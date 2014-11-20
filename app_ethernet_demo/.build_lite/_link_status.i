@@ -323,13 +323,13 @@ void mii_tx_pins(
 
 
 
-void ethernet_get_mii_counts(unsigned *dropped);
+void _ethernet_get_mii_counts(unsigned *dropped);
 # 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_link_status.c" 2
 
 static int _status[1];
 static int _notify[1];
 
-void ethernet_update_link_status(int linkNum, int new_status)
+void _ethernet_update_link_status(int linkNum, int new_status)
 {
   if (new_status != _status[linkNum]) {
     _status[linkNum] = new_status;
@@ -337,11 +337,11 @@ void ethernet_update_link_status(int linkNum, int new_status)
   }
 }
 
-int ethernet_get_link_status(int linkNum) {
+int _ethernet_get_link_status(int linkNum) {
   return _status[linkNum];
 }
 
-int ethernet_link_status_notification(int linkNum) {
+int _ethernet_link_status_notification(int linkNum) {
   int ret = _notify[linkNum];
   _notify[linkNum] = 0;
   return ret;

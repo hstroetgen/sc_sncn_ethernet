@@ -107,7 +107,7 @@ void serviceLinkCmd(chanend link, int linkIndex, unsigned int &cmd)
     }
     case ETHERNET_RX_OVERFLOW_MII_CNT_REQ: {
       unsigned mii_dropped, bad_crc, bad_length, address, filter;
-      ethernet_get_mii_counts(mii_dropped);
+      _ethernet_get_mii_counts(mii_dropped);
       _ethernet_get_filter_counts(address, filter, bad_length, bad_crc);
         link <: mii_dropped;
         link <: bad_length;
@@ -413,7 +413,7 @@ void _ethernet_rx_server(
 
              if (_link_status[i].wants_status_updates == 2) {
                // This currently only works for single port implementations
-               int status = ethernet_get_link_status(0);
+               int status = _ethernet_get_link_status(0);
                send_status_packet(link[i], 0, status);
                _link_status[i].wants_status_updates = 1;
                if (rdIndex != wrIndex) {
@@ -473,8 +473,8 @@ void _ethernet_rx_server(
            }
 
            for (unsigned p=0; p<NUM_ETHERNET_PORTS; ++p) {
-             if (ethernet_link_status_notification(p)) {
-               int status = ethernet_get_link_status(p);
+             if (_ethernet_link_status_notification(p)) {
+               int status = _ethernet_get_link_status(p);
                for (int i=0;i<num_link;i++) {
                  if (_link_status[i].wants_status_updates) {
                    _link_status[i].wants_status_updates = 2;

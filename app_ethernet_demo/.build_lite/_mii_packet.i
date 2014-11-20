@@ -328,7 +328,7 @@ void mii_tx_pins(
 
 
 
-void ethernet_get_mii_counts(unsigned *dropped);
+void _ethernet_get_mii_counts(unsigned *dropped);
 # 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_packet.c" 2
 # 24 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_packet.c"
 extern inline int mii_packet_get_length (int buf); extern inline void mii_packet_set_length (int buf, int x);

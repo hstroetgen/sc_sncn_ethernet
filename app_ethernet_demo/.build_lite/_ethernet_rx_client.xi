@@ -507,7 +507,7 @@ void mii_tx_pins(
                 out buffered port:32 p_mii_txd,
                 int ifnum);
 # 237 "_mii_full.h"
-void ethernet_get_mii_counts( unsigned &dropped );
+void _ethernet_get_mii_counts( unsigned &dropped );
 # 19 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_client.xc" 2
 # 1 "_ethernet_server_def.h" 1
 # 20 "_ethernet_server_def.h"

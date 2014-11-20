@@ -507,7 +507,7 @@ void mii_tx_pins(
                 out buffered port:32 p_mii_txd,
                 int ifnum);
 # 237 "_mii_full.h"
-void ethernet_get_mii_counts( unsigned &dropped );
+void _ethernet_get_mii_counts( unsigned &dropped );
 # 23 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc" 2
 # 1 "_mii_queue.h" 1
 # 24 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc" 2
@@ -689,11 +689,11 @@ void _safe_mac_rx(chanend c_mac,
 # 1 "_ethernet_link_status.h" 1
 
 
-void ethernet_update_link_status(int linkNum, int status);
+void _ethernet_update_link_status(int linkNum, int status);
 
-int ethernet_get_link_status(int linkNum);
+int _ethernet_get_link_status(int linkNum);
 
-int ethernet_link_status_notification(int linkNum);
+int _ethernet_link_status_notification(int linkNum);
 # 29 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc" 2
 # 1 "print.h" 1 3
 # 34 "print.h" 3
@@ -807,7 +807,7 @@ void serviceLinkCmd(chanend link, int linkIndex, unsigned int &cmd)
     }
     case  (0x80000013) : {
       unsigned mii_dropped, bad_crc, bad_length, address, filter;
-      ethernet_get_mii_counts(mii_dropped);
+      _ethernet_get_mii_counts(mii_dropped);
       _ethernet_get_filter_counts(address, filter, bad_length, bad_crc);
         link <: mii_dropped;
         link <: bad_length;
@@ -1072,7 +1072,7 @@ void _ethernet_rx_server(
 
              if (_link_status[i].wants_status_updates == 2) {
 
-               int status = ethernet_get_link_status(0);
+               int status = _ethernet_get_link_status(0);
                send_status_packet(link[i], 0, status);
                _link_status[i].wants_status_updates = 1;
                if (rdIndex != wrIndex) {
@@ -1121,8 +1121,8 @@ void _ethernet_rx_server(
            }
 
            for (unsigned p=0; p< 1 ; ++p) {
-             if (ethernet_link_status_notification(p)) {
-               int status = ethernet_get_link_status(p);
+             if (_ethernet_link_status_notification(p)) {
+               int status = _ethernet_get_link_status(p);
                for (int i=0;i<num_link;i++) {
                  if (_link_status[i].wants_status_updates) {
                    _link_status[i].wants_status_updates = 2;

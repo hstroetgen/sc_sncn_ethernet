@@ -328,7 +328,7 @@ void mii_tx_pins(
 
 
 
-void ethernet_get_mii_counts(unsigned *dropped);
+void _ethernet_get_mii_counts(unsigned *dropped);
 # 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_filter_support.c" 2
 
 # 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_malloc.h" 1

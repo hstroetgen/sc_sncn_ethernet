@@ -499,7 +499,7 @@ void mii_tx_pins(
                 out buffered port:32 p_mii_txd,
                 int ifnum);
 # 237 "_mii_full.h"
-void ethernet_get_mii_counts( unsigned &dropped );
+void _ethernet_get_mii_counts( unsigned &dropped );
 # 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server.xc" 2
 # 1 "smi.h" 1
 # 9 "smi.h"
@@ -507,6 +507,9 @@ void ethernet_get_mii_counts( unsigned &dropped );
 # 10 "smi.h" 2
 # 1 "xccompat.h" 1 3
 # 11 "smi.h" 2
+# 13 "smi.h"
+# 1 "ethernet_conf_derived.h" 1
+# 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
 # 18 "smi.h" 2

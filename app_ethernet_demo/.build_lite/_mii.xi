@@ -505,7 +505,7 @@ void mii_tx_pins(
                 out buffered port:32 p_mii_txd,
                 int ifnum);
 # 237 "_mii_full.h"
-void ethernet_get_mii_counts( unsigned &dropped );
+void _ethernet_get_mii_counts( unsigned &dropped );
 # 4 "_mii_malloc.h" 2
 # 1 "xccompat.h" 1 3
 # 5 "_mii_malloc.h" 2
@@ -983,7 +983,7 @@ int clz(unsigned x);
 # 129 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii.xc"
 static unsigned int _ethernet_mii_no_queue_entries = 0;
 
-void ethernet_get_mii_counts(unsigned& dropped) {
+void _ethernet_get_mii_counts(unsigned& dropped) {
 	dropped = _ethernet_mii_no_queue_entries;
 }
 # 136 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii.xc"
@@ -1159,7 +1159,7 @@ void mii_rx_pins(
 	return;
 }
 # 464 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii.xc"
-void mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tmr)
+void _mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tmr)
 {
 	register const unsigned poly = 0xEDB88320;
 	unsigned int crc = 0;
@@ -1298,7 +1298,7 @@ void mii_tx_pins(
 		}
 # 682 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii.xc"
 #pragma xta endpoint "mii_tx_start"
-		mii_transmit_packet(buf, p_mii_txd, tmr);
+		_mii_transmit_packet(buf, p_mii_txd, tmr);
 # 684 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii.xc"
 #pragma xta endpoint "mii_tx_end"
 

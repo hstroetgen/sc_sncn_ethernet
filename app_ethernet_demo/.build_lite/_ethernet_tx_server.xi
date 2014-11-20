@@ -530,7 +530,7 @@ void mii_tx_pins(
                 out buffered port:32 p_mii_txd,
                 int ifnum);
 # 237 "_mii_full.h"
-void ethernet_get_mii_counts( unsigned &dropped );
+void _ethernet_get_mii_counts( unsigned &dropped );
 # 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc" 2
 # 1 "_mii_queue.h" 1
 # 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc" 2
@@ -542,11 +542,11 @@ void ethernet_get_mii_counts( unsigned &dropped );
 # 1 "_ethernet_link_status.h" 1
 
 
-void ethernet_update_link_status(int linkNum, int status);
+void _ethernet_update_link_status(int linkNum, int status);
 
-int ethernet_get_link_status(int linkNum);
+int _ethernet_get_link_status(int linkNum);
 
-int ethernet_link_status_notification(int linkNum);
+int _ethernet_link_status_notification(int linkNum);
 # 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc" 2
 # 1 "_mii_malloc.h" 1
 # 3 "_mii_malloc.h"
@@ -625,7 +625,7 @@ int clz(unsigned x);
 static void _do_link_check(smi_interface_t &smi, int linkNum)
 {
   int new_status = smi_check_link_state(smi);
-  ethernet_update_link_status(linkNum, new_status);
+  _ethernet_update_link_status(linkNum, new_status);
 }
 # 144 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc"
 #pragma unsafe arrays

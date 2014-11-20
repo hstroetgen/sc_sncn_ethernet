@@ -328,7 +328,7 @@ void mii_tx_pins(
 
 
 
-void ethernet_get_mii_counts(unsigned *dropped);
+void _ethernet_get_mii_counts(unsigned *dropped);
 # 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_malloc.c" 2
 # 1 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/print.h" 1 3 4
 # 34 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/print.h" 3 4

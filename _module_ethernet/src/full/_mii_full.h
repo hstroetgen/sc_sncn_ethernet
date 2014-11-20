@@ -234,7 +234,7 @@ void mii_tx_pins(
 #endif
 
 #if ETHERNET_COUNT_PACKETS
-void ethernet_get_mii_counts(REFERENCE_PARAM(unsigned,dropped));
+void _ethernet_get_mii_counts(REFERENCE_PARAM(unsigned,dropped));
 #endif
 
 #endif

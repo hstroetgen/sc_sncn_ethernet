@@ -497,7 +497,7 @@ void mii_tx_pins(
                 out buffered port:32 p_mii_txd,
                 int ifnum);
 # 237 "_mii_full.h"
-void ethernet_get_mii_counts( unsigned &dropped );
+void _ethernet_get_mii_counts( unsigned &dropped );
 # 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_filter.xc" 2
 # 1 "_mii_queue.h" 1
 # 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_filter.xc" 2

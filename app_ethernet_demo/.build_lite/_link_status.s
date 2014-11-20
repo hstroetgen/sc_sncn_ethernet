@@ -1,34 +1,34 @@
 	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_link_status.c"
 
-.set ethernet_update_link_status.locnoside, 1
+.set _ethernet_update_link_status.locnoside, 1
 
-.set ethernet_update_link_status.locnochandec, 1
+.set _ethernet_update_link_status.locnochandec, 1
 
-.set ethernet_update_link_status.locnoglobalaccess, 1
+.set _ethernet_update_link_status.locnoglobalaccess, 1
 
-.set ethernet_update_link_status.locnointerfaceaccess, 1
+.set _ethernet_update_link_status.locnointerfaceaccess, 1
 
-.set ethernet_update_link_status.locnonotificationselect, 1
+.set _ethernet_update_link_status.locnonotificationselect, 1
 
-.set ethernet_get_link_status.locnoside, 1
+.set _ethernet_get_link_status.locnoside, 1
 
-.set ethernet_get_link_status.locnochandec, 1
+.set _ethernet_get_link_status.locnochandec, 1
 
-.set ethernet_get_link_status.locnoglobalaccess, 1
+.set _ethernet_get_link_status.locnoglobalaccess, 1
 
-.set ethernet_get_link_status.locnointerfaceaccess, 1
+.set _ethernet_get_link_status.locnointerfaceaccess, 1
 
-.set ethernet_get_link_status.locnonotificationselect, 1
+.set _ethernet_get_link_status.locnonotificationselect, 1
 
-.set ethernet_link_status_notification.locnoside, 1
+.set _ethernet_link_status_notification.locnoside, 1
 
-.set ethernet_link_status_notification.locnochandec, 1
+.set _ethernet_link_status_notification.locnochandec, 1
 
-.set ethernet_link_status_notification.locnoglobalaccess, 1
+.set _ethernet_link_status_notification.locnoglobalaccess, 1
 
-.set ethernet_link_status_notification.locnointerfaceaccess, 1
+.set _ethernet_link_status_notification.locnointerfaceaccess, 1
 
-.set ethernet_link_status_notification.locnonotificationselect, 1
+.set _ethernet_link_status_notification.locnonotificationselect, 1
 
 
 	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_link_status.c"
@@ -53,11 +53,11 @@
 .Ltext_begin:
 	.section	.dp.data,"awd",@progbits
 	.text
-	.cc_top ethernet_update_link_status.function
-	.globl	ethernet_update_link_status
+	.cc_top _ethernet_update_link_status.function
+	.globl	_ethernet_update_link_status
 	.align	2
-	.type	ethernet_update_link_status,@function
-ethernet_update_link_status:
+	.type	_ethernet_update_link_status,@function
+_ethernet_update_link_status:
 .Ltmp0:
 	.cfi_startproc
 .Lfunc_begin0:
@@ -81,26 +81,26 @@ ethernet_update_link_status:
 	retsp 0
 .Ltmp4:
 .Ltmp5:
-	.size	ethernet_update_link_status, .Ltmp5-ethernet_update_link_status
+	.size	_ethernet_update_link_status, .Ltmp5-_ethernet_update_link_status
 .Lfunc_end0:
 .Ltmp6:
 	.cfi_endproc
 .Leh_func_end0:
 
-	.cc_bottom ethernet_update_link_status.function
-	.set	ethernet_update_link_status.nstackwords,0
-	.globl	ethernet_update_link_status.nstackwords
-	.set	ethernet_update_link_status.maxcores,1
-	.globl	ethernet_update_link_status.maxcores
-	.set	ethernet_update_link_status.maxtimers,0
-	.globl	ethernet_update_link_status.maxtimers
-	.set	ethernet_update_link_status.maxchanends,0
-	.globl	ethernet_update_link_status.maxchanends
-	.cc_top ethernet_get_link_status.function
-	.globl	ethernet_get_link_status
+	.cc_bottom _ethernet_update_link_status.function
+	.set	_ethernet_update_link_status.nstackwords,0
+	.globl	_ethernet_update_link_status.nstackwords
+	.set	_ethernet_update_link_status.maxcores,1
+	.globl	_ethernet_update_link_status.maxcores
+	.set	_ethernet_update_link_status.maxtimers,0
+	.globl	_ethernet_update_link_status.maxtimers
+	.set	_ethernet_update_link_status.maxchanends,0
+	.globl	_ethernet_update_link_status.maxchanends
+	.cc_top _ethernet_get_link_status.function
+	.globl	_ethernet_get_link_status
 	.align	2
-	.type	ethernet_get_link_status,@function
-ethernet_get_link_status:
+	.type	_ethernet_get_link_status,@function
+_ethernet_get_link_status:
 .Ltmp7:
 	.cfi_startproc
 .Lfunc_begin1:
@@ -112,26 +112,26 @@ ethernet_get_link_status:
 	retsp 0
 .Ltmp9:
 .Ltmp10:
-	.size	ethernet_get_link_status, .Ltmp10-ethernet_get_link_status
+	.size	_ethernet_get_link_status, .Ltmp10-_ethernet_get_link_status
 .Lfunc_end1:
 .Ltmp11:
 	.cfi_endproc
 .Leh_func_end1:
 
-	.cc_bottom ethernet_get_link_status.function
-	.set	ethernet_get_link_status.nstackwords,0
-	.globl	ethernet_get_link_status.nstackwords
-	.set	ethernet_get_link_status.maxcores,1
-	.globl	ethernet_get_link_status.maxcores
-	.set	ethernet_get_link_status.maxtimers,0
-	.globl	ethernet_get_link_status.maxtimers
-	.set	ethernet_get_link_status.maxchanends,0
-	.globl	ethernet_get_link_status.maxchanends
-	.cc_top ethernet_link_status_notification.function
-	.globl	ethernet_link_status_notification
+	.cc_bottom _ethernet_get_link_status.function
+	.set	_ethernet_get_link_status.nstackwords,0
+	.globl	_ethernet_get_link_status.nstackwords
+	.set	_ethernet_get_link_status.maxcores,1
+	.globl	_ethernet_get_link_status.maxcores
+	.set	_ethernet_get_link_status.maxtimers,0
+	.globl	_ethernet_get_link_status.maxtimers
+	.set	_ethernet_get_link_status.maxchanends,0
+	.globl	_ethernet_get_link_status.maxchanends
+	.cc_top _ethernet_link_status_notification.function
+	.globl	_ethernet_link_status_notification
 	.align	2
-	.type	ethernet_link_status_notification,@function
-ethernet_link_status_notification:
+	.type	_ethernet_link_status_notification,@function
+_ethernet_link_status_notification:
 .Ltmp12:
 	.cfi_startproc
 .Lfunc_begin2:
@@ -149,21 +149,21 @@ ethernet_link_status_notification:
 	retsp 0
 .Ltmp15:
 .Ltmp16:
-	.size	ethernet_link_status_notification, .Ltmp16-ethernet_link_status_notification
+	.size	_ethernet_link_status_notification, .Ltmp16-_ethernet_link_status_notification
 .Lfunc_end2:
 .Ltmp17:
 	.cfi_endproc
 .Leh_func_end2:
 
-	.cc_bottom ethernet_link_status_notification.function
-	.set	ethernet_link_status_notification.nstackwords,0
-	.globl	ethernet_link_status_notification.nstackwords
-	.set	ethernet_link_status_notification.maxcores,1
-	.globl	ethernet_link_status_notification.maxcores
-	.set	ethernet_link_status_notification.maxtimers,0
-	.globl	ethernet_link_status_notification.maxtimers
-	.set	ethernet_link_status_notification.maxchanends,0
-	.globl	ethernet_link_status_notification.maxchanends
+	.cc_bottom _ethernet_link_status_notification.function
+	.set	_ethernet_link_status_notification.nstackwords,0
+	.globl	_ethernet_link_status_notification.nstackwords
+	.set	_ethernet_link_status_notification.maxcores,1
+	.globl	_ethernet_link_status_notification.maxcores
+	.set	_ethernet_link_status_notification.maxtimers,0
+	.globl	_ethernet_link_status_notification.maxtimers
+	.set	_ethernet_link_status_notification.maxchanends,0
+	.globl	_ethernet_link_status_notification.maxchanends
 	.section	.dp.bss,"awd",@nobits
 	.cc_top _status.data
 	.align	4
@@ -188,7 +188,7 @@ _notify:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	639
+	.long	645
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -236,9 +236,9 @@ _notify:
 	.byte	3
 	.long	_notify
 	.byte	7
-	.ascii	 "ethernet_update_link_status"
+	.ascii	 "_ethernet_update_link_status"
 	.byte	0
-	.ascii	 "ethernet_update_link_status"
+	.ascii	 "_ethernet_update_link_status"
 	.byte	0
 	.byte	1
 	.byte	7
@@ -265,9 +265,9 @@ _notify:
 	.long	.Ldebug_loc3+0
 	.byte	0
 	.byte	9
-	.ascii	 "ethernet_get_link_status"
+	.ascii	 "_ethernet_get_link_status"
 	.byte	0
-	.ascii	 "ethernet_get_link_status"
+	.ascii	 "_ethernet_get_link_status"
 	.byte	0
 	.byte	1
 	.byte	14
@@ -288,9 +288,9 @@ _notify:
 	.long	.Ldebug_loc6+0
 	.byte	0
 	.byte	9
-	.ascii	 "ethernet_link_status_notification"
+	.ascii	 "_ethernet_link_status_notification"
 	.byte	0
-	.ascii	 "ethernet_link_status_notification"
+	.ascii	 "_ethernet_link_status_notification"
 	.byte	0
 	.byte	1
 	.byte	18
@@ -497,11 +497,11 @@ _notify:
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
 	.long	305
-.asciiz "ethernet_update_link_status"
-	.long	509
-.asciiz "ethernet_link_status_notification"
-	.long	419
-.asciiz "ethernet_get_link_status"
+.asciiz "_ethernet_update_link_status"
+	.long	513
+.asciiz "_ethernet_link_status_notification"
+	.long	421
+.asciiz "_ethernet_get_link_status"
 	.long	0
 .Lpubnames_end1:
 	.section	.debug_pubtypes,"",@progbits
@@ -570,7 +570,7 @@ _notify:
 	.section	.debug_ranges,"",@progbits
 	.section	.debug_macinfo,"",@progbits
 
-	.typestring ethernet_update_link_status, "f{0}(si,si)"
-	.typestring ethernet_get_link_status, "f{si}(si)"
-	.typestring ethernet_link_status_notification, "f{si}(si)"
+	.typestring _ethernet_update_link_status, "f{0}(si,si)"
+	.typestring _ethernet_get_link_status, "f{si}(si)"
+	.typestring _ethernet_link_status_notification, "f{si}(si)"
 	.ident	"GCC: (GNU) 4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"

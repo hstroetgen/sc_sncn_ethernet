@@ -330,7 +330,7 @@ void mii_tx_pins(
 
 
 
-void ethernet_get_mii_counts(unsigned *dropped);
+void _ethernet_get_mii_counts(unsigned *dropped);
 # 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.c" 2
 
 

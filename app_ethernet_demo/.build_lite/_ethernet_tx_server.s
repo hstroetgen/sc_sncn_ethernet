@@ -70,7 +70,7 @@
 	.call ethernet_tx_server,get_ts_queue_entry
 	.call ethernet_tx_server,get_and_dec_transmit_count
 	.call usage.anon.27,smi_check_link_state
-	.call usage.anon.27,ethernet_update_link_status
+	.call usage.anon.27,_ethernet_update_link_status
 	.call usage.anon.2,delay_ticks_longlong
 	.call usage.anon.1,delay_ticks_longlong
 	.call usage.anon.0,delay_ticks_longlong
@@ -900,7 +900,7 @@ ethernet_tx_server:
 	.loc	1 31 0
 	mov r0, r7
 .Lxta.call_labels7:
-	bl ethernet_update_link_status
+	bl _ethernet_update_link_status
 .Ltmp135:
 	bu .LBB0_39
 .Ltmp136:
@@ -915,7 +915,7 @@ ethernet_tx_server:
 	.loc	1 31 0
 	mov r0, r9
 .Lxta.call_labels9:
-	bl ethernet_update_link_status
+	bl _ethernet_update_link_status
 .Ltmp139:
 	bu .LBB0_38
 .Ltmp140:
@@ -928,13 +928,13 @@ ethernet_tx_server:
 
 	.align	4
 	.cc_bottom ethernet_tx_server.function
-	.set	ethernet_tx_server.nstackwords,((memset.nstackwords $M get_ts_queue_entry.nstackwords $M get_and_dec_transmit_count.nstackwords $M mii_free.nstackwords $M smi_check_link_state.nstackwords $M ethernet_update_link_status.nstackwords $M mii_reserve_at_least.nstackwords $M mii_get_wrap_ptr.nstackwords $M mii_commit.nstackwords) + 38)
+	.set	ethernet_tx_server.nstackwords,((memset.nstackwords $M get_ts_queue_entry.nstackwords $M get_and_dec_transmit_count.nstackwords $M mii_free.nstackwords $M smi_check_link_state.nstackwords $M _ethernet_update_link_status.nstackwords $M mii_reserve_at_least.nstackwords $M mii_get_wrap_ptr.nstackwords $M mii_commit.nstackwords) + 38)
 	.globl	ethernet_tx_server.nstackwords
-	.set	ethernet_tx_server.maxcores,ethernet_update_link_status.maxcores $M get_and_dec_transmit_count.maxcores $M get_ts_queue_entry.maxcores $M mii_commit.maxcores $M mii_free.maxcores $M mii_get_wrap_ptr.maxcores $M mii_reserve_at_least.maxcores $M smi_check_link_state.maxcores $M 1
+	.set	ethernet_tx_server.maxcores,_ethernet_update_link_status.maxcores $M get_and_dec_transmit_count.maxcores $M get_ts_queue_entry.maxcores $M mii_commit.maxcores $M mii_free.maxcores $M mii_get_wrap_ptr.maxcores $M mii_reserve_at_least.maxcores $M smi_check_link_state.maxcores $M 1
 	.globl	ethernet_tx_server.maxcores
-	.set	ethernet_tx_server.maxtimers,ethernet_update_link_status.maxtimers $M get_and_dec_transmit_count.maxtimers $M get_ts_queue_entry.maxtimers $M mii_commit.maxtimers $M mii_free.maxtimers $M mii_get_wrap_ptr.maxtimers $M mii_reserve_at_least.maxtimers $M smi_check_link_state.maxtimers $M 0
+	.set	ethernet_tx_server.maxtimers,_ethernet_update_link_status.maxtimers $M get_and_dec_transmit_count.maxtimers $M get_ts_queue_entry.maxtimers $M mii_commit.maxtimers $M mii_free.maxtimers $M mii_get_wrap_ptr.maxtimers $M mii_reserve_at_least.maxtimers $M smi_check_link_state.maxtimers $M 0
 	.globl	ethernet_tx_server.maxtimers
-	.set	ethernet_tx_server.maxchanends,ethernet_update_link_status.maxchanends $M get_and_dec_transmit_count.maxchanends $M get_ts_queue_entry.maxchanends $M mii_commit.maxchanends $M mii_free.maxchanends $M mii_get_wrap_ptr.maxchanends $M mii_reserve_at_least.maxchanends $M smi_check_link_state.maxchanends $M 0
+	.set	ethernet_tx_server.maxchanends,_ethernet_update_link_status.maxchanends $M get_and_dec_transmit_count.maxchanends $M get_ts_queue_entry.maxchanends $M mii_commit.maxchanends $M mii_free.maxchanends $M mii_get_wrap_ptr.maxchanends $M mii_reserve_at_least.maxchanends $M smi_check_link_state.maxchanends $M 0
 	.globl	ethernet_tx_server.maxchanends
 	.cfi_sections .debug_frame
 .Ltext_end:
@@ -2990,7 +2990,7 @@ ethernet_tx_server:
 	.typestring smi_check_link_state, "f{si}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
 	.typestring get_ts_queue_entry, "f{si}(&(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}))"
 	.typestring get_and_dec_transmit_count, "f{si}(si)"
-	.typestring ethernet_update_link_status, "f{0}(si,si)"
+	.typestring _ethernet_update_link_status, "f{0}(si,si)"
 	.typestring mii_reserve_at_least, "f{ui}(ui,&(ui),si)"
 	.typestring mii_commit, "f{0}(ui,si)"
 	.typestring mii_free, "f{0}(ui)"

@@ -28,7 +28,7 @@
 static void _do_link_check(smi_interface_t &smi, int linkNum)
 {
   int new_status = smi_check_link_state(smi);
-  ethernet_update_link_status(linkNum, new_status);
+  _ethernet_update_link_status(linkNum, new_status);
 }
 
 #if ETHERNET_TX_NO_BUFFERING

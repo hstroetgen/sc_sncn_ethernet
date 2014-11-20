@@ -293,7 +293,7 @@ init_mii_mem:
 	stw r0, dp[ethernet_memory_lock]
 	.loc	1 64 0
 .Ltmp53:
-	ldaw r0, dp[rx_lp_data]
+	ldaw r0, dp[_rx_lp_data]
 .Ltmp54:
 	stw r0, dp[rx_mem_lp]
 .Ltmp55:
@@ -302,7 +302,7 @@ init_mii_mem:
 	mov r1, r4
 	bl mii_init_mempool
 	.loc	1 73 0
-	ldaw r0, dp[tx_lp_data]
+	ldaw r0, dp[_tx_lp_data]
 	stw r0, dp[tx_mem_lp]
 	.loc	1 74 0
 	mov r1, r4
@@ -370,26 +370,26 @@ tx_mem_lp:
 ts_queue:
 	.space	36
 	.cc_bottom ts_queue.data
-	.cc_top rx_lp_data.data
-	.globl	rx_lp_data.globound
-	.set	rx_lp_data.globound,1
-	.globl	rx_lp_data
+	.cc_top _rx_lp_data.data
+	.globl	_rx_lp_data.globound
+	.set	_rx_lp_data.globound,1
+	.globl	_rx_lp_data
 	.align	4
-	.type	rx_lp_data,@object
-	.size rx_lp_data,4096
-rx_lp_data:
+	.type	_rx_lp_data,@object
+	.size _rx_lp_data,4096
+_rx_lp_data:
 	.space	4096
-	.cc_bottom rx_lp_data.data
-	.cc_top tx_lp_data.data
-	.globl	tx_lp_data.globound
-	.set	tx_lp_data.globound,1
-	.globl	tx_lp_data
+	.cc_bottom _rx_lp_data.data
+	.cc_top _tx_lp_data.data
+	.globl	_tx_lp_data.globound
+	.set	_tx_lp_data.globound,1
+	.globl	_tx_lp_data
 	.align	4
-	.type	tx_lp_data,@object
-	.size tx_lp_data,4096
-tx_lp_data:
+	.type	_tx_lp_data,@object
+	.size _tx_lp_data,4096
+_tx_lp_data:
 	.space	4096
-	.cc_bottom tx_lp_data.data
+	.cc_bottom _tx_lp_data.data
 	.cfi_sections .debug_frame
 	.text
 .Ltext_end:
@@ -399,7 +399,7 @@ tx_lp_data:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	1340
+	.long	1342
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -528,7 +528,7 @@ tx_lp_data:
 	.short	1023
 	.byte	0
 	.byte	4
-	.ascii	 "rx_lp_data"
+	.ascii	 "_rx_lp_data"
 	.byte	0
 	.long	478
 	.byte	1
@@ -536,9 +536,9 @@ tx_lp_data:
 	.byte	42
 	.byte	5
 	.byte	3
-	.long	rx_lp_data
+	.long	_rx_lp_data
 	.byte	4
-	.ascii	 "tx_lp_data"
+	.ascii	 "_tx_lp_data"
 	.byte	0
 	.long	478
 	.byte	1
@@ -546,7 +546,7 @@ tx_lp_data:
 	.byte	43
 	.byte	5
 	.byte	3
-	.long	tx_lp_data
+	.long	_tx_lp_data
 	.byte	3
 	.long	242
 	.ascii	 "mii_mempool_t"
@@ -554,7 +554,7 @@ tx_lp_data:
 	.byte	5
 	.byte	6
 	.byte	6
-	.long	547
+	.long	549
 	.byte	7
 	.long	316
 	.byte	0
@@ -562,7 +562,7 @@ tx_lp_data:
 	.byte	4
 	.ascii	 "rx_mem_lp"
 	.byte	0
-	.long	568
+	.long	570
 	.byte	1
 	.byte	1
 	.byte	45
@@ -572,7 +572,7 @@ tx_lp_data:
 	.byte	4
 	.ascii	 "tx_mem_lp"
 	.byte	0
-	.long	568
+	.long	570
 	.byte	1
 	.byte	1
 	.byte	46
@@ -598,7 +598,7 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	1189
+	.long	1191
 	.long	.Ldebug_loc0+0
 	.byte	12
 	.ascii	 "num_rx"
@@ -627,14 +627,14 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1209
+	.long	1211
 	.long	.Ldebug_loc6+0
 	.byte	12
 	.ascii	 "tx"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1189
+	.long	1191
 	.long	.Ldebug_loc10+0
 	.byte	12
 	.ascii	 "num_q"
@@ -655,7 +655,7 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1337
+	.long	1339
 	.byte	2
 	.byte	145
 	.byte	24
@@ -664,7 +664,7 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	1337
+	.long	1339
 	.byte	2
 	.byte	145
 	.byte	28
@@ -688,7 +688,7 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	96
-	.long	1215
+	.long	1217
 	.long	.Ldebug_loc17+0
 	.byte	12
 	.byte	105
@@ -717,14 +717,14 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	83
-	.long	1215
+	.long	1217
 	.long	.Ldebug_loc23+0
 	.byte	12
 	.ascii	 "p2"
 	.byte	0
 	.byte	1
 	.byte	84
-	.long	1215
+	.long	1217
 	.long	.Ldebug_loc26+0
 	.byte	12
 	.byte	105
@@ -738,7 +738,7 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	86
-	.long	1174
+	.long	1176
 	.long	.Ldebug_loc32+0
 	.byte	0
 	.byte	14
@@ -788,7 +788,7 @@ tx_lp_data:
 	.byte	6
 	.byte	129
 	.byte	17
-	.long	1174
+	.long	1176
 	.byte	4
 	.byte	2
 	.ascii	 "char"
@@ -796,10 +796,10 @@ tx_lp_data:
 	.byte	8
 	.byte	1
 	.byte	18
-	.long	1195
+	.long	1197
 	.byte	1
 	.byte	17
-	.long	1203
+	.long	1205
 	.byte	4
 	.byte	3
 	.long	242
@@ -826,7 +826,7 @@ tx_lp_data:
 	.byte	9
 	.ascii	 "p_smi_mdio"
 	.byte	0
-	.long	1215
+	.long	1217
 	.byte	7
 	.byte	46
 	.byte	2
@@ -836,7 +836,7 @@ tx_lp_data:
 	.byte	9
 	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	1215
+	.long	1217
 	.byte	7
 	.byte	48
 	.byte	2
@@ -845,13 +845,13 @@ tx_lp_data:
 	.byte	1
 	.byte	0
 	.byte	3
-	.long	1227
+	.long	1229
 	.ascii	 "smi_interface_t"
 	.byte	0
 	.byte	3
 	.byte	26
 	.byte	17
-	.long	1314
+	.long	1316
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -1107,28 +1107,28 @@ tx_lp_data:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	522
-.asciiz "tx_lp_data"
-	.long	1098
+	.long	523
+.asciiz "_tx_lp_data"
+	.long	1100
 .asciiz "init_mii_mem"
-	.long	1063
+	.long	1065
 .asciiz "hwlock_alloc"
-	.long	580
+	.long	582
 .asciiz "rx_mem_lp"
-	.long	604
+	.long	606
 .asciiz "tx_mem_lp"
-	.long	628
+	.long	630
 .asciiz "_ethernet_rx_server_wr"
-	.long	723
+	.long	725
 .asciiz "_ethernet_tx_server_wr"
-	.long	960
+	.long	962
 .asciiz "_mii_rx_pins_wr"
-	.long	885
+	.long	887
 .asciiz "_mii_tx_pins_wr"
 	.long	455
 .asciiz "ts_queue"
 	.long	497
-.asciiz "rx_lp_data"
+.asciiz "_rx_lp_data"
 	.long	274
 .asciiz "ethernet_memory_lock"
 	.long	0
@@ -1143,7 +1143,7 @@ tx_lp_data:
 	.long	.Lset3
 	.long	331
 .asciiz "mii_ts_queue_t"
-	.long	1227
+	.long	1229
 .asciiz "smi_interface_t"
 	.long	0
 .Lpubtypes_end1:
@@ -1369,6 +1369,6 @@ tx_lp_data:
 	.typestring rx_mem_lp, "a(1:ui)"
 	.typestring tx_mem_lp, "a(1:ui)"
 	.typestring ts_queue, "a(1:s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}})"
-	.typestring rx_lp_data, "a(1:a(1024:si))"
-	.typestring tx_lp_data, "a(1:a(1024:si))"
+	.typestring _rx_lp_data, "a(1:a(1024:si))"
+	.typestring _tx_lp_data, "a(1:a(1024:si))"
 	.ident	"GCC: (GNU) 4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"

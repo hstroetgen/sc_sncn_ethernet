@@ -75,9 +75,9 @@
 	.call _ethernet_rx_server,mii_get_my_next_buf
 	.call _ethernet_rx_server,mii_free
 	.call _ethernet_rx_server,get_and_dec_transmit_count
-	.call _ethernet_rx_server,ethernet_link_status_notification
-	.call _ethernet_rx_server,ethernet_get_link_status
 	.call _ethernet_rx_server,_mac_rx_send_frame1
+	.call _ethernet_rx_server,_ethernet_link_status_notification
+	.call _ethernet_rx_server,_ethernet_get_link_status
 	.call usage.anon.31,usage.anon.7
 	.call usage.anon.31,usage.anon.27
 	.call usage.anon.31,usage.anon.16
@@ -88,7 +88,7 @@
 	.call _mac_rx_send_frame1,usage.anon.21
 	.call _mac_rx_send_frame1,mii_packet_get_wrap_ptr
 	.call serviceLinkCmd,usage.anon.27
-	.call serviceLinkCmd,ethernet_get_mii_counts
+	.call serviceLinkCmd,_ethernet_get_mii_counts
 	.call serviceLinkCmd,_ethernet_get_filter_counts
 	.call usage.anon.2,delay_ticks_longlong
 	.call usage.anon.1,delay_ticks_longlong
@@ -488,7 +488,7 @@ _ethernet_rx_server:
 .Ltmp44:
 	mov r0, r9
 .Lxta.call_labels2:
-	bl ethernet_get_link_status
+	bl _ethernet_get_link_status
 .Ltmp45:
 	.loc	1 344 0
 	chkct res[r8], 1
@@ -774,7 +774,7 @@ _ethernet_rx_server:
 .Ltmp94:
 	mov r0, r8
 .Lxta.call_labels9:
-	bl ethernet_link_status_notification
+	bl _ethernet_link_status_notification
 	.loc	1 476 0
 	bf r0, .LBB0_4
 .Lxtalabel33:
@@ -782,7 +782,7 @@ _ethernet_rx_server:
 .Ltmp95:
 	mov r0, r8
 .Lxta.call_labels10:
-	bl ethernet_get_link_status
+	bl _ethernet_get_link_status
 	.loc	1 478 0
 .Ltmp96:
 	ldw r0, sp[1]
@@ -862,13 +862,13 @@ _ethernet_rx_server:
 
 	.align	4
 	.cc_bottom _ethernet_rx_server.function
-	.set	_ethernet_rx_server.nstackwords,((mii_init_my_rdptr.nstackwords $M memset.nstackwords $M serviceLinkCmd.nstackwords $M _mac_rx_send_frame1.nstackwords $M get_and_dec_transmit_count.nstackwords $M mii_get_my_next_buf.nstackwords $M mii_update_my_rdptr.nstackwords $M mii_free.nstackwords $M ethernet_link_status_notification.nstackwords $M ethernet_get_link_status.nstackwords) + 15)
+	.set	_ethernet_rx_server.nstackwords,((mii_init_my_rdptr.nstackwords $M memset.nstackwords $M serviceLinkCmd.nstackwords $M _mac_rx_send_frame1.nstackwords $M get_and_dec_transmit_count.nstackwords $M mii_get_my_next_buf.nstackwords $M mii_update_my_rdptr.nstackwords $M mii_free.nstackwords $M _ethernet_link_status_notification.nstackwords $M _ethernet_get_link_status.nstackwords) + 15)
 	.globl	_ethernet_rx_server.nstackwords
-	.set	_ethernet_rx_server.maxcores,_mac_rx_send_frame1.maxcores $M ethernet_get_link_status.maxcores $M ethernet_link_status_notification.maxcores $M get_and_dec_transmit_count.maxcores $M mii_free.maxcores $M mii_get_my_next_buf.maxcores $M mii_init_my_rdptr.maxcores $M mii_update_my_rdptr.maxcores $M serviceLinkCmd.maxcores $M 1
+	.set	_ethernet_rx_server.maxcores,_ethernet_get_link_status.maxcores $M _ethernet_link_status_notification.maxcores $M _mac_rx_send_frame1.maxcores $M get_and_dec_transmit_count.maxcores $M mii_free.maxcores $M mii_get_my_next_buf.maxcores $M mii_init_my_rdptr.maxcores $M mii_update_my_rdptr.maxcores $M serviceLinkCmd.maxcores $M 1
 	.globl	_ethernet_rx_server.maxcores
-	.set	_ethernet_rx_server.maxtimers,_mac_rx_send_frame1.maxtimers $M ethernet_get_link_status.maxtimers $M ethernet_link_status_notification.maxtimers $M get_and_dec_transmit_count.maxtimers $M mii_free.maxtimers $M mii_get_my_next_buf.maxtimers $M mii_init_my_rdptr.maxtimers $M mii_update_my_rdptr.maxtimers $M serviceLinkCmd.maxtimers $M 0
+	.set	_ethernet_rx_server.maxtimers,_ethernet_get_link_status.maxtimers $M _ethernet_link_status_notification.maxtimers $M _mac_rx_send_frame1.maxtimers $M get_and_dec_transmit_count.maxtimers $M mii_free.maxtimers $M mii_get_my_next_buf.maxtimers $M mii_init_my_rdptr.maxtimers $M mii_update_my_rdptr.maxtimers $M serviceLinkCmd.maxtimers $M 0
 	.globl	_ethernet_rx_server.maxtimers
-	.set	_ethernet_rx_server.maxchanends,_mac_rx_send_frame1.maxchanends $M ethernet_get_link_status.maxchanends $M ethernet_link_status_notification.maxchanends $M get_and_dec_transmit_count.maxchanends $M mii_free.maxchanends $M mii_get_my_next_buf.maxchanends $M mii_init_my_rdptr.maxchanends $M mii_update_my_rdptr.maxchanends $M serviceLinkCmd.maxchanends $M 0
+	.set	_ethernet_rx_server.maxchanends,_ethernet_get_link_status.maxchanends $M _ethernet_link_status_notification.maxchanends $M _mac_rx_send_frame1.maxchanends $M get_and_dec_transmit_count.maxchanends $M mii_free.maxchanends $M mii_get_my_next_buf.maxchanends $M mii_init_my_rdptr.maxchanends $M mii_update_my_rdptr.maxchanends $M serviceLinkCmd.maxchanends $M 0
 	.globl	_ethernet_rx_server.maxchanends
 	.cc_top serviceLinkCmd.function
 	.section	.cp.rodata.cst4,"aMc",@progbits,4
@@ -992,7 +992,7 @@ serviceLinkCmd:
 .Ltmp126:
 	.loc	1 110 0
 .Lxta.call_labels11:
-	bl ethernet_get_mii_counts
+	bl _ethernet_get_mii_counts
 .Ltmp127:
 	ldaw r0, sp[2]
 .Ltmp128:
@@ -1148,13 +1148,13 @@ serviceLinkCmd:
 
 	.align	4
 	.cc_bottom serviceLinkCmd.function
-	.set	serviceLinkCmd.nstackwords,((ethernet_get_mii_counts.nstackwords $M _ethernet_get_filter_counts.nstackwords) + 8)
+	.set	serviceLinkCmd.nstackwords,((_ethernet_get_mii_counts.nstackwords $M _ethernet_get_filter_counts.nstackwords) + 8)
 	.globl	serviceLinkCmd.nstackwords
-	.set	serviceLinkCmd.maxcores,_ethernet_get_filter_counts.maxcores $M ethernet_get_mii_counts.maxcores $M 1
+	.set	serviceLinkCmd.maxcores,_ethernet_get_filter_counts.maxcores $M _ethernet_get_mii_counts.maxcores $M 1
 	.globl	serviceLinkCmd.maxcores
-	.set	serviceLinkCmd.maxtimers,_ethernet_get_filter_counts.maxtimers $M ethernet_get_mii_counts.maxtimers $M 0
+	.set	serviceLinkCmd.maxtimers,_ethernet_get_filter_counts.maxtimers $M _ethernet_get_mii_counts.maxtimers $M 0
 	.globl	serviceLinkCmd.maxtimers
-	.set	serviceLinkCmd.maxchanends,_ethernet_get_filter_counts.maxchanends $M ethernet_get_mii_counts.maxchanends $M 0
+	.set	serviceLinkCmd.maxchanends,_ethernet_get_filter_counts.maxchanends $M _ethernet_get_mii_counts.maxchanends $M 0
 	.globl	serviceLinkCmd.maxchanends
 	.cc_top _mac_rx_send_frame1.function
 	.section	.cp.rodata.cst4,"aMc",@progbits,4
@@ -1692,7 +1692,7 @@ _link_status:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	5248
+	.long	5219
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -1989,20 +1989,8 @@ _link_status:
 	.byte	3
 	.byte	137
 	.long	262
-	.byte	10
-	.ascii	 "buf"
-	.byte	0
-	.byte	3
-	.byte	137
-	.long	262
 	.byte	12
 	.byte	12
-	.byte	13
-	.byte	120
-	.byte	0
-	.byte	3
-	.byte	137
-	.long	262
 	.byte	13
 	.byte	120
 	.byte	0
@@ -2463,13 +2451,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	53
-	.long	4901
-	.byte	10
-	.byte	99
-	.byte	0
-	.byte	1
-	.byte	53
-	.long	4901
+	.long	4872
 	.byte	0
 	.byte	15
 	.ascii	 "_get_tile_id_from_chanend"
@@ -2484,7 +2466,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	58
-	.long	4901
+	.long	4872
 	.byte	13
 	.ascii	 "ci"
 	.byte	0
@@ -2510,22 +2492,22 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	67
-	.long	4901
-	.long	.Ldebug_loc56+0
+	.long	4872
+	.long	.Ldebug_loc49+0
 	.byte	17
 	.ascii	 "linkIndex"
 	.byte	0
 	.byte	1
 	.byte	67
 	.long	262
-	.long	.Ldebug_loc61+0
+	.long	.Ldebug_loc54+0
 	.byte	17
 	.ascii	 "cmd"
 	.byte	0
 	.byte	1
 	.byte	67
-	.long	4944
-	.long	.Ldebug_loc64+0
+	.long	4915
+	.long	.Ldebug_loc57+0
 	.byte	18
 	.long	.Ltmp118
 	.long	.Ltmp142
@@ -2556,7 +2538,7 @@ _link_status:
 	.byte	1
 	.byte	97
 	.long	262
-	.long	.Ldebug_loc69+0
+	.long	.Ldebug_loc62+0
 	.byte	0
 	.byte	18
 	.long	.Ltmp126
@@ -2841,7 +2823,7 @@ _link_status:
 	.byte	1
 	.byte	121
 	.long	262
-	.long	.Ldebug_loc71+0
+	.long	.Ldebug_loc64+0
 	.byte	0
 	.byte	18
 	.long	.Ltmp138
@@ -2852,7 +2834,7 @@ _link_status:
 	.byte	1
 	.byte	132
 	.long	262
-	.long	.Ldebug_loc73+0
+	.long	.Ldebug_loc66+0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2877,21 +2859,21 @@ _link_status:
 	.byte	1
 	.byte	169
 	.long	262
-	.long	.Ldebug_loc75+0
+	.long	.Ldebug_loc68+0
 	.byte	17
 	.ascii	 "link"
 	.byte	0
 	.byte	1
 	.byte	170
-	.long	4901
-	.long	.Ldebug_loc80+0
+	.long	4872
+	.long	.Ldebug_loc73+0
 	.byte	17
 	.ascii	 "cmd"
 	.byte	0
 	.byte	1
 	.byte	171
 	.long	337
-	.long	.Ldebug_loc85+0
+	.long	.Ldebug_loc78+0
 	.byte	18
 	.long	.Ltmp163
 	.long	.Ltmp206
@@ -2904,14 +2886,14 @@ _link_status:
 	.byte	1
 	.byte	173
 	.long	262
-	.long	.Ldebug_loc99+0
+	.long	.Ldebug_loc92+0
 	.byte	19
 	.byte	105
 	.byte	0
 	.byte	1
 	.byte	173
 	.long	262
-	.long	.Ldebug_loc102+0
+	.long	.Ldebug_loc95+0
 	.byte	18
 	.long	.Ltmp163
 	.long	.Ltmp206
@@ -2921,7 +2903,7 @@ _link_status:
 	.byte	1
 	.byte	174
 	.long	262
-	.long	.Ldebug_loc89+0
+	.long	.Ldebug_loc82+0
 	.byte	21
 	.long	.Ldebug_range+248
 	.byte	19
@@ -2930,7 +2912,7 @@ _link_status:
 	.byte	1
 	.byte	175
 	.long	262
-	.long	.Ldebug_loc96+0
+	.long	.Ldebug_loc89+0
 	.byte	21
 	.long	.Ldebug_range+200
 	.byte	19
@@ -2939,7 +2921,7 @@ _link_status:
 	.byte	1
 	.byte	186
 	.long	262
-	.long	.Ldebug_loc108+0
+	.long	.Ldebug_loc101+0
 	.byte	0
 	.byte	21
 	.long	.Ldebug_range+224
@@ -2949,7 +2931,7 @@ _link_status:
 	.byte	1
 	.byte	214
 	.long	262
-	.long	.Ldebug_loc110+0
+	.long	.Ldebug_loc103+0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2974,22 +2956,22 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	228
-	.long	5175
-	.long	.Ldebug_loc112+0
+	.long	5146
+	.long	.Ldebug_loc105+0
 	.byte	17
 	.ascii	 "link"
 	.byte	0
 	.byte	1
 	.byte	229
-	.long	4901
-	.long	.Ldebug_loc118+0
+	.long	4872
+	.long	.Ldebug_loc111+0
 	.byte	17
 	.ascii	 "cmd"
 	.byte	0
 	.byte	1
 	.byte	230
 	.long	337
-	.long	.Ldebug_loc122+0
+	.long	.Ldebug_loc115+0
 	.byte	18
 	.long	.Ltmp210
 	.long	.Ltmp225
@@ -3002,14 +2984,14 @@ _link_status:
 	.byte	1
 	.byte	232
 	.long	262
-	.long	.Ldebug_loc125+0
+	.long	.Ldebug_loc118+0
 	.byte	19
 	.byte	105
 	.byte	0
 	.byte	1
 	.byte	232
 	.long	262
-	.long	.Ldebug_loc128+0
+	.long	.Ldebug_loc121+0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -3031,7 +3013,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	279
-	.long	4917
+	.long	4888
 	.byte	23
 	.byte	110
 	.byte	0
@@ -3118,7 +3100,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	342
-	.long	4901
+	.long	4872
 	.byte	23
 	.ascii	 "src_port"
 	.byte	0
@@ -3150,14 +3132,14 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	366
-	.long	4927
+	.long	4898
 	.long	.Ldebug_loc0+0
 	.byte	27
 	.ascii	 "link"
 	.byte	0
 	.byte	1
 	.short	367
-	.long	4917
+	.long	4888
 	.long	.Ldebug_loc2+0
 	.byte	27
 	.ascii	 "num_link"
@@ -3199,7 +3181,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	375
-	.long	4932
+	.long	4903
 	.byte	18
 	.long	.Ltmp22
 	.long	.Ltmp24
@@ -3405,13 +3387,13 @@ _link_status:
 	.byte	7
 	.byte	4
 	.byte	31
-	.long	4901
+	.long	4872
 	.byte	32
-	.long	4912
+	.long	4883
 	.byte	31
 	.long	337
 	.byte	32
-	.long	4922
+	.long	4893
 	.byte	4
 	.long	262
 	.byte	5
@@ -3523,7 +3505,7 @@ _link_status:
 	.byte	8
 	.ascii	 "data"
 	.byte	0
-	.long	4949
+	.long	4920
 	.byte	1
 	.byte	231
 	.byte	2
@@ -3532,9 +3514,9 @@ _link_status:
 	.byte	1
 	.byte	0
 	.byte	32
-	.long	4962
+	.long	4933
 	.byte	35
-	.long	4203
+	.long	4174
 	.long	.Lfunc_begin4
 	.long	.Lfunc_end4
 	.byte	1
@@ -3545,22 +3527,22 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	342
-	.long	4901
-	.long	.Ldebug_loc134+0
+	.long	4872
+	.long	.Ldebug_loc127+0
 	.byte	27
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.short	342
 	.long	262
-	.long	.Ldebug_loc136+0
+	.long	.Ldebug_loc129+0
 	.byte	27
 	.ascii	 "status"
 	.byte	0
 	.byte	1
 	.short	342
 	.long	262
-	.long	.Ldebug_loc138+0
+	.long	.Ldebug_loc131+0
 	.byte	0
 	.byte	0
 .Linfo_end1:
@@ -4033,57 +4015,57 @@ _link_status:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1482
+	.long	1462
 .asciiz "mii_packet_set_timestamp_id"
 	.long	822
 .asciiz "mii_packet_set_length"
-	.long	3576
+	.long	3547
 .asciiz "_mac_rx_send_frame1"
-	.long	1160
+	.long	1140
 .asciiz "mii_packet_set_filter_result"
-	.long	1977
+	.long	1957
 .asciiz "mii_packet_get_forwarding"
-	.long	2288
+	.long	2268
 .asciiz "mii_packet_get_data_word"
-	.long	2451
+	.long	2431
 .asciiz "mii_packet_set_data_short"
-	.long	2058
+	.long	2038
 .asciiz "mii_packet_set_forwarding"
 	.long	633
 .asciiz "delay_milliseconds"
-	.long	2203
+	.long	2183
 .asciiz "mii_packet_set_data_word"
-	.long	2738
+	.long	2709
 .asciiz "serviceLinkCmd"
-	.long	2377
+	.long	2357
 .asciiz "mii_packet_set_data"
-	.long	2659
+	.long	2630
 .asciiz "_get_tile_id_from_chanend"
-	.long	4289
+	.long	4260
 .asciiz "_ethernet_rx_server"
-	.long	1243
+	.long	1223
 .asciiz "mii_packet_get_src_port"
-	.long	2135
+	.long	2115
 .asciiz "mii_packet_get_data_ptr"
-	.long	4203
+	.long	4174
 .asciiz "send_status_packet"
 	.long	891
 .asciiz "mii_packet_get_timestamp"
-	.long	1563
+	.long	1543
 .asciiz "mii_packet_get_stage"
-	.long	1324
+	.long	1304
 .asciiz "mii_packet_set_src_port"
-	.long	1847
+	.long	1827
 .asciiz "mii_packet_get_crc"
-	.long	2537
+	.long	2517
 .asciiz "mii_packet_set_data_byte"
-	.long	3976
+	.long	3947
 .asciiz "_processReceivedFrame"
-	.long	1705
+	.long	1685
 .asciiz "mii_packet_get_tcount"
 	.long	974
 .asciiz "mii_packet_set_timestamp"
-	.long	1397
+	.long	1377
 .asciiz "mii_packet_get_timestamp_id"
 	.long	745
 .asciiz "mii_packet_get_length"
@@ -4091,15 +4073,15 @@ _link_status:
 .asciiz "delay_microseconds"
 	.long	1049
 .asciiz "mii_packet_get_filter_result"
-	.long	1914
+	.long	1894
 .asciiz "mii_packet_set_crc"
-	.long	1638
+	.long	1618
 .asciiz "mii_packet_set_stage"
-	.long	2621
+	.long	2601
 .asciiz "_notify"
-	.long	3825
+	.long	3796
 .asciiz "_mac_rx_send_frame0"
-	.long	1778
+	.long	1758
 .asciiz "mii_packet_set_tcount"
 	.long	587
 .asciiz "delay_seconds"
@@ -4113,7 +4095,7 @@ _link_status:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	4962
+	.long	4933
 .asciiz "mii_packet_t"
 	.long	365
 .asciiz "__TYPE_0"
@@ -4399,70 +4381,69 @@ _link_status:
 	.long	0
 	.long	0
 .Ldebug_loc49:
-	.long	.Ltmp63
-	.long	.Ltmp64
+	.long	.Lfunc_begin1
+	.long	.Ltmp117
 .Lset38 = .Ltmp304-.Ltmp303
 	.short	.Lset38
 .Ltmp303:
-	.byte	88
+	.byte	80
 .Ltmp304:
-	.long	0
-	.long	0
-.Ldebug_loc51:
-	.long	.Ltmp68
-	.long	.Ltmp69
+	.long	.Ltmp117
+	.long	.Ltmp134
 .Lset39 = .Ltmp306-.Ltmp305
 	.short	.Lset39
 .Ltmp305:
-	.byte	80
+	.byte	84
 .Ltmp306:
-	.long	.Ltmp69
-	.long	.Lfunc_end0
+	.long	.Ltmp135
+	.long	.Ltmp142
 .Lset40 = .Ltmp308-.Ltmp307
 	.short	.Lset40
 .Ltmp307:
-	.byte	126
-	.byte	20
+	.byte	84
 .Ltmp308:
 	.long	0
 	.long	0
 .Ldebug_loc54:
-	.long	.Ltmp98
-	.long	.Ltmp99
+	.long	.Lfunc_begin1
+	.long	.Ltmp125
 .Lset41 = .Ltmp310-.Ltmp309
 	.short	.Lset41
 .Ltmp309:
-	.byte	83
+	.byte	81
 .Ltmp310:
 	.long	0
 	.long	0
-.Ldebug_loc56:
+.Ldebug_loc57:
 	.long	.Lfunc_begin1
-	.long	.Ltmp117
+	.long	.Ltmp120
 .Lset42 = .Ltmp312-.Ltmp311
 	.short	.Lset42
 .Ltmp311:
-	.byte	80
+	.byte	82
 .Ltmp312:
-	.long	.Ltmp117
-	.long	.Ltmp134
+	.long	.Ltmp121
+	.long	.Ltmp123
 .Lset43 = .Ltmp314-.Ltmp313
 	.short	.Lset43
 .Ltmp313:
-	.byte	84
+	.byte	82
 .Ltmp314:
-	.long	.Ltmp135
-	.long	.Ltmp142
+	.long	0
+	.long	0
+.Ldebug_loc62:
+	.long	.Ltmp124
+	.long	.Ltmp125
 .Lset44 = .Ltmp316-.Ltmp315
 	.short	.Lset44
 .Ltmp315:
-	.byte	84
+	.byte	80
 .Ltmp316:
 	.long	0
 	.long	0
-.Ldebug_loc61:
-	.long	.Lfunc_begin1
-	.long	.Ltmp125
+.Ldebug_loc64:
+	.long	.Ltmp136
+	.long	.Ltmp137
 .Lset45 = .Ltmp318-.Ltmp317
 	.short	.Lset45
 .Ltmp317:
@@ -4470,396 +4451,359 @@ _link_status:
 .Ltmp318:
 	.long	0
 	.long	0
-.Ldebug_loc64:
-	.long	.Lfunc_begin1
-	.long	.Ltmp120
+.Ldebug_loc66:
+	.long	.Ltmp139
+	.long	.Ltmp140
 .Lset46 = .Ltmp320-.Ltmp319
 	.short	.Lset46
 .Ltmp319:
-	.byte	82
+	.byte	81
 .Ltmp320:
-	.long	.Ltmp121
-	.long	.Ltmp123
+	.long	0
+	.long	0
+.Ldebug_loc68:
+	.long	.Lfunc_begin2
+	.long	.Ltmp162
 .Lset47 = .Ltmp322-.Ltmp321
 	.short	.Lset47
 .Ltmp321:
-	.byte	82
+	.byte	80
 .Ltmp322:
-	.long	0
-	.long	0
-.Ldebug_loc69:
-	.long	.Ltmp124
-	.long	.Ltmp125
+	.long	.Ltmp162
+	.long	.Ltmp175
 .Lset48 = .Ltmp324-.Ltmp323
 	.short	.Lset48
 .Ltmp323:
-	.byte	80
+	.byte	85
 .Ltmp324:
-	.long	0
-	.long	0
-.Ldebug_loc71:
-	.long	.Ltmp136
-	.long	.Ltmp137
+	.long	.Ltmp176
+	.long	.Ltmp206
 .Lset49 = .Ltmp326-.Ltmp325
 	.short	.Lset49
 .Ltmp325:
-	.byte	81
+	.byte	85
 .Ltmp326:
 	.long	0
 	.long	0
 .Ldebug_loc73:
-	.long	.Ltmp139
-	.long	.Ltmp140
+	.long	.Lfunc_begin2
+	.long	.Ltmp161
 .Lset50 = .Ltmp328-.Ltmp327
 	.short	.Lset50
 .Ltmp327:
 	.byte	81
 .Ltmp328:
-	.long	0
-	.long	0
-.Ldebug_loc75:
-	.long	.Lfunc_begin2
-	.long	.Ltmp162
+	.long	.Ltmp161
+	.long	.Ltmp175
 .Lset51 = .Ltmp330-.Ltmp329
 	.short	.Lset51
 .Ltmp329:
-	.byte	80
+	.byte	84
 .Ltmp330:
-	.long	.Ltmp162
-	.long	.Ltmp175
+	.long	.Ltmp176
+	.long	.Ltmp206
 .Lset52 = .Ltmp332-.Ltmp331
 	.short	.Lset52
 .Ltmp331:
-	.byte	85
+	.byte	84
 .Ltmp332:
-	.long	.Ltmp176
-	.long	.Ltmp206
+	.long	0
+	.long	0
+.Ldebug_loc78:
+	.long	.Lfunc_begin2
+	.long	.Ltmp160
 .Lset53 = .Ltmp334-.Ltmp333
 	.short	.Lset53
 .Ltmp333:
-	.byte	85
+	.byte	82
 .Ltmp334:
-	.long	0
-	.long	0
-.Ldebug_loc80:
-	.long	.Lfunc_begin2
-	.long	.Ltmp161
+	.long	.Ltmp160
+	.long	.Ltmp167
 .Lset54 = .Ltmp336-.Ltmp335
 	.short	.Lset54
 .Ltmp335:
-	.byte	81
+	.byte	86
 .Ltmp336:
-	.long	.Ltmp161
-	.long	.Ltmp175
+	.long	.Ltmp176
+	.long	.Ltmp177
 .Lset55 = .Ltmp338-.Ltmp337
 	.short	.Lset55
 .Ltmp337:
-	.byte	84
+	.byte	86
 .Ltmp338:
-	.long	.Ltmp176
-	.long	.Ltmp206
+	.long	0
+	.long	0
+.Ldebug_loc82:
+	.long	.Ltmp165
+	.long	.Ltmp167
 .Lset56 = .Ltmp340-.Ltmp339
 	.short	.Lset56
 .Ltmp339:
-	.byte	84
+	.byte	87
 .Ltmp340:
-	.long	0
-	.long	0
-.Ldebug_loc85:
-	.long	.Lfunc_begin2
-	.long	.Ltmp160
+	.long	.Ltmp168
+	.long	.Ltmp174
 .Lset57 = .Ltmp342-.Ltmp341
 	.short	.Lset57
 .Ltmp341:
-	.byte	82
+	.byte	87
 .Ltmp342:
-	.long	.Ltmp160
-	.long	.Ltmp167
+	.long	.Ltmp184
+	.long	.Ltmp184
 .Lset58 = .Ltmp344-.Ltmp343
 	.short	.Lset58
 .Ltmp343:
-	.byte	86
+	.byte	87
 .Ltmp344:
-	.long	.Ltmp176
-	.long	.Ltmp177
+	.long	.Ltmp190
+	.long	.Ltmp191
 .Lset59 = .Ltmp346-.Ltmp345
 	.short	.Lset59
 .Ltmp345:
-	.byte	86
+	.byte	87
 .Ltmp346:
-	.long	0
-	.long	0
-.Ldebug_loc89:
-	.long	.Ltmp165
-	.long	.Ltmp167
+	.long	.Ltmp199
+	.long	.Ltmp199
 .Lset60 = .Ltmp348-.Ltmp347
 	.short	.Lset60
 .Ltmp347:
 	.byte	87
 .Ltmp348:
-	.long	.Ltmp168
-	.long	.Ltmp174
+	.long	.Ltmp205
+	.long	.Ltmp206
 .Lset61 = .Ltmp350-.Ltmp349
 	.short	.Lset61
 .Ltmp349:
 	.byte	87
 .Ltmp350:
-	.long	.Ltmp184
-	.long	.Ltmp184
+	.long	0
+	.long	0
+.Ldebug_loc89:
+	.long	.Ltmp166
+	.long	.Ltmp167
 .Lset62 = .Ltmp352-.Ltmp351
 	.short	.Lset62
 .Ltmp351:
-	.byte	87
+	.byte	80
 .Ltmp352:
-	.long	.Ltmp190
-	.long	.Ltmp191
+	.long	.Ltmp168
+	.long	.Ltmp174
 .Lset63 = .Ltmp354-.Ltmp353
 	.short	.Lset63
 .Ltmp353:
-	.byte	87
+	.byte	80
 .Ltmp354:
-	.long	.Ltmp199
-	.long	.Ltmp199
+	.long	0
+	.long	0
+.Ldebug_loc92:
+	.long	.Ltmp169
+	.long	.Ltmp173
 .Lset64 = .Ltmp356-.Ltmp355
 	.short	.Lset64
 .Ltmp355:
-	.byte	87
+	.byte	82
 .Ltmp356:
-	.long	.Ltmp205
-	.long	.Ltmp206
+	.long	.Ltmp178
+	.long	.Ltmp183
 .Lset65 = .Ltmp358-.Ltmp357
 	.short	.Lset65
 .Ltmp357:
-	.byte	87
+	.byte	82
 .Ltmp358:
 	.long	0
 	.long	0
-.Ldebug_loc96:
-	.long	.Ltmp166
-	.long	.Ltmp167
+.Ldebug_loc95:
+	.long	.Ltmp177
+	.long	.Ltmp188
 .Lset66 = .Ltmp360-.Ltmp359
 	.short	.Lset66
 .Ltmp359:
-	.byte	80
+	.byte	16
+	.byte	0
 .Ltmp360:
-	.long	.Ltmp168
-	.long	.Ltmp174
+	.long	.Ltmp188
+	.long	.Ltmp191
 .Lset67 = .Ltmp362-.Ltmp361
 	.short	.Lset67
 .Ltmp361:
-	.byte	80
+	.byte	81
 .Ltmp362:
-	.long	0
-	.long	0
-.Ldebug_loc99:
-	.long	.Ltmp169
-	.long	.Ltmp173
+	.long	.Ltmp191
+	.long	.Ltmp202
 .Lset68 = .Ltmp364-.Ltmp363
 	.short	.Lset68
 .Ltmp363:
-	.byte	82
+	.byte	16
+	.byte	3
 .Ltmp364:
-	.long	.Ltmp178
-	.long	.Ltmp183
+	.long	.Ltmp202
+	.long	.Ltmp206
 .Lset69 = .Ltmp366-.Ltmp365
 	.short	.Lset69
 .Ltmp365:
-	.byte	82
+	.byte	81
 .Ltmp366:
 	.long	0
 	.long	0
-.Ldebug_loc102:
-	.long	.Ltmp177
-	.long	.Ltmp188
+.Ldebug_loc101:
+	.long	.Ltmp185
+	.long	.Ltmp186
 .Lset70 = .Ltmp368-.Ltmp367
 	.short	.Lset70
 .Ltmp367:
-	.byte	16
-	.byte	0
+	.byte	83
 .Ltmp368:
-	.long	.Ltmp188
-	.long	.Ltmp191
+	.long	0
+	.long	0
+.Ldebug_loc103:
+	.long	.Ltmp200
+	.long	.Ltmp203
 .Lset71 = .Ltmp370-.Ltmp369
 	.short	.Lset71
 .Ltmp369:
-	.byte	81
+	.byte	83
 .Ltmp370:
-	.long	.Ltmp191
-	.long	.Ltmp202
+	.long	0
+	.long	0
+.Ldebug_loc105:
+	.long	.Lfunc_begin3
+	.long	.Ltmp216
 .Lset72 = .Ltmp372-.Ltmp371
 	.short	.Lset72
 .Ltmp371:
-	.byte	16
-	.byte	3
+	.byte	80
 .Ltmp372:
-	.long	.Ltmp202
-	.long	.Ltmp206
+	.long	.Ltmp217
+	.long	.Ltmp224
 .Lset73 = .Ltmp374-.Ltmp373
 	.short	.Lset73
 .Ltmp373:
-	.byte	81
+	.byte	80
 .Ltmp374:
-	.long	0
-	.long	0
-.Ldebug_loc108:
-	.long	.Ltmp185
-	.long	.Ltmp186
+	.long	.Ltmp225
+	.long	.Ltmp227
 .Lset74 = .Ltmp376-.Ltmp375
 	.short	.Lset74
 .Ltmp375:
-	.byte	83
+	.byte	80
 .Ltmp376:
 	.long	0
 	.long	0
-.Ldebug_loc110:
-	.long	.Ltmp200
-	.long	.Ltmp203
+.Ldebug_loc111:
+	.long	.Lfunc_begin3
+	.long	.Ltmp216
 .Lset75 = .Ltmp378-.Ltmp377
 	.short	.Lset75
 .Ltmp377:
-	.byte	83
+	.byte	81
 .Ltmp378:
-	.long	0
-	.long	0
-.Ldebug_loc112:
-	.long	.Lfunc_begin3
-	.long	.Ltmp216
+	.long	.Ltmp217
+	.long	.Ltmp227
 .Lset76 = .Ltmp380-.Ltmp379
 	.short	.Lset76
 .Ltmp379:
-	.byte	80
+	.byte	81
 .Ltmp380:
-	.long	.Ltmp217
-	.long	.Ltmp224
+	.long	0
+	.long	0
+.Ldebug_loc115:
+	.long	.Lfunc_begin3
+	.long	.Ltmp211
 .Lset77 = .Ltmp382-.Ltmp381
 	.short	.Lset77
 .Ltmp381:
-	.byte	80
+	.byte	82
 .Ltmp382:
-	.long	.Ltmp225
-	.long	.Ltmp227
+	.long	.Ltmp217
+	.long	.Ltmp218
 .Lset78 = .Ltmp384-.Ltmp383
 	.short	.Lset78
 .Ltmp383:
-	.byte	80
+	.byte	82
 .Ltmp384:
 	.long	0
 	.long	0
 .Ldebug_loc118:
-	.long	.Lfunc_begin3
-	.long	.Ltmp216
+	.long	.Ltmp212
+	.long	.Ltmp213
 .Lset79 = .Ltmp386-.Ltmp385
 	.short	.Lset79
 .Ltmp385:
-	.byte	81
+	.byte	83
 .Ltmp386:
-	.long	.Ltmp217
-	.long	.Ltmp227
+	.long	.Ltmp220
+	.long	.Ltmp221
 .Lset80 = .Ltmp388-.Ltmp387
 	.short	.Lset80
 .Ltmp387:
-	.byte	81
+	.byte	83
 .Ltmp388:
 	.long	0
 	.long	0
-.Ldebug_loc122:
-	.long	.Lfunc_begin3
-	.long	.Ltmp211
+.Ldebug_loc121:
+	.long	.Ltmp214
+	.long	.Ltmp215
 .Lset81 = .Ltmp390-.Ltmp389
 	.short	.Lset81
 .Ltmp389:
 	.byte	82
 .Ltmp390:
-	.long	.Ltmp217
-	.long	.Ltmp218
+	.long	.Ltmp219
+	.long	.Ltmp222
 .Lset82 = .Ltmp392-.Ltmp391
 	.short	.Lset82
 .Ltmp391:
-	.byte	82
+	.byte	16
+	.byte	0
 .Ltmp392:
-	.long	0
-	.long	0
-.Ldebug_loc125:
-	.long	.Ltmp212
-	.long	.Ltmp213
+	.long	.Ltmp222
+	.long	.Ltmp223
 .Lset83 = .Ltmp394-.Ltmp393
 	.short	.Lset83
 .Ltmp393:
-	.byte	83
+	.byte	82
 .Ltmp394:
-	.long	.Ltmp220
-	.long	.Ltmp221
+	.long	.Ltmp223
+	.long	.Lfunc_end3
 .Lset84 = .Ltmp396-.Ltmp395
 	.short	.Lset84
 .Ltmp395:
-	.byte	83
+	.byte	16
+	.byte	3
 .Ltmp396:
 	.long	0
 	.long	0
-.Ldebug_loc128:
-	.long	.Ltmp214
-	.long	.Ltmp215
+.Ldebug_loc127:
+	.long	.Lfunc_begin4
+	.long	.Ltmp232
 .Lset85 = .Ltmp398-.Ltmp397
 	.short	.Lset85
 .Ltmp397:
-	.byte	82
+	.byte	80
 .Ltmp398:
-	.long	.Ltmp219
-	.long	.Ltmp222
+	.long	0
+	.long	0
+.Ldebug_loc129:
+	.long	.Lfunc_begin4
+	.long	.Ltmp231
 .Lset86 = .Ltmp400-.Ltmp399
 	.short	.Lset86
 .Ltmp399:
-	.byte	16
-	.byte	0
+	.byte	81
 .Ltmp400:
-	.long	.Ltmp222
-	.long	.Ltmp223
+	.long	0
+	.long	0
+.Ldebug_loc131:
+	.long	.Lfunc_begin4
+	.long	.Ltmp232
 .Lset87 = .Ltmp402-.Ltmp401
 	.short	.Lset87
 .Ltmp401:
 	.byte	82
 .Ltmp402:
-	.long	.Ltmp223
-	.long	.Lfunc_end3
-.Lset88 = .Ltmp404-.Ltmp403
-	.short	.Lset88
-.Ltmp403:
-	.byte	16
-	.byte	3
-.Ltmp404:
 	.long	0
 	.long	0
-.Ldebug_loc134:
-	.long	.Lfunc_begin4
-	.long	.Ltmp232
-.Lset89 = .Ltmp406-.Ltmp405
-	.short	.Lset89
-.Ltmp405:
-	.byte	80
-.Ltmp406:
-	.long	0
-	.long	0
-.Ldebug_loc136:
-	.long	.Lfunc_begin4
-	.long	.Ltmp231
-.Lset90 = .Ltmp408-.Ltmp407
-	.short	.Lset90
-.Ltmp407:
-	.byte	81
-.Ltmp408:
-	.long	0
-	.long	0
-.Ldebug_loc138:
-	.long	.Lfunc_begin4
-	.long	.Ltmp232
-.Lset91 = .Ltmp410-.Ltmp409
-	.short	.Lset91
-.Ltmp409:
-	.byte	82
-.Ltmp410:
-	.long	0
-	.long	0
-.Ldebug_loc140:
+.Ldebug_loc133:
 	.section	.debug_aranges,"",@progbits
 	.section	.debug_ranges,"",@progbits
 	.long	.Ltmp29
@@ -4933,7 +4877,7 @@ _link_status:
 	.section	.debug_macinfo,"",@progbits
 
 	.typestring get_and_dec_transmit_count, "f{si}(si)"
-	.typestring ethernet_get_mii_counts, "f{0}(&(ui))"
+	.typestring _ethernet_get_mii_counts, "f{0}(&(ui))"
 	.typestring mii_free, "f{0}(ui)"
 	.typestring mii_init_my_rdptr, "f{si}(ui)"
 	.typestring mii_update_my_rdptr, "f{si}(ui,si)"
@@ -4941,8 +4885,8 @@ _link_status:
 	.typestring mii_packet_get_wrap_ptr, "f{si}(si)"
 	.typestring _ethernet_get_filter_counts, "f{0}(&(ui),&(ui),&(ui),&(ui))"
 	.typestring _ethernet_rx_server, "f{0}(&(a(:ui)),&(a(:chd)),si)"
-	.typestring ethernet_get_link_status, "f{si}(si)"
-	.typestring ethernet_link_status_notification, "f{si}(si)"
+	.typestring _ethernet_get_link_status, "f{si}(si)"
+	.typestring _ethernet_link_status_notification, "f{si}(si)"
 	.typestring serviceLinkCmd, "f{0}(chd,si,&(ui))"
 	.typestring _mac_rx_send_frame1, "f{0}(si,chd,ui)"
 	.typestring _mac_rx_send_frame0, "f{0}(&(s(mii_packet_t){m(length){si},m(timestamp){si},m(filter_result){si},m(src_port){si},m(timestamp_id){si},m(stage){si},m(tcount){si},m(crc){si},m(forwarding){si},m(data){a(380:ui)}}),chd,ui)"

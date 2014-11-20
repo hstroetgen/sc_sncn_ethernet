@@ -128,7 +128,7 @@
 #if ETHERNET_COUNT_PACKETS
 static unsigned int _ethernet_mii_no_queue_entries = 0;
 
-void ethernet_get_mii_counts(unsigned& dropped) {
+void _ethernet_get_mii_counts(unsigned& dropped) {
 	dropped = _ethernet_mii_no_queue_entries;
 }
 #endif
@@ -461,7 +461,7 @@ transaction mii_transmit_packet_from_chan(chanend c,
 #endif
 
 // Do the real-time pin wiggling for a single packet
-void mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tmr)
+void _mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tmr)
 {
 	register const unsigned poly = 0xEDB88320;
 	unsigned int crc = 0;
@@ -680,7 +680,7 @@ void mii_tx_pins(
 		}
 
 #pragma xta endpoint "mii_tx_start"
-		mii_transmit_packet(buf, p_mii_txd, tmr);
+		_mii_transmit_packet(buf, p_mii_txd, tmr);
 #pragma xta endpoint "mii_tx_end"
 
 		tmr :> prev_eof_time;
