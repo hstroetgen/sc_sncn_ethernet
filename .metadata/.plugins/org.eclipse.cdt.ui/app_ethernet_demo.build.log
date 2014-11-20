@@ -1,0 +1,7 @@
+
+**** Build of configuration lite for project app_ethernet_demo ****
+
+xmake CONFIG=lite all 
+Using modules: _module_ethernet module_ethernet_board_support module_otp_board_info module_slicekit_support module_ethernet_smi module_locks
+xmake[1]: `bin/lite/app_ethernet_demo_lite.xe' is up to date.
+Build Complete

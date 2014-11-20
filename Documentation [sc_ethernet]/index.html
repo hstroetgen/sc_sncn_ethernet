@@ -1,0 +1,146 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--XDE partnum="XM-001828-SM" version="2.2.3rc0"-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>XMOS ETHERNET SOFTWARE COMPONENT &mdash; XMOS ETHERNET SOFTWARE COMPONENT v documentation</title>
+
+    <link rel="stylesheet" href=".static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href=".static/globals.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/ui.css" type="text/css" />
+    <link rel="stylesheet" href=".static/app.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/mobile.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/xde.css"
+    type="text/css" /><script type="text/javascript" src=".static/scripts.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src=".static/jquery.js"></script>
+    <script type="text/javascript" src=".static/underscore.js"></script>
+    <script type="text/javascript" src=".static/doctools.js"></script>
+    <link rel="top" title="XMOS ETHERNET SOFTWARE COMPONENT v documentation" href="#" />
+    <link rel="next" title="Ethernet Component Change Log" href="changelog.html" /> 
+  </head>
+  <body class="xde indented-content" onload="prepareContents();">  
+          <div id="body">
+             <div id="content">
+             <h1>XMOS ETHERNET SOFTWARE COMPONENT</h1>
+
+             <div class='columns'>
+            
+  <ul class="field_list"><li><h2>Version</h2>
+<p><p>2.2.3rc0</p>
+</p>
+</li>
+<li><h2>Vendor</h2>
+<p><p>XMOS</p>
+</p>
+</li>
+<li><h2>Description</h2>
+<p><p>A complete Ethernet MII and MAC interface for 100MBps Ethernet</p>
+</p>
+</li>
+</ul>
+<h2 class="topic" id="software-blocks">Software Blocks</h2>
+<div><dl class="docutils">
+<dt>Low Level Ethernet Demo (app_ethernet_demo)</dt>
+<dd><p>A simple demo of using the low level ethernet module</p>
+</dd>
+<dt>Low Level Ethernet Loopback Demo (app_ethernet_loopback)</dt>
+<dd><p>An example of looping back packets using the low level ethernet mac</p>
+</dd>
+<dt>Layer 2 Ethernet MAC (module_ethernet)</dt>
+<dd><p>MII interface and L2 ethernet MAC</p>
+</dd>
+<dt>Ethernet Board Support Definitions (module_ethernet_board_support)</dt>
+<dd><p>Ethernet configuration defines for XMOS development boards</p>
+</dd>
+<dt>SMI Ethernet Phy Protocol Library (module_ethernet_smi)</dt>
+<dd><p>A library for communicating using the SMI protocol</p>
+</dd>
+</dl>
+</div><h2 class="topic" id="documentation">Documentation</h2>
+<div><blockquote>
+<div><ul>
+<li><a class="reference" href="././ethernet/index.html"><span>XMOS Layer 2 Ethernet MAC Component</span></a> <a class="reference" href="././ethernet.pdf"><span>PDF</span></a></li>
+<li><a class="reference" href="././changelog.html"><span>Release Notes</span></a></li>
+</ul>
+</div></blockquote>
+</div><h2 class="topic" id="key-features">Key Features</h2>
+<div><blockquote>
+<div><ul>
+<li>RX and TX on separate logical cores</li>
+<li>Packet filtering by extension function</li>
+<li>Memory based locking protocol</li>
+<li>FIFO based memory allocation for lower RAM overhead</li>
+<li>High priority (VLAN priority tag) queues</li>
+<li>802.1Qat traffic shaping</li>
+</ul>
+</div></blockquote>
+</div><h2 class="topic" id="low-thread-count-mii-driver">Low thread count MII driver</h2>
+<div><p>An alternative, low core count MII driver is available.</p>
+<blockquote>
+<div><ul>
+<li>MII pins in 1 logical core</li>
+<li>Rx buffer support handled by interrupt in a designated second
+task on a different core</li>
+<li>Optional service task for providing an API similar to the
+5-thread implementation</li>
+</ul>
+</div></blockquote>
+</div><h2 class="topic" id="firmware-overview">Firmware Overview</h2>
+<div><p>RX and TX are defined as functions which each run on their own logical
+core. Core usage is 5 logical cores for a single port (reducible to 4
+for lower bandwith transmit applicatio).  Ports must be MII and
+attached to the same xcore.</p>
+</div><h2 class="topic" id="known-issues">Known Issues</h2>
+<div><blockquote>
+<div><ul>
+<li>The rx_packet-rx_packet timing constraint may fail because of the user defined packet filters. The user
+is required to fill in the timing details inside any user specified filter in order to help the XTA
+analyze the receive filter timing correctly.</li>
+<li>Packets exceeding the Ethernet maximum length can cause system crash</li>
+<li>Does not reject Ethernet/Ethernet-II/Ethernet-DIX encoded frames where the frame length does not match the length field</li>
+</ul>
+</div></blockquote>
+</div><h2 class="topic" id="required-software-dependencies">Required software (dependencies)</h2>
+<div><blockquote>
+<div><ul>
+<li>sc_otp</li>
+<li>sc_util</li>
+</ul>
+</div></blockquote>
+</div><h2 class="topic" id="support">Support</h2>
+<div><blockquote>
+<div><p>This package is support by XMOS Ltd. Issues can be raised against the software
+at:</p>
+<blockquote>
+<div><p><a class="reference" href="http://www.xmos.com/support"><span>http://www.xmos.com/support</span></a></p>
+</div></blockquote>
+</div></blockquote>
+</div>
+
+             </div>
+             </div>
+
+
+          </div>
+
+          <div>
+             <!--seealsos-->
+          </div>
+    <div class="footer">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench version="2.0">
+<workbenchAdvisor/>
+<window height="1032" width="1817" x="58" y="24">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="102" y="30"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="com.xmos.cdt.ui.edit.actions" itemType="typeToolBarContribution" x="104" y="30"/>
+<coolItem id="org.eclipse.cdt.ui.buildConfigActionSet" itemType="typeToolBarContribution" x="82" y="30"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="156" y="30"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="40" y="30"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.xmos.cdt.ui.help.toolbar" itemType="typeToolBarContribution" x="68" y="30"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.make.editor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.xmos.cdt.ui.XCEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1416407120185" focus="true" label="Workspace - XMOS Edit">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
+<part id="21"/>
+<part id="22"/>
+<part id="23"/>
+<part id="24"/>
+<part id="25"/>
+<part id="26"/>
+<part id="27"/>
+<part id="28"/>
+<part id="29"/>
+<part id="30"/>
+<part id="31"/>
+<part id="32"/>
+<part id="33"/>
+<part id="34"/>
+<part id="35"/>
+<part id="36"/>
+<part id="37"/>
+<part id="38"/>
+<part id="39"/>
+<part id="40"/>
+<part id="41"/>
+<part id="42"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="swlock.h" partName="swlock.h" path="/home/atena/workspace_ethernet_new_replicated/module_locks/src/swlock.h" title="swlock.h" tooltip="module_locks/src/swlock.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/module_locks/src/swlock.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="swlock.c" partName="swlock.c" path="/home/atena/workspace_ethernet_new_replicated/module_locks/src/swlock.c" title="swlock.c" tooltip="module_locks/src/swlock.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/module_locks/src/swlock.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="module_build_info" partName="module_build_info" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/module_build_info" title="module_build_info" tooltip="_module_ethernet/module_build_info" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/module_build_info"/>
+<editorState selectionHorizontalPixel="0" selectionLength="140" selectionOffset="432" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="com.xmos.cdt.ui.XCEditor" name="demo.xc" partName="demo.xc" path="/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/src/demo.xc" title="demo.xc" tooltip="app_ethernet_demo/src/demo.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app_ethernet_demo/src/demo.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8909" selectionTopPixel="6230"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_driver.xc" partName="_mii_driver.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_driver.xc" title="_mii_driver.xc" tooltip="_module_ethernet/src/lite/_mii_driver.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/lite/_mii_driver.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="21" selectionOffset="337" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet_rx_client.h" partName="_ethernet_rx_client.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_rx_client.h" title="_ethernet_rx_client.h" tooltip="_module_ethernet/src/include/_ethernet_rx_client.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/include/_ethernet_rx_client.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="37" selectionOffset="336" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet_tx_client.h" partName="_ethernet_tx_client.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_tx_client.h" title="_ethernet_tx_client.h" tooltip="_module_ethernet/src/include/_ethernet_tx_client.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/include/_ethernet_tx_client.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="688" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_client_lite.xc" partName="_mii_client_lite.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_client_lite.xc" title="_mii_client_lite.xc" tooltip="_module_ethernet/src/lite/_mii_client_lite.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/lite/_mii_client_lite.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="32" selectionOffset="50" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_mii_queue.h" partName="_mii_queue.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.h" title="_mii_queue.h" tooltip="_module_ethernet/src/full/_mii_queue.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mii_queue.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="315" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_mac_filter.h" partName="_mac_filter.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mac_filter.h" title="_mac_filter.h" tooltip="_module_ethernet/src/full/_mac_filter.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mac_filter.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="35" selectionOffset="51" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_ethernet_rx_client.xc" partName="_ethernet_rx_client.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_client.xc" title="_ethernet_rx_client.xc" tooltip="_module_ethernet/src/full/_ethernet_rx_client.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_ethernet_rx_client.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="644" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet_server_def.h" partName="_ethernet_server_def.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server_def.h" title="_ethernet_server_def.h" tooltip="_module_ethernet/src/full/_ethernet_server_def.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_ethernet_server_def.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="608" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_ethernet_tx_client.xc" partName="_ethernet_tx_client.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_client.xc" title="_ethernet_tx_client.xc" tooltip="_module_ethernet/src/full/_ethernet_tx_client.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_ethernet_tx_client.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="653" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet_server_lite.h" partName="_ethernet_server_lite.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_server_lite.h" title="_ethernet_server_lite.h" tooltip="_module_ethernet/src/include/_ethernet_server_lite.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/include/_ethernet_server_lite.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="327" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet_server.h" partName="_ethernet_server.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_server.h" title="_ethernet_server.h" tooltip="_module_ethernet/src/include/_ethernet_server.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/include/_ethernet_server.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2730" selectionTopPixel="603"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_client_lite_support.c" partName="_mii_client_lite_support.c" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_client_lite_support.c" title="_mii_client_lite_support.c" tooltip="_module_ethernet/src/lite/_mii_client_lite_support.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/lite/_mii_client_lite_support.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="32" selectionOffset="108" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ethernet_board_support.h" partName="ethernet_board_support.h" path="/home/atena/workspace_ethernet_new_replicated/module_ethernet_board_support/common/ethernet_board_support.h" title="ethernet_board_support.h" tooltip="module_ethernet_board_support/common/ethernet_board_support.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/module_ethernet_board_support/common/ethernet_board_support.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="35" selectionOffset="450" selectionTopPixel="68"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_ethernet_phy_reset.xc" partName="_ethernet_phy_reset.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_phy_reset.xc" title="_ethernet_phy_reset.xc" tooltip="_module_ethernet/src/common/_ethernet_phy_reset.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/common/_ethernet_phy_reset.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="28" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_mii_malloc.h" partName="_mii_malloc.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_malloc.h" title="_mii_malloc.h" tooltip="_module_ethernet/src/full/_mii_malloc.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mii_malloc.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="61" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_filter.xc" partName="_mii_filter.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_filter.xc" title="_mii_filter.xc" tooltip="_module_ethernet/src/full/_mii_filter.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mii_filter.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="404" selectionTopPixel="17"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_ethernet_tx_server.xc" partName="_ethernet_tx_server.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc" title="_ethernet_tx_server.xc" tooltip="_module_ethernet/src/full/_ethernet_tx_server.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_ethernet_tx_server.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="365" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_ethernet_rx_server.xc" partName="_ethernet_rx_server.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc" title="_ethernet_rx_server.xc" tooltip="_module_ethernet/src/full/_ethernet_rx_server.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_ethernet_rx_server.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="810" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_nettypes.c" partName="_nettypes.c" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_nettypes.c" title="_nettypes.c" tooltip="_module_ethernet/src/full/_nettypes.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_nettypes.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="243" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_wrappers.c" partName="_mii_wrappers.c" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_wrappers.c" title="_mii_wrappers.c" tooltip="_module_ethernet/src/full/_mii_wrappers.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mii_wrappers.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="428" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_queue.c" partName="_mii_queue.c" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.c" title="_mii_queue.c" tooltip="_module_ethernet/src/full/_mii_queue.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mii_queue.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="23" selectionOffset="232" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_packet.c" partName="_mii_packet.c" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_packet.c" title="_mii_packet.c" tooltip="_module_ethernet/src/full/_mii_packet.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mii_packet.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="243" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_malloc.c" partName="_mii_malloc.c" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_malloc.c" title="_mii_malloc.c" tooltip="_module_ethernet/src/full/_mii_malloc.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mii_malloc.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="243" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_filter_support.c" partName="_mii_filter_support.c" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_filter_support.c" title="_mii_filter_support.c" tooltip="_module_ethernet/src/full/_mii_filter_support.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mii_filter_support.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="23" selectionOffset="255" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_link_status.c" partName="_link_status.c" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_link_status.c" title="_link_status.c" tooltip="_module_ethernet/src/full/_link_status.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_link_status.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="11" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_ethernet_tx_client_support.c" partName="_ethernet_tx_client_support.c" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_client_support.c" title="_ethernet_tx_client_support.c" tooltip="_module_ethernet/src/full/_ethernet_tx_client_support.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_ethernet_tx_client_support.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="11" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_ethernet_rx_suppport.c" partName="_ethernet_rx_suppport.c" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_suppport.c" title="_ethernet_rx_suppport.c" tooltip="_module_ethernet/src/full/_ethernet_rx_suppport.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_ethernet_rx_suppport.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="22" selectionOffset="254" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_mii_filter.h" partName="_mii_filter.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_filter.h" title="_mii_filter.h" tooltip="_module_ethernet/src/full/_mii_filter.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mii_filter.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="23" selectionOffset="305" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet_rx_server.h" partName="_ethernet_rx_server.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.h" title="_ethernet_rx_server.h" tooltip="_module_ethernet/src/full/_ethernet_rx_server.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_ethernet_rx_server.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="876" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet_tx_server.h" partName="_ethernet_tx_server.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.h" title="_ethernet_tx_server.h" tooltip="_module_ethernet/src/full/_ethernet_tx_server.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_ethernet_tx_server.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="312" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_mii_driver.h" partName="_mii_driver.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_driver.h" title="_mii_driver.h" tooltip="_module_ethernet/src/lite/_mii_driver.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/lite/_mii_driver.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="17" selectionOffset="75" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii.xc" partName="_mii.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii.xc" title="_mii.xc" tooltip="_module_ethernet/src/full/_mii.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_mii.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="284" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_single_server.xc" partName="_mii_single_server.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc" title="_mii_single_server.xc" tooltip="_module_ethernet/src/lite/_mii_single_server.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/lite/_mii_single_server.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="370" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_lite.xc" partName="_mii_lite.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc" title="_mii_lite.xc" tooltip="_module_ethernet/src/lite/_mii_lite.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/lite/_mii_lite.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="130" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_mii_client_user.xc" partName="_mii_client_user.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_client_user.xc" title="_mii_client_user.xc" tooltip="_module_ethernet/src/lite/_mii_client_user.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/lite/_mii_client_user.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="21" selectionOffset="311" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_mii_lite.h" partName="_mii_lite.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.h" title="_mii_lite.h" tooltip="_module_ethernet/src/lite/_mii_lite.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/lite/_mii_lite.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="83" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet.h" partName="_ethernet.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet.h" title="_ethernet.h" tooltip="_module_ethernet/src/include/_ethernet.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/include/_ethernet.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="249" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet_server_full.h" partName="_ethernet_server_full.h" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_server_full.h" title="_ethernet_server_full.h" tooltip="_module_ethernet/src/include/_ethernet_server_full.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/include/_ethernet_server_full.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="327" selectionTopPixel="0"/>
+</editor>
+<editor id="com.xmos.cdt.ui.XCEditor" name="_ethernet_server.xc" partName="_ethernet_server.xc" path="/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server.xc" title="_ethernet_server.xc" tooltip="_module_ethernet/src/full/_ethernet_server.xc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/_module_ethernet/src/full/_ethernet_server.xc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="531" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" CommonNavigator.LINKING_ENABLED.delayed="0" org.eclipse.cdt.ui.cview.groupincludes="false" org.eclipse.cdt.ui.cview.groupmacros="false" org.eclipse.cdt.ui.editor.CUChildren="true" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="com.xmos.devcolumn.ui.views.devcolumn.DevColumn" partName="Developer Column">
+<viewState/>
+</view>
+<view id="com.xmos.xsoftip.ui.views.community.CommunityView" partName="Community"/>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
+</viewState>
+</view>
+<view id="org.eclipse.cdt.make.ui.views.MakeView" partName="Make Target"/>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings (12 items)"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="com.xmos.xsoftip.ui.views.howto.HowToView" partName="HowTo"/>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="com.xmos.xsoftip.ui.views.xsoftip.XSoftIPView" partName="xSOFTip">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline"/>
+</views>
+<perspectives activePart="com.xmos.cdt.ui.XCEditor" activePerspective="com.xmos.cdt.ui.XdeEditPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.xmos.cdt.ui.XdeEditPerspective" id="com.xmos.cdt.ui.XdeEditPerspective" label="XMOS Edit"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="com.xmos.cdt.ui.edit.actions"/>
+<alwaysOnActionSet id="org.eclipse.ui.dz_com.xmos.cdt.launch.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.buildConfigActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="com.xmos.devcolumn.ui.views.devcolumn.DevColumn"/>
+<show_view_action id="com.xmos.cdt.ui.views.binary.Binary"/>
+<show_view_action id="com.xmos.xvcd.views.signals.Signals"/>
+<show_view_action id="com.xmos.xvcd.views.waves.Waves"/>
+<show_view_action id="com.xmos.xprobe.ui.views.xprobe.XProbe"/>
+<show_view_action id="com.xmos.xscope.ui.views.xscope.XScope"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.cdt.make.ui.views.MakeView"/>
+<show_view_action id="com.xmos.xsoftip.ui.views.xsoftip.XSoftIPView"/>
+<show_view_action id="com.xmos.xsoftip.ui.views.howto.HowToView"/>
+<new_wizard_action id="com.xmos.cdt.ui.xdeproject.XdeProjectWizard"/>
+<new_wizard_action id="com.xmos.cdt.ui.xdeprojectlegacy.XdeProjectLegacyWizard"/>
+<new_wizard_action id="com.xmos.cdt.ui.xdeprojectxsoftip.XdeProjectXSoftIPWizard"/>
+<new_wizard_action id="com.xmos.cdt.ui.xdeprojectxsoftip.XdeProjectExistingWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewSourceFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewHeaderFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewFolderCreationWizard"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="com.xmos.xta.ui.XtaPerspective"/>
+<perspective_action id="com.xmos.cdt.ui.XSoftIPExplorerPerspective"/>
+<hide_menu_item_id id="org.eclipse.ui.internal.ide.actions.BuildSetMenu"/>
+<hide_menu_item_id id="org.eclipse.cdt.ui.prjmenu"/>
+<hide_menu_item_id id="org.eclipse.equinox.p2.ui.sdk.update"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<hide_toolbar_item_id id="org.eclipse.search.searchActionSet"/>
+<hide_toolbar_item_id id="org.eclipse.ui.file.print"/>
+<hide_toolbar_item_id id="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar"/>
+<hide_toolbar_item_id id="newWizardDropDown"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="com.xmos.xsoftip.ui.views.xsoftip.XSoftIPView"/>
+<view id="com.xmos.xsoftip.ui.views.howto.HowToView"/>
+<view id="com.xmos.xsoftip.ui.views.community.CommunityView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
+<view id="com.xmos.devcolumn.ui.views.devcolumn.DevColumn"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.cdt.make.ui.views.MakeView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="com.xmos.xvcd.views.signals.Signals" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@54fbfcb8" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.366408" ratioLeft="661" ratioRight="1143" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottom" ratio="0.6562162" ratioLeft="607" ratioRight="318" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<page content="com.xmos.cdt.ui.views.binary.Binary" label="LabelNotFound"/>
+<page content="com.xmos.xvcd.views.waves.Waves" label="LabelNotFound"/>
+<page content="com.xmos.xprobe.ui.views.xprobe.XProbe" label="LabelNotFound"/>
+<page content="com.xmos.xscope.ui.views.xscope.XScope" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.egit.ui.RepositoriesView" ratio="0.5" ratioLeft="394" ratioRight="394" relationship="2" relative="bottom"/>
+<info folder="true" part="topRight" ratio="0.6497462" ratioLeft="512" ratioRight="276" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="com.xmos.devcolumn.ui.views.devcolumn.DevColumn" appearance="2" expanded="2">
+<page content="com.xmos.devcolumn.ui.views.devcolumn.DevColumn" label="Developer Column"/>
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.cdt.make.ui.views.MakeView" label="Make Target"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.74054056" ratioLeft="685" ratioRight="240" relationship="4" relative="topLeft">
+<folder activePageID="com.xmos.xsoftip.ui.views.xsoftip.XSoftIPView" appearance="2" expanded="2">
+<page content="com.xmos.xsoftip.ui.views.xsoftip.XSoftIPView" label="xSOFTip"/>
+<page content="com.xmos.xsoftip.ui.views.howto.HowToView" label="HowTo"/>
+<page content="com.xmos.xsoftip.ui.views.community.CommunityView" label="Community"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xmos.cdt.ui.XCEditor" path="/app_ethernet_demo/src/demo.xc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xmos.cdt.ui.XCEditor" path="/_module_ethernet/src/lite/_mii_driver.xc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xmos.cdt.ui.XCEditor" path="/_module_ethernet/src/lite/_mii_lite.xc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xmos.cdt.ui.XCEditor" path="/_module_ethernet/src/lite/_mii_client_user.xc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/_module_ethernet/src/lite/_mii_lite.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/module_ethernet_board_support/common/ethernet_board_support.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/_module_ethernet/src/include/_ethernet.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/_module_ethernet/src/include/_ethernet_server.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/_module_ethernet/src/include/_ethernet_server_full.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/_module_ethernet/src/include/_ethernet_server_lite.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/app_ethernet_demo/.build_lite/otp_board_info.xi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/app_ethernet_demo/.build_lite/smi.xi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/app_ethernet_demo/.build_lite/demo.xi"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xmos.cdt.ui.XCEditor" path="/_module_ethernet/src/full/_ethernet_server.xc"/>
+<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/module_ethernet/src/include/ethernet_server.h" project="app_ethernet_demo"/>
+</editors>
+<item historyLabel="_mii_lite.xc" index="2">
+<position info="not_deleted" x="130" y="24"/>
+</item>
+<item historyLabel="_mii_driver.xc" index="1">
+<position info="not_deleted" x="312" y="24"/>
+</item>
+<item historyLabel="_mii_driver.xc" index="1">
+<position info="not_deleted" x="337" y="21"/>
+</item>
+<item historyLabel="_mii_client_user.xc" index="3">
+<position info="not_deleted" x="286" y="24"/>
+</item>
+<item historyLabel="_mii_client_user.xc" index="3">
+<position info="not_deleted" x="311" y="21"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="600" y="0"/>
+</item>
+<item historyLabel="_mii_lite.h" index="4">
+<position info="not_deleted" x="83" y="24"/>
+</item>
+<item historyLabel="ethernet_board_support.h" index="5">
+<position info="not_deleted" x="450" y="35"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="785" y="0"/>
+</item>
+<item historyLabel="_ethernet.h" index="6">
+<position info="not_deleted" x="249" y="0"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="785" y="0"/>
+</item>
+<item historyLabel="_ethernet_server.h" index="7">
+<position info="not_deleted" x="427" y="0"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="785" y="0"/>
+</item>
+<item historyLabel="_ethernet_server_full.h" index="8">
+<position info="not_deleted" x="327" y="0"/>
+</item>
+<item historyLabel="_ethernet_server_lite.h" index="9">
+<position info="not_deleted" x="327" y="0"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="785" y="0"/>
+</item>
+<item historyLabel="ethernet_board_support.h" index="5">
+<position info="not_deleted" x="450" y="35"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8835" y="0"/>
+</item>
+<item historyLabel="otp_board_info.xi" index="10">
+<position info="not_deleted" x="13135" y="22"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8927" y="0"/>
+</item>
+<item historyLabel="smi.xi" index="11">
+<position/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8927" y="0"/>
+</item>
+<item historyLabel="smi.xi" index="11">
+<position/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8982" y="0"/>
+</item>
+<item historyLabel="demo.xi" index="12">
+<position info="not_deleted" x="28819" y="15"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8982" y="0"/>
+</item>
+<item historyLabel="_ethernet_server.h" index="7">
+<position info="not_deleted" x="2216" y="0"/>
+</item>
+<item historyLabel="_ethernet_server.xc" index="13">
+<position info="not_deleted" x="1893" y="24"/>
+</item>
+<item historyLabel="_ethernet_server.h" index="7">
+<position info="not_deleted" x="1940" y="0"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8982" y="0"/>
+</item>
+<item historyLabel="_ethernet_server_lite.h" index="9">
+<position info="not_deleted" x="327" y="0"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8985" y="0"/>
+</item>
+<item historyLabel="ethernet_server.h" index="14">
+<position/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8985" y="0"/>
+</item>
+<item historyLabel="_ethernet_server.h" index="7">
+<position info="not_deleted" x="1940" y="0"/>
+</item>
+<item historyLabel="_ethernet_server.h" index="7">
+<position info="not_deleted" x="1939" y="16"/>
+</item>
+<item historyLabel="_ethernet_server.xc" index="13">
+<position info="not_deleted" x="531" y="0"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8954" y="0"/>
+</item>
+<item historyLabel="smi.xi" index="11">
+<position info="not_deleted" x="14497" y="14"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8986" y="0"/>
+</item>
+<item historyLabel="_ethernet_server.h" index="7">
+<position info="not_deleted" x="2062" y="0"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8978" y="0"/>
+</item>
+<item historyLabel="_ethernet_server.h" index="7">
+<position info="not_deleted" x="2730" y="0"/>
+</item>
+<item historyLabel="_ethernet_server_lite.h" index="9">
+<position info="not_deleted" x="327" y="0"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8978" y="0"/>
+</item>
+<item historyLabel="_ethernet_server.h" index="7">
+<position info="not_deleted" x="2730" y="0"/>
+</item>
+<item historyLabel="_ethernet_server.xc" index="13">
+<position info="not_deleted" x="531" y="0"/>
+</item>
+<item historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8983" y="0"/>
+</item>
+<item historyLabel="ethernet_server.h" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="demo.xc" index="0">
+<position info="not_deleted" x="8983" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ethernet_server.h" tooltip="/module_ethernet/src/include/ethernet_server.h">
+<persistable path="/module_ethernet/src/include/ethernet_server.h" project="app_ethernet_demo"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="smi.xi" tooltip="app_ethernet_demo/.build_lite/smi.xi">
+<persistable path="/app_ethernet_demo/.build_lite/smi.xi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xmos.cdt.ui.XCEditor" name="_ethernet_server.xc" tooltip="_module_ethernet/src/full/_ethernet_server.xc">
+<persistable path="/_module_ethernet/src/full/_ethernet_server.xc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="demo.xi" tooltip="app_ethernet_demo/.build_lite/demo.xi">
+<persistable path="/app_ethernet_demo/.build_lite/demo.xi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="otp_board_info.xi" tooltip="app_ethernet_demo/.build_lite/otp_board_info.xi">
+<persistable path="/app_ethernet_demo/.build_lite/otp_board_info.xi"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet_server_full.h" tooltip="_module_ethernet/src/include/_ethernet_server_full.h">
+<persistable path="/_module_ethernet/src/include/_ethernet_server_full.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet.h" tooltip="_module_ethernet/src/include/_ethernet.h">
+<persistable path="/_module_ethernet/src/include/_ethernet.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="_mii_lite.h" tooltip="_module_ethernet/src/lite/_mii_lite.h">
+<persistable path="/_module_ethernet/src/lite/_mii_lite.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xmos.cdt.ui.XCEditor" name="_mii_client_user.xc" tooltip="_module_ethernet/src/lite/_mii_client_user.xc">
+<persistable path="/_module_ethernet/src/lite/_mii_client_user.xc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xmos.cdt.ui.XCEditor" name="_mii_lite.xc" tooltip="_module_ethernet/src/lite/_mii_lite.xc">
+<persistable path="/_module_ethernet/src/lite/_mii_lite.xc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xmos.cdt.ui.XCEditor" name="_mii_single_server.xc" tooltip="_module_ethernet/src/lite/_mii_single_server.xc">
+<persistable path="/_module_ethernet/src/lite/_mii_single_server.xc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xmos.cdt.ui.XCEditor" name="_mii.xc" tooltip="_module_ethernet/src/full/_mii.xc">
+<persistable path="/_module_ethernet/src/full/_mii.xc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="mii_driver.h" tooltip="_module_ethernet/src/lite/mii_driver.h">
+<persistable path="/_module_ethernet/src/lite/mii_driver.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ethernet_rx_client_full.h" tooltip="_module_ethernet/src/include/ethernet_rx_client_full.h">
+<persistable path="/_module_ethernet/src/include/ethernet_rx_client_full.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="_ethernet_tx_server.h" tooltip="_module_ethernet/src/full/_ethernet_tx_server.h">
+<persistable path="/_module_ethernet/src/full/_ethernet_tx_server.h"/>
+</file>
+</mruList>
+</workbench>

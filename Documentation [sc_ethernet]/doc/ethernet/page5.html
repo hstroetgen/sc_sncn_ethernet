@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>XMOS Development Board Support Component &mdash; XMOS Layer 2 Ethernet MAC Component v documentation</title>
+
+    <link rel="stylesheet" href=".static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href=".static/globals.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/ui.css" type="text/css" />
+    <link rel="stylesheet" href=".static/app.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/mobile.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/xde.css"
+    type="text/css" /><script type="text/javascript" src=".static/scripts.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src=".static/jquery.js"></script>
+    <script type="text/javascript" src=".static/underscore.js"></script>
+    <script type="text/javascript" src=".static/doctools.js"></script>
+    <link rel="top" title="XMOS Layer 2 Ethernet MAC Component v documentation" href="index.html" />
+    <link rel="prev" title="SMI Component API" href="page4.html" /> 
+  </head>
+  <body class="xde indented-content" onload="prepareContents();">  
+          <div id="body">
+             <div id="content">
+             <h1>XMOS Development Board Support Component</h1>
+
+             <div class='columns'>
+            
+  <p>The module <tt class="docutils literal"><span class="pre">module_ethernet_board_support</span></tt> provides defines to allow
+you to easily use an XMOS development board. To use the module include
+the following header:</p>
+<pre class="snip-single-inline">
+#include "ethernet_board_support.h"
+</pre>
+<p>The contents of this header varies depending on the <tt class="docutils literal"><span class="pre">TARGET</span></tt> defined
+in your <tt class="docutils literal"><span class="pre">Makefile</span></tt>.</p>
+<p>With this header included you can intialize ethernet port structures
+using the following defines:</p>
+<pre class="snip-multi-inline">
+smi_interface_t smi = ETHERNET_DEFAULT_SMI_INIT;
+mii_interface_t mii = ETHERNET_DEFAULT_MII_INIT;
+ethernet_reset_interface_t eth_rst = ETHERNET_DEFAULT_RESET_INTERFACE_INIT;
+</pre>
+<p>You can also use the define <tt class="docutils literal"><span class="pre">ETHERNET_DEFAULT_TILE</span></tt> to refer to the
+tile that the ethernet ports are on.</p>
+<h2 class="topic" id="slicekit-core-board">sliceKIT Core Board</h2>
+<div><p>For the sliceKIT Core Board the ethernet slice could be in any of the
+four slots. To choose which slot the defines refer to you can set the
+define one of the following defines to be 1 in <tt class="docutils literal"><span class="pre">ethernet_conf.h</span></tt>:</p>
+<blockquote>
+<div><ul>
+<li><tt class="docutils literal"><span class="pre">ETHERNET_USE_CIRCLE_SLOT</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ETHERNET_USE_SQUARE_SLOT</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ETHERNET_USE_STAR_SLOT</span></tt> (Not compatible with the 1v1 Core Board)</li>
+<li><tt class="docutils literal"><span class="pre">ETHERNET_USE_TRIANGLE_SLOT</span></tt> (Not compatible with the 1v1 Core Board)</li>
+</ul>
+</div></blockquote>
+</div>
+
+             </div>
+             </div>
+
+
+          </div>
+
+          <div>
+             <!--seealsos-->
+          </div><div id="local_seealso">
+             <h1>See Also</h1>
+             <ul class="iconmenu">
+             <li><a href="page0.html">Ethernet Layer 2 MAC Overview</a></li>
+             <li><a href="page1.html">Ethernet Mac Description</a></li>
+             <li><a href="page2.html">Ethernet Programming Guide</a></li>
+             <li><a href="page3.html">Ethernet API</a></li>
+             <li><a href="page4.html">SMI Component API</a></li>
+             </ul>
+          </div>
+    <div class="footer">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Ethernet Programming Guide &mdash; XMOS Layer 2 Ethernet MAC Component v documentation</title>
+
+    <link rel="stylesheet" href=".static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href=".static/globals.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/ui.css" type="text/css" />
+    <link rel="stylesheet" href=".static/app.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/mobile.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/xde.css"
+    type="text/css" /><script type="text/javascript" src=".static/scripts.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src=".static/jquery.js"></script>
+    <script type="text/javascript" src=".static/underscore.js"></script>
+    <script type="text/javascript" src=".static/doctools.js"></script>
+    <link rel="top" title="XMOS Layer 2 Ethernet MAC Component v documentation" href="index.html" />
+    <link rel="next" title="Getting started" href="page2.html#document-getting_started" />
+    <link rel="prev" title="Ethernet Mac Description" href="page1.html" /> 
+  </head>
+  <body class="xde indented-content" onload="prepareContents();">  
+          <div id="body">
+             <div id="content">
+             <h1>Ethernet Programming Guide</h1>
+
+             <div class='columns'>
+            
+  <p>This section provides information on how to program applications using
+the ethernet MAC component.</p>
+<span id="document-getting_started"></span><h2 class="topic" id="getting-started">Getting started</h2>
+<div><h3 id="installation">Installation</h3>
+<div><p>You can import the layer 2 MAC component and example applications from
+the xSOFTip browser in the xTIMEcomposer tool.</p>
+</div></div><span id="document-structure"></span><h2 class="topic" id="source-code-structure">Source code structure</h2>
+<div><p>Source code can be found across several modules:</p>
+<blockquote>
+<div><ul>
+<li><tt class="docutils literal"><span class="pre">module_ethernet</span></tt> contains the main MAC code</li>
+<li><tt class="docutils literal"><span class="pre">module_ethernet_smi</span></tt> contains the code for controlling an
+ethernet phy via the SMI configuration protocol</li>
+<li><tt class="docutils literal"><span class="pre">module_ethernet_board_support</span></tt> contains header files for common
+XMOS development boards allowing easy initialization of port
+structures.</li>
+</ul>
+</div></blockquote>
+<p>Which modules are compiled into the
+application is controlled by the <tt class="docutils literal"><span class="pre">USED_MODULES</span></tt> define in your
+application Makefile.</p>
+<h3 id="key-files">Key Files</h3>
+<div><p>The following header files contain prototypes of all functions
+required to use the ethernet component. The API is described in
+<a class="reference" href="page3.html#sec-api"><span>Ethernet API</span></a>.</p>
+<div class="figure"><div class="caption"><span>Key Files</span></div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head"><p>File</p>
+</th>
+<th class="head"><p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><p><tt class="docutils literal"><span class="pre">ethernet.h</span></tt></p>
+</td>
+<td><p>Ethernet main header file (includes other headers)</p>
+</td>
+</tr>
+<tr><td><p><tt class="docutils literal"><span class="pre">ethernet_server.h</span></tt></p>
+</td>
+<td><p>Ethernet Server API header file</p>
+</td>
+</tr>
+<tr><td><p><tt class="docutils literal"><span class="pre">ethernet_rx_client.h</span></tt></p>
+</td>
+<td><p>Ethernet Client API header file (RX)</p>
+</td>
+</tr>
+<tr><td><p><tt class="docutils literal"><span class="pre">ethernet_tx_client.h</span></tt></p>
+</td>
+<td><p>Ethernet Client API header file (TX)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></div></div><span id="document-app_tutorial"></span><h2 class="topic" id="a-sample-ethernet-application-tutorial">A Sample Ethernet Application (tutorial)</h2>
+<div><p>This tutorial describes a demo included in the xmos ethernet
+package. The demo can be found in the directory app_ethernet_demo and
+provides a simple ethernet application that responds to ICMP ping
+requests. It assumes a basic knowledge of XC programming. For
+information on XMOS programming, you can find reference material at the <a class="reference" href="http://www.xmos.com/support/documentation"><span>XMOS website</span></a>.</p>
+<p>To write an ethernet enabled application for an XMOS device requires
+several things:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Write a Makefile for our application</li>
+<li>Provide an ethernet_conf.h configuration file</li>
+<li>Provide a custom filter function</li>
+<li>Write the application code that uses the component</li>
+</ol>
+</div></blockquote>
+<h3 id="makefile">Makefile</h3>
+<div><p>The Makefile is found in the top level directory of the
+application. It uses the general XMOS makefile in module_xmos_common
+which compiles all the source files in the application and the modules
+that the application uses. We only have to add a couple of
+configuration options.</p>
+<p>Firstly, this application is for a sliceKIT Core Board
+(the SLICEKIT-L2 target) so the
+TARGET variable needs to be set in the Makefile.</p>
+<pre class="snip-multi-inline">
+# The TARGET variable determines what target system the application is
+# compiled for. It either refers to an XN file in the source directories
+# or a valid argument for the --target option when compiling.
+
+TARGET = SLICEKIT-L2
+</pre>
+<p>Secondly, the application will use the ethernet module (and the locks
+module which is required by the ethernet module). So we state that the
+application uses these.</p>
+<pre class="snip-multi-inline">
+# The USED_MODULES variable lists other module used by the application.
+
+USED_MODULES = module_ethernet module_ethernet_board_support \
+               module_otp_board_info module_slicekit_support
+</pre>
+<p>Given this information, the common Makefiles will build all the files
+in the required modules when building the application. This works from
+the command line (using xmake) or from Eclipse.</p>
+</div><h3 id="ethernet-conf-h">ethernet_conf.h</h3>
+<div><p>The ethernet_conf.h file is found in the src/ directory of the
+application. This file contains a series of #defines that configure
+the ethernet stack. The possible #defines that can be set are
+described in <a class="reference" href="page3.html#sec-conf-defines"><span>Configuration Defines</span></a>.</p>
+<p>Within this application we set the maximum packet size we can receive
+to be the maximum possible allowed in the ethernet standard and set
+the number of buffers to be 5 packets for incoming packets and 5 for
+outgoing.</p>
+<p>The maximum number of ethernet clients (chanends we can connect to the
+ethernet server) is set to 4 (even though we only have one client in
+this example).</p>
+<pre>
+// Copyright (c) 2011, XMOS Ltd, All rights reserved
+// This software is freely distributable under a derivative of the
+// University of Illinois/NCSA Open Source License posted in
+// LICENSE.txt and at &lt;http://github.xcore.com/&gt;
+
+#ifdef CONFIG_FULL
+
+#define ETHERNET_DEFAULT_IMPLEMENTATION full
+
+#define MAX_ETHERNET_PACKET_SIZE (1518)
+
+#define MAX_ETHERNET_CLIENTS   (4)    
+
+#else
+
+#define ETHERNET_DEFAULT_IMPLEMENTATION lite
+
+#endif
+
+
+
+
+</pre>
+<p>This application has two build configurations - one for the full
+implementation and one for the lite.</p>
+</div><h3 id="mac-custom-filter">mac_custom_filter</h3>
+<div><p>The mac_custom_filter function allows use to decide which packets get
+passed through the MAC. To do this, we have to provide the
+mac_custom_filter.h header file and a definition of the
+mac_custom_filter function itself.</p>
+<p>The header file in this example just prototypes the mac_custom_filter
+function itself.</p>
+<pre>
+// Copyright (c) 2011, XMOS Ltd, All rights reserved
+// This software is freely distributable under a derivative of the
+// University of Illinois/NCSA Open Source License posted in
+// LICENSE.txt and at &lt;http://github.xcore.com/&gt;
+
+extern int mac_custom_filter(unsigned int data[]);
+
+</pre>
+<p>The module requires the application to provide the header to cater for
+the case where the function is describe as an inline function for
+performance. In this case it is just prototyped and the definition of
+mac_custom_filter is in our main application code file demo.xc</p>
+<pre>
+int mac_custom_filter(unsigned int data[]){
+	if (is_ethertype((data,char[]), ethertype_arp)){
+		return 1;
+	}else if (is_ethertype((data,char[]), ethertype_ip)){
+		return 1;
+	}
+
+	return 0;
+}
+
+</pre>
+<p>This function returns 0 if we do not want to handle the packet and
+non-zero otherwise. The non-zero value is used later to distribute to
+different clients. In this case we detect ARP packets and ICMP packets
+which match our own mac address as a destination. In this case the
+function returns 1. The defintions os is_broadcast, is_ethertype and
+is_mac_addr are in demo.xc</p>
+</div><h3 id="top-level-program-structure">Top level program structure</h3>
+<div><p>Now that we have the basic ethernet building blocks, we can build our
+application. This application is contained in demo.xc. Within this
+file is the main() function which declares some variables (primarily
+XC channels). It also contains a top level par construct which sets
+the various functional units running that make up the program.</p>
+<p>We run the ethernet server (this is set to run on
+the tile <tt class="docutils literal"><span class="pre">ETHERNET_DEFAULT_TILE</span></tt> which is supplied by the board support
+module).
+First, the function <tt class="xref c c-func docutils literal"><span class="pre">otp_board_info_get_mac()</span></tt> reads the device mac address from ROM. The
+functions <tt class="xref c c-func docutils literal"><span class="pre">eth_phy_reset()</span></tt>, <tt class="xref c c-func docutils literal"><span class="pre">smi_config()</span></tt> and
+<a class="reference" href="page4.html#eth_phy_config" title="eth_phy_config"><span>eth_phy_config()</span></a> initialize the phy and then the main function
+<a class="reference" href="page3.html#ethernet_server" title="ethernet_server"><span>ethernet_server()</span></a> runs the ethernet component. The server
+communicates with other tasks via the rx and tx channel arrays.</p>
+<pre>
+      on ETHERNET_DEFAULT_TILE:
+      {
+        char mac_address[6];
+        otp_board_info_get_mac(otp_ports, 0, mac_address);
+        eth_phy_reset(eth_rst);
+        smi_init(smi);
+        eth_phy_config(1, smi);
+        ethernet_server(mii,
+                        null,
+                        mac_address,
+                        rx, 1,
+                        tx, 1);
+      }
+
+</pre>
+<p>On tile 0 we run the demo() function as a task which takes ethernet packets and
+responds to ICMP ping requests. This function is described in the next section.</p>
+<pre>
+      on ETHERNET_DEFAULT_TILE : demo(tx[0], rx[0]);
+
+</pre>
+</div><h3 id="ethernet-packet-processing">Ethernet packet processing</h3>
+<div><p>The demo() function does the actual ethernet packet processing. First
+the application gets the device mac address from the ethernet server.</p>
+<pre>
+  mac_get_macaddr(tx, own_mac_addr);
+
+</pre>
+<p>Then the packet filter is set up. The mask value passed to
+<a class="reference" href="page3.html#mac_set_custom_filter" title="mac_set_custom_filter"><span>mac_set_custom_filter()</span></a> is used within the mac. After the
+custom_mac_filter function is run, if the result is non-zero then the
+result is and-ed against the mask. If this is non-zero then the packet
+is forwarded to the client.</p>
+<p>So in this case, the mask is 1 so all packets that get a result of 1 from
+custom_mac_filter function will get passed to this client.</p>
+<pre>
+#ifdef CONFIG_FULL
+  mac_set_custom_filter(rx, 0x1);
+#endif
+
+</pre>
+<p>Note that this is only for build configuration that uses the FULL
+configuration. If we are using the LITE configuration the filtering is
+done after the client recieves the packet later on.</p>
+<p>After we are set up to receive the correct packets we can go into the
+main loop that responds to ARP and ICMP packets.</p>
+<p>The first task in the loop is to receive a packet into the rxbuf
+buffer using the <a class="reference" href="page3.html#mac_rx" title="mac_rx"><span>mac_rx()</span></a> function.</p>
+<pre>
+  while (1)
+  {
+    unsigned int src_port;
+    unsigned int nbytes;
+    mac_rx(rx, (rxbuf,char[]), nbytes, src_port);
+#ifdef CONFIG_LITE
+    if (!is_broadcast((rxbuf,char[])) && !is_mac_addr((rxbuf,char[]), own_mac_addr))
+      continue;
+    if (mac_custom_filter(rxbuf) != 0x1)
+      continue;
+#endif
+
+
+
+</pre>
+<p>Here we can see the filtering that needs to be done for the LITE configuration.</p>
+<p>When the packet is received it may be an ARP or IP packet since both
+get past our filter. First we check if it is an ARP packet, if so then
+we build the response (in the txbuf array) and send it out over
+ethernet using the <a class="reference" href="page3.html#mac_tx" title="mac_tx"><span>mac_tx()</span></a> function. The functions
+is_valid_arp_packet and build_arp_response are defined demo.xc.</p>
+<pre>
+    if (is_valid_arp_packet((rxbuf,char[]), nbytes))
+      {
+        build_arp_response((rxbuf,char[]), txbuf, own_mac_addr);
+        mac_tx(tx, txbuf, nbytes, ETH_BROADCAST);
+        printstr("ARP response sent\n");
+      }
+
+</pre>
+<p>If the packet is not an ARP packet we check if it is an ICMP packet
+and in the same way build a response and send it out.</p>
+<pre>
+    else if (is_valid_icmp_packet((rxbuf,char[]), nbytes))
+      {
+        build_icmp_response((rxbuf,char[]), (txbuf, unsigned char[]), own_mac_addr);
+        mac_tx(tx, txbuf, nbytes, ETH_BROADCAST);
+        printstr("ICMP response sent\n");
+      }
+
+</pre>
+</div><h3 id="running-the-application">Running the application</h3>
+<div><p>To test the application the following define in demo.xc needs to be
+set to an IP address that is routable in the network that the
+application is to be tested on.</p>
+<pre>
+// NOTE: YOU MAY NEED TO REDEFINE THIS TO AN IP ADDRESS THAT WORKS
+// FOR YOUR NETWORK
+#define OWN_IP_ADDRESS {192, 168, 1, 178}
+
+</pre>
+<p>Once this is done, the demo can be compiled and the XC-2 connected to
+a PC. Pinging the IP address defined should now get a response e.g.:</p>
+<pre class="snip-multi-inline">
+PING 192.168.0.3 (192.168.0.3) 56(84) bytes of data.
+64 bytes from 192.168.0.3: icmp_seq=1 ttl=64 time=2.97 ms
+64 bytes from 192.168.0.3: icmp_seq=2 ttl=64 time=2.93 ms
+64 bytes from 192.168.0.3: icmp_seq=3 ttl=64 time=2.91 ms
+64 bytes from 192.168.0.3: icmp_seq=4 ttl=64 time=2.96 ms
+...
+</pre>
+</div></div>
+
+             </div>
+             </div>
+
+
+          </div>
+
+          <div>
+             <!--seealsos-->
+          </div><div id="local_seealso">
+             <h1>See Also</h1>
+             <ul class="iconmenu">
+             <li><a href="page0.html">Ethernet Layer 2 MAC Overview</a></li>
+             <li><a href="page1.html">Ethernet Mac Description</a></li>
+             <li><a href="page3.html">Ethernet API</a></li>
+             <li><a href="page4.html">SMI Component API</a></li>
+             <li><a href="page5.html">XMOS Development Board Support Component</a></li>
+             </ul>
+          </div>
+    <div class="footer">
+    </div>
+  </body>
+</html>

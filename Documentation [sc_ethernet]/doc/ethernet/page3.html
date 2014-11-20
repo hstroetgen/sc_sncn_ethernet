@@ -1,0 +1,650 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Ethernet API &mdash; XMOS Layer 2 Ethernet MAC Component v documentation</title>
+
+    <link rel="stylesheet" href=".static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href=".static/globals.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/ui.css" type="text/css" />
+    <link rel="stylesheet" href=".static/app.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/mobile.css"  type="text/css" />
+    <link rel="stylesheet" href=".static/xde.css"
+    type="text/css" /><script type="text/javascript" src=".static/scripts.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src=".static/jquery.js"></script>
+    <script type="text/javascript" src=".static/underscore.js"></script>
+    <script type="text/javascript" src=".static/doctools.js"></script>
+    <link rel="top" title="XMOS Layer 2 Ethernet MAC Component v documentation" href="index.html" />
+    <link rel="next" title="SMI Component API" href="page4.html" />
+    <link rel="prev" title="A Sample Ethernet Application (tutorial)" href="page2.html#document-app_tutorial" /> 
+  </head>
+  <body class="xde indented-content" onload="prepareContents();">  
+          <div id="body">
+             <div id="content">
+             <h1>Ethernet API</h1>
+
+             <div class='columns'>
+            
+  <h2 class="topic" id="configuration-defines"><span id="sec-conf-defines"></span>Configuration Defines</h2>
+<div><p>The file <tt class="docutils literal"><span class="pre">ethernet_conf.h</span></tt> may be provided in the application source
+code. This file can set the following defines:</p>
+<p><strong>ETHERNET_DEFAULT_IMPLEMENTATION</strong></p>
+<blockquote>
+<div><p>This define can be set to <tt class="docutils literal"><span class="pre">full</span></tt> or <tt class="docutils literal"><span class="pre">lite</span></tt> and determines which
+implementation is chosen by default when the application makes
+calls to <tt class="docutils literal"><span class="pre">ethernet_server</span></tt> etc.</p>
+</div></blockquote>
+</div><h2 class="topic" id="configuration-defines-for-full-implementation">Configuration Defines for FULL implementation</h2>
+<div><p><strong>MAX_ETHERNET_PACKET_SIZE</strong></p>
+<blockquote>
+<div><p>This define sets the largest packet size in bytes that the ethernet mac
+will receive. The default is the largest possible ethernet packet
+size (1518 bytes). Setting this to a smaller value will save
+memory but restrict the type of packets you can receieve.</p>
+</div></blockquote>
+<p><strong>NUM_MII_RX_BUF</strong></p>
+<blockquote>
+<div><p>Number of incoming packets that will be buffered within the MAC.</p>
+</div></blockquote>
+<p><strong>NUM_MII_TX_BUF</strong></p>
+<blockquote>
+<div><p>Number of outgoing packets that will be buffered within the MAC.</p>
+</div></blockquote>
+<p><strong>MAX_ETHERNET_CLIENTS</strong></p>
+<blockquote>
+<div><p>The maximum number of clients that can be connected to the
+<a class="reference" href="#ethernet_server" title="ethernet_server"><span>ethernet_server()</span></a> function via the rx and tx channel arrays.</p>
+</div></blockquote>
+<p><strong>NUM_ETHERNET_PORTS</strong></p>
+<blockquote>
+<div><p>The number of ethernet ports to support.  Maximum value is 2 in
+the current implementation.</p>
+</div></blockquote>
+<p><strong>ETHERNET_TX_HP_QUEUE</strong></p>
+<blockquote>
+<div><p>Define this constant to include the high priority transmit queueing
+mechanism.  This enables frames which have an ethernet VLAN priority
+tag to be queued in a high priority queue, which in turn can be
+managed with the 802.1qav transmit traffic shaper.</p>
+</div></blockquote>
+<p><strong>ETHERNET_RX_HP_QUEUE</strong></p>
+<blockquote>
+<div><p>Define this constant to include high priority reception of ethernet
+VLAN priority tagged traffic.  This traffic will be queued into a
+fast queue and delivered to the clients ahead of non-tagged traffic.</p>
+</div></blockquote>
+<p><strong>ETHERNET_TRAFFIC_SHAPER</strong></p>
+<blockquote>
+<div><p>If high priority transmit queueing is in use (see <em>ETHERNET_TX_HP_QUEUE</em>)
+then this enables the 802.1qav traffic shaping algorithm.</p>
+</div></blockquote>
+<p><strong>MII_RX_BUFSIZE_HIGH_PRIORITY</strong></p>
+<blockquote>
+<div><p>The number of quadlets (4 byte integers) of space in the high
+priority receive buffer.  The buffer will actually be two full
+packets longer than this to avoid the need to be circular. This
+constant applies when the high priority receive queue is in use.</p>
+</div></blockquote>
+<p><strong>MII_RX_BUFSIZE_LOW_PRIORITY</strong></p>
+<blockquote>
+<div><p>The number of quadlets (4 byte integers) of space in the low
+priority receive buffer.  The buffer will actually be two full
+packets longer than this to avoid the need to be circular. This
+constant applies when the high priority receive is in use.</p>
+</div></blockquote>
+<p><strong>MII_RX_BUFSIZE</strong></p>
+<blockquote>
+<div><p>The number of quadlets (4 byte integers) of space in the low
+priority receive buffer.  The buffer will actually be two full
+packets longer than this to avoid the need to be circular. This
+constant applies when the high priority receive is not in use.</p>
+</div></blockquote>
+<p><strong>MII_TX_BUFSIZE</strong></p>
+<blockquote>
+<div><p>The number of quadlets (4 byte integers) of space in the low
+priority transmit buffer.  The buffer will actually be two full
+packets longer than this to avoid the need to be circular.</p>
+</div></blockquote>
+<p><strong>MII_TX_BUFSIZE_HIGH_PRIORITY</strong></p>
+<blockquote>
+<div><p>The number of quadlets (4 byte integers) of space in the high
+priority transmit buffer.  The buffer will actually be two full
+packets longer than this to avoid the need to be circular. This
+constant applies when the high priority receive is in use.</p>
+</div></blockquote>
+<p><strong>ENABLE_ETHERNET_SOURCE_ADDRESS_WRITE</strong></p>
+<blockquote>
+<div><p>By defining this preprocessor symbol, the source MAC address
+will be automatically filled in with the MAC address passed
+to the port during initialization.</p>
+</div></blockquote>
+</div><h2 class="topic" id="configuration-defines-for-lite-implementation">Configuration defines for LITE implementation</h2>
+<div></div><h2 class="topic" id="custom-filter-function">Custom Filter Function</h2>
+<div><p>For the FULL implementation, every application is required to
+provide this function. It also needs
+to be prototyped (or defined as an inline definition) in the header
+file <tt class="docutils literal"><span class="pre">mac_custom_filter.h</span></tt>.</p>
+<ul class='lib'><li class="function">
+<h2 id="mac_custom_filter">
+int <tt class="descname">mac_custom_filter</tt><big>(</big>unsigned int<em>&nbsp;data[]</em><big>)</big></h2>
+<p>This function examines an ethernet packet and returns a filter
+number to allow different clients to obtain different types of packet.
+The function <em>must</em> run within 6us to allow 100Mbit filtering of
+packets.</p>
+<h3 class="nosecnum compact" id="">Parameters</h3>
+<div><ul class="field_list" class="latex_compact"><li><h2>data</h2>
+<p>This array contains the ethernet packet. It does not
+include the preamble but does include the layer 2
+header or the packet.</p>
+</li>
+</ul>
+</div><h3 class="nosecnum compact" id="">Returns</h3>
+<div><p>0 if the packet is not wanted by the application or
+a number that can be registed by
+<a class="reference" href="#mac_set_custom_filter" title="mac_set_custom_filter"><span>mac_set_custom_filter()</span></a> by a client. Clients
+register a mask so the number is usually made up of a
+bit per unique client destination for the packet.</p>
+</div></li>
+
+</ul></div><h2 class="topic" id="data-structures">Data Structures</h2>
+<div><p>Depending on the implementation you must supply a different port
+structure. The type <tt class="docutils literal"><span class="pre">mii_interface_t</span></tt> will be set to one of this
+structures depending on the <tt class="docutils literal"><span class="pre">ETHERNET_DEFAULT_IMPLEMENTATION</span></tt> define.</p>
+<ul class='lib'><li class="type">
+<h2 id="mii_interface_full_t">
+<tt class="descname">mii_interface_full_t</tt></h2>
+<p>Structure containing resources required for the MII ethernet interface.</p>
+<p>This structure contains resources required to make up an MII interface. It consists of 7 ports and 2 clock blocks.</p>
+<p>The clock blocks can be any available clock blocks and will be clocked of incoming rx/tx clock pins.</p>
+<p><strong>Structure Members:</strong></p>
+<ul class='lib'><li class="member">
+<h2 id="mii_interface_full_t.clk_mii_rx">
+clock <tt class="descname">clk_mii_rx</tt></h2>
+<p>MII RX Clock Block.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_full_t.clk_mii_tx">
+clock <tt class="descname">clk_mii_tx</tt></h2>
+<p>MII TX Clock Block.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_full_t.p_mii_rxclk">
+in port <tt class="descname">p_mii_rxclk</tt></h2>
+<p>MII RX clock wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_full_t.p_mii_rxer">
+in port <tt class="descname">p_mii_rxer</tt></h2>
+<p>MII RX error wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_full_t.p_mii_rxd">
+in buffered port:32 <tt class="descname">p_mii_rxd</tt></h2>
+<p>MII RX data wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_full_t.p_mii_rxdv">
+in port <tt class="descname">p_mii_rxdv</tt></h2>
+<p>MII RX data valid wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_full_t.p_mii_txclk">
+in port <tt class="descname">p_mii_txclk</tt></h2>
+<p>MII TX clock wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_full_t.p_mii_txen">
+out port <tt class="descname">p_mii_txen</tt></h2>
+<p>MII TX enable wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_full_t.p_mii_txd">
+out buffered port:32 <tt class="descname">p_mii_txd</tt></h2>
+<p>MII TX data wire.</p>
+</li>
+
+</ul></li>
+
+<li class="type">
+<h2 id="mii_interface_lite_t">
+<tt class="descname">mii_interface_lite_t</tt></h2>
+<p><strong>Structure Members:</strong></p>
+<ul class='lib'><li class="member">
+<h2 id="mii_interface_lite_t.clk_mii_rx">
+clock <tt class="descname">clk_mii_rx</tt></h2>
+<p>MII RX Clock Block.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_lite_t.clk_mii_tx">
+clock <tt class="descname">clk_mii_tx</tt></h2>
+<p>MII TX Clock Block.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_lite_t.p_mii_rxclk">
+in port <tt class="descname">p_mii_rxclk</tt></h2>
+<p>MII RX clock wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_lite_t.p_mii_rxer">
+in port <tt class="descname">p_mii_rxer</tt></h2>
+<p>MII RX error wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_lite_t.p_mii_rxd">
+in buffered port:32 <tt class="descname">p_mii_rxd</tt></h2>
+<p>MII RX data wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_lite_t.p_mii_rxdv">
+in port <tt class="descname">p_mii_rxdv</tt></h2>
+<p>MII RX data valid wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_lite_t.p_mii_txclk">
+in port <tt class="descname">p_mii_txclk</tt></h2>
+<p>MII TX clock wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_lite_t.p_mii_txen">
+out port <tt class="descname">p_mii_txen</tt></h2>
+<p>MII TX enable wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_lite_t.p_mii_txd">
+out buffered port:32 <tt class="descname">p_mii_txd</tt></h2>
+<p>MII TX data wire.</p>
+</li>
+
+<li class="member">
+<h2 id="mii_interface_lite_t.p_mii_timing">
+in port <tt class="descname">p_mii_timing</tt></h2>
+<p>A port that is not used for anything, used by the LLD for timing purposes.</p>
+<p>Must be clocked of the reference clock</p>
+</li>
+
+</ul></li>
+
+</ul></div><h2 class="topic" id="mac-server-api">MAC Server API</h2>
+<div><ul class='lib'><li class="function">
+<h2 id="ethernet_server">
+void <tt class="descname">ethernet_server</tt><big>(</big>mii_interface_t<em>&nbsp;&amp;mii</em>, <a class="reference" href="page4.html#smi_interface_t" title="smi_interface_t"><span>smi_interface_t</span></a> &amp;<em>&nbsp;?smi</em>, char<em>&nbsp;mac_address[]</em>, chanend<em>&nbsp;rx[]</em>, int<em>&nbsp;num_rx</em>, chanend<em>&nbsp;tx[]</em>, int<em>&nbsp;num_tx</em><big>)</big></h2>
+<p>Single MII port MAC/ethernet server.</p>
+<p>This function provides both MII layer and MAC layer functionality. It runs in 5 threads and communicates to clients over the channel array parameters.</p>
+<p>The clients connected via the rx/tx channels can communicate with the server using the APIs found in ethernet_rx_client.h and ethernet_tx_client.h</p>
+<h3 class="nosecnum compact" id="">Parameters</h3>
+<div><ul class="field_list" class="latex_compact"><li><h2>mii</h2>
+<p>The mii interface resources that the server will connect to</p>
+</li>
+<li><h2>mac_address</h2>
+<p>The mac_address the server will use. This should be a two-word array that stores the 6-byte macaddr in a little endian manner (so reinterpreting the array as a char array is as one would expect)</p>
+</li>
+<li><h2>rx</h2>
+<p>An array of chanends to connect to clients of the server who wish to receive packets.</p>
+</li>
+<li><h2>num_rx</h2>
+<p>The number of clients connected to the rx array</p>
+</li>
+<li><h2>tx</h2>
+<p>An array of chanends to connect to clients of the server who wish to transmit packets.</p>
+</li>
+<li><h2>num_tx</h2>
+<p>The number of clients connected to the txx array</p>
+</li>
+<li><h2>smi</h2>
+<p>An optional parameter of resources to connect to a PHY (via SMI) to check when the link is up.</p>
+</li>
+</ul>
+</div></li>
+
+</ul></div><h2 class="topic" id="rx-client-api">RX Client API</h2>
+<div><h3 id="packet-receive-functions">Packet Receive Functions</h3>
+<div><ul class='lib'><li class="function">
+<h2 id="mac_rx">
+void <tt class="descname">mac_rx</tt><big>(</big>chanend<em>&nbsp;c_mac</em>, unsigned char<em>&nbsp;buffer[]</em>, unsigned int<em>&nbsp;&amp;len</em>, unsigned int<em>&nbsp;&amp;src_port</em><big>)</big></h2>
+<p>This function receives a complete frame (i.e.</p>
+<p>src/dest MAC address, type &amp; payload), excluding pre-amble, SoF &amp; CRC32 from the ethernet server.</p>
+<p>This function is selectable i.e. it can be used as a case in a select e.g.</p>
+<blockquote>
+<div><pre class="snip-multi-inline">
+select {
+   ...
+   case mac_rx(...):
+      break;
+    ...
+  }
+</pre>
+</div></blockquote>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac</h2>
+<p>A chanend connected to the ethernet server</p>
+</li>
+<li><h2>buffer</h2>
+<p>The buffer to fill with the incoming packet</p>
+</li>
+<li><h2>src_port</h2>
+<p>A reference parameter to be filled with the ethernet port the packet came from.</p>
+</li>
+<li><h2>len</h2>
+<p>A reference parameter to be filled with the length of the received packet in bytes.</p>
+</li>
+</ul>
+</div></li>
+
+<li class="function">
+<h2 id="mac_rx_timed">
+void <tt class="descname">mac_rx_timed</tt><big>(</big>chanend<em>&nbsp;c_mac</em>, unsigned char<em>&nbsp;buffer[]</em>, unsigned int<em>&nbsp;&amp;len</em>, unsigned int<em>&nbsp;&amp;time</em>, unsigned int<em>&nbsp;&amp;src_port</em><big>)</big></h2>
+<p>This function receives a complete frame (i.e.</p>
+<p>src/dest MAC address, type &amp; payload), excluding pre-amble, SoF &amp; CRC32. It also timestamps the arrival of the frame.</p>
+<p>This function is selectable.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac</h2>
+<p>A chanend connected to the ethernet server</p>
+</li>
+<li><h2>buffer</h2>
+<p>The buffer to fill with the incoming packet</p>
+</li>
+<li><h2>time</h2>
+<p>A reference parameter to be filled with the timestamp of the packet</p>
+</li>
+<li><h2>len</h2>
+<p>A reference parameter to be filled with the length of the received packet in bytes.</p>
+</li>
+<li><h2>src_port</h2>
+<p>A reference parameter to be filled with the ethernet port the packet came from.</p>
+</li>
+</ul>
+</div></li>
+
+<li class="function">
+<h2 id="safe_mac_rx">
+void <tt class="descname">safe_mac_rx</tt><big>(</big>chanend<em>&nbsp;c_mac</em>, unsigned char<em>&nbsp;buffer[]</em>, unsigned int<em>&nbsp;&amp;len</em>, unsigned int<em>&nbsp;&amp;src_port</em>, int<em>&nbsp;n</em><big>)</big></h2>
+<p>This function receives a complete frame (i.e.</p>
+<p>src/dest MAC address, type &amp; payload), excluding pre-amble, SoF &amp; CRC32. In addition it will only fill the given buffer up to a specified length.</p>
+<p>This function is selectable.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac</h2>
+<p>A chanend connected to the ethernet server</p>
+</li>
+<li><h2>buffer</h2>
+<p>The buffer to fill with the incoming packet</p>
+</li>
+<li><h2>len</h2>
+<p>A reference parameter to be filled with the length of the received packet in bytes.</p>
+</li>
+<li><h2>src_port</h2>
+<p>A reference parameter to be filled with the ethernet port the packet came from.</p>
+</li>
+<li><h2>n</h2>
+<p>The maximum number of bytes to fill the supplied buffer with.</p>
+</li>
+</ul>
+</div></li>
+
+<li class="function">
+<h2 id="safe_mac_rx_timed">
+void <tt class="descname">safe_mac_rx_timed</tt><big>(</big>chanend<em>&nbsp;c_mac</em>, unsigned char<em>&nbsp;buffer[]</em>, unsigned int<em>&nbsp;&amp;len</em>, unsigned int<em>&nbsp;&amp;time</em>, unsigned int<em>&nbsp;&amp;src_port</em>, int<em>&nbsp;n</em><big>)</big></h2>
+<p>This function receives a complete frame (i.e.</p>
+<p>src/dest MAC address, type &amp; payload), excluding pre-amble, SoF &amp; CRC32 from the ethernet server. In addition it will only fill the given buffer up to a specified length.</p>
+<p>This function is selectable i.e. it can be used as a case in a select.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac</h2>
+<p>A chanend connected to the ethernet server</p>
+</li>
+<li><h2>buffer</h2>
+<p>The buffer to fill with the incoming packet</p>
+</li>
+<li><h2>src_port</h2>
+<p>A reference parameter to be filled with the ethernet port the packet came from.</p>
+</li>
+<li><h2>len</h2>
+<p>A reference parameter to be filled with the length of the received packet in bytes.</p>
+</li>
+<li><h2>n</h2>
+<p>The maximum number of bytes to fill the supplied buffer with.</p>
+</li>
+</ul>
+</div></li>
+
+<li class="function">
+<h2 id="mac_rx_offset2">
+void <tt class="descname">mac_rx_offset2</tt><big>(</big>chanend<em>&nbsp;c_mac</em>, unsigned char<em>&nbsp;buffer[]</em>, unsigned int<em>&nbsp;&amp;len</em>, unsigned int<em>&nbsp;&amp;src_port</em><big>)</big></h2>
+<p>Receive a packet starting at the second byte of a buffer.</p>
+<p>This is useful when the contents of the packet should be aligned on a different boundary.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac</h2>
+<p>chanend of receive server.</p>
+</li>
+<li><h2>buffer</h2>
+<p>The buffer to fill with the incoming packet</p>
+</li>
+<li><h2>len</h2>
+<p>A reference parameter to be filled with the length of the received packet in bytes.</p>
+</li>
+<li><h2>src_port</h2>
+<p>A reference parameter to be filled with the ethernet port the packet came from.</p>
+</li>
+</ul>
+</div></li>
+
+</ul></div><h3 id="configuration-functions">Configuration Functions</h3>
+<div><ul class='lib'><li class="function">
+<h2 id="mac_set_drop_packets">
+void <tt class="descname">mac_set_drop_packets</tt><big>(</big>chanend<em>&nbsp;c_mac_svr</em>, int<em>&nbsp;x</em><big>)</big></h2>
+<p>Setup whether a link should drop packets or block if the link is not ready.</p>
+<p>NOTE: setting no dropped packets does not mean no packets will be dropped. If packets are not dropped at the mac layer, it will block the mii fifo. The Mii fifo could possibly overflow and frames for other links could be dropped.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac_svr</h2>
+<p>chanend of receive server.</p>
+</li>
+<li><h2>x</h2>
+<p>boolean value as to whether packets should be dropped at mac layer.</p>
+</li>
+</ul>
+</div></li>
+
+<li class="function">
+<h2 id="mac_set_queue_size">
+void <tt class="descname">mac_set_queue_size</tt><big>(</big>chanend<em>&nbsp;c_mac_svr</em>, int<em>&nbsp;x</em><big>)</big></h2>
+<p>Setup the size of the buffer queue within the mac attached to this link.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac_svr</h2>
+<p>chanend connected to the mac</p>
+</li>
+<li><h2>x</h2>
+<p>the required size of the queue</p>
+</li>
+</ul>
+</div></li>
+
+<li class="function">
+<h2 id="mac_set_custom_filter">
+void <tt class="descname">mac_set_custom_filter</tt><big>(</big>chanend<em>&nbsp;c_mac_svr</em>, int<em>&nbsp;x</em><big>)</big></h2>
+<p>Setup the custom filter up on a link.</p>
+<p>For each packet, the filter value is &amp;-ed against the result of the mac_custom_filter function. If the result is non-zero then the packet is transmitted down the link.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac_svr</h2>
+<p>chanend of receive server.</p>
+</li>
+<li><h2>x</h2>
+<p>filter value</p>
+</li>
+</ul>
+</div></li>
+
+</ul></div></div><h2 class="topic" id="tx-client-api">TX Client API</h2>
+<div><h3 id="packet-transmit-functions">Packet Transmit Functions</h3>
+<div><ul class='lib'><li class="function">
+<h2 id="mac_tx">
+void <tt class="descname">mac_tx</tt><big>(</big>chanend<em>&nbsp;c_mac</em>, unsigned int<em>&nbsp;buffer[]</em>, int<em>&nbsp;nbytes</em>, int<em>&nbsp;ifnum</em><big>)</big></h2>
+<p>Sends an ethernet frame.</p>
+<p>Frame includes dest/src MAC address(s), type and payload.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac</h2>
+<p>channel end to tx server.</p>
+</li>
+<li><h2>buffer[]</h2>
+<p>byte array containing the ethernet frame. <em>This must be word aligned</em></p>
+</li>
+<li><h2>nbytes</h2>
+<p>number of bytes in buffer</p>
+</li>
+<li><h2>ifnum</h2>
+<p>the number of the eth interface to transmit to (use ETH_BROADCAST transmits to all ports)</p>
+</li>
+</ul>
+</div></li>
+
+<li class="function">
+<h2 id="mac_tx_timed">
+void <tt class="descname">mac_tx_timed</tt><big>(</big>chanend<em>&nbsp;c_mac</em>, unsigned int<em>&nbsp;buffer[]</em>, int<em>&nbsp;nbytes</em>, unsigned int<em>&nbsp;&amp;time</em>, int<em>&nbsp;ifnum</em><big>)</big></h2>
+<p>Sends an ethernet frame and gets the timestamp of the send.</p>
+<p>Frame includes dest/src MAC address(s), type and payload.</p>
+<p>This is a blocking call and returns the <em>actual time</em> the frame is sent to PHY according to the XCore 100Mhz 32-bit timer on the core the ethernet server is running.</p>
+<p>NOTE: This function will block until the packet is sent to PHY.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac</h2>
+<p>channel end connected to ethernet server.</p>
+</li>
+<li><h2>buffer[]</h2>
+<p>byte array containing the ethernet frame. <em>This must be word aligned</em></p>
+</li>
+<li><h2>nbytes</h2>
+<p>number of bytes in buffer</p>
+</li>
+<li><h2>ifnum</h2>
+<p>the number of the eth interface to transmit to (use ETH_BROADCAST transmits to all ports)</p>
+</li>
+<li><h2>time</h2>
+<p>A reference paramater that is set to the time the packet is sent to the phy</p>
+</li>
+</ul>
+</div></li>
+
+<li class="function">
+<h2 id="mac_tx_offset2">
+void <tt class="descname">mac_tx_offset2</tt><big>(</big>chanend<em>&nbsp;c_mac</em>, unsigned int<em>&nbsp;buffer[]</em>, int<em>&nbsp;nbytes</em>, int<em>&nbsp;ifnum</em><big>)</big></h2>
+<p>Sends an ethernet frame.</p>
+<p>Frame includes dest/src MAC address(s), type and payload.</p>
+<p>The packet should start at offset 2 in the buffer. This allows the packet to be constructed with alignment on a different boundary, allowing for more efficient construction where many word values are not naturally aligned on word boundaries.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac</h2>
+<p>channel end to tx server.</p>
+</li>
+<li><h2>buffer[]</h2>
+<p>byte array containing the ethernet frame. <em>This must be word aligned</em></p>
+</li>
+<li><h2>nbytes</h2>
+<p>number of bytes in buffer</p>
+</li>
+<li><h2>ifnum</h2>
+<p>the number of the eth interface to transmit to (use ETH_BROADCAST transmits to all ports)</p>
+</li>
+</ul>
+</div></li>
+
+</ul><div class="figure"><div class="caption"><span>Ethernet function synonyms</span></div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head"><p>Synonym</p>
+</th>
+<th class="head"><p>Function</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><p>ethernet_send_frame</p>
+</td>
+<td><p>ethernet_send_frame</p>
+</td>
+</tr>
+<tr><td><p>ethernet_send_frame_getTime</p>
+</td>
+<td><p>ethernet_send_frame_getTime</p>
+</td>
+</tr>
+<tr><td><p>ethernet_send_frame_offset2</p>
+</td>
+<td><p>mac_tx_offset2</p>
+</td>
+</tr>
+<tr><td><p>ethernet_get_my_mac_adrs</p>
+</td>
+<td><p>mac_get_macaddr</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></div><h3 id="id1">Configuration Functions</h3>
+<div><ul class='lib'><li class="function">
+<h2 id="mac_get_macaddr">
+int <tt class="descname">mac_get_macaddr</tt><big>(</big>chanend<em>&nbsp;c_mac</em>, unsigned char<em>&nbsp;macaddr[]</em><big>)</big></h2>
+<p>Get the device MAC address.</p>
+<p>This function gets the MAC address of the device (the address passed into the <a class="reference" href="#ethernet_server" title="ethernet_server"><span>ethernet_server()</span></a> function.</p>
+<h4 class="nosecnum compact" id="">Parameters</h4>
+<div><ul class="field_list" class="latex_compact"><li><h2>c_mac</h2>
+<p>chanend end connected to ethernet server</p>
+</li>
+<li><h2>macaddr[]</h2>
+<p>an array of type char where the MAC address is placed (in network order).</p>
+</li>
+</ul>
+</div><h4 class="nosecnum compact" id="">Returns</h4>
+<div><p>zero on success and non-zero on failure.</p>
+</div></li>
+
+</ul></div></div>
+
+             </div>
+             </div>
+
+
+          </div>
+
+          <div>
+             <!--seealsos-->
+          </div><div id="local_seealso">
+             <h1>See Also</h1>
+             <ul class="iconmenu">
+             <li><a href="page0.html">Ethernet Layer 2 MAC Overview</a></li>
+             <li><a href="page1.html">Ethernet Mac Description</a></li>
+             <li><a href="page2.html">Ethernet Programming Guide</a></li>
+             <li><a href="page4.html">SMI Component API</a></li>
+             <li><a href="page5.html">XMOS Development Board Support Component</a></li>
+             </ul>
+          </div>
+    <div class="footer">
+    </div>
+  </body>
+</html>
