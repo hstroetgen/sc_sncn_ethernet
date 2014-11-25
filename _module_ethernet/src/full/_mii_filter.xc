@@ -21,8 +21,8 @@
 int _mac_custom_filter_coerce(int);
 
 
-#define is_broadcast(buf) (mii_packet_get_data(buf,0) & 0x1)
-#define compare_mac(buf,mac) (mii_packet_get_data(buf,0) == mac[0] && ((short) mii_packet_get_data(buf,1)) == ((short) mac[1]))
+#define _is_broadcast(buf) (_mii_packet_get_data(buf,0) & 0x1)
+#define _compare_mac(buf,mac) (_mii_packet_get_data(buf,0) == mac[0] && ((short) _mii_packet_get_data(buf,1)) == ((short) mac[1]))
 
 #if ETHERNET_COUNT_PACKETS
 static unsigned _ethernet_filtered_by_address=0;
@@ -65,7 +65,7 @@ void _ethernet_filter(const char mac_address[], streaming chanend c[NUM_ETHERNET
 					int endbytes;
 					int tail;
 
-					tail = mii_packet_get_data(buf,((length & 0xFFFFFFFC)/4)+1);
+					tail = _mii_packet_get_data(buf,((length & 0xFFFFFFFC)/4)+1);
 
 					endbytes = (length & 3);
 
@@ -110,8 +110,8 @@ void _ethernet_filter(const char mac_address[], streaming chanend c[NUM_ETHERNET
 #endif
 					else
 					{
-						int broadcast = is_broadcast(buf);
-						int unicast = compare_mac(buf,mac);
+						int broadcast = _is_broadcast(buf);
+						int unicast = _compare_mac(buf,mac);
 						int res=0;
 #if (NUM_ETHERNET_PORTS > 1) && !defined(DISABLE_ETHERNET_PORT_FORWARDING)
 						if (!unicast) {

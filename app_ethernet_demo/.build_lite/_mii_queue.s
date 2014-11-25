@@ -1,54 +1,54 @@
 	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.c"
 
-.set get_and_dec_transmit_count.locnoside, 1
+.set _get_and_dec_transmit_count.locnoside, 1
 
-.set get_and_dec_transmit_count.locnochandec, 1
+.set _get_and_dec_transmit_count.locnochandec, 1
 
-.set get_and_dec_transmit_count.locnoglobalaccess, 1
+.set _get_and_dec_transmit_count.locnoglobalaccess, 1
 
-.set get_and_dec_transmit_count.locnointerfaceaccess, 1
+.set _get_and_dec_transmit_count.locnointerfaceaccess, 1
 
-.set get_and_dec_transmit_count.locnonotificationselect, 1
+.set _get_and_dec_transmit_count.locnonotificationselect, 1
 
-.set mii_packet_get_and_clear_forwarding.locnoside, 1
+.set _mii_packet_get_and_clear_forwarding.locnoside, 1
 
-.set mii_packet_get_and_clear_forwarding.locnochandec, 1
+.set _mii_packet_get_and_clear_forwarding.locnochandec, 1
 
-.set mii_packet_get_and_clear_forwarding.locnoglobalaccess, 1
+.set _mii_packet_get_and_clear_forwarding.locnoglobalaccess, 1
 
-.set mii_packet_get_and_clear_forwarding.locnointerfaceaccess, 1
+.set _mii_packet_get_and_clear_forwarding.locnointerfaceaccess, 1
 
-.set mii_packet_get_and_clear_forwarding.locnonotificationselect, 1
+.set _mii_packet_get_and_clear_forwarding.locnonotificationselect, 1
 
-.set init_ts_queue.locnoside, 1
+.set _init_ts_queue.locnoside, 1
 
-.set init_ts_queue.locnochandec, 1
+.set _init_ts_queue.locnochandec, 1
 
-.set init_ts_queue.locnoglobalaccess, 1
+.set _init_ts_queue.locnoglobalaccess, 1
 
-.set init_ts_queue.locnointerfaceaccess, 1
+.set _init_ts_queue.locnointerfaceaccess, 1
 
-.set init_ts_queue.locnonotificationselect, 1
+.set _init_ts_queue.locnonotificationselect, 1
 
-.set get_ts_queue_entry.locnoside, 1
+.set _get_ts_queue_entry.locnoside, 1
 
-.set get_ts_queue_entry.locnochandec, 1
+.set _get_ts_queue_entry.locnochandec, 1
 
-.set get_ts_queue_entry.locnoglobalaccess, 1
+.set _get_ts_queue_entry.locnoglobalaccess, 1
 
-.set get_ts_queue_entry.locnointerfaceaccess, 1
+.set _get_ts_queue_entry.locnointerfaceaccess, 1
 
-.set get_ts_queue_entry.locnonotificationselect, 1
+.set _get_ts_queue_entry.locnonotificationselect, 1
 
-.set add_ts_queue_entry.locnoside, 1
+.set _add_ts_queue_entry.locnoside, 1
 
-.set add_ts_queue_entry.locnochandec, 1
+.set _add_ts_queue_entry.locnochandec, 1
 
-.set add_ts_queue_entry.locnoglobalaccess, 1
+.set _add_ts_queue_entry.locnoglobalaccess, 1
 
-.set add_ts_queue_entry.locnointerfaceaccess, 1
+.set _add_ts_queue_entry.locnointerfaceaccess, 1
 
-.set add_ts_queue_entry.locnonotificationselect, 1
+.set _add_ts_queue_entry.locnonotificationselect, 1
 
 
 	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.c"
@@ -74,184 +74,184 @@
 .Ltext_begin:
 	.section	.dp.data,"awd",@progbits
 	.text
-	.cc_top get_and_dec_transmit_count.function
-	.globl	get_and_dec_transmit_count
+	.cc_top _get_and_dec_transmit_count.function
+	.globl	_get_and_dec_transmit_count
 	.align	2
-	.type	get_and_dec_transmit_count,@function
-get_and_dec_transmit_count:
+	.type	_get_and_dec_transmit_count,@function
+_get_and_dec_transmit_count:
 .Ltmp0:
 	.cfi_startproc
 .Lfunc_begin0:
-	.loc	1 25 0
+	.loc	1 24 0
 	mov r1, r0
 .Ltmp1:
-	.loc	1 31 0 prologue_end
-	ldw r0, dp[ethernet_memory_lock]
+	.loc	1 30 0 prologue_end
+	ldw r0, dp[_ethernet_memory_lock]
 .Ltmp2:
 	.loc	2 62 0
 	#APP
 	in r0, res[r0]
 	#NO_APP
 .Ltmp3:
-	.loc	1 33 0
+	.loc	1 32 0
 	ldw r0, r1[6]
 .Ltmp4:
-	.loc	1 34 0
+	.loc	1 33 0
 	bf r0, .LBB0_2
 .Ltmp5:
-	.loc	1 35 0
+	.loc	1 34 0
 	sub r2, r0, 1
 	stw r2, r1[6]
 .Ltmp6:
 .LBB0_2:
-	.loc	1 39 0
-	ldw r1, dp[ethernet_memory_lock]
+	.loc	1 38 0
+	ldw r1, dp[_ethernet_memory_lock]
 .Ltmp7:
 	.loc	2 77 0
 	#APP
 	out res[r1], r1
 	#NO_APP
 .Ltmp8:
-	.loc	1 41 0
+	.loc	1 40 0
 	retsp 0
 .Ltmp9:
 .Ltmp10:
-	.size	get_and_dec_transmit_count, .Ltmp10-get_and_dec_transmit_count
+	.size	_get_and_dec_transmit_count, .Ltmp10-_get_and_dec_transmit_count
 .Lfunc_end0:
 	.file	3 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
 .Ltmp11:
 	.cfi_endproc
 .Leh_func_end0:
 
-	.cc_bottom get_and_dec_transmit_count.function
-	.set	get_and_dec_transmit_count.nstackwords,0
-	.globl	get_and_dec_transmit_count.nstackwords
-	.set	get_and_dec_transmit_count.maxcores,1
-	.globl	get_and_dec_transmit_count.maxcores
-	.set	get_and_dec_transmit_count.maxtimers,0
-	.globl	get_and_dec_transmit_count.maxtimers
-	.set	get_and_dec_transmit_count.maxchanends,0
-	.globl	get_and_dec_transmit_count.maxchanends
-	.cc_top mii_packet_get_and_clear_forwarding.function
-	.globl	mii_packet_get_and_clear_forwarding
+	.cc_bottom _get_and_dec_transmit_count.function
+	.set	_get_and_dec_transmit_count.nstackwords,0
+	.globl	_get_and_dec_transmit_count.nstackwords
+	.set	_get_and_dec_transmit_count.maxcores,1
+	.globl	_get_and_dec_transmit_count.maxcores
+	.set	_get_and_dec_transmit_count.maxtimers,0
+	.globl	_get_and_dec_transmit_count.maxtimers
+	.set	_get_and_dec_transmit_count.maxchanends,0
+	.globl	_get_and_dec_transmit_count.maxchanends
+	.cc_top _mii_packet_get_and_clear_forwarding.function
+	.globl	_mii_packet_get_and_clear_forwarding
 	.align	2
-	.type	mii_packet_get_and_clear_forwarding,@function
-mii_packet_get_and_clear_forwarding:
+	.type	_mii_packet_get_and_clear_forwarding,@function
+_mii_packet_get_and_clear_forwarding:
 .Ltmp12:
 	.cfi_startproc
 .Lfunc_begin1:
-	.loc	1 49 0
+	.loc	1 48 0
 	mkmsk r2, 1
-	.loc	1 51 0 prologue_end
+	.loc	1 50 0 prologue_end
 .Ltmp13:
 	shl r2, r2, r1
 .Ltmp14:
-	.loc	1 52 0
+	.loc	1 51 0
 	ldw r1, r0[8]
 .Ltmp15:
 	and r1, r1, r2
 .Ltmp16:
-	.loc	1 57 0
-	ldw r3, dp[ethernet_memory_lock]
+	.loc	1 56 0
+	ldw r3, dp[_ethernet_memory_lock]
 .Ltmp17:
 	.loc	2 62 0
 	#APP
 	in r3, res[r3]
 	#NO_APP
 .Ltmp18:
-	.loc	1 60 0
+	.loc	1 59 0
 	ldw r3, r0[8]
 .Ltmp19:
 	andnot r3, r2
 	stw r3, r0[8]
-	.loc	1 65 0
-	ldw r0, dp[ethernet_memory_lock]
+	.loc	1 64 0
+	ldw r0, dp[_ethernet_memory_lock]
 .Ltmp20:
 	.loc	2 77 0
 	#APP
 	out res[r0], r0
 	#NO_APP
 .Ltmp21:
-	.loc	1 67 0
+	.loc	1 66 0
 	mov r0, r1
 .Ltmp22:
 	retsp 0
 .Ltmp23:
 .Ltmp24:
-	.size	mii_packet_get_and_clear_forwarding, .Ltmp24-mii_packet_get_and_clear_forwarding
+	.size	_mii_packet_get_and_clear_forwarding, .Ltmp24-_mii_packet_get_and_clear_forwarding
 .Lfunc_end1:
 .Ltmp25:
 	.cfi_endproc
 .Leh_func_end1:
 
-	.cc_bottom mii_packet_get_and_clear_forwarding.function
-	.set	mii_packet_get_and_clear_forwarding.nstackwords,0
-	.globl	mii_packet_get_and_clear_forwarding.nstackwords
-	.set	mii_packet_get_and_clear_forwarding.maxcores,1
-	.globl	mii_packet_get_and_clear_forwarding.maxcores
-	.set	mii_packet_get_and_clear_forwarding.maxtimers,0
-	.globl	mii_packet_get_and_clear_forwarding.maxtimers
-	.set	mii_packet_get_and_clear_forwarding.maxchanends,0
-	.globl	mii_packet_get_and_clear_forwarding.maxchanends
-	.cc_top init_ts_queue.function
-	.globl	init_ts_queue
+	.cc_bottom _mii_packet_get_and_clear_forwarding.function
+	.set	_mii_packet_get_and_clear_forwarding.nstackwords,0
+	.globl	_mii_packet_get_and_clear_forwarding.nstackwords
+	.set	_mii_packet_get_and_clear_forwarding.maxcores,1
+	.globl	_mii_packet_get_and_clear_forwarding.maxcores
+	.set	_mii_packet_get_and_clear_forwarding.maxtimers,0
+	.globl	_mii_packet_get_and_clear_forwarding.maxtimers
+	.set	_mii_packet_get_and_clear_forwarding.maxchanends,0
+	.globl	_mii_packet_get_and_clear_forwarding.maxchanends
+	.cc_top _init_ts_queue.function
+	.globl	_init_ts_queue
 	.align	2
-	.type	init_ts_queue,@function
-init_ts_queue:
+	.type	_init_ts_queue,@function
+_init_ts_queue:
 .Ltmp26:
 	.cfi_startproc
 .Lfunc_begin2:
-	.loc	1 76 0
+	.loc	1 75 0
 	ldc r1, 0
-	.loc	1 84 0 prologue_end
+	.loc	1 83 0 prologue_end
 .Ltmp27:
 	stw r1, r0[1]
-	.loc	1 85 0
+	.loc	1 84 0
 	stw r1, r0[2]
-	.loc	1 86 0
+	.loc	1 85 0
 	retsp 0
 .Ltmp28:
 .Ltmp29:
-	.size	init_ts_queue, .Ltmp29-init_ts_queue
+	.size	_init_ts_queue, .Ltmp29-_init_ts_queue
 .Lfunc_end2:
 	.file	4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.h"
 .Ltmp30:
 	.cfi_endproc
 .Leh_func_end2:
 
-	.cc_bottom init_ts_queue.function
-	.set	init_ts_queue.nstackwords,0
-	.globl	init_ts_queue.nstackwords
-	.set	init_ts_queue.maxcores,1
-	.globl	init_ts_queue.maxcores
-	.set	init_ts_queue.maxtimers,0
-	.globl	init_ts_queue.maxtimers
-	.set	init_ts_queue.maxchanends,0
-	.globl	init_ts_queue.maxchanends
-	.cc_top get_ts_queue_entry.function
-	.globl	get_ts_queue_entry
+	.cc_bottom _init_ts_queue.function
+	.set	_init_ts_queue.nstackwords,0
+	.globl	_init_ts_queue.nstackwords
+	.set	_init_ts_queue.maxcores,1
+	.globl	_init_ts_queue.maxcores
+	.set	_init_ts_queue.maxtimers,0
+	.globl	_init_ts_queue.maxtimers
+	.set	_init_ts_queue.maxchanends,0
+	.globl	_init_ts_queue.maxchanends
+	.cc_top _get_ts_queue_entry.function
+	.globl	_get_ts_queue_entry
 	.align	2
-	.type	get_ts_queue_entry,@function
-get_ts_queue_entry:
+	.type	_get_ts_queue_entry,@function
+_get_ts_queue_entry:
 .Ltmp31:
 	.cfi_startproc
 .Lfunc_begin3:
-	.loc	1 90 0
-	.loc	1 97 0 prologue_end
-	ldw r1, dp[ethernet_memory_lock]
+	.loc	1 89 0
+	.loc	1 96 0 prologue_end
+	ldw r1, dp[_ethernet_memory_lock]
 .Ltmp32:
 	.loc	2 62 0
 	#APP
 	in r1, res[r1]
 	#NO_APP
 .Ltmp33:
-	.loc	1 101 0
+	.loc	1 100 0
 	ldw r2, r0[2]
 .Ltmp34:
-	.loc	1 100 0
+	.loc	1 99 0
 	ldw r1, r0[1]
 .Ltmp35:
-	.loc	1 103 0
+	.loc	1 102 0
 	eq r2, r1, r2
 .Ltmp36:
 	bf r2, .LBB3_2
@@ -260,10 +260,10 @@ get_ts_queue_entry:
 	bu .LBB3_6
 .LBB3_2:
 .Ltmp38:
-	.loc	1 107 0
+	.loc	1 106 0
 	add r2, r1, 1
 .Ltmp39:
-	.loc	1 108 0
+	.loc	1 107 0
 	eq r3, r2, 6
 	bf r3, .LBB3_4
 	ldc r3, 0
@@ -274,67 +274,67 @@ get_ts_queue_entry:
 .Ltmp40:
 	and r2, r3, r2
 .Ltmp41:
-	.loc	1 106 0
+	.loc	1 105 0
 	ldaw r1, r0[r1]
 	ldw r1, r1[3]
 .Ltmp42:
-	.loc	1 109 0
+	.loc	1 108 0
 	stw r2, r0[1]
 .Ltmp43:
 .LBB3_6:
-	.loc	1 114 0
-	ldw r0, dp[ethernet_memory_lock]
+	.loc	1 113 0
+	ldw r0, dp[_ethernet_memory_lock]
 .Ltmp44:
 	.loc	2 77 0
 	#APP
 	out res[r0], r0
 	#NO_APP
 .Ltmp45:
-	.loc	1 116 0
+	.loc	1 115 0
 	mov r0, r1
 .Ltmp46:
 	retsp 0
 .Ltmp47:
 .Ltmp48:
-	.size	get_ts_queue_entry, .Ltmp48-get_ts_queue_entry
+	.size	_get_ts_queue_entry, .Ltmp48-_get_ts_queue_entry
 .Lfunc_end3:
 .Ltmp49:
 	.cfi_endproc
 .Leh_func_end3:
 
-	.cc_bottom get_ts_queue_entry.function
-	.set	get_ts_queue_entry.nstackwords,0
-	.globl	get_ts_queue_entry.nstackwords
-	.set	get_ts_queue_entry.maxcores,1
-	.globl	get_ts_queue_entry.maxcores
-	.set	get_ts_queue_entry.maxtimers,0
-	.globl	get_ts_queue_entry.maxtimers
-	.set	get_ts_queue_entry.maxchanends,0
-	.globl	get_ts_queue_entry.maxchanends
-	.cc_top add_ts_queue_entry.function
-	.globl	add_ts_queue_entry
+	.cc_bottom _get_ts_queue_entry.function
+	.set	_get_ts_queue_entry.nstackwords,0
+	.globl	_get_ts_queue_entry.nstackwords
+	.set	_get_ts_queue_entry.maxcores,1
+	.globl	_get_ts_queue_entry.maxcores
+	.set	_get_ts_queue_entry.maxtimers,0
+	.globl	_get_ts_queue_entry.maxtimers
+	.set	_get_ts_queue_entry.maxchanends,0
+	.globl	_get_ts_queue_entry.maxchanends
+	.cc_top _add_ts_queue_entry.function
+	.globl	_add_ts_queue_entry
 	.align	2
-	.type	add_ts_queue_entry,@function
-add_ts_queue_entry:
+	.type	_add_ts_queue_entry,@function
+_add_ts_queue_entry:
 .Ltmp50:
 	.cfi_startproc
 .Lfunc_begin4:
-	.loc	1 120 0
-	.loc	1 126 0 prologue_end
-	ldw r2, dp[ethernet_memory_lock]
+	.loc	1 119 0
+	.loc	1 125 0 prologue_end
+	ldw r2, dp[_ethernet_memory_lock]
 .Ltmp51:
 	.loc	2 62 0
 	#APP
 	in r2, res[r2]
 	#NO_APP
 .Ltmp52:
-	.loc	1 129 0
+	.loc	1 128 0
 	ldw r2, r0[2]
 .Ltmp53:
-	.loc	1 131 0
+	.loc	1 130 0
 	add r3, r2, 1
 .Ltmp54:
-	.loc	1 132 0
+	.loc	1 131 0
 	eq r11, r3, 6
 	bf r11, .LBB4_2
 	ldc r11, 0
@@ -345,38 +345,38 @@ add_ts_queue_entry:
 .Ltmp55:
 	and r3, r11, r3
 .Ltmp56:
-	.loc	1 130 0
+	.loc	1 129 0
 	ldaw r2, r0[r2]
 	stw r1, r2[3]
-	.loc	1 133 0
+	.loc	1 132 0
 	stw r3, r0[2]
-	.loc	1 138 0
-	ldw r0, dp[ethernet_memory_lock]
+	.loc	1 137 0
+	ldw r0, dp[_ethernet_memory_lock]
 .Ltmp57:
 	.loc	2 77 0
 	#APP
 	out res[r0], r0
 	#NO_APP
 .Ltmp58:
-	.loc	1 140 0
+	.loc	1 139 0
 	retsp 0
 .Ltmp59:
 .Ltmp60:
-	.size	add_ts_queue_entry, .Ltmp60-add_ts_queue_entry
+	.size	_add_ts_queue_entry, .Ltmp60-_add_ts_queue_entry
 .Lfunc_end4:
 .Ltmp61:
 	.cfi_endproc
 .Leh_func_end4:
 
-	.cc_bottom add_ts_queue_entry.function
-	.set	add_ts_queue_entry.nstackwords,0
-	.globl	add_ts_queue_entry.nstackwords
-	.set	add_ts_queue_entry.maxcores,1
-	.globl	add_ts_queue_entry.maxcores
-	.set	add_ts_queue_entry.maxtimers,0
-	.globl	add_ts_queue_entry.maxtimers
-	.set	add_ts_queue_entry.maxchanends,0
-	.globl	add_ts_queue_entry.maxchanends
+	.cc_bottom _add_ts_queue_entry.function
+	.set	_add_ts_queue_entry.nstackwords,0
+	.globl	_add_ts_queue_entry.nstackwords
+	.set	_add_ts_queue_entry.maxcores,1
+	.globl	_add_ts_queue_entry.maxcores
+	.set	_add_ts_queue_entry.maxtimers,0
+	.globl	_add_ts_queue_entry.maxtimers
+	.set	_add_ts_queue_entry.maxchanends,0
+	.globl	_add_ts_queue_entry.maxchanends
 	.cfi_sections .debug_frame
 .Ltext_end:
 	.section	.dp.data,"awd",@progbits
@@ -385,7 +385,7 @@ add_ts_queue_entry:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	1332
+	.long	1342
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -401,14 +401,14 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	2
-	.ascii	 "get_and_dec_transmit_count"
+	.ascii	 "_get_and_dec_transmit_count"
 	.byte	0
-	.ascii	 "get_and_dec_transmit_count"
+	.ascii	 "_get_and_dec_transmit_count"
 	.byte	0
 	.byte	1
-	.byte	25
+	.byte	24
 	.byte	1
-	.long	372
+	.long	374
 	.byte	1
 	.long	.Lfunc_begin0
 	.long	.Lfunc_end0
@@ -420,7 +420,7 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	24
-	.long	372
+	.long	374
 	.long	.Ldebug_loc0+0
 	.byte	4
 	.long	.Ltmp1
@@ -429,15 +429,15 @@ add_ts_queue_entry:
 	.ascii	 "buf"
 	.byte	0
 	.byte	1
-	.byte	26
-	.long	1199
+	.byte	25
+	.long	1209
 	.long	.Ldebug_loc4+0
 	.byte	5
 	.ascii	 "count"
 	.byte	0
 	.byte	1
-	.byte	27
-	.long	372
+	.byte	26
+	.long	374
 	.long	.Ldebug_loc7+0
 	.byte	0
 	.byte	0
@@ -465,14 +465,14 @@ add_ts_queue_entry:
 	.byte	1
 	.byte	1
 	.byte	2
-	.ascii	 "mii_packet_get_and_clear_forwarding"
+	.ascii	 "_mii_packet_get_and_clear_forwarding"
 	.byte	0
-	.ascii	 "mii_packet_get_and_clear_forwarding"
+	.ascii	 "_mii_packet_get_and_clear_forwarding"
 	.byte	0
 	.byte	1
-	.byte	49
+	.byte	48
 	.byte	1
-	.long	372
+	.long	374
 	.byte	1
 	.long	.Lfunc_begin1
 	.long	.Lfunc_end1
@@ -483,15 +483,15 @@ add_ts_queue_entry:
 	.ascii	 "buf0"
 	.byte	0
 	.byte	1
-	.byte	48
-	.long	372
+	.byte	47
+	.long	374
 	.long	.Ldebug_loc10+0
 	.byte	3
 	.ascii	 "ifnum"
 	.byte	0
 	.byte	1
-	.byte	48
-	.long	372
+	.byte	47
+	.long	374
 	.long	.Ldebug_loc12+0
 	.byte	4
 	.long	.Ltmp13
@@ -500,32 +500,32 @@ add_ts_queue_entry:
 	.ascii	 "buf"
 	.byte	0
 	.byte	1
-	.byte	50
-	.long	1199
+	.byte	49
+	.long	1209
 	.long	.Ldebug_loc14+0
 	.byte	5
 	.ascii	 "mask"
 	.byte	0
 	.byte	1
-	.byte	51
-	.long	372
+	.byte	50
+	.long	374
 	.long	.Ldebug_loc16+0
 	.byte	5
 	.ascii	 "ret"
 	.byte	0
 	.byte	1
-	.byte	52
-	.long	372
+	.byte	51
+	.long	374
 	.long	.Ldebug_loc18+0
 	.byte	0
 	.byte	0
 	.byte	8
-	.ascii	 "init_ts_queue"
+	.ascii	 "_init_ts_queue"
 	.byte	0
-	.ascii	 "init_ts_queue"
+	.ascii	 "_init_ts_queue"
 	.byte	0
 	.byte	1
-	.byte	76
+	.byte	75
 	.byte	1
 	.byte	1
 	.long	.Lfunc_begin2
@@ -537,19 +537,19 @@ add_ts_queue_entry:
 	.byte	113
 	.byte	0
 	.byte	1
-	.byte	75
-	.long	1329
+	.byte	74
+	.long	1339
 	.long	.Ldebug_loc20+0
 	.byte	0
 	.byte	2
-	.ascii	 "get_ts_queue_entry"
+	.ascii	 "_get_ts_queue_entry"
 	.byte	0
-	.ascii	 "get_ts_queue_entry"
+	.ascii	 "_get_ts_queue_entry"
 	.byte	0
 	.byte	1
-	.byte	90
+	.byte	89
 	.byte	1
-	.long	372
+	.long	374
 	.byte	1
 	.long	.Lfunc_begin3
 	.long	.Lfunc_end3
@@ -560,8 +560,8 @@ add_ts_queue_entry:
 	.byte	113
 	.byte	0
 	.byte	1
-	.byte	89
-	.long	1329
+	.byte	88
+	.long	1339
 	.long	.Ldebug_loc22+0
 	.byte	4
 	.long	.Lfunc_begin3
@@ -570,32 +570,32 @@ add_ts_queue_entry:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	91
-	.long	372
+	.byte	90
+	.long	374
 	.long	.Ldebug_loc26+0
 	.byte	5
 	.ascii	 "wrIndex"
 	.byte	0
 	.byte	1
-	.byte	92
-	.long	372
+	.byte	91
+	.long	374
 	.long	.Ldebug_loc30+0
 	.byte	5
 	.ascii	 "rdIndex"
 	.byte	0
 	.byte	1
-	.byte	92
-	.long	372
+	.byte	91
+	.long	374
 	.long	.Ldebug_loc32+0
 	.byte	0
 	.byte	0
 	.byte	8
-	.ascii	 "add_ts_queue_entry"
+	.ascii	 "_add_ts_queue_entry"
 	.byte	0
-	.ascii	 "add_ts_queue_entry"
+	.ascii	 "_add_ts_queue_entry"
 	.byte	0
 	.byte	1
-	.byte	120
+	.byte	119
 	.byte	1
 	.byte	1
 	.long	.Lfunc_begin4
@@ -607,15 +607,15 @@ add_ts_queue_entry:
 	.byte	113
 	.byte	0
 	.byte	1
-	.byte	119
-	.long	1329
+	.byte	118
+	.long	1339
 	.long	.Ldebug_loc37+0
 	.byte	3
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	119
-	.long	372
+	.byte	118
+	.long	374
 	.long	.Ldebug_loc40+0
 	.byte	4
 	.long	.Lfunc_begin4
@@ -624,8 +624,8 @@ add_ts_queue_entry:
 	.ascii	 "wrIndex"
 	.byte	0
 	.byte	1
-	.byte	121
-	.long	372
+	.byte	120
+	.long	374
 	.long	.Ldebug_loc43+0
 	.byte	0
 	.byte	0
@@ -638,9 +638,9 @@ add_ts_queue_entry:
 	.byte	4
 	.byte	5
 	.byte	10
-	.long	932
+	.long	942
 	.byte	11
-	.long	948
+	.long	958
 	.short	379
 	.byte	0
 	.byte	12
@@ -652,7 +652,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "length"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	3
 	.byte	88
 	.byte	2
@@ -662,7 +662,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "timestamp"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	3
 	.byte	90
 	.byte	2
@@ -672,7 +672,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "filter_result"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	3
 	.byte	92
 	.byte	2
@@ -682,7 +682,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "src_port"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	3
 	.byte	94
 	.byte	2
@@ -692,7 +692,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "timestamp_id"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	3
 	.byte	96
 	.byte	2
@@ -702,7 +702,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "stage"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	3
 	.byte	98
 	.byte	2
@@ -712,7 +712,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "tcount"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	3
 	.byte	100
 	.byte	2
@@ -722,7 +722,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "crc"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	3
 	.byte	102
 	.byte	2
@@ -732,7 +732,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "forwarding"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	3
 	.byte	104
 	.byte	2
@@ -742,7 +742,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "data"
 	.byte	0
-	.long	951
+	.long	961
 	.byte	3
 	.byte	106
 	.byte	2
@@ -751,18 +751,18 @@ add_ts_queue_entry:
 	.byte	1
 	.byte	0
 	.byte	14
-	.long	964
+	.long	974
 	.ascii	 "mii_packet_t"
 	.byte	0
 	.byte	2
 	.byte	14
 	.byte	15
-	.long	1179
+	.long	1189
 	.byte	4
 	.byte	10
-	.long	932
+	.long	942
 	.byte	16
-	.long	948
+	.long	958
 	.byte	5
 	.byte	0
 	.byte	17
@@ -774,7 +774,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "lock"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	4
 	.byte	27
 	.byte	2
@@ -784,7 +784,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "rdIndex"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	4
 	.byte	28
 	.byte	2
@@ -794,7 +794,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "wrIndex"
 	.byte	0
-	.long	372
+	.long	374
 	.byte	4
 	.byte	29
 	.byte	2
@@ -804,7 +804,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "fifo"
 	.byte	0
-	.long	1205
+	.long	1215
 	.byte	4
 	.byte	30
 	.byte	2
@@ -813,13 +813,13 @@ add_ts_queue_entry:
 	.byte	1
 	.byte	0
 	.byte	14
-	.long	1217
+	.long	1227
 	.ascii	 "mii_ts_queue_t"
 	.byte	0
 	.byte	3
 	.byte	86
 	.byte	15
-	.long	1307
+	.long	1317
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -1072,20 +1072,20 @@ add_ts_queue_entry:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	379
+	.long	381
 .asciiz "hwlock_acquire"
-	.long	822
-.asciiz "add_ts_queue_entry"
+	.long	830
+.asciiz "_add_ts_queue_entry"
 	.long	239
-.asciiz "get_and_dec_transmit_count"
-	.long	414
+.asciiz "_get_and_dec_transmit_count"
+	.long	416
 .asciiz "hwlock_release"
-	.long	689
-.asciiz "get_ts_queue_entry"
-	.long	631
-.asciiz "init_ts_queue"
-	.long	449
-.asciiz "mii_packet_get_and_clear_forwarding"
+	.long	695
+.asciiz "_get_ts_queue_entry"
+	.long	635
+.asciiz "_init_ts_queue"
+	.long	451
+.asciiz "_mii_packet_get_and_clear_forwarding"
 	.long	0
 .Lpubnames_end1:
 	.section	.debug_pubtypes,"",@progbits
@@ -1096,9 +1096,9 @@ add_ts_queue_entry:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	964
+	.long	974
 .asciiz "mii_packet_t"
-	.long	1217
+	.long	1227
 .asciiz "mii_ts_queue_t"
 	.long	0
 .Lpubtypes_end1:
@@ -1319,10 +1319,10 @@ add_ts_queue_entry:
 	.section	.debug_ranges,"",@progbits
 	.section	.debug_macinfo,"",@progbits
 
-	.typestring get_and_dec_transmit_count, "f{si}(si)"
-	.typestring mii_packet_get_and_clear_forwarding, "f{si}(si,si)"
-	.typestring init_ts_queue, "f{0}(p(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}))"
-	.typestring get_ts_queue_entry, "f{si}(p(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}))"
-	.typestring add_ts_queue_entry, "f{0}(p(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}),si)"
-	.typestring ethernet_memory_lock, "ui"
+	.typestring _get_and_dec_transmit_count, "f{si}(si)"
+	.typestring _mii_packet_get_and_clear_forwarding, "f{si}(si,si)"
+	.typestring _init_ts_queue, "f{0}(p(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}))"
+	.typestring _get_ts_queue_entry, "f{si}(p(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}))"
+	.typestring _add_ts_queue_entry, "f{0}(p(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}),si)"
+	.typestring _ethernet_memory_lock, "ui"
 	.ident	"GCC: (GNU) 4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"

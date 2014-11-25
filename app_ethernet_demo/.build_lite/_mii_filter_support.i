@@ -224,24 +224,24 @@ typedef struct mii_ts_queue_t {
 
 
 
-void init_ts_queue(mii_ts_queue_t *q);
+void _init_ts_queue(mii_ts_queue_t *q);
 
 
-int get_ts_queue_entry(mii_ts_queue_t *q);
+int _get_ts_queue_entry(mii_ts_queue_t *q);
 
 
-void add_ts_queue_entry(mii_ts_queue_t *q, int i);
-
-
-
+void _add_ts_queue_entry(mii_ts_queue_t *q, int i);
 
 
 
 
-int get_and_dec_transmit_count(int buf_num);
 
 
-int mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
+
+int _get_and_dec_transmit_count(int buf_num);
+
+
+int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 # 80 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h" 2
 
 
@@ -309,7 +309,7 @@ inline void mii_packet_set_data_byte(int buf, int n, int v) {
   __asm__("st8 %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+(9*4)));
 }
 # 193 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
-void mii_rx_pins(
+void _mii_rx_pins(
 
 
 
@@ -319,7 +319,7 @@ void mii_rx_pins(
    int ifnum,
    chanend c);
 # 220 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
-void mii_tx_pins(
+void _mii_tx_pins(
 # 230 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t *ts_queue,
@@ -350,14 +350,14 @@ mii_buffer_t mii_reserve_at_least(mii_mempool_t mempool,
 
 void mii_commit(mii_buffer_t buf, int endptr0);
 
-void mii_free(mii_buffer_t buf);
-int mii_init_my_rdptr(mii_mempool_t mempool);
-int mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0);
-mii_buffer_t mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0);
-mii_buffer_t mii_get_next_buf(mii_mempool_t mempool);
-int mii_get_wrap_ptr(mii_mempool_t mempool);
-unsigned mii_packet_get_data(int buf, int n);
-int mii_packet_get_wrap_ptr(int buf);
+void _mii_free(mii_buffer_t buf);
+int _mii_init_my_rdptr(mii_mempool_t mempool);
+int _mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0);
+mii_buffer_t _mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0);
+mii_buffer_t _mii_get_next_buf(mii_mempool_t mempool);
+int _mii_get_wrap_ptr(mii_mempool_t mempool);
+unsigned _mii_packet_get_data(int buf, int n);
+int _mii_packet_get_wrap_ptr(int buf);
 # 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_filter_support.c" 2
 
 int _mac_custom_filter_coerce1(unsigned int buf[]);

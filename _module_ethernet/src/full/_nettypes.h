@@ -28,23 +28,23 @@ typedef struct { unsigned char data[10]; } n80_t;
 typedef struct { unsigned char data[12]; } n96_t;
 
 
-inline n16_t hton16(u16_t x) {
+inline n16_t _hton16(u16_t x) {
   n16_t ret;
   ret.data[0] = x >> 8;
   ret.data[1] = (x & 0xff);
   return ret;
 }
 
-inline u16_t ntoh16(n16_t x) {
+inline u16_t _ntoh16(n16_t x) {
   return ((x.data[0] << 8) | x.data[1]);
 }
 
-inline u32_t ntoh32(n32_t x) {
+inline u32_t _ntoh32(n32_t x) {
   return ((x.data[0] << 24) | x.data[1] << 16 | x.data[2] << 8 | x.data[1]);
 }
 
 #ifndef __XC__
-inline u64_t ntoh64(n64_t x) {
+inline u64_t _ntoh64(n64_t x) {
   long long ret=0;
   for (int i=0;i<8;i++)
     ret = (ret << 8) + x.data[i];
@@ -53,7 +53,7 @@ inline u64_t ntoh64(n64_t x) {
 #endif
 
 
-inline n32_t hton32(u32_t x) {
+inline n32_t _hton32(u32_t x) {
   n32_t ret;
 
   ret.data[0] = ((x >> 24) & 0xff);
@@ -63,7 +63,7 @@ inline n32_t hton32(u32_t x) {
   return ret;
 }
 
-inline n80_t hton80(u80_t x) {
+inline n80_t _hton80(u80_t x) {
   n80_t ret;
   for (int i=0;i<10;i++) 
     ret.data[i] = x.data[9-i];

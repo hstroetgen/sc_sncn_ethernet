@@ -406,28 +406,28 @@ typedef struct mii_ts_queue_t {
 
 
 
-void init_ts_queue( mii_ts_queue_t &q );
+void _init_ts_queue( mii_ts_queue_t &q );
 
 
-int get_ts_queue_entry( mii_ts_queue_t &q );
+int _get_ts_queue_entry( mii_ts_queue_t &q );
 
 
-void add_ts_queue_entry( mii_ts_queue_t &q , int i);
-
-
-
+void _add_ts_queue_entry( mii_ts_queue_t &q , int i);
 
 
 
 
-int get_and_dec_transmit_count(int buf_num);
 
 
-int mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
+
+int _get_and_dec_transmit_count(int buf_num);
+
+
+int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 # 80 "_mii_full.h" 2
 
 
-void mii_init_full( mii_interface_full_t &m );
+void _mii_init_full( mii_interface_full_t &m );
 
 
 
@@ -492,7 +492,7 @@ inline void mii_packet_set_data_byte(int buf, int n, int v) {
 }
 
 
-void mii_rx_pins(
+void _mii_rx_pins(
 # 187 "_mii_full.h"
 		 unsigned rxmem_lp,
 		 in port p_mii_rxdv,
@@ -500,7 +500,7 @@ void mii_rx_pins(
 		 int ifnum,
 		 streaming chanend c);
 # 205 "_mii_full.h"
-void mii_tx_pins(
+void _mii_tx_pins(
 # 215 "_mii_full.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t &ts_queue,

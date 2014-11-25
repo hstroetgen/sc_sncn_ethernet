@@ -104,7 +104,7 @@ void handle_tx_cmd(const char mac_addr[],
 
 }
 
-void ethernet_tx_server_no_buffer(const char mac_addr[],
+void _ethernet_tx_server_no_buffer(const char mac_addr[],
                                   chanend tx[],
                                   int num_tx,
                                   out buffered port:32 p_mii_txd,
@@ -142,7 +142,7 @@ void ethernet_tx_server_no_buffer(const char mac_addr[],
 #endif
 
 #pragma unsafe arrays
-    void ethernet_tx_server(
+    void _ethernet_tx_server(
 #if ETHERNET_TX_HP_QUEUE
                         mii_mempool_t tx_mem_hp[],
 #endif
@@ -225,7 +225,7 @@ void ethernet_tx_server_no_buffer(const char mac_addr[],
               buf[p] = mii_reserve_at_least(tx_mem_lp[p],
                                                      end_ptr[p],
                                                          MII_MALLOC_FULL_PACKET_SIZE_LP);
-              wrap_ptr[p] = mii_get_wrap_ptr(tx_mem_lp[p]);
+              wrap_ptr[p] = _mii_get_wrap_ptr(tx_mem_lp[p]);
 #endif
         	  if (buf[p] == 0)
                     bufs_ok=0;
@@ -376,13 +376,13 @@ void ethernet_tx_server_no_buffer(const char mac_addr[],
 
     // Reply with timestamps where client is requesting them
     for (unsigned p=0; p<NUM_ETHERNET_PORTS; ++p) {
-    	buf[p]=get_ts_queue_entry(ts_queue[p]);
+    	buf[p]=_get_ts_queue_entry(ts_queue[p]);
     	if (buf[p] != 0) {
     		int i = mii_packet_get_timestamp_id(buf[p]);
     		int ts = mii_packet_get_timestamp(buf[p]);
     		tx[i-1] <: ts + ETHERNET_TX_PHY_TIMER_OFFSET;
-    		if (get_and_dec_transmit_count(buf[p]) == 0)
-    			mii_free(buf[p]);
+    		if (_get_and_dec_transmit_count(buf[p]) == 0)
+    			_mii_free(buf[p]);
     	}
     }
   }

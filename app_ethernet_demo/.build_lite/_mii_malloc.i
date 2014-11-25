@@ -224,24 +224,24 @@ typedef struct mii_ts_queue_t {
 
 
 
-void init_ts_queue(mii_ts_queue_t *q);
+void _init_ts_queue(mii_ts_queue_t *q);
 
 
-int get_ts_queue_entry(mii_ts_queue_t *q);
+int _get_ts_queue_entry(mii_ts_queue_t *q);
 
 
-void add_ts_queue_entry(mii_ts_queue_t *q, int i);
-
-
-
+void _add_ts_queue_entry(mii_ts_queue_t *q, int i);
 
 
 
 
-int get_and_dec_transmit_count(int buf_num);
 
 
-int mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
+
+int _get_and_dec_transmit_count(int buf_num);
+
+
+int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 # 80 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h" 2
 
 
@@ -309,7 +309,7 @@ inline void mii_packet_set_data_byte(int buf, int n, int v) {
   __asm__("st8 %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+(9*4)));
 }
 # 193 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
-void mii_rx_pins(
+void _mii_rx_pins(
 
 
 
@@ -319,7 +319,7 @@ void mii_rx_pins(
    int ifnum,
    chanend c);
 # 220 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
-void mii_tx_pins(
+void _mii_tx_pins(
 # 230 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t *ts_queue,
@@ -468,7 +468,7 @@ typedef unsigned mii_mempool_t;
 typedef unsigned mii_buffer_t;
 
 
-extern hwlock_t ethernet_memory_lock;
+extern hwlock_t _ethernet_memory_lock;
 
 
 typedef struct mempool_info_t {
@@ -504,7 +504,7 @@ void mii_init_mempool(mii_mempool_t mempool0, int size)
   return;
 }
 
-int mii_get_wrap_ptr(mii_mempool_t mempool)
+int _mii_get_wrap_ptr(mii_mempool_t mempool)
 {
   mempool_info_t *info = (mempool_info_t *) mempool;
   return (int) (info->end);
@@ -587,14 +587,14 @@ void mii_commit(mii_buffer_t buf, int endptr0)
   return;
 }
 
-void mii_free(mii_buffer_t buf) {
+void _mii_free(mii_buffer_t buf) {
   malloc_hdr_t *hdr = (malloc_hdr_t *) ((char *) buf - sizeof(malloc_hdr_t));
   mempool_info_t *info = (mempool_info_t *) hdr->info;
 
 
 
 
-  hwlock_acquire(ethernet_memory_lock);
+  hwlock_acquire(_ethernet_memory_lock);
 
 
   while (1) {
@@ -630,19 +630,19 @@ void mii_free(mii_buffer_t buf) {
 
 
 
-  hwlock_release(ethernet_memory_lock);
+  hwlock_release(_ethernet_memory_lock);
 
 }
 
 
-int mii_init_my_rdptr(mii_mempool_t mempool)
+int _mii_init_my_rdptr(mii_mempool_t mempool)
 {
   mempool_info_t *info = (mempool_info_t *) mempool;
   return (int) info->rdptr;
 }
 
 
-int mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0)
+int _mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0)
 {
   int *rdptr = (int *) rdptr0;
   malloc_hdr_t *hdr;
@@ -654,7 +654,7 @@ int mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0)
   return next;
 }
 
-mii_buffer_t mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0)
+mii_buffer_t _mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0)
 {
   mempool_info_t *info = (mempool_info_t *) mempool;
   int *rdptr = (int *) rdptr0;
@@ -666,7 +666,7 @@ mii_buffer_t mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0)
   return (mii_buffer_t) ((char *) rdptr + sizeof(malloc_hdr_t));
 }
 
-mii_buffer_t mii_get_next_buf(mii_mempool_t mempool)
+mii_buffer_t _mii_get_next_buf(mii_mempool_t mempool)
 {
   mempool_info_t *info = (mempool_info_t *) mempool;
   int *rdptr = info->rdptr;
@@ -680,7 +680,7 @@ mii_buffer_t mii_get_next_buf(mii_mempool_t mempool)
 }
 
 
-unsigned mii_packet_get_data(int buf, int n)
+unsigned _mii_packet_get_data(int buf, int n)
 {
   malloc_hdr_t *hdr = (malloc_hdr_t *) (buf - sizeof(malloc_hdr_t));
   mempool_info_t *info = hdr->info;
@@ -692,7 +692,7 @@ unsigned mii_packet_get_data(int buf, int n)
   return *p;
 }
 
-int mii_packet_get_wrap_ptr(int buf)
+int _mii_packet_get_wrap_ptr(int buf)
 {
   malloc_hdr_t *hdr = (malloc_hdr_t *) (buf - sizeof(malloc_hdr_t));
   mempool_info_t *info = hdr->info;

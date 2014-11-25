@@ -398,28 +398,28 @@ typedef struct mii_ts_queue_t {
 
 
 
-void init_ts_queue( mii_ts_queue_t &q );
+void _init_ts_queue( mii_ts_queue_t &q );
 
 
-int get_ts_queue_entry( mii_ts_queue_t &q );
+int _get_ts_queue_entry( mii_ts_queue_t &q );
 
 
-void add_ts_queue_entry( mii_ts_queue_t &q , int i);
-
-
-
+void _add_ts_queue_entry( mii_ts_queue_t &q , int i);
 
 
 
 
-int get_and_dec_transmit_count(int buf_num);
 
 
-int mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
+
+int _get_and_dec_transmit_count(int buf_num);
+
+
+int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 # 80 "_mii_full.h" 2
 
 
-void mii_init_full( mii_interface_full_t &m );
+void _mii_init_full( mii_interface_full_t &m );
 
 
 
@@ -484,7 +484,7 @@ inline void mii_packet_set_data_byte(int buf, int n, int v) {
 }
 
 
-void mii_rx_pins(
+void _mii_rx_pins(
 # 187 "_mii_full.h"
 		 unsigned rxmem_lp,
 		 in port p_mii_rxdv,
@@ -492,7 +492,7 @@ void mii_rx_pins(
 		 int ifnum,
 		 streaming chanend c);
 # 205 "_mii_full.h"
-void mii_tx_pins(
+void _mii_tx_pins(
 # 215 "_mii_full.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t &ts_queue,
@@ -507,9 +507,6 @@ void _ethernet_get_mii_counts( unsigned &dropped );
 # 10 "smi.h" 2
 # 1 "xccompat.h" 1 3
 # 11 "smi.h" 2
-# 13 "smi.h"
-# 1 "ethernet_conf_derived.h" 1
-# 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
 # 18 "smi.h" 2
@@ -591,14 +588,14 @@ mii_buffer_t mii_reserve_at_least(mii_mempool_t mempool,
 
 void mii_commit(mii_buffer_t buf, int endptr0);
 
-void mii_free(mii_buffer_t buf);
-int mii_init_my_rdptr(mii_mempool_t mempool);
-int mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0);
-mii_buffer_t mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0);
-mii_buffer_t mii_get_next_buf(mii_mempool_t mempool);
-int mii_get_wrap_ptr(mii_mempool_t mempool);
-unsigned mii_packet_get_data(int buf, int n);
-int mii_packet_get_wrap_ptr(int buf);
+void _mii_free(mii_buffer_t buf);
+int _mii_init_my_rdptr(mii_mempool_t mempool);
+int _mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0);
+mii_buffer_t _mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0);
+mii_buffer_t _mii_get_next_buf(mii_mempool_t mempool);
+int _mii_get_wrap_ptr(mii_mempool_t mempool);
+unsigned _mii_packet_get_data(int buf, int n);
+int _mii_packet_get_wrap_ptr(int buf);
 # 11 "_mii_filter.h" 2
 
 
@@ -620,7 +617,7 @@ void phy_init(smi_interface_t &smi0,
               mii_interface_full_t &mii0)
 {
   smi_init(smi0);
-  mii_init_full(mii0);
+  _mii_init_full(mii0);
   eth_phy_config(1, smi0);
 }
 
@@ -633,7 +630,7 @@ void _ethernet_server_full(mii_interface_full_t &m,
                           int num_tx)
 {
   streaming chan c[1];
-  mii_init_full(m);
+  _mii_init_full(m);
   init_mii_mem();
   par {
 

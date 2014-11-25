@@ -212,24 +212,24 @@ typedef struct mii_ts_queue_t {
 
 
 
-void init_ts_queue(mii_ts_queue_t *q);
+void _init_ts_queue(mii_ts_queue_t *q);
 
 
-int get_ts_queue_entry(mii_ts_queue_t *q);
+int _get_ts_queue_entry(mii_ts_queue_t *q);
 
 
-void add_ts_queue_entry(mii_ts_queue_t *q, int i);
-
-
-
+void _add_ts_queue_entry(mii_ts_queue_t *q, int i);
 
 
 
 
-int get_and_dec_transmit_count(int buf_num);
 
 
-int mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
+
+int _get_and_dec_transmit_count(int buf_num);
+
+
+int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 # 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.c" 2
 # 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h" 1
 # 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
@@ -311,7 +311,7 @@ inline void mii_packet_set_data_byte(int buf, int n, int v) {
   __asm__("st8 %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+(9*4)));
 }
 # 193 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
-void mii_rx_pins(
+void _mii_rx_pins(
 
 
 
@@ -321,7 +321,7 @@ void mii_rx_pins(
    int ifnum,
    chanend c);
 # 220 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
-void mii_tx_pins(
+void _mii_tx_pins(
 # 230 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t *ts_queue,
@@ -383,17 +383,16 @@ extern mii_packet_t mii_packet_buf[];
 
 
 
-extern hwlock_t ethernet_memory_lock;
+extern hwlock_t _ethernet_memory_lock;
 
 
-int get_and_dec_transmit_count(int buf0)
-{
+int _get_and_dec_transmit_count(int buf0) {
   mii_packet_t *buf = (mii_packet_t *) buf0;
   int count;
 
 
 
-  hwlock_acquire(ethernet_memory_lock);
+  hwlock_acquire(_ethernet_memory_lock);
 
   count = buf->tcount;
   if (count)
@@ -401,7 +400,7 @@ int get_and_dec_transmit_count(int buf0)
 
 
 
-  hwlock_release(ethernet_memory_lock);
+  hwlock_release(_ethernet_memory_lock);
 
   return count;
 }
@@ -410,7 +409,7 @@ int get_and_dec_transmit_count(int buf0)
 
 
 
-int mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
+int _mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
 {
   mii_packet_t *buf = (mii_packet_t *) buf0;
   int mask = (1<<ifnum);
@@ -419,7 +418,7 @@ int mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
 
 
 
-  hwlock_acquire(ethernet_memory_lock);
+  hwlock_acquire(_ethernet_memory_lock);
 
 
   buf->forwarding &= (~mask);
@@ -427,7 +426,7 @@ int mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
 
 
 
-  hwlock_release(ethernet_memory_lock);
+  hwlock_release(_ethernet_memory_lock);
 
   return ret;
 }
@@ -437,7 +436,7 @@ int mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
 
 
 
-void init_ts_queue(mii_ts_queue_t *q)
+void _init_ts_queue(mii_ts_queue_t *q)
 {
 
 
@@ -451,7 +450,7 @@ void init_ts_queue(mii_ts_queue_t *q)
   return;
 }
 
-int get_ts_queue_entry(mii_ts_queue_t *q)
+int _get_ts_queue_entry(mii_ts_queue_t *q)
 {
   int i=0;
   int rdIndex, wrIndex;
@@ -459,7 +458,7 @@ int get_ts_queue_entry(mii_ts_queue_t *q)
 
 
 
-  hwlock_acquire(ethernet_memory_lock);
+  hwlock_acquire(_ethernet_memory_lock);
 
 
   rdIndex = q->rdIndex;
@@ -476,19 +475,19 @@ int get_ts_queue_entry(mii_ts_queue_t *q)
 
 
 
-  hwlock_release(ethernet_memory_lock);
+  hwlock_release(_ethernet_memory_lock);
 
   return i;
 }
 
-void add_ts_queue_entry(mii_ts_queue_t *q, int i)
+void _add_ts_queue_entry(mii_ts_queue_t *q, int i)
 {
   int wrIndex;
 
 
 
 
-  hwlock_acquire(ethernet_memory_lock);
+  hwlock_acquire(_ethernet_memory_lock);
 
 
   wrIndex = q->wrIndex;
@@ -500,7 +499,7 @@ void add_ts_queue_entry(mii_ts_queue_t *q, int i)
 
 
 
-  hwlock_release(ethernet_memory_lock);
+  hwlock_release(_ethernet_memory_lock);
 
   return;
 }

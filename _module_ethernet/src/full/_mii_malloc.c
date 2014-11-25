@@ -15,7 +15,7 @@ typedef unsigned mii_mempool_t;
 typedef unsigned mii_buffer_t;
 
 #ifdef ETHERNET_USE_HARDWARE_LOCKS
-extern hwlock_t ethernet_memory_lock;
+extern hwlock_t _ethernet_memory_lock;
 #endif
 
 typedef struct mempool_info_t {
@@ -51,7 +51,7 @@ void mii_init_mempool(mii_mempool_t mempool0, int size)
   return;
 }
 
-int mii_get_wrap_ptr(mii_mempool_t mempool)
+int _mii_get_wrap_ptr(mii_mempool_t mempool)
 {
   mempool_info_t *info = (mempool_info_t *) mempool;
   return (int) (info->end);
@@ -134,14 +134,14 @@ void mii_commit(mii_buffer_t buf, int endptr0)
   return;
 }
 
-void mii_free(mii_buffer_t buf) {
+void _mii_free(mii_buffer_t buf) {
   malloc_hdr_t *hdr = (malloc_hdr_t *) ((char *) buf - sizeof(malloc_hdr_t));
   mempool_info_t *info = (mempool_info_t *) hdr->info;
 
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   swlock_acquire(&info->lock);
 #else
-  hwlock_acquire(ethernet_memory_lock);
+  hwlock_acquire(_ethernet_memory_lock);
 #endif
 
   while (1) {
@@ -177,19 +177,19 @@ void mii_free(mii_buffer_t buf) {
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   swlock_release(&info->lock);
 #else
-  hwlock_release(ethernet_memory_lock);
+  hwlock_release(_ethernet_memory_lock);
 #endif
 }
 
 
-int mii_init_my_rdptr(mii_mempool_t mempool)
+int _mii_init_my_rdptr(mii_mempool_t mempool)
 {
   mempool_info_t *info = (mempool_info_t *) mempool;
   return (int) info->rdptr;
 }
 
 
-int mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0)
+int _mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0)
 {
   int *rdptr = (int *) rdptr0;
   malloc_hdr_t *hdr;
@@ -208,7 +208,7 @@ int mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0)
   return next;
 }
 
-mii_buffer_t mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0)
+mii_buffer_t _mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0)
 {
   mempool_info_t *info = (mempool_info_t *) mempool;
   int *rdptr = (int *) rdptr0;
@@ -220,7 +220,7 @@ mii_buffer_t mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0)
   return (mii_buffer_t) ((char *) rdptr + sizeof(malloc_hdr_t));
 }
 
-mii_buffer_t mii_get_next_buf(mii_mempool_t mempool)
+mii_buffer_t _mii_get_next_buf(mii_mempool_t mempool)
 {
   mempool_info_t *info = (mempool_info_t *) mempool;
   int *rdptr = info->rdptr;
@@ -234,7 +234,7 @@ mii_buffer_t mii_get_next_buf(mii_mempool_t mempool)
 }
 
 
-unsigned mii_packet_get_data(int buf, int n)
+unsigned _mii_packet_get_data(int buf, int n)
 {
   malloc_hdr_t *hdr = (malloc_hdr_t *) (buf - sizeof(malloc_hdr_t));
   mempool_info_t *info = hdr->info;
@@ -246,7 +246,7 @@ unsigned mii_packet_get_data(int buf, int n)
   return *p;
 }
 
-int mii_packet_get_wrap_ptr(int buf)
+int _mii_packet_get_wrap_ptr(int buf)
 {
   malloc_hdr_t *hdr = (malloc_hdr_t *) (buf - sizeof(malloc_hdr_t));
   mempool_info_t *info = hdr->info;

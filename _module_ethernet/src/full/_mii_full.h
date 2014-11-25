@@ -79,7 +79,7 @@
 #include "_mii_queue.h"
 
 #ifdef __XC__
-void mii_init_full(REFERENCE_PARAM(mii_interface_full_t, m));
+void _mii_init_full(REFERENCE_PARAM(mii_interface_full_t, m));
 #endif
 
 
@@ -180,7 +180,7 @@ inline void mii_packet_set_data_byte(int buf, int n, int v) {
 }
 
 #ifdef __XC__
-void mii_rx_pins(
+void _mii_rx_pins(
 #if ETHERNET_RX_HP_QUEUE
 		unsigned rxmem_hp,
 #endif
@@ -190,7 +190,7 @@ void mii_rx_pins(
 		 int ifnum,
 		 streaming chanend c);
 #else
-void mii_rx_pins(
+void _mii_rx_pins(
 #if ETHERNET_RX_HP_QUEUE
 		unsigned rxmem_hp,
 #endif
@@ -202,7 +202,7 @@ void mii_rx_pins(
 #endif
 
 #ifdef __XC__
-void mii_tx_pins(
+void _mii_tx_pins(
 #if (NUM_ETHERNET_PORTS > 1) && !(DISABLE_ETHERNET_PORT_FORWARDING)
 #if ETHERNET_TX_HP_QUEUE
 				unsigned hp_forward[],
@@ -217,7 +217,7 @@ void mii_tx_pins(
                 out buffered port:32 p_mii_txd,
                 int ifnum);
 #else
-void mii_tx_pins(
+void _mii_tx_pins(
 #if (NUM_ETHERNET_PORTS > 1) && !defined(DISABLE_ETHERNET_PORT_FORWARDING)
 #if ETHERNET_TX_HP_QUEUE
 				unsigned* hp_forward,

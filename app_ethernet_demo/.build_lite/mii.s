@@ -500,7 +500,7 @@ mii_rx_pins:
 	ldc r11, 20
 	setc res[r4], 1
 	
-	.xtabranch .LBB1_9, .LBB1_5
+	.xtabranch .LBB1_5, .LBB1_9
 waiteu
 .LBB1_3:
 .Lxtalabel5:
@@ -517,7 +517,7 @@ waiteu
 .Lxtalabel6:
 	setc res[r4], 1
 	
-	.xtabranch .LBB1_9, .LBB1_5
+	.xtabranch .LBB1_5, .LBB1_9
 waiteu
 .Ltmp1:
 .LBB1_5:
@@ -543,7 +543,7 @@ waiteu
 	#NO_APP
 	setc res[r4], 1
 	
-	.xtabranch .LBB1_9, .LBB1_5
+	.xtabranch .LBB1_5, .LBB1_9
 waiteu
 .Ltmp2:
 .LBB1_9:

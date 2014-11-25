@@ -20,7 +20,7 @@ mii_ts_queue_t ts_queue[NUM_ETHERNET_PORTS];
 // This is the single ethernet hardware lock when we are using hardware locking
 #ifdef ETHERNET_USE_HARDWARE_LOCKS
 #include "hwlock.h"
-hwlock_t ethernet_memory_lock = 0;
+hwlock_t _ethernet_memory_lock = 0;
 #endif
 
 #if ETHERNET_RX_HP_QUEUE
@@ -53,7 +53,7 @@ mii_mempool_t tx_mem_lp[NUM_ETHERNET_PORTS];
 
 void init_mii_mem() {
 #ifdef ETHERNET_USE_HARDWARE_LOCKS
-  ethernet_memory_lock = hwlock_alloc();
+  _ethernet_memory_lock = hwlock_alloc();
 #endif
 
   for (int i=0; i<NUM_ETHERNET_PORTS; ++i) {
@@ -73,7 +73,7 @@ void init_mii_mem() {
          tx_mem_lp[i] = (mii_mempool_t) &_tx_lp_data[i][0];
          mii_init_mempool(tx_mem_lp[i],
                           ETHERNET_TX_LP_MEMSIZE*4);
-         init_ts_queue(&ts_queue[i]);
+         _init_ts_queue(&ts_queue[i]);
 #endif
 
   }
@@ -88,7 +88,7 @@ void _mii_rx_pins_wr(port p1,
 #if ETHERNET_RX_HP_QUEUE
           _mii_rx_pins(rx_mem_hp[i],rx_mem_lp[i], p1, p2, i, c);
 #else
-  mii_rx_pins(rx_mem_lp[i], p1, p2, i, c);
+  _mii_rx_pins(rx_mem_lp[i], p1, p2, i, c);
 #endif
 }
 
@@ -96,7 +96,7 @@ void _mii_rx_pins_wr(port p1,
 void _mii_tx_pins_wr(port p,
                     int i)
 {
-  mii_tx_pins(
+  _mii_tx_pins(
 #if (NUM_ETHERNET_PORTS > 1) && !defined(DISABLE_ETHERNET_PORT_FORWARDING)
 #if ETHERNET_TX_HP_QUEUE
 				rx_mem_hp,
@@ -124,7 +124,7 @@ void _ethernet_tx_server_wr(const char mac_addr[], chanend tx[], int num_q, int 
                                p_mii_txd,
                                smi1);
 #else
-  ethernet_tx_server(
+  _ethernet_tx_server(
 #if ETHERNET_TX_HP_QUEUE
                      tx_mem_hp,
 #endif

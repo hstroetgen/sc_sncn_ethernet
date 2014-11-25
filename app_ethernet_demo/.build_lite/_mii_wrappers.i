@@ -187,19 +187,7 @@ __attribute__((deprecated)) static inline unsigned get_thread_id(void) {
 
 
 
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/common/ethernet_conf_derived.h" 1
 
-
-# 1 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 1 3 4
-# 21 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 3 4
-# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 1 3 4
-# 22 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 2 3 4
-# 4 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/common/ethernet_conf_derived.h" 2
-
-
-# 1 ".././src/ethernet_conf.h" 1
-# 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/common/ethernet_conf_derived.h" 2
-# 14 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.h" 2
 
 
 
@@ -261,6 +249,17 @@ int smi_reg(smi_interface_t *smi, unsigned reg, unsigned val, int inning);
 
 
 # 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h" 1
+
+
+# 1 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 1 3 4
+# 21 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 3 4
+# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 1 3 4
+# 22 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 2 3 4
+# 4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h" 2
+
+
+# 1 ".././src/ethernet_conf.h" 1
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h" 2
 # 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/include/_mii.h" 2
 # 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h" 2
 
@@ -280,24 +279,24 @@ typedef struct mii_ts_queue_t {
 
 
 
-void init_ts_queue(mii_ts_queue_t *q);
+void _init_ts_queue(mii_ts_queue_t *q);
 
 
-int get_ts_queue_entry(mii_ts_queue_t *q);
+int _get_ts_queue_entry(mii_ts_queue_t *q);
 
 
-void add_ts_queue_entry(mii_ts_queue_t *q, int i);
-
-
-
+void _add_ts_queue_entry(mii_ts_queue_t *q, int i);
 
 
 
 
-int get_and_dec_transmit_count(int buf_num);
 
 
-int mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
+
+int _get_and_dec_transmit_count(int buf_num);
+
+
+int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 # 80 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h" 2
 
 
@@ -365,7 +364,7 @@ inline void mii_packet_set_data_byte(int buf, int n, int v) {
   __asm__("st8 %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+(9*4)));
 }
 # 193 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
-void mii_rx_pins(
+void _mii_rx_pins(
 
 
 
@@ -375,7 +374,7 @@ void mii_rx_pins(
    int ifnum,
    chanend c);
 # 220 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
-void mii_tx_pins(
+void _mii_tx_pins(
 # 230 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t *ts_queue,
@@ -408,14 +407,14 @@ mii_buffer_t mii_reserve_at_least(mii_mempool_t mempool,
 
 void mii_commit(mii_buffer_t buf, int endptr0);
 
-void mii_free(mii_buffer_t buf);
-int mii_init_my_rdptr(mii_mempool_t mempool);
-int mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0);
-mii_buffer_t mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0);
-mii_buffer_t mii_get_next_buf(mii_mempool_t mempool);
-int mii_get_wrap_ptr(mii_mempool_t mempool);
-unsigned mii_packet_get_data(int buf, int n);
-int mii_packet_get_wrap_ptr(int buf);
+void _mii_free(mii_buffer_t buf);
+int _mii_init_my_rdptr(mii_mempool_t mempool);
+int _mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0);
+mii_buffer_t _mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0);
+mii_buffer_t _mii_get_next_buf(mii_mempool_t mempool);
+int _mii_get_wrap_ptr(mii_mempool_t mempool);
+unsigned _mii_packet_get_data(int buf, int n);
+int _mii_packet_get_wrap_ptr(int buf);
 # 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_filter.h" 2
 
 
@@ -432,7 +431,7 @@ void _ethernet_get_filter_counts(unsigned *address,
 # 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_wrappers.c" 2
 # 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.h" 1
 # 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.h"
-void ethernet_tx_server_no_buffer(const char mac_addr[],
+void _ethernet_tx_server_no_buffer(const char mac_addr[],
                                   chanend tx[],
                                   int num_tx,
 
@@ -442,7 +441,7 @@ void ethernet_tx_server_no_buffer(const char mac_addr[],
 
                                   smi_interface_t *smi1);
 # 36 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.h"
-void ethernet_tx_server(
+void _ethernet_tx_server(
 
 
 
@@ -603,7 +602,7 @@ inline void hwlock_release(hwlock_t lock)
                         : "memory");
 }
 # 23 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_wrappers.c" 2
-hwlock_t ethernet_memory_lock = 0;
+hwlock_t _ethernet_memory_lock = 0;
 # 42 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_wrappers.c"
 int _rx_lp_data[1][(((4096))/4)];
 int _tx_lp_data[1][(((4096))/4)];
@@ -619,7 +618,7 @@ mii_mempool_t tx_mem_lp[1];
 
 void init_mii_mem() {
 
-  ethernet_memory_lock = hwlock_alloc();
+  _ethernet_memory_lock = hwlock_alloc();
 
 
   for (int i=0; i<1; ++i) {
@@ -639,7 +638,7 @@ void init_mii_mem() {
          tx_mem_lp[i] = (mii_mempool_t) &_tx_lp_data[i][0];
          mii_init_mempool(tx_mem_lp[i],
                           (((4096))/4)*4);
-         init_ts_queue(&ts_queue[i]);
+         _init_ts_queue(&ts_queue[i]);
 
 
   }
@@ -654,7 +653,7 @@ void _mii_rx_pins_wr(port p1,
 
 
 
-  mii_rx_pins(rx_mem_lp[i], p1, p2, i, c);
+  _mii_rx_pins(rx_mem_lp[i], p1, p2, i, c);
 
 }
 
@@ -662,7 +661,7 @@ void _mii_rx_pins_wr(port p1,
 void _mii_tx_pins_wr(port p,
                     int i)
 {
-  mii_tx_pins(
+  _mii_tx_pins(
 # 109 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_wrappers.c"
     tx_mem_lp[i], &ts_queue[i], p, i);
 }
@@ -675,7 +674,7 @@ void _ethernet_tx_server_wr(const char mac_addr[], chanend tx[], int num_q, int 
 )
 {
 # 127 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_wrappers.c"
-  ethernet_tx_server(
+  _ethernet_tx_server(
 
 
 

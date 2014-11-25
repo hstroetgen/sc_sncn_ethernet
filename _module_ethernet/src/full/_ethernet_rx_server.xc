@@ -172,7 +172,7 @@ void _mac_rx_send_frame1(int p,
 {
   int i, length;
   int dptr = mii_packet_get_data_ptr(p);
-  int wrap_ptr = mii_packet_get_wrap_ptr(p);
+  int wrap_ptr = _mii_packet_get_wrap_ptr(p);
   
   if (cmd == ETHERNET_RX_FRAME_REQ_OFFSET2) {
     i=0;
@@ -331,7 +331,7 @@ static void _processReceivedFrame(int buf,
    
    if (tcount == 0) {
      //if (get_and_dec_transmit_count(buf)==0)
-       mii_free(buf);
+       _mii_free(buf);
    }
    else {
      mii_packet_set_tcount(buf, tcount-1);
@@ -376,9 +376,9 @@ void _ethernet_rx_server(
 
    for (unsigned p=0; p<NUM_ETHERNET_PORTS; ++p) {
 #if ETHERNET_RX_HP_QUEUE
-     rdptr_hp[p] = mii_init_my_rdptr(rxmem_hp[p]);
+     rdptr_hp[p] = _mii_init_my_rdptr(rxmem_hp[p]);
 #endif
-     rdptr_lp[p] = mii_init_my_rdptr(rxmem_lp[p]);
+     rdptr_lp[p] = _mii_init_my_rdptr(rxmem_lp[p]);
    }
 
    // Initialise the link filters & local data structures.
@@ -431,8 +431,8 @@ void _ethernet_rx_server(
 
                  _mac_rx_send_frame1(buf, link[i], cmd);
 
-                 if (get_and_dec_transmit_count(buf)==0)
-                   mii_free(buf);
+                 if (_get_and_dec_transmit_count(buf)==0)
+                   _mii_free(buf);
 
                  _link_status[i].rdIndex = new_rdIndex;
 
@@ -464,9 +464,9 @@ void _ethernet_rx_server(
 
 #endif
            for (unsigned p=0; p<NUM_ETHERNET_PORTS; ++p) {
-             int buf = mii_get_my_next_buf(rxmem_lp[p], rdptr_lp[p]);
+             int buf = _mii_get_my_next_buf(rxmem_lp[p], rdptr_lp[p]);
              if (buf != 0 && mii_packet_get_stage(buf) == 1) {
-               rdptr_lp[p] = mii_update_my_rdptr(rxmem_lp[p], rdptr_lp[p]);
+               rdptr_lp[p] = _mii_update_my_rdptr(rxmem_lp[p], rdptr_lp[p]);
                _processReceivedFrame(buf, link, num_link);
                    break;
              }

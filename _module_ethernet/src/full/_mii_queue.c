@@ -18,17 +18,16 @@ extern mii_packet_t mii_packet_buf[];
 swlock_t queue_locks[MAC_MAX_NUM_QUEUES];
 swlock_t tc_lock = INITIAL_SWLOCK_VALUE;
 #else
-extern hwlock_t ethernet_memory_lock;
+extern hwlock_t _ethernet_memory_lock;
 #endif
 
-int get_and_dec_transmit_count(int buf0) 
-{
+int _get_and_dec_transmit_count(int buf0) {
   mii_packet_t *buf = (mii_packet_t *) buf0;
   int count;
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   swlock_acquire(&tc_lock);
 #else
-  hwlock_acquire(ethernet_memory_lock);
+  hwlock_acquire(_ethernet_memory_lock);
 #endif
   count = buf->tcount;
   if (count) 
@@ -36,7 +35,7 @@ int get_and_dec_transmit_count(int buf0)
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   swlock_release(&tc_lock);
 #else
-  hwlock_release(ethernet_memory_lock);
+  hwlock_release(_ethernet_memory_lock);
 #endif
   return count;
 }
@@ -45,7 +44,7 @@ int get_and_dec_transmit_count(int buf0)
 
 
 
-int mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
+int _mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
 {
   mii_packet_t *buf = (mii_packet_t *) buf0;
   int mask = (1<<ifnum);
@@ -54,7 +53,7 @@ int mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   swlock_acquire(&tc_lock);
 #else
-  hwlock_acquire(ethernet_memory_lock);
+  hwlock_acquire(_ethernet_memory_lock);
 #endif
 
   buf->forwarding &= (~mask);
@@ -62,7 +61,7 @@ int mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   swlock_release(&tc_lock);
 #else
-  hwlock_release(ethernet_memory_lock);
+  hwlock_release(_ethernet_memory_lock);
 #endif
   return ret;
 }
@@ -72,7 +71,7 @@ int mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
 
 
 
-void init_ts_queue(mii_ts_queue_t *q)
+void _init_ts_queue(mii_ts_queue_t *q)
 {
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   static int _next_qlock = 1;
@@ -86,7 +85,7 @@ void init_ts_queue(mii_ts_queue_t *q)
   return;
 }
 
-int get_ts_queue_entry(mii_ts_queue_t *q)
+int _get_ts_queue_entry(mii_ts_queue_t *q)
 {
   int i=0;
   int rdIndex, wrIndex;
@@ -94,7 +93,7 @@ int get_ts_queue_entry(mii_ts_queue_t *q)
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   swlock_acquire((swlock_t *) q->lock);
 #else
-  hwlock_acquire(ethernet_memory_lock);
+  hwlock_acquire(_ethernet_memory_lock);
 #endif
   
   rdIndex = q->rdIndex;
@@ -111,19 +110,19 @@ int get_ts_queue_entry(mii_ts_queue_t *q)
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   swlock_release((swlock_t *) q->lock);
 #else
-  hwlock_release(ethernet_memory_lock);
+  hwlock_release(_ethernet_memory_lock);
 #endif
   return i;
 }
 
-void add_ts_queue_entry(mii_ts_queue_t *q, int i)
+void _add_ts_queue_entry(mii_ts_queue_t *q, int i)
 {
   int wrIndex;
 
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   swlock_acquire((swlock_t *) q->lock);
 #else
-  hwlock_acquire(ethernet_memory_lock);
+  hwlock_acquire(_ethernet_memory_lock);
 #endif
 
   wrIndex = q->wrIndex;
@@ -135,7 +134,7 @@ void add_ts_queue_entry(mii_ts_queue_t *q, int i)
 #ifndef ETHERNET_USE_HARDWARE_LOCKS
   swlock_release((swlock_t *) q->lock);
 #else
-  hwlock_release(ethernet_memory_lock);
+  hwlock_release(_ethernet_memory_lock);
 #endif
   return;
 }

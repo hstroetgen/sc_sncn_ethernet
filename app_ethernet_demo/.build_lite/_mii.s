@@ -56,28 +56,28 @@
 	.set usage.anon.26,0
 	.set usage.anon.27,0
 	.globread _ethernet_get_mii_counts,usage.anon.27,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii.xc:132: error: previously used here"
-	.globwrite mii_rx_pins,usage.anon.27,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii.xc:206: error: previously used here"
-	.call mii_tx_pins,usage.anon.14
-	.call mii_tx_pins,usage.anon.13
-	.call mii_tx_pins,usage.anon.11
-	.call mii_tx_pins,mii_get_next_buf
-	.call mii_tx_pins,mii_free
-	.call mii_tx_pins,get_and_dec_transmit_count
-	.call mii_tx_pins,add_ts_queue_entry
-	.call mii_tx_pins,_mii_transmit_packet
+	.globwrite _mii_rx_pins,usage.anon.27,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii.xc:206: error: previously used here"
+	.call _mii_tx_pins,usage.anon.14
+	.call _mii_tx_pins,usage.anon.13
+	.call _mii_tx_pins,usage.anon.11
+	.call _mii_tx_pins,_mii_transmit_packet
+	.call _mii_tx_pins,_mii_get_next_buf
+	.call _mii_tx_pins,_mii_free
+	.call _mii_tx_pins,_get_and_dec_transmit_count
+	.call _mii_tx_pins,_add_ts_queue_entry
 	.call _mii_transmit_packet,usage.anon.6
 	.call _mii_transmit_packet,usage.anon.3
 	.call _mii_transmit_packet,usage.anon.23
 	.call _mii_transmit_packet,usage.anon.21
-	.call _mii_transmit_packet,mii_packet_get_wrap_ptr
-	.call mii_rx_pins,usage.anon.6
-	.call mii_rx_pins,usage.anon.4
-	.call mii_rx_pins,usage.anon.21
-	.call mii_rx_pins,usage.anon.18
-	.call mii_rx_pins,usage.anon.10
-	.call mii_rx_pins,mii_reserve
-	.call mii_rx_pins,mii_get_wrap_ptr
-	.call mii_rx_pins,mii_commit
+	.call _mii_transmit_packet,_mii_packet_get_wrap_ptr
+	.call _mii_rx_pins,usage.anon.6
+	.call _mii_rx_pins,usage.anon.4
+	.call _mii_rx_pins,usage.anon.21
+	.call _mii_rx_pins,usage.anon.18
+	.call _mii_rx_pins,usage.anon.10
+	.call _mii_rx_pins,mii_reserve
+	.call _mii_rx_pins,mii_commit
+	.call _mii_rx_pins,_mii_get_wrap_ptr
 	.call usage.anon.2,delay_ticks_longlong
 	.call usage.anon.1,delay_ticks_longlong
 	.call usage.anon.0,delay_ticks_longlong
@@ -136,10 +136,10 @@
 	.set usage.anon.25.locnochandec, 1
 	.set usage.anon.26.locnochandec, 1
 	.set _ethernet_get_mii_counts.locnochandec, 1
-	.set mii_rx_pins.locnochandec, 1
+	.set _mii_rx_pins.locnochandec, 1
 	.set _mii_transmit_packet.locnochandec, 1
-	.set mii_tx_pins.locnochandec, 1
-	.set mii_init_full.locnochandec, 1
+	.set _mii_tx_pins.locnochandec, 1
+	.set _mii_init_full.locnochandec, 1
 	.set usage.anon.0.locnoglobalaccess, 1
 	.set usage.anon.1.locnoglobalaccess, 1
 	.set usage.anon.2.locnoglobalaccess, 1
@@ -168,8 +168,8 @@
 	.set usage.anon.25.locnoglobalaccess, 1
 	.set usage.anon.26.locnoglobalaccess, 1
 	.set _mii_transmit_packet.locnoglobalaccess, 1
-	.set mii_tx_pins.locnoglobalaccess, 1
-	.set mii_init_full.locnoglobalaccess, 1
+	.set _mii_tx_pins.locnoglobalaccess, 1
+	.set _mii_init_full.locnoglobalaccess, 1
 	.set usage.anon.0.locnointerfaceaccess, 1
 	.set usage.anon.1.locnointerfaceaccess, 1
 	.set usage.anon.2.locnointerfaceaccess, 1
@@ -198,10 +198,10 @@
 	.set usage.anon.25.locnointerfaceaccess, 1
 	.set usage.anon.26.locnointerfaceaccess, 1
 	.set _ethernet_get_mii_counts.locnointerfaceaccess, 1
-	.set mii_rx_pins.locnointerfaceaccess, 1
+	.set _mii_rx_pins.locnointerfaceaccess, 1
 	.set _mii_transmit_packet.locnointerfaceaccess, 1
-	.set mii_tx_pins.locnointerfaceaccess, 1
-	.set mii_init_full.locnointerfaceaccess, 1
+	.set _mii_tx_pins.locnointerfaceaccess, 1
+	.set _mii_init_full.locnointerfaceaccess, 1
 	.set usage.anon.0.locnonotificationselect, 1
 	.set usage.anon.1.locnonotificationselect, 1
 	.set usage.anon.2.locnonotificationselect, 1
@@ -230,10 +230,10 @@
 	.set usage.anon.25.locnonotificationselect, 1
 	.set usage.anon.26.locnonotificationselect, 1
 	.set _ethernet_get_mii_counts.locnonotificationselect, 1
-	.set mii_rx_pins.locnonotificationselect, 1
+	.set _mii_rx_pins.locnonotificationselect, 1
 	.set _mii_transmit_packet.locnonotificationselect, 1
-	.set mii_tx_pins.locnonotificationselect, 1
-	.set mii_init_full.locnonotificationselect, 1
+	.set _mii_tx_pins.locnonotificationselect, 1
+	.set _mii_init_full.locnonotificationselect, 1
 
 
 	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii.xc"
@@ -260,7 +260,7 @@
 .Ltext_begin:
 	.section	.dp.data,"awd",@progbits
 	.text
-	.cc_top mii_init_full.function
+	.cc_top _mii_init_full.function
 	.section	.cp.rodata.cst4,"aMc",@progbits,4
 	.cc_top .LCPI0_0.data
 	.align	4
@@ -268,10 +268,10 @@
 	.long	10000000
 	.cc_bottom .LCPI0_0.data
 	.text
-	.globl	mii_init_full
+	.globl	_mii_init_full
 	.align	4
-	.type	mii_init_full,@function
-mii_init_full:
+	.type	_mii_init_full,@function
+_mii_init_full:
 .Ltmp3:
 	.cfi_startproc
 .Lfunc_begin0:
@@ -440,23 +440,23 @@ mii_init_full:
 	retsp 2
 .Ltmp17:
 .Ltmp18:
-	.size	mii_init_full, .Ltmp18-mii_init_full
+	.size	_mii_init_full, .Ltmp18-_mii_init_full
 .Lfunc_end0:
 .Ltmp19:
 	.cfi_endproc
 .Leh_func_end0:
 
 	.align	4
-	.cc_bottom mii_init_full.function
-	.set	mii_init_full.nstackwords,2
-	.globl	mii_init_full.nstackwords
-	.set	mii_init_full.maxcores,1
-	.globl	mii_init_full.maxcores
-	.set	mii_init_full.maxtimers,0
-	.globl	mii_init_full.maxtimers
-	.set	mii_init_full.maxchanends,0
-	.globl	mii_init_full.maxchanends
-	.cc_top mii_rx_pins.function
+	.cc_bottom _mii_init_full.function
+	.set	_mii_init_full.nstackwords,2
+	.globl	_mii_init_full.nstackwords
+	.set	_mii_init_full.maxcores,1
+	.globl	_mii_init_full.maxcores
+	.set	_mii_init_full.maxtimers,0
+	.globl	_mii_init_full.maxtimers
+	.set	_mii_init_full.maxchanends,0
+	.globl	_mii_init_full.maxchanends
+	.cc_top _mii_rx_pins.function
 	.section	.cp.rodata.cst4,"aMc",@progbits,4
 	.cc_top .LCPI1_0.data
 	.align	4
@@ -469,10 +469,10 @@ mii_init_full:
 	.long	2452026722
 	.cc_bottom .LCPI1_1.data
 	.text
-	.globl	mii_rx_pins
+	.globl	_mii_rx_pins
 	.align	4
-	.type	mii_rx_pins,@function
-mii_rx_pins:
+	.type	_mii_rx_pins,@function
+_mii_rx_pins:
 .Ltmp28:
 	.cfi_startproc
 .Lfunc_begin1:
@@ -514,7 +514,7 @@ mii_rx_pins:
 .Ltmp41:
 	.loc	1 157 0
 .Lxta.call_labels0:
-	bl mii_get_wrap_ptr
+	bl _mii_get_wrap_ptr
 .Ltmp42:
 	mov r7, r0
 .Ltmp43:
@@ -809,27 +809,27 @@ waiteu
 	bu .LBB1_10
 .Ltmp98:
 .Ltmp99:
-	.size	mii_rx_pins, .Ltmp99-mii_rx_pins
+	.size	_mii_rx_pins, .Ltmp99-_mii_rx_pins
 .Lfunc_end1:
 .Ltmp100:
 	.cfi_endproc
 .Leh_func_end1:
 
 	.align	4
-	.cc_bottom mii_rx_pins.function
-	.set	mii_rx_pins.nstackwords,((mii_get_wrap_ptr.nstackwords $M mii_reserve.nstackwords $M mii_commit.nstackwords) + 12)
-	.globl	mii_rx_pins.nstackwords
-	.set	mii_rx_pins.maxcores,mii_commit.maxcores $M mii_get_wrap_ptr.maxcores $M mii_reserve.maxcores $M 1
-	.globl	mii_rx_pins.maxcores
-	.set	mii_rx_pins.maxtimers,mii_commit.maxtimers $M mii_get_wrap_ptr.maxtimers $M mii_reserve.maxtimers $M 0
-	.globl	mii_rx_pins.maxtimers
-	.set	mii_rx_pins.maxchanends,mii_commit.maxchanends $M mii_get_wrap_ptr.maxchanends $M mii_reserve.maxchanends $M 0
-	.globl	mii_rx_pins.maxchanends
-	.cc_top mii_tx_pins.function
-	.globl	mii_tx_pins
+	.cc_bottom _mii_rx_pins.function
+	.set	_mii_rx_pins.nstackwords,((_mii_get_wrap_ptr.nstackwords $M mii_reserve.nstackwords $M mii_commit.nstackwords) + 12)
+	.globl	_mii_rx_pins.nstackwords
+	.set	_mii_rx_pins.maxcores,_mii_get_wrap_ptr.maxcores $M mii_commit.maxcores $M mii_reserve.maxcores $M 1
+	.globl	_mii_rx_pins.maxcores
+	.set	_mii_rx_pins.maxtimers,_mii_get_wrap_ptr.maxtimers $M mii_commit.maxtimers $M mii_reserve.maxtimers $M 0
+	.globl	_mii_rx_pins.maxtimers
+	.set	_mii_rx_pins.maxchanends,_mii_get_wrap_ptr.maxchanends $M mii_commit.maxchanends $M mii_reserve.maxchanends $M 0
+	.globl	_mii_rx_pins.maxchanends
+	.cc_top _mii_tx_pins.function
+	.globl	_mii_tx_pins
 	.align	4
-	.type	mii_tx_pins,@function
-mii_tx_pins:
+	.type	_mii_tx_pins,@function
+_mii_tx_pins:
 .Ltmp109:
 	.cfi_startproc
 .Lfunc_begin2:
@@ -882,7 +882,7 @@ mii_tx_pins:
 	.loc	1 695 0
 	mov r0, r7
 .Lxta.call_labels3:
-	bl mii_free
+	bl _mii_free
 .Ltmp124:
 	ldc r4, 0
 .Ltmp125:
@@ -891,7 +891,7 @@ mii_tx_pins:
 	.loc	1 647 0
 	mov r0, r6
 .Lxta.call_labels4:
-	bl mii_get_next_buf
+	bl _mii_get_next_buf
 .Ltmp126:
 	mov r7, r0
 .Ltmp127:
@@ -945,7 +945,7 @@ mii_tx_pins:
 	.loc	1 689 0
 	mov r0, r7
 .Lxta.call_labels6:
-	bl get_and_dec_transmit_count
+	bl _get_and_dec_transmit_count
 	ldc r4, 0
 	.loc	1 689 0
 	bt r0, .LBB2_1
@@ -971,29 +971,29 @@ mii_tx_pins:
 	mov r0, r5
 	mov r1, r7
 .Lxta.call_labels7:
-	bl add_ts_queue_entry
+	bl _add_ts_queue_entry
 .Ltmp145:
 	ldc r4, 0
 .Ltmp146:
 	bu .LBB2_1
 .Ltmp147:
 .Ltmp148:
-	.size	mii_tx_pins, .Ltmp148-mii_tx_pins
+	.size	_mii_tx_pins, .Ltmp148-_mii_tx_pins
 .Lfunc_end2:
 .Ltmp149:
 	.cfi_endproc
 .Leh_func_end2:
 
 	.align	4
-	.cc_bottom mii_tx_pins.function
-	.set	mii_tx_pins.nstackwords,((mii_get_next_buf.nstackwords $M _mii_transmit_packet.nstackwords $M get_and_dec_transmit_count.nstackwords $M mii_free.nstackwords $M add_ts_queue_entry.nstackwords) + 9)
-	.globl	mii_tx_pins.nstackwords
-	.set	mii_tx_pins.maxcores,_mii_transmit_packet.maxcores $M add_ts_queue_entry.maxcores $M get_and_dec_transmit_count.maxcores $M mii_free.maxcores $M mii_get_next_buf.maxcores $M 1
-	.globl	mii_tx_pins.maxcores
-	.set	mii_tx_pins.maxtimers,_mii_transmit_packet.maxtimers $M add_ts_queue_entry.maxtimers $M get_and_dec_transmit_count.maxtimers $M mii_free.maxtimers $M mii_get_next_buf.maxtimers $M 0
-	.globl	mii_tx_pins.maxtimers
-	.set	mii_tx_pins.maxchanends,_mii_transmit_packet.maxchanends $M add_ts_queue_entry.maxchanends $M get_and_dec_transmit_count.maxchanends $M mii_free.maxchanends $M mii_get_next_buf.maxchanends $M 0
-	.globl	mii_tx_pins.maxchanends
+	.cc_bottom _mii_tx_pins.function
+	.set	_mii_tx_pins.nstackwords,((_mii_get_next_buf.nstackwords $M _mii_transmit_packet.nstackwords $M _get_and_dec_transmit_count.nstackwords $M _mii_free.nstackwords $M _add_ts_queue_entry.nstackwords) + 9)
+	.globl	_mii_tx_pins.nstackwords
+	.set	_mii_tx_pins.maxcores,_add_ts_queue_entry.maxcores $M _get_and_dec_transmit_count.maxcores $M _mii_free.maxcores $M _mii_get_next_buf.maxcores $M _mii_transmit_packet.maxcores $M 1
+	.globl	_mii_tx_pins.maxcores
+	.set	_mii_tx_pins.maxtimers,_add_ts_queue_entry.maxtimers $M _get_and_dec_transmit_count.maxtimers $M _mii_free.maxtimers $M _mii_get_next_buf.maxtimers $M _mii_transmit_packet.maxtimers $M 0
+	.globl	_mii_tx_pins.maxtimers
+	.set	_mii_tx_pins.maxchanends,_add_ts_queue_entry.maxchanends $M _get_and_dec_transmit_count.maxchanends $M _mii_free.maxchanends $M _mii_get_next_buf.maxchanends $M _mii_transmit_packet.maxchanends $M 0
+	.globl	_mii_tx_pins.maxchanends
 	.cc_top _ethernet_get_mii_counts.function
 	.globl	_ethernet_get_mii_counts
 	.align	4
@@ -1090,7 +1090,7 @@ _mii_transmit_packet:
 	.loc	1 478 0
 	mov r0, r5
 .Lxta.call_labels8:
-	bl mii_packet_get_wrap_ptr
+	bl _mii_packet_get_wrap_ptr
 .Ltmp174:
 	ldw r1, cp[.LCPI4_0]
 	.loc	1 481 0
@@ -1271,13 +1271,13 @@ _mii_transmit_packet:
 
 	.align	4
 	.cc_bottom _mii_transmit_packet.function
-	.set	_mii_transmit_packet.nstackwords,(mii_packet_get_wrap_ptr.nstackwords + 7)
+	.set	_mii_transmit_packet.nstackwords,(_mii_packet_get_wrap_ptr.nstackwords + 7)
 	.globl	_mii_transmit_packet.nstackwords
-	.set	_mii_transmit_packet.maxcores,mii_packet_get_wrap_ptr.maxcores $M 1
+	.set	_mii_transmit_packet.maxcores,_mii_packet_get_wrap_ptr.maxcores $M 1
 	.globl	_mii_transmit_packet.maxcores
-	.set	_mii_transmit_packet.maxtimers,mii_packet_get_wrap_ptr.maxtimers $M 0
+	.set	_mii_transmit_packet.maxtimers,_mii_packet_get_wrap_ptr.maxtimers $M 0
 	.globl	_mii_transmit_packet.maxtimers
-	.set	_mii_transmit_packet.maxchanends,mii_packet_get_wrap_ptr.maxchanends $M 0
+	.set	_mii_transmit_packet.maxchanends,_mii_packet_get_wrap_ptr.maxchanends $M 0
 	.globl	_mii_transmit_packet.maxchanends
 	.section	.dp.bss,"awd",@nobits
 	.cc_top _ethernet_mii_no_queue_entries.data
@@ -1296,7 +1296,7 @@ _ethernet_mii_no_queue_entries:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	4439
+	.long	4434
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -1791,12 +1791,6 @@ _ethernet_mii_no_queue_entries:
 	.byte	3
 	.byte	145
 	.long	573
-	.byte	5
-	.ascii	 "buf"
-	.byte	0
-	.byte	3
-	.byte	145
-	.long	573
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_set_data_word"
@@ -1956,13 +1950,13 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	131
-	.long	4432
-	.long	.Ldebug_loc131+0
+	.long	4427
+	.long	.Ldebug_loc128+0
 	.byte	0
 	.byte	9
-	.ascii	 "mii_rx_pins"
+	.ascii	 "_mii_rx_pins"
 	.byte	0
-	.ascii	 "mii_rx_pins"
+	.ascii	 "_mii_rx_pins"
 	.byte	0
 	.byte	1
 	.byte	146
@@ -1984,14 +1978,14 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	4056
+	.long	4051
 	.long	.Ldebug_loc11+0
 	.byte	10
 	.ascii	 "p_mii_rxd"
 	.byte	0
 	.byte	1
 	.byte	143
-	.long	4056
+	.long	4051
 	.long	.Ldebug_loc15+0
 	.byte	10
 	.ascii	 "ifnum"
@@ -2005,7 +1999,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	145
-	.long	4309
+	.long	4304
 	.byte	11
 	.long	.Ltmp41
 	.long	.Ltmp98
@@ -2017,7 +2011,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	147
-	.long	4300
+	.long	4295
 	.byte	11
 	.long	.Ltmp41
 	.long	.Ltmp98
@@ -2074,7 +2068,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	167
 	.long	247
-	.long	.Ldebug_loc66+0
+	.long	.Ldebug_loc63+0
 	.byte	14
 	.long	.Ldebug_range+272
 	.byte	13
@@ -2083,7 +2077,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	168
 	.long	573
-	.long	.Ldebug_loc94+0
+	.long	.Ldebug_loc91+0
 	.byte	14
 	.long	.Ldebug_range+248
 	.byte	15
@@ -2103,7 +2097,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	170
 	.long	247
-	.long	.Ldebug_loc70+0
+	.long	.Ldebug_loc67+0
 	.byte	14
 	.long	.Ldebug_range+200
 	.byte	13
@@ -2126,14 +2120,14 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	171
 	.long	247
-	.long	.Ldebug_loc81+0
+	.long	.Ldebug_loc78+0
 	.byte	13
 	.ascii	 "end_ptr"
 	.byte	0
 	.byte	1
 	.byte	171
 	.long	247
-	.long	.Ldebug_loc86+0
+	.long	.Ldebug_loc83+0
 	.byte	14
 	.long	.Ldebug_range+176
 	.byte	13
@@ -2149,7 +2143,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	172
 	.long	247
-	.long	.Ldebug_loc79+0
+	.long	.Ldebug_loc76+0
 	.byte	14
 	.long	.Ldebug_range+152
 	.byte	15
@@ -2169,7 +2163,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	192
 	.long	573
-	.long	.Ldebug_loc64+0
+	.long	.Ldebug_loc61+0
 	.byte	14
 	.long	.Ldebug_range+80
 	.byte	15
@@ -2223,7 +2217,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	208
 	.long	573
-	.long	.Ldebug_loc90+0
+	.long	.Ldebug_loc87+0
 	.byte	14
 	.long	.Ldebug_range+48
 	.byte	16
@@ -2261,7 +2255,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	321
 	.long	573
-	.long	.Ldebug_loc92+0
+	.long	.Ldebug_loc89+0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2300,21 +2294,21 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	464
 	.long	247
-	.long	.Ldebug_loc133+0
+	.long	.Ldebug_loc130+0
 	.byte	19
 	.ascii	 "p_mii_txd"
 	.byte	0
 	.byte	1
 	.short	464
-	.long	4056
-	.long	.Ldebug_loc136+0
+	.long	4051
+	.long	.Ldebug_loc133+0
 	.byte	19
 	.ascii	 "tmr"
 	.byte	0
 	.byte	1
 	.short	464
-	.long	4300
-	.long	.Ldebug_loc140+0
+	.long	4295
+	.long	.Ldebug_loc137+0
 	.byte	11
 	.long	.Ltmp172
 	.long	.Ltmp201
@@ -2326,7 +2320,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	466
-	.long	4437
+	.long	4432
 	.byte	5
 	.ascii	 "\240\206\342\355\016"
 	.byte	11
@@ -2347,7 +2341,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	469
 	.long	247
-	.long	.Ldebug_loc161+0
+	.long	.Ldebug_loc158+0
 	.byte	11
 	.long	.Ltmp172
 	.long	.Ltmp201
@@ -2357,7 +2351,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	470
 	.long	247
-	.long	.Ldebug_loc156+0
+	.long	.Ldebug_loc153+0
 	.byte	11
 	.long	.Ltmp172
 	.long	.Ltmp201
@@ -2367,7 +2361,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	471
 	.long	247
-	.long	.Ldebug_loc154+0
+	.long	.Ldebug_loc151+0
 	.byte	11
 	.long	.Ltmp172
 	.long	.Ltmp201
@@ -2386,7 +2380,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	473
 	.long	573
-	.long	.Ldebug_loc147+0
+	.long	.Ldebug_loc144+0
 	.byte	11
 	.long	.Ltmp173
 	.long	.Ltmp201
@@ -2396,7 +2390,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	474
 	.long	573
-	.long	.Ldebug_loc168+0
+	.long	.Ldebug_loc165+0
 	.byte	14
 	.long	.Ldebug_range+392
 	.byte	17
@@ -2405,7 +2399,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	475
 	.long	573
-	.long	.Ldebug_loc151+0
+	.long	.Ldebug_loc148+0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2418,9 +2412,9 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	0
 	.byte	18
-	.ascii	 "mii_tx_pins"
+	.ascii	 "_mii_tx_pins"
 	.byte	0
-	.ascii	 "mii_tx_pins"
+	.ascii	 "_mii_tx_pins"
 	.byte	0
 	.byte	1
 	.short	573
@@ -2436,28 +2430,28 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	569
 	.long	247
-	.long	.Ldebug_loc96+0
+	.long	.Ldebug_loc93+0
 	.byte	19
 	.ascii	 "ts_queue"
 	.byte	0
 	.byte	1
 	.short	570
-	.long	4427
-	.long	.Ldebug_loc100+0
+	.long	4422
+	.long	.Ldebug_loc97+0
 	.byte	19
 	.ascii	 "p_mii_txd"
 	.byte	0
 	.byte	1
 	.short	571
-	.long	4056
-	.long	.Ldebug_loc104+0
+	.long	4051
+	.long	.Ldebug_loc101+0
 	.byte	19
 	.ascii	 "ifnum"
 	.byte	0
 	.byte	1
 	.short	572
 	.long	573
-	.long	.Ldebug_loc108+0
+	.long	.Ldebug_loc105+0
 	.byte	11
 	.long	.Ltmp122
 	.long	.Ltmp147
@@ -2470,14 +2464,14 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	579
 	.long	573
-	.long	.Ldebug_loc122+0
+	.long	.Ldebug_loc119+0
 	.byte	17
 	.ascii	 "time"
 	.byte	0
 	.byte	1
 	.short	579
 	.long	573
-	.long	.Ldebug_loc129+0
+	.long	.Ldebug_loc126+0
 	.byte	11
 	.long	.Ltmp122
 	.long	.Ltmp147
@@ -2486,7 +2480,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	580
-	.long	4300
+	.long	4295
 	.byte	11
 	.long	.Ltmp122
 	.long	.Ltmp147
@@ -2496,7 +2490,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	581
 	.long	573
-	.long	.Ldebug_loc116+0
+	.long	.Ldebug_loc113+0
 	.byte	11
 	.long	.Ltmp122
 	.long	.Ltmp147
@@ -2506,7 +2500,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.short	588
 	.long	247
-	.long	.Ldebug_loc126+0
+	.long	.Ldebug_loc123+0
 	.byte	11
 	.long	.Ltmp122
 	.long	.Ltmp147
@@ -2534,9 +2528,9 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	0
 	.byte	18
-	.ascii	 "mii_init_full"
+	.ascii	 "_mii_init_full"
 	.byte	0
-	.ascii	 "mii_init_full"
+	.ascii	 "_mii_init_full"
 	.byte	0
 	.byte	1
 	.short	706
@@ -2551,7 +2545,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	706
-	.long	4295
+	.long	4290
 	.long	.Ldebug_loc0+0
 	.byte	11
 	.long	.Ltmp9
@@ -2564,7 +2558,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	708
-	.long	4300
+	.long	4295
 	.byte	11
 	.long	.Ltmp9
 	.long	.Ltmp17
@@ -2607,7 +2601,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "clk_mii_rx"
 	.byte	0
-	.long	4047
+	.long	4042
 	.byte	1
 	.short	706
 	.byte	2
@@ -2617,7 +2611,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "clk_mii_tx"
 	.byte	0
-	.long	4047
+	.long	4042
 	.byte	1
 	.short	706
 	.byte	2
@@ -2627,7 +2621,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_rxclk"
 	.byte	0
-	.long	4056
+	.long	4051
 	.byte	1
 	.short	706
 	.byte	2
@@ -2637,7 +2631,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_rxer"
 	.byte	0
-	.long	4056
+	.long	4051
 	.byte	1
 	.short	706
 	.byte	2
@@ -2647,7 +2641,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_rxd"
 	.byte	0
-	.long	4056
+	.long	4051
 	.byte	1
 	.short	706
 	.byte	2
@@ -2657,7 +2651,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_rxdv"
 	.byte	0
-	.long	4056
+	.long	4051
 	.byte	1
 	.short	706
 	.byte	2
@@ -2667,7 +2661,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_txclk"
 	.byte	0
-	.long	4056
+	.long	4051
 	.byte	1
 	.short	706
 	.byte	2
@@ -2677,7 +2671,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_txen"
 	.byte	0
-	.long	4056
+	.long	4051
 	.byte	1
 	.short	706
 	.byte	2
@@ -2687,7 +2681,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_txd"
 	.byte	0
-	.long	4056
+	.long	4051
 	.byte	1
 	.short	706
 	.byte	2
@@ -2696,7 +2690,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	0
 	.byte	23
-	.long	4064
+	.long	4059
 	.byte	2
 	.ascii	 "timer"
 	.byte	0
@@ -2713,7 +2707,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	25
 	.long	247
 	.byte	26
-	.long	4320
+	.long	4315
 	.byte	5
 	.byte	0
 	.byte	21
@@ -2753,7 +2747,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "fifo"
 	.byte	0
-	.long	4323
+	.long	4318
 	.byte	1
 	.short	573
 	.byte	2
@@ -2762,7 +2756,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	0
 	.byte	23
-	.long	4335
+	.long	4330
 	.byte	23
 	.long	247
 	.byte	27
@@ -3142,34 +3136,34 @@ _ethernet_mii_no_queue_entries:
 .asciiz "mii_packet_set_length"
 	.long	890
 .asciiz "mii_packet_set_filter_result"
-	.long	3211
+	.long	3202
 .asciiz "_mii_transmit_packet"
 	.long	1707
 .asciiz "mii_packet_get_forwarding"
-	.long	2029
+	.long	2018
 .asciiz "mii_packet_get_data_word"
-	.long	2196
+	.long	2185
 .asciiz "mii_packet_set_data_short"
 	.long	1788
 .asciiz "mii_packet_set_forwarding"
 	.long	384
 .asciiz "delay_milliseconds"
-	.long	1944
+	.long	1933
 .asciiz "mii_packet_set_data_word"
-	.long	2366
+	.long	2355
 .asciiz "_ethernet_get_mii_counts"
-	.long	2122
+	.long	2111
 .asciiz "mii_packet_set_data"
 	.long	973
 .asciiz "mii_packet_get_src_port"
-	.long	2451
-.asciiz "mii_rx_pins"
+	.long	2440
+.asciiz "_mii_rx_pins"
+	.long	3575
+.asciiz "_mii_tx_pins"
 	.long	1865
 .asciiz "mii_packet_get_data_ptr"
-	.long	3584
-.asciiz "mii_tx_pins"
-	.long	3908
-.asciiz "mii_init_full"
+	.long	3901
+.asciiz "_mii_init_full"
 	.long	649
 .asciiz "mii_packet_get_timestamp"
 	.long	1293
@@ -3178,7 +3172,7 @@ _ethernet_mii_no_queue_entries:
 .asciiz "mii_packet_set_src_port"
 	.long	1577
 .asciiz "mii_packet_get_crc"
-	.long	2282
+	.long	2271
 .asciiz "mii_packet_set_data_byte"
 	.long	1435
 .asciiz "mii_packet_get_tcount"
@@ -3210,9 +3204,9 @@ _ethernet_mii_no_queue_entries:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	4064
+	.long	4059
 .asciiz "mii_interface_full_t"
-	.long	4335
+	.long	4330
 .asciiz "mii_ts_queue_t"
 	.long	0
 .Lpubtypes_end1:
@@ -3501,279 +3495,279 @@ _ethernet_mii_no_queue_entries:
 	.long	0
 	.long	0
 .Ldebug_loc61:
-	.long	.Ltmp53
-	.long	.Ltmp80
+	.long	.Ltmp55
+	.long	.Ltmp56
 .Lset37 = .Ltmp272-.Ltmp271
 	.short	.Lset37
 .Ltmp271:
-	.byte	80
+	.byte	81
 .Ltmp272:
 	.long	0
 	.long	0
-.Ldebug_loc64:
-	.long	.Ltmp55
-	.long	.Ltmp56
+.Ldebug_loc63:
+	.long	.Ltmp59
+	.long	.Ltmp61
 .Lset38 = .Ltmp274-.Ltmp273
 	.short	.Lset38
 .Ltmp273:
-	.byte	81
+	.byte	16
+	.ascii	 "\342\352\233\221\t"
 .Ltmp274:
-	.long	0
-	.long	0
-.Ldebug_loc66:
-	.long	.Ltmp59
 	.long	.Ltmp61
+	.long	.Ltmp64
 .Lset39 = .Ltmp276-.Ltmp275
 	.short	.Lset39
 .Ltmp275:
-	.byte	16
-	.ascii	 "\342\352\233\221\t"
+	.byte	83
 .Ltmp276:
-	.long	.Ltmp61
-	.long	.Ltmp64
+	.long	.Ltmp86
+	.long	.Ltmp88
 .Lset40 = .Ltmp278-.Ltmp277
 	.short	.Lset40
 .Ltmp277:
 	.byte	83
 .Ltmp278:
-	.long	.Ltmp86
-	.long	.Ltmp88
+	.long	0
+	.long	0
+.Ldebug_loc67:
+	.long	.Ltmp59
+	.long	.Ltmp74
 .Lset41 = .Ltmp280-.Ltmp279
 	.short	.Lset41
 .Ltmp279:
-	.byte	83
+	.byte	91
 .Ltmp280:
-	.long	0
-	.long	0
-.Ldebug_loc70:
-	.long	.Ltmp59
-	.long	.Ltmp74
+	.long	.Ltmp84
+	.long	.Ltmp88
 .Lset42 = .Ltmp282-.Ltmp281
 	.short	.Lset42
 .Ltmp281:
-	.byte	91
+	.byte	89
 .Ltmp282:
-	.long	.Ltmp84
-	.long	.Ltmp88
+	.long	0
+	.long	0
+.Ldebug_loc76:
+	.long	.Ltmp62
+	.long	.Ltmp80
 .Lset43 = .Ltmp284-.Ltmp283
 	.short	.Lset43
 .Ltmp283:
-	.byte	89
+	.byte	81
 .Ltmp284:
 	.long	0
 	.long	0
-.Ldebug_loc79:
+.Ldebug_loc78:
 	.long	.Ltmp62
-	.long	.Ltmp80
+	.long	.Ltmp77
 .Lset44 = .Ltmp286-.Ltmp285
 	.short	.Lset44
 .Ltmp285:
 	.byte	81
 .Ltmp286:
-	.long	0
-	.long	0
-.Ldebug_loc81:
-	.long	.Ltmp62
-	.long	.Ltmp77
+	.long	.Ltmp78
+	.long	.Ltmp80
 .Lset45 = .Ltmp288-.Ltmp287
 	.short	.Lset45
 .Ltmp287:
 	.byte	81
 .Ltmp288:
-	.long	.Ltmp78
-	.long	.Ltmp80
+	.long	.Ltmp87
+	.long	.Ltmp88
 .Lset46 = .Ltmp290-.Ltmp289
 	.short	.Lset46
 .Ltmp289:
 	.byte	81
 .Ltmp290:
-	.long	.Ltmp87
-	.long	.Ltmp88
+	.long	.Ltmp89
+	.long	.Ltmp90
 .Lset47 = .Ltmp292-.Ltmp291
 	.short	.Lset47
 .Ltmp291:
 	.byte	81
 .Ltmp292:
-	.long	.Ltmp89
-	.long	.Ltmp90
+	.long	0
+	.long	0
+.Ldebug_loc83:
+	.long	.Ltmp67
+	.long	.Ltmp80
 .Lset48 = .Ltmp294-.Ltmp293
 	.short	.Lset48
 .Ltmp293:
-	.byte	81
+	.byte	86
 .Ltmp294:
-	.long	0
-	.long	0
-.Ldebug_loc86:
-	.long	.Ltmp67
-	.long	.Ltmp80
+	.long	.Ltmp83
+	.long	.Ltmp98
 .Lset49 = .Ltmp296-.Ltmp295
 	.short	.Lset49
 .Ltmp295:
 	.byte	86
 .Ltmp296:
+	.long	0
+	.long	0
+.Ldebug_loc87:
+	.long	.Ltmp82
 	.long	.Ltmp83
-	.long	.Ltmp98
 .Lset50 = .Ltmp298-.Ltmp297
 	.short	.Lset50
 .Ltmp297:
-	.byte	86
+	.byte	80
 .Ltmp298:
 	.long	0
 	.long	0
-.Ldebug_loc90:
-	.long	.Ltmp82
-	.long	.Ltmp83
+.Ldebug_loc89:
+	.long	.Ltmp91
+	.long	.Ltmp92
 .Lset51 = .Ltmp300-.Ltmp299
 	.short	.Lset51
 .Ltmp299:
-	.byte	80
+	.byte	89
 .Ltmp300:
 	.long	0
 	.long	0
-.Ldebug_loc92:
-	.long	.Ltmp91
-	.long	.Ltmp92
+.Ldebug_loc91:
+	.long	.Ltmp93
+	.long	.Ltmp96
 .Lset52 = .Ltmp302-.Ltmp301
 	.short	.Lset52
 .Ltmp301:
-	.byte	89
+	.byte	91
 .Ltmp302:
 	.long	0
 	.long	0
-.Ldebug_loc94:
-	.long	.Ltmp93
-	.long	.Ltmp96
+.Ldebug_loc93:
+	.long	.Lfunc_begin2
+	.long	.Ltmp122
 .Lset53 = .Ltmp304-.Ltmp303
 	.short	.Lset53
 .Ltmp303:
-	.byte	91
+	.byte	80
 .Ltmp304:
-	.long	0
-	.long	0
-.Ldebug_loc96:
-	.long	.Lfunc_begin2
 	.long	.Ltmp122
+	.long	.Ltmp147
 .Lset54 = .Ltmp306-.Ltmp305
 	.short	.Lset54
 .Ltmp305:
-	.byte	80
+	.byte	86
 .Ltmp306:
-	.long	.Ltmp122
-	.long	.Ltmp147
+	.long	0
+	.long	0
+.Ldebug_loc97:
+	.long	.Lfunc_begin2
+	.long	.Ltmp121
 .Lset55 = .Ltmp308-.Ltmp307
 	.short	.Lset55
 .Ltmp307:
-	.byte	86
+	.byte	81
 .Ltmp308:
-	.long	0
-	.long	0
-.Ldebug_loc100:
-	.long	.Lfunc_begin2
 	.long	.Ltmp121
+	.long	.Ltmp147
 .Lset56 = .Ltmp310-.Ltmp309
 	.short	.Lset56
 .Ltmp309:
-	.byte	81
+	.byte	85
 .Ltmp310:
-	.long	.Ltmp121
-	.long	.Ltmp147
+	.long	0
+	.long	0
+.Ldebug_loc101:
+	.long	.Lfunc_begin2
+	.long	.Ltmp120
 .Lset57 = .Ltmp312-.Ltmp311
 	.short	.Lset57
 .Ltmp311:
-	.byte	85
+	.byte	82
 .Ltmp312:
-	.long	0
-	.long	0
-.Ldebug_loc104:
-	.long	.Lfunc_begin2
 	.long	.Ltmp120
+	.long	.Lfunc_end2
 .Lset58 = .Ltmp314-.Ltmp313
 	.short	.Lset58
 .Ltmp313:
-	.byte	82
+	.byte	126
+	.byte	4
 .Ltmp314:
-	.long	.Ltmp120
-	.long	.Lfunc_end2
+	.long	0
+	.long	0
+.Ldebug_loc105:
+	.long	.Lfunc_begin2
+	.long	.Ltmp124
 .Lset59 = .Ltmp316-.Ltmp315
 	.short	.Lset59
 .Ltmp315:
-	.byte	126
-	.byte	4
+	.byte	83
 .Ltmp316:
-	.long	0
-	.long	0
-.Ldebug_loc108:
-	.long	.Lfunc_begin2
-	.long	.Ltmp124
+	.long	.Ltmp125
+	.long	.Ltmp126
 .Lset60 = .Ltmp318-.Ltmp317
 	.short	.Lset60
 .Ltmp317:
 	.byte	83
 .Ltmp318:
-	.long	.Ltmp125
-	.long	.Ltmp126
+	.long	.Ltmp131
+	.long	.Ltmp138
 .Lset61 = .Ltmp320-.Ltmp319
 	.short	.Lset61
 .Ltmp319:
 	.byte	83
 .Ltmp320:
-	.long	.Ltmp131
-	.long	.Ltmp138
+	.long	.Ltmp140
+	.long	.Ltmp145
 .Lset62 = .Ltmp322-.Ltmp321
 	.short	.Lset62
 .Ltmp321:
 	.byte	83
 .Ltmp322:
-	.long	.Ltmp140
-	.long	.Ltmp145
+	.long	0
+	.long	0
+.Ldebug_loc113:
+	.long	.Ltmp122
+	.long	.Lfunc_end2
 .Lset63 = .Ltmp324-.Ltmp323
 	.short	.Lset63
 .Ltmp323:
-	.byte	83
+	.byte	16
+	.byte	0
 .Ltmp324:
 	.long	0
 	.long	0
-.Ldebug_loc116:
-	.long	.Ltmp122
-	.long	.Lfunc_end2
+.Ldebug_loc119:
+	.long	.Ltmp123
+	.long	.Ltmp125
 .Lset64 = .Ltmp326-.Ltmp325
 	.short	.Lset64
 .Ltmp325:
-	.byte	16
-	.byte	0
+	.byte	90
 .Ltmp326:
-	.long	0
-	.long	0
-.Ldebug_loc122:
-	.long	.Ltmp123
-	.long	.Ltmp125
+	.long	.Ltmp139
+	.long	.Ltmp147
 .Lset65 = .Ltmp328-.Ltmp327
 	.short	.Lset65
 .Ltmp327:
 	.byte	90
 .Ltmp328:
-	.long	.Ltmp139
-	.long	.Ltmp147
+	.long	0
+	.long	0
+.Ldebug_loc123:
+	.long	.Ltmp127
+	.long	.Ltmp133
 .Lset66 = .Ltmp330-.Ltmp329
 	.short	.Lset66
 .Ltmp329:
-	.byte	90
+	.byte	87
 .Ltmp330:
 	.long	0
 	.long	0
 .Ldebug_loc126:
-	.long	.Ltmp127
-	.long	.Ltmp133
+	.long	.Ltmp128
+	.long	.Ltmp129
 .Lset67 = .Ltmp332-.Ltmp331
 	.short	.Lset67
 .Ltmp331:
-	.byte	87
+	.byte	80
 .Ltmp332:
 	.long	0
 	.long	0
-.Ldebug_loc129:
-	.long	.Ltmp128
-	.long	.Ltmp129
+.Ldebug_loc128:
+	.long	.Lfunc_begin3
+	.long	.Ltmp151
 .Lset68 = .Ltmp334-.Ltmp333
 	.short	.Lset68
 .Ltmp333:
@@ -3781,198 +3775,188 @@ _ethernet_mii_no_queue_entries:
 .Ltmp334:
 	.long	0
 	.long	0
-.Ldebug_loc131:
-	.long	.Lfunc_begin3
-	.long	.Ltmp151
+.Ldebug_loc130:
+	.long	.Lfunc_begin4
+	.long	.Ltmp172
 .Lset69 = .Ltmp336-.Ltmp335
 	.short	.Lset69
 .Ltmp335:
 	.byte	80
 .Ltmp336:
+	.long	.Ltmp172
+	.long	.Ltmp183
+.Lset70 = .Ltmp338-.Ltmp337
+	.short	.Lset70
+.Ltmp337:
+	.byte	85
+.Ltmp338:
 	.long	0
 	.long	0
 .Ldebug_loc133:
 	.long	.Lfunc_begin4
-	.long	.Ltmp172
-.Lset70 = .Ltmp338-.Ltmp337
-	.short	.Lset70
-.Ltmp337:
-	.byte	80
-.Ltmp338:
-	.long	.Ltmp172
-	.long	.Ltmp183
+	.long	.Ltmp171
 .Lset71 = .Ltmp340-.Ltmp339
 	.short	.Lset71
 .Ltmp339:
-	.byte	85
+	.byte	81
 .Ltmp340:
-	.long	0
-	.long	0
-.Ldebug_loc136:
-	.long	.Lfunc_begin4
 	.long	.Ltmp171
+	.long	.Ltmp200
 .Lset72 = .Ltmp342-.Ltmp341
 	.short	.Lset72
 .Ltmp341:
-	.byte	81
+	.byte	84
 .Ltmp342:
-	.long	.Ltmp171
-	.long	.Ltmp200
+	.long	0
+	.long	0
+.Ldebug_loc137:
+	.long	.Lfunc_begin4
+	.long	.Ltmp174
 .Lset73 = .Ltmp344-.Ltmp343
 	.short	.Lset73
 .Ltmp343:
-	.byte	84
+	.byte	82
 .Ltmp344:
-	.long	0
-	.long	0
-.Ldebug_loc140:
-	.long	.Lfunc_begin4
-	.long	.Ltmp174
+	.long	.Ltmp183
+	.long	.Ltmp188
 .Lset74 = .Ltmp346-.Ltmp345
 	.short	.Lset74
 .Ltmp345:
 	.byte	82
 .Ltmp346:
-	.long	.Ltmp183
-	.long	.Ltmp188
+	.long	.Ltmp190
+	.long	.Ltmp200
 .Lset75 = .Ltmp348-.Ltmp347
 	.short	.Lset75
 .Ltmp347:
 	.byte	82
 .Ltmp348:
-	.long	.Ltmp190
-	.long	.Ltmp200
+	.long	.Ltmp201
+	.long	.Ltmp202
 .Lset76 = .Ltmp350-.Ltmp349
 	.short	.Lset76
 .Ltmp349:
 	.byte	82
 .Ltmp350:
-	.long	.Ltmp201
-	.long	.Ltmp202
+	.long	0
+	.long	0
+.Ldebug_loc144:
+	.long	.Ltmp173
+	.long	.Ltmp182
 .Lset77 = .Ltmp352-.Ltmp351
 	.short	.Lset77
 .Ltmp351:
-	.byte	82
+	.byte	86
 .Ltmp352:
-	.long	0
-	.long	0
-.Ldebug_loc147:
-	.long	.Ltmp173
 	.long	.Ltmp182
+	.long	.Ltmp190
 .Lset78 = .Ltmp354-.Ltmp353
 	.short	.Lset78
 .Ltmp353:
-	.byte	86
+	.byte	85
 .Ltmp354:
-	.long	.Ltmp182
+	.long	0
+	.long	0
+.Ldebug_loc148:
+	.long	.Ltmp174
 	.long	.Ltmp190
 .Lset79 = .Ltmp356-.Ltmp355
 	.short	.Lset79
 .Ltmp355:
-	.byte	85
+	.byte	80
 .Ltmp356:
 	.long	0
 	.long	0
 .Ldebug_loc151:
-	.long	.Ltmp174
-	.long	.Ltmp190
+	.long	.Ltmp175
+	.long	.Ltmp178
 .Lset80 = .Ltmp358-.Ltmp357
 	.short	.Lset80
 .Ltmp357:
-	.byte	80
+	.byte	81
 .Ltmp358:
 	.long	0
 	.long	0
-.Ldebug_loc154:
-	.long	.Ltmp175
-	.long	.Ltmp178
+.Ldebug_loc153:
+	.long	.Ltmp177
+	.long	.Ltmp181
 .Lset81 = .Ltmp360-.Ltmp359
 	.short	.Lset81
 .Ltmp359:
-	.byte	81
+	.byte	82
 .Ltmp360:
-	.long	0
-	.long	0
-.Ldebug_loc156:
-	.long	.Ltmp177
 	.long	.Ltmp181
+	.long	.Ltmp183
 .Lset82 = .Ltmp362-.Ltmp361
 	.short	.Lset82
 .Ltmp361:
-	.byte	82
+	.byte	88
 .Ltmp362:
-	.long	.Ltmp181
-	.long	.Ltmp183
+	.long	.Ltmp184
+	.long	.Ltmp186
 .Lset83 = .Ltmp364-.Ltmp363
 	.short	.Lset83
 .Ltmp363:
-	.byte	88
+	.byte	91
 .Ltmp364:
-	.long	.Ltmp184
-	.long	.Ltmp186
+	.long	.Ltmp187
+	.long	.Ltmp187
 .Lset84 = .Ltmp366-.Ltmp365
 	.short	.Lset84
 .Ltmp365:
 	.byte	91
 .Ltmp366:
-	.long	.Ltmp187
-	.long	.Ltmp187
+	.long	0
+	.long	0
+.Ldebug_loc158:
+	.long	.Ltmp179
+	.long	.Ltmp183
 .Lset85 = .Ltmp368-.Ltmp367
 	.short	.Lset85
 .Ltmp367:
-	.byte	91
+	.byte	82
 .Ltmp368:
-	.long	0
-	.long	0
-.Ldebug_loc161:
-	.long	.Ltmp179
-	.long	.Ltmp183
+	.long	.Ltmp185
+	.long	.Ltmp189
 .Lset86 = .Ltmp370-.Ltmp369
 	.short	.Lset86
 .Ltmp369:
-	.byte	82
+	.byte	88
 .Ltmp370:
-	.long	.Ltmp185
-	.long	.Ltmp189
+	.long	.Ltmp195
+	.long	.Ltmp196
 .Lset87 = .Ltmp372-.Ltmp371
 	.short	.Lset87
 .Ltmp371:
-	.byte	88
+	.byte	80
 .Ltmp372:
-	.long	.Ltmp195
-	.long	.Ltmp196
+	.long	.Ltmp197
+	.long	.Ltmp198
 .Lset88 = .Ltmp374-.Ltmp373
 	.short	.Lset88
 .Ltmp373:
 	.byte	80
 .Ltmp374:
-	.long	.Ltmp197
-	.long	.Ltmp198
+	.long	.Ltmp199
+	.long	.Ltmp200
 .Lset89 = .Ltmp376-.Ltmp375
 	.short	.Lset89
 .Ltmp375:
 	.byte	80
 .Ltmp376:
-	.long	.Ltmp199
-	.long	.Ltmp200
+	.long	0
+	.long	0
+.Ldebug_loc165:
+	.long	.Ltmp191
+	.long	.Ltmp193
 .Lset90 = .Ltmp378-.Ltmp377
 	.short	.Lset90
 .Ltmp377:
-	.byte	80
+	.byte	86
 .Ltmp378:
 	.long	0
 	.long	0
-.Ldebug_loc168:
-	.long	.Ltmp191
-	.long	.Ltmp193
-.Lset91 = .Ltmp380-.Ltmp379
-	.short	.Lset91
-.Ltmp379:
-	.byte	86
-.Ltmp380:
-	.long	0
-	.long	0
-.Ldebug_loc170:
+.Ldebug_loc167:
 	.section	.debug_aranges,"",@progbits
 	.section	.debug_ranges,"",@progbits
 	.long	.Ltmp48
@@ -4081,18 +4065,18 @@ _ethernet_mii_no_queue_entries:
 	.long	0
 	.section	.debug_macinfo,"",@progbits
 
-	.typestring add_ts_queue_entry, "f{0}(&(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}),si)"
-	.typestring get_and_dec_transmit_count, "f{si}(si)"
-	.typestring mii_init_full, "f{0}(&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}))"
-	.typestring mii_rx_pins, "f{0}(ui,i:p,bi:p:32,si,m:chd)"
-	.typestring mii_tx_pins, "f{0}(ui,&(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}),bo:p:32,si)"
+	.typestring _add_ts_queue_entry, "f{0}(&(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}),si)"
+	.typestring _get_and_dec_transmit_count, "f{si}(si)"
+	.typestring _mii_init_full, "f{0}(&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}))"
+	.typestring _mii_rx_pins, "f{0}(ui,i:p,bi:p:32,si,m:chd)"
+	.typestring _mii_tx_pins, "f{0}(ui,&(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}),bo:p:32,si)"
 	.typestring _ethernet_get_mii_counts, "f{0}(&(ui))"
 	.typestring mii_reserve, "f{ui}(ui,&(ui))"
 	.typestring mii_commit, "f{0}(ui,si)"
-	.typestring mii_free, "f{0}(ui)"
-	.typestring mii_get_next_buf, "f{ui}(ui)"
-	.typestring mii_get_wrap_ptr, "f{si}(ui)"
-	.typestring mii_packet_get_wrap_ptr, "f{si}(si)"
+	.typestring _mii_free, "f{0}(ui)"
+	.typestring _mii_get_next_buf, "f{ui}(ui)"
+	.typestring _mii_get_wrap_ptr, "f{si}(ui)"
+	.typestring _mii_packet_get_wrap_ptr, "f{si}(si)"
 	.typestring _mii_transmit_packet, "f{0}(ui,bo:p:32,swt)"
 	.section	.xtacalltable,"",@progbits
 .Lentries_start0:

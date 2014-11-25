@@ -10,12 +10,12 @@ void _mii_rx_pins_wr(in port p_mii_rxdv,
                     int i,
                     streaming chanend c);
 
-#define mii_rx_pins _mii_rx_pins_wr
+#define _mii_rx_pins _mii_rx_pins_wr
 
 void _mii_tx_pins_wr(out buffered port:32 p,
                     int i);
 
-#define mii_tx_pins _mii_tx_pins_wr
+#define _mii_tx_pins _mii_tx_pins_wr
 
 void _ethernet_tx_server_wr(const char mac_addr[], chanend tx[], int num_q, int num_tx, smi_interface_t &?smi1, smi_interface_t &?smi2
 #if ETHERNET_TX_NO_BUFFERING

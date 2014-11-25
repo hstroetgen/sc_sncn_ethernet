@@ -15,7 +15,7 @@ void phy_init(smi_interface_t &smi0,
               mii_interface_full_t &mii0)
 {
   smi_init(smi0);
-  mii_init_full(mii0);
+  _mii_init_full(mii0);
   eth_phy_config(1, smi0);
 }
 
@@ -28,16 +28,16 @@ void _ethernet_server_full(mii_interface_full_t &m,
                           int num_tx)
 {
   streaming chan c[1];
-  mii_init_full(m);
+  _mii_init_full(m);
   init_mii_mem();
   par {
     // These tasks all communicate internally via shared memory
     // packet queues
-    mii_rx_pins(m.p_mii_rxdv, m.p_mii_rxd, 0, c[0]);
+    _mii_rx_pins(m.p_mii_rxdv, m.p_mii_rxd, 0, c[0]);
 #if ETHERNET_TX_NO_BUFFERING
-    ethernet_tx_server(mac_address, tx, 1, num_tx, smi, null, m.p_mii_txd);
+    _ethernet_tx_server(mac_address, tx, 1, num_tx, smi, null, m.p_mii_txd);
 #else
-    mii_tx_pins(m.p_mii_txd, 0);
+    _mii_tx_pins(m.p_mii_txd, 0);
     _ethernet_tx_server(mac_address, tx, 1, num_tx, smi, null);
 #endif
     _ethernet_rx_server(rx, num_rx);

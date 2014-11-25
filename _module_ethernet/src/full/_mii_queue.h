@@ -34,13 +34,13 @@ typedef struct mii_ts_queue_t {
 //! \name Functions used by the queue of packets waiting to have their timestamps reported
 
 //! Initialise a queue
-void init_ts_queue(REFERENCE_PARAM(mii_ts_queue_t, q));
+void _init_ts_queue(REFERENCE_PARAM(mii_ts_queue_t, q));
 
 //! Get the first entry in the timestamp buffer queue
-int get_ts_queue_entry(REFERENCE_PARAM(mii_ts_queue_t, q));
+int _get_ts_queue_entry(REFERENCE_PARAM(mii_ts_queue_t, q));
 
 //! Add an entry to the timestamp buffer queue
-void add_ts_queue_entry(REFERENCE_PARAM(mii_ts_queue_t, q), int i);
+void _add_ts_queue_entry(REFERENCE_PARAM(mii_ts_queue_t, q), int i);
 
 //!@}
 
@@ -48,10 +48,10 @@ void add_ts_queue_entry(REFERENCE_PARAM(mii_ts_queue_t, q), int i);
 //! \name Functions used for atomic modification of packet buffer properties
 
 //! This is an atomic get and decrement of a buffers transmit counter
-int get_and_dec_transmit_count(int buf_num);
+int _get_and_dec_transmit_count(int buf_num);
 
 //! This is an atomic test and clear of the forward to other port bit for a buffer
-int mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
+int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 
 //!@}
 

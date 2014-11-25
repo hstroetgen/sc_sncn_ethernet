@@ -406,28 +406,28 @@ typedef struct mii_ts_queue_t {
 
 
 
-void init_ts_queue( mii_ts_queue_t &q );
+void _init_ts_queue( mii_ts_queue_t &q );
 
 
-int get_ts_queue_entry( mii_ts_queue_t &q );
+int _get_ts_queue_entry( mii_ts_queue_t &q );
 
 
-void add_ts_queue_entry( mii_ts_queue_t &q , int i);
-
-
-
+void _add_ts_queue_entry( mii_ts_queue_t &q , int i);
 
 
 
 
-int get_and_dec_transmit_count(int buf_num);
 
 
-int mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
+
+int _get_and_dec_transmit_count(int buf_num);
+
+
+int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 # 80 "_mii_full.h" 2
 
 
-void mii_init_full( mii_interface_full_t &m );
+void _mii_init_full( mii_interface_full_t &m );
 
 
 
@@ -492,7 +492,7 @@ inline void mii_packet_set_data_byte(int buf, int n, int v) {
 }
 
 
-void mii_rx_pins(
+void _mii_rx_pins(
 # 187 "_mii_full.h"
 		 unsigned rxmem_lp,
 		 in port p_mii_rxdv,
@@ -500,7 +500,7 @@ void mii_rx_pins(
 		 int ifnum,
 		 streaming chanend c);
 # 205 "_mii_full.h"
-void mii_tx_pins(
+void _mii_tx_pins(
 # 215 "_mii_full.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t &ts_queue,
@@ -537,14 +537,14 @@ mii_buffer_t mii_reserve_at_least(mii_mempool_t mempool,
 
 void mii_commit(mii_buffer_t buf, int endptr0);
 
-void mii_free(mii_buffer_t buf);
-int mii_init_my_rdptr(mii_mempool_t mempool);
-int mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0);
-mii_buffer_t mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0);
-mii_buffer_t mii_get_next_buf(mii_mempool_t mempool);
-int mii_get_wrap_ptr(mii_mempool_t mempool);
-unsigned mii_packet_get_data(int buf, int n);
-int mii_packet_get_wrap_ptr(int buf);
+void _mii_free(mii_buffer_t buf);
+int _mii_init_my_rdptr(mii_mempool_t mempool);
+int _mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0);
+mii_buffer_t _mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0);
+mii_buffer_t _mii_get_next_buf(mii_mempool_t mempool);
+int _mii_get_wrap_ptr(mii_mempool_t mempool);
+unsigned _mii_packet_get_data(int buf, int n);
+int _mii_packet_get_wrap_ptr(int buf);
 # 11 "_mii_filter.h" 2
 
 
@@ -858,7 +858,7 @@ void _mac_rx_send_frame1(int p,
 {
   int i, length;
   int dptr = mii_packet_get_data_ptr(p);
-  int wrap_ptr = mii_packet_get_wrap_ptr(p);
+  int wrap_ptr = _mii_packet_get_wrap_ptr(p);
 
   if (cmd ==  (0x80000019) ) {
     i=0;
@@ -1007,7 +1007,7 @@ static void _processReceivedFrame(int buf,
 
    if (tcount == 0) {
 
-       mii_free(buf);
+       _mii_free(buf);
    }
    else {
      mii_packet_set_tcount(buf, tcount-1);
@@ -1038,7 +1038,7 @@ void _ethernet_rx_server(
 
    for (unsigned p=0; p< 1 ; ++p) {
 # 381 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc"
-     rdptr_lp[p] = mii_init_my_rdptr(rxmem_lp[p]);
+     rdptr_lp[p] = _mii_init_my_rdptr(rxmem_lp[p]);
    }
 
 
@@ -1090,8 +1090,8 @@ void _ethernet_rx_server(
 
                  _mac_rx_send_frame1(buf, link[i], cmd);
 
-                 if (get_and_dec_transmit_count(buf)==0)
-                   mii_free(buf);
+                 if (_get_and_dec_transmit_count(buf)==0)
+                   _mii_free(buf);
 
                  _link_status[i].rdIndex = new_rdIndex;
 
@@ -1112,9 +1112,9 @@ void _ethernet_rx_server(
          {
 # 466 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc"
            for (unsigned p=0; p< 1 ; ++p) {
-             int buf = mii_get_my_next_buf(rxmem_lp[p], rdptr_lp[p]);
+             int buf = _mii_get_my_next_buf(rxmem_lp[p], rdptr_lp[p]);
              if (buf != 0 && mii_packet_get_stage(buf) == 1) {
-               rdptr_lp[p] = mii_update_my_rdptr(rxmem_lp[p], rdptr_lp[p]);
+               rdptr_lp[p] = _mii_update_my_rdptr(rxmem_lp[p], rdptr_lp[p]);
                _processReceivedFrame(buf, link, num_link);
                    break;
              }

@@ -70,23 +70,23 @@
 	.call _ethernet_rx_server,usage.anon.13
 	.call _ethernet_rx_server,serviceLinkCmd
 	.call _ethernet_rx_server,send_status_packet
-	.call _ethernet_rx_server,mii_update_my_rdptr
-	.call _ethernet_rx_server,mii_init_my_rdptr
-	.call _ethernet_rx_server,mii_get_my_next_buf
-	.call _ethernet_rx_server,mii_free
-	.call _ethernet_rx_server,get_and_dec_transmit_count
+	.call _ethernet_rx_server,_mii_update_my_rdptr
+	.call _ethernet_rx_server,_mii_init_my_rdptr
+	.call _ethernet_rx_server,_mii_get_my_next_buf
+	.call _ethernet_rx_server,_mii_free
 	.call _ethernet_rx_server,_mac_rx_send_frame1
+	.call _ethernet_rx_server,_get_and_dec_transmit_count
 	.call _ethernet_rx_server,_ethernet_link_status_notification
 	.call _ethernet_rx_server,_ethernet_get_link_status
 	.call usage.anon.31,usage.anon.7
 	.call usage.anon.31,usage.anon.27
 	.call usage.anon.31,usage.anon.16
-	.call usage.anon.31,mii_free
+	.call usage.anon.31,_mii_free
 	.call _mac_rx_send_frame1,usage.anon.9
 	.call _mac_rx_send_frame1,usage.anon.5
 	.call _mac_rx_send_frame1,usage.anon.3
 	.call _mac_rx_send_frame1,usage.anon.21
-	.call _mac_rx_send_frame1,mii_packet_get_wrap_ptr
+	.call _mac_rx_send_frame1,_mii_packet_get_wrap_ptr
 	.call serviceLinkCmd,usage.anon.27
 	.call serviceLinkCmd,_ethernet_get_mii_counts
 	.call serviceLinkCmd,_ethernet_get_filter_counts
@@ -350,7 +350,7 @@ _ethernet_rx_server:
 	stw r0, sp[3]
 	.loc	1 381 0
 .Lxta.call_labels0:
-	bl mii_init_my_rdptr
+	bl _mii_init_my_rdptr
 	stw r0, sp[4]
 	stw r6, sp[1]
 .Ltmp24:
@@ -564,7 +564,7 @@ _ethernet_rx_server:
 	.loc	1 434 0
 	mov r0, r9
 .Lxta.call_labels4:
-	bl get_and_dec_transmit_count
+	bl _get_and_dec_transmit_count
 	.loc	1 434 0
 	bt r0, .LBB0_20
 .Ltmp56:
@@ -572,7 +572,7 @@ _ethernet_rx_server:
 	.loc	1 435 0
 	mov r0, r9
 .Lxta.call_labels5:
-	bl mii_free
+	bl _mii_free
 .Ltmp57:
 .LBB0_20:
 .Lxtalabel15:
@@ -601,7 +601,7 @@ _ethernet_rx_server:
 	ldw r0, sp[3]
 	ldw r1, sp[4]
 .Lxta.call_labels6:
-	bl mii_get_my_next_buf
+	bl _mii_get_my_next_buf
 	mov r8, r0
 .Ltmp63:
 	.loc	1 468 0
@@ -617,7 +617,7 @@ _ethernet_rx_server:
 	ldw r0, sp[3]
 	ldw r1, sp[4]
 .Lxta.call_labels7:
-	bl mii_update_my_rdptr
+	bl _mii_update_my_rdptr
 	stw r0, sp[4]
 	.loc	3 137 0
 .Ltmp67:
@@ -740,7 +740,7 @@ _ethernet_rx_server:
 	.loc	1 334 0
 	mov r0, r8
 .Lxta.call_labels8:
-	bl mii_free
+	bl _mii_free
 	bu .LBB0_42
 .Ltmp87:
 .LBB0_40:
@@ -862,13 +862,13 @@ _ethernet_rx_server:
 
 	.align	4
 	.cc_bottom _ethernet_rx_server.function
-	.set	_ethernet_rx_server.nstackwords,((mii_init_my_rdptr.nstackwords $M memset.nstackwords $M serviceLinkCmd.nstackwords $M _mac_rx_send_frame1.nstackwords $M get_and_dec_transmit_count.nstackwords $M mii_get_my_next_buf.nstackwords $M mii_update_my_rdptr.nstackwords $M mii_free.nstackwords $M _ethernet_link_status_notification.nstackwords $M _ethernet_get_link_status.nstackwords) + 15)
+	.set	_ethernet_rx_server.nstackwords,((_mii_init_my_rdptr.nstackwords $M memset.nstackwords $M serviceLinkCmd.nstackwords $M _mac_rx_send_frame1.nstackwords $M _get_and_dec_transmit_count.nstackwords $M _mii_get_my_next_buf.nstackwords $M _mii_update_my_rdptr.nstackwords $M _mii_free.nstackwords $M _ethernet_link_status_notification.nstackwords $M _ethernet_get_link_status.nstackwords) + 15)
 	.globl	_ethernet_rx_server.nstackwords
-	.set	_ethernet_rx_server.maxcores,_ethernet_get_link_status.maxcores $M _ethernet_link_status_notification.maxcores $M _mac_rx_send_frame1.maxcores $M get_and_dec_transmit_count.maxcores $M mii_free.maxcores $M mii_get_my_next_buf.maxcores $M mii_init_my_rdptr.maxcores $M mii_update_my_rdptr.maxcores $M serviceLinkCmd.maxcores $M 1
+	.set	_ethernet_rx_server.maxcores,_ethernet_get_link_status.maxcores $M _ethernet_link_status_notification.maxcores $M _get_and_dec_transmit_count.maxcores $M _mac_rx_send_frame1.maxcores $M _mii_free.maxcores $M _mii_get_my_next_buf.maxcores $M _mii_init_my_rdptr.maxcores $M _mii_update_my_rdptr.maxcores $M serviceLinkCmd.maxcores $M 1
 	.globl	_ethernet_rx_server.maxcores
-	.set	_ethernet_rx_server.maxtimers,_ethernet_get_link_status.maxtimers $M _ethernet_link_status_notification.maxtimers $M _mac_rx_send_frame1.maxtimers $M get_and_dec_transmit_count.maxtimers $M mii_free.maxtimers $M mii_get_my_next_buf.maxtimers $M mii_init_my_rdptr.maxtimers $M mii_update_my_rdptr.maxtimers $M serviceLinkCmd.maxtimers $M 0
+	.set	_ethernet_rx_server.maxtimers,_ethernet_get_link_status.maxtimers $M _ethernet_link_status_notification.maxtimers $M _get_and_dec_transmit_count.maxtimers $M _mac_rx_send_frame1.maxtimers $M _mii_free.maxtimers $M _mii_get_my_next_buf.maxtimers $M _mii_init_my_rdptr.maxtimers $M _mii_update_my_rdptr.maxtimers $M serviceLinkCmd.maxtimers $M 0
 	.globl	_ethernet_rx_server.maxtimers
-	.set	_ethernet_rx_server.maxchanends,_ethernet_get_link_status.maxchanends $M _ethernet_link_status_notification.maxchanends $M _mac_rx_send_frame1.maxchanends $M get_and_dec_transmit_count.maxchanends $M mii_free.maxchanends $M mii_get_my_next_buf.maxchanends $M mii_init_my_rdptr.maxchanends $M mii_update_my_rdptr.maxchanends $M serviceLinkCmd.maxchanends $M 0
+	.set	_ethernet_rx_server.maxchanends,_ethernet_get_link_status.maxchanends $M _ethernet_link_status_notification.maxchanends $M _get_and_dec_transmit_count.maxchanends $M _mac_rx_send_frame1.maxchanends $M _mii_free.maxchanends $M _mii_get_my_next_buf.maxchanends $M _mii_init_my_rdptr.maxchanends $M _mii_update_my_rdptr.maxchanends $M serviceLinkCmd.maxchanends $M 0
 	.globl	_ethernet_rx_server.maxchanends
 	.cc_top serviceLinkCmd.function
 	.section	.cp.rodata.cst4,"aMc",@progbits,4
@@ -1222,7 +1222,7 @@ _mac_rx_send_frame1:
 	.loc	1 175 0
 	mov r0, r5
 .Lxta.call_labels13:
-	bl mii_packet_get_wrap_ptr
+	bl _mii_packet_get_wrap_ptr
 .Ltmp166:
 	.loc	1 177 0
 	bf r8, .LBB2_5
@@ -1436,13 +1436,13 @@ _mac_rx_send_frame1:
 
 	.align	4
 	.cc_bottom _mac_rx_send_frame1.function
-	.set	_mac_rx_send_frame1.nstackwords,(mii_packet_get_wrap_ptr.nstackwords + 6)
+	.set	_mac_rx_send_frame1.nstackwords,(_mii_packet_get_wrap_ptr.nstackwords + 6)
 	.globl	_mac_rx_send_frame1.nstackwords
-	.set	_mac_rx_send_frame1.maxcores,mii_packet_get_wrap_ptr.maxcores $M 1
+	.set	_mac_rx_send_frame1.maxcores,_mii_packet_get_wrap_ptr.maxcores $M 1
 	.globl	_mac_rx_send_frame1.maxcores
-	.set	_mac_rx_send_frame1.maxtimers,mii_packet_get_wrap_ptr.maxtimers $M 0
+	.set	_mac_rx_send_frame1.maxtimers,_mii_packet_get_wrap_ptr.maxtimers $M 0
 	.globl	_mac_rx_send_frame1.maxtimers
-	.set	_mac_rx_send_frame1.maxchanends,mii_packet_get_wrap_ptr.maxchanends $M 0
+	.set	_mac_rx_send_frame1.maxchanends,_mii_packet_get_wrap_ptr.maxchanends $M 0
 	.globl	_mac_rx_send_frame1.maxchanends
 	.cc_top _mac_rx_send_frame0.function
 	.section	.cp.rodata.cst4,"aMc",@progbits,4
@@ -4876,13 +4876,13 @@ _link_status:
 	.long	0
 	.section	.debug_macinfo,"",@progbits
 
-	.typestring get_and_dec_transmit_count, "f{si}(si)"
+	.typestring _get_and_dec_transmit_count, "f{si}(si)"
 	.typestring _ethernet_get_mii_counts, "f{0}(&(ui))"
-	.typestring mii_free, "f{0}(ui)"
-	.typestring mii_init_my_rdptr, "f{si}(ui)"
-	.typestring mii_update_my_rdptr, "f{si}(ui,si)"
-	.typestring mii_get_my_next_buf, "f{ui}(ui,si)"
-	.typestring mii_packet_get_wrap_ptr, "f{si}(si)"
+	.typestring _mii_free, "f{0}(ui)"
+	.typestring _mii_init_my_rdptr, "f{si}(ui)"
+	.typestring _mii_update_my_rdptr, "f{si}(ui,si)"
+	.typestring _mii_get_my_next_buf, "f{ui}(ui,si)"
+	.typestring _mii_packet_get_wrap_ptr, "f{si}(si)"
 	.typestring _ethernet_get_filter_counts, "f{0}(&(ui),&(ui),&(ui),&(ui))"
 	.typestring _ethernet_rx_server, "f{0}(&(a(:ui)),&(a(:chd)),si)"
 	.typestring _ethernet_get_link_status, "f{si}(si)"

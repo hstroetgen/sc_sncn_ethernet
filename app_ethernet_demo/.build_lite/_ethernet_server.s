@@ -56,16 +56,16 @@
 	.set usage.anon.24,0
 	.set usage.anon.25,0
 	.set usage.anon.26,0
-	.call _ethernet_server_full,mii_init_full
 	.call _ethernet_server_full,init_mii_mem
 	.call _ethernet_server_full,_mii_tx_pins_wr
 	.call _ethernet_server_full,_mii_rx_pins_wr
+	.call _ethernet_server_full,_mii_init_full
 	.call _ethernet_server_full,_ethernet_tx_server_wr
 	.call _ethernet_server_full,_ethernet_rx_server_wr
 	.call _ethernet_server_full,_ethernet_filter
 	.call phy_init,smi_init
-	.call phy_init,mii_init_full
 	.call phy_init,eth_phy_config
+	.call phy_init,_mii_init_full
 	.call usage.anon.2,delay_ticks_longlong
 	.call usage.anon.1,delay_ticks_longlong
 	.call usage.anon.0,delay_ticks_longlong
@@ -283,7 +283,7 @@ phy_init:
 	mov r0, r5
 .Ltmp11:
 .Lxta.call_labels1:
-	bl mii_init_full
+	bl _mii_init_full
 .Ltmp12:
 	mkmsk r0, 1
 	.loc	1 19 0
@@ -304,13 +304,13 @@ phy_init:
 
 	.align	4
 	.cc_bottom phy_init.function
-	.set	phy_init.nstackwords,((smi_init.nstackwords $M mii_init_full.nstackwords $M eth_phy_config.nstackwords) + 3)
+	.set	phy_init.nstackwords,((smi_init.nstackwords $M _mii_init_full.nstackwords $M eth_phy_config.nstackwords) + 3)
 	.globl	phy_init.nstackwords
-	.set	phy_init.maxcores,eth_phy_config.maxcores $M mii_init_full.maxcores $M smi_init.maxcores $M 1
+	.set	phy_init.maxcores,_mii_init_full.maxcores $M eth_phy_config.maxcores $M smi_init.maxcores $M 1
 	.globl	phy_init.maxcores
-	.set	phy_init.maxtimers,eth_phy_config.maxtimers $M mii_init_full.maxtimers $M smi_init.maxtimers $M 0
+	.set	phy_init.maxtimers,_mii_init_full.maxtimers $M eth_phy_config.maxtimers $M smi_init.maxtimers $M 0
 	.globl	phy_init.maxtimers
-	.set	phy_init.maxchanends,eth_phy_config.maxchanends $M mii_init_full.maxchanends $M smi_init.maxchanends $M 0
+	.set	phy_init.maxchanends,_mii_init_full.maxchanends $M eth_phy_config.maxchanends $M smi_init.maxchanends $M 0
 	.globl	phy_init.maxchanends
 	.cc_top _ethernet_server_full.function
 	.globl	_ethernet_server_full
@@ -353,7 +353,7 @@ _ethernet_server_full:
 	stw r1, sp[12]
 	.loc	1 31 0
 .Lxta.call_labels3:
-	bl mii_init_full
+	bl _mii_init_full
 	.loc	1 32 0
 .Lxta.call_labels4:
 	bl init_mii_mem
@@ -380,13 +380,13 @@ _ethernet_server_full:
 
 	.align	4
 	.cc_bottom _ethernet_server_full.function
-	.set	_ethernet_server_full.nstackwords,((mii_init_full.nstackwords $M init_mii_mem.nstackwords $M (par.extra_stackwords + 1 + _ethernet_server_full.task._mii_rx_pins_wr.0.nstackwords + 1 + _ethernet_server_full.task._mii_tx_pins_wr.1.nstackwords + 1 + _ethernet_server_full.task._ethernet_tx_server_wr.2.nstackwords + 1 + _ethernet_server_full.task._ethernet_rx_server_wr.3.nstackwords + 1 + _ethernet_server_full.task._ethernet_filter.4.nstackwords)) + 13)
+	.set	_ethernet_server_full.nstackwords,((_mii_init_full.nstackwords $M init_mii_mem.nstackwords $M (par.extra_stackwords + 1 + _ethernet_server_full.task._mii_rx_pins_wr.0.nstackwords + 1 + _ethernet_server_full.task._mii_tx_pins_wr.1.nstackwords + 1 + _ethernet_server_full.task._ethernet_tx_server_wr.2.nstackwords + 1 + _ethernet_server_full.task._ethernet_rx_server_wr.3.nstackwords + 1 + _ethernet_server_full.task._ethernet_filter.4.nstackwords)) + 13)
 	.globl	_ethernet_server_full.nstackwords
-	.set	_ethernet_server_full.maxcores,(0 + _ethernet_server_full.task._mii_rx_pins_wr.0.maxcores + _ethernet_server_full.task._mii_tx_pins_wr.1.maxcores + _ethernet_server_full.task._ethernet_tx_server_wr.2.maxcores + _ethernet_server_full.task._ethernet_rx_server_wr.3.maxcores + _ethernet_server_full.task._ethernet_filter.4.maxcores) $M init_mii_mem.maxcores $M mii_init_full.maxcores $M 1
+	.set	_ethernet_server_full.maxcores,(0 + _ethernet_server_full.task._mii_rx_pins_wr.0.maxcores + _ethernet_server_full.task._mii_tx_pins_wr.1.maxcores + _ethernet_server_full.task._ethernet_tx_server_wr.2.maxcores + _ethernet_server_full.task._ethernet_rx_server_wr.3.maxcores + _ethernet_server_full.task._ethernet_filter.4.maxcores) $M _mii_init_full.maxcores $M init_mii_mem.maxcores $M 1
 	.globl	_ethernet_server_full.maxcores
-	.set	_ethernet_server_full.maxtimers,(4 + _ethernet_server_full.task._mii_rx_pins_wr.0.maxtimers + _ethernet_server_full.task._mii_tx_pins_wr.1.maxtimers + _ethernet_server_full.task._ethernet_tx_server_wr.2.maxtimers + _ethernet_server_full.task._ethernet_rx_server_wr.3.maxtimers + _ethernet_server_full.task._ethernet_filter.4.maxtimers) $M init_mii_mem.maxtimers $M mii_init_full.maxtimers $M 0
+	.set	_ethernet_server_full.maxtimers,(4 + _ethernet_server_full.task._mii_rx_pins_wr.0.maxtimers + _ethernet_server_full.task._mii_tx_pins_wr.1.maxtimers + _ethernet_server_full.task._ethernet_tx_server_wr.2.maxtimers + _ethernet_server_full.task._ethernet_rx_server_wr.3.maxtimers + _ethernet_server_full.task._ethernet_filter.4.maxtimers) $M _mii_init_full.maxtimers $M init_mii_mem.maxtimers $M 0
 	.globl	_ethernet_server_full.maxtimers
-	.set	_ethernet_server_full.maxchanends,(2 + (0 + _ethernet_server_full.task._mii_rx_pins_wr.0.maxchanends + _ethernet_server_full.task._mii_tx_pins_wr.1.maxchanends + _ethernet_server_full.task._ethernet_tx_server_wr.2.maxchanends + _ethernet_server_full.task._ethernet_rx_server_wr.3.maxchanends + _ethernet_server_full.task._ethernet_filter.4.maxchanends)) $M (2 + init_mii_mem.maxchanends) $M (2 + mii_init_full.maxchanends) $M 2
+	.set	_ethernet_server_full.maxchanends,(2 + (0 + _ethernet_server_full.task._mii_rx_pins_wr.0.maxchanends + _ethernet_server_full.task._mii_tx_pins_wr.1.maxchanends + _ethernet_server_full.task._ethernet_tx_server_wr.2.maxchanends + _ethernet_server_full.task._ethernet_rx_server_wr.3.maxchanends + _ethernet_server_full.task._ethernet_filter.4.maxchanends)) $M (2 + _mii_init_full.maxchanends) $M (2 + init_mii_mem.maxchanends) $M 2
 	.globl	_ethernet_server_full.maxchanends
 	.cc_top _ethernet_server_full.task._mii_rx_pins_wr.0.function
 	.align	4
@@ -2239,7 +2239,7 @@ par.desc.1:
 	.section	.debug_ranges,"",@progbits
 	.section	.debug_macinfo,"",@progbits
 
-	.typestring mii_init_full, "f{0}(&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}))"
+	.typestring _mii_init_full, "f{0}(&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}))"
 	.typestring smi_init, "f{0}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
 	.typestring eth_phy_config, "f{0}(si,&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
 	.typestring init_mii_mem, "f{0}()"

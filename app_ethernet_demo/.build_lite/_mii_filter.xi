@@ -396,28 +396,28 @@ typedef struct mii_ts_queue_t {
 
 
 
-void init_ts_queue( mii_ts_queue_t &q );
+void _init_ts_queue( mii_ts_queue_t &q );
 
 
-int get_ts_queue_entry( mii_ts_queue_t &q );
+int _get_ts_queue_entry( mii_ts_queue_t &q );
 
 
-void add_ts_queue_entry( mii_ts_queue_t &q , int i);
-
-
-
+void _add_ts_queue_entry( mii_ts_queue_t &q , int i);
 
 
 
 
-int get_and_dec_transmit_count(int buf_num);
 
 
-int mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
+
+int _get_and_dec_transmit_count(int buf_num);
+
+
+int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 # 80 "_mii_full.h" 2
 
 
-void mii_init_full( mii_interface_full_t &m );
+void _mii_init_full( mii_interface_full_t &m );
 
 
 
@@ -482,7 +482,7 @@ inline void mii_packet_set_data_byte(int buf, int n, int v) {
 }
 
 
-void mii_rx_pins(
+void _mii_rx_pins(
 # 187 "_mii_full.h"
 		 unsigned rxmem_lp,
 		 in port p_mii_rxdv,
@@ -490,7 +490,7 @@ void mii_rx_pins(
 		 int ifnum,
 		 streaming chanend c);
 # 205 "_mii_full.h"
-void mii_tx_pins(
+void _mii_tx_pins(
 # 215 "_mii_full.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t &ts_queue,
@@ -562,14 +562,14 @@ mii_buffer_t mii_reserve_at_least(mii_mempool_t mempool,
 
 void mii_commit(mii_buffer_t buf, int endptr0);
 
-void mii_free(mii_buffer_t buf);
-int mii_init_my_rdptr(mii_mempool_t mempool);
-int mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0);
-mii_buffer_t mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0);
-mii_buffer_t mii_get_next_buf(mii_mempool_t mempool);
-int mii_get_wrap_ptr(mii_mempool_t mempool);
-unsigned mii_packet_get_data(int buf, int n);
-int mii_packet_get_wrap_ptr(int buf);
+void _mii_free(mii_buffer_t buf);
+int _mii_init_my_rdptr(mii_mempool_t mempool);
+int _mii_update_my_rdptr(mii_mempool_t mempool, int rdptr0);
+mii_buffer_t _mii_get_my_next_buf(mii_mempool_t mempool, int rdptr0);
+mii_buffer_t _mii_get_next_buf(mii_mempool_t mempool);
+int _mii_get_wrap_ptr(mii_mempool_t mempool);
+unsigned _mii_packet_get_data(int buf, int n);
+int _mii_packet_get_wrap_ptr(int buf);
 # 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_filter.xc" 2
 # 1 "_mii_filter.h" 1
 # 8 "_mii_filter.h"
@@ -653,7 +653,7 @@ void _ethernet_filter(const char mac_address[], streaming chanend c[ 1 ]) {
 					int endbytes;
 					int tail;
 
-					tail = mii_packet_get_data(buf,((length & 0xFFFFFFFC)/4)+1);
+					tail = _mii_packet_get_data(buf,((length & 0xFFFFFFFC)/4)+1);
 
 					endbytes = (length & 3);
 
@@ -698,8 +698,8 @@ void _ethernet_filter(const char mac_address[], streaming chanend c[ 1 ]) {
 
 					else
 					{
-						int broadcast =  (mii_packet_get_data(buf,0) & 0x1) ;
-						int unicast =  (mii_packet_get_data(buf,0) == mac[0] && ((short) mii_packet_get_data(buf,1)) == ((short) mac[1])) ;
+						int broadcast =  (_mii_packet_get_data(buf,0) & 0x1) ;
+						int unicast =  (_mii_packet_get_data(buf,0) == mac[0] && ((short) _mii_packet_get_data(buf,1)) == ((short) mac[1])) ;
 						int res=0;
 # 124 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_filter.xc"
 							if (broadcast || unicast) {

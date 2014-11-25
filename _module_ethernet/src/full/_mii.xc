@@ -134,7 +134,7 @@ void _ethernet_get_mii_counts(unsigned& dropped) {
 #endif
 
 #pragma unsafe arrays
-void mii_rx_pins(
+void _mii_rx_pins(
 #if ETHERNET_RX_HP_QUEUE
 		mii_mempool_t rxmem_hp,
 #endif
@@ -154,7 +154,7 @@ void mii_rx_pins(
 #if ETHERNET_RX_HP_QUEUE
         wrap_ptr_hp = mii_get_wrap_ptr(rxmem_hp);
 #endif
-        wrap_ptr_lp = mii_get_wrap_ptr(rxmem_lp);
+        wrap_ptr_lp = _mii_get_wrap_ptr(rxmem_lp);
 
 	p_mii_rxdv when pinseq(0) :> int lo;
 
@@ -475,7 +475,7 @@ void _mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tm
         int wrap_ptr;
 	word_count = word_count >> 2;
 	dptr = mii_packet_get_data_ptr(buf);
-        wrap_ptr = mii_packet_get_wrap_ptr(buf);
+        wrap_ptr = _mii_packet_get_wrap_ptr(buf);
 
 #pragma xta endpoint "mii_tx_sof"
 	p_mii_txd <: 0x55555555;
@@ -556,7 +556,7 @@ void _mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tm
 
 
 #pragma unsafe arrays
-void mii_tx_pins(
+void _mii_tx_pins(
 #if (NUM_ETHERNET_PORTS > 1) && !(DISABLE_ETHERNET_PORT_FORWARDING)
 #if ETHERNET_TX_HP_QUEUE
 		mii_mempool_t hp_forward[],
@@ -644,7 +644,7 @@ void mii_tx_pins(
 		if (!buf || mii_packet_get_stage(buf) != 1)
 		buf = mii_get_next_buf(lp_queue);
 #else
-		buf = mii_get_next_buf(lp_queue);
+		buf = _mii_get_next_buf(lp_queue);
 
 #endif
 
@@ -686,13 +686,13 @@ void mii_tx_pins(
 		tmr :> prev_eof_time;
 		ok_to_transmit = 0;
 
-		if (get_and_dec_transmit_count(buf) == 0) {
+		if (_get_and_dec_transmit_count(buf) == 0) {
 			if (mii_packet_get_timestamp_id(buf)) {
 				mii_packet_set_stage(buf, 2);
-				add_ts_queue_entry(ts_queue, buf);
+				_add_ts_queue_entry(ts_queue, buf);
 			}
 			else {
-				mii_free(buf);
+				_mii_free(buf);
 			}
 		}
 	}
@@ -703,7 +703,7 @@ void mii_tx_pins(
 extern clock ETH_REF_CLOCK;
 #endif
 
-void mii_init_full(mii_interface_full_t &m) {
+void _mii_init_full(mii_interface_full_t &m) {
 #ifndef SIMULATION
 	timer tmr;
 	unsigned t;

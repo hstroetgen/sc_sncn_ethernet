@@ -1,64 +1,64 @@
 	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_nettypes.c"
 
-.set hton16.locnoside, 1
+.set _hton16.locnoside, 1
 
-.set hton16.locnochandec, 1
+.set _hton16.locnochandec, 1
 
-.set hton16.locnoglobalaccess, 1
+.set _hton16.locnoglobalaccess, 1
 
-.set hton16.locnointerfaceaccess, 1
+.set _hton16.locnointerfaceaccess, 1
 
-.set hton16.locnonotificationselect, 1
+.set _hton16.locnonotificationselect, 1
 
-.set ntoh16.locnoside, 1
+.set _ntoh16.locnoside, 1
 
-.set ntoh16.locnochandec, 1
+.set _ntoh16.locnochandec, 1
 
-.set ntoh16.locnoglobalaccess, 1
+.set _ntoh16.locnoglobalaccess, 1
 
-.set ntoh16.locnointerfaceaccess, 1
+.set _ntoh16.locnointerfaceaccess, 1
 
-.set ntoh16.locnonotificationselect, 1
+.set _ntoh16.locnonotificationselect, 1
 
-.set ntoh32.locnoside, 1
+.set _ntoh32.locnoside, 1
 
-.set ntoh32.locnochandec, 1
+.set _ntoh32.locnochandec, 1
 
-.set ntoh32.locnoglobalaccess, 1
+.set _ntoh32.locnoglobalaccess, 1
 
-.set ntoh32.locnointerfaceaccess, 1
+.set _ntoh32.locnointerfaceaccess, 1
 
-.set ntoh32.locnonotificationselect, 1
+.set _ntoh32.locnonotificationselect, 1
 
-.set ntoh64.locnoside, 1
+.set _ntoh64.locnoside, 1
 
-.set ntoh64.locnochandec, 1
+.set _ntoh64.locnochandec, 1
 
-.set ntoh64.locnoglobalaccess, 1
+.set _ntoh64.locnoglobalaccess, 1
 
-.set ntoh64.locnointerfaceaccess, 1
+.set _ntoh64.locnointerfaceaccess, 1
 
-.set ntoh64.locnonotificationselect, 1
+.set _ntoh64.locnonotificationselect, 1
 
-.set hton32.locnoside, 1
+.set _hton32.locnoside, 1
 
-.set hton32.locnochandec, 1
+.set _hton32.locnochandec, 1
 
-.set hton32.locnoglobalaccess, 1
+.set _hton32.locnoglobalaccess, 1
 
-.set hton32.locnointerfaceaccess, 1
+.set _hton32.locnointerfaceaccess, 1
 
-.set hton32.locnonotificationselect, 1
+.set _hton32.locnonotificationselect, 1
 
-.set hton80.locnoside, 1
+.set _hton80.locnoside, 1
 
-.set hton80.locnochandec, 1
+.set _hton80.locnochandec, 1
 
-.set hton80.locnoglobalaccess, 1
+.set _hton80.locnoglobalaccess, 1
 
-.set hton80.locnointerfaceaccess, 1
+.set _hton80.locnointerfaceaccess, 1
 
-.set hton80.locnonotificationselect, 1
+.set _hton80.locnonotificationselect, 1
 
 
 	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_nettypes.c"
@@ -84,11 +84,11 @@
 .Ltext_begin:
 	.section	.dp.data,"awd",@progbits
 	.text
-	.cc_top hton16.function
-	.globl	hton16
+	.cc_top _hton16.function
+	.globl	_hton16
 	.align	2
-	.type	hton16,@function
-hton16:
+	.type	_hton16,@function
+_hton16:
 .Ltmp0:
 	.cfi_startproc
 .Lfunc_begin0:
@@ -103,26 +103,26 @@ hton16:
 	retsp 0
 .Ltmp1:
 .Ltmp2:
-	.size	hton16, .Ltmp2-hton16
+	.size	_hton16, .Ltmp2-_hton16
 .Lfunc_end0:
 .Ltmp3:
 	.cfi_endproc
 .Leh_func_end0:
 
-	.cc_bottom hton16.function
-	.set	hton16.nstackwords,0
-	.globl	hton16.nstackwords
-	.set	hton16.maxcores,1
-	.globl	hton16.maxcores
-	.set	hton16.maxtimers,0
-	.globl	hton16.maxtimers
-	.set	hton16.maxchanends,0
-	.globl	hton16.maxchanends
-	.cc_top ntoh16.function
-	.globl	ntoh16
+	.cc_bottom _hton16.function
+	.set	_hton16.nstackwords,0
+	.globl	_hton16.nstackwords
+	.set	_hton16.maxcores,1
+	.globl	_hton16.maxcores
+	.set	_hton16.maxtimers,0
+	.globl	_hton16.maxtimers
+	.set	_hton16.maxchanends,0
+	.globl	_hton16.maxchanends
+	.cc_top _ntoh16.function
+	.globl	_ntoh16
 	.align	2
-	.type	ntoh16,@function
-ntoh16:
+	.type	_ntoh16,@function
+_ntoh16:
 .Ltmp4:
 	.cfi_startproc
 .Lfunc_begin1:
@@ -139,26 +139,26 @@ ntoh16:
 	retsp 0
 .Ltmp6:
 .Ltmp7:
-	.size	ntoh16, .Ltmp7-ntoh16
+	.size	_ntoh16, .Ltmp7-_ntoh16
 .Lfunc_end1:
 .Ltmp8:
 	.cfi_endproc
 .Leh_func_end1:
 
-	.cc_bottom ntoh16.function
-	.set	ntoh16.nstackwords,0
-	.globl	ntoh16.nstackwords
-	.set	ntoh16.maxcores,1
-	.globl	ntoh16.maxcores
-	.set	ntoh16.maxtimers,0
-	.globl	ntoh16.maxtimers
-	.set	ntoh16.maxchanends,0
-	.globl	ntoh16.maxchanends
-	.cc_top ntoh32.function
-	.globl	ntoh32
+	.cc_bottom _ntoh16.function
+	.set	_ntoh16.nstackwords,0
+	.globl	_ntoh16.nstackwords
+	.set	_ntoh16.maxcores,1
+	.globl	_ntoh16.maxcores
+	.set	_ntoh16.maxtimers,0
+	.globl	_ntoh16.maxtimers
+	.set	_ntoh16.maxchanends,0
+	.globl	_ntoh16.maxchanends
+	.cc_top _ntoh32.function
+	.globl	_ntoh32
 	.align	2
-	.type	ntoh32,@function
-ntoh32:
+	.type	_ntoh32,@function
+_ntoh32:
 .Ltmp9:
 	.cfi_startproc
 .Lfunc_begin2:
@@ -180,26 +180,26 @@ ntoh32:
 	retsp 0
 .Ltmp11:
 .Ltmp12:
-	.size	ntoh32, .Ltmp12-ntoh32
+	.size	_ntoh32, .Ltmp12-_ntoh32
 .Lfunc_end2:
 .Ltmp13:
 	.cfi_endproc
 .Leh_func_end2:
 
-	.cc_bottom ntoh32.function
-	.set	ntoh32.nstackwords,0
-	.globl	ntoh32.nstackwords
-	.set	ntoh32.maxcores,1
-	.globl	ntoh32.maxcores
-	.set	ntoh32.maxtimers,0
-	.globl	ntoh32.maxtimers
-	.set	ntoh32.maxchanends,0
-	.globl	ntoh32.maxchanends
-	.cc_top ntoh64.function
-	.globl	ntoh64
+	.cc_bottom _ntoh32.function
+	.set	_ntoh32.nstackwords,0
+	.globl	_ntoh32.nstackwords
+	.set	_ntoh32.maxcores,1
+	.globl	_ntoh32.maxcores
+	.set	_ntoh32.maxtimers,0
+	.globl	_ntoh32.maxtimers
+	.set	_ntoh32.maxchanends,0
+	.globl	_ntoh32.maxchanends
+	.cc_top _ntoh64.function
+	.globl	_ntoh64
 	.align	2
-	.type	ntoh64,@function
-ntoh64:
+	.type	_ntoh64,@function
+_ntoh64:
 .Ltmp17:
 	.cfi_startproc
 .Lfunc_begin3:
@@ -276,26 +276,26 @@ ntoh64:
 	retsp 4
 .Ltmp28:
 .Ltmp29:
-	.size	ntoh64, .Ltmp29-ntoh64
+	.size	_ntoh64, .Ltmp29-_ntoh64
 .Lfunc_end3:
 .Ltmp30:
 	.cfi_endproc
 .Leh_func_end3:
 
-	.cc_bottom ntoh64.function
-	.set	ntoh64.nstackwords,4
-	.globl	ntoh64.nstackwords
-	.set	ntoh64.maxcores,1
-	.globl	ntoh64.maxcores
-	.set	ntoh64.maxtimers,0
-	.globl	ntoh64.maxtimers
-	.set	ntoh64.maxchanends,0
-	.globl	ntoh64.maxchanends
-	.cc_top hton32.function
-	.globl	hton32
+	.cc_bottom _ntoh64.function
+	.set	_ntoh64.nstackwords,4
+	.globl	_ntoh64.nstackwords
+	.set	_ntoh64.maxcores,1
+	.globl	_ntoh64.maxcores
+	.set	_ntoh64.maxtimers,0
+	.globl	_ntoh64.maxtimers
+	.set	_ntoh64.maxchanends,0
+	.globl	_ntoh64.maxchanends
+	.cc_top _hton32.function
+	.globl	_hton32
 	.align	2
-	.type	hton32,@function
-hton32:
+	.type	_hton32,@function
+_hton32:
 .Ltmp31:
 	.cfi_startproc
 .Lfunc_begin4:
@@ -320,26 +320,26 @@ hton32:
 	retsp 0
 .Ltmp32:
 .Ltmp33:
-	.size	hton32, .Ltmp33-hton32
+	.size	_hton32, .Ltmp33-_hton32
 .Lfunc_end4:
 .Ltmp34:
 	.cfi_endproc
 .Leh_func_end4:
 
-	.cc_bottom hton32.function
-	.set	hton32.nstackwords,0
-	.globl	hton32.nstackwords
-	.set	hton32.maxcores,1
-	.globl	hton32.maxcores
-	.set	hton32.maxtimers,0
-	.globl	hton32.maxtimers
-	.set	hton32.maxchanends,0
-	.globl	hton32.maxchanends
-	.cc_top hton80.function
-	.globl	hton80
+	.cc_bottom _hton32.function
+	.set	_hton32.nstackwords,0
+	.globl	_hton32.nstackwords
+	.set	_hton32.maxcores,1
+	.globl	_hton32.maxcores
+	.set	_hton32.maxtimers,0
+	.globl	_hton32.maxtimers
+	.set	_hton32.maxchanends,0
+	.globl	_hton32.maxchanends
+	.cc_top _hton80.function
+	.globl	_hton80
 	.align	2
-	.type	hton80,@function
-hton80:
+	.type	_hton80,@function
+_hton80:
 .Ltmp38:
 	.cfi_startproc
 .Lfunc_begin5:
@@ -390,21 +390,21 @@ hton80:
 	retsp 9
 .Ltmp48:
 .Ltmp49:
-	.size	hton80, .Ltmp49-hton80
+	.size	_hton80, .Ltmp49-_hton80
 .Lfunc_end5:
 .Ltmp50:
 	.cfi_endproc
 .Leh_func_end5:
 
-	.cc_bottom hton80.function
-	.set	hton80.nstackwords,(memcpy.nstackwords + 9)
-	.globl	hton80.nstackwords
-	.set	hton80.maxcores,1
-	.globl	hton80.maxcores
-	.set	hton80.maxtimers,0
-	.globl	hton80.maxtimers
-	.set	hton80.maxchanends,0
-	.globl	hton80.maxchanends
+	.cc_bottom _hton80.function
+	.set	_hton80.nstackwords,(memcpy.nstackwords + 9)
+	.globl	_hton80.nstackwords
+	.set	_hton80.maxcores,1
+	.globl	_hton80.maxcores
+	.set	_hton80.maxtimers,0
+	.globl	_hton80.maxtimers
+	.set	_hton80.maxchanends,0
+	.globl	_hton80.maxchanends
 	.cfi_sections .debug_frame
 .Ltext_end:
 	.section	.dp.data,"awd",@progbits
@@ -413,7 +413,7 @@ hton80:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	932
+	.long	944
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -429,14 +429,14 @@ hton80:
 	.byte	0
 	.byte	1
 	.byte	2
-	.ascii	 "hton16"
+	.ascii	 "_hton16"
 	.byte	0
-	.ascii	 "hton16"
+	.ascii	 "_hton16"
 	.byte	0
 	.byte	2
 	.byte	31
 	.byte	1
-	.long	339
+	.long	341
 	.byte	1
 	.long	.Lfunc_begin0
 	.long	.Lfunc_end0
@@ -448,7 +448,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	31
-	.long	408
+	.long	412
 	.long	.Ldebug_loc0+0
 	.byte	0
 	.byte	4
@@ -460,9 +460,9 @@ hton80:
 	.byte	4
 	.byte	5
 	.byte	6
-	.long	286
+	.long	288
 	.byte	7
-	.long	303
+	.long	305
 	.byte	1
 	.byte	0
 	.byte	8
@@ -472,7 +472,7 @@ hton80:
 	.byte	9
 	.ascii	 "data"
 	.byte	0
-	.long	306
+	.long	308
 	.byte	2
 	.byte	24
 	.byte	2
@@ -481,20 +481,20 @@ hton80:
 	.byte	1
 	.byte	0
 	.byte	10
-	.long	318
+	.long	320
 	.ascii	 "n16_t"
 	.byte	0
 	.byte	2
 	.byte	25
 	.byte	11
-	.ascii	 "ntoh16"
+	.ascii	 "_ntoh16"
 	.byte	0
-	.ascii	 "ntoh16"
+	.ascii	 "_ntoh16"
 	.byte	0
 	.byte	2
 	.byte	38
 	.byte	1
-	.long	408
+	.long	412
 	.byte	1
 	.long	.Lfunc_begin1
 	.long	.Lfunc_end1
@@ -507,20 +507,20 @@ hton80:
 	.byte	7
 	.byte	2
 	.byte	10
-	.long	386
+	.long	390
 	.ascii	 "u16_t"
 	.byte	0
 	.byte	2
 	.byte	15
 	.byte	11
-	.ascii	 "ntoh32"
+	.ascii	 "_ntoh32"
 	.byte	0
-	.ascii	 "ntoh32"
+	.ascii	 "_ntoh32"
 	.byte	0
 	.byte	2
 	.byte	42
 	.byte	1
-	.long	471
+	.long	477
 	.byte	1
 	.long	.Lfunc_begin2
 	.long	.Lfunc_end2
@@ -533,20 +533,20 @@ hton80:
 	.byte	7
 	.byte	4
 	.byte	10
-	.long	455
+	.long	461
 	.ascii	 "u32_t"
 	.byte	0
 	.byte	2
 	.byte	17
 	.byte	2
-	.ascii	 "ntoh64"
+	.ascii	 "_ntoh64"
 	.byte	0
-	.ascii	 "ntoh64"
+	.ascii	 "_ntoh64"
 	.byte	0
 	.byte	2
 	.byte	47
 	.byte	1
-	.long	601
+	.long	609
 	.byte	1
 	.long	.Lfunc_begin3
 	.long	.Lfunc_end3
@@ -558,7 +558,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	47
-	.long	881
+	.long	893
 	.byte	2
 	.byte	145
 	.byte	0
@@ -570,7 +570,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	48
-	.long	584
+	.long	592
 	.byte	8
 	.long	0
 	.long	0
@@ -582,7 +582,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	49
-	.long	894
+	.long	906
 	.long	.Ldebug_loc2+0
 	.byte	0
 	.byte	0
@@ -593,20 +593,20 @@ hton80:
 	.byte	5
 	.byte	8
 	.byte	10
-	.long	584
+	.long	592
 	.ascii	 "u64_t"
 	.byte	0
 	.byte	2
 	.byte	19
 	.byte	2
-	.ascii	 "hton32"
+	.ascii	 "_hton32"
 	.byte	0
-	.ascii	 "hton32"
+	.ascii	 "_hton32"
 	.byte	0
 	.byte	2
 	.byte	56
 	.byte	1
-	.long	695
+	.long	705
 	.byte	1
 	.long	.Lfunc_begin4
 	.long	.Lfunc_end4
@@ -618,13 +618,13 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	56
-	.long	471
+	.long	477
 	.long	.Ldebug_loc7+0
 	.byte	0
 	.byte	6
-	.long	286
+	.long	288
 	.byte	7
-	.long	303
+	.long	305
 	.byte	3
 	.byte	0
 	.byte	8
@@ -634,7 +634,7 @@ hton80:
 	.byte	9
 	.ascii	 "data"
 	.byte	0
-	.long	662
+	.long	672
 	.byte	2
 	.byte	25
 	.byte	2
@@ -643,20 +643,20 @@ hton80:
 	.byte	1
 	.byte	0
 	.byte	10
-	.long	674
+	.long	684
 	.ascii	 "n32_t"
 	.byte	0
 	.byte	2
 	.byte	26
 	.byte	2
-	.ascii	 "hton80"
+	.ascii	 "_hton80"
 	.byte	0
-	.ascii	 "hton80"
+	.ascii	 "_hton80"
 	.byte	0
 	.byte	2
 	.byte	66
 	.byte	1
-	.long	835
+	.long	847
 	.byte	1
 	.long	.Lfunc_begin5
 	.long	.Lfunc_end5
@@ -668,7 +668,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	66
-	.long	922
+	.long	934
 	.byte	2
 	.byte	145
 	.byte	16
@@ -680,7 +680,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	67
-	.long	835
+	.long	847
 	.byte	2
 	.byte	145
 	.byte	4
@@ -692,15 +692,15 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	68
-	.long	894
+	.long	906
 	.long	.Ldebug_loc9+0
 	.byte	0
 	.byte	0
 	.byte	0
 	.byte	6
-	.long	286
+	.long	288
 	.byte	7
-	.long	303
+	.long	305
 	.byte	9
 	.byte	0
 	.byte	8
@@ -710,7 +710,7 @@ hton80:
 	.byte	9
 	.ascii	 "data"
 	.byte	0
-	.long	802
+	.long	814
 	.byte	2
 	.byte	27
 	.byte	2
@@ -719,15 +719,15 @@ hton80:
 	.byte	1
 	.byte	0
 	.byte	10
-	.long	814
+	.long	826
 	.ascii	 "n80_t"
 	.byte	0
 	.byte	2
 	.byte	28
 	.byte	6
-	.long	286
+	.long	288
 	.byte	7
-	.long	303
+	.long	305
 	.byte	7
 	.byte	0
 	.byte	8
@@ -737,7 +737,7 @@ hton80:
 	.byte	9
 	.ascii	 "data"
 	.byte	0
-	.long	848
+	.long	860
 	.byte	2
 	.byte	26
 	.byte	2
@@ -746,7 +746,7 @@ hton80:
 	.byte	1
 	.byte	0
 	.byte	10
-	.long	860
+	.long	872
 	.ascii	 "n64_t"
 	.byte	0
 	.byte	2
@@ -763,7 +763,7 @@ hton80:
 	.byte	9
 	.ascii	 "data"
 	.byte	0
-	.long	802
+	.long	814
 	.byte	2
 	.byte	19
 	.byte	2
@@ -772,7 +772,7 @@ hton80:
 	.byte	1
 	.byte	0
 	.byte	10
-	.long	901
+	.long	913
 	.ascii	 "u80_t"
 	.byte	0
 	.byte	2
@@ -1025,18 +1025,18 @@ hton80:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
+	.long	354
+.asciiz "_ntoh16"
+	.long	718
+.asciiz "_hton80"
+	.long	490
+.asciiz "_ntoh64"
+	.long	425
+.asciiz "_ntoh32"
+	.long	622
+.asciiz "_hton32"
 	.long	238
-.asciiz "hton16"
-	.long	352
-.asciiz "ntoh16"
-	.long	708
-.asciiz "hton80"
-	.long	484
-.asciiz "ntoh64"
-	.long	421
-.asciiz "ntoh32"
-	.long	614
-.asciiz "hton32"
+.asciiz "_hton16"
 	.long	0
 .Lpubnames_end1:
 	.section	.debug_pubtypes,"",@progbits
@@ -1126,10 +1126,10 @@ hton80:
 	.section	.debug_ranges,"",@progbits
 	.section	.debug_macinfo,"",@progbits
 
-	.typestring hton16, "f{s(){m(data){a(2:uc)}}}(us)"
-	.typestring ntoh16, "f{us}(s(){m(data){a(2:uc)}})"
-	.typestring ntoh32, "f{ui}(s(){m(data){a(4:uc)}})"
-	.typestring ntoh64, "f{sll}(s(){m(data){a(8:uc)}})"
-	.typestring hton32, "f{s(){m(data){a(4:uc)}}}(ui)"
-	.typestring hton80, "f{s(){m(data){a(10:uc)}}}(s(){m(data){a(10:uc)}})"
+	.typestring _hton16, "f{s(){m(data){a(2:uc)}}}(us)"
+	.typestring _ntoh16, "f{us}(s(){m(data){a(2:uc)}})"
+	.typestring _ntoh32, "f{ui}(s(){m(data){a(4:uc)}})"
+	.typestring _ntoh64, "f{sll}(s(){m(data){a(8:uc)}})"
+	.typestring _hton32, "f{s(){m(data){a(4:uc)}}}(ui)"
+	.typestring _hton80, "f{s(){m(data){a(10:uc)}}}(s(){m(data){a(10:uc)}})"
 	.ident	"GCC: (GNU) 4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"

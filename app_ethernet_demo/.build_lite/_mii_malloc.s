@@ -10,15 +10,15 @@
 
 .set mii_init_mempool.locnonotificationselect, 1
 
-.set mii_get_wrap_ptr.locnoside, 1
+.set _mii_get_wrap_ptr.locnoside, 1
 
-.set mii_get_wrap_ptr.locnochandec, 1
+.set _mii_get_wrap_ptr.locnochandec, 1
 
-.set mii_get_wrap_ptr.locnoglobalaccess, 1
+.set _mii_get_wrap_ptr.locnoglobalaccess, 1
 
-.set mii_get_wrap_ptr.locnointerfaceaccess, 1
+.set _mii_get_wrap_ptr.locnointerfaceaccess, 1
 
-.set mii_get_wrap_ptr.locnonotificationselect, 1
+.set _mii_get_wrap_ptr.locnonotificationselect, 1
 
 .set mii_reserve_at_least.locnoside, 1
 
@@ -50,75 +50,75 @@
 
 .set mii_commit.locnonotificationselect, 1
 
-.set mii_free.locnoside, 1
+.set _mii_free.locnoside, 1
 
-.set mii_free.locnochandec, 1
+.set _mii_free.locnochandec, 1
 
-.set mii_free.locnoglobalaccess, 1
+.set _mii_free.locnoglobalaccess, 1
 
-.set mii_free.locnointerfaceaccess, 1
+.set _mii_free.locnointerfaceaccess, 1
 
-.set mii_free.locnonotificationselect, 1
+.set _mii_free.locnonotificationselect, 1
 
-.set mii_init_my_rdptr.locnoside, 1
+.set _mii_init_my_rdptr.locnoside, 1
 
-.set mii_init_my_rdptr.locnochandec, 1
+.set _mii_init_my_rdptr.locnochandec, 1
 
-.set mii_init_my_rdptr.locnoglobalaccess, 1
+.set _mii_init_my_rdptr.locnoglobalaccess, 1
 
-.set mii_init_my_rdptr.locnointerfaceaccess, 1
+.set _mii_init_my_rdptr.locnointerfaceaccess, 1
 
-.set mii_init_my_rdptr.locnonotificationselect, 1
+.set _mii_init_my_rdptr.locnonotificationselect, 1
 
-.set mii_update_my_rdptr.locnoside, 1
+.set _mii_update_my_rdptr.locnoside, 1
 
-.set mii_update_my_rdptr.locnochandec, 1
+.set _mii_update_my_rdptr.locnochandec, 1
 
-.set mii_update_my_rdptr.locnoglobalaccess, 1
+.set _mii_update_my_rdptr.locnoglobalaccess, 1
 
-.set mii_update_my_rdptr.locnointerfaceaccess, 1
+.set _mii_update_my_rdptr.locnointerfaceaccess, 1
 
-.set mii_update_my_rdptr.locnonotificationselect, 1
+.set _mii_update_my_rdptr.locnonotificationselect, 1
 
-.set mii_get_my_next_buf.locnoside, 1
+.set _mii_get_my_next_buf.locnoside, 1
 
-.set mii_get_my_next_buf.locnochandec, 1
+.set _mii_get_my_next_buf.locnochandec, 1
 
-.set mii_get_my_next_buf.locnoglobalaccess, 1
+.set _mii_get_my_next_buf.locnoglobalaccess, 1
 
-.set mii_get_my_next_buf.locnointerfaceaccess, 1
+.set _mii_get_my_next_buf.locnointerfaceaccess, 1
 
-.set mii_get_my_next_buf.locnonotificationselect, 1
+.set _mii_get_my_next_buf.locnonotificationselect, 1
 
-.set mii_get_next_buf.locnoside, 1
+.set _mii_get_next_buf.locnoside, 1
 
-.set mii_get_next_buf.locnochandec, 1
+.set _mii_get_next_buf.locnochandec, 1
 
-.set mii_get_next_buf.locnoglobalaccess, 1
+.set _mii_get_next_buf.locnoglobalaccess, 1
 
-.set mii_get_next_buf.locnointerfaceaccess, 1
+.set _mii_get_next_buf.locnointerfaceaccess, 1
 
-.set mii_get_next_buf.locnonotificationselect, 1
+.set _mii_get_next_buf.locnonotificationselect, 1
 
-.set mii_packet_get_data.locnoside, 1
+.set _mii_packet_get_data.locnoside, 1
 
-.set mii_packet_get_data.locnochandec, 1
+.set _mii_packet_get_data.locnochandec, 1
 
-.set mii_packet_get_data.locnoglobalaccess, 1
+.set _mii_packet_get_data.locnoglobalaccess, 1
 
-.set mii_packet_get_data.locnointerfaceaccess, 1
+.set _mii_packet_get_data.locnointerfaceaccess, 1
 
-.set mii_packet_get_data.locnonotificationselect, 1
+.set _mii_packet_get_data.locnonotificationselect, 1
 
-.set mii_packet_get_wrap_ptr.locnoside, 1
+.set _mii_packet_get_wrap_ptr.locnoside, 1
 
-.set mii_packet_get_wrap_ptr.locnochandec, 1
+.set _mii_packet_get_wrap_ptr.locnochandec, 1
 
-.set mii_packet_get_wrap_ptr.locnoglobalaccess, 1
+.set _mii_packet_get_wrap_ptr.locnoglobalaccess, 1
 
-.set mii_packet_get_wrap_ptr.locnointerfaceaccess, 1
+.set _mii_packet_get_wrap_ptr.locnointerfaceaccess, 1
 
-.set mii_packet_get_wrap_ptr.locnonotificationselect, 1
+.set _mii_packet_get_wrap_ptr.locnonotificationselect, 1
 
 
 	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_malloc.c"
@@ -193,11 +193,11 @@ mii_init_mempool:
 	.globl	mii_init_mempool.maxtimers
 	.set	mii_init_mempool.maxchanends,0
 	.globl	mii_init_mempool.maxchanends
-	.cc_top mii_get_wrap_ptr.function
-	.globl	mii_get_wrap_ptr
+	.cc_top _mii_get_wrap_ptr.function
+	.globl	_mii_get_wrap_ptr
 	.align	2
-	.type	mii_get_wrap_ptr,@function
-mii_get_wrap_ptr:
+	.type	_mii_get_wrap_ptr,@function
+_mii_get_wrap_ptr:
 .Ltmp6:
 	.cfi_startproc
 .Lfunc_begin1:
@@ -208,21 +208,21 @@ mii_get_wrap_ptr:
 	retsp 0
 .Ltmp8:
 .Ltmp9:
-	.size	mii_get_wrap_ptr, .Ltmp9-mii_get_wrap_ptr
+	.size	_mii_get_wrap_ptr, .Ltmp9-_mii_get_wrap_ptr
 .Lfunc_end1:
 .Ltmp10:
 	.cfi_endproc
 .Leh_func_end1:
 
-	.cc_bottom mii_get_wrap_ptr.function
-	.set	mii_get_wrap_ptr.nstackwords,0
-	.globl	mii_get_wrap_ptr.nstackwords
-	.set	mii_get_wrap_ptr.maxcores,1
-	.globl	mii_get_wrap_ptr.maxcores
-	.set	mii_get_wrap_ptr.maxtimers,0
-	.globl	mii_get_wrap_ptr.maxtimers
-	.set	mii_get_wrap_ptr.maxchanends,0
-	.globl	mii_get_wrap_ptr.maxchanends
+	.cc_bottom _mii_get_wrap_ptr.function
+	.set	_mii_get_wrap_ptr.nstackwords,0
+	.globl	_mii_get_wrap_ptr.nstackwords
+	.set	_mii_get_wrap_ptr.maxcores,1
+	.globl	_mii_get_wrap_ptr.maxcores
+	.set	_mii_get_wrap_ptr.maxtimers,0
+	.globl	_mii_get_wrap_ptr.maxtimers
+	.set	_mii_get_wrap_ptr.maxchanends,0
+	.globl	_mii_get_wrap_ptr.maxchanends
 	.cc_top mii_reserve_at_least.function
 	.globl	mii_reserve_at_least
 	.align	2
@@ -433,11 +433,11 @@ mii_commit:
 	.globl	mii_commit.maxtimers
 	.set	mii_commit.maxchanends,0
 	.globl	mii_commit.maxchanends
-	.cc_top mii_free.function
-	.globl	mii_free
+	.cc_top _mii_free.function
+	.globl	_mii_free
 	.align	2
-	.type	mii_free,@function
-mii_free:
+	.type	_mii_free,@function
+_mii_free:
 .Ltmp64:
 	.cfi_startproc
 .Lfunc_begin5:
@@ -459,7 +459,7 @@ mii_free:
 	ldw r1, r1[0]
 .Ltmp71:
 	.loc	1 144 0
-	ldw r2, dp[ethernet_memory_lock]
+	ldw r2, dp[_ethernet_memory_lock]
 .Ltmp72:
 	.loc	2 62 0
 	#APP
@@ -515,7 +515,7 @@ mii_free:
 .LBB5_7:
 .Ltmp86:
 	.loc	1 180 0
-	ldw r0, dp[ethernet_memory_lock]
+	ldw r0, dp[_ethernet_memory_lock]
 .Ltmp87:
 	.loc	2 77 0
 	#APP
@@ -527,26 +527,26 @@ mii_free:
 	retsp 1
 .Ltmp89:
 .Ltmp90:
-	.size	mii_free, .Ltmp90-mii_free
+	.size	_mii_free, .Ltmp90-_mii_free
 .Lfunc_end5:
 .Ltmp91:
 	.cfi_endproc
 .Leh_func_end5:
 
-	.cc_bottom mii_free.function
-	.set	mii_free.nstackwords,1
-	.globl	mii_free.nstackwords
-	.set	mii_free.maxcores,1
-	.globl	mii_free.maxcores
-	.set	mii_free.maxtimers,0
-	.globl	mii_free.maxtimers
-	.set	mii_free.maxchanends,0
-	.globl	mii_free.maxchanends
-	.cc_top mii_init_my_rdptr.function
-	.globl	mii_init_my_rdptr
+	.cc_bottom _mii_free.function
+	.set	_mii_free.nstackwords,1
+	.globl	_mii_free.nstackwords
+	.set	_mii_free.maxcores,1
+	.globl	_mii_free.maxcores
+	.set	_mii_free.maxtimers,0
+	.globl	_mii_free.maxtimers
+	.set	_mii_free.maxchanends,0
+	.globl	_mii_free.maxchanends
+	.cc_top _mii_init_my_rdptr.function
+	.globl	_mii_init_my_rdptr
 	.align	2
-	.type	mii_init_my_rdptr,@function
-mii_init_my_rdptr:
+	.type	_mii_init_my_rdptr,@function
+_mii_init_my_rdptr:
 .Ltmp92:
 	.cfi_startproc
 .Lfunc_begin6:
@@ -557,26 +557,26 @@ mii_init_my_rdptr:
 	retsp 0
 .Ltmp94:
 .Ltmp95:
-	.size	mii_init_my_rdptr, .Ltmp95-mii_init_my_rdptr
+	.size	_mii_init_my_rdptr, .Ltmp95-_mii_init_my_rdptr
 .Lfunc_end6:
 .Ltmp96:
 	.cfi_endproc
 .Leh_func_end6:
 
-	.cc_bottom mii_init_my_rdptr.function
-	.set	mii_init_my_rdptr.nstackwords,0
-	.globl	mii_init_my_rdptr.nstackwords
-	.set	mii_init_my_rdptr.maxcores,1
-	.globl	mii_init_my_rdptr.maxcores
-	.set	mii_init_my_rdptr.maxtimers,0
-	.globl	mii_init_my_rdptr.maxtimers
-	.set	mii_init_my_rdptr.maxchanends,0
-	.globl	mii_init_my_rdptr.maxchanends
-	.cc_top mii_update_my_rdptr.function
-	.globl	mii_update_my_rdptr
+	.cc_bottom _mii_init_my_rdptr.function
+	.set	_mii_init_my_rdptr.nstackwords,0
+	.globl	_mii_init_my_rdptr.nstackwords
+	.set	_mii_init_my_rdptr.maxcores,1
+	.globl	_mii_init_my_rdptr.maxcores
+	.set	_mii_init_my_rdptr.maxtimers,0
+	.globl	_mii_init_my_rdptr.maxtimers
+	.set	_mii_init_my_rdptr.maxchanends,0
+	.globl	_mii_init_my_rdptr.maxchanends
+	.cc_top _mii_update_my_rdptr.function
+	.globl	_mii_update_my_rdptr
 	.align	2
-	.type	mii_update_my_rdptr,@function
-mii_update_my_rdptr:
+	.type	_mii_update_my_rdptr,@function
+_mii_update_my_rdptr:
 .Ltmp97:
 	.cfi_startproc
 .Lfunc_begin7:
@@ -588,26 +588,26 @@ mii_update_my_rdptr:
 	retsp 0
 .Ltmp99:
 .Ltmp100:
-	.size	mii_update_my_rdptr, .Ltmp100-mii_update_my_rdptr
+	.size	_mii_update_my_rdptr, .Ltmp100-_mii_update_my_rdptr
 .Lfunc_end7:
 .Ltmp101:
 	.cfi_endproc
 .Leh_func_end7:
 
-	.cc_bottom mii_update_my_rdptr.function
-	.set	mii_update_my_rdptr.nstackwords,0
-	.globl	mii_update_my_rdptr.nstackwords
-	.set	mii_update_my_rdptr.maxcores,1
-	.globl	mii_update_my_rdptr.maxcores
-	.set	mii_update_my_rdptr.maxtimers,0
-	.globl	mii_update_my_rdptr.maxtimers
-	.set	mii_update_my_rdptr.maxchanends,0
-	.globl	mii_update_my_rdptr.maxchanends
-	.cc_top mii_get_my_next_buf.function
-	.globl	mii_get_my_next_buf
+	.cc_bottom _mii_update_my_rdptr.function
+	.set	_mii_update_my_rdptr.nstackwords,0
+	.globl	_mii_update_my_rdptr.nstackwords
+	.set	_mii_update_my_rdptr.maxcores,1
+	.globl	_mii_update_my_rdptr.maxcores
+	.set	_mii_update_my_rdptr.maxtimers,0
+	.globl	_mii_update_my_rdptr.maxtimers
+	.set	_mii_update_my_rdptr.maxchanends,0
+	.globl	_mii_update_my_rdptr.maxchanends
+	.cc_top _mii_get_my_next_buf.function
+	.globl	_mii_get_my_next_buf
 	.align	2
-	.type	mii_get_my_next_buf,@function
-mii_get_my_next_buf:
+	.type	_mii_get_my_next_buf,@function
+_mii_get_my_next_buf:
 .Ltmp102:
 	.cfi_startproc
 .Lfunc_begin8:
@@ -633,26 +633,26 @@ mii_get_my_next_buf:
 	retsp 0
 .Ltmp109:
 .Ltmp110:
-	.size	mii_get_my_next_buf, .Ltmp110-mii_get_my_next_buf
+	.size	_mii_get_my_next_buf, .Ltmp110-_mii_get_my_next_buf
 .Lfunc_end8:
 .Ltmp111:
 	.cfi_endproc
 .Leh_func_end8:
 
-	.cc_bottom mii_get_my_next_buf.function
-	.set	mii_get_my_next_buf.nstackwords,0
-	.globl	mii_get_my_next_buf.nstackwords
-	.set	mii_get_my_next_buf.maxcores,1
-	.globl	mii_get_my_next_buf.maxcores
-	.set	mii_get_my_next_buf.maxtimers,0
-	.globl	mii_get_my_next_buf.maxtimers
-	.set	mii_get_my_next_buf.maxchanends,0
-	.globl	mii_get_my_next_buf.maxchanends
-	.cc_top mii_get_next_buf.function
-	.globl	mii_get_next_buf
+	.cc_bottom _mii_get_my_next_buf.function
+	.set	_mii_get_my_next_buf.nstackwords,0
+	.globl	_mii_get_my_next_buf.nstackwords
+	.set	_mii_get_my_next_buf.maxcores,1
+	.globl	_mii_get_my_next_buf.maxcores
+	.set	_mii_get_my_next_buf.maxtimers,0
+	.globl	_mii_get_my_next_buf.maxtimers
+	.set	_mii_get_my_next_buf.maxchanends,0
+	.globl	_mii_get_my_next_buf.maxchanends
+	.cc_top _mii_get_next_buf.function
+	.globl	_mii_get_next_buf
 	.align	2
-	.type	mii_get_next_buf,@function
-mii_get_next_buf:
+	.type	_mii_get_next_buf,@function
+_mii_get_next_buf:
 .Ltmp112:
 	.cfi_startproc
 .Lfunc_begin9:
@@ -680,26 +680,26 @@ mii_get_next_buf:
 	retsp 0
 .Ltmp119:
 .Ltmp120:
-	.size	mii_get_next_buf, .Ltmp120-mii_get_next_buf
+	.size	_mii_get_next_buf, .Ltmp120-_mii_get_next_buf
 .Lfunc_end9:
 .Ltmp121:
 	.cfi_endproc
 .Leh_func_end9:
 
-	.cc_bottom mii_get_next_buf.function
-	.set	mii_get_next_buf.nstackwords,0
-	.globl	mii_get_next_buf.nstackwords
-	.set	mii_get_next_buf.maxcores,1
-	.globl	mii_get_next_buf.maxcores
-	.set	mii_get_next_buf.maxtimers,0
-	.globl	mii_get_next_buf.maxtimers
-	.set	mii_get_next_buf.maxchanends,0
-	.globl	mii_get_next_buf.maxchanends
-	.cc_top mii_packet_get_data.function
-	.globl	mii_packet_get_data
+	.cc_bottom _mii_get_next_buf.function
+	.set	_mii_get_next_buf.nstackwords,0
+	.globl	_mii_get_next_buf.nstackwords
+	.set	_mii_get_next_buf.maxcores,1
+	.globl	_mii_get_next_buf.maxcores
+	.set	_mii_get_next_buf.maxtimers,0
+	.globl	_mii_get_next_buf.maxtimers
+	.set	_mii_get_next_buf.maxchanends,0
+	.globl	_mii_get_next_buf.maxchanends
+	.cc_top _mii_packet_get_data.function
+	.globl	_mii_packet_get_data
 	.align	2
-	.type	mii_packet_get_data,@function
-mii_packet_get_data:
+	.type	_mii_packet_get_data,@function
+_mii_packet_get_data:
 .Ltmp124:
 	.cfi_startproc
 .Lfunc_begin10:
@@ -742,26 +742,26 @@ mii_packet_get_data:
 	retsp 1
 .Ltmp134:
 .Ltmp135:
-	.size	mii_packet_get_data, .Ltmp135-mii_packet_get_data
+	.size	_mii_packet_get_data, .Ltmp135-_mii_packet_get_data
 .Lfunc_end10:
 .Ltmp136:
 	.cfi_endproc
 .Leh_func_end10:
 
-	.cc_bottom mii_packet_get_data.function
-	.set	mii_packet_get_data.nstackwords,1
-	.globl	mii_packet_get_data.nstackwords
-	.set	mii_packet_get_data.maxcores,1
-	.globl	mii_packet_get_data.maxcores
-	.set	mii_packet_get_data.maxtimers,0
-	.globl	mii_packet_get_data.maxtimers
-	.set	mii_packet_get_data.maxchanends,0
-	.globl	mii_packet_get_data.maxchanends
-	.cc_top mii_packet_get_wrap_ptr.function
-	.globl	mii_packet_get_wrap_ptr
+	.cc_bottom _mii_packet_get_data.function
+	.set	_mii_packet_get_data.nstackwords,1
+	.globl	_mii_packet_get_data.nstackwords
+	.set	_mii_packet_get_data.maxcores,1
+	.globl	_mii_packet_get_data.maxcores
+	.set	_mii_packet_get_data.maxtimers,0
+	.globl	_mii_packet_get_data.maxtimers
+	.set	_mii_packet_get_data.maxchanends,0
+	.globl	_mii_packet_get_data.maxchanends
+	.cc_top _mii_packet_get_wrap_ptr.function
+	.globl	_mii_packet_get_wrap_ptr
 	.align	2
-	.type	mii_packet_get_wrap_ptr,@function
-mii_packet_get_wrap_ptr:
+	.type	_mii_packet_get_wrap_ptr,@function
+_mii_packet_get_wrap_ptr:
 .Ltmp137:
 	.cfi_startproc
 .Lfunc_begin11:
@@ -775,21 +775,21 @@ mii_packet_get_wrap_ptr:
 	retsp 0
 .Ltmp139:
 .Ltmp140:
-	.size	mii_packet_get_wrap_ptr, .Ltmp140-mii_packet_get_wrap_ptr
+	.size	_mii_packet_get_wrap_ptr, .Ltmp140-_mii_packet_get_wrap_ptr
 .Lfunc_end11:
 .Ltmp141:
 	.cfi_endproc
 .Leh_func_end11:
 
-	.cc_bottom mii_packet_get_wrap_ptr.function
-	.set	mii_packet_get_wrap_ptr.nstackwords,0
-	.globl	mii_packet_get_wrap_ptr.nstackwords
-	.set	mii_packet_get_wrap_ptr.maxcores,1
-	.globl	mii_packet_get_wrap_ptr.maxcores
-	.set	mii_packet_get_wrap_ptr.maxtimers,0
-	.globl	mii_packet_get_wrap_ptr.maxtimers
-	.set	mii_packet_get_wrap_ptr.maxchanends,0
-	.globl	mii_packet_get_wrap_ptr.maxchanends
+	.cc_bottom _mii_packet_get_wrap_ptr.function
+	.set	_mii_packet_get_wrap_ptr.nstackwords,0
+	.globl	_mii_packet_get_wrap_ptr.nstackwords
+	.set	_mii_packet_get_wrap_ptr.maxcores,1
+	.globl	_mii_packet_get_wrap_ptr.maxcores
+	.set	_mii_packet_get_wrap_ptr.maxtimers,0
+	.globl	_mii_packet_get_wrap_ptr.maxtimers
+	.set	_mii_packet_get_wrap_ptr.maxchanends,0
+	.globl	_mii_packet_get_wrap_ptr.maxchanends
 	.cfi_sections .debug_frame
 .Ltext_end:
 	.section	.dp.data,"awd",@progbits
@@ -798,7 +798,7 @@ mii_packet_get_wrap_ptr:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	2362
+	.long	2378
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -832,14 +832,14 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	39
-	.long	1885
+	.long	1901
 	.long	.Ldebug_loc0+0
 	.byte	3
 	.ascii	 "size"
 	.byte	0
 	.byte	1
 	.byte	39
-	.long	453
+	.long	455
 	.long	.Ldebug_loc2+0
 	.byte	4
 	.long	.Lfunc_begin0
@@ -849,19 +849,19 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	41
-	.long	2020
+	.long	2036
 	.long	.Ldebug_loc4+0
 	.byte	0
 	.byte	0
 	.byte	6
-	.ascii	 "mii_get_wrap_ptr"
+	.ascii	 "_mii_get_wrap_ptr"
 	.byte	0
-	.ascii	 "mii_get_wrap_ptr"
+	.ascii	 "_mii_get_wrap_ptr"
 	.byte	0
 	.byte	1
 	.byte	55
 	.byte	1
-	.long	453
+	.long	455
 	.byte	1
 	.long	.Lfunc_begin1
 	.long	.Lfunc_end1
@@ -873,7 +873,7 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	54
-	.long	1885
+	.long	1901
 	.long	.Ldebug_loc6+0
 	.byte	4
 	.long	.Lfunc_begin1
@@ -883,7 +883,7 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	56
-	.long	2020
+	.long	2036
 	.long	.Ldebug_loc8+0
 	.byte	0
 	.byte	0
@@ -900,7 +900,7 @@ mii_packet_get_wrap_ptr:
 	.byte	1
 	.byte	63
 	.byte	1
-	.long	662
+	.long	664
 	.byte	1
 	.long	.Lfunc_begin2
 	.long	.Lfunc_end2
@@ -912,21 +912,21 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	60
-	.long	1885
+	.long	1901
 	.long	.Ldebug_loc10+0
 	.byte	3
 	.ascii	 "end_ptr"
 	.byte	0
 	.byte	1
 	.byte	61
-	.long	2026
+	.long	2042
 	.long	.Ldebug_loc13+0
 	.byte	3
 	.ascii	 "min_size"
 	.byte	0
 	.byte	1
 	.byte	62
-	.long	453
+	.long	455
 	.long	.Ldebug_loc16+0
 	.byte	4
 	.long	.Ltmp22
@@ -936,21 +936,21 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	64
-	.long	2020
+	.long	2036
 	.long	.Ldebug_loc19+0
 	.byte	5
 	.ascii	 "rdptr"
 	.byte	0
 	.byte	1
 	.byte	65
-	.long	1906
+	.long	1922
 	.long	.Ldebug_loc22+0
 	.byte	5
 	.ascii	 "space_left"
 	.byte	0
 	.byte	1
 	.byte	68
-	.long	453
+	.long	455
 	.long	.Ldebug_loc25+0
 	.byte	0
 	.byte	0
@@ -960,7 +960,7 @@ mii_packet_get_wrap_ptr:
 	.byte	7
 	.byte	4
 	.byte	8
-	.long	646
+	.long	648
 	.ascii	 "mii_buffer_t"
 	.byte	0
 	.byte	1
@@ -973,7 +973,7 @@ mii_packet_get_wrap_ptr:
 	.byte	1
 	.byte	87
 	.byte	1
-	.long	662
+	.long	664
 	.byte	1
 	.long	.Lfunc_begin3
 	.long	.Lfunc_end3
@@ -985,14 +985,14 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	85
-	.long	1885
+	.long	1901
 	.long	.Ldebug_loc29+0
 	.byte	3
 	.ascii	 "end_ptr"
 	.byte	0
 	.byte	1
 	.byte	86
-	.long	2026
+	.long	2042
 	.long	.Ldebug_loc32+0
 	.byte	4
 	.long	.Ltmp41
@@ -1002,28 +1002,28 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	88
-	.long	2020
+	.long	2036
 	.long	.Ldebug_loc35+0
 	.byte	5
 	.ascii	 "rdptr"
 	.byte	0
 	.byte	1
 	.byte	89
-	.long	1906
+	.long	1922
 	.long	.Ldebug_loc38+0
 	.byte	5
 	.ascii	 "wrptr"
 	.byte	0
 	.byte	1
 	.byte	90
-	.long	1906
+	.long	1922
 	.long	.Ldebug_loc41+0
 	.byte	5
 	.ascii	 "space_left"
 	.byte	0
 	.byte	1
 	.byte	92
-	.long	453
+	.long	455
 	.long	.Ldebug_loc44+0
 	.byte	0
 	.byte	0
@@ -1046,14 +1046,14 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	114
-	.long	662
+	.long	664
 	.long	.Ldebug_loc46+0
 	.byte	3
 	.ascii	 "endptr0"
 	.byte	0
 	.byte	1
 	.byte	114
-	.long	453
+	.long	455
 	.long	.Ldebug_loc49+0
 	.byte	4
 	.long	.Lfunc_begin4
@@ -1063,28 +1063,28 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	118
-	.long	2020
+	.long	2036
 	.long	.Ldebug_loc51+0
 	.byte	5
 	.ascii	 "pkt"
 	.byte	0
 	.byte	1
 	.byte	119
-	.long	2283
+	.long	2299
 	.long	.Ldebug_loc54+0
 	.byte	5
 	.ascii	 "end_ptr"
 	.byte	0
 	.byte	1
 	.byte	116
-	.long	1906
+	.long	1922
 	.long	.Ldebug_loc57+0
 	.byte	0
 	.byte	0
 	.byte	2
-	.ascii	 "mii_free"
+	.ascii	 "_mii_free"
 	.byte	0
-	.ascii	 "mii_free"
+	.ascii	 "_mii_free"
 	.byte	0
 	.byte	1
 	.byte	137
@@ -1100,7 +1100,7 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	137
-	.long	662
+	.long	664
 	.long	.Ldebug_loc60+0
 	.byte	4
 	.long	.Ltmp69
@@ -1110,14 +1110,14 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	138
-	.long	2359
+	.long	2375
 	.long	.Ldebug_loc62+0
 	.byte	5
 	.ascii	 "info"
 	.byte	0
 	.byte	1
 	.byte	139
-	.long	2020
+	.long	2036
 	.long	.Ldebug_loc66+0
 	.byte	9
 	.long	.Ldebug_range+0
@@ -1126,14 +1126,14 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	151
-	.long	2359
+	.long	2375
 	.long	.Ldebug_loc69+0
 	.byte	5
 	.ascii	 "next"
 	.byte	0
 	.byte	1
 	.byte	153
-	.long	453
+	.long	455
 	.long	.Ldebug_loc74+0
 	.byte	0
 	.byte	0
@@ -1157,14 +1157,14 @@ mii_packet_get_wrap_ptr:
 	.byte	1
 	.byte	1
 	.byte	6
-	.ascii	 "mii_init_my_rdptr"
+	.ascii	 "_mii_init_my_rdptr"
 	.byte	0
-	.ascii	 "mii_init_my_rdptr"
+	.ascii	 "_mii_init_my_rdptr"
 	.byte	0
 	.byte	1
 	.byte	186
 	.byte	1
-	.long	453
+	.long	455
 	.byte	1
 	.long	.Lfunc_begin6
 	.long	.Lfunc_end6
@@ -1176,18 +1176,18 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	185
-	.long	1885
+	.long	1901
 	.long	.Ldebug_loc78+0
 	.byte	0
 	.byte	6
-	.ascii	 "mii_update_my_rdptr"
+	.ascii	 "_mii_update_my_rdptr"
 	.byte	0
-	.ascii	 "mii_update_my_rdptr"
+	.ascii	 "_mii_update_my_rdptr"
 	.byte	0
 	.byte	1
 	.byte	193
 	.byte	1
-	.long	453
+	.long	455
 	.byte	1
 	.long	.Lfunc_begin7
 	.long	.Lfunc_end7
@@ -1199,14 +1199,14 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	192
-	.long	1885
+	.long	1901
 	.long	.Ldebug_loc80+0
 	.byte	3
 	.ascii	 "rdptr0"
 	.byte	0
 	.byte	1
 	.byte	192
-	.long	453
+	.long	455
 	.long	.Ldebug_loc82+0
 	.byte	4
 	.long	.Lfunc_begin7
@@ -1216,26 +1216,26 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	195
-	.long	2359
+	.long	2375
 	.long	.Ldebug_loc84+0
 	.byte	5
 	.ascii	 "next"
 	.byte	0
 	.byte	1
 	.byte	196
-	.long	453
+	.long	455
 	.long	.Ldebug_loc86+0
 	.byte	0
 	.byte	0
 	.byte	6
-	.ascii	 "mii_get_my_next_buf"
+	.ascii	 "_mii_get_my_next_buf"
 	.byte	0
-	.ascii	 "mii_get_my_next_buf"
+	.ascii	 "_mii_get_my_next_buf"
 	.byte	0
 	.byte	1
 	.byte	212
 	.byte	1
-	.long	662
+	.long	664
 	.byte	1
 	.long	.Lfunc_begin8
 	.long	.Lfunc_end8
@@ -1247,14 +1247,14 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	211
-	.long	1885
+	.long	1901
 	.long	.Ldebug_loc88+0
 	.byte	3
 	.ascii	 "rdptr0"
 	.byte	0
 	.byte	1
 	.byte	211
-	.long	453
+	.long	455
 	.long	.Ldebug_loc90+0
 	.byte	4
 	.long	.Lfunc_begin8
@@ -1264,33 +1264,33 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	213
-	.long	2020
+	.long	2036
 	.long	.Ldebug_loc93+0
 	.byte	5
 	.ascii	 "rdptr"
 	.byte	0
 	.byte	1
 	.byte	214
-	.long	1906
+	.long	1922
 	.long	.Ldebug_loc95+0
 	.byte	5
 	.ascii	 "wrptr"
 	.byte	0
 	.byte	1
 	.byte	215
-	.long	1906
+	.long	1922
 	.long	.Ldebug_loc98+0
 	.byte	0
 	.byte	0
 	.byte	6
-	.ascii	 "mii_get_next_buf"
+	.ascii	 "_mii_get_next_buf"
 	.byte	0
-	.ascii	 "mii_get_next_buf"
+	.ascii	 "_mii_get_next_buf"
 	.byte	0
 	.byte	1
 	.byte	224
 	.byte	1
-	.long	662
+	.long	664
 	.byte	1
 	.long	.Lfunc_begin9
 	.long	.Lfunc_end9
@@ -1302,7 +1302,7 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	223
-	.long	1885
+	.long	1901
 	.long	.Ldebug_loc103+0
 	.byte	4
 	.long	.Lfunc_begin9
@@ -1312,33 +1312,33 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	225
-	.long	2020
+	.long	2036
 	.long	.Ldebug_loc105+0
 	.byte	5
 	.ascii	 "rdptr"
 	.byte	0
 	.byte	1
 	.byte	226
-	.long	1906
+	.long	1922
 	.long	.Ldebug_loc107+0
 	.byte	5
 	.ascii	 "wrptr"
 	.byte	0
 	.byte	1
 	.byte	227
-	.long	1906
+	.long	1922
 	.long	.Ldebug_loc110+0
 	.byte	0
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_data"
+	.ascii	 "_mii_packet_get_data"
 	.byte	0
-	.ascii	 "mii_packet_get_data"
+	.ascii	 "_mii_packet_get_data"
 	.byte	0
 	.byte	1
 	.byte	238
 	.byte	1
-	.long	646
+	.long	648
 	.byte	1
 	.long	.Lfunc_begin10
 	.long	.Lfunc_end10
@@ -1350,14 +1350,14 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	237
-	.long	453
+	.long	455
 	.long	.Ldebug_loc114+0
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	1
 	.byte	237
-	.long	453
+	.long	455
 	.long	.Ldebug_loc117+0
 	.byte	4
 	.long	.Ltmp129
@@ -1367,19 +1367,19 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	241
-	.long	1906
+	.long	1922
 	.long	.Ldebug_loc119+0
 	.byte	0
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_wrap_ptr"
+	.ascii	 "_mii_packet_get_wrap_ptr"
 	.byte	0
-	.ascii	 "mii_packet_get_wrap_ptr"
+	.ascii	 "_mii_packet_get_wrap_ptr"
 	.byte	0
 	.byte	1
 	.byte	250
 	.byte	1
-	.long	453
+	.long	455
 	.byte	1
 	.long	.Lfunc_begin11
 	.long	.Lfunc_end11
@@ -1391,17 +1391,17 @@ mii_packet_get_wrap_ptr:
 	.byte	0
 	.byte	1
 	.byte	249
-	.long	453
+	.long	455
 	.long	.Ldebug_loc122+0
 	.byte	0
 	.byte	8
-	.long	646
+	.long	648
 	.ascii	 "mii_mempool_t"
 	.byte	0
 	.byte	1
 	.byte	15
 	.byte	11
-	.long	453
+	.long	455
 	.byte	4
 	.byte	12
 	.ascii	 "mempool_info_t"
@@ -1412,7 +1412,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "rdptr"
 	.byte	0
-	.long	1906
+	.long	1922
 	.byte	1
 	.byte	22
 	.byte	2
@@ -1422,7 +1422,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "wrptr"
 	.byte	0
-	.long	1906
+	.long	1922
 	.byte	1
 	.byte	23
 	.byte	2
@@ -1432,7 +1432,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "start"
 	.byte	0
-	.long	1906
+	.long	1922
 	.byte	1
 	.byte	24
 	.byte	2
@@ -1442,7 +1442,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "end"
 	.byte	0
-	.long	1906
+	.long	1922
 	.byte	1
 	.byte	25
 	.byte	2
@@ -1451,24 +1451,24 @@ mii_packet_get_wrap_ptr:
 	.byte	1
 	.byte	0
 	.byte	8
-	.long	1912
+	.long	1928
 	.ascii	 "mempool_info_t"
 	.byte	0
 	.byte	1
 	.byte	31
 	.byte	11
-	.long	1998
+	.long	2014
 	.byte	4
 	.byte	11
-	.long	646
+	.long	648
 	.byte	4
 	.byte	14
 	.byte	4
 	.byte	5
 	.byte	15
-	.long	646
+	.long	648
 	.byte	16
-	.long	2032
+	.long	2048
 	.short	379
 	.byte	0
 	.byte	17
@@ -1480,7 +1480,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "length"
 	.byte	0
-	.long	453
+	.long	455
 	.byte	3
 	.byte	88
 	.byte	2
@@ -1490,7 +1490,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "timestamp"
 	.byte	0
-	.long	453
+	.long	455
 	.byte	3
 	.byte	90
 	.byte	2
@@ -1500,7 +1500,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "filter_result"
 	.byte	0
-	.long	453
+	.long	455
 	.byte	3
 	.byte	92
 	.byte	2
@@ -1510,7 +1510,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "src_port"
 	.byte	0
-	.long	453
+	.long	455
 	.byte	3
 	.byte	94
 	.byte	2
@@ -1520,7 +1520,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "timestamp_id"
 	.byte	0
-	.long	453
+	.long	455
 	.byte	3
 	.byte	96
 	.byte	2
@@ -1530,7 +1530,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "stage"
 	.byte	0
-	.long	453
+	.long	455
 	.byte	3
 	.byte	98
 	.byte	2
@@ -1540,7 +1540,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "tcount"
 	.byte	0
-	.long	453
+	.long	455
 	.byte	3
 	.byte	100
 	.byte	2
@@ -1550,7 +1550,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "crc"
 	.byte	0
-	.long	453
+	.long	455
 	.byte	3
 	.byte	102
 	.byte	2
@@ -1560,7 +1560,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "forwarding"
 	.byte	0
-	.long	453
+	.long	455
 	.byte	3
 	.byte	104
 	.byte	2
@@ -1570,7 +1570,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "data"
 	.byte	0
-	.long	2035
+	.long	2051
 	.byte	3
 	.byte	106
 	.byte	2
@@ -1579,13 +1579,13 @@ mii_packet_get_wrap_ptr:
 	.byte	1
 	.byte	0
 	.byte	8
-	.long	2048
+	.long	2064
 	.ascii	 "mii_packet_t"
 	.byte	0
 	.byte	2
 	.byte	14
 	.byte	11
-	.long	2263
+	.long	2279
 	.byte	4
 	.byte	12
 	.ascii	 "malloc_hdr_t"
@@ -1596,7 +1596,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "next"
 	.byte	0
-	.long	453
+	.long	455
 	.byte	1
 	.byte	32
 	.byte	2
@@ -1606,7 +1606,7 @@ mii_packet_get_wrap_ptr:
 	.byte	13
 	.ascii	 "info"
 	.byte	0
-	.long	2020
+	.long	2036
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1615,13 +1615,13 @@ mii_packet_get_wrap_ptr:
 	.byte	1
 	.byte	0
 	.byte	8
-	.long	2289
+	.long	2305
 	.ascii	 "malloc_hdr_t"
 	.byte	0
 	.byte	1
 	.byte	34
 	.byte	11
-	.long	2339
+	.long	2355
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -1872,34 +1872,34 @@ mii_packet_get_wrap_ptr:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	980
-.asciiz "mii_free"
-	.long	1182
-.asciiz "mii_init_my_rdptr"
-	.long	1801
-.asciiz "mii_packet_get_wrap_ptr"
-	.long	460
+	.long	1186
+.asciiz "_mii_init_my_rdptr"
+	.long	1815
+.asciiz "_mii_packet_get_wrap_ptr"
+	.long	462
 .asciiz "mii_reserve_at_least"
-	.long	847
+	.long	849
 .asciiz "mii_commit"
-	.long	1147
+	.long	1151
 .asciiz "hwlock_release"
 	.long	240
 .asciiz "mii_init_mempool"
 	.long	353
-.asciiz "mii_get_wrap_ptr"
-	.long	1689
-.asciiz "mii_packet_get_data"
-	.long	1112
+.asciiz "_mii_get_wrap_ptr"
+	.long	1701
+.asciiz "_mii_packet_get_data"
+	.long	1264
+.asciiz "_mii_update_my_rdptr"
+	.long	1116
 .asciiz "hwlock_acquire"
-	.long	1258
-.asciiz "mii_update_my_rdptr"
-	.long	1555
-.asciiz "mii_get_next_buf"
-	.long	682
+	.long	1565
+.asciiz "_mii_get_next_buf"
+	.long	684
 .asciiz "mii_reserve"
-	.long	1397
-.asciiz "mii_get_my_next_buf"
+	.long	1405
+.asciiz "_mii_get_my_next_buf"
+	.long	982
+.asciiz "_mii_free"
 	.long	0
 .Lpubnames_end1:
 	.section	.debug_pubtypes,"",@progbits
@@ -1910,11 +1910,11 @@ mii_packet_get_wrap_ptr:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	1912
+	.long	1928
 .asciiz "mempool_info_t"
-	.long	2289
+	.long	2305
 .asciiz "malloc_hdr_t"
-	.long	2048
+	.long	2064
 .asciiz "mii_packet_t"
 	.long	0
 .Lpubtypes_end1:
@@ -2500,16 +2500,16 @@ mii_packet_get_wrap_ptr:
 	.section	.debug_macinfo,"",@progbits
 
 	.typestring mii_init_mempool, "f{0}(ui,si)"
-	.typestring mii_get_wrap_ptr, "f{si}(ui)"
+	.typestring _mii_get_wrap_ptr, "f{si}(ui)"
 	.typestring mii_reserve_at_least, "f{ui}(ui,p(ui),si)"
 	.typestring mii_reserve, "f{ui}(ui,p(ui))"
 	.typestring mii_commit, "f{0}(ui,si)"
-	.typestring mii_free, "f{0}(ui)"
-	.typestring mii_init_my_rdptr, "f{si}(ui)"
-	.typestring mii_update_my_rdptr, "f{si}(ui,si)"
-	.typestring mii_get_my_next_buf, "f{ui}(ui,si)"
-	.typestring mii_get_next_buf, "f{ui}(ui)"
-	.typestring mii_packet_get_data, "f{ui}(si,si)"
-	.typestring mii_packet_get_wrap_ptr, "f{si}(si)"
-	.typestring ethernet_memory_lock, "ui"
+	.typestring _mii_free, "f{0}(ui)"
+	.typestring _mii_init_my_rdptr, "f{si}(ui)"
+	.typestring _mii_update_my_rdptr, "f{si}(ui,si)"
+	.typestring _mii_get_my_next_buf, "f{ui}(ui,si)"
+	.typestring _mii_get_next_buf, "f{ui}(ui)"
+	.typestring _mii_packet_get_data, "f{ui}(si,si)"
+	.typestring _mii_packet_get_wrap_ptr, "f{si}(si)"
+	.typestring _ethernet_memory_lock, "ui"
 	.ident	"GCC: (GNU) 4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"

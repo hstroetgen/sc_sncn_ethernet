@@ -9,7 +9,7 @@
 #include "_mii_malloc.h"
 #include "_ethernet_conf_derived.h"
 
-void ethernet_tx_server_no_buffer(const char mac_addr[],
+void _ethernet_tx_server_no_buffer(const char mac_addr[],
                                   chanend tx[],
                                   int num_tx,
                                   #ifdef __XC__
@@ -21,7 +21,7 @@ void ethernet_tx_server_no_buffer(const char mac_addr[],
 
 
 #ifdef __XC__
-void ethernet_tx_server(
+void _ethernet_tx_server(
 #if ETHERNET_TX_HP_QUEUE
                         mii_mempool_t tx_mem_hp[],
 #endif
@@ -33,7 +33,7 @@ void ethernet_tx_server(
                         smi_interface_t &?smi1,
                         smi_interface_t &?smi2);
 #else
-void ethernet_tx_server(
+void _ethernet_tx_server(
 #if ETHERNET_TX_HP_QUEUE
                         mii_mempool_t tx_mem_hp[],
 #endif

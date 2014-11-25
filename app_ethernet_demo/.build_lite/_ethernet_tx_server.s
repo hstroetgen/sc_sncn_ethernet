@@ -55,20 +55,20 @@
 	.set usage.anon.25,0
 	.set usage.anon.26,0
 	.set usage.anon.27,0
-	.call ethernet_tx_server,usage.anon.5
-	.call ethernet_tx_server,usage.anon.4
-	.call ethernet_tx_server,usage.anon.27
-	.call ethernet_tx_server,usage.anon.21
-	.call ethernet_tx_server,usage.anon.16
-	.call ethernet_tx_server,usage.anon.14
-	.call ethernet_tx_server,usage.anon.12
-	.call ethernet_tx_server,usage.anon.11
-	.call ethernet_tx_server,mii_reserve_at_least
-	.call ethernet_tx_server,mii_get_wrap_ptr
-	.call ethernet_tx_server,mii_free
-	.call ethernet_tx_server,mii_commit
-	.call ethernet_tx_server,get_ts_queue_entry
-	.call ethernet_tx_server,get_and_dec_transmit_count
+	.call _ethernet_tx_server,usage.anon.5
+	.call _ethernet_tx_server,usage.anon.4
+	.call _ethernet_tx_server,usage.anon.27
+	.call _ethernet_tx_server,usage.anon.21
+	.call _ethernet_tx_server,usage.anon.16
+	.call _ethernet_tx_server,usage.anon.14
+	.call _ethernet_tx_server,usage.anon.12
+	.call _ethernet_tx_server,usage.anon.11
+	.call _ethernet_tx_server,mii_reserve_at_least
+	.call _ethernet_tx_server,mii_commit
+	.call _ethernet_tx_server,_mii_get_wrap_ptr
+	.call _ethernet_tx_server,_mii_free
+	.call _ethernet_tx_server,_get_ts_queue_entry
+	.call _ethernet_tx_server,_get_and_dec_transmit_count
 	.call usage.anon.27,smi_check_link_state
 	.call usage.anon.27,_ethernet_update_link_status
 	.call usage.anon.2,delay_ticks_longlong
@@ -129,7 +129,7 @@
 	.set usage.anon.25.locnochandec, 1
 	.set usage.anon.26.locnochandec, 1
 	.set usage.anon.27.locnochandec, 1
-	.set ethernet_tx_server.locnochandec, 1
+	.set _ethernet_tx_server.locnochandec, 1
 	.set usage.anon.0.locnoglobalaccess, 1
 	.set usage.anon.1.locnoglobalaccess, 1
 	.set usage.anon.2.locnoglobalaccess, 1
@@ -158,7 +158,7 @@
 	.set usage.anon.25.locnoglobalaccess, 1
 	.set usage.anon.26.locnoglobalaccess, 1
 	.set usage.anon.27.locnoglobalaccess, 1
-	.set ethernet_tx_server.locnoglobalaccess, 1
+	.set _ethernet_tx_server.locnoglobalaccess, 1
 	.set usage.anon.0.locnointerfaceaccess, 1
 	.set usage.anon.1.locnointerfaceaccess, 1
 	.set usage.anon.2.locnointerfaceaccess, 1
@@ -187,7 +187,7 @@
 	.set usage.anon.25.locnointerfaceaccess, 1
 	.set usage.anon.26.locnointerfaceaccess, 1
 	.set usage.anon.27.locnointerfaceaccess, 1
-	.set ethernet_tx_server.locnointerfaceaccess, 1
+	.set _ethernet_tx_server.locnointerfaceaccess, 1
 	.set usage.anon.0.locnonotificationselect, 1
 	.set usage.anon.1.locnonotificationselect, 1
 	.set usage.anon.2.locnonotificationselect, 1
@@ -216,7 +216,7 @@
 	.set usage.anon.25.locnonotificationselect, 1
 	.set usage.anon.26.locnonotificationselect, 1
 	.set usage.anon.27.locnonotificationselect, 1
-	.set ethernet_tx_server.locnonotificationselect, 1
+	.set _ethernet_tx_server.locnonotificationselect, 1
 
 
 	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc"
@@ -243,7 +243,7 @@
 .Ltext_begin:
 	.section	.dp.data,"awd",@progbits
 	.text
-	.cc_top ethernet_tx_server.function
+	.cc_top _ethernet_tx_server.function
 	.section	.cp.rodata.cst4,"aMc",@progbits,4
 	.cc_top .LCPI0_0.data
 	.align	4
@@ -271,10 +271,10 @@
 	.long	2147483650
 	.cc_bottom .LCPI0_4.data
 	.text
-	.globl	ethernet_tx_server
+	.globl	_ethernet_tx_server
 	.align	4
-	.type	ethernet_tx_server,@function
-ethernet_tx_server:
+	.type	_ethernet_tx_server,@function
+_ethernet_tx_server:
 .Ltmp8:
 	.cfi_startproc
 .Lfunc_begin0:
@@ -415,7 +415,7 @@ ethernet_tx_server:
 	.loc	1 379 0
 	ldw r0, sp[4]
 .Lxta.call_labels0:
-	bl get_ts_queue_entry
+	bl _get_ts_queue_entry
 .Ltmp37:
 	mov r5, r0
 .Ltmp38:
@@ -455,7 +455,7 @@ ethernet_tx_server:
 	.loc	1 384 0
 	mov r0, r5
 .Lxta.call_labels1:
-	bl get_and_dec_transmit_count
+	bl _get_and_dec_transmit_count
 	.loc	1 384 0
 	bt r0, .LBB0_4
 .Ltmp46:
@@ -463,7 +463,7 @@ ethernet_tx_server:
 	.loc	1 385 0
 	mov r0, r5
 .Lxta.call_labels2:
-	bl mii_free
+	bl _mii_free
 .Ltmp47:
 .LBB0_4:
 .Lxtalabel6:
@@ -515,7 +515,7 @@ ethernet_tx_server:
 	mov r0, r9
 	mov r9, r6
 .Lxta.call_labels4:
-	bl mii_get_wrap_ptr
+	bl _mii_get_wrap_ptr
 	.loc	1 230 0
 	bf r5, .LBB0_24
 .Ltmp60:
@@ -920,22 +920,22 @@ ethernet_tx_server:
 	bu .LBB0_38
 .Ltmp140:
 .Ltmp141:
-	.size	ethernet_tx_server, .Ltmp141-ethernet_tx_server
+	.size	_ethernet_tx_server, .Ltmp141-_ethernet_tx_server
 .Lfunc_end0:
 .Ltmp142:
 	.cfi_endproc
 .Leh_func_end0:
 
 	.align	4
-	.cc_bottom ethernet_tx_server.function
-	.set	ethernet_tx_server.nstackwords,((memset.nstackwords $M get_ts_queue_entry.nstackwords $M get_and_dec_transmit_count.nstackwords $M mii_free.nstackwords $M smi_check_link_state.nstackwords $M _ethernet_update_link_status.nstackwords $M mii_reserve_at_least.nstackwords $M mii_get_wrap_ptr.nstackwords $M mii_commit.nstackwords) + 38)
-	.globl	ethernet_tx_server.nstackwords
-	.set	ethernet_tx_server.maxcores,_ethernet_update_link_status.maxcores $M get_and_dec_transmit_count.maxcores $M get_ts_queue_entry.maxcores $M mii_commit.maxcores $M mii_free.maxcores $M mii_get_wrap_ptr.maxcores $M mii_reserve_at_least.maxcores $M smi_check_link_state.maxcores $M 1
-	.globl	ethernet_tx_server.maxcores
-	.set	ethernet_tx_server.maxtimers,_ethernet_update_link_status.maxtimers $M get_and_dec_transmit_count.maxtimers $M get_ts_queue_entry.maxtimers $M mii_commit.maxtimers $M mii_free.maxtimers $M mii_get_wrap_ptr.maxtimers $M mii_reserve_at_least.maxtimers $M smi_check_link_state.maxtimers $M 0
-	.globl	ethernet_tx_server.maxtimers
-	.set	ethernet_tx_server.maxchanends,_ethernet_update_link_status.maxchanends $M get_and_dec_transmit_count.maxchanends $M get_ts_queue_entry.maxchanends $M mii_commit.maxchanends $M mii_free.maxchanends $M mii_get_wrap_ptr.maxchanends $M mii_reserve_at_least.maxchanends $M smi_check_link_state.maxchanends $M 0
-	.globl	ethernet_tx_server.maxchanends
+	.cc_bottom _ethernet_tx_server.function
+	.set	_ethernet_tx_server.nstackwords,((memset.nstackwords $M _get_ts_queue_entry.nstackwords $M _get_and_dec_transmit_count.nstackwords $M _mii_free.nstackwords $M smi_check_link_state.nstackwords $M _ethernet_update_link_status.nstackwords $M mii_reserve_at_least.nstackwords $M _mii_get_wrap_ptr.nstackwords $M mii_commit.nstackwords) + 38)
+	.globl	_ethernet_tx_server.nstackwords
+	.set	_ethernet_tx_server.maxcores,_ethernet_update_link_status.maxcores $M _get_and_dec_transmit_count.maxcores $M _get_ts_queue_entry.maxcores $M _mii_free.maxcores $M _mii_get_wrap_ptr.maxcores $M mii_commit.maxcores $M mii_reserve_at_least.maxcores $M smi_check_link_state.maxcores $M 1
+	.globl	_ethernet_tx_server.maxcores
+	.set	_ethernet_tx_server.maxtimers,_ethernet_update_link_status.maxtimers $M _get_and_dec_transmit_count.maxtimers $M _get_ts_queue_entry.maxtimers $M _mii_free.maxtimers $M _mii_get_wrap_ptr.maxtimers $M mii_commit.maxtimers $M mii_reserve_at_least.maxtimers $M smi_check_link_state.maxtimers $M 0
+	.globl	_ethernet_tx_server.maxtimers
+	.set	_ethernet_tx_server.maxchanends,_ethernet_update_link_status.maxchanends $M _get_and_dec_transmit_count.maxchanends $M _get_ts_queue_entry.maxchanends $M _mii_free.maxchanends $M _mii_get_wrap_ptr.maxchanends $M mii_commit.maxchanends $M mii_reserve_at_least.maxchanends $M smi_check_link_state.maxchanends $M 0
+	.globl	_ethernet_tx_server.maxchanends
 	.cfi_sections .debug_frame
 .Ltext_end:
 	.section	.dp.data,"awd",@progbits
@@ -944,7 +944,7 @@ ethernet_tx_server:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	3530
+	.long	3552
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -972,7 +972,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	3308
+	.long	3330
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -987,7 +987,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	3308
+	.long	3330
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -1002,7 +1002,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	3308
+	.long	3330
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_length"
@@ -1262,6 +1262,18 @@ ethernet_tx_server:
 	.byte	3
 	.byte	140
 	.byte	1
+	.byte	3
+	.ascii	 "buf"
+	.byte	0
+	.byte	3
+	.byte	140
+	.long	493
+	.byte	3
+	.byte	120
+	.byte	0
+	.byte	3
+	.byte	140
+	.long	493
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
@@ -1568,7 +1580,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	28
-	.long	3303
+	.long	3325
 	.byte	3
 	.ascii	 "linkNum"
 	.byte	0
@@ -1587,9 +1599,9 @@ ethernet_tx_server:
 	.byte	0
 	.byte	0
 	.byte	9
-	.ascii	 "ethernet_tx_server"
+	.ascii	 "_ethernet_tx_server"
 	.byte	0
-	.ascii	 "ethernet_tx_server"
+	.ascii	 "_ethernet_tx_server"
 	.byte	0
 	.byte	1
 	.byte	157
@@ -1604,7 +1616,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	149
-	.long	3332
+	.long	3354
 	.long	.Ldebug_loc0+0
 	.byte	10
 	.ascii	 "num_q"
@@ -1618,14 +1630,14 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	151
-	.long	3442
+	.long	3464
 	.long	.Ldebug_loc42+0
 	.byte	10
 	.ascii	 "mac_addr"
 	.byte	0
 	.byte	1
 	.byte	152
-	.long	3474
+	.long	3496
 	.long	.Ldebug_loc46+0
 	.byte	10
 	.ascii	 "num_tx"
@@ -1639,20 +1651,20 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	153
-	.long	3495
+	.long	3517
 	.byte	10
 	.ascii	 "smi1"
 	.byte	0
 	.byte	1
 	.byte	155
-	.long	3303
+	.long	3325
 	.long	.Ldebug_loc57+0
 	.byte	10
 	.ascii	 "smi2"
 	.byte	0
 	.byte	1
 	.byte	156
-	.long	3303
+	.long	3325
 	.long	.Ldebug_loc60+0
 	.byte	11
 	.long	.Ltmp22
@@ -1665,7 +1677,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	158
-	.long	3500
+	.long	3522
 	.byte	11
 	.long	.Ltmp22
 	.long	.Ltmp140
@@ -1674,7 +1686,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	159
-	.long	3500
+	.long	3522
 	.byte	11
 	.long	.Ltmp22
 	.long	.Ltmp140
@@ -1683,7 +1695,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	160
-	.long	3500
+	.long	3522
 	.byte	11
 	.long	.Ltmp22
 	.long	.Ltmp140
@@ -1692,7 +1704,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	161
-	.long	3500
+	.long	3522
 	.byte	11
 	.long	.Ltmp22
 	.long	.Ltmp140
@@ -1701,7 +1713,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	162
-	.long	3512
+	.long	3534
 	.byte	3
 	.byte	145
 .asciiz "\320"
@@ -1713,7 +1725,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	163
-	.long	3512
+	.long	3534
 	.byte	2
 	.byte	145
 	.byte	40
@@ -1725,7 +1737,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	164
-	.long	3524
+	.long	3546
 	.byte	11
 	.long	.Ltmp24
 	.long	.Ltmp140
@@ -1734,7 +1746,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	165
-	.long	3308
+	.long	3330
 	.byte	13
 	.long	.Ldebug_range+0
 	.byte	5
@@ -1771,7 +1783,7 @@ ethernet_tx_server:
 	.byte	1
 	.short	317
 	.long	493
-	.long	.Ldebug_loc79+0
+	.long	.Ldebug_loc81+0
 	.byte	0
 	.byte	0
 	.byte	11
@@ -1782,7 +1794,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.short	378
-	.long	3308
+	.long	3330
 	.byte	11
 	.long	.Ltmp39
 	.long	.Ltmp47
@@ -1840,7 +1852,7 @@ ethernet_tx_server:
 	.byte	1
 	.byte	178
 	.long	493
-	.long	.Ldebug_loc70+0
+	.long	.Ldebug_loc72+0
 	.byte	12
 	.ascii	 "dst_port"
 	.byte	0
@@ -1857,7 +1869,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	210
-	.long	3308
+	.long	3330
 	.byte	0
 	.byte	13
 	.long	.Ldebug_range+256
@@ -1884,7 +1896,7 @@ ethernet_tx_server:
 	.byte	1
 	.short	261
 	.long	493
-	.long	.Ldebug_loc75+0
+	.long	.Ldebug_loc77+0
 	.byte	11
 	.long	.Ltmp69
 	.long	.Ltmp73
@@ -1893,7 +1905,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.short	263
-	.long	3308
+	.long	3330
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1904,7 +1916,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.short	273
-	.long	3308
+	.long	3330
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1925,7 +1937,7 @@ ethernet_tx_server:
 	.byte	1
 	.byte	246
 	.long	493
-	.long	.Ldebug_loc77+0
+	.long	.Ldebug_loc79+0
 	.byte	11
 	.long	.Ltmp80
 	.long	.Ltmp84
@@ -1934,7 +1946,7 @@ ethernet_tx_server:
 	.byte	0
 	.byte	1
 	.byte	248
-	.long	3308
+	.long	3330
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1985,7 +1997,7 @@ ethernet_tx_server:
 	.byte	19
 	.ascii	 "p_smi_mdio"
 	.byte	0
-	.long	3210
+	.long	3232
 	.byte	1
 	.byte	29
 	.byte	2
@@ -1995,7 +2007,7 @@ ethernet_tx_server:
 	.byte	19
 	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	3210
+	.long	3232
 	.byte	1
 	.byte	29
 	.byte	2
@@ -2004,7 +2016,7 @@ ethernet_tx_server:
 	.byte	1
 	.byte	0
 	.byte	20
-	.long	3218
+	.long	3240
 	.byte	6
 	.ascii	 "unsigned int"
 	.byte	0
@@ -2014,13 +2026,13 @@ ethernet_tx_server:
 	.byte	4
 	.byte	5
 	.byte	22
-	.long	3308
+	.long	3330
 	.byte	20
-	.long	3327
+	.long	3349
 	.byte	23
-	.long	3308
+	.long	3330
 	.byte	24
-	.long	3324
+	.long	3346
 	.byte	5
 	.byte	0
 	.byte	18
@@ -2060,7 +2072,7 @@ ethernet_tx_server:
 	.byte	19
 	.ascii	 "fifo"
 	.byte	0
-	.long	3337
+	.long	3359
 	.byte	1
 	.byte	157
 	.byte	2
@@ -2069,39 +2081,39 @@ ethernet_tx_server:
 	.byte	1
 	.byte	0
 	.byte	22
-	.long	3349
+	.long	3371
 	.byte	20
-	.long	3437
+	.long	3459
 	.byte	6
 	.ascii	 "unsigned char"
 	.byte	0
 	.byte	8
 	.byte	1
 	.byte	25
-	.long	3447
-	.byte	22
-	.long	3464
-	.byte	20
 	.long	3469
+	.byte	22
+	.long	3486
+	.byte	20
+	.long	3491
 	.byte	6
 	.ascii	 "chanend"
 	.byte	0
 	.byte	7
 	.byte	4
 	.byte	22
-	.long	3479
+	.long	3501
 	.byte	20
-	.long	3490
+	.long	3512
 	.byte	23
-	.long	3308
+	.long	3330
 	.byte	24
-	.long	3324
+	.long	3346
 	.byte	0
 	.byte	0
 	.byte	23
 	.long	493
 	.byte	24
-	.long	3324
+	.long	3346
 	.byte	9
 	.byte	0
 	.byte	6
@@ -2430,31 +2442,31 @@ ethernet_tx_server:
 	.long	.Lset1
 	.long	1136
 .asciiz "mii_packet_set_timestamp_id"
-	.long	2353
-.asciiz "ethernet_tx_server"
 	.long	500
 .asciiz "mii_packet_set_length"
 	.long	814
 .asciiz "mii_packet_set_filter_result"
-	.long	1627
+	.long	1647
 .asciiz "mii_packet_get_forwarding"
-	.long	1938
+	.long	1958
 .asciiz "mii_packet_get_data_word"
-	.long	2101
+	.long	2121
 .asciiz "mii_packet_set_data_short"
-	.long	1708
+	.long	1728
 .asciiz "mii_packet_set_forwarding"
 	.long	308
 .asciiz "delay_milliseconds"
-	.long	1853
+	.long	1873
 .asciiz "mii_packet_set_data_word"
-	.long	2027
+	.long	2047
 .asciiz "mii_packet_set_data"
-	.long	2271
+	.long	2291
 .asciiz "_do_link_check"
+	.long	2373
+.asciiz "_ethernet_tx_server"
 	.long	897
 .asciiz "mii_packet_get_src_port"
-	.long	1785
+	.long	1805
 .asciiz "mii_packet_get_data_ptr"
 	.long	569
 .asciiz "mii_packet_get_timestamp"
@@ -2462,11 +2474,11 @@ ethernet_tx_server:
 .asciiz "mii_packet_get_stage"
 	.long	974
 .asciiz "mii_packet_set_src_port"
-	.long	1497
+	.long	1517
 .asciiz "mii_packet_get_crc"
-	.long	2187
+	.long	2207
 .asciiz "mii_packet_set_data_byte"
-	.long	1355
+	.long	1375
 .asciiz "mii_packet_get_tcount"
 	.long	652
 .asciiz "mii_packet_set_timestamp"
@@ -2478,11 +2490,11 @@ ethernet_tx_server:
 .asciiz "delay_microseconds"
 	.long	727
 .asciiz "mii_packet_get_filter_result"
-	.long	1564
+	.long	1584
 .asciiz "mii_packet_set_crc"
 	.long	1288
 .asciiz "mii_packet_set_stage"
-	.long	1428
+	.long	1448
 .asciiz "mii_packet_set_tcount"
 	.long	262
 .asciiz "delay_seconds"
@@ -2496,9 +2508,9 @@ ethernet_tx_server:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	3218
+	.long	3240
 .asciiz "smi_interface_t"
-	.long	3349
+	.long	3371
 .asciiz "mii_ts_queue_t"
 	.long	0
 .Lpubtypes_end1:
@@ -2847,60 +2859,70 @@ ethernet_tx_server:
 	.long	0
 	.long	0
 .Ldebug_loc70:
-	.long	.Ltmp62
-	.long	.Ltmp66
+	.long	.Ltmp59
+	.long	.Ltmp60
 .Lset48 = .Ltmp232-.Ltmp231
 	.short	.Lset48
 .Ltmp231:
-	.byte	82
+	.byte	85
 .Ltmp232:
-	.long	.Ltmp68
-	.long	.Ltmp74
+	.long	0
+	.long	0
+.Ldebug_loc72:
+	.long	.Ltmp62
+	.long	.Ltmp66
 .Lset49 = .Ltmp234-.Ltmp233
 	.short	.Lset49
 .Ltmp233:
 	.byte	82
 .Ltmp234:
-	.long	.Ltmp78
-	.long	.Ltmp93
+	.long	.Ltmp68
+	.long	.Ltmp74
 .Lset50 = .Ltmp236-.Ltmp235
 	.short	.Lset50
 .Ltmp235:
 	.byte	82
 .Ltmp236:
-	.long	0
-	.long	0
-.Ldebug_loc75:
-	.long	.Ltmp69
-	.long	.Ltmp71
+	.long	.Ltmp78
+	.long	.Ltmp93
 .Lset51 = .Ltmp238-.Ltmp237
 	.short	.Lset51
 .Ltmp237:
-	.byte	87
+	.byte	82
 .Ltmp238:
 	.long	0
 	.long	0
 .Ldebug_loc77:
-	.long	.Ltmp80
-	.long	.Ltmp81
+	.long	.Ltmp69
+	.long	.Ltmp71
 .Lset52 = .Ltmp240-.Ltmp239
 	.short	.Lset52
 .Ltmp239:
-	.byte	86
+	.byte	87
 .Ltmp240:
 	.long	0
 	.long	0
 .Ldebug_loc79:
-	.long	.Ltmp115
-	.long	.Ltmp117
+	.long	.Ltmp80
+	.long	.Ltmp81
 .Lset53 = .Ltmp242-.Ltmp241
 	.short	.Lset53
 .Ltmp241:
-	.byte	81
+	.byte	86
 .Ltmp242:
 	.long	0
 	.long	0
 .Ldebug_loc81:
+	.long	.Ltmp115
+	.long	.Ltmp117
+.Lset54 = .Ltmp244-.Ltmp243
+	.short	.Lset54
+.Ltmp243:
+	.byte	81
+.Ltmp244:
+	.long	0
+	.long	0
+.Ldebug_loc83:
 	.section	.debug_aranges,"",@progbits
 	.section	.debug_ranges,"",@progbits
 	.long	.Ltmp25
@@ -2988,14 +3010,14 @@ ethernet_tx_server:
 	.section	.debug_macinfo,"",@progbits
 
 	.typestring smi_check_link_state, "f{si}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
-	.typestring get_ts_queue_entry, "f{si}(&(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}))"
-	.typestring get_and_dec_transmit_count, "f{si}(si)"
+	.typestring _get_ts_queue_entry, "f{si}(&(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}))"
+	.typestring _get_and_dec_transmit_count, "f{si}(si)"
 	.typestring _ethernet_update_link_status, "f{0}(si,si)"
 	.typestring mii_reserve_at_least, "f{ui}(ui,&(ui),si)"
 	.typestring mii_commit, "f{0}(ui,si)"
-	.typestring mii_free, "f{0}(ui)"
-	.typestring mii_get_wrap_ptr, "f{si}(ui)"
-	.typestring ethernet_tx_server, "f{0}(&(a(:ui)),si,&(a(:s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}})),&(a(:c:uc)),&(a(:chd)),si,n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
+	.typestring _mii_free, "f{0}(ui)"
+	.typestring _mii_get_wrap_ptr, "f{si}(ui)"
+	.typestring _ethernet_tx_server, "f{0}(&(a(:ui)),si,&(a(:s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}})),&(a(:c:uc)),&(a(:chd)),si,n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
 	.section	.xtacalltable,"",@progbits
 .Lentries_start0:
 	.long	.Lentries_end1-.Lentries_start0
