@@ -697,7 +697,7 @@ _mii_rx_pins:
 	setc res[r4], 1
 	.loc	1 325 0
 	
-	.xtabranch .LBB1_5, .LBB1_9
+	.xtabranch .LBB1_9, .LBB1_5
 waiteu
 .Ltmp80:
 .LBB1_3:
@@ -724,7 +724,7 @@ waiteu
 	setc res[r4], 1
 	.loc	1 325 0
 	
-	.xtabranch .LBB1_5, .LBB1_9
+	.xtabranch .LBB1_9, .LBB1_5
 waiteu
 .Ltmp73:
 .LBB1_5:
@@ -767,7 +767,7 @@ waiteu
 	setc res[r4], 1
 	.loc	1 325 0
 	
-	.xtabranch .LBB1_5, .LBB1_9
+	.xtabranch .LBB1_9, .LBB1_5
 waiteu
 .Ltmp90:
 .Ltmp75:

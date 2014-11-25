@@ -634,7 +634,7 @@ static void _do_link_check(smi_interface_t &smi, int linkNum)
 #pragma unsafe arrays
     void _ethernet_tx_server(
 # 149 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc"
-                        mii_mempool_t tx_mem_lp[],
+                        mii_mempool_t _tx_mem_lp[],
                         int num_q,
                         mii_ts_queue_t ts_queue[],
                         const char mac_addr[],
@@ -673,10 +673,10 @@ static void _do_link_check(smi_interface_t &smi, int linkNum)
 # 210 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc"
           for (unsigned int p=0; p< 1 ; ++p) {
 # 225 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc"
-              buf[p] = _mii_reserve_at_least(tx_mem_lp[p],
+              buf[p] = _mii_reserve_at_least(_tx_mem_lp[p],
                                                      end_ptr[p],
                                                          (sizeof(mii_packet_t) - (( (1518) +3)/4)*4) +8+ (1518) );
-              wrap_ptr[p] = _mii_get_wrap_ptr(tx_mem_lp[p]);
+              wrap_ptr[p] = _mii_get_wrap_ptr(_tx_mem_lp[p]);
 
         	  if (buf[p] == 0)
                     bufs_ok=0;

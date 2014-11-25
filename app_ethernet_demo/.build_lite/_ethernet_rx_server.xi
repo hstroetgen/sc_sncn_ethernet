@@ -764,7 +764,7 @@ static inline unsigned int _get_tile_id_from_chanend(chanend c) {
 }
 # 66 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc"
 #pragma select handler
-void serviceLinkCmd(chanend link, int linkIndex, unsigned int &cmd)
+void _serviceLinkCmd(chanend link, int linkIndex, unsigned int &cmd)
 {
   int renotify=0;
   int is_cmd;
@@ -1015,7 +1015,7 @@ static void _processReceivedFrame(int buf,
    return;
 }
 
-void send_status_packet(chanend c, int src_port, int status)
+void _send_status_packet(chanend c, int src_port, int status)
 {
   slave {
     c <: src_port;
@@ -1061,7 +1061,7 @@ void _ethernet_rx_server(
 #pragma ordered
      select
        {
-       case (int i=0;i<num_link;i++) serviceLinkCmd(link[i], i, cmd):
+       case (int i=0;i<num_link;i++) _serviceLinkCmd(link[i], i, cmd):
          if (cmd ==  (0x80000010)  ||
              cmd ==  (0x80000011)  ||
              cmd ==  (0x80000019) )
@@ -1073,7 +1073,7 @@ void _ethernet_rx_server(
              if (_link_status[i].wants_status_updates == 2) {
 
                int status = _ethernet_get_link_status(0);
-               send_status_packet(link[i], 0, status);
+               _send_status_packet(link[i], 0, status);
                _link_status[i].wants_status_updates = 1;
                if (rdIndex != wrIndex) {
                  _notify(link[i]);

@@ -33,11 +33,11 @@
 
     .align 4
 
-    .globl polynomial
+    .globl _polynomial
     
 initialCRC:   
     .word 0x9226F562
-polynomial:   
+_polynomial:
     .word 0xEDB88320
 allFives:   
     .word 0x55555555
@@ -119,7 +119,7 @@ _miiLLD:
     // R4 does not need initialising.
     // R5 does not need initialising yet
 
-    ldw    r6, cp[polynomial]
+    ldw    r6, cp[_polynomial]
     
     // R7 does not need initialising.
     ldc   r8, 99             // Initial interframe gap reg

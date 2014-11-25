@@ -63,13 +63,13 @@
 	.globwrite _ethernet_rx_server,usage.anon.30,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:387: error: previously used here"
 	.globwrite _ethernet_rx_server,usage.anon.29,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:393: error: previously used here"
 	.globwrite usage.anon.31,usage.anon.30,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:311: error: previously used here"
-	.globwrite serviceLinkCmd,usage.anon.30,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:124: error: previously used here"
-	.globwrite serviceLinkCmd,usage.anon.29,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:99: error: previously used here"
+	.globwrite _serviceLinkCmd,usage.anon.30,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:124: error: previously used here"
+	.globwrite _serviceLinkCmd,usage.anon.29,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:99: error: previously used here"
 	.call _ethernet_rx_server,usage.anon.31
 	.call _ethernet_rx_server,usage.anon.27
 	.call _ethernet_rx_server,usage.anon.13
-	.call _ethernet_rx_server,serviceLinkCmd
-	.call _ethernet_rx_server,send_status_packet
+	.call _ethernet_rx_server,_serviceLinkCmd
+	.call _ethernet_rx_server,_send_status_packet
 	.call _ethernet_rx_server,_mii_update_my_rdptr
 	.call _ethernet_rx_server,_mii_init_my_rdptr
 	.call _ethernet_rx_server,_mii_get_my_next_buf
@@ -87,9 +87,9 @@
 	.call _mac_rx_send_frame1,usage.anon.3
 	.call _mac_rx_send_frame1,usage.anon.21
 	.call _mac_rx_send_frame1,_mii_packet_get_wrap_ptr
-	.call serviceLinkCmd,usage.anon.27
-	.call serviceLinkCmd,_ethernet_get_mii_counts
-	.call serviceLinkCmd,_ethernet_get_filter_counts
+	.call _serviceLinkCmd,usage.anon.27
+	.call _serviceLinkCmd,_ethernet_get_mii_counts
+	.call _serviceLinkCmd,_ethernet_get_filter_counts
 	.call usage.anon.2,delay_ticks_longlong
 	.call usage.anon.1,delay_ticks_longlong
 	.call usage.anon.0,delay_ticks_longlong
@@ -149,11 +149,11 @@
 	.set usage.anon.26.locnochandec, 1
 	.set usage.anon.27.locnochandec, 1
 	.set usage.anon.28.locnochandec, 1
-	.set serviceLinkCmd.locnochandec, 1
+	.set _serviceLinkCmd.locnochandec, 1
 	.set _mac_rx_send_frame1.locnochandec, 1
 	.set _mac_rx_send_frame0.locnochandec, 1
 	.set usage.anon.31.locnochandec, 1
-	.set send_status_packet.locnochandec, 1
+	.set _send_status_packet.locnochandec, 1
 	.set _ethernet_rx_server.locnochandec, 1
 	.set usage.anon.0.locnoglobalaccess, 1
 	.set usage.anon.1.locnoglobalaccess, 1
@@ -186,7 +186,7 @@
 	.set usage.anon.28.locnoglobalaccess, 1
 	.set _mac_rx_send_frame1.locnoglobalaccess, 1
 	.set _mac_rx_send_frame0.locnoglobalaccess, 1
-	.set send_status_packet.locnoglobalaccess, 1
+	.set _send_status_packet.locnoglobalaccess, 1
 	.set usage.anon.0.locnointerfaceaccess, 1
 	.set usage.anon.1.locnointerfaceaccess, 1
 	.set usage.anon.2.locnointerfaceaccess, 1
@@ -216,11 +216,11 @@
 	.set usage.anon.26.locnointerfaceaccess, 1
 	.set usage.anon.27.locnointerfaceaccess, 1
 	.set usage.anon.28.locnointerfaceaccess, 1
-	.set serviceLinkCmd.locnointerfaceaccess, 1
+	.set _serviceLinkCmd.locnointerfaceaccess, 1
 	.set _mac_rx_send_frame1.locnointerfaceaccess, 1
 	.set _mac_rx_send_frame0.locnointerfaceaccess, 1
 	.set usage.anon.31.locnointerfaceaccess, 1
-	.set send_status_packet.locnointerfaceaccess, 1
+	.set _send_status_packet.locnointerfaceaccess, 1
 	.set _ethernet_rx_server.locnointerfaceaccess, 1
 	.set usage.anon.0.locnonotificationselect, 1
 	.set usage.anon.1.locnonotificationselect, 1
@@ -251,11 +251,11 @@
 	.set usage.anon.26.locnonotificationselect, 1
 	.set usage.anon.27.locnonotificationselect, 1
 	.set usage.anon.28.locnonotificationselect, 1
-	.set serviceLinkCmd.locnonotificationselect, 1
+	.set _serviceLinkCmd.locnonotificationselect, 1
 	.set _mac_rx_send_frame1.locnonotificationselect, 1
 	.set _mac_rx_send_frame0.locnonotificationselect, 1
 	.set usage.anon.31.locnonotificationselect, 1
-	.set send_status_packet.locnonotificationselect, 1
+	.set _send_status_packet.locnonotificationselect, 1
 	.set _ethernet_rx_server.locnonotificationselect, 1
 	.assert 1,usage.anon.9.actnochandec,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:181: error: call to function `_mii_packet_get_src_port' which declares a channel from within a transaction statement"
 	.assert 1,usage.anon.5.actnochandec,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:195: error: call to function `_mii_packet_get_timestamp' which declares a channel from within a transaction statement"
@@ -447,7 +447,7 @@ _ethernet_rx_server:
 	mov r0, r8
 	mov r1, r9
 .Lxta.call_labels1:
-	bl serviceLinkCmd
+	bl _serviceLinkCmd
 .Ltmp37:
 	ldw r0, cp[.LCPI0_0]
 	.loc	1 406 0
@@ -862,15 +862,15 @@ _ethernet_rx_server:
 
 	.align	4
 	.cc_bottom _ethernet_rx_server.function
-	.set	_ethernet_rx_server.nstackwords,((_mii_init_my_rdptr.nstackwords $M memset.nstackwords $M serviceLinkCmd.nstackwords $M _mac_rx_send_frame1.nstackwords $M _get_and_dec_transmit_count.nstackwords $M _mii_get_my_next_buf.nstackwords $M _mii_update_my_rdptr.nstackwords $M _mii_free.nstackwords $M _ethernet_link_status_notification.nstackwords $M _ethernet_get_link_status.nstackwords) + 15)
+	.set	_ethernet_rx_server.nstackwords,((_mii_init_my_rdptr.nstackwords $M memset.nstackwords $M _serviceLinkCmd.nstackwords $M _mac_rx_send_frame1.nstackwords $M _get_and_dec_transmit_count.nstackwords $M _mii_get_my_next_buf.nstackwords $M _mii_update_my_rdptr.nstackwords $M _mii_free.nstackwords $M _ethernet_link_status_notification.nstackwords $M _ethernet_get_link_status.nstackwords) + 15)
 	.globl	_ethernet_rx_server.nstackwords
-	.set	_ethernet_rx_server.maxcores,_ethernet_get_link_status.maxcores $M _ethernet_link_status_notification.maxcores $M _get_and_dec_transmit_count.maxcores $M _mac_rx_send_frame1.maxcores $M _mii_free.maxcores $M _mii_get_my_next_buf.maxcores $M _mii_init_my_rdptr.maxcores $M _mii_update_my_rdptr.maxcores $M serviceLinkCmd.maxcores $M 1
+	.set	_ethernet_rx_server.maxcores,_ethernet_get_link_status.maxcores $M _ethernet_link_status_notification.maxcores $M _get_and_dec_transmit_count.maxcores $M _mac_rx_send_frame1.maxcores $M _mii_free.maxcores $M _mii_get_my_next_buf.maxcores $M _mii_init_my_rdptr.maxcores $M _mii_update_my_rdptr.maxcores $M _serviceLinkCmd.maxcores $M 1
 	.globl	_ethernet_rx_server.maxcores
-	.set	_ethernet_rx_server.maxtimers,_ethernet_get_link_status.maxtimers $M _ethernet_link_status_notification.maxtimers $M _get_and_dec_transmit_count.maxtimers $M _mac_rx_send_frame1.maxtimers $M _mii_free.maxtimers $M _mii_get_my_next_buf.maxtimers $M _mii_init_my_rdptr.maxtimers $M _mii_update_my_rdptr.maxtimers $M serviceLinkCmd.maxtimers $M 0
+	.set	_ethernet_rx_server.maxtimers,_ethernet_get_link_status.maxtimers $M _ethernet_link_status_notification.maxtimers $M _get_and_dec_transmit_count.maxtimers $M _mac_rx_send_frame1.maxtimers $M _mii_free.maxtimers $M _mii_get_my_next_buf.maxtimers $M _mii_init_my_rdptr.maxtimers $M _mii_update_my_rdptr.maxtimers $M _serviceLinkCmd.maxtimers $M 0
 	.globl	_ethernet_rx_server.maxtimers
-	.set	_ethernet_rx_server.maxchanends,_ethernet_get_link_status.maxchanends $M _ethernet_link_status_notification.maxchanends $M _get_and_dec_transmit_count.maxchanends $M _mac_rx_send_frame1.maxchanends $M _mii_free.maxchanends $M _mii_get_my_next_buf.maxchanends $M _mii_init_my_rdptr.maxchanends $M _mii_update_my_rdptr.maxchanends $M serviceLinkCmd.maxchanends $M 0
+	.set	_ethernet_rx_server.maxchanends,_ethernet_get_link_status.maxchanends $M _ethernet_link_status_notification.maxchanends $M _get_and_dec_transmit_count.maxchanends $M _mac_rx_send_frame1.maxchanends $M _mii_free.maxchanends $M _mii_get_my_next_buf.maxchanends $M _mii_init_my_rdptr.maxchanends $M _mii_update_my_rdptr.maxchanends $M _serviceLinkCmd.maxchanends $M 0
 	.globl	_ethernet_rx_server.maxchanends
-	.cc_top serviceLinkCmd.function
+	.cc_top _serviceLinkCmd.function
 	.section	.cp.rodata.cst4,"aMc",@progbits,4
 	.cc_top .LCPI1_0.data
 	.align	4
@@ -878,10 +878,10 @@ _ethernet_rx_server:
 	.long	2147483632
 	.cc_bottom .LCPI1_0.data
 	.text
-	.globl	serviceLinkCmd
+	.globl	_serviceLinkCmd
 	.align	4
-	.type	serviceLinkCmd,@function
-serviceLinkCmd:
+	.type	_serviceLinkCmd,@function
+_serviceLinkCmd:
 .Ltmp111:
 	.cfi_startproc
 .Lfunc_begin1:
@@ -1140,22 +1140,22 @@ serviceLinkCmd:
 	ldw r4, sp[7]
 	retsp 8
 .Ltmp143:
-	.size	serviceLinkCmd, .Ltmp143-serviceLinkCmd
+	.size	_serviceLinkCmd, .Ltmp143-_serviceLinkCmd
 .Lfunc_end1:
 .Ltmp144:
 	.cfi_endproc
 .Leh_func_end1:
 
 	.align	4
-	.cc_bottom serviceLinkCmd.function
-	.set	serviceLinkCmd.nstackwords,((_ethernet_get_mii_counts.nstackwords $M _ethernet_get_filter_counts.nstackwords) + 8)
-	.globl	serviceLinkCmd.nstackwords
-	.set	serviceLinkCmd.maxcores,_ethernet_get_filter_counts.maxcores $M _ethernet_get_mii_counts.maxcores $M 1
-	.globl	serviceLinkCmd.maxcores
-	.set	serviceLinkCmd.maxtimers,_ethernet_get_filter_counts.maxtimers $M _ethernet_get_mii_counts.maxtimers $M 0
-	.globl	serviceLinkCmd.maxtimers
-	.set	serviceLinkCmd.maxchanends,_ethernet_get_filter_counts.maxchanends $M _ethernet_get_mii_counts.maxchanends $M 0
-	.globl	serviceLinkCmd.maxchanends
+	.cc_bottom _serviceLinkCmd.function
+	.set	_serviceLinkCmd.nstackwords,((_ethernet_get_mii_counts.nstackwords $M _ethernet_get_filter_counts.nstackwords) + 8)
+	.globl	_serviceLinkCmd.nstackwords
+	.set	_serviceLinkCmd.maxcores,_ethernet_get_filter_counts.maxcores $M _ethernet_get_mii_counts.maxcores $M 1
+	.globl	_serviceLinkCmd.maxcores
+	.set	_serviceLinkCmd.maxtimers,_ethernet_get_filter_counts.maxtimers $M _ethernet_get_mii_counts.maxtimers $M 0
+	.globl	_serviceLinkCmd.maxtimers
+	.set	_serviceLinkCmd.maxchanends,_ethernet_get_filter_counts.maxchanends $M _ethernet_get_mii_counts.maxchanends $M 0
+	.globl	_serviceLinkCmd.maxchanends
 	.cc_top _mac_rx_send_frame1.function
 	.section	.cp.rodata.cst4,"aMc",@progbits,4
 	.cc_top .LCPI2_0.data
@@ -1623,11 +1623,11 @@ _mac_rx_send_frame0:
 	.globl	_mac_rx_send_frame0.maxtimers
 	.set	_mac_rx_send_frame0.maxchanends,0
 	.globl	_mac_rx_send_frame0.maxchanends
-	.cc_top send_status_packet.function
-	.globl	send_status_packet
+	.cc_top _send_status_packet.function
+	.globl	_send_status_packet
 	.align	4
-	.type	send_status_packet,@function
-send_status_packet:
+	.type	_send_status_packet,@function
+_send_status_packet:
 .Ltmp230:
 	.cfi_startproc
 .Lfunc_begin4:
@@ -1652,22 +1652,22 @@ send_status_packet:
 	retsp 0
 .Ltmp232:
 .Ltmp233:
-	.size	send_status_packet, .Ltmp233-send_status_packet
+	.size	_send_status_packet, .Ltmp233-_send_status_packet
 .Lfunc_end4:
 .Ltmp234:
 	.cfi_endproc
 .Leh_func_end4:
 
 	.align	4
-	.cc_bottom send_status_packet.function
-	.set	send_status_packet.nstackwords,0
-	.globl	send_status_packet.nstackwords
-	.set	send_status_packet.maxcores,1
-	.globl	send_status_packet.maxcores
-	.set	send_status_packet.maxtimers,0
-	.globl	send_status_packet.maxtimers
-	.set	send_status_packet.maxchanends,0
-	.globl	send_status_packet.maxchanends
+	.cc_bottom _send_status_packet.function
+	.set	_send_status_packet.nstackwords,0
+	.globl	_send_status_packet.nstackwords
+	.set	_send_status_packet.maxcores,1
+	.globl	_send_status_packet.maxcores
+	.set	_send_status_packet.maxtimers,0
+	.globl	_send_status_packet.maxtimers
+	.set	_send_status_packet.maxchanends,0
+	.globl	_send_status_packet.maxchanends
 	.section	.dp.bss,"awd",@nobits
 	.cc_top _custom_filter_mask.data
 	.align	4
@@ -1692,7 +1692,7 @@ _link_status:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	5267
+	.long	5271
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -2451,7 +2451,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	53
-	.long	4920
+	.long	4924
 	.byte	0
 	.byte	15
 	.ascii	 "_get_tile_id_from_chanend"
@@ -2466,7 +2466,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	58
-	.long	4920
+	.long	4924
 	.byte	13
 	.ascii	 "ci"
 	.byte	0
@@ -2475,9 +2475,9 @@ _link_status:
 	.long	337
 	.byte	0
 	.byte	16
-	.ascii	 "serviceLinkCmd"
+	.ascii	 "_serviceLinkCmd"
 	.byte	0
-	.ascii	 "serviceLinkCmd"
+	.ascii	 "_serviceLinkCmd"
 	.byte	0
 	.byte	1
 	.byte	68
@@ -2492,7 +2492,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	67
-	.long	4920
+	.long	4924
 	.long	.Ldebug_loc49+0
 	.byte	17
 	.ascii	 "linkIndex"
@@ -2506,7 +2506,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	67
-	.long	4963
+	.long	4967
 	.long	.Ldebug_loc57+0
 	.byte	18
 	.long	.Ltmp118
@@ -2865,7 +2865,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	170
-	.long	4920
+	.long	4924
 	.long	.Ldebug_loc73+0
 	.byte	17
 	.ascii	 "cmd"
@@ -2956,14 +2956,14 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	228
-	.long	5194
+	.long	5198
 	.long	.Ldebug_loc105+0
 	.byte	17
 	.ascii	 "link"
 	.byte	0
 	.byte	1
 	.byte	229
-	.long	4920
+	.long	4924
 	.long	.Ldebug_loc111+0
 	.byte	17
 	.ascii	 "cmd"
@@ -3013,7 +3013,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	279
-	.long	4936
+	.long	4940
 	.byte	23
 	.byte	110
 	.byte	0
@@ -3088,9 +3088,9 @@ _link_status:
 	.byte	0
 	.byte	0
 	.byte	25
-	.ascii	 "send_status_packet"
+	.ascii	 "_send_status_packet"
 	.byte	0
-	.ascii	 "send_status_packet"
+	.ascii	 "_send_status_packet"
 	.byte	0
 	.byte	1
 	.short	343
@@ -3100,7 +3100,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	342
-	.long	4920
+	.long	4924
 	.byte	23
 	.ascii	 "src_port"
 	.byte	0
@@ -3132,14 +3132,14 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	366
-	.long	4946
+	.long	4950
 	.long	.Ldebug_loc0+0
 	.byte	27
 	.ascii	 "link"
 	.byte	0
 	.byte	1
 	.short	367
-	.long	4936
+	.long	4940
 	.long	.Ldebug_loc2+0
 	.byte	27
 	.ascii	 "num_link"
@@ -3181,7 +3181,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	375
-	.long	4951
+	.long	4955
 	.byte	18
 	.long	.Ltmp22
 	.long	.Ltmp24
@@ -3387,13 +3387,13 @@ _link_status:
 	.byte	7
 	.byte	4
 	.byte	31
-	.long	4920
+	.long	4924
 	.byte	32
-	.long	4931
+	.long	4935
 	.byte	31
 	.long	337
 	.byte	32
-	.long	4941
+	.long	4945
 	.byte	4
 	.long	262
 	.byte	5
@@ -3505,7 +3505,7 @@ _link_status:
 	.byte	8
 	.ascii	 "data"
 	.byte	0
-	.long	4968
+	.long	4972
 	.byte	1
 	.byte	231
 	.byte	2
@@ -3514,9 +3514,9 @@ _link_status:
 	.byte	1
 	.byte	0
 	.byte	32
-	.long	4981
+	.long	4985
 	.byte	35
-	.long	4222
+	.long	4224
 	.long	.Lfunc_begin4
 	.long	.Lfunc_end4
 	.byte	1
@@ -3527,7 +3527,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	342
-	.long	4920
+	.long	4924
 	.long	.Ldebug_loc127+0
 	.byte	27
 	.ascii	 "src_port"
@@ -4017,8 +4017,10 @@ _link_status:
 	.long	.Lset1
 	.long	824
 .asciiz "_mii_packet_set_length"
-	.long	3844
+	.long	3846
 .asciiz "_mac_rx_send_frame0"
+	.long	4224
+.asciiz "_send_status_packet"
 	.long	1989
 .asciiz "_mii_packet_get_forwarding"
 	.long	895
@@ -4047,9 +4049,7 @@ _link_status:
 .asciiz "_mii_packet_set_data"
 	.long	2678
 .asciiz "_get_tile_id_from_chanend"
-	.long	2757
-.asciiz "serviceLinkCmd"
-	.long	4308
+	.long	4312
 .asciiz "_ethernet_rx_server"
 	.long	1235
 .asciiz "_mii_packet_get_src_port"
@@ -4057,16 +4057,16 @@ _link_status:
 .asciiz "_mii_packet_get_data_ptr"
 	.long	1150
 .asciiz "_mii_packet_set_filter_result"
-	.long	4222
-.asciiz "send_status_packet"
 	.long	2308
 .asciiz "_mii_packet_get_data_word"
 	.long	1318
 .asciiz "_mii_packet_set_src_port"
 	.long	1709
 .asciiz "_mii_packet_get_tcount"
-	.long	3995
+	.long	3997
 .asciiz "_processReceivedFrame"
+	.long	2757
+.asciiz "_serviceLinkCmd"
 	.long	1393
 .asciiz "_mii_packet_get_timestamp_id"
 	.long	2221
@@ -4081,7 +4081,7 @@ _link_status:
 .asciiz "_mii_packet_set_tcount"
 	.long	587
 .asciiz "delay_seconds"
-	.long	3595
+	.long	3597
 .asciiz "_mac_rx_send_frame1"
 	.long	1480
 .asciiz "_mii_packet_set_timestamp_id"
@@ -4095,7 +4095,7 @@ _link_status:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	4981
+	.long	4985
 .asciiz "mii_packet_t"
 	.long	365
 .asciiz "__TYPE_0"
@@ -4887,10 +4887,10 @@ _link_status:
 	.typestring _ethernet_rx_server, "f{0}(&(a(:ui)),&(a(:chd)),si)"
 	.typestring _ethernet_get_link_status, "f{si}(si)"
 	.typestring _ethernet_link_status_notification, "f{si}(si)"
-	.typestring serviceLinkCmd, "f{0}(chd,si,&(ui))"
+	.typestring _serviceLinkCmd, "f{0}(chd,si,&(ui))"
 	.typestring _mac_rx_send_frame1, "f{0}(si,chd,ui)"
 	.typestring _mac_rx_send_frame0, "f{0}(&(s(mii_packet_t){m(length){si},m(timestamp){si},m(filter_result){si},m(src_port){si},m(timestamp_id){si},m(stage){si},m(tcount){si},m(crc){si},m(forwarding){si},m(data){a(380:ui)}}),chd,ui)"
-	.typestring send_status_packet, "f{0}(chd,si,si)"
+	.typestring _send_status_packet, "f{0}(chd,si,si)"
 	.section	.xtacalltable,"",@progbits
 .Lentries_start0:
 	.long	.Lentries_end1-.Lentries_start0

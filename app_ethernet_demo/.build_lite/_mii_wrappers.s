@@ -96,7 +96,7 @@ _ethernet_rx_server_wr:
 	mov r1, r0
 .Ltmp5:
 	.loc	1 144 0 prologue_end
-	ldaw r0, dp[rx_mem_lp]
+	ldaw r0, dp[_rx_mem_lp]
 	bl _ethernet_rx_server
 .Ltmp6:
 	.loc	1 151 0
@@ -143,8 +143,8 @@ _ethernet_tx_server_wr:
 	stw r0, sp[3]
 	stw r3, sp[2]
 	stw r1, sp[1]
-	ldaw r0, dp[tx_mem_lp]
-	ldaw r3, dp[ts_queue]
+	ldaw r0, dp[_tx_mem_lp]
+	ldaw r3, dp[_ts_queue]
 .Ltmp16:
 	mov r1, r2
 .Ltmp17:
@@ -192,11 +192,11 @@ _mii_tx_pins_wr:
 	mov r2, r0
 .Ltmp28:
 	.loc	1 99 0 prologue_end
-	ldaw r0, dp[tx_mem_lp]
+	ldaw r0, dp[_tx_mem_lp]
 	ldw r0, r0[r3]
 	ldc r1, 36
 	mul r1, r3, r1
-	ldaw r11, dp[ts_queue]
+	ldaw r11, dp[_ts_queue]
 	add r1, r11, r1
 	bl _mii_tx_pins
 .Ltmp29:
@@ -240,7 +240,7 @@ _mii_rx_pins_wr:
 	mov r1, r0
 .Ltmp39:
 	.loc	1 91 0 prologue_end
-	ldaw r0, dp[rx_mem_lp]
+	ldaw r0, dp[_rx_mem_lp]
 	ldw r0, r0[r11]
 	stw r3, sp[1]
 	mov r3, r11
@@ -295,7 +295,7 @@ _init_mii_mem:
 .Ltmp53:
 	ldaw r0, dp[_rx_lp_data]
 .Ltmp54:
-	stw r0, dp[rx_mem_lp]
+	stw r0, dp[_rx_mem_lp]
 .Ltmp55:
 	ldc r4, 4096
 	.loc	1 65 0
@@ -303,12 +303,12 @@ _init_mii_mem:
 	bl _mii_init_mempool
 	.loc	1 73 0
 	ldaw r0, dp[_tx_lp_data]
-	stw r0, dp[tx_mem_lp]
+	stw r0, dp[_tx_mem_lp]
 	.loc	1 74 0
 	mov r1, r4
 	bl _mii_init_mempool
 	.loc	1 76 0
-	ldaw r0, dp[ts_queue]
+	ldaw r0, dp[_ts_queue]
 	bl _init_ts_queue
 .Ltmp56:
 	.loc	1 80 0
@@ -340,36 +340,36 @@ _init_mii_mem:
 _ethernet_memory_lock:
 	.long	0
 	.cc_bottom _ethernet_memory_lock.data
-	.cc_top rx_mem_lp.data
-	.globl	rx_mem_lp.globound
-	.set	rx_mem_lp.globound,1
-	.globl	rx_mem_lp
+	.cc_top _rx_mem_lp.data
+	.globl	_rx_mem_lp.globound
+	.set	_rx_mem_lp.globound,1
+	.globl	_rx_mem_lp
 	.align	4
-	.type	rx_mem_lp,@object
-	.size rx_mem_lp,4
-rx_mem_lp:
+	.type	_rx_mem_lp,@object
+	.size _rx_mem_lp,4
+_rx_mem_lp:
 	.space	4
-	.cc_bottom rx_mem_lp.data
-	.cc_top tx_mem_lp.data
-	.globl	tx_mem_lp.globound
-	.set	tx_mem_lp.globound,1
-	.globl	tx_mem_lp
+	.cc_bottom _rx_mem_lp.data
+	.cc_top _tx_mem_lp.data
+	.globl	_tx_mem_lp.globound
+	.set	_tx_mem_lp.globound,1
+	.globl	_tx_mem_lp
 	.align	4
-	.type	tx_mem_lp,@object
-	.size tx_mem_lp,4
-tx_mem_lp:
+	.type	_tx_mem_lp,@object
+	.size _tx_mem_lp,4
+_tx_mem_lp:
 	.space	4
-	.cc_bottom tx_mem_lp.data
-	.cc_top ts_queue.data
-	.globl	ts_queue.globound
-	.set	ts_queue.globound,1
-	.globl	ts_queue
+	.cc_bottom _tx_mem_lp.data
+	.cc_top _ts_queue.data
+	.globl	_ts_queue.globound
+	.set	_ts_queue.globound,1
+	.globl	_ts_queue
 	.align	4
-	.type	ts_queue,@object
-	.size ts_queue,36
-ts_queue:
+	.type	_ts_queue,@object
+	.size _ts_queue,36
+_ts_queue:
 	.space	36
-	.cc_bottom ts_queue.data
+	.cc_bottom _ts_queue.data
 	.cc_top _rx_lp_data.data
 	.globl	_rx_lp_data.globound
 	.set	_rx_lp_data.globound,1
@@ -399,7 +399,7 @@ _tx_lp_data:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	1345
+	.long	1348
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -509,7 +509,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	0
 	.byte	4
-	.ascii	 "ts_queue"
+	.ascii	 "_ts_queue"
 	.byte	0
 	.long	444
 	.byte	1
@@ -517,7 +517,7 @@ _tx_lp_data:
 	.byte	18
 	.byte	5
 	.byte	3
-	.long	ts_queue
+	.long	_ts_queue
 	.byte	6
 	.long	310
 	.byte	7
@@ -530,7 +530,7 @@ _tx_lp_data:
 	.byte	4
 	.ascii	 "_rx_lp_data"
 	.byte	0
-	.long	479
+	.long	480
 	.byte	1
 	.byte	1
 	.byte	42
@@ -540,7 +540,7 @@ _tx_lp_data:
 	.byte	4
 	.ascii	 "_tx_lp_data"
 	.byte	0
-	.long	479
+	.long	480
 	.byte	1
 	.byte	1
 	.byte	43
@@ -554,31 +554,31 @@ _tx_lp_data:
 	.byte	5
 	.byte	6
 	.byte	6
-	.long	550
+	.long	551
 	.byte	7
 	.long	317
 	.byte	0
 	.byte	0
 	.byte	4
-	.ascii	 "rx_mem_lp"
+	.ascii	 "_rx_mem_lp"
 	.byte	0
-	.long	571
+	.long	572
 	.byte	1
 	.byte	1
 	.byte	45
 	.byte	5
 	.byte	3
-	.long	rx_mem_lp
+	.long	_rx_mem_lp
 	.byte	4
-	.ascii	 "tx_mem_lp"
+	.ascii	 "_tx_mem_lp"
 	.byte	0
-	.long	571
+	.long	572
 	.byte	1
 	.byte	1
 	.byte	46
 	.byte	5
 	.byte	3
-	.long	tx_mem_lp
+	.long	_tx_mem_lp
 	.byte	11
 	.ascii	 "_ethernet_rx_server_wr"
 	.byte	0
@@ -598,7 +598,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	1194
+	.long	1197
 	.long	.Ldebug_loc0+0
 	.byte	12
 	.ascii	 "num_rx"
@@ -627,14 +627,14 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1214
+	.long	1217
 	.long	.Ldebug_loc6+0
 	.byte	12
 	.ascii	 "tx"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1194
+	.long	1197
 	.long	.Ldebug_loc10+0
 	.byte	12
 	.ascii	 "num_q"
@@ -655,7 +655,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1342
+	.long	1345
 	.byte	2
 	.byte	145
 	.byte	24
@@ -664,7 +664,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	1342
+	.long	1345
 	.byte	2
 	.byte	145
 	.byte	28
@@ -688,7 +688,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	96
-	.long	1220
+	.long	1223
 	.long	.Ldebug_loc17+0
 	.byte	12
 	.byte	105
@@ -717,14 +717,14 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	83
-	.long	1220
+	.long	1223
 	.long	.Ldebug_loc23+0
 	.byte	12
 	.ascii	 "p2"
 	.byte	0
 	.byte	1
 	.byte	84
-	.long	1220
+	.long	1223
 	.long	.Ldebug_loc26+0
 	.byte	12
 	.byte	105
@@ -738,7 +738,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	86
-	.long	1179
+	.long	1182
 	.long	.Ldebug_loc32+0
 	.byte	0
 	.byte	14
@@ -788,7 +788,7 @@ _tx_lp_data:
 	.byte	6
 	.byte	129
 	.byte	17
-	.long	1179
+	.long	1182
 	.byte	4
 	.byte	2
 	.ascii	 "char"
@@ -796,10 +796,10 @@ _tx_lp_data:
 	.byte	8
 	.byte	1
 	.byte	18
-	.long	1200
+	.long	1203
 	.byte	1
 	.byte	17
-	.long	1208
+	.long	1211
 	.byte	4
 	.byte	3
 	.long	242
@@ -826,7 +826,7 @@ _tx_lp_data:
 	.byte	9
 	.ascii	 "p_smi_mdio"
 	.byte	0
-	.long	1220
+	.long	1223
 	.byte	7
 	.byte	46
 	.byte	2
@@ -836,7 +836,7 @@ _tx_lp_data:
 	.byte	9
 	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	1220
+	.long	1223
 	.byte	7
 	.byte	48
 	.byte	2
@@ -845,13 +845,13 @@ _tx_lp_data:
 	.byte	1
 	.byte	0
 	.byte	3
-	.long	1232
+	.long	1235
 	.ascii	 "smi_interface_t"
 	.byte	0
 	.byte	3
 	.byte	26
 	.byte	17
-	.long	1319
+	.long	1322
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -1107,29 +1107,29 @@ _tx_lp_data:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1101
+	.long	1104
 .asciiz "_init_mii_mem"
-	.long	1066
+	.long	584
+.asciiz "_rx_mem_lp"
+	.long	1069
 .asciiz "hwlock_alloc"
-	.long	583
-.asciiz "rx_mem_lp"
-	.long	607
-.asciiz "tx_mem_lp"
-	.long	631
+	.long	609
+.asciiz "_tx_mem_lp"
+	.long	634
 .asciiz "_ethernet_rx_server_wr"
-	.long	726
+	.long	729
 .asciiz "_ethernet_tx_server_wr"
-	.long	963
+	.long	966
 .asciiz "_mii_rx_pins_wr"
-	.long	888
-.asciiz "_mii_tx_pins_wr"
 	.long	456
-.asciiz "ts_queue"
-	.long	498
+.asciiz "_ts_queue"
+	.long	891
+.asciiz "_mii_tx_pins_wr"
+	.long	499
 .asciiz "_rx_lp_data"
 	.long	274
 .asciiz "_ethernet_memory_lock"
-	.long	524
+	.long	525
 .asciiz "_tx_lp_data"
 	.long	0
 .Lpubnames_end1:
@@ -1143,7 +1143,7 @@ _tx_lp_data:
 	.long	.Lset3
 	.long	332
 .asciiz "mii_ts_queue_t"
-	.long	1232
+	.long	1235
 .asciiz "smi_interface_t"
 	.long	0
 .Lpubtypes_end1:
@@ -1366,9 +1366,9 @@ _tx_lp_data:
 	.typestring _mii_init_mempool, "f{0}(ui,si)"
 	.typestring _init_ts_queue, "f{0}(p(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}))"
 	.typestring _ethernet_memory_lock, "ui"
-	.typestring rx_mem_lp, "a(1:ui)"
-	.typestring tx_mem_lp, "a(1:ui)"
-	.typestring ts_queue, "a(1:s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}})"
+	.typestring _rx_mem_lp, "a(1:ui)"
+	.typestring _tx_mem_lp, "a(1:ui)"
+	.typestring _ts_queue, "a(1:s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}})"
 	.typestring _rx_lp_data, "a(1:a(1024:si))"
 	.typestring _tx_lp_data, "a(1:a(1024:si))"
 	.ident	"GCC: (GNU) 4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"

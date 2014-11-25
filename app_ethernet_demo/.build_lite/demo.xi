@@ -750,10 +750,10 @@ typedef struct otp_ports_t {
   out port ctrl;
 # 29 "otp_board_info.h"
 } otp_ports_t;
-# 50 "otp_board_info.h"
+# 57 "otp_board_info.h"
 int otp_board_info_get_mac( otp_ports_t &ports , unsigned index,
                            char mac[6]);
-# 60 "otp_board_info.h"
+# 67 "otp_board_info.h"
 int otp_board_info_get_serial( otp_ports_t &ports ,
                               unsigned &value );
 # 28 "../src/demo.xc" 2
@@ -815,6 +815,9 @@ typedef struct mii_interface_lite_t {
 # 10 "smi.h" 2
 # 1 "xccompat.h" 1 3
 # 11 "smi.h" 2
+# 13 "smi.h"
+# 1 "ethernet_conf_derived.h" 1
+# 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
 # 18 "smi.h" 2
@@ -1208,10 +1211,12 @@ int _mac_get_macaddr(chanend c_mac, unsigned char macaddr[]);
 # 20 "_ethernet_phy_reset.h"
 typedef int ethernet_reset_interface_t;
 
+
 inline void _eth_phy_reset(ethernet_reset_interface_t eth_rst) {}
 # 12 "_ethernet.h" 2
 # 29 "../src/demo.xc" 2
-# 30 "../src/demo.xc"
+# 1 "ethernet.h" 1
+# 30 "../src/demo.xc" 2
 # 1 "ethernet_board_support.h" 1
 # 4 "ethernet_board_support.h"
 # 1 "platform.h" 1 3
@@ -1323,16 +1328,22 @@ void xscope_connect_data_from_host(chanend from_host);
 # 411 "xscope.h" 2 3
 # 33 "../src/demo.xc" 2
 # 50 "../src/demo.xc"
-on  tile[1] : otp_ports_t otp_ports =  { 0x200100 , 0x100200 , 0x100300 } ;
+on  tile[1] : otp_ports_t otp_ports0 =  { 0x200100 , 0x100200 , 0x100300 } ;
+on  tile[1] : otp_ports_t otp_ports1 =  { 0x200000 , 0x100000 , 0x100100 } ;
 
 
 
 
 
-smi_interface_t smi =  { 0 , on tile[1]: 0x10c00 , on tile[1]: 0x10d00 } ;
-mii_interface_full_t  mii =  { on tile[1] : 0x106 , on tile[1] : 0x206 , on tile[1]: 0x10800 , on tile[1]: 0x10f00 , on tile[1]: 0x40400 , on tile[1]: 0x10900 , on tile[1]: 0x10a00 , on tile[1]: 0x10b00 , on tile[1]: 0x40500 } ;
+smi_interface_t smi0 =  { 0 , on tile[1]: 0x10c00 , on tile[1]: 0x10d00 } ;
+smi_interface_t smi1 =  { 0 , on tile[0]: 0x10c00 , on tile[0]: 0x10d00 } ;
 
-ethernet_reset_interface_t eth_rst =  0 ;
+mii_interface_full_t  mii0 =  { on tile[1] : 0x106 , on tile[1] : 0x206 , on tile[1]: 0x10800 , on tile[1]: 0x10f00 , on tile[1]: 0x40400 , on tile[1]: 0x10900 , on tile[1]: 0x10a00 , on tile[1]: 0x10b00 , on tile[1]: 0x40500 } ;
+
+
+ethernet_reset_interface_t eth_rst0 =  0 ;
+ethernet_reset_interface_t eth_rst1 =  0 ;
+
 
 
 
@@ -1345,19 +1356,20 @@ unsigned char ethertype_ip[] = {0x08, 0x00};
 unsigned char ethertype_arp[] = {0x08, 0x06};
 
 unsigned char own_mac_addr[6];
+unsigned char own_mac_addr1[6];
 
 
 
 
 
 void demo(chanend tx, chanend rx);
-# 79 "../src/demo.xc"
+# 86 "../src/demo.xc"
 #pragma unsafe arrays
 int is_ethertype(unsigned char data[], unsigned char type[]){
 	int i = 12;
 	return data[i] == type[0] && data[i + 1] == type[1];
 }
-# 85 "../src/demo.xc"
+# 92 "../src/demo.xc"
 #pragma unsafe arrays
 int is_mac_addr(unsigned char data[], unsigned char addr[]){
 	for (int i=0;i<6;i++){
@@ -1368,7 +1380,7 @@ int is_mac_addr(unsigned char data[], unsigned char addr[]){
 
 	return 1;
 }
-# 96 "../src/demo.xc"
+# 103 "../src/demo.xc"
 #pragma unsafe arrays
 int is_broadcast(unsigned char data[]){
 	for (int i=0;i<6;i++){
@@ -1655,16 +1667,17 @@ int main()
       on  tile[1] :
       {
         char mac_address[6];
-        otp_board_info_get_mac(otp_ports, 0, mac_address);
-        _eth_phy_reset(eth_rst);
-        smi_init(smi);
-        eth_phy_config(1, smi);
-        _ethernet_server_full (mii,
+        otp_board_info_get_mac(otp_ports0, 0, mac_address);
+        _eth_phy_reset(eth_rst0);
+        smi_init(smi0);
+        eth_phy_config(1, smi0);
+        _ethernet_server_full (mii0,
                         null,
                         mac_address,
                         rx, 1,
                         tx, 1);
       }
+
 
 
 

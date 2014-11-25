@@ -446,7 +446,7 @@ void _ethernet_tx_server(
 
 
 
-                        mii_mempool_t tx_mem_lp[],
+                        mii_mempool_t _tx_mem_lp[],
                         int num_q,
                         mii_ts_queue_t ts_q[],
                         const char mac_addr[],
@@ -560,7 +560,7 @@ int printstrln(const char *s);
 # 16 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_wrappers.c" 2
 
 
-mii_ts_queue_t ts_queue[1];
+mii_ts_queue_t _ts_queue[1];
 
 
 
@@ -608,8 +608,8 @@ hwlock_t _ethernet_memory_lock = 0;
 int _rx_lp_data[1][(((4096))/4)];
 int _tx_lp_data[1][(((4096))/4)];
 
-mii_mempool_t rx_mem_lp[1];
-mii_mempool_t tx_mem_lp[1];
+mii_mempool_t _rx_mem_lp[1];
+mii_mempool_t _tx_mem_lp[1];
 
 
 
@@ -627,8 +627,8 @@ void _init_mii_mem() {
 
 
 
-    rx_mem_lp[i] = (mii_mempool_t) &_rx_lp_data[i][0];
-    _mii_init_mempool(rx_mem_lp[i], (((4096))/4)*4);
+    _rx_mem_lp[i] = (mii_mempool_t) &_rx_lp_data[i][0];
+    _mii_init_mempool(_rx_mem_lp[i], (((4096))/4)*4);
 
 
 
@@ -636,10 +636,10 @@ void _init_mii_mem() {
 
 
 
-         tx_mem_lp[i] = (mii_mempool_t) &_tx_lp_data[i][0];
-         _mii_init_mempool(tx_mem_lp[i],
+         _tx_mem_lp[i] = (mii_mempool_t) &_tx_lp_data[i][0];
+         _mii_init_mempool(_tx_mem_lp[i],
                           (((4096))/4)*4);
-         _init_ts_queue(&ts_queue[i]);
+         _init_ts_queue(&_ts_queue[i]);
 
 
   }
@@ -654,7 +654,7 @@ void _mii_rx_pins_wr(port p1,
 
 
 
-  _mii_rx_pins(rx_mem_lp[i], p1, p2, i, c);
+  _mii_rx_pins(_rx_mem_lp[i], p1, p2, i, c);
 
 }
 
@@ -664,7 +664,7 @@ void _mii_tx_pins_wr(port p,
 {
   _mii_tx_pins(
 # 109 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_wrappers.c"
-    tx_mem_lp[i], &ts_queue[i], p, i);
+    _tx_mem_lp[i], &_ts_queue[i], p, i);
 }
 
 
@@ -679,9 +679,9 @@ void _ethernet_tx_server_wr(const char mac_addr[], chanend tx[], int num_q, int 
 
 
 
-                     tx_mem_lp,
+                     _tx_mem_lp,
                      num_q,
-                     ts_queue,
+                     _ts_queue,
                      mac_addr,
                      tx,
                      num_tx,
@@ -696,7 +696,7 @@ void _ethernet_rx_server_wr(chanend rx[], int num_rx)
 
 
 
-                     rx_mem_lp,
+                     _rx_mem_lp,
                      rx,
                      num_rx);
 }

@@ -153,13 +153,13 @@ _eth_phy_reset:
 	.ascii	 "_eth_phy_reset"
 	.byte	0
 	.byte	3
-	.byte	22
+	.byte	23
 	.byte	1
 	.byte	3
 	.ascii	 "eth_rst"
 	.byte	0
 	.byte	3
-	.byte	22
+	.byte	23
 	.long	488
 	.byte	0
 	.byte	4

@@ -37,7 +37,7 @@ void _ethernet_tx_server(
 #if ETHERNET_TX_HP_QUEUE
                         mii_mempool_t tx_mem_hp[],
 #endif
-                        mii_mempool_t tx_mem_lp[],
+                        mii_mempool_t _tx_mem_lp[],
                         int num_q,
                         mii_ts_queue_t ts_q[],
                         const char mac_addr[],

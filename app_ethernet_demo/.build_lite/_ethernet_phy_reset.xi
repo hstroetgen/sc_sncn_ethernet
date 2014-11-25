@@ -327,6 +327,7 @@ extern tileref tile[2];
 # 20 "_ethernet_phy_reset.h"
 typedef int ethernet_reset_interface_t;
 
+
 inline void _eth_phy_reset(ethernet_reset_interface_t eth_rst) {}
 # 3 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_phy_reset.xc" 2
 # 18 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_phy_reset.xc"

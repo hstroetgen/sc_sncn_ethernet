@@ -26,10 +26,10 @@ typedef struct otp_ports_t {
   out port ctrl;
 # 29 "otp_board_info.h"
 } otp_ports_t;
-# 50 "otp_board_info.h"
+# 57 "otp_board_info.h"
 int otp_board_info_get_mac( otp_ports_t &ports , unsigned index,
                            char mac[6]);
-# 60 "otp_board_info.h"
+# 67 "otp_board_info.h"
 int otp_board_info_get_serial( otp_ports_t &ports ,
                               unsigned &value );
 # 7 "/home/atena/workspace_ethernet_new_replicated/module_otp_board_info/src/otp_board_info.xc" 2

@@ -11,7 +11,7 @@
 
 #if (NUM_ETHERNET_PORTS == 1)
 
-void phy_init(smi_interface_t &smi0,
+void _phy_init(smi_interface_t &smi0,
               mii_interface_full_t &mii0)
 {
   smi_init(smi0);

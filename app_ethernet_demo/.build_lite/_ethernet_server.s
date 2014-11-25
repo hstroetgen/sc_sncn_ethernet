@@ -63,9 +63,9 @@
 	.call _ethernet_server_full,_ethernet_tx_server_wr
 	.call _ethernet_server_full,_ethernet_rx_server_wr
 	.call _ethernet_server_full,_ethernet_filter
-	.call phy_init,smi_init
-	.call phy_init,eth_phy_config
-	.call phy_init,_mii_init_full
+	.call _phy_init,smi_init
+	.call _phy_init,eth_phy_config
+	.call _phy_init,_mii_init_full
 	.call usage.anon.2,delay_ticks_longlong
 	.call usage.anon.1,delay_ticks_longlong
 	.call usage.anon.0,delay_ticks_longlong
@@ -133,7 +133,7 @@
 	.set usage.anon.24.locnochandec, 1
 	.set usage.anon.25.locnochandec, 1
 	.set usage.anon.26.locnochandec, 1
-	.set phy_init.locnochandec, 1
+	.set _phy_init.locnochandec, 1
 	.set usage.anon.0.locnoglobalaccess, 1
 	.set usage.anon.1.locnoglobalaccess, 1
 	.set usage.anon.2.locnoglobalaccess, 1
@@ -161,7 +161,7 @@
 	.set usage.anon.24.locnoglobalaccess, 1
 	.set usage.anon.25.locnoglobalaccess, 1
 	.set usage.anon.26.locnoglobalaccess, 1
-	.set phy_init.locnoglobalaccess, 1
+	.set _phy_init.locnoglobalaccess, 1
 	.set _ethernet_server_full.locnoglobalaccess, 1
 	.set usage.anon.0.locnointerfaceaccess, 1
 	.set usage.anon.1.locnointerfaceaccess, 1
@@ -190,7 +190,7 @@
 	.set usage.anon.24.locnointerfaceaccess, 1
 	.set usage.anon.25.locnointerfaceaccess, 1
 	.set usage.anon.26.locnointerfaceaccess, 1
-	.set phy_init.locnointerfaceaccess, 1
+	.set _phy_init.locnointerfaceaccess, 1
 	.set _ethernet_server_full.locnointerfaceaccess, 1
 	.set usage.anon.0.locnonotificationselect, 1
 	.set usage.anon.1.locnonotificationselect, 1
@@ -219,7 +219,7 @@
 	.set usage.anon.24.locnonotificationselect, 1
 	.set usage.anon.25.locnonotificationselect, 1
 	.set usage.anon.26.locnonotificationselect, 1
-	.set phy_init.locnonotificationselect, 1
+	.set _phy_init.locnonotificationselect, 1
 	.set _ethernet_server_full.locnonotificationselect, 1
 	.overlay_subgraph_conflict _ethernet_server_full.task._mii_rx_pins_wr.0, _ethernet_server_full.task._mii_tx_pins_wr.1, _ethernet_server_full.task._ethernet_tx_server_wr.2, _ethernet_server_full.task._ethernet_rx_server_wr.3, _ethernet_server_full.task._ethernet_filter.4
 
@@ -248,11 +248,11 @@
 .Ltext_begin:
 	.section	.dp.data,"awd",@progbits
 	.text
-	.cc_top phy_init.function
-	.globl	phy_init
+	.cc_top _phy_init.function
+	.globl	_phy_init
 	.align	4
-	.type	phy_init,@function
-phy_init:
+	.type	_phy_init,@function
+_phy_init:
 .Ltmp3:
 	.cfi_startproc
 .Lfunc_begin0:
@@ -296,22 +296,22 @@ phy_init:
 	retsp 3
 .Ltmp14:
 .Ltmp15:
-	.size	phy_init, .Ltmp15-phy_init
+	.size	_phy_init, .Ltmp15-_phy_init
 .Lfunc_end0:
 .Ltmp16:
 	.cfi_endproc
 .Leh_func_end0:
 
 	.align	4
-	.cc_bottom phy_init.function
-	.set	phy_init.nstackwords,((smi_init.nstackwords $M _mii_init_full.nstackwords $M eth_phy_config.nstackwords) + 3)
-	.globl	phy_init.nstackwords
-	.set	phy_init.maxcores,_mii_init_full.maxcores $M eth_phy_config.maxcores $M smi_init.maxcores $M 1
-	.globl	phy_init.maxcores
-	.set	phy_init.maxtimers,_mii_init_full.maxtimers $M eth_phy_config.maxtimers $M smi_init.maxtimers $M 0
-	.globl	phy_init.maxtimers
-	.set	phy_init.maxchanends,_mii_init_full.maxchanends $M eth_phy_config.maxchanends $M smi_init.maxchanends $M 0
-	.globl	phy_init.maxchanends
+	.cc_bottom _phy_init.function
+	.set	_phy_init.nstackwords,((smi_init.nstackwords $M _mii_init_full.nstackwords $M eth_phy_config.nstackwords) + 3)
+	.globl	_phy_init.nstackwords
+	.set	_phy_init.maxcores,_mii_init_full.maxcores $M eth_phy_config.maxcores $M smi_init.maxcores $M 1
+	.globl	_phy_init.maxcores
+	.set	_phy_init.maxtimers,_mii_init_full.maxtimers $M eth_phy_config.maxtimers $M smi_init.maxtimers $M 0
+	.globl	_phy_init.maxtimers
+	.set	_phy_init.maxchanends,_mii_init_full.maxchanends $M eth_phy_config.maxchanends $M smi_init.maxchanends $M 0
+	.globl	_phy_init.maxchanends
 	.cc_top _ethernet_server_full.function
 	.globl	_ethernet_server_full
 	.align	4
@@ -619,7 +619,7 @@ par.desc.1:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	3890
+	.long	3892
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -647,7 +647,7 @@ par.desc.1:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	3582
+	.long	3584
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -662,7 +662,7 @@ par.desc.1:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	3582
+	.long	3584
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -677,7 +677,7 @@ par.desc.1:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	3582
+	.long	3584
 	.byte	0
 	.byte	4
 	.ascii	 "_mii_packet_get_length"
@@ -1224,9 +1224,9 @@ par.desc.1:
 	.long	492
 	.byte	0
 	.byte	7
-	.ascii	 "phy_init"
+	.ascii	 "_phy_init"
 	.byte	0
-	.ascii	 "phy_init"
+	.ascii	 "_phy_init"
 	.byte	0
 	.byte	1
 	.byte	16
@@ -1241,14 +1241,14 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.byte	14
-	.long	3272
+	.long	3274
 	.long	.Ldebug_loc0+0
 	.byte	8
 	.ascii	 "mii0"
 	.byte	0
 	.byte	1
 	.byte	15
-	.long	3508
+	.long	3510
 	.long	.Ldebug_loc3+0
 	.byte	0
 	.byte	9
@@ -1268,7 +1268,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	3887
+	.long	3889
 	.long	.Ldebug_loc7+0
 	.byte	0
 	.byte	9
@@ -1288,7 +1288,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	3887
+	.long	3889
 	.long	.Ldebug_loc9+0
 	.byte	0
 	.byte	9
@@ -1308,7 +1308,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	3887
+	.long	3889
 	.long	.Ldebug_loc11+0
 	.byte	0
 	.byte	9
@@ -1328,7 +1328,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	3887
+	.long	3889
 	.long	.Ldebug_loc14+0
 	.byte	0
 	.byte	9
@@ -1348,7 +1348,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	3887
+	.long	3889
 	.long	.Ldebug_loc17+0
 	.byte	0
 	.byte	7
@@ -1369,7 +1369,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.byte	22
-	.long	3508
+	.long	3510
 	.byte	2
 	.byte	145
 	.byte	4
@@ -1378,19 +1378,19 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.byte	23
-	.long	3272
+	.long	3274
 	.byte	3
 	.ascii	 "mac_address"
 	.byte	0
 	.byte	1
 	.byte	24
-	.long	3538
+	.long	3540
 	.byte	3
 	.ascii	 "rx"
 	.byte	0
 	.byte	1
 	.byte	25
-	.long	3559
+	.long	3561
 	.byte	3
 	.ascii	 "num_rx"
 	.byte	0
@@ -1402,7 +1402,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.byte	27
-	.long	3559
+	.long	3561
 	.byte	3
 	.ascii	 "num_tx"
 	.byte	0
@@ -1432,7 +1432,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "p_smi_mdio"
 	.byte	0
-	.long	3179
+	.long	3181
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1442,7 +1442,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	3179
+	.long	3181
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1451,7 +1451,7 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	14
-	.long	3187
+	.long	3189
 	.byte	6
 	.ascii	 "clock"
 	.byte	0
@@ -1464,7 +1464,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "clk_mii_rx"
 	.byte	0
-	.long	3277
+	.long	3279
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1474,7 +1474,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "clk_mii_tx"
 	.byte	0
-	.long	3277
+	.long	3279
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1484,7 +1484,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "p_mii_rxclk"
 	.byte	0
-	.long	3179
+	.long	3181
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1494,7 +1494,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "p_mii_rxer"
 	.byte	0
-	.long	3179
+	.long	3181
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1504,7 +1504,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "p_mii_rxd"
 	.byte	0
-	.long	3179
+	.long	3181
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1514,7 +1514,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "p_mii_rxdv"
 	.byte	0
-	.long	3179
+	.long	3181
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1524,7 +1524,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "p_mii_txclk"
 	.byte	0
-	.long	3179
+	.long	3181
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1534,7 +1534,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "p_mii_txen"
 	.byte	0
-	.long	3179
+	.long	3181
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1544,7 +1544,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "p_mii_txd"
 	.byte	0
-	.long	3179
+	.long	3181
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1553,7 +1553,7 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	14
-	.long	3286
+	.long	3288
 	.byte	6
 	.ascii	 "unsigned char"
 	.byte	0
@@ -1563,26 +1563,26 @@ par.desc.1:
 	.byte	4
 	.byte	5
 	.byte	16
-	.long	3513
+	.long	3515
 	.byte	14
-	.long	3533
+	.long	3535
 	.byte	6
 	.ascii	 "chanend"
 	.byte	0
 	.byte	7
 	.byte	4
 	.byte	16
-	.long	3543
+	.long	3545
 	.byte	14
-	.long	3554
+	.long	3556
 	.byte	17
-	.long	3286
+	.long	3288
 	.byte	4
 	.byte	17
-	.long	3187
+	.long	3189
 	.byte	4
 	.byte	17
-	.long	3533
+	.long	3535
 	.byte	4
 	.byte	6
 	.ascii	 "unsigned int"
@@ -1596,7 +1596,7 @@ par.desc.1:
 	.byte	13
 	.byte	97
 	.byte	0
-	.long	3576
+	.long	3578
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1606,7 +1606,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "bound"
 	.byte	0
-	.long	3582
+	.long	3584
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1615,7 +1615,7 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	17
-	.long	3554
+	.long	3556
 	.byte	4
 	.byte	12
 	.ascii	 "__TYPE_1"
@@ -1624,7 +1624,7 @@ par.desc.1:
 	.byte	13
 	.byte	97
 	.byte	0
-	.long	3640
+	.long	3642
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1634,7 +1634,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "bound"
 	.byte	0
-	.long	3582
+	.long	3584
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1649,7 +1649,7 @@ par.desc.1:
 	.byte	13
 	.byte	97
 	.byte	0
-	.long	3640
+	.long	3642
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1659,7 +1659,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "bound"
 	.byte	0
-	.long	3582
+	.long	3584
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1668,12 +1668,12 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	18
-	.long	3543
+	.long	3545
 	.byte	19
-	.long	3530
+	.long	3532
 	.byte	1
 	.byte	19
-	.long	3530
+	.long	3532
 	.byte	0
 	.byte	0
 	.byte	12
@@ -1683,7 +1683,7 @@ par.desc.1:
 	.byte	13
 	.byte	109
 	.byte	0
-	.long	3564
+	.long	3566
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1693,7 +1693,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "smi"
 	.byte	0
-	.long	3570
+	.long	3572
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1703,7 +1703,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "mac_address"
 	.byte	0
-	.long	3598
+	.long	3600
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1713,7 +1713,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "rx"
 	.byte	0
-	.long	3646
+	.long	3648
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1733,7 +1733,7 @@ par.desc.1:
 	.byte	13
 	.ascii	 "tx"
 	.byte	0
-	.long	3688
+	.long	3690
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1753,7 +1753,7 @@ par.desc.1:
 	.byte	13
 	.byte	99
 	.byte	0
-	.long	3730
+	.long	3732
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1762,7 +1762,7 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	17
-	.long	3748
+	.long	3750
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -2031,8 +2031,6 @@ par.desc.1:
 	.long	.Lset1
 	.long	499
 .asciiz "_mii_packet_set_length"
-	.long	2308
-.asciiz "phy_init"
 	.long	1648
 .asciiz "_mii_packet_get_forwarding"
 	.long	570
@@ -2045,7 +2043,7 @@ par.desc.1:
 .asciiz "_mii_packet_get_crc"
 	.long	2222
 .asciiz "_mii_packet_set_data_byte"
-	.long	3029
+	.long	3031
 .asciiz "_ethernet_server_full"
 	.long	1731
 .asciiz "_mii_packet_set_forwarding"
@@ -2061,20 +2059,22 @@ par.desc.1:
 .asciiz "_mii_packet_set_crc"
 	.long	2058
 .asciiz "_mii_packet_set_data"
-	.long	2374
+	.long	2376
 .asciiz "_ethernet_server_full.task._mii_rx_pins_wr.0"
-	.long	2624
+	.long	2626
 .asciiz "_ethernet_server_full.task._ethernet_tx_server_wr.2"
-	.long	2499
+	.long	2501
 .asciiz "_ethernet_server_full.task._mii_tx_pins_wr.1"
 	.long	902
 .asciiz "_mii_packet_get_src_port"
-	.long	2763
+	.long	2765
 .asciiz "_ethernet_server_full.task._ethernet_rx_server_wr.3"
 	.long	1810
 .asciiz "_mii_packet_get_data_ptr"
 	.long	817
 .asciiz "_mii_packet_set_filter_result"
+	.long	2308
+.asciiz "_phy_init"
 	.long	1967
 .asciiz "_mii_packet_get_data_word"
 	.long	981
@@ -2089,7 +2089,7 @@ par.desc.1:
 .asciiz "_mii_packet_get_length"
 	.long	361
 .asciiz "delay_microseconds"
-	.long	2902
+	.long	2904
 .asciiz "_ethernet_server_full.task._ethernet_filter.4"
 	.long	1443
 .asciiz "_mii_packet_set_tcount"
@@ -2107,17 +2107,17 @@ par.desc.1:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	3646
+	.long	3648
 .asciiz "__TYPE_1"
-	.long	3688
+	.long	3690
 .asciiz "__TYPE_2"
-	.long	3286
+	.long	3288
 .asciiz "mii_interface_full_t"
-	.long	3748
+	.long	3750
 .asciiz "frame.0"
-	.long	3187
+	.long	3189
 .asciiz "smi_interface_t"
-	.long	3598
+	.long	3600
 .asciiz "__TYPE_0"
 	.long	0
 .Lpubtypes_end1:
@@ -2248,7 +2248,7 @@ par.desc.1:
 	.typestring _ethernet_tx_server_wr, "f{0}(&(a(:c:uc)),&(a(:chd)),si,si,n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
 	.typestring _ethernet_rx_server_wr, "f{0}(&(a(:chd)),si)"
 	.typestring _ethernet_filter, "f{0}(&(a(:c:uc)),&(a(1:m:chd)))"
-	.typestring phy_init, "f{0}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}))"
+	.typestring _phy_init, "f{0}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}))"
 	.typestring _ethernet_server_full, "f{0}(&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
 	.section	.xtacalltable,"",@progbits
 .Lentries_start0:

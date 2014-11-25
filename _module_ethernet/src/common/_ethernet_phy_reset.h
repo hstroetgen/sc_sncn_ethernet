@@ -18,7 +18,8 @@ void eth_phy_reset(ethernet_reset_interface_t eth_rst);
 #endif
 #else
 typedef int ethernet_reset_interface_t;
-#define ETHERNET_DEFAULT_RESET_INTERFACE_INIT 0
+#define ETHERNET_DEFAULT_RESET_INTERFACE_INIT0 0
+#define ETHERNET_DEFAULT_RESET_INTERFACE_INIT1 0
 inline void _eth_phy_reset(ethernet_reset_interface_t eth_rst) {}
 #endif
 

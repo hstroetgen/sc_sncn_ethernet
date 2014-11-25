@@ -15,7 +15,7 @@
 #include <print.h>
 
 // Queue of timestamps for transmitted packets
-mii_ts_queue_t ts_queue[NUM_ETHERNET_PORTS];
+mii_ts_queue_t _ts_queue[NUM_ETHERNET_PORTS];
 
 // This is the single ethernet hardware lock when we are using hardware locking
 #ifdef ETHERNET_USE_HARDWARE_LOCKS
@@ -42,8 +42,8 @@ mii_mempool_t tx_mem_hp[NUM_ETHERNET_PORTS];
 int _rx_lp_data[NUM_ETHERNET_PORTS][ETHERNET_RX_LP_MEMSIZE];
 int _tx_lp_data[NUM_ETHERNET_PORTS][ETHERNET_TX_LP_MEMSIZE];
 
-mii_mempool_t rx_mem_lp[NUM_ETHERNET_PORTS];
-mii_mempool_t tx_mem_lp[NUM_ETHERNET_PORTS];
+mii_mempool_t _rx_mem_lp[NUM_ETHERNET_PORTS];
+mii_mempool_t _tx_mem_lp[NUM_ETHERNET_PORTS];
 
 #ifdef ETHERNET_TX_BUFSIZE
 #if ETHERNET_MAX_TX_PACKET_SIZE > ETHERNET_TX_BUFSIZE
@@ -61,8 +61,8 @@ void _init_mii_mem() {
     rx_mem_hp[i] = (mii_mempool_t) &rx_hp_data[i][0];
     _mii_init_mempool(rx_mem_hp[i], ETHERNET_RX_HP_MEMSIZE*4);
 #endif
-    rx_mem_lp[i] = (mii_mempool_t) &_rx_lp_data[i][0];
-    _mii_init_mempool(rx_mem_lp[i], ETHERNET_RX_LP_MEMSIZE*4);
+    _rx_mem_lp[i] = (mii_mempool_t) &_rx_lp_data[i][0];
+    _mii_init_mempool(_rx_mem_lp[i], ETHERNET_RX_LP_MEMSIZE*4);
 
 #if !ETHERNET_TX_NO_BUFFERING
      #if ETHERNET_TX_HP_QUEUE
@@ -70,10 +70,10 @@ void _init_mii_mem() {
          mii_init_mempool(tx_mem_hp[i],
                           ETHERNET_TX_HP_MEMSIZE*4);
      #endif
-         tx_mem_lp[i] = (mii_mempool_t) &_tx_lp_data[i][0];
-         _mii_init_mempool(tx_mem_lp[i],
+         _tx_mem_lp[i] = (mii_mempool_t) &_tx_lp_data[i][0];
+         _mii_init_mempool(_tx_mem_lp[i],
                           ETHERNET_TX_LP_MEMSIZE*4);
-         _init_ts_queue(&ts_queue[i]);
+         _init_ts_queue(&_ts_queue[i]);
 #endif
 
   }
@@ -88,7 +88,7 @@ void _mii_rx_pins_wr(port p1,
 #if ETHERNET_RX_HP_QUEUE
           _mii_rx_pins(rx_mem_hp[i],rx_mem_lp[i], p1, p2, i, c);
 #else
-  _mii_rx_pins(rx_mem_lp[i], p1, p2, i, c);
+  _mii_rx_pins(_rx_mem_lp[i], p1, p2, i, c);
 #endif
 }
 
@@ -106,7 +106,7 @@ void _mii_tx_pins_wr(port p,
 #if ETHERNET_TX_HP_QUEUE
 				tx_mem_hp[i],
 #endif
-				tx_mem_lp[i], &ts_queue[i], p, i);
+				_tx_mem_lp[i], &_ts_queue[i], p, i);
 }
 #endif
 
@@ -126,11 +126,11 @@ void _ethernet_tx_server_wr(const char mac_addr[], chanend tx[], int num_q, int 
 #else
   _ethernet_tx_server(
 #if ETHERNET_TX_HP_QUEUE
-                     tx_mem_hp,
+                     _tx_mem_hp,
 #endif
-                     tx_mem_lp,
+                     _tx_mem_lp,
                      num_q,
-                     ts_queue,
+                     _ts_queue,
                      mac_addr,
                      tx,
                      num_tx,
@@ -145,7 +145,7 @@ void _ethernet_rx_server_wr(chanend rx[], int num_rx)
 #if ETHERNET_RX_HP_QUEUE
 					 rx_mem_hp,
 #endif
-                     rx_mem_lp,
+                     _rx_mem_lp,
                      rx,
                      num_rx);
 }

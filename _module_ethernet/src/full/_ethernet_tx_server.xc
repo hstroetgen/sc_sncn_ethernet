@@ -146,7 +146,7 @@ void _ethernet_tx_server_no_buffer(const char mac_addr[],
 #if ETHERNET_TX_HP_QUEUE
                         mii_mempool_t tx_mem_hp[],
 #endif
-                        mii_mempool_t tx_mem_lp[],
+                        mii_mempool_t _tx_mem_lp[],
                         int num_q, 
                         mii_ts_queue_t ts_queue[],
                         const char mac_addr[],
@@ -222,10 +222,10 @@ void _ethernet_tx_server_no_buffer(const char mac_addr[],
               wrap_ptr[p] = mii_get_wrap_ptr(tx_mem_lp[p]);
             }
 #else
-              buf[p] = _mii_reserve_at_least(tx_mem_lp[p],
+              buf[p] = _mii_reserve_at_least(_tx_mem_lp[p],
                                                      end_ptr[p],
                                                          MII_MALLOC_FULL_PACKET_SIZE_LP);
-              wrap_ptr[p] = _mii_get_wrap_ptr(tx_mem_lp[p]);
+              wrap_ptr[p] = _mii_get_wrap_ptr(_tx_mem_lp[p]);
 #endif
         	  if (buf[p] == 0)
                     bufs_ok=0;

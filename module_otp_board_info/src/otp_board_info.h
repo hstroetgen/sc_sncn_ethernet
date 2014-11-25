@@ -32,11 +32,18 @@ typedef struct otp_ports_t {
  * Standard initializer for an otp_ports_t structure. Use as follows:
  * on stdcore[0]: otp_ports_t otp_ports = OTP_PORTS_INITIALIZER;
  */
-#define OTP_PORTS_INITIALIZER \
+#define OTP_PORTS_INITIALIZER0 \
 { \
   XS1_PORT_32B, \
   XS1_PORT_16C, \
   XS1_PORT_16D \
+}
+
+#define OTP_PORTS_INITIALIZER1 \
+{ \
+    XS1_PORT_32A, \
+    XS1_PORT_16A, \
+    XS1_PORT_16B \
 }
 
 /**

@@ -209,7 +209,7 @@ the_server:
 	.loc	1 88 0
 .Ltmp14:
 	
-	.xtabranch .LBB3_14, .LBB3_10, .LBB3_8, .LBB3_6
+	.xtabranch .LBB3_10, .LBB3_14, .LBB3_8, .LBB3_6
 waiteu
 .Ltmp15:
 .Ltmp13:
@@ -610,7 +610,7 @@ waiteu
 
 	.align	4
 	.cc_bottom the_server.function
-	.set	the_server.nstackwords,((mac_set_macaddr_lite.nstackwords $M mii_buffer_init.nstackwords $M mii_out_init.nstackwords $M mii_out_packet.nstackwords $M mii_out_packet_done.nstackwords $M mii_free_in_buffer.nstackwords $M mii_restart_buffer.nstackwords $M mii_get_in_buffer.nstackwords $M smi_check_link_state.nstackwords) + 6994)
+	.set	the_server.nstackwords,((mac_set_macaddr_lite.nstackwords $M mii_buffer_init.nstackwords $M mii_out_init.nstackwords $M mii_free_in_buffer.nstackwords $M mii_restart_buffer.nstackwords $M mii_get_in_buffer.nstackwords $M mii_out_packet.nstackwords $M mii_out_packet_done.nstackwords $M smi_check_link_state.nstackwords) + 6994)
 	.set	the_server.maxcores,mac_set_macaddr_lite.maxcores $M mii_buffer_init.maxcores $M mii_free_in_buffer.maxcores $M mii_get_in_buffer.maxcores $M mii_out_init.maxcores $M mii_out_packet.maxcores $M mii_out_packet_done.maxcores $M mii_restart_buffer.maxcores $M smi_check_link_state.maxcores $M 1
 	.set	the_server.maxtimers,mac_set_macaddr_lite.maxtimers $M mii_buffer_init.maxtimers $M mii_free_in_buffer.maxtimers $M mii_get_in_buffer.maxtimers $M mii_out_init.maxtimers $M mii_out_packet.maxtimers $M mii_out_packet_done.maxtimers $M mii_restart_buffer.maxtimers $M smi_check_link_state.maxtimers $M 0
 	.set	the_server.maxchanends,mac_set_macaddr_lite.maxchanends $M mii_buffer_init.maxchanends $M mii_free_in_buffer.maxchanends $M mii_get_in_buffer.maxchanends $M mii_out_init.maxchanends $M mii_out_packet.maxchanends $M mii_out_packet_done.maxchanends $M mii_restart_buffer.maxchanends $M smi_check_link_state.maxchanends $M 0

@@ -37,11 +37,11 @@
 
     .align 4
 
-    .globl polynomial
+    .globl _polynomial
 
 initialCRC:
     .word 0x9226F562
-polynomial:
+_polynomial:
     .word 0xEDB88320
 allFives:
     .word 0x55555555
@@ -109,7 +109,7 @@ _miiLLD:
 
 
 
-    ldw r6, cp[polynomial]
+    ldw r6, cp[_polynomial]
 
 
     ldc r8, 99

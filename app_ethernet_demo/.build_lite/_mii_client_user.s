@@ -4071,26 +4071,6 @@ _globalNow:
 	.long	0
 	.long	0
 .Ldebug_loc111:
-	.long	.Ltmp240
-	.long	.Ltmp253
-.Lset60 = .Ltmp390-.Ltmp389
-	.short	.Lset60
-.Ltmp389:
-	.byte	80
-.Ltmp390:
-	.long	0
-	.long	0
-.Ldebug_loc114:
-	.long	.Ltmp251
-	.long	.Ltmp253
-.Lset61 = .Ltmp392-.Ltmp391
-	.short	.Lset61
-.Ltmp391:
-	.byte	83
-.Ltmp392:
-	.long	0
-	.long	0
-.Ldebug_loc116:
 	.section	.debug_aranges,"",@progbits
 	.section	.debug_ranges,"",@progbits
 	.long	.Ltmp81

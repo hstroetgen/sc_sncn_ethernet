@@ -41,44 +41,76 @@
 
 
 // Ethernet Ports
-#define ETHERNET_DEFAULT_MII_INIT_full { \
+#define ETHERNET_DEFAULT_MII_INIT0_full { \
   ETHERNET_DEFAULT_CLKBLK_0, \
   ETHERNET_DEFAULT_CLKBLK_1, \
 \
-    PORT_ETH_RXCLK,                             \
-    PORT_ETH_ERR,                               \
-    PORT_ETH_RXD,                               \
-    PORT_ETH_RXDV,                              \
-    PORT_ETH_TXCLK,                             \
-    PORT_ETH_TXEN,                              \
-    PORT_ETH_TXD \
+    PORT_ETH_RXCLK0,                             \
+    PORT_ETH_ERR0,                               \
+    PORT_ETH_RXD0,                               \
+    PORT_ETH_RXDV0,                              \
+    PORT_ETH_TXCLK0,                             \
+    PORT_ETH_TXEN0,                              \
+    PORT_ETH_TXD0 \
 }
 
-#define ETHERNET_DEFAULT_MII_INIT_lite { \
+#define ETHERNET_DEFAULT_MII_INIT0_lite { \
   ETHERNET_DEFAULT_CLKBLK_0, \
   ETHERNET_DEFAULT_CLKBLK_1, \
 \
-    PORT_ETH_RXCLK,                             \
-    PORT_ETH_ERR,                               \
-    PORT_ETH_RXD,                               \
-    PORT_ETH_RXDV,                              \
-    PORT_ETH_TXCLK,                             \
-    PORT_ETH_TXEN,                              \
-    PORT_ETH_TXD,                               \
-    PORT_ETH_FAKE \
+    PORT_ETH_RXCLK0,                             \
+    PORT_ETH_ERR0,                               \
+    PORT_ETH_RXD0,                               \
+    PORT_ETH_RXDV0,                              \
+    PORT_ETH_TXCLK0,                             \
+    PORT_ETH_TXEN0,                              \
+    PORT_ETH_TXD0,                               \
+    PORT_ETH_FAKE0 \
 }
 
+#define ETHERNET_DEFAULT_MII_INIT1_full { \
+  ETHERNET_DEFAULT_CLKBLK_0, \
+  ETHERNET_DEFAULT_CLKBLK_1, \
+\
+    PORT_ETH_RXCLK1,                             \
+    PORT_ETH_ERR1,                               \
+    PORT_ETH_RXD1,                               \
+    PORT_ETH_RXDV1,                              \
+    PORT_ETH_TXCLK1,                             \
+    PORT_ETH_TXEN1,                              \
+    PORT_ETH_TXD1 \
+}
 
-#define ETHERNET_DEFAULT_MII_INIT ADD_SUFFIX(ETHERNET_DEFAULT_MII_INIT,ETHERNET_DEFAULT_IMPLEMENTATION)
+#define ETHERNET_DEFAULT_MII_INIT1_lite { \
+  ETHERNET_DEFAULT_CLKBLK_0, \
+  ETHERNET_DEFAULT_CLKBLK_1, \
+\
+    PORT_ETH_RXCLK1,                             \
+    PORT_ETH_ERR1,                               \
+    PORT_ETH_RXD1,                               \
+    PORT_ETH_RXDV1,                              \
+    PORT_ETH_TXCLK1,                             \
+    PORT_ETH_TXEN1,                              \
+    PORT_ETH_TXD1,                               \
+    PORT_ETH_FAKE1 \
+}
+
+#define ETHERNET_DEFAULT_MII_INIT0 ADD_SUFFIX(ETHERNET_DEFAULT_MII_INIT0,ETHERNET_DEFAULT_IMPLEMENTATION)
+#define ETHERNET_DEFAULT_MII_INIT1 ADD_SUFFIX(ETHERNET_DEFAULT_MII_INIT1,ETHERNET_DEFAULT_IMPLEMENTATION)
 
 
 #if SMI_COMBINE_MDC_MDIO
-#define ETHERNET_DEFAULT_SMI_INIT {ETHERNET_DEFAULT_PHY_ADDRESS, \
+#define ETHERNET_DEFAULT_SMI_INIT0 {ETHERNET_DEFAULT_PHY_ADDRESS, \
+                                   PORT_ETH_MDIOC}
+#define ETHERNET_DEFAULT_SMI_INIT1 {ETHERNET_DEFAULT_PHY_ADDRESS, \
                                    PORT_ETH_MDIOC}
 #else
-#define ETHERNET_DEFAULT_SMI_INIT {ETHERNET_DEFAULT_PHY_ADDRESS, \
-                                   PORT_ETH_MDIO,       \
-                                   PORT_ETH_MDC}
+#define ETHERNET_DEFAULT_SMI_INIT0 {ETHERNET_DEFAULT_PHY_ADDRESS, \
+                                   PORT_ETH_MDIO0,       \
+                                   PORT_ETH_MDC0}
+#define ETHERNET_DEFAULT_SMI_INIT1 {ETHERNET_DEFAULT_PHY_ADDRESS, \
+                                   PORT_ETH_MDIO1,       \
+                                   PORT_ETH_MDC1}
 #endif
 
 
