@@ -563,7 +563,7 @@ mac_check_link_client:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	1432
+	.long	1423
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -591,7 +591,7 @@ mac_check_link_client:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	1364
+	.long	1355
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -606,7 +606,7 @@ mac_check_link_client:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	1364
+	.long	1355
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -621,7 +621,7 @@ mac_check_link_client:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	1364
+	.long	1355
 	.byte	0
 	.byte	4
 	.ascii	 "mac_check_link_client"
@@ -641,22 +641,22 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	27
-	.long	1353
-	.long	.Ldebug_loc45+0
+	.long	1344
+	.long	.Ldebug_loc41+0
 	.byte	5
 	.ascii	 "linkNum"
 	.byte	0
 	.byte	1
 	.byte	27
-	.long	1425
-	.long	.Ldebug_loc47+0
+	.long	1416
+	.long	.Ldebug_loc43+0
 	.byte	5
 	.ascii	 "status"
 	.byte	0
 	.byte	1
 	.byte	27
-	.long	1430
-	.long	.Ldebug_loc49+0
+	.long	1421
+	.long	.Ldebug_loc45+0
 	.byte	0
 	.byte	6
 	.ascii	 "ethernet_send_frame_unify"
@@ -670,37 +670,37 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	37
-	.long	1353
+	.long	1344
 	.byte	3
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	37
-	.long	1388
+	.long	1379
 	.byte	3
 	.ascii	 "count"
 	.byte	0
 	.byte	1
 	.byte	37
-	.long	1277
+	.long	1268
 	.byte	3
 	.ascii	 "sentTime"
 	.byte	0
 	.byte	1
 	.byte	37
-	.long	1393
+	.long	1384
 	.byte	3
 	.ascii	 "Cmd"
 	.byte	0
 	.byte	1
 	.byte	37
-	.long	1364
+	.long	1355
 	.byte	3
 	.ascii	 "ifnum"
 	.byte	0
 	.byte	1
 	.byte	37
-	.long	1277
+	.long	1268
 	.byte	7
 	.byte	7
 	.byte	8
@@ -708,19 +708,13 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	89
-	.long	1364
+	.long	1355
 	.byte	8
 	.byte	105
 	.byte	0
 	.byte	1
 	.byte	39
-	.long	1277
-	.byte	8
-	.byte	105
-	.byte	0
-	.byte	1
-	.byte	39
-	.long	1277
+	.long	1268
 	.byte	0
 	.byte	0
 	.byte	0
@@ -742,28 +736,28 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	87
-	.long	1353
+	.long	1344
 	.long	.Ldebug_loc0+0
 	.byte	5
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	87
-	.long	1388
+	.long	1379
 	.long	.Ldebug_loc3+0
 	.byte	5
 	.ascii	 "count"
 	.byte	0
 	.byte	1
 	.byte	87
-	.long	1277
+	.long	1268
 	.long	.Ldebug_loc6+0
 	.byte	5
 	.ascii	 "ifnum"
 	.byte	0
 	.byte	1
 	.byte	87
-	.long	1277
+	.long	1268
 	.long	.Ldebug_loc8+0
 	.byte	9
 	.long	.Ltmp3
@@ -796,29 +790,29 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	95
-	.long	1353
-	.long	.Ldebug_loc14+0
+	.long	1344
+	.long	.Ldebug_loc10+0
 	.byte	5
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	96
-	.long	1388
-	.long	.Ldebug_loc17+0
+	.long	1379
+	.long	.Ldebug_loc13+0
 	.byte	5
 	.ascii	 "count"
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	1277
-	.long	.Ldebug_loc20+0
+	.long	1268
+	.long	.Ldebug_loc16+0
 	.byte	5
 	.ascii	 "ifnum"
 	.byte	0
 	.byte	1
 	.byte	98
-	.long	1277
-	.long	.Ldebug_loc22+0
+	.long	1268
+	.long	.Ldebug_loc18+0
 	.byte	9
 	.long	.Ltmp15
 	.long	.Ltmp21
@@ -830,7 +824,7 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	105
-	.long	1277
+	.long	1268
 	.byte	0
 	.byte	0
 	.byte	0
@@ -852,35 +846,35 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1353
-	.long	.Ldebug_loc24+0
+	.long	1344
+	.long	.Ldebug_loc20+0
 	.byte	5
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1388
-	.long	.Ldebug_loc27+0
+	.long	1379
+	.long	.Ldebug_loc23+0
 	.byte	5
 	.ascii	 "count"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1277
-	.long	.Ldebug_loc30+0
+	.long	1268
+	.long	.Ldebug_loc26+0
 	.byte	5
 	.ascii	 "sentTime"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1393
-	.long	.Ldebug_loc32+0
+	.long	1384
+	.long	.Ldebug_loc28+0
 	.byte	11
 	.ascii	 "ifnum"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1277
+	.long	1268
 	.byte	2
 	.byte	145
 	.byte	8
@@ -892,7 +886,7 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	121
-	.long	1277
+	.long	1268
 	.byte	1
 	.long	.Lfunc_begin3
 	.long	.Lfunc_end3
@@ -904,15 +898,15 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	120
-	.long	1353
-	.long	.Ldebug_loc35+0
+	.long	1344
+	.long	.Ldebug_loc31+0
 	.byte	5
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	120
-	.long	1420
-	.long	.Ldebug_loc38+0
+	.long	1411
+	.long	.Ldebug_loc34+0
 	.byte	9
 	.long	.Ltmp47
 	.long	.Ltmp51
@@ -924,8 +918,8 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	122
-	.long	1277
-	.long	.Ldebug_loc41+0
+	.long	1268
+	.long	.Ldebug_loc37+0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -947,13 +941,13 @@ mac_check_link_client:
 	.byte	0
 	.byte	1
 	.byte	162
-	.long	1353
+	.long	1344
 	.byte	3
 	.ascii	 "bps"
 	.byte	0
 	.byte	1
 	.byte	163
-	.long	1277
+	.long	1268
 	.byte	0
 	.byte	14
 	.ascii	 "chanend"
@@ -969,24 +963,24 @@ mac_check_link_client:
 	.byte	4
 	.byte	5
 	.byte	16
-	.long	1364
+	.long	1355
 	.byte	17
-	.long	1383
+	.long	1374
 	.byte	17
-	.long	1364
+	.long	1355
 	.byte	14
 	.ascii	 "unsigned char"
 	.byte	0
 	.byte	8
 	.byte	1
 	.byte	16
-	.long	1398
+	.long	1389
 	.byte	17
-	.long	1415
+	.long	1406
 	.byte	17
-	.long	1398
+	.long	1389
 	.byte	17
-	.long	1277
+	.long	1268
 	.byte	0
 .Linfo_end1:
 	.section	.debug_abbrev,"",@progbits
@@ -1224,15 +1218,15 @@ mac_check_link_client:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1140
+	.long	1131
 .asciiz "mac_get_macaddr_full"
 	.long	306
 .asciiz "delay_milliseconds"
-	.long	852
+	.long	843
 .asciiz "mac_tx_offset2"
 	.long	362
 .asciiz "delay_microseconds"
-	.long	1284
+	.long	1275
 .asciiz "mac_set_qav_bandwidth"
 	.long	418
 .asciiz "mac_check_link_client"
@@ -1240,9 +1234,9 @@ mac_check_link_client:
 .asciiz "ethernet_send_frame_unify"
 	.long	260
 .asciiz "delay_seconds"
-	.long	709
+	.long	700
 .asciiz "mac_tx_full"
-	.long	1003
+	.long	994
 .asciiz "mac_tx_timed"
 	.long	0
 .Lpubnames_end1:
@@ -1298,114 +1292,119 @@ mac_check_link_client:
 	.long	0
 	.long	0
 .Ldebug_loc10:
-	.long	.Ltmp3
-	.long	.Ltmp7
+	.long	.Lfunc_begin1
+	.long	.Ltmp21
 .Lset8 = .Ltmp72-.Ltmp71
 	.short	.Lset8
 .Ltmp71:
-	.byte	16
-	.byte	0
+	.byte	80
 .Ltmp72:
-	.long	.Ltmp7
-	.long	.Ltmp8
+	.long	0
+	.long	0
+.Ldebug_loc13:
+	.long	.Lfunc_begin1
+	.long	.Ltmp20
 .Lset9 = .Ltmp74-.Ltmp73
 	.short	.Lset9
 .Ltmp73:
-	.byte	83
+	.byte	81
 .Ltmp74:
-	.long	.Ltmp8
-	.long	.Lfunc_end0
+	.long	0
+	.long	0
+.Ldebug_loc16:
+	.long	.Lfunc_begin1
+	.long	.Ltmp17
 .Lset10 = .Ltmp76-.Ltmp75
 	.short	.Lset10
 .Ltmp75:
-	.byte	16
-	.byte	0
+	.byte	82
 .Ltmp76:
 	.long	0
 	.long	0
-.Ldebug_loc14:
+.Ldebug_loc18:
 	.long	.Lfunc_begin1
-	.long	.Ltmp21
+	.long	.Ltmp18
 .Lset11 = .Ltmp78-.Ltmp77
 	.short	.Lset11
 .Ltmp77:
-	.byte	80
+	.byte	83
 .Ltmp78:
 	.long	0
 	.long	0
-.Ldebug_loc17:
-	.long	.Lfunc_begin1
-	.long	.Ltmp20
+.Ldebug_loc20:
+	.long	.Lfunc_begin2
+	.long	.Ltmp37
 .Lset12 = .Ltmp80-.Ltmp79
 	.short	.Lset12
 .Ltmp79:
-	.byte	81
+	.byte	80
 .Ltmp80:
 	.long	0
 	.long	0
-.Ldebug_loc20:
-	.long	.Lfunc_begin1
-	.long	.Ltmp17
+.Ldebug_loc23:
+	.long	.Lfunc_begin2
+	.long	.Ltmp36
 .Lset13 = .Ltmp82-.Ltmp81
 	.short	.Lset13
 .Ltmp81:
-	.byte	82
+	.byte	81
 .Ltmp82:
 	.long	0
 	.long	0
-.Ldebug_loc22:
-	.long	.Lfunc_begin1
-	.long	.Ltmp18
+.Ldebug_loc26:
+	.long	.Lfunc_begin2
+	.long	.Ltmp33
 .Lset14 = .Ltmp84-.Ltmp83
 	.short	.Lset14
 .Ltmp83:
-	.byte	83
+	.byte	82
 .Ltmp84:
 	.long	0
 	.long	0
-.Ldebug_loc24:
+.Ldebug_loc28:
 	.long	.Lfunc_begin2
 	.long	.Ltmp37
 .Lset15 = .Ltmp86-.Ltmp85
 	.short	.Lset15
 .Ltmp85:
-	.byte	80
+	.byte	83
 .Ltmp86:
 	.long	0
 	.long	0
-.Ldebug_loc27:
-	.long	.Lfunc_begin2
-	.long	.Ltmp36
+.Ldebug_loc31:
+	.long	.Lfunc_begin3
+	.long	.Ltmp50
 .Lset16 = .Ltmp88-.Ltmp87
 	.short	.Lset16
 .Ltmp87:
-	.byte	81
+	.byte	80
 .Ltmp88:
 	.long	0
 	.long	0
-.Ldebug_loc30:
-	.long	.Lfunc_begin2
-	.long	.Ltmp33
+.Ldebug_loc34:
+	.long	.Lfunc_begin3
+	.long	.Ltmp51
 .Lset17 = .Ltmp90-.Ltmp89
 	.short	.Lset17
 .Ltmp89:
-	.byte	82
+	.byte	81
 .Ltmp90:
 	.long	0
 	.long	0
-.Ldebug_loc32:
-	.long	.Lfunc_begin2
-	.long	.Ltmp37
+.Ldebug_loc37:
+	.long	.Ltmp47
+	.long	.Lfunc_end3
 .Lset18 = .Ltmp92-.Ltmp91
 	.short	.Lset18
 .Ltmp91:
-	.byte	83
+	.byte	16
+	.byte	1
 .Ltmp92:
 	.long	0
 	.long	0
-.Ldebug_loc35:
-	.long	.Lfunc_begin3
-	.long	.Ltmp50
+.Ldebug_loc41:
+	.long	.Lfunc_begin5
+	.long	.Ltmp59
 .Lset19 = .Ltmp94-.Ltmp93
 	.short	.Lset19
 .Ltmp93:
@@ -1413,9 +1412,9 @@ mac_check_link_client:
 .Ltmp94:
 	.long	0
 	.long	0
-.Ldebug_loc38:
-	.long	.Lfunc_begin3
-	.long	.Ltmp51
+.Ldebug_loc43:
+	.long	.Lfunc_begin5
+	.long	.Ltmp58
 .Lset20 = .Ltmp96-.Ltmp95
 	.short	.Lset20
 .Ltmp95:
@@ -1423,48 +1422,17 @@ mac_check_link_client:
 .Ltmp96:
 	.long	0
 	.long	0
-.Ldebug_loc41:
-	.long	.Ltmp47
-	.long	.Lfunc_end3
+.Ldebug_loc45:
+	.long	.Lfunc_begin5
+	.long	.Ltmp60
 .Lset21 = .Ltmp98-.Ltmp97
 	.short	.Lset21
 .Ltmp97:
-	.byte	16
-	.byte	1
+	.byte	82
 .Ltmp98:
 	.long	0
 	.long	0
-.Ldebug_loc45:
-	.long	.Lfunc_begin5
-	.long	.Ltmp59
-.Lset22 = .Ltmp100-.Ltmp99
-	.short	.Lset22
-.Ltmp99:
-	.byte	80
-.Ltmp100:
-	.long	0
-	.long	0
 .Ldebug_loc47:
-	.long	.Lfunc_begin5
-	.long	.Ltmp58
-.Lset23 = .Ltmp102-.Ltmp101
-	.short	.Lset23
-.Ltmp101:
-	.byte	81
-.Ltmp102:
-	.long	0
-	.long	0
-.Ldebug_loc49:
-	.long	.Lfunc_begin5
-	.long	.Ltmp60
-.Lset24 = .Ltmp104-.Ltmp103
-	.short	.Lset24
-.Ltmp103:
-	.byte	82
-.Ltmp104:
-	.long	0
-	.long	0
-.Ldebug_loc51:
 	.section	.debug_aranges,"",@progbits
 	.section	.debug_ranges,"",@progbits
 	.section	.debug_macinfo,"",@progbits

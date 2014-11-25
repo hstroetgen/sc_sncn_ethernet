@@ -115,19 +115,19 @@ typedef struct mii_packet_t {
 // The inline assembler version of the Get breaks.  Use a C function until
 // a tools fix is available
 #define create_buf_getset(field) \
-  inline int mii_packet_get_##field (int buf) { \
+  inline int _mii_packet_get_##field (int buf) { \
     int x; \
     __asm__("ldw %0,%1[" STRINGIFY(BUF_OFFSET_ ## field) "]":"=r"(x):"r"(buf)); \
     return x; \
  } \
- inline void mii_packet_set_##field (int buf, int x) { \
+ inline void _mii_packet_set_##field (int buf, int x) { \
   __asm__("stw %1, %0[" STRINGIFY(BUF_OFFSET_ ## field) "]"::"r"(buf),"r"(x)); \
  }
 #else
 // Temporary version of the get/set to avoid compiler issue with inline assembler
 #define create_buf_getset(field) \
- int mii_packet_get_##field (int buf); \
- inline void mii_packet_set_##field (int buf, int x) { \
+ int _mii_packet_get_##field (int buf); \
+ inline void _mii_packet_set_##field (int buf, int x) { \
   __asm__("stw %1, %0[" STRINGIFY(BUF_OFFSET_ ## field) "]"::"r"(buf),"r"(x)); \
  }
 #endif
@@ -142,16 +142,16 @@ create_buf_getset(tcount)
 create_buf_getset(crc)
 create_buf_getset(forwarding)
 
-inline int mii_packet_get_data_ptr(int buf) {
+inline int _mii_packet_get_data_ptr(int buf) {
   return (buf+BUF_DATA_OFFSET*4);
 }
 
-inline void mii_packet_set_data_word(int data, int n, int v) {
+inline void _mii_packet_set_data_word(int data, int n, int v) {
   __asm__("stw %0,%1[%2]"::"r"(v),"r"(data),"r"(n));
 }
 
 #ifdef ETHERNET_INLINE_PACKET_GET
-inline int mii_packet_get_data_word(int data, int n) {
+inline int _mii_packet_get_data_word(int data, int n) {
   int x;
   __asm__("ldw %0,%1[%2]":"=r"(x):"r"(data),"r"(n));
   return x;
@@ -167,15 +167,15 @@ int mii_packet_get_data_word(int data, int n);
   asm("ldw %0,%1[" STRINGIFY(n) "]":"=r"(v):"r"(data));
 
 
-inline void mii_packet_set_data(int buf, int n, int v) {
+inline void _mii_packet_set_data(int buf, int n, int v) {
   __asm__("stw %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+BUF_DATA_OFFSET));
 }
 
-inline void mii_packet_set_data_short(int buf, int n, int v) {
+inline void _mii_packet_set_data_short(int buf, int n, int v) {
   __asm__("st16 %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+(BUF_DATA_OFFSET*2)));
 }
 
-inline void mii_packet_set_data_byte(int buf, int n, int v) {
+inline void _mii_packet_set_data_byte(int buf, int n, int v) {
   __asm__("st8 %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+(BUF_DATA_OFFSET*4)));
 }
 

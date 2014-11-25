@@ -3,30 +3,30 @@
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
 	.inline_definition delay_microseconds
-	.inline_definition mii_packet_get_length
-	.inline_definition mii_packet_set_length
-	.inline_definition mii_packet_get_timestamp
-	.inline_definition mii_packet_set_timestamp
-	.inline_definition mii_packet_get_filter_result
-	.inline_definition mii_packet_set_filter_result
-	.inline_definition mii_packet_get_src_port
-	.inline_definition mii_packet_set_src_port
-	.inline_definition mii_packet_get_timestamp_id
-	.inline_definition mii_packet_set_timestamp_id
-	.inline_definition mii_packet_get_stage
-	.inline_definition mii_packet_set_stage
-	.inline_definition mii_packet_get_tcount
-	.inline_definition mii_packet_set_tcount
-	.inline_definition mii_packet_get_crc
-	.inline_definition mii_packet_set_crc
-	.inline_definition mii_packet_get_forwarding
-	.inline_definition mii_packet_set_forwarding
-	.inline_definition mii_packet_get_data_ptr
-	.inline_definition mii_packet_set_data_word
-	.inline_definition mii_packet_get_data_word
-	.inline_definition mii_packet_set_data
-	.inline_definition mii_packet_set_data_short
-	.inline_definition mii_packet_set_data_byte
+	.inline_definition _mii_packet_get_length
+	.inline_definition _mii_packet_set_length
+	.inline_definition _mii_packet_get_timestamp
+	.inline_definition _mii_packet_set_timestamp
+	.inline_definition _mii_packet_get_filter_result
+	.inline_definition _mii_packet_set_filter_result
+	.inline_definition _mii_packet_get_src_port
+	.inline_definition _mii_packet_set_src_port
+	.inline_definition _mii_packet_get_timestamp_id
+	.inline_definition _mii_packet_set_timestamp_id
+	.inline_definition _mii_packet_get_stage
+	.inline_definition _mii_packet_set_stage
+	.inline_definition _mii_packet_get_tcount
+	.inline_definition _mii_packet_set_tcount
+	.inline_definition _mii_packet_get_crc
+	.inline_definition _mii_packet_set_crc
+	.inline_definition _mii_packet_get_forwarding
+	.inline_definition _mii_packet_set_forwarding
+	.inline_definition _mii_packet_get_data_ptr
+	.inline_definition _mii_packet_set_data_word
+	.inline_definition _mii_packet_get_data_word
+	.inline_definition _mii_packet_set_data
+	.inline_definition _mii_packet_set_data_short
+	.inline_definition _mii_packet_set_data_byte
 	.set usage.anon.0,0
 	.set usage.anon.1,0
 	.set usage.anon.2,0
@@ -1502,7 +1502,7 @@ _ethernet_unified_get_data:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	4487
+	.long	4535
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -1530,7 +1530,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	2346
+	.long	2394
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -1545,7 +1545,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	2346
+	.long	2394
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -1560,29 +1560,29 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	2346
+	.long	2394
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_length"
+	.ascii	 "_mii_packet_get_length"
 	.byte	0
-	.ascii	 "mii_packet_get_length"
+	.ascii	 "_mii_packet_get_length"
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	493
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	493
+	.long	495
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	493
+	.long	495
 	.byte	0
 	.byte	6
 	.ascii	 "int"
@@ -1590,181 +1590,181 @@ _ethernet_unified_get_data:
 	.byte	5
 	.byte	4
 	.byte	2
-	.ascii	 "mii_packet_set_length"
+	.ascii	 "_mii_packet_set_length"
 	.byte	0
-	.ascii	 "mii_packet_set_length"
-	.byte	0
-	.byte	3
-	.byte	135
-	.byte	1
-	.byte	3
-	.ascii	 "buf"
+	.ascii	 "_mii_packet_set_length"
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	493
+	.byte	1
+	.byte	3
+	.ascii	 "buf"
+	.byte	0
+	.byte	3
+	.byte	135
+	.long	495
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	493
+	.long	495
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_timestamp"
+	.ascii	 "_mii_packet_get_timestamp"
 	.byte	0
-	.ascii	 "mii_packet_get_timestamp"
-	.byte	0
-	.byte	3
-	.byte	136
-	.long	493
-	.byte	1
-	.byte	3
-	.ascii	 "buf"
+	.ascii	 "_mii_packet_get_timestamp"
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	493
-	.byte	5
-	.byte	120
-	.byte	0
-	.byte	3
-	.byte	136
-	.long	493
-	.byte	0
-	.byte	2
-	.ascii	 "mii_packet_set_timestamp"
-	.byte	0
-	.ascii	 "mii_packet_set_timestamp"
-	.byte	0
-	.byte	3
-	.byte	136
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	493
+	.long	495
+	.byte	5
+	.byte	120
+	.byte	0
+	.byte	3
+	.byte	136
+	.long	495
+	.byte	0
+	.byte	2
+	.ascii	 "_mii_packet_set_timestamp"
+	.byte	0
+	.ascii	 "_mii_packet_set_timestamp"
+	.byte	0
+	.byte	3
+	.byte	136
+	.byte	1
+	.byte	3
+	.ascii	 "buf"
+	.byte	0
+	.byte	3
+	.byte	136
+	.long	495
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	493
+	.long	495
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_filter_result"
+	.ascii	 "_mii_packet_get_filter_result"
 	.byte	0
-	.ascii	 "mii_packet_get_filter_result"
-	.byte	0
-	.byte	3
-	.byte	137
-	.long	493
-	.byte	1
-	.byte	3
-	.ascii	 "buf"
+	.ascii	 "_mii_packet_get_filter_result"
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	493
-	.byte	5
-	.byte	120
-	.byte	0
-	.byte	3
-	.byte	137
-	.long	493
-	.byte	0
-	.byte	2
-	.ascii	 "mii_packet_set_filter_result"
-	.byte	0
-	.ascii	 "mii_packet_set_filter_result"
-	.byte	0
-	.byte	3
-	.byte	137
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	493
+	.long	495
+	.byte	5
+	.byte	120
+	.byte	0
+	.byte	3
+	.byte	137
+	.long	495
+	.byte	0
+	.byte	2
+	.ascii	 "_mii_packet_set_filter_result"
+	.byte	0
+	.ascii	 "_mii_packet_set_filter_result"
+	.byte	0
+	.byte	3
+	.byte	137
+	.byte	1
+	.byte	3
+	.ascii	 "buf"
+	.byte	0
+	.byte	3
+	.byte	137
+	.long	495
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	493
+	.long	495
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_src_port"
+	.ascii	 "_mii_packet_get_src_port"
 	.byte	0
-	.ascii	 "mii_packet_get_src_port"
-	.byte	0
-	.byte	3
-	.byte	138
-	.long	493
-	.byte	1
-	.byte	3
-	.ascii	 "buf"
+	.ascii	 "_mii_packet_get_src_port"
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	493
-	.byte	5
-	.byte	120
-	.byte	0
-	.byte	3
-	.byte	138
-	.long	493
-	.byte	0
-	.byte	2
-	.ascii	 "mii_packet_set_src_port"
-	.byte	0
-	.ascii	 "mii_packet_set_src_port"
-	.byte	0
-	.byte	3
-	.byte	138
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	493
+	.long	495
+	.byte	5
+	.byte	120
+	.byte	0
+	.byte	3
+	.byte	138
+	.long	495
+	.byte	0
+	.byte	2
+	.ascii	 "_mii_packet_set_src_port"
+	.byte	0
+	.ascii	 "_mii_packet_set_src_port"
+	.byte	0
+	.byte	3
+	.byte	138
+	.byte	1
+	.byte	3
+	.ascii	 "buf"
+	.byte	0
+	.byte	3
+	.byte	138
+	.long	495
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	493
+	.long	495
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_timestamp_id"
+	.ascii	 "_mii_packet_get_timestamp_id"
 	.byte	0
-	.ascii	 "mii_packet_get_timestamp_id"
+	.ascii	 "_mii_packet_get_timestamp_id"
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	493
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	493
+	.long	495
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	493
+	.long	495
 	.byte	0
 	.byte	2
-	.ascii	 "mii_packet_set_timestamp_id"
+	.ascii	 "_mii_packet_set_timestamp_id"
 	.byte	0
-	.ascii	 "mii_packet_set_timestamp_id"
+	.ascii	 "_mii_packet_set_timestamp_id"
 	.byte	0
 	.byte	3
 	.byte	139
@@ -1774,40 +1774,40 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	493
+	.long	495
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	493
+	.long	495
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_stage"
+	.ascii	 "_mii_packet_get_stage"
 	.byte	0
-	.ascii	 "mii_packet_get_stage"
+	.ascii	 "_mii_packet_get_stage"
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	493
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	493
+	.long	495
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	493
+	.long	495
 	.byte	0
 	.byte	2
-	.ascii	 "mii_packet_set_stage"
+	.ascii	 "_mii_packet_set_stage"
 	.byte	0
-	.ascii	 "mii_packet_set_stage"
+	.ascii	 "_mii_packet_set_stage"
 	.byte	0
 	.byte	3
 	.byte	140
@@ -1817,40 +1817,40 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	493
+	.long	495
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	493
+	.long	495
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_tcount"
+	.ascii	 "_mii_packet_get_tcount"
 	.byte	0
-	.ascii	 "mii_packet_get_tcount"
+	.ascii	 "_mii_packet_get_tcount"
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	493
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	493
+	.long	495
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	493
+	.long	495
 	.byte	0
 	.byte	2
-	.ascii	 "mii_packet_set_tcount"
+	.ascii	 "_mii_packet_set_tcount"
 	.byte	0
-	.ascii	 "mii_packet_set_tcount"
+	.ascii	 "_mii_packet_set_tcount"
 	.byte	0
 	.byte	3
 	.byte	141
@@ -1860,40 +1860,40 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	493
+	.long	495
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	493
+	.long	495
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_crc"
+	.ascii	 "_mii_packet_get_crc"
 	.byte	0
-	.ascii	 "mii_packet_get_crc"
+	.ascii	 "_mii_packet_get_crc"
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	493
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	493
+	.long	495
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	493
+	.long	495
 	.byte	0
 	.byte	2
-	.ascii	 "mii_packet_set_crc"
+	.ascii	 "_mii_packet_set_crc"
 	.byte	0
-	.ascii	 "mii_packet_set_crc"
+	.ascii	 "_mii_packet_set_crc"
 	.byte	0
 	.byte	3
 	.byte	142
@@ -1903,40 +1903,40 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	493
+	.long	495
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	493
+	.long	495
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_forwarding"
+	.ascii	 "_mii_packet_get_forwarding"
 	.byte	0
-	.ascii	 "mii_packet_get_forwarding"
+	.ascii	 "_mii_packet_get_forwarding"
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	493
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	493
+	.long	495
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	493
+	.long	495
 	.byte	0
 	.byte	2
-	.ascii	 "mii_packet_set_forwarding"
+	.ascii	 "_mii_packet_set_forwarding"
 	.byte	0
-	.ascii	 "mii_packet_set_forwarding"
+	.ascii	 "_mii_packet_set_forwarding"
 	.byte	0
 	.byte	3
 	.byte	143
@@ -1946,34 +1946,34 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	493
+	.long	495
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	493
+	.long	495
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_data_ptr"
+	.ascii	 "_mii_packet_get_data_ptr"
 	.byte	0
-	.ascii	 "mii_packet_get_data_ptr"
+	.ascii	 "_mii_packet_get_data_ptr"
 	.byte	0
 	.byte	3
 	.byte	145
-	.long	493
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	145
-	.long	493
+	.long	495
 	.byte	0
 	.byte	2
-	.ascii	 "mii_packet_set_data_word"
+	.ascii	 "_mii_packet_set_data_word"
 	.byte	0
-	.ascii	 "mii_packet_set_data_word"
+	.ascii	 "_mii_packet_set_data_word"
 	.byte	0
 	.byte	3
 	.byte	149
@@ -1983,52 +1983,52 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	493
+	.long	495
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	493
+	.long	495
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	493
+	.long	495
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_get_data_word"
+	.ascii	 "_mii_packet_get_data_word"
 	.byte	0
-	.ascii	 "mii_packet_get_data_word"
+	.ascii	 "_mii_packet_get_data_word"
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	493
+	.long	495
 	.byte	1
 	.byte	3
 	.ascii	 "data"
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	493
+	.long	495
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	493
+	.long	495
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	155
-	.long	493
+	.long	495
 	.byte	0
 	.byte	2
-	.ascii	 "mii_packet_set_data"
+	.ascii	 "_mii_packet_set_data"
 	.byte	0
-	.ascii	 "mii_packet_set_data"
+	.ascii	 "_mii_packet_set_data"
 	.byte	0
 	.byte	3
 	.byte	170
@@ -2038,24 +2038,24 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	493
+	.long	495
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	493
+	.long	495
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	493
+	.long	495
 	.byte	0
 	.byte	2
-	.ascii	 "mii_packet_set_data_short"
+	.ascii	 "_mii_packet_set_data_short"
 	.byte	0
-	.ascii	 "mii_packet_set_data_short"
+	.ascii	 "_mii_packet_set_data_short"
 	.byte	0
 	.byte	3
 	.byte	174
@@ -2065,24 +2065,24 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	493
+	.long	495
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	493
+	.long	495
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	493
+	.long	495
 	.byte	0
 	.byte	2
-	.ascii	 "mii_packet_set_data_byte"
+	.ascii	 "_mii_packet_set_data_byte"
 	.byte	0
-	.ascii	 "mii_packet_set_data_byte"
+	.ascii	 "_mii_packet_set_data_byte"
 	.byte	0
 	.byte	3
 	.byte	178
@@ -2092,19 +2092,19 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	493
+	.long	495
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	493
+	.long	495
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	493
+	.long	495
 	.byte	0
 	.byte	7
 	.ascii	 "_get_tile_id_from_chanend"
@@ -2113,13 +2113,13 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	24
-	.long	2346
+	.long	2394
 	.byte	3
 	.byte	99
 	.byte	0
 	.byte	1
 	.byte	24
-	.long	4430
+	.long	4478
 	.byte	8
 	.byte	8
 	.byte	5
@@ -2127,7 +2127,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	25
-	.long	2346
+	.long	2394
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2143,7 +2143,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	35
-	.long	493
+	.long	495
 	.long	.Lfunc_begin12
 	.long	.Lfunc_end12
 	.byte	1
@@ -2154,37 +2154,37 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	4430
+	.long	4478
 	.byte	3
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	4466
+	.long	4514
 	.byte	3
 	.ascii	 "rxTime"
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	4471
+	.long	4519
 	.byte	3
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	4471
+	.long	4519
 	.byte	3
 	.ascii	 "Cmd"
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	2346
+	.long	2394
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	493
+	.long	495
 	.byte	10
 	.long	.Ltmp151
 	.long	.Ltmp185
@@ -2196,49 +2196,49 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2346
+	.long	2394
 	.long	.Ldebug_loc86+0
 	.byte	11
 	.byte	105
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2346
+	.long	2394
 	.long	.Ldebug_loc89+0
 	.byte	11
 	.byte	106
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2346
+	.long	2394
 	.long	.Ldebug_loc94+0
 	.byte	11
 	.ascii	 "transferCnt"
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2346
+	.long	2394
 	.long	.Ldebug_loc99+0
 	.byte	11
 	.byte	107
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2346
+	.long	2394
 	.long	.Ldebug_loc101+0
 	.byte	11
 	.ascii	 "rxData"
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2346
+	.long	2394
 	.long	.Ldebug_loc107+0
 	.byte	11
 	.ascii	 "temp"
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2346
+	.long	2394
 	.long	.Ldebug_loc117+0
 	.byte	10
 	.long	.Ltmp169
@@ -2248,7 +2248,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	53
-	.long	493
+	.long	495
 	.long	.Ldebug_loc126+0
 	.byte	0
 	.byte	0
@@ -2272,28 +2272,28 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	88
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc0+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	88
-	.long	4466
+	.long	4514
 	.long	.Ldebug_loc2+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	89
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc4+0
 	.byte	13
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	90
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc7+0
 	.byte	10
 	.long	.Ltmp8
@@ -2306,7 +2306,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	92
-	.long	2346
+	.long	2394
 	.byte	2
 	.byte	145
 	.byte	12
@@ -2331,28 +2331,28 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc75+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	4466
+	.long	4514
 	.long	.Ldebug_loc77+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc79+0
 	.byte	13
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc82+0
 	.byte	10
 	.long	.Ltmp120
@@ -2365,7 +2365,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	99
-	.long	2346
+	.long	2394
 	.byte	2
 	.byte	145
 	.byte	12
@@ -2390,35 +2390,35 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc9+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	4466
+	.long	4514
 	.long	.Ldebug_loc11+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc13+0
 	.byte	13
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc16+0
 	.byte	15
 	.byte	110
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	493
+	.long	495
 	.byte	2
 	.byte	145
 	.byte	24
@@ -2433,7 +2433,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	106
-	.long	2346
+	.long	2394
 	.byte	2
 	.byte	145
 	.byte	12
@@ -2458,35 +2458,35 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	111
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc18+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	111
-	.long	4466
+	.long	4514
 	.long	.Ldebug_loc20+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	111
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc22+0
 	.byte	13
 	.ascii	 "rxTime"
 	.byte	0
 	.byte	1
 	.byte	111
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc25+0
 	.byte	15
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	111
-	.long	4471
+	.long	4519
 	.byte	2
 	.byte	145
 	.byte	20
@@ -2509,35 +2509,35 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc28+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	4466
+	.long	4514
 	.long	.Ldebug_loc30+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc32+0
 	.byte	13
 	.ascii	 "rxTime"
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc35+0
 	.byte	15
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	4471
+	.long	4519
 	.byte	2
 	.byte	145
 	.byte	20
@@ -2546,7 +2546,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	493
+	.long	495
 	.byte	2
 	.byte	145
 	.byte	24
@@ -2563,13 +2563,13 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	123
-	.long	4430
+	.long	4478
 	.byte	3
 	.ascii	 "cmd"
 	.byte	0
 	.byte	1
 	.byte	123
-	.long	493
+	.long	495
 	.byte	0
 	.byte	12
 	.ascii	 "_mac_set_drop_packets"
@@ -2589,14 +2589,14 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	134
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc38+0
 	.byte	13
 	.byte	120
 	.byte	0
 	.byte	1
 	.byte	134
-	.long	493
+	.long	495
 	.long	.Ldebug_loc40+0
 	.byte	0
 	.byte	12
@@ -2617,7 +2617,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc84+0
 	.byte	0
 	.byte	12
@@ -2638,14 +2638,14 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	149
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc42+0
 	.byte	13
 	.byte	120
 	.byte	0
 	.byte	1
 	.byte	149
-	.long	493
+	.long	495
 	.long	.Ldebug_loc44+0
 	.byte	0
 	.byte	12
@@ -2666,14 +2666,14 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	156
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc46+0
 	.byte	13
 	.byte	120
 	.byte	0
 	.byte	1
 	.byte	156
-	.long	493
+	.long	495
 	.long	.Ldebug_loc48+0
 	.byte	0
 	.byte	12
@@ -2694,14 +2694,14 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	165
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc50+0
 	.byte	13
 	.ascii	 "dropped"
 	.byte	0
 	.byte	1
 	.byte	165
-	.long	4476
+	.long	4524
 	.long	.Ldebug_loc52+0
 	.byte	0
 	.byte	12
@@ -2722,35 +2722,35 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	173
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc54+0
 	.byte	13
 	.ascii	 "mii_overflow"
 	.byte	0
 	.byte	1
 	.byte	174
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc56+0
 	.byte	13
 	.ascii	 "bad_length"
 	.byte	0
 	.byte	1
 	.byte	175
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc58+0
 	.byte	13
 	.ascii	 "mismatched_address"
 	.byte	0
 	.byte	1
 	.byte	176
-	.long	4471
+	.long	4519
 	.long	.Ldebug_loc60+0
 	.byte	15
 	.ascii	 "filtered"
 	.byte	0
 	.byte	1
 	.byte	177
-	.long	4471
+	.long	4519
 	.byte	2
 	.byte	145
 	.byte	4
@@ -2759,7 +2759,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	179
-	.long	4471
+	.long	4519
 	.byte	2
 	.byte	145
 	.byte	8
@@ -2782,14 +2782,14 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	191
-	.long	4430
+	.long	4478
 	.long	.Ldebug_loc62+0
 	.byte	13
 	.ascii	 "offset"
 	.byte	0
 	.byte	1
 	.byte	191
-	.long	4476
+	.long	4524
 	.long	.Ldebug_loc64+0
 	.byte	10
 	.long	.Ltmp97
@@ -2802,7 +2802,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	193
-	.long	2346
+	.long	2394
 	.long	.Ldebug_loc67+0
 	.byte	10
 	.long	.Ltmp97
@@ -2812,7 +2812,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	194
-	.long	493
+	.long	495
 	.long	.Ldebug_loc69+0
 	.byte	10
 	.long	.Ltmp97
@@ -2822,7 +2822,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	195
-	.long	493
+	.long	495
 	.long	.Ldebug_loc72+0
 	.byte	10
 	.long	.Ltmp97
@@ -2832,7 +2832,7 @@ _ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	196
-	.long	4481
+	.long	4529
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2853,13 +2853,13 @@ _ethernet_unified_get_data:
 	.byte	4
 	.byte	5
 	.byte	18
-	.long	4441
+	.long	4489
 	.byte	19
-	.long	4461
+	.long	4509
 	.byte	19
-	.long	2346
+	.long	2394
 	.byte	19
-	.long	493
+	.long	495
 	.byte	6
 	.ascii	 "timer"
 	.byte	0
@@ -3138,90 +3138,90 @@ _ethernet_unified_get_data:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1128
-.asciiz "mii_packet_set_timestamp_id"
-	.long	500
-.asciiz "mii_packet_set_length"
-	.long	3705
-.asciiz "_mac_set_queue_size"
-	.long	810
-.asciiz "mii_packet_set_filter_result"
-	.long	3614
+	.long	502
+.asciiz "_mii_packet_set_length"
+	.long	3526
+.asciiz "_send_cmd"
+	.long	3662
 .asciiz "_mac_request_status_packets"
-	.long	1619
-.asciiz "mii_packet_get_forwarding"
-	.long	1930
-.asciiz "mii_packet_get_data_word"
-	.long	2093
-.asciiz "mii_packet_set_data_short"
-	.long	2684
-.asciiz "_mac_rx_full"
-	.long	3318
+	.long	1651
+.asciiz "_mii_packet_get_forwarding"
+	.long	573
+.asciiz "_mii_packet_get_timestamp"
+	.long	1229
+.asciiz "_mii_packet_get_stage"
+	.long	2137
+.asciiz "_mii_packet_set_data_short"
+	.long	3366
 .asciiz "_safe_mac_rx_timed"
-	.long	1700
-.asciiz "mii_packet_set_forwarding"
+	.long	1517
+.asciiz "_mii_packet_get_crc"
+	.long	2225
+.asciiz "_mii_packet_set_data_byte"
+	.long	2732
+.asciiz "_mac_rx_full"
+	.long	1734
+.asciiz "_mii_packet_set_forwarding"
+	.long	654
+.asciiz "_mii_packet_set_timestamp"
 	.long	308
 .asciiz "delay_milliseconds"
-	.long	1845
-.asciiz "mii_packet_set_data_word"
-	.long	2362
+	.long	1302
+.asciiz "_mii_packet_set_stage"
+	.long	731
+.asciiz "_mii_packet_get_filter_result"
+	.long	1586
+.asciiz "_mii_packet_set_crc"
+	.long	2061
+.asciiz "_mii_packet_set_data"
+	.long	2410
 .asciiz "_ethernet_unified_get_data"
-	.long	2019
-.asciiz "mii_packet_set_data"
-	.long	2263
+	.long	2311
 .asciiz "_get_tile_id_from_chanend"
-	.long	3793
+	.long	3841
 .asciiz "_mac_set_custom_filter"
-	.long	893
-.asciiz "mii_packet_get_src_port"
-	.long	4185
+	.long	905
+.asciiz "_mii_packet_get_src_port"
+	.long	1813
+.asciiz "_mii_packet_get_data_ptr"
+	.long	820
+.asciiz "_mii_packet_set_filter_result"
+	.long	4233
 .asciiz "_mac_get_tile_timer_offset"
-	.long	1777
-.asciiz "mii_packet_get_data_ptr"
-	.long	569
-.asciiz "mii_packet_get_timestamp"
-	.long	1209
-.asciiz "mii_packet_get_stage"
-	.long	3002
+	.long	1970
+.asciiz "_mii_packet_get_data_word"
+	.long	3050
 .asciiz "_safe_mac_rx_full"
-	.long	3180
+	.long	984
+.asciiz "_mii_packet_set_src_port"
+	.long	3228
 .asciiz "_mac_rx_timed"
-	.long	970
-.asciiz "mii_packet_set_src_port"
-	.long	1489
-.asciiz "mii_packet_get_crc"
-	.long	2179
-.asciiz "mii_packet_set_data_byte"
-	.long	3887
+	.long	3935
 .asciiz "_mac_get_link_counters"
-	.long	1347
-.asciiz "mii_packet_get_tcount"
-	.long	2840
+	.long	1371
+.asciiz "_mii_packet_get_tcount"
+	.long	2888
 .asciiz "_mac_rx_offset2"
-	.long	648
-.asciiz "mii_packet_set_timestamp"
-	.long	1043
-.asciiz "mii_packet_get_timestamp_id"
+	.long	4035
+.asciiz "_mac_get_global_counters"
+	.long	1059
+.asciiz "_mii_packet_get_timestamp_id"
+	.long	1883
+.asciiz "_mii_packet_set_data_word"
 	.long	420
-.asciiz "mii_packet_get_length"
+.asciiz "_mii_packet_get_length"
 	.long	364
 .asciiz "delay_microseconds"
-	.long	723
-.asciiz "mii_packet_get_filter_result"
-	.long	1556
-.asciiz "mii_packet_set_crc"
-	.long	1280
-.asciiz "mii_packet_set_stage"
-	.long	3987
-.asciiz "_mac_get_global_counters"
-	.long	3478
-.asciiz "_send_cmd"
-	.long	1420
-.asciiz "mii_packet_set_tcount"
+	.long	3570
+.asciiz "_mac_set_drop_packets"
+	.long	3753
+.asciiz "_mac_set_queue_size"
+	.long	1446
+.asciiz "_mii_packet_set_tcount"
 	.long	262
 .asciiz "delay_seconds"
-	.long	3522
-.asciiz "_mac_set_drop_packets"
+	.long	1146
+.asciiz "_mii_packet_set_timestamp_id"
 	.long	0
 .Lpubnames_end1:
 	.section	.debug_pubtypes,"",@progbits

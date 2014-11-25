@@ -3,30 +3,30 @@
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
 	.inline_definition delay_microseconds
-	.inline_definition mii_packet_get_length
-	.inline_definition mii_packet_set_length
-	.inline_definition mii_packet_get_timestamp
-	.inline_definition mii_packet_set_timestamp
-	.inline_definition mii_packet_get_filter_result
-	.inline_definition mii_packet_set_filter_result
-	.inline_definition mii_packet_get_src_port
-	.inline_definition mii_packet_set_src_port
-	.inline_definition mii_packet_get_timestamp_id
-	.inline_definition mii_packet_set_timestamp_id
-	.inline_definition mii_packet_get_stage
-	.inline_definition mii_packet_set_stage
-	.inline_definition mii_packet_get_tcount
-	.inline_definition mii_packet_set_tcount
-	.inline_definition mii_packet_get_crc
-	.inline_definition mii_packet_set_crc
-	.inline_definition mii_packet_get_forwarding
-	.inline_definition mii_packet_set_forwarding
-	.inline_definition mii_packet_get_data_ptr
-	.inline_definition mii_packet_set_data_word
-	.inline_definition mii_packet_get_data_word
-	.inline_definition mii_packet_set_data
-	.inline_definition mii_packet_set_data_short
-	.inline_definition mii_packet_set_data_byte
+	.inline_definition _mii_packet_get_length
+	.inline_definition _mii_packet_set_length
+	.inline_definition _mii_packet_get_timestamp
+	.inline_definition _mii_packet_set_timestamp
+	.inline_definition _mii_packet_get_filter_result
+	.inline_definition _mii_packet_set_filter_result
+	.inline_definition _mii_packet_get_src_port
+	.inline_definition _mii_packet_set_src_port
+	.inline_definition _mii_packet_get_timestamp_id
+	.inline_definition _mii_packet_set_timestamp_id
+	.inline_definition _mii_packet_get_stage
+	.inline_definition _mii_packet_set_stage
+	.inline_definition _mii_packet_get_tcount
+	.inline_definition _mii_packet_set_tcount
+	.inline_definition _mii_packet_get_crc
+	.inline_definition _mii_packet_set_crc
+	.inline_definition _mii_packet_get_forwarding
+	.inline_definition _mii_packet_set_forwarding
+	.inline_definition _mii_packet_get_data_ptr
+	.inline_definition _mii_packet_set_data_word
+	.inline_definition _mii_packet_get_data_word
+	.inline_definition _mii_packet_set_data
+	.inline_definition _mii_packet_set_data_short
+	.inline_definition _mii_packet_set_data_byte
 	.set usage.anon.0,0
 	.set usage.anon.1,0
 	.set usage.anon.2,0
@@ -257,8 +257,8 @@
 	.set usage.anon.31.locnonotificationselect, 1
 	.set send_status_packet.locnonotificationselect, 1
 	.set _ethernet_rx_server.locnonotificationselect, 1
-	.assert 1,usage.anon.9.actnochandec,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:181: error: call to function `mii_packet_get_src_port' which declares a channel from within a transaction statement"
-	.assert 1,usage.anon.5.actnochandec,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:195: error: call to function `mii_packet_get_timestamp' which declares a channel from within a transaction statement"
+	.assert 1,usage.anon.9.actnochandec,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:181: error: call to function `_mii_packet_get_src_port' which declares a channel from within a transaction statement"
+	.assert 1,usage.anon.5.actnochandec,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc:195: error: call to function `_mii_packet_get_timestamp' which declares a channel from within a transaction statement"
 
 
 	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_server.xc"
@@ -1692,7 +1692,7 @@ _link_status:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	5219
+	.long	5267
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -1881,9 +1881,9 @@ _link_status:
 	.long	337
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_length"
+	.ascii	 "_mii_packet_get_length"
 	.byte	0
-	.ascii	 "mii_packet_get_length"
+	.ascii	 "_mii_packet_get_length"
 	.byte	0
 	.byte	3
 	.byte	135
@@ -1907,9 +1907,9 @@ _link_status:
 	.byte	0
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_length"
+	.ascii	 "_mii_packet_set_length"
 	.byte	0
-	.ascii	 "mii_packet_set_length"
+	.ascii	 "_mii_packet_set_length"
 	.byte	0
 	.byte	3
 	.byte	135
@@ -1928,9 +1928,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_timestamp"
+	.ascii	 "_mii_packet_get_timestamp"
 	.byte	0
-	.ascii	 "mii_packet_get_timestamp"
+	.ascii	 "_mii_packet_get_timestamp"
 	.byte	0
 	.byte	3
 	.byte	136
@@ -1954,30 +1954,30 @@ _link_status:
 	.byte	0
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_timestamp"
+	.ascii	 "_mii_packet_set_timestamp"
 	.byte	0
-	.ascii	 "mii_packet_set_timestamp"
+	.ascii	 "_mii_packet_set_timestamp"
 	.byte	0
 	.byte	3
 	.byte	136
 	.byte	1
 	.byte	10
 	.ascii	 "buf"
-	.byte	0
-	.byte	3
-	.byte	136
-	.long	262
-	.byte	10
-	.byte	120
 	.byte	0
 	.byte	3
 	.byte	136
 	.long	262
+	.byte	10
+	.byte	120
+	.byte	0
+	.byte	3
+	.byte	136
+	.long	262
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_filter_result"
+	.ascii	 "_mii_packet_get_filter_result"
 	.byte	0
-	.ascii	 "mii_packet_get_filter_result"
+	.ascii	 "_mii_packet_get_filter_result"
 	.byte	0
 	.byte	3
 	.byte	137
@@ -2001,30 +2001,30 @@ _link_status:
 	.byte	0
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_filter_result"
+	.ascii	 "_mii_packet_set_filter_result"
 	.byte	0
-	.ascii	 "mii_packet_set_filter_result"
+	.ascii	 "_mii_packet_set_filter_result"
 	.byte	0
 	.byte	3
 	.byte	137
 	.byte	1
 	.byte	10
 	.ascii	 "buf"
-	.byte	0
-	.byte	3
-	.byte	137
-	.long	262
-	.byte	10
-	.byte	120
 	.byte	0
 	.byte	3
 	.byte	137
 	.long	262
+	.byte	10
+	.byte	120
+	.byte	0
+	.byte	3
+	.byte	137
+	.long	262
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_src_port"
+	.ascii	 "_mii_packet_get_src_port"
 	.byte	0
-	.ascii	 "mii_packet_get_src_port"
+	.ascii	 "_mii_packet_get_src_port"
 	.byte	0
 	.byte	3
 	.byte	138
@@ -2048,9 +2048,9 @@ _link_status:
 	.byte	0
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_src_port"
+	.ascii	 "_mii_packet_set_src_port"
 	.byte	0
-	.ascii	 "mii_packet_set_src_port"
+	.ascii	 "_mii_packet_set_src_port"
 	.byte	0
 	.byte	3
 	.byte	138
@@ -2069,9 +2069,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_timestamp_id"
+	.ascii	 "_mii_packet_get_timestamp_id"
 	.byte	0
-	.ascii	 "mii_packet_get_timestamp_id"
+	.ascii	 "_mii_packet_get_timestamp_id"
 	.byte	0
 	.byte	3
 	.byte	139
@@ -2091,9 +2091,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_timestamp_id"
+	.ascii	 "_mii_packet_set_timestamp_id"
 	.byte	0
-	.ascii	 "mii_packet_set_timestamp_id"
+	.ascii	 "_mii_packet_set_timestamp_id"
 	.byte	0
 	.byte	3
 	.byte	139
@@ -2112,9 +2112,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_stage"
+	.ascii	 "_mii_packet_get_stage"
 	.byte	0
-	.ascii	 "mii_packet_get_stage"
+	.ascii	 "_mii_packet_get_stage"
 	.byte	0
 	.byte	3
 	.byte	140
@@ -2138,9 +2138,9 @@ _link_status:
 	.byte	0
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_stage"
+	.ascii	 "_mii_packet_set_stage"
 	.byte	0
-	.ascii	 "mii_packet_set_stage"
+	.ascii	 "_mii_packet_set_stage"
 	.byte	0
 	.byte	3
 	.byte	140
@@ -2159,9 +2159,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_tcount"
+	.ascii	 "_mii_packet_get_tcount"
 	.byte	0
-	.ascii	 "mii_packet_get_tcount"
+	.ascii	 "_mii_packet_get_tcount"
 	.byte	0
 	.byte	3
 	.byte	141
@@ -2181,9 +2181,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_tcount"
+	.ascii	 "_mii_packet_set_tcount"
 	.byte	0
-	.ascii	 "mii_packet_set_tcount"
+	.ascii	 "_mii_packet_set_tcount"
 	.byte	0
 	.byte	3
 	.byte	141
@@ -2202,9 +2202,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_crc"
+	.ascii	 "_mii_packet_get_crc"
 	.byte	0
-	.ascii	 "mii_packet_get_crc"
+	.ascii	 "_mii_packet_get_crc"
 	.byte	0
 	.byte	3
 	.byte	142
@@ -2224,9 +2224,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_crc"
+	.ascii	 "_mii_packet_set_crc"
 	.byte	0
-	.ascii	 "mii_packet_set_crc"
+	.ascii	 "_mii_packet_set_crc"
 	.byte	0
 	.byte	3
 	.byte	142
@@ -2245,9 +2245,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_forwarding"
+	.ascii	 "_mii_packet_get_forwarding"
 	.byte	0
-	.ascii	 "mii_packet_get_forwarding"
+	.ascii	 "_mii_packet_get_forwarding"
 	.byte	0
 	.byte	3
 	.byte	143
@@ -2267,9 +2267,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_forwarding"
+	.ascii	 "_mii_packet_set_forwarding"
 	.byte	0
-	.ascii	 "mii_packet_set_forwarding"
+	.ascii	 "_mii_packet_set_forwarding"
 	.byte	0
 	.byte	3
 	.byte	143
@@ -2288,9 +2288,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_data_ptr"
+	.ascii	 "_mii_packet_get_data_ptr"
 	.byte	0
-	.ascii	 "mii_packet_get_data_ptr"
+	.ascii	 "_mii_packet_get_data_ptr"
 	.byte	0
 	.byte	3
 	.byte	145
@@ -2304,9 +2304,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_data_word"
+	.ascii	 "_mii_packet_set_data_word"
 	.byte	0
-	.ascii	 "mii_packet_set_data_word"
+	.ascii	 "_mii_packet_set_data_word"
 	.byte	0
 	.byte	3
 	.byte	149
@@ -2331,9 +2331,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	11
-	.ascii	 "mii_packet_get_data_word"
+	.ascii	 "_mii_packet_get_data_word"
 	.byte	0
-	.ascii	 "mii_packet_get_data_word"
+	.ascii	 "_mii_packet_get_data_word"
 	.byte	0
 	.byte	3
 	.byte	154
@@ -2359,9 +2359,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_data"
+	.ascii	 "_mii_packet_set_data"
 	.byte	0
-	.ascii	 "mii_packet_set_data"
+	.ascii	 "_mii_packet_set_data"
 	.byte	0
 	.byte	3
 	.byte	170
@@ -2386,9 +2386,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_data_short"
+	.ascii	 "_mii_packet_set_data_short"
 	.byte	0
-	.ascii	 "mii_packet_set_data_short"
+	.ascii	 "_mii_packet_set_data_short"
 	.byte	0
 	.byte	3
 	.byte	174
@@ -2413,9 +2413,9 @@ _link_status:
 	.long	262
 	.byte	0
 	.byte	9
-	.ascii	 "mii_packet_set_data_byte"
+	.ascii	 "_mii_packet_set_data_byte"
 	.byte	0
-	.ascii	 "mii_packet_set_data_byte"
+	.ascii	 "_mii_packet_set_data_byte"
 	.byte	0
 	.byte	3
 	.byte	178
@@ -2451,7 +2451,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	53
-	.long	4872
+	.long	4920
 	.byte	0
 	.byte	15
 	.ascii	 "_get_tile_id_from_chanend"
@@ -2466,7 +2466,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	58
-	.long	4872
+	.long	4920
 	.byte	13
 	.ascii	 "ci"
 	.byte	0
@@ -2492,7 +2492,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	67
-	.long	4872
+	.long	4920
 	.long	.Ldebug_loc49+0
 	.byte	17
 	.ascii	 "linkIndex"
@@ -2506,7 +2506,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	67
-	.long	4915
+	.long	4963
 	.long	.Ldebug_loc57+0
 	.byte	18
 	.long	.Ltmp118
@@ -2865,7 +2865,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	170
-	.long	4872
+	.long	4920
 	.long	.Ldebug_loc73+0
 	.byte	17
 	.ascii	 "cmd"
@@ -2956,14 +2956,14 @@ _link_status:
 	.byte	0
 	.byte	1
 	.byte	228
-	.long	5146
+	.long	5194
 	.long	.Ldebug_loc105+0
 	.byte	17
 	.ascii	 "link"
 	.byte	0
 	.byte	1
 	.byte	229
-	.long	4872
+	.long	4920
 	.long	.Ldebug_loc111+0
 	.byte	17
 	.ascii	 "cmd"
@@ -3013,7 +3013,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	279
-	.long	4888
+	.long	4936
 	.byte	23
 	.byte	110
 	.byte	0
@@ -3100,7 +3100,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	342
-	.long	4872
+	.long	4920
 	.byte	23
 	.ascii	 "src_port"
 	.byte	0
@@ -3132,14 +3132,14 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	366
-	.long	4898
+	.long	4946
 	.long	.Ldebug_loc0+0
 	.byte	27
 	.ascii	 "link"
 	.byte	0
 	.byte	1
 	.short	367
-	.long	4888
+	.long	4936
 	.long	.Ldebug_loc2+0
 	.byte	27
 	.ascii	 "num_link"
@@ -3181,7 +3181,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	375
-	.long	4903
+	.long	4951
 	.byte	18
 	.long	.Ltmp22
 	.long	.Ltmp24
@@ -3387,13 +3387,13 @@ _link_status:
 	.byte	7
 	.byte	4
 	.byte	31
-	.long	4872
+	.long	4920
 	.byte	32
-	.long	4883
+	.long	4931
 	.byte	31
 	.long	337
 	.byte	32
-	.long	4893
+	.long	4941
 	.byte	4
 	.long	262
 	.byte	5
@@ -3505,7 +3505,7 @@ _link_status:
 	.byte	8
 	.ascii	 "data"
 	.byte	0
-	.long	4920
+	.long	4968
 	.byte	1
 	.byte	231
 	.byte	2
@@ -3514,9 +3514,9 @@ _link_status:
 	.byte	1
 	.byte	0
 	.byte	32
-	.long	4933
+	.long	4981
 	.byte	35
-	.long	4174
+	.long	4222
 	.long	.Lfunc_begin4
 	.long	.Lfunc_end4
 	.byte	1
@@ -3527,7 +3527,7 @@ _link_status:
 	.byte	0
 	.byte	1
 	.short	342
-	.long	4872
+	.long	4920
 	.long	.Ldebug_loc127+0
 	.byte	27
 	.ascii	 "src_port"
@@ -4015,76 +4015,76 @@ _link_status:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1462
-.asciiz "mii_packet_set_timestamp_id"
-	.long	822
-.asciiz "mii_packet_set_length"
-	.long	3547
-.asciiz "_mac_rx_send_frame1"
-	.long	1140
-.asciiz "mii_packet_set_filter_result"
-	.long	1957
-.asciiz "mii_packet_get_forwarding"
-	.long	2268
-.asciiz "mii_packet_get_data_word"
-	.long	2431
-.asciiz "mii_packet_set_data_short"
-	.long	2038
-.asciiz "mii_packet_set_forwarding"
+	.long	824
+.asciiz "_mii_packet_set_length"
+	.long	3844
+.asciiz "_mac_rx_send_frame0"
+	.long	1989
+.asciiz "_mii_packet_get_forwarding"
+	.long	895
+.asciiz "_mii_packet_get_timestamp"
+	.long	1563
+.asciiz "_mii_packet_get_stage"
+	.long	2475
+.asciiz "_mii_packet_set_data_short"
+	.long	1855
+.asciiz "_mii_packet_get_crc"
+	.long	2563
+.asciiz "_mii_packet_set_data_byte"
+	.long	2072
+.asciiz "_mii_packet_set_forwarding"
+	.long	980
+.asciiz "_mii_packet_set_timestamp"
 	.long	633
 .asciiz "delay_milliseconds"
-	.long	2183
-.asciiz "mii_packet_set_data_word"
-	.long	2709
-.asciiz "serviceLinkCmd"
-	.long	2357
-.asciiz "mii_packet_set_data"
-	.long	2630
+	.long	1640
+.asciiz "_mii_packet_set_stage"
+	.long	1057
+.asciiz "_mii_packet_get_filter_result"
+	.long	1924
+.asciiz "_mii_packet_set_crc"
+	.long	2399
+.asciiz "_mii_packet_set_data"
+	.long	2678
 .asciiz "_get_tile_id_from_chanend"
-	.long	4260
+	.long	2757
+.asciiz "serviceLinkCmd"
+	.long	4308
 .asciiz "_ethernet_rx_server"
-	.long	1223
-.asciiz "mii_packet_get_src_port"
-	.long	2115
-.asciiz "mii_packet_get_data_ptr"
-	.long	4174
+	.long	1235
+.asciiz "_mii_packet_get_src_port"
+	.long	2151
+.asciiz "_mii_packet_get_data_ptr"
+	.long	1150
+.asciiz "_mii_packet_set_filter_result"
+	.long	4222
 .asciiz "send_status_packet"
-	.long	891
-.asciiz "mii_packet_get_timestamp"
-	.long	1543
-.asciiz "mii_packet_get_stage"
-	.long	1304
-.asciiz "mii_packet_set_src_port"
-	.long	1827
-.asciiz "mii_packet_get_crc"
-	.long	2517
-.asciiz "mii_packet_set_data_byte"
-	.long	3947
+	.long	2308
+.asciiz "_mii_packet_get_data_word"
+	.long	1318
+.asciiz "_mii_packet_set_src_port"
+	.long	1709
+.asciiz "_mii_packet_get_tcount"
+	.long	3995
 .asciiz "_processReceivedFrame"
-	.long	1685
-.asciiz "mii_packet_get_tcount"
-	.long	974
-.asciiz "mii_packet_set_timestamp"
-	.long	1377
-.asciiz "mii_packet_get_timestamp_id"
+	.long	1393
+.asciiz "_mii_packet_get_timestamp_id"
+	.long	2221
+.asciiz "_mii_packet_set_data_word"
 	.long	745
-.asciiz "mii_packet_get_length"
+.asciiz "_mii_packet_get_length"
 	.long	689
 .asciiz "delay_microseconds"
-	.long	1049
-.asciiz "mii_packet_get_filter_result"
-	.long	1894
-.asciiz "mii_packet_set_crc"
-	.long	1618
-.asciiz "mii_packet_set_stage"
-	.long	2601
+	.long	2649
 .asciiz "_notify"
-	.long	3796
-.asciiz "_mac_rx_send_frame0"
-	.long	1758
-.asciiz "mii_packet_set_tcount"
+	.long	1784
+.asciiz "_mii_packet_set_tcount"
 	.long	587
 .asciiz "delay_seconds"
+	.long	3595
+.asciiz "_mac_rx_send_frame1"
+	.long	1480
+.asciiz "_mii_packet_set_timestamp_id"
 	.long	0
 .Lpubnames_end1:
 	.section	.debug_pubtypes,"",@progbits
@@ -4095,7 +4095,7 @@ _link_status:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	4933
+	.long	4981
 .asciiz "mii_packet_t"
 	.long	365
 .asciiz "__TYPE_0"

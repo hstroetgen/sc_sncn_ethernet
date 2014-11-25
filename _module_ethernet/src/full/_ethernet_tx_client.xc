@@ -92,7 +92,7 @@ void _mac_tx_full(chanend ethernet_tx_svr, unsigned int Buf[], int count, int if
 }
 
 #pragma unsafe arrays
-void mac_tx_offset2(chanend ethernet_tx_svr, 
+void _mac_tx_offset2(chanend ethernet_tx_svr,
                     unsigned int Buf[], 
                     int count, 
                     int ifnum)
@@ -157,13 +157,13 @@ void mac_initialize_routing_table(chanend c)
 
 #endif
 
-int mac_calc_idle_slope(int bps);
+int _mac_calc_idle_slope(int bps);
 
-void mac_set_qav_bandwidth(chanend c,
+void _mac_set_qav_bandwidth(chanend c,
                            int bps)
 {
 #if (ETHERNET_TX_HP_QUEUE) && (ETHERNET_TRAFFIC_SHAPER)
-  int slope = mac_calc_idle_slope(bps);
+  int slope = _mac_calc_idle_slope(bps);
   c <: ETHERNET_TX_SET_QAV_IDLE_SLOPE;
   slave {
     c <: slope;

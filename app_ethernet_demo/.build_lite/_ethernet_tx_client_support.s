@@ -1,14 +1,14 @@
 	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_client_support.c"
 
-.set mac_calc_idle_slope.locnoside, 1
+.set _mac_calc_idle_slope.locnoside, 1
 
-.set mac_calc_idle_slope.locnochandec, 1
+.set _mac_calc_idle_slope.locnochandec, 1
 
-.set mac_calc_idle_slope.locnoglobalaccess, 1
+.set _mac_calc_idle_slope.locnoglobalaccess, 1
 
-.set mac_calc_idle_slope.locnointerfaceaccess, 1
+.set _mac_calc_idle_slope.locnointerfaceaccess, 1
 
-.set mac_calc_idle_slope.locnonotificationselect, 1
+.set _mac_calc_idle_slope.locnonotificationselect, 1
 
 
 	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_client_support.c"
@@ -33,7 +33,7 @@
 .Ltext_begin:
 	.section	.dp.data,"awd",@progbits
 	.text
-	.cc_top mac_calc_idle_slope.function
+	.cc_top _mac_calc_idle_slope.function
 	.section	.cp.rodata.cst4,"aMc",@progbits,4
 	.cc_top .LCPI0_0.data
 	.align	4
@@ -41,10 +41,10 @@
 	.long	100000000
 	.cc_bottom .LCPI0_0.data
 	.text
-	.globl	mac_calc_idle_slope
+	.globl	_mac_calc_idle_slope
 	.align	2
-	.type	mac_calc_idle_slope,@function
-mac_calc_idle_slope:
+	.type	_mac_calc_idle_slope,@function
+_mac_calc_idle_slope:
 .Ltmp1:
 	.cfi_startproc
 .Lfunc_begin0:
@@ -70,21 +70,21 @@ mac_calc_idle_slope:
 	retsp 1
 .Ltmp6:
 .Ltmp7:
-	.size	mac_calc_idle_slope, .Ltmp7-mac_calc_idle_slope
+	.size	_mac_calc_idle_slope, .Ltmp7-_mac_calc_idle_slope
 .Lfunc_end0:
 .Ltmp8:
 	.cfi_endproc
 .Leh_func_end0:
 
-	.cc_bottom mac_calc_idle_slope.function
-	.set	mac_calc_idle_slope.nstackwords,(__divdi3.nstackwords + 1)
-	.globl	mac_calc_idle_slope.nstackwords
-	.set	mac_calc_idle_slope.maxcores,1
-	.globl	mac_calc_idle_slope.maxcores
-	.set	mac_calc_idle_slope.maxtimers,0
-	.globl	mac_calc_idle_slope.maxtimers
-	.set	mac_calc_idle_slope.maxchanends,0
-	.globl	mac_calc_idle_slope.maxchanends
+	.cc_bottom _mac_calc_idle_slope.function
+	.set	_mac_calc_idle_slope.nstackwords,(__divdi3.nstackwords + 1)
+	.globl	_mac_calc_idle_slope.nstackwords
+	.set	_mac_calc_idle_slope.maxcores,1
+	.globl	_mac_calc_idle_slope.maxcores
+	.set	_mac_calc_idle_slope.maxtimers,0
+	.globl	_mac_calc_idle_slope.maxtimers
+	.set	_mac_calc_idle_slope.maxchanends,0
+	.globl	_mac_calc_idle_slope.maxchanends
 	.cfi_sections .debug_frame
 .Ltext_end:
 	.section	.dp.data,"awd",@progbits
@@ -93,7 +93,7 @@ mac_calc_idle_slope:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	336
+	.long	338
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -109,14 +109,14 @@ mac_calc_idle_slope:
 	.byte	0
 	.byte	1
 	.byte	2
-	.ascii	 "mac_calc_idle_slope"
+	.ascii	 "_mac_calc_idle_slope"
 	.byte	0
-	.ascii	 "mac_calc_idle_slope"
+	.ascii	 "_mac_calc_idle_slope"
 	.byte	0
 	.byte	1
 	.byte	4
 	.byte	1
-	.long	332
+	.long	334
 	.byte	1
 	.long	.Lfunc_begin0
 	.long	.Lfunc_end0
@@ -128,7 +128,7 @@ mac_calc_idle_slope:
 	.byte	0
 	.byte	1
 	.byte	3
-	.long	332
+	.long	334
 	.long	.Ldebug_loc0+0
 	.byte	0
 	.byte	4
@@ -223,7 +223,7 @@ mac_calc_idle_slope:
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
 	.long	256
-.asciiz "mac_calc_idle_slope"
+.asciiz "_mac_calc_idle_slope"
 	.long	0
 .Lpubnames_end1:
 	.section	.debug_pubtypes,"",@progbits
@@ -252,5 +252,5 @@ mac_calc_idle_slope:
 	.section	.debug_ranges,"",@progbits
 	.section	.debug_macinfo,"",@progbits
 
-	.typestring mac_calc_idle_slope, "f{si}(si)"
+	.typestring _mac_calc_idle_slope, "f{si}(si)"
 	.ident	"GCC: (GNU) 4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"

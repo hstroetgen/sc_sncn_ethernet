@@ -3,30 +3,30 @@
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
 	.inline_definition delay_microseconds
-	.inline_definition mii_packet_get_length
-	.inline_definition mii_packet_set_length
-	.inline_definition mii_packet_get_timestamp
-	.inline_definition mii_packet_set_timestamp
-	.inline_definition mii_packet_get_filter_result
-	.inline_definition mii_packet_set_filter_result
-	.inline_definition mii_packet_get_src_port
-	.inline_definition mii_packet_set_src_port
-	.inline_definition mii_packet_get_timestamp_id
-	.inline_definition mii_packet_set_timestamp_id
-	.inline_definition mii_packet_get_stage
-	.inline_definition mii_packet_set_stage
-	.inline_definition mii_packet_get_tcount
-	.inline_definition mii_packet_set_tcount
-	.inline_definition mii_packet_get_crc
-	.inline_definition mii_packet_set_crc
-	.inline_definition mii_packet_get_forwarding
-	.inline_definition mii_packet_set_forwarding
-	.inline_definition mii_packet_get_data_ptr
-	.inline_definition mii_packet_set_data_word
-	.inline_definition mii_packet_get_data_word
-	.inline_definition mii_packet_set_data
-	.inline_definition mii_packet_set_data_short
-	.inline_definition mii_packet_set_data_byte
+	.inline_definition _mii_packet_get_length
+	.inline_definition _mii_packet_set_length
+	.inline_definition _mii_packet_get_timestamp
+	.inline_definition _mii_packet_set_timestamp
+	.inline_definition _mii_packet_get_filter_result
+	.inline_definition _mii_packet_set_filter_result
+	.inline_definition _mii_packet_get_src_port
+	.inline_definition _mii_packet_set_src_port
+	.inline_definition _mii_packet_get_timestamp_id
+	.inline_definition _mii_packet_set_timestamp_id
+	.inline_definition _mii_packet_get_stage
+	.inline_definition _mii_packet_set_stage
+	.inline_definition _mii_packet_get_tcount
+	.inline_definition _mii_packet_set_tcount
+	.inline_definition _mii_packet_get_crc
+	.inline_definition _mii_packet_set_crc
+	.inline_definition _mii_packet_get_forwarding
+	.inline_definition _mii_packet_set_forwarding
+	.inline_definition _mii_packet_get_data_ptr
+	.inline_definition _mii_packet_set_data_word
+	.inline_definition _mii_packet_get_data_word
+	.inline_definition _mii_packet_set_data
+	.inline_definition _mii_packet_set_data_short
+	.inline_definition _mii_packet_set_data_byte
 	.set usage.anon.0,0
 	.set usage.anon.1,0
 	.set usage.anon.2,0
@@ -75,9 +75,9 @@
 	.call _mii_rx_pins,usage.anon.21
 	.call _mii_rx_pins,usage.anon.18
 	.call _mii_rx_pins,usage.anon.10
-	.call _mii_rx_pins,mii_reserve
-	.call _mii_rx_pins,mii_commit
+	.call _mii_rx_pins,_mii_reserve
 	.call _mii_rx_pins,_mii_get_wrap_ptr
+	.call _mii_rx_pins,_mii_commit
 	.call usage.anon.2,delay_ticks_longlong
 	.call usage.anon.1,delay_ticks_longlong
 	.call usage.anon.0,delay_ticks_longlong
@@ -562,7 +562,7 @@ _mii_rx_pins:
 	out res[r2], r0
 	.loc	1 352 0
 .Lxta.call_labels1:
-	bl mii_commit
+	bl _mii_commit
 .Ltmp52:
 .LBB1_1:
 .Lxtalabel3:
@@ -570,7 +570,7 @@ _mii_rx_pins:
 	ldw r0, sp[2]
 	ldaw r1, sp[4]
 .Lxta.call_labels2:
-	bl mii_reserve
+	bl _mii_reserve
 .Ltmp53:
 	ldc r1, 13
 	.loc	1 192 0
@@ -817,13 +817,13 @@ waiteu
 
 	.align	4
 	.cc_bottom _mii_rx_pins.function
-	.set	_mii_rx_pins.nstackwords,((_mii_get_wrap_ptr.nstackwords $M mii_reserve.nstackwords $M mii_commit.nstackwords) + 12)
+	.set	_mii_rx_pins.nstackwords,((_mii_get_wrap_ptr.nstackwords $M _mii_reserve.nstackwords $M _mii_commit.nstackwords) + 12)
 	.globl	_mii_rx_pins.nstackwords
-	.set	_mii_rx_pins.maxcores,_mii_get_wrap_ptr.maxcores $M mii_commit.maxcores $M mii_reserve.maxcores $M 1
+	.set	_mii_rx_pins.maxcores,_mii_commit.maxcores $M _mii_get_wrap_ptr.maxcores $M _mii_reserve.maxcores $M 1
 	.globl	_mii_rx_pins.maxcores
-	.set	_mii_rx_pins.maxtimers,_mii_get_wrap_ptr.maxtimers $M mii_commit.maxtimers $M mii_reserve.maxtimers $M 0
+	.set	_mii_rx_pins.maxtimers,_mii_commit.maxtimers $M _mii_get_wrap_ptr.maxtimers $M _mii_reserve.maxtimers $M 0
 	.globl	_mii_rx_pins.maxtimers
-	.set	_mii_rx_pins.maxchanends,_mii_get_wrap_ptr.maxchanends $M mii_commit.maxchanends $M mii_reserve.maxchanends $M 0
+	.set	_mii_rx_pins.maxchanends,_mii_commit.maxchanends $M _mii_get_wrap_ptr.maxchanends $M _mii_reserve.maxchanends $M 0
 	.globl	_mii_rx_pins.maxchanends
 	.cc_top _mii_tx_pins.function
 	.globl	_mii_tx_pins
@@ -1296,7 +1296,7 @@ _ethernet_mii_no_queue_entries:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	4434
+	.long	4482
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -1373,20 +1373,20 @@ _ethernet_mii_no_queue_entries:
 	.long	247
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_length"
+	.ascii	 "_mii_packet_get_length"
 	.byte	0
-	.ascii	 "mii_packet_get_length"
+	.ascii	 "_mii_packet_get_length"
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	573
+	.long	575
 	.byte	7
 	.byte	7
 	.byte	8
@@ -1394,7 +1394,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	573
+	.long	575
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1404,52 +1404,52 @@ _ethernet_mii_no_queue_entries:
 	.byte	5
 	.byte	4
 	.byte	4
-	.ascii	 "mii_packet_set_length"
+	.ascii	 "_mii_packet_set_length"
 	.byte	0
-	.ascii	 "mii_packet_set_length"
-	.byte	0
-	.byte	3
-	.byte	135
-	.byte	1
-	.byte	5
-	.ascii	 "buf"
+	.ascii	 "_mii_packet_set_length"
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	573
+	.byte	1
+	.byte	5
+	.ascii	 "buf"
+	.byte	0
+	.byte	3
+	.byte	135
+	.long	575
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	573
+	.long	575
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_timestamp"
+	.ascii	 "_mii_packet_get_timestamp"
 	.byte	0
-	.ascii	 "mii_packet_get_timestamp"
+	.ascii	 "_mii_packet_get_timestamp"
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	573
+	.long	575
 	.byte	8
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	573
+	.long	575
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_timestamp"
+	.ascii	 "_mii_packet_set_timestamp"
 	.byte	0
-	.ascii	 "mii_packet_set_timestamp"
+	.ascii	 "_mii_packet_set_timestamp"
 	.byte	0
 	.byte	3
 	.byte	136
@@ -1459,40 +1459,40 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	573
+	.long	575
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	573
+	.long	575
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_filter_result"
+	.ascii	 "_mii_packet_get_filter_result"
 	.byte	0
-	.ascii	 "mii_packet_get_filter_result"
+	.ascii	 "_mii_packet_get_filter_result"
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	573
+	.long	575
 	.byte	8
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	573
+	.long	575
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_filter_result"
+	.ascii	 "_mii_packet_set_filter_result"
 	.byte	0
-	.ascii	 "mii_packet_set_filter_result"
+	.ascii	 "_mii_packet_set_filter_result"
 	.byte	0
 	.byte	3
 	.byte	137
@@ -1502,40 +1502,40 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	573
+	.long	575
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	573
+	.long	575
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_src_port"
+	.ascii	 "_mii_packet_get_src_port"
 	.byte	0
-	.ascii	 "mii_packet_get_src_port"
+	.ascii	 "_mii_packet_get_src_port"
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	573
+	.long	575
 	.byte	8
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	573
+	.long	575
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_src_port"
+	.ascii	 "_mii_packet_set_src_port"
 	.byte	0
-	.ascii	 "mii_packet_set_src_port"
+	.ascii	 "_mii_packet_set_src_port"
 	.byte	0
 	.byte	3
 	.byte	138
@@ -1545,29 +1545,29 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	573
+	.long	575
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	573
+	.long	575
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_timestamp_id"
+	.ascii	 "_mii_packet_get_timestamp_id"
 	.byte	0
-	.ascii	 "mii_packet_get_timestamp_id"
+	.ascii	 "_mii_packet_get_timestamp_id"
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	573
+	.long	575
 	.byte	7
 	.byte	7
 	.byte	8
@@ -1575,14 +1575,14 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	573
+	.long	575
 	.byte	0
 	.byte	0
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_timestamp_id"
+	.ascii	 "_mii_packet_set_timestamp_id"
 	.byte	0
-	.ascii	 "mii_packet_set_timestamp_id"
+	.ascii	 "_mii_packet_set_timestamp_id"
 	.byte	0
 	.byte	3
 	.byte	139
@@ -1592,29 +1592,29 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	573
+	.long	575
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	573
+	.long	575
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_stage"
+	.ascii	 "_mii_packet_get_stage"
 	.byte	0
-	.ascii	 "mii_packet_get_stage"
+	.ascii	 "_mii_packet_get_stage"
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	573
+	.long	575
 	.byte	7
 	.byte	7
 	.byte	8
@@ -1622,14 +1622,14 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	573
+	.long	575
 	.byte	0
 	.byte	0
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_stage"
+	.ascii	 "_mii_packet_set_stage"
 	.byte	0
-	.ascii	 "mii_packet_set_stage"
+	.ascii	 "_mii_packet_set_stage"
 	.byte	0
 	.byte	3
 	.byte	140
@@ -1639,40 +1639,40 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	573
+	.long	575
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	573
+	.long	575
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_tcount"
+	.ascii	 "_mii_packet_get_tcount"
 	.byte	0
-	.ascii	 "mii_packet_get_tcount"
+	.ascii	 "_mii_packet_get_tcount"
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	573
+	.long	575
 	.byte	8
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	573
+	.long	575
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_tcount"
+	.ascii	 "_mii_packet_set_tcount"
 	.byte	0
-	.ascii	 "mii_packet_set_tcount"
+	.ascii	 "_mii_packet_set_tcount"
 	.byte	0
 	.byte	3
 	.byte	141
@@ -1682,40 +1682,40 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	573
+	.long	575
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	573
+	.long	575
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_crc"
+	.ascii	 "_mii_packet_get_crc"
 	.byte	0
-	.ascii	 "mii_packet_get_crc"
+	.ascii	 "_mii_packet_get_crc"
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	573
+	.long	575
 	.byte	8
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	573
+	.long	575
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_crc"
+	.ascii	 "_mii_packet_set_crc"
 	.byte	0
-	.ascii	 "mii_packet_set_crc"
+	.ascii	 "_mii_packet_set_crc"
 	.byte	0
 	.byte	3
 	.byte	142
@@ -1725,40 +1725,40 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	573
+	.long	575
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	573
+	.long	575
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_forwarding"
+	.ascii	 "_mii_packet_get_forwarding"
 	.byte	0
-	.ascii	 "mii_packet_get_forwarding"
+	.ascii	 "_mii_packet_get_forwarding"
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	573
+	.long	575
 	.byte	8
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	573
+	.long	575
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_forwarding"
+	.ascii	 "_mii_packet_set_forwarding"
 	.byte	0
-	.ascii	 "mii_packet_set_forwarding"
+	.ascii	 "_mii_packet_set_forwarding"
 	.byte	0
 	.byte	3
 	.byte	143
@@ -1768,34 +1768,34 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	573
+	.long	575
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	573
+	.long	575
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_data_ptr"
+	.ascii	 "_mii_packet_get_data_ptr"
 	.byte	0
-	.ascii	 "mii_packet_get_data_ptr"
+	.ascii	 "_mii_packet_get_data_ptr"
 	.byte	0
 	.byte	3
 	.byte	145
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	145
-	.long	573
+	.long	575
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_data_word"
+	.ascii	 "_mii_packet_set_data_word"
 	.byte	0
-	.ascii	 "mii_packet_set_data_word"
+	.ascii	 "_mii_packet_set_data_word"
 	.byte	0
 	.byte	3
 	.byte	149
@@ -1805,41 +1805,41 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	573
+	.long	575
 	.byte	5
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	573
+	.long	575
 	.byte	5
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	573
+	.long	575
 	.byte	0
 	.byte	6
-	.ascii	 "mii_packet_get_data_word"
+	.ascii	 "_mii_packet_get_data_word"
 	.byte	0
-	.ascii	 "mii_packet_get_data_word"
+	.ascii	 "_mii_packet_get_data_word"
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	573
+	.long	575
 	.byte	1
 	.byte	5
 	.ascii	 "data"
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	573
+	.long	575
 	.byte	5
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	573
+	.long	575
 	.byte	7
 	.byte	7
 	.byte	8
@@ -1847,14 +1847,14 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	155
-	.long	573
+	.long	575
 	.byte	0
 	.byte	0
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_data"
+	.ascii	 "_mii_packet_set_data"
 	.byte	0
-	.ascii	 "mii_packet_set_data"
+	.ascii	 "_mii_packet_set_data"
 	.byte	0
 	.byte	3
 	.byte	170
@@ -1864,24 +1864,24 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	573
+	.long	575
 	.byte	5
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	573
+	.long	575
 	.byte	5
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	573
+	.long	575
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_data_short"
+	.ascii	 "_mii_packet_set_data_short"
 	.byte	0
-	.ascii	 "mii_packet_set_data_short"
+	.ascii	 "_mii_packet_set_data_short"
 	.byte	0
 	.byte	3
 	.byte	174
@@ -1891,24 +1891,24 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	573
+	.long	575
 	.byte	5
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	573
+	.long	575
 	.byte	5
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	573
+	.long	575
 	.byte	0
 	.byte	4
-	.ascii	 "mii_packet_set_data_byte"
+	.ascii	 "_mii_packet_set_data_byte"
 	.byte	0
-	.ascii	 "mii_packet_set_data_byte"
+	.ascii	 "_mii_packet_set_data_byte"
 	.byte	0
 	.byte	3
 	.byte	178
@@ -1918,19 +1918,19 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	573
+	.long	575
 	.byte	5
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	573
+	.long	575
 	.byte	5
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	573
+	.long	575
 	.byte	0
 	.byte	9
 	.ascii	 "_ethernet_get_mii_counts"
@@ -1950,7 +1950,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	131
-	.long	4427
+	.long	4475
 	.long	.Ldebug_loc128+0
 	.byte	0
 	.byte	9
@@ -1978,28 +1978,28 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	4051
+	.long	4099
 	.long	.Ldebug_loc11+0
 	.byte	10
 	.ascii	 "p_mii_rxd"
 	.byte	0
 	.byte	1
 	.byte	143
-	.long	4051
+	.long	4099
 	.long	.Ldebug_loc15+0
 	.byte	10
 	.ascii	 "ifnum"
 	.byte	0
 	.byte	1
 	.byte	144
-	.long	573
+	.long	575
 	.long	.Ldebug_loc19+0
 	.byte	5
 	.byte	99
 	.byte	0
 	.byte	1
 	.byte	145
-	.long	4304
+	.long	4352
 	.byte	11
 	.long	.Ltmp41
 	.long	.Ltmp98
@@ -2011,7 +2011,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	147
-	.long	4295
+	.long	4343
 	.byte	11
 	.long	.Ltmp41
 	.long	.Ltmp98
@@ -2040,7 +2040,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	159
-	.long	573
+	.long	575
 	.long	.Ldebug_loc33+0
 	.byte	14
 	.long	.Ldebug_range+344
@@ -2058,7 +2058,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	573
+	.long	575
 	.long	.Ldebug_loc50+0
 	.byte	14
 	.long	.Ldebug_range+296
@@ -2076,7 +2076,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	168
-	.long	573
+	.long	575
 	.long	.Ldebug_loc91+0
 	.byte	14
 	.long	.Ldebug_range+248
@@ -2162,7 +2162,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	192
-	.long	573
+	.long	575
 	.long	.Ldebug_loc61+0
 	.byte	14
 	.long	.Ldebug_range+80
@@ -2216,7 +2216,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.byte	208
-	.long	573
+	.long	575
 	.long	.Ldebug_loc87+0
 	.byte	14
 	.long	.Ldebug_range+48
@@ -2225,7 +2225,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	285
-	.long	573
+	.long	575
 	.byte	14
 	.long	.Ldebug_range+24
 	.byte	17
@@ -2242,7 +2242,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	332
-	.long	573
+	.long	575
 	.long	.Ldebug_loc54+0
 	.byte	0
 	.byte	0
@@ -2254,7 +2254,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	321
-	.long	573
+	.long	575
 	.long	.Ldebug_loc89+0
 	.byte	0
 	.byte	0
@@ -2300,14 +2300,14 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	464
-	.long	4051
+	.long	4099
 	.long	.Ldebug_loc133+0
 	.byte	19
 	.ascii	 "tmr"
 	.byte	0
 	.byte	1
 	.short	464
-	.long	4295
+	.long	4343
 	.long	.Ldebug_loc137+0
 	.byte	11
 	.long	.Ltmp172
@@ -2320,7 +2320,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	466
-	.long	4432
+	.long	4480
 	.byte	5
 	.ascii	 "\240\206\342\355\016"
 	.byte	11
@@ -2370,7 +2370,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	472
-	.long	573
+	.long	575
 	.byte	11
 	.long	.Ltmp172
 	.long	.Ltmp201
@@ -2379,7 +2379,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	473
-	.long	573
+	.long	575
 	.long	.Ldebug_loc144+0
 	.byte	11
 	.long	.Ltmp173
@@ -2389,7 +2389,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	474
-	.long	573
+	.long	575
 	.long	.Ldebug_loc165+0
 	.byte	14
 	.long	.Ldebug_range+392
@@ -2398,7 +2398,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	475
-	.long	573
+	.long	575
 	.long	.Ldebug_loc148+0
 	.byte	0
 	.byte	0
@@ -2436,21 +2436,21 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	570
-	.long	4422
+	.long	4470
 	.long	.Ldebug_loc97+0
 	.byte	19
 	.ascii	 "p_mii_txd"
 	.byte	0
 	.byte	1
 	.short	571
-	.long	4051
+	.long	4099
 	.long	.Ldebug_loc101+0
 	.byte	19
 	.ascii	 "ifnum"
 	.byte	0
 	.byte	1
 	.short	572
-	.long	573
+	.long	575
 	.long	.Ldebug_loc105+0
 	.byte	11
 	.long	.Ltmp122
@@ -2463,14 +2463,14 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	579
-	.long	573
+	.long	575
 	.long	.Ldebug_loc119+0
 	.byte	17
 	.ascii	 "time"
 	.byte	0
 	.byte	1
 	.short	579
-	.long	573
+	.long	575
 	.long	.Ldebug_loc126+0
 	.byte	11
 	.long	.Ltmp122
@@ -2480,7 +2480,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	580
-	.long	4295
+	.long	4343
 	.byte	11
 	.long	.Ltmp122
 	.long	.Ltmp147
@@ -2489,7 +2489,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	581
-	.long	573
+	.long	575
 	.long	.Ldebug_loc113+0
 	.byte	11
 	.long	.Ltmp122
@@ -2509,7 +2509,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	589
-	.long	573
+	.long	575
 	.byte	11
 	.long	.Ltmp122
 	.long	.Ltmp147
@@ -2518,7 +2518,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	591
-	.long	573
+	.long	575
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2545,7 +2545,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	706
-	.long	4290
+	.long	4338
 	.long	.Ldebug_loc0+0
 	.byte	11
 	.long	.Ltmp9
@@ -2558,7 +2558,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	708
-	.long	4295
+	.long	4343
 	.byte	11
 	.long	.Ltmp9
 	.long	.Ltmp17
@@ -2577,7 +2577,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	0
 	.byte	1
 	.short	712
-	.long	573
+	.long	575
 	.long	.Ldebug_loc2+0
 	.byte	0
 	.byte	0
@@ -2601,7 +2601,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "clk_mii_rx"
 	.byte	0
-	.long	4042
+	.long	4090
 	.byte	1
 	.short	706
 	.byte	2
@@ -2611,7 +2611,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "clk_mii_tx"
 	.byte	0
-	.long	4042
+	.long	4090
 	.byte	1
 	.short	706
 	.byte	2
@@ -2621,7 +2621,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_rxclk"
 	.byte	0
-	.long	4051
+	.long	4099
 	.byte	1
 	.short	706
 	.byte	2
@@ -2631,7 +2631,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_rxer"
 	.byte	0
-	.long	4051
+	.long	4099
 	.byte	1
 	.short	706
 	.byte	2
@@ -2641,7 +2641,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_rxd"
 	.byte	0
-	.long	4051
+	.long	4099
 	.byte	1
 	.short	706
 	.byte	2
@@ -2651,7 +2651,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_rxdv"
 	.byte	0
-	.long	4051
+	.long	4099
 	.byte	1
 	.short	706
 	.byte	2
@@ -2661,7 +2661,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_txclk"
 	.byte	0
-	.long	4051
+	.long	4099
 	.byte	1
 	.short	706
 	.byte	2
@@ -2671,7 +2671,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_txen"
 	.byte	0
-	.long	4051
+	.long	4099
 	.byte	1
 	.short	706
 	.byte	2
@@ -2681,7 +2681,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "p_mii_txd"
 	.byte	0
-	.long	4051
+	.long	4099
 	.byte	1
 	.short	706
 	.byte	2
@@ -2690,7 +2690,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	0
 	.byte	23
-	.long	4059
+	.long	4107
 	.byte	2
 	.ascii	 "timer"
 	.byte	0
@@ -2707,7 +2707,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	25
 	.long	247
 	.byte	26
-	.long	4315
+	.long	4363
 	.byte	5
 	.byte	0
 	.byte	21
@@ -2717,7 +2717,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "lock"
 	.byte	0
-	.long	573
+	.long	575
 	.byte	1
 	.short	573
 	.byte	2
@@ -2727,7 +2727,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "rdIndex"
 	.byte	0
-	.long	573
+	.long	575
 	.byte	1
 	.short	573
 	.byte	2
@@ -2737,7 +2737,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "wrIndex"
 	.byte	0
-	.long	573
+	.long	575
 	.byte	1
 	.short	573
 	.byte	2
@@ -2747,7 +2747,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	22
 	.ascii	 "fifo"
 	.byte	0
-	.long	4318
+	.long	4366
 	.byte	1
 	.short	573
 	.byte	2
@@ -2756,7 +2756,7 @@ _ethernet_mii_no_queue_entries:
 	.byte	1
 	.byte	0
 	.byte	23
-	.long	4330
+	.long	4378
 	.byte	23
 	.long	247
 	.byte	27
@@ -3130,70 +3130,70 @@ _ethernet_mii_no_queue_entries:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1212
-.asciiz "mii_packet_set_timestamp_id"
-	.long	580
-.asciiz "mii_packet_set_length"
-	.long	890
-.asciiz "mii_packet_set_filter_result"
-	.long	3202
+	.long	582
+.asciiz "_mii_packet_set_length"
+	.long	1739
+.asciiz "_mii_packet_get_forwarding"
+	.long	653
+.asciiz "_mii_packet_get_timestamp"
+	.long	1313
+.asciiz "_mii_packet_get_stage"
+	.long	2229
+.asciiz "_mii_packet_set_data_short"
+	.long	1605
+.asciiz "_mii_packet_get_crc"
+	.long	2317
+.asciiz "_mii_packet_set_data_byte"
+	.long	3250
 .asciiz "_mii_transmit_packet"
-	.long	1707
-.asciiz "mii_packet_get_forwarding"
-	.long	2018
-.asciiz "mii_packet_get_data_word"
-	.long	2185
-.asciiz "mii_packet_set_data_short"
-	.long	1788
-.asciiz "mii_packet_set_forwarding"
+	.long	1822
+.asciiz "_mii_packet_set_forwarding"
+	.long	734
+.asciiz "_mii_packet_set_timestamp"
 	.long	384
 .asciiz "delay_milliseconds"
-	.long	1933
-.asciiz "mii_packet_set_data_word"
-	.long	2355
+	.long	1390
+.asciiz "_mii_packet_set_stage"
+	.long	811
+.asciiz "_mii_packet_get_filter_result"
+	.long	1674
+.asciiz "_mii_packet_set_crc"
+	.long	2153
+.asciiz "_mii_packet_set_data"
+	.long	2403
 .asciiz "_ethernet_get_mii_counts"
-	.long	2111
-.asciiz "mii_packet_set_data"
-	.long	973
-.asciiz "mii_packet_get_src_port"
-	.long	2440
+	.long	985
+.asciiz "_mii_packet_get_src_port"
+	.long	2488
 .asciiz "_mii_rx_pins"
-	.long	3575
-.asciiz "_mii_tx_pins"
-	.long	1865
-.asciiz "mii_packet_get_data_ptr"
-	.long	3901
+	.long	1901
+.asciiz "_mii_packet_get_data_ptr"
+	.long	900
+.asciiz "_mii_packet_set_filter_result"
+	.long	3949
 .asciiz "_mii_init_full"
-	.long	649
-.asciiz "mii_packet_get_timestamp"
-	.long	1293
-.asciiz "mii_packet_get_stage"
-	.long	1050
-.asciiz "mii_packet_set_src_port"
-	.long	1577
-.asciiz "mii_packet_get_crc"
-	.long	2271
-.asciiz "mii_packet_set_data_byte"
-	.long	1435
-.asciiz "mii_packet_get_tcount"
-	.long	728
-.asciiz "mii_packet_set_timestamp"
-	.long	1123
-.asciiz "mii_packet_get_timestamp_id"
+	.long	3623
+.asciiz "_mii_tx_pins"
+	.long	2058
+.asciiz "_mii_packet_get_data_word"
+	.long	1064
+.asciiz "_mii_packet_set_src_port"
+	.long	1459
+.asciiz "_mii_packet_get_tcount"
+	.long	1139
+.asciiz "_mii_packet_get_timestamp_id"
+	.long	1971
+.asciiz "_mii_packet_set_data_word"
 	.long	496
-.asciiz "mii_packet_get_length"
+.asciiz "_mii_packet_get_length"
 	.long	440
 .asciiz "delay_microseconds"
-	.long	803
-.asciiz "mii_packet_get_filter_result"
-	.long	1644
-.asciiz "mii_packet_set_crc"
-	.long	1368
-.asciiz "mii_packet_set_stage"
-	.long	1508
-.asciiz "mii_packet_set_tcount"
+	.long	1534
+.asciiz "_mii_packet_set_tcount"
 	.long	338
 .asciiz "delay_seconds"
+	.long	1230
+.asciiz "_mii_packet_set_timestamp_id"
 	.long	0
 .Lpubnames_end1:
 	.section	.debug_pubtypes,"",@progbits
@@ -3204,9 +3204,9 @@ _ethernet_mii_no_queue_entries:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	4059
+	.long	4107
 .asciiz "mii_interface_full_t"
-	.long	4330
+	.long	4378
 .asciiz "mii_ts_queue_t"
 	.long	0
 .Lpubtypes_end1:
@@ -4071,8 +4071,8 @@ _ethernet_mii_no_queue_entries:
 	.typestring _mii_rx_pins, "f{0}(ui,i:p,bi:p:32,si,m:chd)"
 	.typestring _mii_tx_pins, "f{0}(ui,&(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}),bo:p:32,si)"
 	.typestring _ethernet_get_mii_counts, "f{0}(&(ui))"
-	.typestring mii_reserve, "f{ui}(ui,&(ui))"
-	.typestring mii_commit, "f{0}(ui,si)"
+	.typestring _mii_reserve, "f{ui}(ui,&(ui))"
+	.typestring _mii_commit, "f{0}(ui,si)"
 	.typestring _mii_free, "f{0}(ui)"
 	.typestring _mii_get_next_buf, "f{ui}(ui)"
 	.typestring _mii_get_wrap_ptr, "f{si}(ui)"

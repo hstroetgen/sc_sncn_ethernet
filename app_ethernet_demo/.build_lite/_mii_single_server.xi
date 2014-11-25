@@ -443,6 +443,9 @@ extern void _miiTimeStampInit(unsigned offset);
 # 10 "smi.h" 2
 # 1 "xccompat.h" 1 3
 # 11 "smi.h" 2
+# 13 "smi.h"
+# 1 "ethernet_conf_derived.h" 1
+# 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
 # 18 "smi.h" 2

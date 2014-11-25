@@ -53,7 +53,7 @@ void _mac_tx_full(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
  */
 void _mac_tx_offset2(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
 
-#define ethernet_send_frame_offset2 mac_tx_offset2
+#define _ethernet_send_frame_offset2 _mac_tx_offset2
 
 /** Sends an ethernet frame and gets the timestamp of the send. 
  *  Frame includes dest/src MAC address(s), type

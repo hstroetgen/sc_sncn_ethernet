@@ -51,7 +51,7 @@ mii_mempool_t tx_mem_lp[NUM_ETHERNET_PORTS];
 #endif
 #endif
 
-void init_mii_mem() {
+void _init_mii_mem() {
 #ifdef ETHERNET_USE_HARDWARE_LOCKS
   _ethernet_memory_lock = hwlock_alloc();
 #endif
@@ -59,10 +59,10 @@ void init_mii_mem() {
   for (int i=0; i<NUM_ETHERNET_PORTS; ++i) {
 #if ETHERNET_RX_HP_QUEUE
     rx_mem_hp[i] = (mii_mempool_t) &rx_hp_data[i][0];
-    mii_init_mempool(rx_mem_hp[i], ETHERNET_RX_HP_MEMSIZE*4);
+    _mii_init_mempool(rx_mem_hp[i], ETHERNET_RX_HP_MEMSIZE*4);
 #endif
     rx_mem_lp[i] = (mii_mempool_t) &_rx_lp_data[i][0];
-    mii_init_mempool(rx_mem_lp[i], ETHERNET_RX_LP_MEMSIZE*4);
+    _mii_init_mempool(rx_mem_lp[i], ETHERNET_RX_LP_MEMSIZE*4);
 
 #if !ETHERNET_TX_NO_BUFFERING
      #if ETHERNET_TX_HP_QUEUE
@@ -71,7 +71,7 @@ void init_mii_mem() {
                           ETHERNET_TX_HP_MEMSIZE*4);
      #endif
          tx_mem_lp[i] = (mii_mempool_t) &_tx_lp_data[i][0];
-         mii_init_mempool(tx_mem_lp[i],
+         _mii_init_mempool(tx_mem_lp[i],
                           ETHERNET_TX_LP_MEMSIZE*4);
          _init_ts_queue(&ts_queue[i]);
 #endif

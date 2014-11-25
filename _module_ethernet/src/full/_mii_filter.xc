@@ -57,11 +57,11 @@ void _ethernet_filter(const char mac_address[], streaming chanend c[NUM_ETHERNET
 			{
 				if (buf)
 				{
-					int length = mii_packet_get_length(buf);
+					int length = _mii_packet_get_length(buf);
 
 #if ETHERNET_RX_CRC_ERROR_CHECK
 					unsigned poly = 0xEDB88320;
-					unsigned crc = mii_packet_get_crc(buf);
+					unsigned crc = _mii_packet_get_crc(buf);
 					int endbytes;
 					int tail;
 
@@ -87,15 +87,15 @@ void _ethernet_filter(const char mac_address[], streaming chanend c[NUM_ETHERNET
 							break;
 					}
 #endif
-					mii_packet_set_src_port(buf,ifnum);
+					_mii_packet_set_src_port(buf,ifnum);
 
 					if (length < 60)
 					{
 #if ETHERNET_COUNT_PACKETS
 						_ethernet_filtered_by_length++;
 #endif
-						mii_packet_set_filter_result(buf, 0);
-						mii_packet_set_stage(buf,1);
+						_mii_packet_set_filter_result(buf, 0);
+						_mii_packet_set_stage(buf,1);
 					}
 #if ETHERNET_RX_CRC_ERROR_CHECK
 					else if (~crc)
@@ -103,8 +103,8 @@ void _ethernet_filter(const char mac_address[], streaming chanend c[NUM_ETHERNET
 #if ETHERNET_COUNT_PACKETS
 						_ethernet_filtered_by_bad_crc++;
 #endif
-						mii_packet_set_filter_result(buf, 0);
-						mii_packet_set_stage(buf,1);
+						_mii_packet_set_filter_result(buf, 0);
+						_mii_packet_set_stage(buf,1);
 
 					}
 #endif
@@ -133,8 +133,8 @@ void _ethernet_filter(const char mac_address[], streaming chanend c[NUM_ETHERNET
 								_ethernet_filtered_by_user_filter++;
 #endif
 							}
-							mii_packet_set_filter_result(buf, res);
-							mii_packet_set_stage(buf, 1);
+							_mii_packet_set_filter_result(buf, res);
+							_mii_packet_set_stage(buf, 1);
 						}
 					}
 					break;

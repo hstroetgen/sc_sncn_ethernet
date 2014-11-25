@@ -5,16 +5,16 @@
 typedef unsigned mii_mempool_t;
 typedef unsigned mii_buffer_t;
 
-void mii_init_mempool(mii_mempool_t mempool0, int size);
+void _mii_init_mempool(mii_mempool_t mempool0, int size);
 
-mii_buffer_t mii_reserve(mii_mempool_t mempool,
+mii_buffer_t _mii_reserve(mii_mempool_t mempool,
                                   REFERENCE_PARAM(unsigned, end_ptr));
 
-mii_buffer_t mii_reserve_at_least(mii_mempool_t mempool,
+mii_buffer_t _mii_reserve_at_least(mii_mempool_t mempool,
                                            REFERENCE_PARAM(unsigned, end_ptr),
                                            int min_size);
 
-void mii_commit(mii_buffer_t buf, int endptr0);
+void _mii_commit(mii_buffer_t buf, int endptr0);
 
 void _mii_free(mii_buffer_t buf);
 int _mii_init_my_rdptr(mii_mempool_t mempool);

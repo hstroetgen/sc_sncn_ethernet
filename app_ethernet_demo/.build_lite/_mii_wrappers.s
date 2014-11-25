@@ -40,15 +40,15 @@
 
 .set _mii_rx_pins_wr.locnonotificationselect, 1
 
-.set init_mii_mem.locnoside, 1
+.set _init_mii_mem.locnoside, 1
 
-.set init_mii_mem.locnochandec, 1
+.set _init_mii_mem.locnochandec, 1
 
-.set init_mii_mem.locnoglobalaccess, 1
+.set _init_mii_mem.locnoglobalaccess, 1
 
-.set init_mii_mem.locnointerfaceaccess, 1
+.set _init_mii_mem.locnointerfaceaccess, 1
 
-.set init_mii_mem.locnonotificationselect, 1
+.set _init_mii_mem.locnonotificationselect, 1
 
 
 	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_wrappers.c"
@@ -266,11 +266,11 @@ _mii_rx_pins_wr:
 	.globl	_mii_rx_pins_wr.maxtimers
 	.set	_mii_rx_pins_wr.maxchanends,_mii_rx_pins.maxchanends $M 0
 	.globl	_mii_rx_pins_wr.maxchanends
-	.cc_top init_mii_mem.function
-	.globl	init_mii_mem
+	.cc_top _init_mii_mem.function
+	.globl	_init_mii_mem
 	.align	2
-	.type	init_mii_mem,@function
-init_mii_mem:
+	.type	_init_mii_mem,@function
+_init_mii_mem:
 .Ltmp47:
 	.cfi_startproc
 .Lfunc_begin4:
@@ -300,13 +300,13 @@ init_mii_mem:
 	ldc r4, 4096
 	.loc	1 65 0
 	mov r1, r4
-	bl mii_init_mempool
+	bl _mii_init_mempool
 	.loc	1 73 0
 	ldaw r0, dp[_tx_lp_data]
 	stw r0, dp[tx_mem_lp]
 	.loc	1 74 0
 	mov r1, r4
-	bl mii_init_mempool
+	bl _mii_init_mempool
 	.loc	1 76 0
 	ldaw r0, dp[ts_queue]
 	bl _init_ts_queue
@@ -316,21 +316,21 @@ init_mii_mem:
 	retsp 2
 .Ltmp57:
 .Ltmp58:
-	.size	init_mii_mem, .Ltmp58-init_mii_mem
+	.size	_init_mii_mem, .Ltmp58-_init_mii_mem
 .Lfunc_end4:
 .Ltmp59:
 	.cfi_endproc
 .Leh_func_end4:
 
-	.cc_bottom init_mii_mem.function
-	.set	init_mii_mem.nstackwords,((mii_init_mempool.nstackwords $M _init_ts_queue.nstackwords) + 2)
-	.globl	init_mii_mem.nstackwords
-	.set	init_mii_mem.maxcores,_init_ts_queue.maxcores $M mii_init_mempool.maxcores $M 1
-	.globl	init_mii_mem.maxcores
-	.set	init_mii_mem.maxtimers,_init_ts_queue.maxtimers $M mii_init_mempool.maxtimers $M 0
-	.globl	init_mii_mem.maxtimers
-	.set	init_mii_mem.maxchanends,_init_ts_queue.maxchanends $M mii_init_mempool.maxchanends $M 0
-	.globl	init_mii_mem.maxchanends
+	.cc_bottom _init_mii_mem.function
+	.set	_init_mii_mem.nstackwords,((_mii_init_mempool.nstackwords $M _init_ts_queue.nstackwords) + 2)
+	.globl	_init_mii_mem.nstackwords
+	.set	_init_mii_mem.maxcores,_init_ts_queue.maxcores $M _mii_init_mempool.maxcores $M 1
+	.globl	_init_mii_mem.maxcores
+	.set	_init_mii_mem.maxtimers,_init_ts_queue.maxtimers $M _mii_init_mempool.maxtimers $M 0
+	.globl	_init_mii_mem.maxtimers
+	.set	_init_mii_mem.maxchanends,_init_ts_queue.maxchanends $M _mii_init_mempool.maxchanends $M 0
+	.globl	_init_mii_mem.maxchanends
 	.section	.dp.bss,"awd",@nobits
 	.cc_top _ethernet_memory_lock.data
 	.globl	_ethernet_memory_lock
@@ -399,7 +399,7 @@ _tx_lp_data:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	1343
+	.long	1345
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -598,7 +598,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	1192
+	.long	1194
 	.long	.Ldebug_loc0+0
 	.byte	12
 	.ascii	 "num_rx"
@@ -627,14 +627,14 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1212
+	.long	1214
 	.long	.Ldebug_loc6+0
 	.byte	12
 	.ascii	 "tx"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1192
+	.long	1194
 	.long	.Ldebug_loc10+0
 	.byte	12
 	.ascii	 "num_q"
@@ -655,7 +655,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1340
+	.long	1342
 	.byte	2
 	.byte	145
 	.byte	24
@@ -664,7 +664,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	1340
+	.long	1342
 	.byte	2
 	.byte	145
 	.byte	28
@@ -688,7 +688,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	96
-	.long	1218
+	.long	1220
 	.long	.Ldebug_loc17+0
 	.byte	12
 	.byte	105
@@ -717,14 +717,14 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	83
-	.long	1218
+	.long	1220
 	.long	.Ldebug_loc23+0
 	.byte	12
 	.ascii	 "p2"
 	.byte	0
 	.byte	1
 	.byte	84
-	.long	1218
+	.long	1220
 	.long	.Ldebug_loc26+0
 	.byte	12
 	.byte	105
@@ -738,7 +738,7 @@ _tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	86
-	.long	1177
+	.long	1179
 	.long	.Ldebug_loc32+0
 	.byte	0
 	.byte	14
@@ -752,9 +752,9 @@ _tx_lp_data:
 	.long	258
 	.byte	1
 	.byte	11
-	.ascii	 "init_mii_mem"
+	.ascii	 "_init_mii_mem"
 	.byte	0
-	.ascii	 "init_mii_mem"
+	.ascii	 "_init_mii_mem"
 	.byte	0
 	.byte	1
 	.byte	54
@@ -788,7 +788,7 @@ _tx_lp_data:
 	.byte	6
 	.byte	129
 	.byte	17
-	.long	1177
+	.long	1179
 	.byte	4
 	.byte	2
 	.ascii	 "char"
@@ -796,10 +796,10 @@ _tx_lp_data:
 	.byte	8
 	.byte	1
 	.byte	18
-	.long	1198
+	.long	1200
 	.byte	1
 	.byte	17
-	.long	1206
+	.long	1208
 	.byte	4
 	.byte	3
 	.long	242
@@ -826,7 +826,7 @@ _tx_lp_data:
 	.byte	9
 	.ascii	 "p_smi_mdio"
 	.byte	0
-	.long	1218
+	.long	1220
 	.byte	7
 	.byte	46
 	.byte	2
@@ -836,7 +836,7 @@ _tx_lp_data:
 	.byte	9
 	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	1218
+	.long	1220
 	.byte	7
 	.byte	48
 	.byte	2
@@ -845,13 +845,13 @@ _tx_lp_data:
 	.byte	1
 	.byte	0
 	.byte	3
-	.long	1230
+	.long	1232
 	.ascii	 "smi_interface_t"
 	.byte	0
 	.byte	3
 	.byte	26
 	.byte	17
-	.long	1317
+	.long	1319
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -1108,7 +1108,7 @@ _tx_lp_data:
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
 	.long	1101
-.asciiz "init_mii_mem"
+.asciiz "_init_mii_mem"
 	.long	1066
 .asciiz "hwlock_alloc"
 	.long	583
@@ -1143,7 +1143,7 @@ _tx_lp_data:
 	.long	.Lset3
 	.long	332
 .asciiz "mii_ts_queue_t"
-	.long	1230
+	.long	1232
 .asciiz "smi_interface_t"
 	.long	0
 .Lpubtypes_end1:
@@ -1362,8 +1362,8 @@ _tx_lp_data:
 	.typestring _mii_tx_pins, "f{0}(ui,p(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}),ui,si)"
 	.typestring _mii_rx_pins_wr, "f{0}(ui,ui,si,ui)"
 	.typestring _mii_rx_pins, "f{0}(ui,ui,ui,si,ui)"
-	.typestring init_mii_mem, "f{0}()"
-	.typestring mii_init_mempool, "f{0}(ui,si)"
+	.typestring _init_mii_mem, "f{0}()"
+	.typestring _mii_init_mempool, "f{0}(ui,si)"
 	.typestring _init_ts_queue, "f{0}(p(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}))"
 	.typestring _ethernet_memory_lock, "ui"
 	.typestring rx_mem_lp, "a(1:ui)"

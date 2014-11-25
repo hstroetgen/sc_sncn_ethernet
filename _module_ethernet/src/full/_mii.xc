@@ -176,13 +176,13 @@ void _mii_rx_pins(
 #endif
 
 #if ETHERNET_RX_HP_QUEUE
-		buf_hp = mii_reserve(rxmem_hp, end_ptr_hp);
+		buf_hp = _mii_reserve(rxmem_hp, end_ptr_hp);
 #endif
-		buf_lp = mii_reserve(rxmem_lp, end_ptr_lp);
+		buf_lp = _mii_reserve(rxmem_lp, end_ptr_lp);
 
 #if ETHERNET_RX_HP_QUEUE
 		if (buf_hp) {
-                  dptr_hp = mii_packet_get_data_ptr(buf_hp);
+                  dptr_hp = _mii_packet_get_data_ptr(buf_hp);
 		} else {
                   dptr_hp = 0;
 		}
@@ -195,7 +195,7 @@ void _mii_rx_pins(
 		tmr :> time;
 
 		if (buf_lp) {
-			dptr_lp = mii_packet_get_data_ptr(buf_lp);
+			dptr_lp = _mii_packet_get_data_ptr(buf_lp);
 #if ETHERNET_RX_HP_QUEUE
 		} else if (buf_hp) {
 			dptr_lp = dptr_hp;
@@ -223,7 +223,7 @@ void _mii_rx_pins(
 		crc32(crc, word, poly);
 		mii_packet_set_data_word_imm(dptr_lp, 0, word);
 #if ETHERNET_RX_HP_QUEUE
-		mii_packet_set_data_word_imm(dptr_hp, 0, word);
+		_mii_packet_set_data_word_imm(dptr_hp, 0, word);
 #endif
 
 #pragma xta endpoint "mii_rx_second_word"
@@ -231,7 +231,7 @@ void _mii_rx_pins(
 		crc32(crc, word, poly);
 		mii_packet_set_data_word_imm(dptr_lp, 1, word);
 #if ETHERNET_RX_HP_QUEUE
-		mii_packet_set_data_word_imm(dptr_hp, 1, word);
+		_mii_packet_set_data_word_imm(dptr_hp, 1, word);
 #endif
 
 #pragma xta endpoint "mii_rx_third_word"
@@ -239,7 +239,7 @@ void _mii_rx_pins(
 		crc32(crc, word, poly);
 		mii_packet_set_data_word_imm(dptr_lp, 2, word);
 #if ETHERNET_RX_HP_QUEUE
-		mii_packet_set_data_word_imm(dptr_hp, 2, word);
+		_mii_packet_set_data_word_imm(dptr_hp, 2, word);
 #endif
 		//mii_packet_set_timestamp_id(buf, 0);
 
@@ -248,7 +248,7 @@ void _mii_rx_pins(
 		crc32(crc, word, poly);
 		mii_packet_set_data_word_imm(dptr_lp, 3, word);
 #if ETHERNET_RX_HP_QUEUE
-		mii_packet_set_data_word_imm(dptr_hp, 3, word);
+		_mii_packet_set_data_word_imm(dptr_hp, 3, word);
 #endif
 
 		{
@@ -295,7 +295,7 @@ void _mii_rx_pins(
 		p_mii_rxd :> word;
 		crc32(crc, word, poly);
 		mii_packet_set_data_word_imm(dptr, 5, word);
-		mii_packet_set_src_port(buf, 0);
+		_mii_packet_set_src_port(buf, 0);
 
 		ii = 5*4;
                 dptr += 6*4;
@@ -336,20 +336,20 @@ void _mii_rx_pins(
 			// Calculate final length - (i-1) to not count the CRC
                         //  length = ((i-1) << 2) + (taillen >> 3);
                         length = ii + (taillen>>3);
-			mii_packet_set_length(buf, length);
+			_mii_packet_set_length(buf, length);
 
 			// The remainder of the CRC calculation and the test takes place in the filter thread
-			mii_packet_set_crc(buf, crc);
+			_mii_packet_set_crc(buf, crc);
 
 			p_mii_rxd :> tail;
 
 			tail = tail >> (32 - taillen);
 
                         if (dptr != end_ptr) {
-                          mii_packet_set_timestamp(buf, time);
+                          _mii_packet_set_timestamp(buf, time);
                           mii_packet_set_data_word_imm(dptr, 0, tail);
                           c <: buf;
-                          mii_commit(buf, dptr);
+                          _mii_commit(buf, dptr);
                         }
 		}
 	}
@@ -470,11 +470,11 @@ void _mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tm
 	unsigned int dptr;
 	unsigned int time;
         int i=0;
-	int word_count = mii_packet_get_length(buf);
+	int word_count = _mii_packet_get_length(buf);
 	int tail_byte_count = word_count & 3;
         int wrap_ptr;
 	word_count = word_count >> 2;
-	dptr = mii_packet_get_data_ptr(buf);
+	dptr = _mii_packet_get_data_ptr(buf);
         wrap_ptr = _mii_packet_get_wrap_ptr(buf);
 
 #pragma xta endpoint "mii_tx_sof"
@@ -483,10 +483,10 @@ void _mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tm
 
 #if !TX_TIMESTAMP_END_OF_PACKET
 	tmr :> time;
-	mii_packet_set_timestamp(buf, time);
+	_mii_packet_set_timestamp(buf, time);
 #endif
 
-	word = mii_packet_get_data_word(dptr, 0);
+	word = _mii_packet_get_data_word(dptr, 0);
 #pragma xta endpoint "mii_tx_first_word"
 	p_mii_txd <: word;
 	dptr+=4;
@@ -507,7 +507,7 @@ void _mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tm
 
 #if TX_TIMESTAMP_END_OF_PACKET
 	tmr :> time;
-	mii_packet_set_timestamp(buf, time);
+	_mii_packet_set_timestamp(buf, time);
 #endif
 
 	switch (tail_byte_count)
@@ -519,7 +519,7 @@ void _mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tm
 			p_mii_txd <: crc;
 			break;
 		case 1:
-			word = mii_packet_get_data_word(dptr, 0);
+			word = _mii_packet_get_data_word(dptr, 0);
 			crc8shr(crc, word, poly);
 #pragma xta endpoint "mii_tx_final_partword_1"
 			partout(p_mii_txd, 8, word);
@@ -529,7 +529,7 @@ void _mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tm
 			p_mii_txd <: crc;
 			break;
 		case 2:
-			word = mii_packet_get_data_word(dptr, 0);
+			word = _mii_packet_get_data_word(dptr, 0);
 #pragma xta endpoint "mii_tx_final_partword_2"
 			partout(p_mii_txd, 16, word);
 			word = crc8shr(crc, word, poly);
@@ -540,7 +540,7 @@ void _mii_transmit_packet(unsigned buf, out buffered port:32 p_mii_txd, timer tm
 			p_mii_txd <: crc;
 			break;
 		case 3:
-			word = mii_packet_get_data_word(dptr, 0);
+			word = _mii_packet_get_data_word(dptr, 0);
 #pragma xta endpoint "mii_tx_final_partword_3"
 			partout(p_mii_txd, 24, word);
 			word = crc8shr(crc, word, poly);
@@ -599,13 +599,13 @@ void _mii_tx_pins(
 		buf = mii_get_next_buf(hp_queue);
 
 #if (NUM_ETHERNET_PORTS > 1) && !(DISABLE_ETHERNET_PORT_FORWARDING)
-		if (!buf || mii_packet_get_stage(buf) == 0) {
+		if (!buf || _mii_packet_get_stage(buf) == 0) {
 			for (unsigned int i=0; i<NUM_ETHERNET_PORTS; ++i) {
 				if (i == ifnum) continue;
 				buf = mii_get_next_buf(hp_forward[i]);
 				if (buf) {
-					if (mii_packet_get_forwarding(buf) != 0) {
-						if (mii_packet_get_and_clear_forwarding(buf, ifnum)) break;
+					if (_mii_packet_get_forwarding(buf) != 0) {
+						if (_mii_packet_get_and_clear_forwarding(buf, ifnum)) break;
 					}
 				}
 				buf = 0;
@@ -614,7 +614,7 @@ void _mii_tx_pins(
 #endif
 
 #if ETHERNET_TRAFFIC_SHAPER
-		if (buf && mii_packet_get_stage(buf) == 1) {
+		if (buf && _mii_packet_get_stage(buf) == 1) {
 
 			if (credit < 0) {
 				asm("ldw %0,dp[g_mii_idle_slope]":"=r"(idle_slope));
@@ -629,7 +629,7 @@ void _mii_tx_pins(
 			if (credit < 0)
 			buf = 0;
 			else {
-				int len = mii_packet_get_length(buf);
+				int len = _mii_packet_get_length(buf);
 				credit = credit - len << (MII_CREDIT_FRACTIONAL_BITS+3);
 			}
 
@@ -641,7 +641,7 @@ void _mii_tx_pins(
 		}
 #endif
 
-		if (!buf || mii_packet_get_stage(buf) != 1)
+		if (!buf || _mii_packet_get_stage(buf) != 1)
 		buf = mii_get_next_buf(lp_queue);
 #else
 		buf = _mii_get_next_buf(lp_queue);
@@ -649,13 +649,13 @@ void _mii_tx_pins(
 #endif
 
 #if (NUM_ETHERNET_PORTS > 1) && !(DISABLE_ETHERNET_PORT_FORWARDING)
-		if (!buf || mii_packet_get_stage(buf) == 0) {
+		if (!buf || _mii_packet_get_stage(buf) == 0) {
 			for (unsigned int i=0; i<NUM_ETHERNET_PORTS; ++i) {
 				if (i == ifnum) continue;
 				buf = mii_get_next_buf(lp_forward[i]);
 				if (buf) {
-					if (mii_packet_get_forwarding(buf) != 0) {
-						if (mii_packet_get_and_clear_forwarding(buf, ifnum)) break;
+					if (_mii_packet_get_forwarding(buf) != 0) {
+						if (_mii_packet_get_and_clear_forwarding(buf, ifnum)) break;
 					}
 				}
 				buf = 0;
@@ -674,7 +674,7 @@ void _mii_tx_pins(
 			continue;
 		}
 
-		if (mii_packet_get_stage(buf) != 1) {
+		if (_mii_packet_get_stage(buf) != 1) {
 #pragma xta endpoint "mii_tx_buffer_not_marked_for_transmission"
 			continue;
 		}
@@ -687,8 +687,8 @@ void _mii_tx_pins(
 		ok_to_transmit = 0;
 
 		if (_get_and_dec_transmit_count(buf) == 0) {
-			if (mii_packet_get_timestamp_id(buf)) {
-				mii_packet_set_stage(buf, 2);
+			if (_mii_packet_get_timestamp_id(buf)) {
+				_mii_packet_set_stage(buf, 2);
 				_add_ts_queue_entry(ts_queue, buf);
 			}
 			else {

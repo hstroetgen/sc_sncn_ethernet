@@ -3,7 +3,7 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-void init_mii_mem();
+void _init_mii_mem();
 
 void _mii_rx_pins_wr(in port p_mii_rxdv,
                     in buffered port:32 p_mii_rxd,

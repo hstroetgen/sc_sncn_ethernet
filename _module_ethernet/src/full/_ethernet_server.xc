@@ -29,7 +29,7 @@ void _ethernet_server_full(mii_interface_full_t &m,
 {
   streaming chan c[1];
   _mii_init_full(m);
-  init_mii_mem();
+  _init_mii_mem();
   par {
     // These tasks all communicate internally via shared memory
     // packet queues

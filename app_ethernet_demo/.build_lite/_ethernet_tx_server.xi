@@ -319,6 +319,23 @@ typedef out buffered port:8 out_buffered_port_8_t;
 typedef out buffered port:16 out_buffered_port_16_t;
 typedef out buffered port:32 out_buffered_port_32_t;
 # 11 "smi.h" 2
+# 13 "smi.h"
+# 1 "ethernet_conf_derived.h" 1
+# 3 "ethernet_conf_derived.h"
+# 1 "platform.h" 1 3
+# 21 "platform.h" 3
+# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 1
+# 4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
+# 1 "xs1.h" 1 3
+# 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
+extern tileref tile[2];
+# 22 "platform.h" 2 3
+# 4 "ethernet_conf_derived.h" 2
+# 6 "ethernet_conf_derived.h"
+# 1 "ethernet_conf.h" 1
+# 7 "ethernet_conf_derived.h" 2
+# 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
 # 18 "smi.h" 2
@@ -359,20 +376,6 @@ int smi_reg( smi_interface_t &smi , unsigned reg, unsigned val, int inning);
 # 1 "xccompat.h" 1 3
 # 6 "_mii.h" 2
 # 1 "_ethernet_conf_derived.h" 1
-# 3 "_ethernet_conf_derived.h"
-# 1 "platform.h" 1 3
-# 21 "platform.h" 3
-# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 1
-# 4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
-# 1 "xs1.h" 1 3
-# 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 2
-# 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
-extern tileref tile[2];
-# 22 "platform.h" 2 3
-# 4 "_ethernet_conf_derived.h" 2
-# 6 "_ethernet_conf_derived.h"
-# 1 "ethernet_conf.h" 1
-# 7 "_ethernet_conf_derived.h" 2
 # 7 "_mii.h" 2
 # 19 "_mii.h"
 typedef struct mii_interface_full_t {
@@ -477,40 +480,40 @@ typedef struct mii_packet_t {
   unsigned int data[( (1518) +3)/4];
 } mii_packet_t;
 # 135 "_mii_full.h"
-inline int mii_packet_get_length (int buf) { int x; __asm__("ldw %0,%1[" "0" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_length (int buf, int x) { __asm__("stw %1, %0[" "0" "]"::"r"(buf),"r"(x)); }
-inline int mii_packet_get_timestamp (int buf) { int x; __asm__("ldw %0,%1[" "1" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_timestamp (int buf, int x) { __asm__("stw %1, %0[" "1" "]"::"r"(buf),"r"(x)); }
-inline int mii_packet_get_filter_result (int buf) { int x; __asm__("ldw %0,%1[" "2" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_filter_result (int buf, int x) { __asm__("stw %1, %0[" "2" "]"::"r"(buf),"r"(x)); }
-inline int mii_packet_get_src_port (int buf) { int x; __asm__("ldw %0,%1[" "3" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_src_port (int buf, int x) { __asm__("stw %1, %0[" "3" "]"::"r"(buf),"r"(x)); }
-inline int mii_packet_get_timestamp_id (int buf) { int x; __asm__("ldw %0,%1[" "4" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_timestamp_id (int buf, int x) { __asm__("stw %1, %0[" "4" "]"::"r"(buf),"r"(x)); }
-inline int mii_packet_get_stage (int buf) { int x; __asm__("ldw %0,%1[" "5" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_stage (int buf, int x) { __asm__("stw %1, %0[" "5" "]"::"r"(buf),"r"(x)); }
-inline int mii_packet_get_tcount (int buf) { int x; __asm__("ldw %0,%1[" "6" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_tcount (int buf, int x) { __asm__("stw %1, %0[" "6" "]"::"r"(buf),"r"(x)); }
-inline int mii_packet_get_crc (int buf) { int x; __asm__("ldw %0,%1[" "7" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_crc (int buf, int x) { __asm__("stw %1, %0[" "7" "]"::"r"(buf),"r"(x)); }
-inline int mii_packet_get_forwarding (int buf) { int x; __asm__("ldw %0,%1[" "8" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_forwarding (int buf, int x) { __asm__("stw %1, %0[" "8" "]"::"r"(buf),"r"(x)); }
+inline int _mii_packet_get_length (int buf) { int x; __asm__("ldw %0,%1[" "0" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_length (int buf, int x) { __asm__("stw %1, %0[" "0" "]"::"r"(buf),"r"(x)); }
+inline int _mii_packet_get_timestamp (int buf) { int x; __asm__("ldw %0,%1[" "1" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_timestamp (int buf, int x) { __asm__("stw %1, %0[" "1" "]"::"r"(buf),"r"(x)); }
+inline int _mii_packet_get_filter_result (int buf) { int x; __asm__("ldw %0,%1[" "2" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_filter_result (int buf, int x) { __asm__("stw %1, %0[" "2" "]"::"r"(buf),"r"(x)); }
+inline int _mii_packet_get_src_port (int buf) { int x; __asm__("ldw %0,%1[" "3" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_src_port (int buf, int x) { __asm__("stw %1, %0[" "3" "]"::"r"(buf),"r"(x)); }
+inline int _mii_packet_get_timestamp_id (int buf) { int x; __asm__("ldw %0,%1[" "4" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_timestamp_id (int buf, int x) { __asm__("stw %1, %0[" "4" "]"::"r"(buf),"r"(x)); }
+inline int _mii_packet_get_stage (int buf) { int x; __asm__("ldw %0,%1[" "5" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_stage (int buf, int x) { __asm__("stw %1, %0[" "5" "]"::"r"(buf),"r"(x)); }
+inline int _mii_packet_get_tcount (int buf) { int x; __asm__("ldw %0,%1[" "6" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_tcount (int buf, int x) { __asm__("stw %1, %0[" "6" "]"::"r"(buf),"r"(x)); }
+inline int _mii_packet_get_crc (int buf) { int x; __asm__("ldw %0,%1[" "7" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_crc (int buf, int x) { __asm__("stw %1, %0[" "7" "]"::"r"(buf),"r"(x)); }
+inline int _mii_packet_get_forwarding (int buf) { int x; __asm__("ldw %0,%1[" "8" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_forwarding (int buf, int x) { __asm__("stw %1, %0[" "8" "]"::"r"(buf),"r"(x)); }
 
-inline int mii_packet_get_data_ptr(int buf) {
+inline int _mii_packet_get_data_ptr(int buf) {
   return (buf+ 9 *4);
 }
 
-inline void mii_packet_set_data_word(int data, int n, int v) {
+inline void _mii_packet_set_data_word(int data, int n, int v) {
   __asm__("stw %0,%1[%2]"::"r"(v),"r"(data),"r"(n));
 }
 
 
-inline int mii_packet_get_data_word(int data, int n) {
+inline int _mii_packet_get_data_word(int data, int n) {
   int x;
   __asm__("ldw %0,%1[%2]":"=r"(x):"r"(data),"r"(n));
   return x;
 }
 # 170 "_mii_full.h"
-inline void mii_packet_set_data(int buf, int n, int v) {
+inline void _mii_packet_set_data(int buf, int n, int v) {
   __asm__("stw %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+ 9 ));
 }
 
-inline void mii_packet_set_data_short(int buf, int n, int v) {
+inline void _mii_packet_set_data_short(int buf, int n, int v) {
   __asm__("st16 %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+( 9 *2)));
 }
 
-inline void mii_packet_set_data_byte(int buf, int n, int v) {
+inline void _mii_packet_set_data_byte(int buf, int n, int v) {
   __asm__("st8 %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+( 9 *4)));
 }
 
@@ -557,16 +560,16 @@ int _ethernet_link_status_notification(int linkNum);
 typedef unsigned mii_mempool_t;
 typedef unsigned mii_buffer_t;
 
-void mii_init_mempool(mii_mempool_t mempool0, int size);
+void _mii_init_mempool(mii_mempool_t mempool0, int size);
 
-mii_buffer_t mii_reserve(mii_mempool_t mempool,
+mii_buffer_t _mii_reserve(mii_mempool_t mempool,
                                   unsigned &end_ptr );
 
-mii_buffer_t mii_reserve_at_least(mii_mempool_t mempool,
+mii_buffer_t _mii_reserve_at_least(mii_mempool_t mempool,
                                            unsigned &end_ptr ,
                                            int min_size);
 
-void mii_commit(mii_buffer_t buf, int endptr0);
+void _mii_commit(mii_buffer_t buf, int endptr0);
 
 void _mii_free(mii_buffer_t buf);
 int _mii_init_my_rdptr(mii_mempool_t mempool);
@@ -670,7 +673,7 @@ static void _do_link_check(smi_interface_t &smi, int linkNum)
 # 210 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc"
           for (unsigned int p=0; p< 1 ; ++p) {
 # 225 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc"
-              buf[p] = mii_reserve_at_least(tx_mem_lp[p],
+              buf[p] = _mii_reserve_at_least(tx_mem_lp[p],
                                                      end_ptr[p],
                                                          (sizeof(mii_packet_t) - (( (1518) +3)/4)*4) +8+ (1518) );
               wrap_ptr[p] = _mii_get_wrap_ptr(tx_mem_lp[p]);
@@ -678,7 +681,7 @@ static void _do_link_check(smi_interface_t &smi, int linkNum)
         	  if (buf[p] == 0)
                     bufs_ok=0;
                   else
-                    dptr[p] = mii_packet_get_data_ptr(buf[p]);
+                    dptr[p] = _mii_packet_get_data_ptr(buf[p]);
           }
 
           if (bufs_ok) {
@@ -720,18 +723,18 @@ static void _do_link_check(smi_interface_t &smi, int linkNum)
 
             for (unsigned p=0; p< 1 ; ++p) {
             	if (p == dst_port || dst_port ==  (-1) ) {
-            		mii_packet_set_length(buf[p], length);
+            		_mii_packet_set_length(buf[p], length);
 # 284 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_server.xc"
             		if (cmd ==  (0x80000001) )
-            			mii_packet_set_timestamp_id(buf[p], i+1);
+            			_mii_packet_set_timestamp_id(buf[p], i+1);
             		else
-            			mii_packet_set_timestamp_id(buf[p], 0);
+            			_mii_packet_set_timestamp_id(buf[p], 0);
 
 
-            		mii_commit(buf[p], dptr[p]);
+            		_mii_commit(buf[p], dptr[p]);
 
-            		mii_packet_set_tcount(buf[p], 0);
-            		mii_packet_set_stage(buf[p], 1);
+            		_mii_packet_set_tcount(buf[p], 0);
+            		_mii_packet_set_stage(buf[p], 1);
             	}
             }
 
@@ -789,8 +792,8 @@ static void _do_link_check(smi_interface_t &smi, int linkNum)
     for (unsigned p=0; p< 1 ; ++p) {
     	buf[p]=_get_ts_queue_entry(ts_queue[p]);
     	if (buf[p] != 0) {
-    		int i = mii_packet_get_timestamp_id(buf[p]);
-    		int ts = mii_packet_get_timestamp(buf[p]);
+    		int i = _mii_packet_get_timestamp_id(buf[p]);
+    		int ts = _mii_packet_get_timestamp(buf[p]);
     		tx[i-1] <: ts +  5 ;
     		if (_get_and_dec_transmit_count(buf[p]) == 0)
     			_mii_free(buf[p]);

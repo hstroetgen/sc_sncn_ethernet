@@ -205,15 +205,19 @@ _the_server:
 	.loc	1 82 0
 	add r0, r3, 3
 	ashr r0, r0, 2
-	ldc r1, 0
-	lss r2, r1, r0
 .Ltmp32:
+	.loc	1 60 0
+	ldc r1, 0
+	.loc	1 82 0
+.Ltmp33:
+	lss r2, r1, r0
+.Ltmp34:
 	.loc	1 81 0
 	chkct res[r5], 1
 	outct res[r5], 1
 	ldc r11, 399
 	.loc	1 82 0
-.Ltmp33:
+.Ltmp35:
 	bf r2, .LBB0_13
 .LBB0_18:
 .Lxtalabel2:
@@ -240,21 +244,25 @@ _the_server:
 	bt r2, .LBB0_18
 .LBB0_13:
 .Lxtalabel3:
-.Ltmp34:
+.Ltmp36:
 	ldc r0, 400
 	.loc	1 86 0
 	stw r0, sp[1]
 	mov r0, r9
 	ldaw r1, sp[161]
+.Ltmp37:
+	.loc	1 60 0
 	ldc r2, 0
+	.loc	1 86 0
+.Ltmp38:
 .Lxta.call_labels3:
 	bl _mii_out_packet
-.Ltmp35:
+.Ltmp39:
 	.loc	1 87 0
 	mov r0, r9
 .Lxta.call_labels4:
 	bl _mii_out_packet_done
-.Ltmp36:
+.Ltmp40:
 .LBB0_14:
 	.loc	1 92 0
 	bf r6, .LBB0_1
@@ -285,7 +293,7 @@ _the_server:
 	ldw r1, sp[8]
 	setd res[r1], r0
 	setc res[r1], 9
-	ldap r11, .Ltmp37
+	ldap r11, .Ltmp41
 	setv res[r1], r11
 	eeu res[r1]
 	ldw r0, sp[9]
@@ -293,17 +301,17 @@ _the_server:
 	ldw r6, sp[7]
 	zext r6, 1
 	bt r6, .LBB0_3
-	ldap r11, .Ltmp38
+	ldap r11, .Ltmp42
 	setv res[r8], r11
 	eeu res[r8]
 .LBB0_3:
 	eeu res[r5]
 	.loc	1 88 0
-.Ltmp39:
+.Ltmp43:
 	
-	.xtabranch .LBB0_5, .LBB0_4, .LBB0_17, .LBB0_11
+	.xtabranch .LBB0_11, .LBB0_4, .LBB0_5, .LBB0_17
 waiteu
-.Ltmp40:
+.Ltmp44:
 .Ltmp28:
 .LBB0_4:
 .Lxtalabel7:
@@ -316,15 +324,15 @@ waiteu
 	ldc r2, 0
 	st8 r0, r1[r2]
 	bu .LBB0_14
-.Ltmp37:
+.Ltmp41:
 .LBB0_5:
 .Lxtalabel8:
 	.loc	1 43 0
-.Ltmp41:
+.Ltmp45:
 	ldw r0, sp[8]
 .Lxta.endpoint_labels5:
 	in r0, res[r0]
-.Ltmp42:
+.Ltmp46:
 	.loc	1 44 0
 	ldw r0, sp[10]
 	bt r0, .LBB0_7
@@ -334,36 +342,36 @@ waiteu
 	.loc	1 56 0
 	ldw r1, sp[11]
 	add r1, r1, r0
-.Ltmp43:
+.Ltmp47:
 	.loc	1 57 0
 	stw r1, sp[11]
 	bu .LBB0_14
 .LBB0_7:
 .Lxtalabel10:
 	.loc	1 47 0
-.Ltmp44:
+.Ltmp48:
 	ldw r0, sp[10]
 .Lxta.call_labels6:
 	bl smi_check_link_state
-.Ltmp45:
+.Ltmp49:
 	.loc	1 48 0
 	ldw r1, dp[phy_status.static]
 	eq r1, r0, r1
 	bt r1, .LBB0_6
 .Lxtalabel11:
-.Ltmp46:
+.Ltmp50:
 	mkmsk r1, 32
 	.loc	1 49 0
 .Lxta.endpoint_labels6:
 	out res[r8], r1
 	.loc	1 50 0
-.Ltmp47:
+.Ltmp51:
 	chkct res[r8], 1
 	outct res[r8], 1
 	.loc	1 50 0
 .Lxta.endpoint_labels7:
 	in r1, res[r8]
-.Ltmp48:
+.Ltmp52:
 	.loc	1 50 0
 	chkct res[r8], 1
 	outct res[r8], 1
@@ -379,8 +387,10 @@ waiteu
 	.loc	1 52 0
 	outct res[r8], 1
 	chkct res[r8], 1
+.Ltmp53:
+	.loc	1 60 0
 	ldc r1, 0
-.Ltmp49:
+.Ltmp54:
 	.loc	1 52 0
 .Lxta.endpoint_labels9:
 	out res[r8], r1
@@ -390,12 +400,12 @@ waiteu
 	.loc	1 53 0
 	stw r0, dp[phy_status.static]
 	bu .LBB0_6
-.Ltmp50:
+.Ltmp55:
 .LBB0_9:
 .Lxtalabel12:
 	ldaw r7, sp[12]
 	.loc	1 70 0
-.Ltmp51:
+.Ltmp56:
 	mov r0, r7
 	mov r1, r10
 .Lxta.call_labels7:
@@ -417,68 +427,67 @@ waiteu
 .Lxta.endpoint_labels10:
 	out res[r8], r7
 	bu .LBB0_14
-.Ltmp38:
+.Ltmp42:
 .LBB0_11:
 .Lxtalabel14:
 	.loc	1 65 0
 	add r0, r7, 3
 	ashr r0, r0, 2
-	ldc r3, 0
-	lss r2, r3, r0
-.Ltmp52:
+	ldc r1, 0
+	lss r2, r1, r0
+.Ltmp57:
 	.loc	1 64 0
 	chkct res[r8], 1
 	outct res[r8], 1
 	.loc	1 64 0
 .Lxta.endpoint_labels11:
-	in r1, res[r8]
-.Ltmp53:
+	in r3, res[r8]
+.Ltmp58:
 	.loc	1 64 0
 	chkct res[r8], 1
 	outct res[r8], 1
-	mov r1, r3
-.Ltmp54:
+.Ltmp59:
 	.loc	1 65 0
 	bf r2, .LBB0_9
+.Ltmp60:
 .LBB0_12:
 .Lxtalabel15:
-.Ltmp55:
 	.loc	1 67 0
 	#APP
 	ldw r2, r10[r1]
 	#NO_APP
-.Ltmp56:
+.Ltmp61:
 	.loc	1 68 0
 	outct res[r8], 1
 	chkct res[r8], 1
 	.loc	1 68 0
 .Lxta.endpoint_labels12:
 	out res[r8], r2
-.Ltmp57:
+.Ltmp62:
 	.loc	1 65 0
 	add r1, r1, 1
 	eq r2, r1, r0
-.Ltmp58:
+.Ltmp63:
 	.loc	1 68 0
 	outct res[r8], 1
 	chkct res[r8], 1
 .Lxta.loop_labels1:
 	# LOOPMARKER 1
-.Ltmp59:
+.Ltmp64:
 	.loc	1 65 0
 	bf r2, .LBB0_12
 	bu .LBB0_9
-.Ltmp60:
-.Ltmp61:
-	.size	_the_server, .Ltmp61-_the_server
+.Ltmp65:
+.Ltmp66:
+	.size	_the_server, .Ltmp66-_the_server
 .Lfunc_end0:
-.Ltmp62:
+.Ltmp67:
 	.cfi_endproc
 .Leh_func_end0:
 
 	.align	4
 	.cc_bottom _the_server.function
-	.set	_the_server.nstackwords,((_mac_set_macaddr_lite.nstackwords $M _mii_buffer_init.nstackwords $M _mii_out_init.nstackwords $M smi_check_link_state.nstackwords $M _mii_out_packet.nstackwords $M _mii_out_packet_done.nstackwords $M _mii_free_in_buffer.nstackwords $M _mii_restart_buffer.nstackwords $M _mii_get_in_buffer.nstackwords) + 6968)
+	.set	_the_server.nstackwords,((_mac_set_macaddr_lite.nstackwords $M _mii_buffer_init.nstackwords $M _mii_out_init.nstackwords $M _mii_free_in_buffer.nstackwords $M _mii_restart_buffer.nstackwords $M _mii_get_in_buffer.nstackwords $M smi_check_link_state.nstackwords $M _mii_out_packet.nstackwords $M _mii_out_packet_done.nstackwords) + 6968)
 	.set	_the_server.maxcores,_mac_set_macaddr_lite.maxcores $M _mii_buffer_init.maxcores $M _mii_free_in_buffer.maxcores $M _mii_get_in_buffer.maxcores $M _mii_out_init.maxcores $M _mii_out_packet.maxcores $M _mii_out_packet_done.maxcores $M _mii_restart_buffer.maxcores $M smi_check_link_state.maxcores $M 1
 	.set	_the_server.maxtimers,_mac_set_macaddr_lite.maxtimers $M _mii_buffer_init.maxtimers $M _mii_free_in_buffer.maxtimers $M _mii_get_in_buffer.maxtimers $M _mii_out_init.maxtimers $M _mii_out_packet.maxtimers $M _mii_out_packet_done.maxtimers $M _mii_restart_buffer.maxtimers $M smi_check_link_state.maxtimers $M 0
 	.set	_the_server.maxchanends,_mac_set_macaddr_lite.maxchanends $M _mii_buffer_init.maxchanends $M _mii_free_in_buffer.maxchanends $M _mii_get_in_buffer.maxchanends $M _mii_out_init.maxchanends $M _mii_out_packet.maxchanends $M _mii_out_packet_done.maxchanends $M _mii_restart_buffer.maxchanends $M smi_check_link_state.maxchanends $M 0
@@ -487,20 +496,20 @@ waiteu
 	.align	4
 	.type	_mii_single_server,@function
 _mii_single_server:
-.Ltmp65:
+.Ltmp70:
 	.cfi_startproc
 .Lfunc_begin1:
 	.loc	1 107 0
 .Lxtalabel16:
 	entsp 13
-.Ltmp66:
+.Ltmp71:
 	.cfi_def_cfa_offset 52
-.Ltmp67:
+.Ltmp72:
 	.cfi_offset 15, 0
 	.loc	1 103 0 prologue_end
-.Ltmp68:
+.Ltmp73:
 	stw r4, sp[12]
-.Ltmp69:
+.Ltmp74:
 	.cfi_offset 4, -4
 	mov r4, r1
 	stw r4, sp[1]
@@ -511,7 +520,7 @@ _mii_single_server:
 	ldw r1, sp[15]
 	stw r1, sp[5]
 	.loc	1 108 0
-.Ltmp70:
+.Ltmp75:
 	getr r3, 2
 	getr r1, 2
 	setd res[r3], r1
@@ -525,7 +534,7 @@ _mii_single_server:
 	stw r3, sp[8]
 	stw r1, sp[9]
 	.loc	1 109 0
-.Ltmp71:
+.Ltmp76:
 	getr r3, 2
 	getr r1, 2
 	setd res[r3], r1
@@ -536,7 +545,7 @@ _mii_single_server:
 	mov r1, r2
 .Lxta.call_labels10:
 	bl _mii_initialise
-.Ltmp72:
+.Ltmp77:
 	.loc	1 112 0
 	bf r4, .LBB1_2
 .Lxtalabel17:
@@ -555,11 +564,11 @@ _mii_single_server:
 	.loc	1 114 0
 	ldaw r1, dp[par.desc.1]
 	bl __start_other_cores
-.Ltmp73:
-.Ltmp74:
-	.size	_mii_single_server, .Ltmp74-_mii_single_server
+.Ltmp78:
+.Ltmp79:
+	.size	_mii_single_server, .Ltmp79-_mii_single_server
 .Lfunc_end1:
-.Ltmp75:
+.Ltmp80:
 	.cfi_endproc
 .Leh_func_end1:
 
@@ -577,33 +586,33 @@ _mii_single_server:
 	.align	4
 	.type	_mii_single_server.task._mii_driver.0,@function
 _mii_single_server.task._mii_driver.0:
-.Ltmp77:
+.Ltmp82:
 	.cfi_startproc
 .Lfunc_begin2:
 	.loc	1 118 0
 	entsp 1
-.Ltmp78:
+.Ltmp83:
 	.cfi_def_cfa_offset 4
-.Ltmp79:
+.Ltmp84:
 	.cfi_offset 15, 0
 	.loc	1 118 0 prologue_end
-.Ltmp80:
+.Ltmp85:
 	ldw r1, r0[9]
 	#APP
 	#NO_APP
 	ldw r2, r0[7]
 	ldw r1, r0[5]
 	ldw r0, r0[1]
-.Ltmp81:
+.Ltmp86:
 	.loc	1 118 0
 .Lxta.call_labels13:
 	bl _mii_driver
 	retsp 1
-.Ltmp82:
-.Ltmp83:
-	.size	_mii_single_server.task._mii_driver.0, .Ltmp83-_mii_single_server.task._mii_driver.0
+.Ltmp87:
+.Ltmp88:
+	.size	_mii_single_server.task._mii_driver.0, .Ltmp88-_mii_single_server.task._mii_driver.0
 .Lfunc_end2:
-.Ltmp84:
+.Ltmp89:
 	.cfi_endproc
 .Leh_func_end2:
 
@@ -617,25 +626,25 @@ _mii_single_server.task._mii_driver.0:
 	.align	4
 	.type	_mii_single_server.task._the_server.1,@function
 _mii_single_server.task._the_server.1:
-.Ltmp88:
+.Ltmp93:
 	.cfi_startproc
 .Lfunc_begin3:
 	.loc	1 119 0
 	entsp 6
-.Ltmp89:
+.Ltmp94:
 	.cfi_def_cfa_offset 24
-.Ltmp90:
+.Ltmp95:
 	.cfi_offset 15, 0
 	.loc	1 0 0 prologue_end
-.Ltmp91:
+.Ltmp96:
 	stw r4, sp[5]
-.Ltmp92:
+.Ltmp97:
 	.cfi_offset 4, -4
 	stw r5, sp[4]
-.Ltmp93:
+.Ltmp98:
 	.cfi_offset 5, -8
 	mov r11, r0
-.Ltmp94:
+.Ltmp99:
 	.loc	1 119 0
 	ldw r3, r11[0]
 	ldw r2, r11[10]
@@ -644,18 +653,18 @@ _mii_single_server.task._the_server.1:
 	ldw r4, r11[2]
 	ldw r5, r11[3]
 	ldw r11, r11[4]
-.Ltmp95:
+.Ltmp100:
 	.loc	1 119 0
 	stw r11, sp[3]
 	stw r5, sp[2]
 	stw r4, sp[1]
 .Lxta.call_labels14:
 	bl _the_server
-.Ltmp96:
-.Ltmp97:
-	.size	_mii_single_server.task._the_server.1, .Ltmp97-_mii_single_server.task._the_server.1
+.Ltmp101:
+.Ltmp102:
+	.size	_mii_single_server.task._the_server.1, .Ltmp102-_mii_single_server.task._the_server.1
 .Lfunc_end3:
-.Ltmp98:
+.Ltmp103:
 	.cfi_endproc
 .Leh_func_end3:
 
@@ -670,15 +679,15 @@ _mii_single_server.task._the_server.1:
 	.align	4
 	.type	_ethernet_server_lite,@function
 _ethernet_server_lite:
-.Ltmp100:
+.Ltmp105:
 	.cfi_startproc
 .Lfunc_begin4:
 	.loc	1 128 0
 .Lxtalabel19:
 	entsp 15
-.Ltmp101:
+.Ltmp106:
 	.cfi_def_cfa_offset 60
-.Ltmp102:
+.Ltmp107:
 	.cfi_offset 15, 0
 	stw r0, sp[1]
 	stw r1, sp[2]
@@ -693,7 +702,7 @@ _ethernet_server_lite:
 	ldw r1, sp[21]
 	stw r1, sp[8]
 	.loc	1 129 0 prologue_end
-.Ltmp103:
+.Ltmp108:
 	getr r2, 2
 	getr r1, 2
 	setd res[r2], r1
@@ -707,7 +716,7 @@ _ethernet_server_lite:
 	stw r2, sp[11]
 	stw r1, sp[12]
 	.loc	1 130 0
-.Ltmp104:
+.Ltmp109:
 	getr r2, 2
 	getr r1, 2
 	setd res[r2], r1
@@ -721,11 +730,11 @@ _ethernet_server_lite:
 	.loc	1 131 0
 	ldaw r1, dp[par.desc.2]
 	bl __start_other_cores
-.Ltmp105:
-.Ltmp106:
-	.size	_ethernet_server_lite, .Ltmp106-_ethernet_server_lite
+.Ltmp110:
+.Ltmp111:
+	.size	_ethernet_server_lite, .Ltmp111-_ethernet_server_lite
 .Lfunc_end4:
-.Ltmp107:
+.Ltmp112:
 	.cfi_endproc
 .Leh_func_end4:
 
@@ -743,18 +752,18 @@ _ethernet_server_lite:
 	.align	4
 	.type	_ethernet_server_lite.task._mii_driver.0,@function
 _ethernet_server_lite.task._mii_driver.0:
-.Ltmp109:
+.Ltmp114:
 	.cfi_startproc
 .Lfunc_begin5:
 	.loc	1 133 0
 	entsp 1
-.Ltmp110:
+.Ltmp115:
 	.cfi_def_cfa_offset 4
-.Ltmp111:
+.Ltmp116:
 	.cfi_offset 15, 0
 	ldc r1, 48
 	.loc	1 133 0 prologue_end
-.Ltmp112:
+.Ltmp117:
 	add r1, r0, r1
 	ldw r1, r1[0]
 	#APP
@@ -762,16 +771,16 @@ _ethernet_server_lite.task._mii_driver.0:
 	ldw r2, r0[10]
 	ldw r1, r0[8]
 	ldw r0, r0[0]
-.Ltmp113:
+.Ltmp118:
 	.loc	1 133 0
 .Lxta.call_labels16:
 	bl _mii_driver
 	retsp 1
-.Ltmp114:
-.Ltmp115:
-	.size	_ethernet_server_lite.task._mii_driver.0, .Ltmp115-_ethernet_server_lite.task._mii_driver.0
+.Ltmp119:
+.Ltmp120:
+	.size	_ethernet_server_lite.task._mii_driver.0, .Ltmp120-_ethernet_server_lite.task._mii_driver.0
 .Lfunc_end5:
-.Ltmp116:
+.Ltmp121:
 	.cfi_endproc
 .Leh_func_end5:
 
@@ -785,25 +794,25 @@ _ethernet_server_lite.task._mii_driver.0:
 	.align	4
 	.type	_ethernet_server_lite.task._the_server.1,@function
 _ethernet_server_lite.task._the_server.1:
-.Ltmp120:
+.Ltmp125:
 	.cfi_startproc
 .Lfunc_begin6:
 	.loc	1 135 0
 	entsp 6
-.Ltmp121:
+.Ltmp126:
 	.cfi_def_cfa_offset 24
-.Ltmp122:
+.Ltmp127:
 	.cfi_offset 15, 0
 	.loc	1 0 0 prologue_end
-.Ltmp123:
+.Ltmp128:
 	stw r4, sp[5]
-.Ltmp124:
+.Ltmp129:
 	.cfi_offset 4, -4
 	stw r5, sp[4]
-.Ltmp125:
+.Ltmp130:
 	.cfi_offset 5, -8
 	.loc	1 135 0
-.Ltmp126:
+.Ltmp131:
 	ldw r1, r0[5]
 	ecallf r1
 	ldw r1, r0[7]
@@ -812,7 +821,7 @@ _ethernet_server_lite.task._the_server.1:
 	ldc r2, 6
 	lsu r1, r1, r2
 	ecallt r1
-.Ltmp127:
+.Ltmp132:
 	ldc r1, 52
 	add r1, r0, r1
 	ldw r2, r1[0]
@@ -824,7 +833,7 @@ _ethernet_server_lite.task._the_server.1:
 	ldw r5, r0[6]
 	ldw r5, r5[0]
 	ldw r0, r0[2]
-.Ltmp128:
+.Ltmp133:
 	.loc	1 135 0
 	stw r0, sp[3]
 	stw r5, sp[2]
@@ -832,11 +841,11 @@ _ethernet_server_lite.task._the_server.1:
 	mov r0, r11
 .Lxta.call_labels17:
 	bl _the_server
-.Ltmp129:
-.Ltmp130:
-	.size	_ethernet_server_lite.task._the_server.1, .Ltmp130-_ethernet_server_lite.task._the_server.1
+.Ltmp134:
+.Ltmp135:
+	.size	_ethernet_server_lite.task._the_server.1, .Ltmp135-_ethernet_server_lite.task._the_server.1
 .Lfunc_end6:
-.Ltmp131:
+.Ltmp136:
 	.cfi_endproc
 .Leh_func_end6:
 
@@ -884,7 +893,7 @@ par.desc.2:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	3267
+	.long	3255
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -931,7 +940,7 @@ par.desc.2:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	1982
+	.long	1970
 	.byte	0
 	.byte	5
 	.ascii	 "delay_milliseconds"
@@ -946,7 +955,7 @@ par.desc.2:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	1982
+	.long	1970
 	.byte	0
 	.byte	5
 	.ascii	 "delay_microseconds"
@@ -961,7 +970,7 @@ par.desc.2:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	1982
+	.long	1970
 	.byte	0
 	.byte	7
 	.ascii	 "_the_server"
@@ -980,35 +989,35 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	23
-	.long	1801
+	.long	1789
 	.long	.Ldebug_loc0+0
 	.byte	8
 	.ascii	 "cOut"
 	.byte	0
 	.byte	1
 	.byte	23
-	.long	1801
+	.long	1789
 	.long	.Ldebug_loc4+0
 	.byte	8
 	.ascii	 "cNotifications"
 	.byte	0
 	.byte	1
 	.byte	23
-	.long	1801
+	.long	1789
 	.long	.Ldebug_loc9+0
 	.byte	8
 	.ascii	 "smi"
 	.byte	0
 	.byte	1
 	.byte	24
-	.long	1905
+	.long	1893
 	.long	.Ldebug_loc14+0
 	.byte	9
 	.ascii	 "mac_address"
 	.byte	0
 	.byte	1
 	.byte	25
-	.long	1942
+	.long	1930
 	.byte	4
 	.byte	145
 	.ascii	 "\354\331\001"
@@ -1017,21 +1026,21 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	25
-	.long	1801
+	.long	1789
 	.long	.Ldebug_loc18+0
 	.byte	8
 	.ascii	 "appIn"
 	.byte	0
 	.byte	1
 	.byte	25
-	.long	1801
+	.long	1789
 	.long	.Ldebug_loc21+0
 	.byte	10
 	.long	.Ltmp23
-	.long	.Ltmp60
+	.long	.Ltmp65
 	.byte	10
 	.long	.Ltmp23
-	.long	.Ltmp60
+	.long	.Ltmp65
 	.byte	11
 	.ascii	 "havePacket"
 	.byte	0
@@ -1040,7 +1049,7 @@ par.desc.2:
 	.long	261
 	.byte	10
 	.long	.Ltmp23
-	.long	.Ltmp60
+	.long	.Ltmp65
 	.byte	12
 	.ascii	 "outBytes"
 	.byte	0
@@ -1050,7 +1059,7 @@ par.desc.2:
 	.long	.Ldebug_loc24+0
 	.byte	10
 	.long	.Ltmp23
-	.long	.Ltmp60
+	.long	.Ltmp65
 	.byte	11
 	.ascii	 "nBytes"
 	.byte	0
@@ -1071,55 +1080,55 @@ par.desc.2:
 	.long	261
 	.byte	10
 	.long	.Ltmp23
-	.long	.Ltmp60
+	.long	.Ltmp65
 	.byte	11
 	.byte	98
 	.byte	0
 	.byte	1
 	.byte	29
-	.long	1947
+	.long	1935
 	.byte	10
 	.long	.Ltmp23
-	.long	.Ltmp60
+	.long	.Ltmp65
 	.byte	13
 	.ascii	 "txbuf"
 	.byte	0
 	.byte	1
 	.byte	30
-	.long	1960
+	.long	1948
 	.byte	3
 	.byte	145
 	.ascii	 "\204\005"
 	.byte	10
 	.long	.Ltmp23
-	.long	.Ltmp60
+	.long	.Ltmp65
 	.byte	11
 	.ascii	 "linkcheck_timer"
 	.byte	0
 	.byte	1
 	.byte	31
-	.long	1973
+	.long	1961
 	.byte	10
 	.long	.Ltmp23
-	.long	.Ltmp60
+	.long	.Ltmp65
 	.byte	13
 	.ascii	 "linkcheck_time"
 	.byte	0
 	.byte	1
 	.byte	32
-	.long	1982
+	.long	1970
 	.byte	2
 	.byte	145
 	.byte	44
 	.byte	10
 	.long	.Ltmp23
-	.long	.Ltmp60
+	.long	.Ltmp65
 	.byte	13
 	.ascii	 "miiData"
 	.byte	0
 	.byte	1
 	.byte	33
-	.long	2022
+	.long	2010
 	.byte	2
 	.byte	145
 	.byte	48
@@ -1132,12 +1141,10 @@ par.desc.2:
 	.byte	82
 	.long	261
 	.byte	0
-	.byte	10
-	.long	.Ltmp44
-	.long	.Ltmp50
-	.byte	10
-	.long	.Ltmp44
-	.long	.Ltmp50
+	.byte	14
+	.long	.Ldebug_range+96
+	.byte	14
+	.long	.Ldebug_range+72
 	.byte	12
 	.ascii	 "new_status"
 	.byte	0
@@ -1145,9 +1152,8 @@ par.desc.2:
 	.byte	47
 	.long	261
 	.long	.Ldebug_loc27+0
-	.byte	10
-	.long	.Ltmp47
-	.long	.Ltmp50
+	.byte	14
+	.long	.Ldebug_range+48
 	.byte	12
 	.byte	95
 	.byte	0
@@ -1159,7 +1165,7 @@ par.desc.2:
 	.byte	0
 	.byte	0
 	.byte	14
-	.long	.Ldebug_range+56
+	.long	.Ldebug_range+144
 	.byte	11
 	.byte	105
 	.byte	0
@@ -1167,7 +1173,7 @@ par.desc.2:
 	.byte	65
 	.long	261
 	.byte	14
-	.long	.Ldebug_range+32
+	.long	.Ldebug_range+120
 	.byte	12
 	.ascii	 "val"
 	.byte	0
@@ -1178,8 +1184,8 @@ par.desc.2:
 	.byte	0
 	.byte	0
 	.byte	10
-	.long	.Ltmp52
-	.long	.Ltmp54
+	.long	.Ltmp57
+	.long	.Ltmp59
 	.byte	12
 	.byte	95
 	.byte	0
@@ -1215,7 +1221,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	2950
+	.long	2938
 	.long	.Ldebug_loc38+0
 	.byte	0
 	.byte	7
@@ -1235,7 +1241,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	2950
+	.long	2938
 	.long	.Ldebug_loc40+0
 	.byte	0
 	.byte	16
@@ -1256,7 +1262,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	1905
+	.long	1893
 	.byte	2
 	.byte	145
 	.byte	4
@@ -1265,32 +1271,32 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	1812
+	.long	1800
 	.long	.Ldebug_loc36+0
 	.byte	6
 	.byte	109
 	.byte	0
 	.byte	1
 	.byte	105
-	.long	2762
+	.long	2750
 	.byte	6
 	.ascii	 "appIn"
 	.byte	0
 	.byte	1
 	.byte	106
-	.long	1801
+	.long	1789
 	.byte	6
 	.ascii	 "appOut"
 	.byte	0
 	.byte	1
 	.byte	106
-	.long	1801
+	.long	1789
 	.byte	6
 	.ascii	 "mac_address"
 	.byte	0
 	.byte	1
 	.byte	107
-	.long	1942
+	.long	1930
 	.byte	0
 	.byte	7
 	.ascii	 "_ethernet_server_lite.task._mii_driver.0"
@@ -1309,7 +1315,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	3264
+	.long	3252
 	.long	.Ldebug_loc43+0
 	.byte	0
 	.byte	7
@@ -1329,7 +1335,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	3264
+	.long	3252
 	.long	.Ldebug_loc45+0
 	.byte	0
 	.byte	16
@@ -1350,7 +1356,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	124
-	.long	2762
+	.long	2750
 	.byte	2
 	.byte	145
 	.byte	4
@@ -1377,25 +1383,25 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	125
-	.long	1905
+	.long	1893
 	.byte	6
 	.ascii	 "mac_address"
 	.byte	0
 	.byte	1
 	.byte	126
-	.long	2961
+	.long	2949
 	.byte	6
 	.ascii	 "c_rx"
 	.byte	0
 	.byte	1
 	.byte	127
-	.long	2971
+	.long	2959
 	.byte	6
 	.ascii	 "c_tx"
 	.byte	0
 	.byte	1
 	.byte	127
-	.long	2971
+	.long	2959
 	.byte	0
 	.byte	2
 	.ascii	 "chanend"
@@ -1424,7 +1430,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_smi_mdio"
 	.byte	0
-	.long	1812
+	.long	1800
 	.byte	1
 	.byte	25
 	.byte	2
@@ -1434,7 +1440,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	1812
+	.long	1800
 	.byte	1
 	.byte	25
 	.byte	2
@@ -1443,7 +1449,7 @@ par.desc.2:
 	.byte	1
 	.byte	0
 	.byte	19
-	.long	1820
+	.long	1808
 	.byte	2
 	.ascii	 "unsigned char"
 	.byte	0
@@ -1453,23 +1459,23 @@ par.desc.2:
 	.byte	4
 	.byte	5
 	.byte	21
-	.long	1910
+	.long	1898
 	.byte	22
-	.long	1927
+	.long	1915
 	.byte	5
 	.byte	0
 	.byte	19
-	.long	1930
+	.long	1918
 	.byte	21
 	.long	261
 	.byte	23
-	.long	1927
+	.long	1915
 	.short	6399
 	.byte	0
 	.byte	21
 	.long	261
 	.byte	23
-	.long	1927
+	.long	1915
 	.short	399
 	.byte	0
 	.byte	2
@@ -1485,13 +1491,13 @@ par.desc.2:
 	.byte	21
 	.long	261
 	.byte	22
-	.long	1927
+	.long	1915
 	.byte	1
 	.byte	0
 	.byte	21
 	.long	261
 	.byte	22
-	.long	1927
+	.long	1915
 	.byte	127
 	.byte	0
 	.byte	24
@@ -1523,7 +1529,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "notificationChannelEnd"
 	.byte	0
-	.long	1982
+	.long	1970
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1533,7 +1539,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "miiChannelEnd"
 	.byte	0
-	.long	1982
+	.long	1970
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1563,7 +1569,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "freePtr"
 	.byte	0
-	.long	1998
+	.long	1986
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1573,7 +1579,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "wrPtr"
 	.byte	0
-	.long	1998
+	.long	1986
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1583,7 +1589,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "lastSafePtr"
 	.byte	0
-	.long	1998
+	.long	1986
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1593,7 +1599,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "firstPtr"
 	.byte	0
-	.long	1998
+	.long	1986
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1603,7 +1609,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "readPtr"
 	.byte	0
-	.long	1998
+	.long	1986
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1613,7 +1619,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "notifyLast"
 	.byte	0
-	.long	1910
+	.long	1898
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1623,7 +1629,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "notifySeen"
 	.byte	0
-	.long	1910
+	.long	1898
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1633,7 +1639,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "pad0"
 	.byte	0
-	.long	1910
+	.long	1898
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1643,7 +1649,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "pad1"
 	.byte	0
-	.long	1910
+	.long	1898
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1693,7 +1699,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "kernelStack"
 	.byte	0
-	.long	2010
+	.long	1998
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1713,7 +1719,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "clk_mii_rx"
 	.byte	0
-	.long	2507
+	.long	2495
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1723,7 +1729,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "clk_mii_tx"
 	.byte	0
-	.long	2507
+	.long	2495
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1733,7 +1739,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_rxclk"
 	.byte	0
-	.long	1812
+	.long	1800
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1743,7 +1749,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_rxer"
 	.byte	0
-	.long	1812
+	.long	1800
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1753,7 +1759,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_rxd"
 	.byte	0
-	.long	1812
+	.long	1800
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1763,7 +1769,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_rxdv"
 	.byte	0
-	.long	1812
+	.long	1800
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1773,7 +1779,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_txclk"
 	.byte	0
-	.long	1812
+	.long	1800
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1783,7 +1789,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_txen"
 	.byte	0
-	.long	1812
+	.long	1800
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1793,7 +1799,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_txd"
 	.byte	0
-	.long	1812
+	.long	1800
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1803,7 +1809,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_timing"
 	.byte	0
-	.long	1812
+	.long	1800
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1812,20 +1818,20 @@ par.desc.2:
 	.byte	1
 	.byte	0
 	.byte	19
-	.long	2516
+	.long	2504
 	.byte	25
-	.long	1820
+	.long	1808
 	.byte	4
 	.byte	25
-	.long	2516
+	.long	2504
 	.byte	4
 	.byte	25
-	.long	1930
+	.long	1918
 	.byte	4
 	.byte	21
-	.long	1801
+	.long	1789
 	.byte	22
-	.long	1927
+	.long	1915
 	.byte	1
 	.byte	0
 	.byte	17
@@ -1835,7 +1841,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "smi"
 	.byte	0
-	.long	2767
+	.long	2755
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1845,7 +1851,7 @@ par.desc.2:
 	.byte	18
 	.byte	109
 	.byte	0
-	.long	2773
+	.long	2761
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1855,7 +1861,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "appIn"
 	.byte	0
-	.long	1801
+	.long	1789
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1865,7 +1871,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "appOut"
 	.byte	0
-	.long	1801
+	.long	1789
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1875,7 +1881,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "mac_address"
 	.byte	0
-	.long	2779
+	.long	2767
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1885,7 +1891,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "cIn"
 	.byte	0
-	.long	2785
+	.long	2773
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1895,7 +1901,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "cOut"
 	.byte	0
-	.long	2785
+	.long	2773
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1905,7 +1911,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "notifications"
 	.byte	0
-	.long	2785
+	.long	2773
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1914,18 +1920,18 @@ par.desc.2:
 	.byte	1
 	.byte	0
 	.byte	25
-	.long	2797
+	.long	2785
 	.byte	4
 	.byte	26
-	.long	1910
+	.long	1898
 	.byte	19
-	.long	2956
+	.long	2944
 	.byte	26
-	.long	1801
+	.long	1789
 	.byte	19
-	.long	2966
+	.long	2954
 	.byte	25
-	.long	2956
+	.long	2944
 	.byte	4
 	.byte	17
 	.ascii	 "__TYPE_0"
@@ -1934,7 +1940,7 @@ par.desc.2:
 	.byte	18
 	.byte	97
 	.byte	0
-	.long	2976
+	.long	2964
 	.byte	1
 	.byte	133
 	.byte	2
@@ -1944,7 +1950,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "bound"
 	.byte	0
-	.long	1982
+	.long	1970
 	.byte	1
 	.byte	133
 	.byte	2
@@ -1953,7 +1959,7 @@ par.desc.2:
 	.byte	1
 	.byte	0
 	.byte	25
-	.long	2966
+	.long	2954
 	.byte	4
 	.byte	17
 	.ascii	 "__TYPE_1"
@@ -1962,7 +1968,7 @@ par.desc.2:
 	.byte	18
 	.byte	97
 	.byte	0
-	.long	3024
+	.long	3012
 	.byte	1
 	.byte	133
 	.byte	2
@@ -1972,7 +1978,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "bound"
 	.byte	0
-	.long	1982
+	.long	1970
 	.byte	1
 	.byte	133
 	.byte	2
@@ -1987,7 +1993,7 @@ par.desc.2:
 	.byte	18
 	.byte	97
 	.byte	0
-	.long	3024
+	.long	3012
 	.byte	1
 	.byte	133
 	.byte	2
@@ -1997,7 +2003,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "bound"
 	.byte	0
-	.long	1982
+	.long	1970
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2012,7 +2018,7 @@ par.desc.2:
 	.byte	18
 	.byte	109
 	.byte	0
-	.long	2773
+	.long	2761
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2022,7 +2028,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "smi"
 	.byte	0
-	.long	2767
+	.long	2755
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2032,7 +2038,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "mac_address"
 	.byte	0
-	.long	2982
+	.long	2970
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2042,7 +2048,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "c_rx"
 	.byte	0
-	.long	3030
+	.long	3018
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2052,7 +2058,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "c_tx"
 	.byte	0
-	.long	3072
+	.long	3060
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2062,7 +2068,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "cIn"
 	.byte	0
-	.long	2785
+	.long	2773
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2072,7 +2078,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "cOut"
 	.byte	0
-	.long	2785
+	.long	2773
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2082,7 +2088,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "notifications"
 	.byte	0
-	.long	2785
+	.long	2773
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2091,7 +2097,7 @@ par.desc.2:
 	.byte	1
 	.byte	0
 	.byte	25
-	.long	3114
+	.long	3102
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -2435,25 +2441,25 @@ par.desc.2:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1639
+	.long	1627
 .asciiz "_ethernet_server_lite"
 	.long	355
 .asciiz "delay_milliseconds"
-	.long	1258
+	.long	1246
 .asciiz "_mii_single_server"
 	.long	467
 .asciiz "_the_server"
 	.long	411
 .asciiz "delay_microseconds"
-	.long	1405
+	.long	1393
 .asciiz "_ethernet_server_lite.task._mii_driver.0"
-	.long	1147
+	.long	1135
 .asciiz "_mii_single_server.task._the_server.1"
-	.long	1036
+	.long	1024
 .asciiz "_mii_single_server.task._mii_driver.0"
 	.long	309
 .asciiz "delay_seconds"
-	.long	1522
+	.long	1510
 .asciiz "_ethernet_server_lite.task._the_server.1"
 	.long	0
 .Lpubnames_end1:
@@ -2465,19 +2471,19 @@ par.desc.2:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	2982
+	.long	2970
 .asciiz "__TYPE_0"
-	.long	3030
+	.long	3018
 .asciiz "__TYPE_1"
-	.long	3072
+	.long	3060
 .asciiz "__TYPE_2"
-	.long	3114
+	.long	3102
 .asciiz "frame.0"
-	.long	2797
+	.long	2785
 .asciiz "frame.1"
-	.long	1820
+	.long	1808
 .asciiz "smi_interface_t"
-	.long	2516
+	.long	2504
 .asciiz "mii_interface_lite_t"
 	.long	0
 .Lpubtypes_end1:
@@ -2485,219 +2491,219 @@ par.desc.2:
 .Ldebug_loc0:
 	.long	.Lfunc_begin0
 	.long	.Ltmp22
-.Lset4 = .Ltmp133-.Ltmp132
+.Lset4 = .Ltmp138-.Ltmp137
 	.short	.Lset4
-.Ltmp132:
+.Ltmp137:
 	.byte	80
-.Ltmp133:
+.Ltmp138:
 	.long	.Ltmp22
 	.long	.Ltmp24
-.Lset5 = .Ltmp135-.Ltmp134
+.Lset5 = .Ltmp140-.Ltmp139
 	.short	.Lset5
-.Ltmp134:
+.Ltmp139:
 	.byte	87
-.Ltmp135:
+.Ltmp140:
 	.long	.Ltmp24
 	.long	.Ltmp25
-.Lset6 = .Ltmp137-.Ltmp136
+.Lset6 = .Ltmp142-.Ltmp141
 	.short	.Lset6
-.Ltmp136:
+.Ltmp141:
 	.byte	81
-.Ltmp137:
+.Ltmp142:
 	.long	0
 	.long	0
 .Ldebug_loc4:
 	.long	.Lfunc_begin0
 	.long	.Ltmp21
-.Lset7 = .Ltmp139-.Ltmp138
+.Lset7 = .Ltmp144-.Ltmp143
 	.short	.Lset7
-.Ltmp138:
+.Ltmp143:
 	.byte	81
-.Ltmp139:
+.Ltmp144:
 	.long	.Ltmp21
 	.long	.Ltmp26
-.Lset8 = .Ltmp141-.Ltmp140
+.Lset8 = .Ltmp146-.Ltmp145
 	.short	.Lset8
-.Ltmp140:
+.Ltmp145:
 	.byte	86
-.Ltmp141:
+.Ltmp146:
 	.long	.Ltmp26
-	.long	.Ltmp60
-.Lset9 = .Ltmp143-.Ltmp142
+	.long	.Ltmp65
+.Lset9 = .Ltmp148-.Ltmp147
 	.short	.Lset9
-.Ltmp142:
+.Ltmp147:
 	.byte	89
-.Ltmp143:
+.Ltmp148:
 	.long	0
 	.long	0
 .Ldebug_loc9:
 	.long	.Lfunc_begin0
 	.long	.Ltmp20
-.Lset10 = .Ltmp145-.Ltmp144
+.Lset10 = .Ltmp150-.Ltmp149
 	.short	.Lset10
-.Ltmp144:
+.Ltmp149:
 	.byte	82
-.Ltmp145:
+.Ltmp150:
 	.long	.Ltmp20
 	.long	.Ltmp29
-.Lset11 = .Ltmp147-.Ltmp146
+.Lset11 = .Ltmp152-.Ltmp151
 	.short	.Lset11
-.Ltmp146:
+.Ltmp151:
 	.byte	85
-.Ltmp147:
+.Ltmp152:
 	.long	.Ltmp29
 	.long	.Lfunc_end0
-.Lset12 = .Ltmp149-.Ltmp148
+.Lset12 = .Ltmp154-.Ltmp153
 	.short	.Lset12
-.Ltmp148:
+.Ltmp153:
 	.byte	126
 	.byte	36
-.Ltmp149:
+.Ltmp154:
 	.long	0
 	.long	0
 .Ldebug_loc14:
 	.long	.Lfunc_begin0
 	.long	.Ltmp19
-.Lset13 = .Ltmp151-.Ltmp150
+.Lset13 = .Ltmp156-.Ltmp155
 	.short	.Lset13
-.Ltmp150:
+.Ltmp155:
 	.byte	83
-.Ltmp151:
+.Ltmp156:
 	.long	.Ltmp19
 	.long	.Lfunc_end0
-.Lset14 = .Ltmp153-.Ltmp152
+.Lset14 = .Ltmp158-.Ltmp157
 	.short	.Lset14
-.Ltmp152:
+.Ltmp157:
 	.byte	126
 	.byte	40
-.Ltmp153:
+.Ltmp158:
 	.long	0
 	.long	0
 .Ldebug_loc18:
 	.long	.Lfunc_begin0
-	.long	.Ltmp60
-.Lset15 = .Ltmp155-.Ltmp154
+	.long	.Ltmp65
+.Lset15 = .Ltmp160-.Ltmp159
 	.short	.Lset15
-.Ltmp154:
+.Ltmp159:
 	.byte	85
-.Ltmp155:
+.Ltmp160:
 	.long	0
 	.long	0
 .Ldebug_loc21:
 	.long	.Lfunc_begin0
-	.long	.Ltmp60
-.Lset16 = .Ltmp157-.Ltmp156
+	.long	.Ltmp65
+.Lset16 = .Ltmp162-.Ltmp161
 	.short	.Lset16
-.Ltmp156:
+.Ltmp161:
 	.byte	88
-.Ltmp157:
+.Ltmp162:
 	.long	0
 	.long	0
 .Ldebug_loc24:
 	.long	.Ltmp31
-	.long	.Ltmp35
-.Lset17 = .Ltmp159-.Ltmp158
+	.long	.Ltmp39
+.Lset17 = .Ltmp164-.Ltmp163
 	.short	.Lset17
-.Ltmp158:
+.Ltmp163:
 	.byte	83
-.Ltmp159:
+.Ltmp164:
 	.long	0
 	.long	0
 .Ldebug_loc27:
-	.long	.Ltmp45
-	.long	.Ltmp50
-.Lset18 = .Ltmp161-.Ltmp160
+	.long	.Ltmp49
+	.long	.Ltmp55
+.Lset18 = .Ltmp166-.Ltmp165
 	.short	.Lset18
-.Ltmp160:
+.Ltmp165:
 	.byte	80
-.Ltmp161:
+.Ltmp166:
 	.long	0
 	.long	0
 .Ldebug_loc30:
-	.long	.Ltmp48
-	.long	.Ltmp49
-.Lset19 = .Ltmp163-.Ltmp162
+	.long	.Ltmp52
+	.long	.Ltmp54
+.Lset19 = .Ltmp168-.Ltmp167
 	.short	.Lset19
-.Ltmp162:
+.Ltmp167:
 	.byte	81
-.Ltmp163:
+.Ltmp168:
 	.long	0
 	.long	0
 .Ldebug_loc32:
-	.long	.Ltmp53
-	.long	.Ltmp54
-.Lset20 = .Ltmp165-.Ltmp164
+	.long	.Ltmp58
+	.long	.Ltmp60
+.Lset20 = .Ltmp170-.Ltmp169
 	.short	.Lset20
-.Ltmp164:
-	.byte	81
-.Ltmp165:
+.Ltmp169:
+	.byte	83
+.Ltmp170:
 	.long	0
 	.long	0
 .Ldebug_loc34:
-	.long	.Ltmp56
-	.long	.Ltmp58
-.Lset21 = .Ltmp167-.Ltmp166
+	.long	.Ltmp61
+	.long	.Ltmp63
+.Lset21 = .Ltmp172-.Ltmp171
 	.short	.Lset21
-.Ltmp166:
+.Ltmp171:
 	.byte	82
-.Ltmp167:
+.Ltmp172:
 	.long	0
 	.long	0
 .Ldebug_loc36:
 	.long	.Lfunc_begin1
-	.long	.Ltmp72
-.Lset22 = .Ltmp169-.Ltmp168
+	.long	.Ltmp77
+.Lset22 = .Ltmp174-.Ltmp173
 	.short	.Lset22
-.Ltmp168:
+.Ltmp173:
 	.byte	80
-.Ltmp169:
+.Ltmp174:
 	.long	0
 	.long	0
 .Ldebug_loc38:
 	.long	.Lfunc_begin2
-	.long	.Ltmp81
-.Lset23 = .Ltmp171-.Ltmp170
+	.long	.Ltmp86
+.Lset23 = .Ltmp176-.Ltmp175
 	.short	.Lset23
-.Ltmp170:
+.Ltmp175:
 	.byte	80
-.Ltmp171:
+.Ltmp176:
 	.long	0
 	.long	0
 .Ldebug_loc40:
 	.long	.Lfunc_begin3
-	.long	.Ltmp94
-.Lset24 = .Ltmp173-.Ltmp172
+	.long	.Ltmp99
+.Lset24 = .Ltmp178-.Ltmp177
 	.short	.Lset24
-.Ltmp172:
+.Ltmp177:
 	.byte	80
-.Ltmp173:
-	.long	.Ltmp94
-	.long	.Ltmp95
-.Lset25 = .Ltmp175-.Ltmp174
+.Ltmp178:
+	.long	.Ltmp99
+	.long	.Ltmp100
+.Lset25 = .Ltmp180-.Ltmp179
 	.short	.Lset25
-.Ltmp174:
+.Ltmp179:
 	.byte	91
-.Ltmp175:
+.Ltmp180:
 	.long	0
 	.long	0
 .Ldebug_loc43:
 	.long	.Lfunc_begin5
-	.long	.Ltmp113
-.Lset26 = .Ltmp177-.Ltmp176
+	.long	.Ltmp118
+.Lset26 = .Ltmp182-.Ltmp181
 	.short	.Lset26
-.Ltmp176:
+.Ltmp181:
 	.byte	80
-.Ltmp177:
+.Ltmp182:
 	.long	0
 	.long	0
 .Ldebug_loc45:
 	.long	.Lfunc_begin6
-	.long	.Ltmp128
-.Lset27 = .Ltmp179-.Ltmp178
+	.long	.Ltmp133
+.Lset27 = .Ltmp184-.Ltmp183
 	.short	.Lset27
-.Ltmp178:
+.Ltmp183:
 	.byte	80
-.Ltmp179:
+.Ltmp184:
 	.long	0
 	.long	0
 .Ldebug_loc48:
@@ -2706,21 +2712,43 @@ par.desc.2:
 	.long	.Ltmp31
 	.long	.Ltmp32
 	.long	.Ltmp33
-	.long	.Ltmp36
-	.long	.Ltmp39
+	.long	.Ltmp34
+	.long	.Ltmp35
+	.long	.Ltmp37
+	.long	.Ltmp38
 	.long	.Ltmp40
-	.long	0
-	.long	0
-	.long	.Ltmp55
-	.long	.Ltmp57
-	.long	.Ltmp58
-	.long	.Ltmp59
+	.long	.Ltmp43
+	.long	.Ltmp44
 	.long	0
 	.long	0
 	.long	.Ltmp51
-	.long	.Ltmp52
+	.long	.Ltmp53
 	.long	.Ltmp54
+	.long	.Ltmp55
+	.long	0
+	.long	0
+	.long	.Ltmp48
+	.long	.Ltmp53
+	.long	.Ltmp54
+	.long	.Ltmp55
+	.long	0
+	.long	0
+	.long	.Ltmp48
+	.long	.Ltmp53
+	.long	.Ltmp54
+	.long	.Ltmp55
+	.long	0
+	.long	0
 	.long	.Ltmp60
+	.long	.Ltmp62
+	.long	.Ltmp63
+	.long	.Ltmp64
+	.long	0
+	.long	0
+	.long	.Ltmp56
+	.long	.Ltmp57
+	.long	.Ltmp59
+	.long	.Ltmp65
 	.long	0
 	.long	0
 	.section	.debug_macinfo,"",@progbits

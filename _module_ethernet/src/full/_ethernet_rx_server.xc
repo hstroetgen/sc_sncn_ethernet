@@ -171,14 +171,14 @@ void _mac_rx_send_frame1(int p,
                         unsigned int cmd)
 {
   int i, length;
-  int dptr = mii_packet_get_data_ptr(p);
+  int dptr = _mii_packet_get_data_ptr(p);
   int wrap_ptr = _mii_packet_get_wrap_ptr(p);
   
   if (cmd == ETHERNET_RX_FRAME_REQ_OFFSET2) {
     i=0;
-    length = mii_packet_get_length(p);
+    length = _mii_packet_get_length(p);
     slave {
-      link <: mii_packet_get_src_port(p);
+      link <: _mii_packet_get_src_port(p);
       link <: length-(i<<2);
       link <: (char) 0;
       link <: (char) 0;
@@ -192,7 +192,7 @@ void _mac_rx_send_frame1(int p,
       }
       link <: (char) 0;
       link <: (char) 0;      
-      link <: mii_packet_get_timestamp(p) + ETHERNET_RX_PHY_TIMER_OFFSET;
+      link <: _mii_packet_get_timestamp(p) + ETHERNET_RX_PHY_TIMER_OFFSET;
     }  
     
   }
@@ -205,10 +205,10 @@ void _mac_rx_send_frame1(int p,
       i=3;
     }
     
-    length = mii_packet_get_length(p);
+    length = _mii_packet_get_length(p);
     
     slave {
-      link <: mii_packet_get_src_port(p);
+      link <: _mii_packet_get_src_port(p);
       link <: length-(i<<2);
       for (;i < (length+3)>>2;i++) {
         int datum;
@@ -218,7 +218,7 @@ void _mac_rx_send_frame1(int p,
         link <: datum;
         dptr += 4;
       }
-      link <: mii_packet_get_timestamp(p);
+      link <: _mii_packet_get_timestamp(p);
       
     }  
   }
@@ -281,7 +281,7 @@ static void _processReceivedFrame(int buf,
 {
    int i;
    int tcount = 0;
-   int result = mii_packet_get_filter_result(buf);
+   int result = _mii_packet_get_filter_result(buf);
    // process for each link
 
    if (result) {
@@ -334,7 +334,7 @@ static void _processReceivedFrame(int buf,
        _mii_free(buf);
    }
    else {
-     mii_packet_set_tcount(buf, tcount-1);
+     _mii_packet_set_tcount(buf, tcount-1);
    }   
    return;
 }
@@ -465,7 +465,7 @@ void _ethernet_rx_server(
 #endif
            for (unsigned p=0; p<NUM_ETHERNET_PORTS; ++p) {
              int buf = _mii_get_my_next_buf(rxmem_lp[p], rdptr_lp[p]);
-             if (buf != 0 && mii_packet_get_stage(buf) == 1) {
+             if (buf != 0 && _mii_packet_get_stage(buf) == 1) {
                rdptr_lp[p] = _mii_update_my_rdptr(rxmem_lp[p], rdptr_lp[p]);
                _processReceivedFrame(buf, link, num_link);
                    break;

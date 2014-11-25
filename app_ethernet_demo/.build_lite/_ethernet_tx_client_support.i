@@ -120,7 +120,7 @@ __attribute__((deprecated)) static inline unsigned get_thread_id(void) {
 # 21 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server_def.h" 2
 # 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_client_support.c" 2
 
-int mac_calc_idle_slope(int bps)
+int _mac_calc_idle_slope(int bps)
 {
   long long slope;
 

@@ -222,7 +222,7 @@ void _ethernet_tx_server_no_buffer(const char mac_addr[],
               wrap_ptr[p] = mii_get_wrap_ptr(tx_mem_lp[p]);
             }
 #else
-              buf[p] = mii_reserve_at_least(tx_mem_lp[p],
+              buf[p] = _mii_reserve_at_least(tx_mem_lp[p],
                                                      end_ptr[p],
                                                          MII_MALLOC_FULL_PACKET_SIZE_LP);
               wrap_ptr[p] = _mii_get_wrap_ptr(tx_mem_lp[p]);
@@ -230,7 +230,7 @@ void _ethernet_tx_server_no_buffer(const char mac_addr[],
         	  if (buf[p] == 0)
                     bufs_ok=0;
                   else
-                    dptr[p] = mii_packet_get_data_ptr(buf[p]);
+                    dptr[p] = _mii_packet_get_data_ptr(buf[p]);
           }
 
           if (bufs_ok) {
@@ -272,7 +272,7 @@ void _ethernet_tx_server_no_buffer(const char mac_addr[],
 
             for (unsigned p=0; p<NUM_ETHERNET_PORTS; ++p) {
             	if (p == dst_port || dst_port == ETH_BROADCAST) {
-            		mii_packet_set_length(buf[p], length);
+            		_mii_packet_set_length(buf[p], length);
 
 #if defined(ENABLE_ETHERNET_SOURCE_ADDRESS_WRITE)
             		{
@@ -282,15 +282,15 @@ void _ethernet_tx_server_no_buffer(const char mac_addr[],
 #endif
 
             		if (cmd == ETHERNET_TX_REQ_TIMED)
-            			mii_packet_set_timestamp_id(buf[p], i+1);
+            			_mii_packet_set_timestamp_id(buf[p], i+1);
             		else
-            			mii_packet_set_timestamp_id(buf[p], 0);
+            			_mii_packet_set_timestamp_id(buf[p], 0);
 
 
-            		mii_commit(buf[p], dptr[p]);
+            		_mii_commit(buf[p], dptr[p]);
 
-            		mii_packet_set_tcount(buf[p], 0);
-            		mii_packet_set_stage(buf[p], 1);
+            		_mii_packet_set_tcount(buf[p], 0);
+            		_mii_packet_set_stage(buf[p], 1);
             	}
             }
 
@@ -378,8 +378,8 @@ void _ethernet_tx_server_no_buffer(const char mac_addr[],
     for (unsigned p=0; p<NUM_ETHERNET_PORTS; ++p) {
     	buf[p]=_get_ts_queue_entry(ts_queue[p]);
     	if (buf[p] != 0) {
-    		int i = mii_packet_get_timestamp_id(buf[p]);
-    		int ts = mii_packet_get_timestamp(buf[p]);
+    		int i = _mii_packet_get_timestamp_id(buf[p]);
+    		int ts = _mii_packet_get_timestamp(buf[p]);
     		tx[i-1] <: ts + ETHERNET_TX_PHY_TIMER_OFFSET;
     		if (_get_and_dec_transmit_count(buf[p]) == 0)
     			_mii_free(buf[p]);

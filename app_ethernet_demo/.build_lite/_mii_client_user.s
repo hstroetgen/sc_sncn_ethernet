@@ -1666,14 +1666,14 @@ _miiClientUser:
 	.set	_miiClientUser.maxchanends,0
 	.globl	_miiClientUser.maxchanends
 	.section	.dp.bss,"awd",@nobits
-	.cc_top globalNow.data
-	.globl	globalNow
+	.cc_top _globalNow.data
+	.globl	_globalNow
 	.align	4
-	.type	globalNow,@object
-	.size globalNow,4
-globalNow:
+	.type	_globalNow,@object
+	.size _globalNow,4
+_globalNow:
 	.long	0
-	.cc_bottom globalNow.data
+	.cc_bottom _globalNow.data
 	.cfi_sections .debug_frame
 	.text
 .Ltext_end:
@@ -1683,7 +1683,7 @@ globalNow:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	3794
+	.long	3796
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -1704,9 +1704,9 @@ globalNow:
 	.byte	5
 	.byte	4
 	.byte	3
-	.ascii	 "globalNow"
+	.ascii	 "_globalNow"
 	.byte	0
-	.ascii	 "globalNow"
+	.ascii	 "_globalNow"
 	.byte	0
 	.long	259
 	.byte	1
@@ -1714,7 +1714,7 @@ globalNow:
 	.short	266
 	.byte	5
 	.byte	3
-	.long	globalNow
+	.long	_globalNow
 	.byte	4
 	.ascii	 "delay_seconds"
 	.byte	0
@@ -1728,7 +1728,7 @@ globalNow:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	1410
+	.long	1412
 	.byte	0
 	.byte	4
 	.ascii	 "delay_milliseconds"
@@ -1743,7 +1743,7 @@ globalNow:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	1410
+	.long	1412
 	.byte	0
 	.byte	4
 	.ascii	 "delay_microseconds"
@@ -1758,7 +1758,7 @@ globalNow:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	1410
+	.long	1412
 	.byte	0
 	.byte	6
 	.ascii	 "_value_1"
@@ -1862,28 +1862,28 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	39
-	.long	1410
+	.long	1412
 	.byte	7
 	.byte	8
 	.ascii	 "tailLength"
 	.byte	0
 	.byte	1
 	.byte	40
-	.long	1410
+	.long	1412
 	.byte	7
 	.byte	8
 	.ascii	 "partCRC"
 	.byte	0
 	.byte	1
 	.byte	41
-	.long	1410
+	.long	1412
 	.byte	7
 	.byte	8
 	.ascii	 "length"
 	.byte	0
 	.byte	1
 	.byte	42
-	.long	1410
+	.long	1412
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1903,7 +1903,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	65
-	.long	3683
+	.long	3685
 	.byte	5
 	.ascii	 "base"
 	.byte	0
@@ -1990,28 +1990,28 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	123
-	.long	3683
+	.long	3685
 	.long	.Ldebug_loc0+0
 	.byte	11
 	.ascii	 "cIn"
 	.byte	0
 	.byte	1
 	.byte	123
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc2+0
 	.byte	11
 	.ascii	 "cNotifications"
 	.byte	0
 	.byte	1
 	.byte	123
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc5+0
 	.byte	11
 	.ascii	 "buffer"
 	.byte	0
 	.byte	1
 	.byte	123
-	.long	3704
+	.long	3706
 	.long	.Ldebug_loc9+0
 	.byte	12
 	.ascii	 "numberWords"
@@ -2056,14 +2056,14 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	149
-	.long	3683
+	.long	3685
 	.long	.Ldebug_loc86+0
 	.byte	11
 	.ascii	 "notificationChannel"
 	.byte	0
 	.byte	1
 	.byte	149
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc89+0
 	.byte	0
 	.byte	15
@@ -2085,7 +2085,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	156
-	.long	1426
+	.long	1428
 	.byte	1
 	.long	.Lfunc_begin4
 	.long	.Lfunc_end4
@@ -2097,21 +2097,21 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	156
-	.long	3683
+	.long	3685
 	.long	.Ldebug_loc41+0
 	.byte	11
 	.ascii	 "notificationChannel"
 	.byte	0
 	.byte	1
 	.byte	156
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc43+0
 	.byte	17
 	.ascii	 "_mii_notified.enable.saved_state_ptr"
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	3791
+	.long	3793
 	.byte	0
 	.byte	2
 	.ascii	 "unsigned int"
@@ -2119,7 +2119,7 @@ globalNow:
 	.byte	7
 	.byte	4
 	.byte	18
-	.long	1410
+	.long	1412
 	.byte	4
 	.byte	10
 	.ascii	 "_mii_notified"
@@ -2139,14 +2139,14 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	156
-	.long	3683
+	.long	3685
 	.long	.Ldebug_loc45+0
 	.byte	11
 	.ascii	 "notificationChannel"
 	.byte	0
 	.byte	1
 	.byte	156
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc47+0
 	.byte	0
 	.byte	10
@@ -2167,7 +2167,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	162
-	.long	3683
+	.long	3685
 	.long	.Ldebug_loc22+0
 	.byte	13
 	.long	.Ltmp49
@@ -2180,14 +2180,14 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	163
-	.long	1410
+	.long	1412
 	.long	.Ldebug_loc27+0
 	.byte	14
 	.ascii	 "timeStamp"
 	.byte	0
 	.byte	1
 	.byte	163
-	.long	1410
+	.long	1412
 	.long	.Ldebug_loc32+0
 	.byte	13
 	.long	.Ltmp49
@@ -2206,7 +2206,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	172
-	.long	1410
+	.long	1412
 	.long	.Ldebug_loc30+0
 	.byte	0
 	.byte	0
@@ -2225,25 +2225,25 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	185
-	.long	3683
+	.long	3685
 	.byte	5
 	.ascii	 "currentBuffer"
 	.byte	0
 	.byte	1
 	.byte	185
-	.long	1410
+	.long	1412
 	.byte	5
 	.ascii	 "length"
 	.byte	0
 	.byte	1
 	.byte	185
-	.long	1410
+	.long	1412
 	.byte	5
 	.ascii	 "notificationChannel"
 	.byte	0
 	.byte	1
 	.byte	185
-	.long	3688
+	.long	3690
 	.byte	7
 	.byte	7
 	.byte	8
@@ -2267,13 +2267,13 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	215
-	.long	3683
+	.long	3685
 	.byte	5
 	.ascii	 "currentBuffer"
 	.byte	0
 	.byte	1
 	.byte	215
-	.long	1410
+	.long	1412
 	.byte	0
 	.byte	10
 	.ascii	 "_mii_restart_buffer"
@@ -2293,7 +2293,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	220
-	.long	3683
+	.long	3685
 	.long	.Ldebug_loc49+0
 	.byte	13
 	.long	.Ltmp126
@@ -2329,7 +2329,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.byte	245
-	.long	3683
+	.long	3685
 	.long	.Ldebug_loc34+0
 	.byte	11
 	.ascii	 "base"
@@ -2386,7 +2386,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.short	268
-	.long	1410
+	.long	1412
 	.byte	22
 	.ascii	 "testOffset"
 	.byte	0
@@ -2412,7 +2412,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.short	274
-	.long	3683
+	.long	3685
 	.long	.Ldebug_loc92+0
 	.byte	24
 	.ascii	 "base"
@@ -2433,7 +2433,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.short	274
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc103+0
 	.byte	13
 	.long	.Ltmp222
@@ -2470,14 +2470,14 @@ globalNow:
 	.byte	0
 	.byte	1
 	.short	284
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc56+0
 	.byte	24
 	.byte	98
 	.byte	0
 	.byte	1
 	.short	284
-	.long	3704
+	.long	3706
 	.long	.Ldebug_loc58+0
 	.byte	24
 	.ascii	 "index"
@@ -2556,7 +2556,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.short	306
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc72+0
 	.byte	24
 	.byte	97
@@ -2636,7 +2636,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.short	325
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc84+0
 	.byte	0
 	.byte	23
@@ -2657,7 +2657,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.short	329
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc54+0
 	.byte	0
 	.byte	27
@@ -2672,7 +2672,7 @@ globalNow:
 	.byte	0
 	.byte	1
 	.short	333
-	.long	3688
+	.long	3690
 	.byte	0
 	.byte	23
 	.ascii	 "_mii_close"
@@ -2692,21 +2692,21 @@ globalNow:
 	.byte	0
 	.byte	1
 	.short	341
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc13+0
 	.byte	24
 	.ascii	 "cIn"
 	.byte	0
 	.byte	1
 	.short	341
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc16+0
 	.byte	24
 	.ascii	 "cOut"
 	.byte	0
 	.byte	1
 	.short	341
-	.long	3688
+	.long	3690
 	.long	.Ldebug_loc19+0
 	.byte	0
 	.byte	28
@@ -2715,7 +2715,7 @@ globalNow:
 	.byte	29
 	.long	259
 	.byte	30
-	.long	3156
+	.long	3158
 	.byte	1
 	.byte	0
 	.byte	2
@@ -2726,7 +2726,7 @@ globalNow:
 	.byte	29
 	.long	259
 	.byte	30
-	.long	3156
+	.long	3158
 	.byte	127
 	.byte	0
 	.byte	31
@@ -2756,7 +2756,7 @@ globalNow:
 	.byte	32
 	.ascii	 "notificationChannelEnd"
 	.byte	0
-	.long	1410
+	.long	1412
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2766,7 +2766,7 @@ globalNow:
 	.byte	32
 	.ascii	 "miiChannelEnd"
 	.byte	0
-	.long	1410
+	.long	1412
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2796,7 +2796,7 @@ globalNow:
 	.byte	32
 	.ascii	 "freePtr"
 	.byte	0
-	.long	3159
+	.long	3161
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2806,7 +2806,7 @@ globalNow:
 	.byte	32
 	.ascii	 "wrPtr"
 	.byte	0
-	.long	3159
+	.long	3161
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2816,7 +2816,7 @@ globalNow:
 	.byte	32
 	.ascii	 "lastSafePtr"
 	.byte	0
-	.long	3159
+	.long	3161
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2826,7 +2826,7 @@ globalNow:
 	.byte	32
 	.ascii	 "firstPtr"
 	.byte	0
-	.long	3159
+	.long	3161
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2836,7 +2836,7 @@ globalNow:
 	.byte	32
 	.ascii	 "readPtr"
 	.byte	0
-	.long	3159
+	.long	3161
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2846,7 +2846,7 @@ globalNow:
 	.byte	32
 	.ascii	 "notifyLast"
 	.byte	0
-	.long	3171
+	.long	3173
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2856,7 +2856,7 @@ globalNow:
 	.byte	32
 	.ascii	 "notifySeen"
 	.byte	0
-	.long	3171
+	.long	3173
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2866,7 +2866,7 @@ globalNow:
 	.byte	32
 	.ascii	 "pad0"
 	.byte	0
-	.long	3171
+	.long	3173
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2876,7 +2876,7 @@ globalNow:
 	.byte	32
 	.ascii	 "pad1"
 	.byte	0
-	.long	3171
+	.long	3173
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2926,7 +2926,7 @@ globalNow:
 	.byte	32
 	.ascii	 "kernelStack"
 	.byte	0
-	.long	3188
+	.long	3190
 	.byte	1
 	.byte	65
 	.byte	2
@@ -2935,7 +2935,7 @@ globalNow:
 	.byte	1
 	.byte	0
 	.byte	33
-	.long	3200
+	.long	3202
 	.byte	2
 	.ascii	 "chanend"
 	.byte	0
@@ -2944,9 +2944,9 @@ globalNow:
 	.byte	34
 	.long	259
 	.byte	33
-	.long	3699
+	.long	3701
 	.byte	18
-	.long	3200
+	.long	3202
 	.byte	4
 	.byte	35
 	.ascii	 "_mii_notified.struct.type"
@@ -2955,7 +2955,7 @@ globalNow:
 	.byte	32
 	.ascii	 "notificationChannel"
 	.byte	0
-	.long	3688
+	.long	3690
 	.byte	1
 	.byte	156
 	.byte	2
@@ -2965,7 +2965,7 @@ globalNow:
 	.byte	32
 	.ascii	 "this"
 	.byte	0
-	.long	3709
+	.long	3711
 	.byte	1
 	.byte	156
 	.byte	2
@@ -2974,7 +2974,7 @@ globalNow:
 	.byte	1
 	.byte	0
 	.byte	18
-	.long	3715
+	.long	3717
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -3472,62 +3472,62 @@ globalNow:
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
 	.long	266
-.asciiz "globalNow"
-	.long	2965
+.asciiz "_globalNow"
+	.long	2967
 .asciiz "_mii_out_init"
-	.long	927
+	.long	929
 .asciiz "_mii_buffer_init"
-	.long	459
+	.long	461
 .asciiz "_value_1"
-	.long	518
+	.long	520
 .asciiz "_value_2"
-	.long	577
+	.long	579
 .asciiz "_value_3"
-	.long	2002
+	.long	2004
 .asciiz "_mii_free_in_buffer"
-	.long	2888
+	.long	2890
 .asciiz "_mii_out_packet_done"
-	.long	1523
+	.long	1525
 .asciiz "_mii_get_in_buffer"
-	.long	3057
+	.long	3059
 .asciiz "_mii_close"
-	.long	347
+	.long	349
 .asciiz "delay_milliseconds"
-	.long	1825
+	.long	1827
 .asciiz "_miiRejectBuffer"
-	.long	2424
+	.long	2426
 .asciiz "_mii_out_packet"
-	.long	1113
+	.long	1115
 .asciiz "_miiNotify"
-	.long	2256
+	.long	2258
 .asciiz "_miiClientUser"
-	.long	636
+	.long	638
 .asciiz "_CRCBad"
-	.long	880
+	.long	882
 .asciiz "_get"
-	.long	756
+	.long	758
 .asciiz "_packetGood"
-	.long	1699
+	.long	1701
 .asciiz "_miiCommitBuffer"
-	.long	1254
+	.long	1256
 .asciiz "_mii_notified.enable"
-	.long	2180
+	.long	2182
 .asciiz "_miiTimeStampInit"
-	.long	2663
+	.long	2665
 .asciiz "_mii_out_packet_"
-	.long	841
+	.long	843
 .asciiz "_set"
-	.long	3028
+	.long	3030
 .asciiz "_drain"
-	.long	1432
+	.long	1434
 .asciiz "_mii_notified"
-	.long	403
+	.long	405
 .asciiz "delay_microseconds"
-	.long	1198
+	.long	1200
 .asciiz "_mii_notified.case.0"
-	.long	1896
+	.long	1898
 .asciiz "_mii_restart_buffer"
-	.long	301
+	.long	303
 .asciiz "delay_seconds"
 	.long	0
 .Lpubnames_end1:
@@ -3539,9 +3539,9 @@ globalNow:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	3715
+	.long	3717
 .asciiz "_mii_notified.struct.type"
-	.long	3200
+	.long	3202
 .asciiz "miiData"
 	.long	0
 .Lpubtypes_end1:
@@ -4071,6 +4071,26 @@ globalNow:
 	.long	0
 	.long	0
 .Ldebug_loc111:
+	.long	.Ltmp240
+	.long	.Ltmp253
+.Lset60 = .Ltmp390-.Ltmp389
+	.short	.Lset60
+.Ltmp389:
+	.byte	80
+.Ltmp390:
+	.long	0
+	.long	0
+.Ldebug_loc114:
+	.long	.Ltmp251
+	.long	.Ltmp253
+.Lset61 = .Ltmp392-.Ltmp391
+	.short	.Lset61
+.Ltmp391:
+	.byte	83
+.Ltmp392:
+	.long	0
+	.long	0
+.Ldebug_loc116:
 	.section	.debug_aranges,"",@progbits
 	.section	.debug_ranges,"",@progbits
 	.long	.Ltmp81
@@ -4115,7 +4135,7 @@ globalNow:
 	.typestring _miiTimeStampInit, "f{0}(ui)"
 	.typestring _miiClientUser, "f{0}(&(s(miiData){m(nextBuffer){si},m(packetInLLD){si},m(notificationChannelEnd){ui},m(miiChannelEnd){ui},m(miiPacketsOverran){si},m(refillBankNumber){si},m(freePtr){a(2:si)},m(wrPtr){a(2:si)},m(lastSafePtr){a(2:si)},m(firstPtr){a(2:si)},m(readPtr){a(2:si)},m(notifyLast){uc},m(notifySeen){uc},m(pad0){uc},m(pad1){uc},m(miiPacketsTransmitted){si},m(miiPacketsReceived){si},m(miiPacketsCRCError){si},m(readBank){si},m(kernelStack){a(128:si)}}),si,si,chd)"
 	.typestring _tailValues, "a(4:ui)"
-	.typestring globalNow, "si"
+	.typestring _globalNow, "si"
 	.section	.xtacalltable,"",@progbits
 .Lentries_start0:
 	.long	.Lentries_end1-.Lentries_start0

@@ -453,7 +453,7 @@ void _mac_tx_full(chanend ethernet_tx_svr, unsigned int Buf[], int count, int if
 }
 # 94 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_client.xc"
 #pragma unsafe arrays
-void mac_tx_offset2(chanend ethernet_tx_svr,
+void _mac_tx_offset2(chanend ethernet_tx_svr,
                     unsigned int Buf[],
                     int count,
                     int ifnum)
@@ -494,9 +494,9 @@ int _mac_get_macaddr_full(chanend ethernet_tx_svr, unsigned char Buf[])
   return 0;
 }
 # 160 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_client.xc"
-int mac_calc_idle_slope(int bps);
+int _mac_calc_idle_slope(int bps);
 
-void mac_set_qav_bandwidth(chanend c,
+void _mac_set_qav_bandwidth(chanend c,
                            int bps)
 {
 

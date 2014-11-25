@@ -36,7 +36,7 @@ typedef struct malloc_hdr_t {
 
 #define MIN_USAGE (MII_PACKET_HEADER_SIZE+sizeof(malloc_hdr_t)+4*10)
 
-void mii_init_mempool(mii_mempool_t mempool0, int size)
+void _mii_init_mempool(mii_mempool_t mempool0, int size)
 {
   mempool_info_t *info = (mempool_info_t *) mempool0;
   info->start = (int *) (mempool0 + sizeof(mempool_info_t));
@@ -57,7 +57,7 @@ int _mii_get_wrap_ptr(mii_mempool_t mempool)
   return (int) (info->end);
 }
 
-mii_buffer_t mii_reserve_at_least(mii_mempool_t mempool,
+mii_buffer_t _mii_reserve_at_least(mii_mempool_t mempool,
                                            unsigned *end_ptr,
                                            int min_size)
 {
@@ -82,7 +82,7 @@ mii_buffer_t mii_reserve_at_least(mii_mempool_t mempool,
   return (mii_buffer_t) (wrptr+(sizeof(malloc_hdr_t)>>2));
 }
 
-mii_buffer_t mii_reserve(mii_mempool_t mempool,
+mii_buffer_t _mii_reserve(mii_mempool_t mempool,
                                   unsigned *end_ptr)
 {
   mempool_info_t *info = (mempool_info_t *) mempool;
@@ -111,7 +111,7 @@ mii_buffer_t mii_reserve(mii_mempool_t mempool,
 
 
 
-void mii_commit(mii_buffer_t buf, int endptr0)
+void _mii_commit(mii_buffer_t buf, int endptr0)
 {
   int *end_ptr = (int *) endptr0;
   malloc_hdr_t *hdr = (malloc_hdr_t *) ((char *) buf - sizeof(malloc_hdr_t));

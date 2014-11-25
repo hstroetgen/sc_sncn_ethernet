@@ -618,7 +618,7 @@ void _mii_free_in_buffer(struct miiData &this, int base) {
 }
 
 static int _globalOffset;
-int globalNow;
+int _globalNow;
 
 void _miiTimeStampInit(unsigned offset) {
     int testOffset = 10000;
