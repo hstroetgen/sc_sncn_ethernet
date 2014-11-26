@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc"
-# 6 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc"
+# 6 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc"
 # 1 "mii_full.h" 1
 # 8 "mii_full.h"
 # 1 "xs1.h" 1 3
@@ -498,16 +498,16 @@ void mii_tx_pins(
                 int ifnum);
 # 237 "mii_full.h"
 void ethernet_get_mii_counts( unsigned &dropped );
-# 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc" 2
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc" 2
 # 1 "mii_queue.h" 1
-# 8 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc" 2
 # 1 "ethernet_server_def.h" 1
 # 20 "ethernet_server_def.h"
 # 1 "ethernet_conf_derived.h" 1
 # 21 "ethernet_server_def.h" 2
-# 9 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc" 2
+# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc" 2
 # 1 "xccompat.h" 1 3
-# 10 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc" 2
+# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc" 2
 # 1 "print.h" 1 3
 # 34 "print.h" 3
 int printchar(char value);
@@ -541,7 +541,7 @@ int printllonghexln(unsigned long long value);
 int printstr(const char (& alias s)[]);
 # 133 "print.h" 3
 int printstrln(const char (& alias s)[]);
-# 11 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc" 2
+# 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc" 2
 # 1 "mii_malloc.h" 1
 # 3 "mii_malloc.h"
 # 1 "mii_full.h" 1
@@ -570,7 +570,7 @@ mii_buffer_t mii_get_next_buf(mii_mempool_t mempool);
 int mii_get_wrap_ptr(mii_mempool_t mempool);
 unsigned mii_packet_get_data(int buf, int n);
 int mii_packet_get_wrap_ptr(int buf);
-# 12 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc" 2
+# 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc" 2
 # 1 "mii_filter.h" 1
 # 8 "mii_filter.h"
 # 1 "mii_full.h" 1
@@ -591,7 +591,7 @@ void ethernet_get_filter_counts( unsigned &address ,
 								unsigned &filter ,
 								unsigned &length ,
 								unsigned &crc );
-# 13 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc" 2
 # 1 "mac_filter.h" 1
 # 4 "mac_filter.h"
 # 1 "ethernet_conf_derived.h" 1
@@ -605,8 +605,8 @@ void ethernet_get_filter_counts( unsigned &address ,
 
 extern int mac_custom_filter(unsigned int data[]);
 # 11 "mac_filter.h" 2
-# 14 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc" 2
-# 21 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc"
+# 14 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc" 2
+# 21 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc"
 int mac_custom_filter_coerce(int);
 
 
@@ -626,7 +626,7 @@ void ethernet_get_filter_counts(unsigned &address, unsigned &filter, unsigned &l
 	length = ethernet_filtered_by_length;
 	crc = ethernet_filtered_by_bad_crc;
 }
-# 43 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc"
+# 43 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc"
 #pragma unsafe arrays
 void ethernet_filter(const char mac_address[], streaming chanend c[ 1 ]) {
   unsigned int mac[2];
@@ -639,7 +639,7 @@ void ethernet_filter(const char mac_address[], streaming chanend c[ 1 ]) {
 	{
 		select
 		{
-# 55 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc"
+# 55 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc"
 #pragma xta endpoint "rx_packet"
 			case (int ifnum=0; ifnum< 1 ; ifnum++) c[ifnum] :> buf :
 			{
@@ -701,7 +701,7 @@ void ethernet_filter(const char mac_address[], streaming chanend c[ 1 ]) {
 						int broadcast =  (mii_packet_get_data(buf,0) & 0x1) ;
 						int unicast =  (mii_packet_get_data(buf,0) == mac[0] && ((short) mii_packet_get_data(buf,1)) == ((short) mac[1])) ;
 						int res=0;
-# 124 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_filter.xc"
+# 124 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_filter.xc"
 							if (broadcast || unicast) {
 
 								int filter_result = mac_custom_filter_coerce(buf);

@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_queue.c"
+	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_queue.c"
 
 .set get_and_dec_transmit_count.locnoside, 1
 
@@ -51,7 +51,7 @@
 .set add_ts_queue_entry.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_queue.c"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_queue.c"
 	.file	2 "/home/atena/workspace_ethernet_new_replicated/module_locks/src/hwlock.h"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
@@ -118,7 +118,7 @@ get_and_dec_transmit_count:
 .Ltmp10:
 	.size	get_and_dec_transmit_count, .Ltmp10-get_and_dec_transmit_count
 .Lfunc_end0:
-	.file	3 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_full.h"
+	.file	3 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_full.h"
 .Ltmp11:
 	.cfi_endproc
 .Leh_func_end0:
@@ -214,7 +214,7 @@ init_ts_queue:
 .Ltmp29:
 	.size	init_ts_queue, .Ltmp29-init_ts_queue
 .Lfunc_end2:
-	.file	4 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_queue.h"
+	.file	4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_queue.h"
 .Ltmp30:
 	.cfi_endproc
 .Leh_func_end2:
@@ -385,7 +385,7 @@ add_ts_queue_entry:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	1330
+	.long	1336
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -393,7 +393,7 @@ add_ts_queue_entry:
 	.ascii	 "4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"
 	.byte	0
 	.short	1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_queue.c"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/mii_queue.c"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -408,7 +408,7 @@ add_ts_queue_entry:
 	.byte	1
 	.byte	25
 	.byte	1
-	.long	370
+	.long	376
 	.byte	1
 	.long	.Lfunc_begin0
 	.long	.Lfunc_end0
@@ -420,7 +420,7 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	24
-	.long	370
+	.long	376
 	.long	.Ldebug_loc0+0
 	.byte	4
 	.long	.Ltmp1
@@ -430,14 +430,14 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	26
-	.long	1197
+	.long	1203
 	.long	.Ldebug_loc4+0
 	.byte	5
 	.ascii	 "count"
 	.byte	0
 	.byte	1
 	.byte	27
-	.long	370
+	.long	376
 	.long	.Ldebug_loc7+0
 	.byte	0
 	.byte	0
@@ -472,7 +472,7 @@ add_ts_queue_entry:
 	.byte	1
 	.byte	49
 	.byte	1
-	.long	370
+	.long	376
 	.byte	1
 	.long	.Lfunc_begin1
 	.long	.Lfunc_end1
@@ -484,14 +484,14 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	48
-	.long	370
+	.long	376
 	.long	.Ldebug_loc10+0
 	.byte	3
 	.ascii	 "ifnum"
 	.byte	0
 	.byte	1
 	.byte	48
-	.long	370
+	.long	376
 	.long	.Ldebug_loc12+0
 	.byte	4
 	.long	.Ltmp13
@@ -501,21 +501,21 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	50
-	.long	1197
+	.long	1203
 	.long	.Ldebug_loc14+0
 	.byte	5
 	.ascii	 "mask"
 	.byte	0
 	.byte	1
 	.byte	51
-	.long	370
+	.long	376
 	.long	.Ldebug_loc16+0
 	.byte	5
 	.ascii	 "ret"
 	.byte	0
 	.byte	1
 	.byte	52
-	.long	370
+	.long	376
 	.long	.Ldebug_loc18+0
 	.byte	0
 	.byte	0
@@ -538,7 +538,7 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	75
-	.long	1327
+	.long	1333
 	.long	.Ldebug_loc20+0
 	.byte	0
 	.byte	2
@@ -549,7 +549,7 @@ add_ts_queue_entry:
 	.byte	1
 	.byte	90
 	.byte	1
-	.long	370
+	.long	376
 	.byte	1
 	.long	.Lfunc_begin3
 	.long	.Lfunc_end3
@@ -561,7 +561,7 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	89
-	.long	1327
+	.long	1333
 	.long	.Ldebug_loc22+0
 	.byte	4
 	.long	.Lfunc_begin3
@@ -571,21 +571,21 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	91
-	.long	370
+	.long	376
 	.long	.Ldebug_loc26+0
 	.byte	5
 	.ascii	 "wrIndex"
 	.byte	0
 	.byte	1
 	.byte	92
-	.long	370
+	.long	376
 	.long	.Ldebug_loc30+0
 	.byte	5
 	.ascii	 "rdIndex"
 	.byte	0
 	.byte	1
 	.byte	92
-	.long	370
+	.long	376
 	.long	.Ldebug_loc32+0
 	.byte	0
 	.byte	0
@@ -608,14 +608,14 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	119
-	.long	1327
+	.long	1333
 	.long	.Ldebug_loc37+0
 	.byte	3
 	.byte	105
 	.byte	0
 	.byte	1
 	.byte	119
-	.long	370
+	.long	376
 	.long	.Ldebug_loc40+0
 	.byte	4
 	.long	.Lfunc_begin4
@@ -625,7 +625,7 @@ add_ts_queue_entry:
 	.byte	0
 	.byte	1
 	.byte	121
-	.long	370
+	.long	376
 	.long	.Ldebug_loc43+0
 	.byte	0
 	.byte	0
@@ -638,9 +638,9 @@ add_ts_queue_entry:
 	.byte	4
 	.byte	5
 	.byte	10
-	.long	930
+	.long	936
 	.byte	11
-	.long	946
+	.long	952
 	.short	379
 	.byte	0
 	.byte	12
@@ -652,7 +652,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "length"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	3
 	.byte	88
 	.byte	2
@@ -662,7 +662,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "timestamp"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	3
 	.byte	90
 	.byte	2
@@ -672,7 +672,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "filter_result"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	3
 	.byte	92
 	.byte	2
@@ -682,7 +682,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "src_port"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	3
 	.byte	94
 	.byte	2
@@ -692,7 +692,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "timestamp_id"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	3
 	.byte	96
 	.byte	2
@@ -702,7 +702,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "stage"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	3
 	.byte	98
 	.byte	2
@@ -712,7 +712,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "tcount"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	3
 	.byte	100
 	.byte	2
@@ -722,7 +722,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "crc"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	3
 	.byte	102
 	.byte	2
@@ -732,7 +732,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "forwarding"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	3
 	.byte	104
 	.byte	2
@@ -742,7 +742,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "data"
 	.byte	0
-	.long	949
+	.long	955
 	.byte	3
 	.byte	106
 	.byte	2
@@ -751,18 +751,18 @@ add_ts_queue_entry:
 	.byte	1
 	.byte	0
 	.byte	14
-	.long	962
+	.long	968
 	.ascii	 "mii_packet_t"
 	.byte	0
 	.byte	2
 	.byte	14
 	.byte	15
-	.long	1177
+	.long	1183
 	.byte	4
 	.byte	10
-	.long	930
+	.long	936
 	.byte	16
-	.long	946
+	.long	952
 	.byte	5
 	.byte	0
 	.byte	17
@@ -774,7 +774,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "lock"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	4
 	.byte	27
 	.byte	2
@@ -784,7 +784,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "rdIndex"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	4
 	.byte	28
 	.byte	2
@@ -794,7 +794,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "wrIndex"
 	.byte	0
-	.long	370
+	.long	376
 	.byte	4
 	.byte	29
 	.byte	2
@@ -804,7 +804,7 @@ add_ts_queue_entry:
 	.byte	13
 	.ascii	 "fifo"
 	.byte	0
-	.long	1203
+	.long	1209
 	.byte	4
 	.byte	30
 	.byte	2
@@ -813,13 +813,13 @@ add_ts_queue_entry:
 	.byte	1
 	.byte	0
 	.byte	14
-	.long	1215
+	.long	1221
 	.ascii	 "mii_ts_queue_t"
 	.byte	0
 	.byte	3
 	.byte	86
 	.byte	15
-	.long	1305
+	.long	1311
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -1072,19 +1072,19 @@ add_ts_queue_entry:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	377
+	.long	383
 .asciiz "hwlock_acquire"
-	.long	820
+	.long	826
 .asciiz "add_ts_queue_entry"
-	.long	237
+	.long	243
 .asciiz "get_and_dec_transmit_count"
-	.long	412
+	.long	418
 .asciiz "hwlock_release"
-	.long	687
+	.long	693
 .asciiz "get_ts_queue_entry"
-	.long	629
+	.long	635
 .asciiz "init_ts_queue"
-	.long	447
+	.long	453
 .asciiz "mii_packet_get_and_clear_forwarding"
 	.long	0
 .Lpubnames_end1:
@@ -1096,9 +1096,9 @@ add_ts_queue_entry:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	962
+	.long	968
 .asciiz "mii_packet_t"
-	.long	1215
+	.long	1221
 .asciiz "mii_ts_queue_t"
 	.long	0
 .Lpubtypes_end1:

@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc"
-# 16 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc"
+# 16 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -300,7 +300,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 17 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc" 2
+# 17 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc" 2
 # 1 "xclib.h" 1 3
 # 35 "xclib.h" 3
 unsigned bitrev(unsigned x);
@@ -308,30 +308,30 @@ unsigned bitrev(unsigned x);
 unsigned byterev(unsigned x);
 # 59 "xclib.h" 3
 int clz(unsigned x);
-# 18 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc" 2
-# 19 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc"
+# 18 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc" 2
+# 19 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc"
 # 1 "ethernet_conf_derived.h" 1
 # 3 "ethernet_conf_derived.h"
 # 1 "platform.h" 1 3
 # 21 "platform.h" 3
-# 1 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full/SLICEKIT-L2.h" 1
-# 4 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full/SLICEKIT-L2.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h" 1
+# 4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h"
 # 1 "xs1.h" 1 3
-# 5 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full/SLICEKIT-L2.h" 2
-# 13 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full/SLICEKIT-L2.h"
+# 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h"
 extern tileref tile[2];
 # 22 "platform.h" 2 3
 # 4 "ethernet_conf_derived.h" 2
 # 6 "ethernet_conf_derived.h"
 # 1 "ethernet_conf.h" 1
 # 7 "ethernet_conf_derived.h" 2
-# 20 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc" 2
+# 20 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc" 2
 # 1 "ethernet_server_def.h" 1
 # 20 "ethernet_server_def.h"
 # 1 "ethernet_conf_derived.h" 1
 # 21 "ethernet_server_def.h" 2
-# 21 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc" 2
-# 22 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc"
+# 21 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc" 2
+# 22 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc"
 # 1 "ethernet_tx_client_full.h" 1
 # 19 "ethernet_tx_client_full.h"
 # 1 "xccompat.h" 1 3
@@ -372,7 +372,7 @@ void mac_set_qav_bandwidth(chanend c_mac,
 # 135 "ethernet_tx_client_full.h"
 #pragma select handler
 void mac_check_link_client(chanend c, unsigned char &linkNum, int &status);
-# 23 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc" 2
+# 23 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc" 2
 # 1 "print.h" 1 3
 # 34 "print.h" 3
 int printchar(char value);
@@ -406,8 +406,8 @@ int printllonghexln(unsigned long long value);
 int printstr(const char (& alias s)[]);
 # 133 "print.h" 3
 int printstrln(const char (& alias s)[]);
-# 24 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc" 2
-# 26 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc"
+# 24 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc" 2
+# 26 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc"
 #pragma select handler
 void mac_check_link_client(chanend c, unsigned char &linkNum, int &status)
 {
@@ -417,12 +417,12 @@ void mac_check_link_client(chanend c, unsigned char &linkNum, int &status)
   (void)  __builtin_in_uchar(c) ;
   (void)  __builtin_inct(c) ;
 }
-# 36 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc"
+# 36 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc"
 #pragma unsafe arrays
 static void ethernet_send_frame_unify(chanend ethernet_tx_svr, unsigned int Buf[], int count, unsigned int &sentTime, unsigned int Cmd, int ifnum)
 {
   int i;
-# 65 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc"
+# 65 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc"
   sentTime = 0;
 
   ethernet_tx_svr <: Cmd;
@@ -451,7 +451,7 @@ void mac_tx_full(chanend ethernet_tx_svr, unsigned int Buf[], int count, int ifn
   ethernet_send_frame_unify(ethernet_tx_svr, Buf, count, sentTime,  (0x80000000) , ifnum);
   return;
 }
-# 94 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc"
+# 94 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc"
 #pragma unsafe arrays
 void mac_tx_offset2(chanend ethernet_tx_svr,
                     unsigned int Buf[],
@@ -493,7 +493,7 @@ int mac_get_macaddr_full(chanend ethernet_tx_svr, unsigned char Buf[])
 
   return 0;
 }
-# 160 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_tx_client.xc"
+# 160 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_tx_client.xc"
 int mac_calc_idle_slope(int bps);
 
 void mac_set_qav_bandwidth(chanend c,

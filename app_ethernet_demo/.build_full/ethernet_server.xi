@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_server.xc"
-# 6 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_server.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+# 6 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -300,7 +300,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 7 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_server.xc" 2
+# 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc" 2
 # 1 "mii_full.h" 1
 # 8 "mii_full.h"
 # 1 "xs1.h" 1 3
@@ -331,11 +331,11 @@ typedef out buffered port:32 out_buffered_port_32_t;
 # 3 "ethernet_conf_derived.h"
 # 1 "platform.h" 1 3
 # 21 "platform.h" 3
-# 1 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full/SLICEKIT-L2.h" 1
-# 4 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full/SLICEKIT-L2.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h" 1
+# 4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h"
 # 1 "xs1.h" 1 3
-# 5 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full/SLICEKIT-L2.h" 2
-# 13 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full/SLICEKIT-L2.h"
+# 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h"
 extern tileref tile[2];
 # 22 "platform.h" 2 3
 # 4 "ethernet_conf_derived.h" 2
@@ -500,7 +500,7 @@ void mii_tx_pins(
                 int ifnum);
 # 237 "mii_full.h"
 void ethernet_get_mii_counts( unsigned &dropped );
-# 8 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_server.xc" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc" 2
 # 1 "smi.h" 1
 # 9 "smi.h"
 # 1 "xs1.h" 1 3
@@ -536,7 +536,7 @@ int smi_check_link_state( smi_interface_t &smi );
 
 
 int smi_reg( smi_interface_t &smi , unsigned reg, unsigned val, int inning);
-# 9 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_server.xc" 2
+# 9 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc" 2
 # 1 "mii_wrappers.h" 1
 
 
@@ -564,7 +564,7 @@ void ethernet_tx_server_wr(const char mac_addr[], chanend tx[], int num_q, int n
 
 
 void ethernet_rx_server_wr(chanend rx[], int num_rx);
-# 10 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_server.xc" 2
+# 10 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc" 2
 # 1 "mii_filter.h" 1
 # 8 "mii_filter.h"
 # 1 "mii_full.h" 1
@@ -612,7 +612,7 @@ void ethernet_get_filter_counts( unsigned &address ,
 								unsigned &filter ,
 								unsigned &length ,
 								unsigned &crc );
-# 11 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_server.xc" 2
+# 11 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc" 2
 
 
 
@@ -649,7 +649,7 @@ void ethernet_server_full(mii_interface_full_t &m,
     ethernet_filter(mac_address, c);
   }
 }
-# 69 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/ethernet_server.xc"
+# 69 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
 void ethernet_server_two_port(mii_interface_full_t &mii1,
                               mii_interface_full_t &mii2,
                               char mac_address[],

@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
@@ -77,37 +77,37 @@
 	.call usage.anon.2,delay_ticks_longlong
 	.call usage.anon.1,delay_ticks_longlong
 	.call usage.anon.0,delay_ticks_longlong
-	.par mii_rx_pins_wr,mii_tx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,mii_rx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,mii_tx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,mii_rx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,mii_tx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,mii_tx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par ethernet_filter,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par ethernet_filter,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par ethernet_rx_server_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,mii_tx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
-	.par mii_rx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
-	.par mii_tx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
-	.par ethernet_tx_server_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
-	.par ethernet_tx_server_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
-	.par ethernet_rx_server_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,mii_tx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,mii_rx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,mii_tx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,mii_rx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,mii_tx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,mii_tx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par ethernet_filter,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par ethernet_filter,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par ethernet_rx_server_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:83: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,mii_tx_pins_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
+	.par mii_rx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,ethernet_tx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
+	.par mii_tx_pins_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
+	.par ethernet_tx_server_wr,ethernet_rx_server_wr,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
+	.par ethernet_tx_server_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
+	.par ethernet_rx_server_wr,ethernet_filter,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc:33: error: use of `%s' violates parallel usage rules"
 	.set usage.anon.0.locnoside, 1
 	.set usage.anon.1.locnoside, 1
 	.set usage.anon.2.locnoside, 1
@@ -256,7 +256,7 @@
 	.overlay_subgraph_conflict ethernet_server_full.task.mii_rx_pins_wr.0, ethernet_server_full.task.mii_tx_pins_wr.1, ethernet_server_full.task.ethernet_tx_server_wr.2, ethernet_server_full.task.ethernet_rx_server_wr.3, ethernet_server_full.task.ethernet_filter.4
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.file	2 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/timer.h"
 	.file	3 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/mii_full.h"
 	.section	.debug_info,"",@progbits
@@ -706,7 +706,7 @@ par.desc.1:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	5165
+	.long	5171
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -714,7 +714,7 @@ par.desc.1:
 	.ascii	 "XMOS 32-bit XC Compiler Community_13.1.0 (build 12073, May-09-2014)"
 	.byte	0
 	.short	49152
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -734,7 +734,7 @@ par.desc.1:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	4547
+	.long	4553
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -749,7 +749,7 @@ par.desc.1:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	4547
+	.long	4553
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -764,7 +764,7 @@ par.desc.1:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	4547
+	.long	4553
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_length"
@@ -773,20 +773,20 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	488
+	.long	494
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	488
+	.long	494
 	.byte	0
 	.byte	6
 	.ascii	 "int"
@@ -806,13 +806,13 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	488
+	.long	494
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	488
+	.long	494
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_timestamp"
@@ -821,20 +821,20 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	488
+	.long	494
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_timestamp"
@@ -849,13 +849,13 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	488
+	.long	494
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	488
+	.long	494
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_filter_result"
@@ -864,20 +864,20 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	488
+	.long	494
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_filter_result"
@@ -892,13 +892,13 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	488
+	.long	494
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	488
+	.long	494
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_src_port"
@@ -907,20 +907,20 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	488
+	.long	494
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_src_port"
@@ -935,13 +935,13 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	488
+	.long	494
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	488
+	.long	494
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_timestamp_id"
@@ -950,20 +950,20 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	488
+	.long	494
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_timestamp_id"
@@ -978,13 +978,13 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	488
+	.long	494
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	488
+	.long	494
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_stage"
@@ -993,20 +993,20 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	488
+	.long	494
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_stage"
@@ -1021,13 +1021,13 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	488
+	.long	494
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	488
+	.long	494
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_tcount"
@@ -1036,20 +1036,20 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	488
+	.long	494
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_tcount"
@@ -1064,13 +1064,13 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	488
+	.long	494
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	488
+	.long	494
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_crc"
@@ -1079,20 +1079,20 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	488
+	.long	494
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_crc"
@@ -1107,13 +1107,13 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	488
+	.long	494
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	488
+	.long	494
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_forwarding"
@@ -1122,20 +1122,20 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	488
+	.long	494
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_forwarding"
@@ -1150,13 +1150,13 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	488
+	.long	494
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	488
+	.long	494
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_data_ptr"
@@ -1165,14 +1165,14 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	145
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	145
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_data_word"
@@ -1187,19 +1187,19 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	488
+	.long	494
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	488
+	.long	494
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	488
+	.long	494
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_data_word"
@@ -1208,26 +1208,26 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	488
+	.long	494
 	.byte	1
 	.byte	3
 	.ascii	 "data"
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	488
+	.long	494
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	488
+	.long	494
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	155
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_data"
@@ -1242,19 +1242,19 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	488
+	.long	494
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	488
+	.long	494
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_data_short"
@@ -1269,19 +1269,19 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	488
+	.long	494
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	488
+	.long	494
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	488
+	.long	494
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_data_byte"
@@ -1296,19 +1296,19 @@ par.desc.1:
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	488
+	.long	494
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	488
+	.long	494
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	488
+	.long	494
 	.byte	0
 	.byte	7
 	.ascii	 "phy_init"
@@ -1328,14 +1328,14 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.byte	14
-	.long	4237
+	.long	4243
 	.long	.Ldebug_loc0+0
 	.byte	8
 	.ascii	 "mii0"
 	.byte	0
 	.byte	1
 	.byte	15
-	.long	4473
+	.long	4479
 	.long	.Ldebug_loc3+0
 	.byte	0
 	.byte	9
@@ -1355,7 +1355,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	4852
+	.long	4858
 	.long	.Ldebug_loc7+0
 	.byte	0
 	.byte	9
@@ -1375,7 +1375,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	4852
+	.long	4858
 	.long	.Ldebug_loc9+0
 	.byte	0
 	.byte	9
@@ -1395,7 +1395,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	4852
+	.long	4858
 	.long	.Ldebug_loc11+0
 	.byte	0
 	.byte	9
@@ -1415,7 +1415,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	4852
+	.long	4858
 	.long	.Ldebug_loc14+0
 	.byte	0
 	.byte	9
@@ -1435,7 +1435,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	4852
+	.long	4858
 	.long	.Ldebug_loc17+0
 	.byte	0
 	.byte	7
@@ -1456,7 +1456,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.byte	22
-	.long	4473
+	.long	4479
 	.byte	2
 	.byte	145
 	.byte	4
@@ -1465,37 +1465,37 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.byte	23
-	.long	4237
+	.long	4243
 	.byte	3
 	.ascii	 "mac_address"
 	.byte	0
 	.byte	1
 	.byte	24
-	.long	4503
+	.long	4509
 	.byte	3
 	.ascii	 "rx"
 	.byte	0
 	.byte	1
 	.byte	25
-	.long	4524
+	.long	4530
 	.byte	3
 	.ascii	 "num_rx"
 	.byte	0
 	.byte	1
 	.byte	26
-	.long	488
+	.long	494
 	.byte	3
 	.ascii	 "tx"
 	.byte	0
 	.byte	1
 	.byte	27
-	.long	4524
+	.long	4530
 	.byte	3
 	.ascii	 "num_tx"
 	.byte	0
 	.byte	1
 	.byte	28
-	.long	488
+	.long	494
 	.byte	0
 	.byte	12
 	.ascii	 "ethernet_server_two_port.task.mii_rx_pins_wr.0"
@@ -1509,7 +1509,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	5162
+	.long	5168
 	.byte	0
 	.byte	12
 	.ascii	 "ethernet_server_two_port.task.mii_tx_pins_wr.1"
@@ -1523,7 +1523,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	5162
+	.long	5168
 	.byte	0
 	.byte	12
 	.ascii	 "ethernet_server_two_port.task.mii_rx_pins_wr.2"
@@ -1537,7 +1537,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	5162
+	.long	5168
 	.byte	0
 	.byte	12
 	.ascii	 "ethernet_server_two_port.task.mii_tx_pins_wr.3"
@@ -1551,7 +1551,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	5162
+	.long	5168
 	.byte	0
 	.byte	12
 	.ascii	 "ethernet_server_two_port.task.ethernet_filter.4"
@@ -1565,7 +1565,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	5162
+	.long	5168
 	.byte	0
 	.byte	12
 	.ascii	 "ethernet_server_two_port.task.ethernet_rx_server_wr.5"
@@ -1579,7 +1579,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	5162
+	.long	5168
 	.byte	0
 	.byte	12
 	.ascii	 "ethernet_server_two_port.task.ethernet_tx_server_wr.6"
@@ -1593,7 +1593,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	5162
+	.long	5168
 	.byte	0
 	.byte	7
 	.ascii	 "ethernet_server_two_port"
@@ -1613,7 +1613,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.byte	77
-	.long	4237
+	.long	4243
 	.byte	2
 	.byte	145
 	.byte	20
@@ -1622,7 +1622,7 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.byte	78
-	.long	4508
+	.long	4514
 	.byte	2
 	.byte	145
 	.byte	24
@@ -1631,49 +1631,49 @@ par.desc.1:
 	.byte	0
 	.byte	1
 	.byte	69
-	.long	4473
+	.long	4479
 	.byte	3
 	.ascii	 "mii2"
 	.byte	0
 	.byte	1
 	.byte	70
-	.long	4473
+	.long	4479
 	.byte	3
 	.ascii	 "mac_address"
 	.byte	0
 	.byte	1
 	.byte	71
-	.long	4503
+	.long	4509
 	.byte	3
 	.ascii	 "rx"
 	.byte	0
 	.byte	1
 	.byte	72
-	.long	4524
+	.long	4530
 	.byte	3
 	.ascii	 "num_rx"
 	.byte	0
 	.byte	1
 	.byte	73
-	.long	488
+	.long	494
 	.byte	3
 	.ascii	 "tx"
 	.byte	0
 	.byte	1
 	.byte	74
-	.long	4524
+	.long	4530
 	.byte	3
 	.ascii	 "num_tx"
 	.byte	0
 	.byte	1
 	.byte	75
-	.long	488
+	.long	494
 	.byte	3
 	.ascii	 "smi1"
 	.byte	0
 	.byte	1
 	.byte	76
-	.long	4237
+	.long	4243
 	.byte	0
 	.byte	6
 	.ascii	 "port"
@@ -1687,7 +1687,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "phy_address"
 	.byte	0
-	.long	488
+	.long	494
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1697,7 +1697,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "p_smi_mdio"
 	.byte	0
-	.long	4144
+	.long	4150
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1707,7 +1707,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	4144
+	.long	4150
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1716,7 +1716,7 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	16
-	.long	4152
+	.long	4158
 	.byte	6
 	.ascii	 "clock"
 	.byte	0
@@ -1729,7 +1729,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "clk_mii_rx"
 	.byte	0
-	.long	4242
+	.long	4248
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1739,7 +1739,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "clk_mii_tx"
 	.byte	0
-	.long	4242
+	.long	4248
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1749,7 +1749,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "p_mii_rxclk"
 	.byte	0
-	.long	4144
+	.long	4150
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1759,7 +1759,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "p_mii_rxer"
 	.byte	0
-	.long	4144
+	.long	4150
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1769,7 +1769,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "p_mii_rxd"
 	.byte	0
-	.long	4144
+	.long	4150
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1779,7 +1779,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "p_mii_rxdv"
 	.byte	0
-	.long	4144
+	.long	4150
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1789,7 +1789,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "p_mii_txclk"
 	.byte	0
-	.long	4144
+	.long	4150
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1799,7 +1799,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "p_mii_txen"
 	.byte	0
-	.long	4144
+	.long	4150
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1809,7 +1809,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "p_mii_txd"
 	.byte	0
-	.long	4144
+	.long	4150
 	.byte	1
 	.byte	16
 	.byte	2
@@ -1818,7 +1818,7 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	16
-	.long	4251
+	.long	4257
 	.byte	6
 	.ascii	 "unsigned char"
 	.byte	0
@@ -1828,26 +1828,26 @@ par.desc.1:
 	.byte	4
 	.byte	5
 	.byte	18
-	.long	4478
+	.long	4484
 	.byte	16
-	.long	4498
+	.long	4504
 	.byte	6
 	.ascii	 "chanend"
 	.byte	0
 	.byte	7
 	.byte	4
 	.byte	18
-	.long	4508
+	.long	4514
 	.byte	16
-	.long	4519
+	.long	4525
 	.byte	19
-	.long	4251
+	.long	4257
 	.byte	4
 	.byte	19
-	.long	4152
+	.long	4158
 	.byte	4
 	.byte	19
-	.long	4498
+	.long	4504
 	.byte	4
 	.byte	6
 	.ascii	 "unsigned int"
@@ -1861,7 +1861,7 @@ par.desc.1:
 	.byte	15
 	.byte	97
 	.byte	0
-	.long	4541
+	.long	4547
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1871,7 +1871,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "bound"
 	.byte	0
-	.long	4547
+	.long	4553
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1880,7 +1880,7 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	19
-	.long	4519
+	.long	4525
 	.byte	4
 	.byte	14
 	.ascii	 "__TYPE_4"
@@ -1889,7 +1889,7 @@ par.desc.1:
 	.byte	15
 	.byte	97
 	.byte	0
-	.long	4605
+	.long	4611
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1899,7 +1899,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "bound"
 	.byte	0
-	.long	4547
+	.long	4553
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1914,7 +1914,7 @@ par.desc.1:
 	.byte	15
 	.byte	97
 	.byte	0
-	.long	4605
+	.long	4611
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1924,7 +1924,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "bound"
 	.byte	0
-	.long	4547
+	.long	4553
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1933,12 +1933,12 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	20
-	.long	4508
+	.long	4514
 	.byte	21
-	.long	4495
+	.long	4501
 	.byte	1
 	.byte	21
-	.long	4495
+	.long	4501
 	.byte	0
 	.byte	0
 	.byte	14
@@ -1948,7 +1948,7 @@ par.desc.1:
 	.byte	15
 	.byte	109
 	.byte	0
-	.long	4529
+	.long	4535
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1958,7 +1958,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "smi"
 	.byte	0
-	.long	4535
+	.long	4541
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1968,7 +1968,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "mac_address"
 	.byte	0
-	.long	4563
+	.long	4569
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1978,7 +1978,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "rx"
 	.byte	0
-	.long	4611
+	.long	4617
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1988,7 +1988,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "num_rx"
 	.byte	0
-	.long	488
+	.long	494
 	.byte	1
 	.byte	36
 	.byte	2
@@ -1998,7 +1998,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "tx"
 	.byte	0
-	.long	4653
+	.long	4659
 	.byte	1
 	.byte	36
 	.byte	2
@@ -2008,7 +2008,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "num_tx"
 	.byte	0
-	.long	488
+	.long	494
 	.byte	1
 	.byte	36
 	.byte	2
@@ -2018,7 +2018,7 @@ par.desc.1:
 	.byte	15
 	.byte	99
 	.byte	0
-	.long	4695
+	.long	4701
 	.byte	1
 	.byte	36
 	.byte	2
@@ -2027,7 +2027,7 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	19
-	.long	4713
+	.long	4719
 	.byte	4
 	.byte	14
 	.ascii	 "__TYPE_0"
@@ -2036,7 +2036,7 @@ par.desc.1:
 	.byte	15
 	.byte	97
 	.byte	0
-	.long	4541
+	.long	4547
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2046,7 +2046,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "bound"
 	.byte	0
-	.long	4547
+	.long	4553
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2061,7 +2061,7 @@ par.desc.1:
 	.byte	15
 	.byte	97
 	.byte	0
-	.long	4605
+	.long	4611
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2071,7 +2071,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "bound"
 	.byte	0
-	.long	4547
+	.long	4553
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2086,7 +2086,7 @@ par.desc.1:
 	.byte	15
 	.byte	97
 	.byte	0
-	.long	4605
+	.long	4611
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2096,7 +2096,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "bound"
 	.byte	0
-	.long	4547
+	.long	4553
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2105,12 +2105,12 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	20
-	.long	4508
+	.long	4514
 	.byte	21
-	.long	4495
+	.long	4501
 	.byte	1
 	.byte	21
-	.long	4495
+	.long	4501
 	.byte	1
 	.byte	0
 	.byte	14
@@ -2120,7 +2120,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "mii1"
 	.byte	0
-	.long	4529
+	.long	4535
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2130,7 +2130,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "mii2"
 	.byte	0
-	.long	4529
+	.long	4535
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2140,7 +2140,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "mac_address"
 	.byte	0
-	.long	4858
+	.long	4864
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2150,7 +2150,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "rx"
 	.byte	0
-	.long	4900
+	.long	4906
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2160,7 +2160,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "num_rx"
 	.byte	0
-	.long	488
+	.long	494
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2170,7 +2170,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "tx"
 	.byte	0
-	.long	4942
+	.long	4948
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2180,7 +2180,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "num_tx"
 	.byte	0
-	.long	488
+	.long	494
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2190,7 +2190,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "smi1"
 	.byte	0
-	.long	4535
+	.long	4541
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2200,7 +2200,7 @@ par.desc.1:
 	.byte	15
 	.ascii	 "cs"
 	.byte	0
-	.long	4984
+	.long	4990
 	.byte	1
 	.byte	86
 	.byte	2
@@ -2209,7 +2209,7 @@ par.desc.1:
 	.byte	1
 	.byte	0
 	.byte	19
-	.long	5002
+	.long	5008
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -2502,89 +2502,89 @@ par.desc.1:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1123
+	.long	1129
 .asciiz "mii_packet_set_timestamp_id"
-	.long	2445
+	.long	2451
 .asciiz "ethernet_server_full.task.mii_tx_pins_wr.1"
-	.long	495
+	.long	501
 .asciiz "mii_packet_set_length"
-	.long	2324
+	.long	2330
 .asciiz "ethernet_server_full.task.mii_rx_pins_wr.0"
-	.long	805
+	.long	811
 .asciiz "mii_packet_set_filter_result"
-	.long	2258
+	.long	2264
 .asciiz "phy_init"
-	.long	1614
+	.long	1620
 .asciiz "mii_packet_get_forwarding"
-	.long	1925
+	.long	1931
 .asciiz "mii_packet_get_data_word"
-	.long	2088
+	.long	2094
 .asciiz "mii_packet_set_data_short"
-	.long	3679
+	.long	3685
 .asciiz "ethernet_server_two_port.task.ethernet_rx_server_wr.5"
-	.long	2701
+	.long	2707
 .asciiz "ethernet_server_full.task.ethernet_rx_server_wr.3"
-	.long	3807
+	.long	3813
 .asciiz "ethernet_server_two_port.task.ethernet_tx_server_wr.6"
-	.long	3221
+	.long	3227
 .asciiz "ethernet_server_two_port.task.mii_tx_pins_wr.1"
-	.long	3935
+	.long	3941
 .asciiz "ethernet_server_two_port"
-	.long	1695
+	.long	1701
 .asciiz "mii_packet_set_forwarding"
-	.long	303
+	.long	309
 .asciiz "delay_milliseconds"
-	.long	1840
+	.long	1846
 .asciiz "mii_packet_set_data_word"
-	.long	2014
+	.long	2020
 .asciiz "mii_packet_set_data"
-	.long	2836
+	.long	2842
 .asciiz "ethernet_server_full.task.ethernet_filter.4"
-	.long	888
+	.long	894
 .asciiz "mii_packet_get_src_port"
-	.long	1772
+	.long	1778
 .asciiz "mii_packet_get_data_ptr"
-	.long	2959
+	.long	2965
 .asciiz "ethernet_server_full"
-	.long	564
+	.long	570
 .asciiz "mii_packet_get_timestamp"
-	.long	1204
+	.long	1210
 .asciiz "mii_packet_get_stage"
-	.long	3335
+	.long	3341
 .asciiz "ethernet_server_two_port.task.mii_rx_pins_wr.2"
-	.long	3107
+	.long	3113
 .asciiz "ethernet_server_two_port.task.mii_rx_pins_wr.0"
-	.long	965
+	.long	971
 .asciiz "mii_packet_set_src_port"
-	.long	1484
+	.long	1490
 .asciiz "mii_packet_get_crc"
-	.long	2174
+	.long	2180
 .asciiz "mii_packet_set_data_byte"
-	.long	3449
+	.long	3455
 .asciiz "ethernet_server_two_port.task.mii_tx_pins_wr.3"
-	.long	1342
+	.long	1348
 .asciiz "mii_packet_get_tcount"
-	.long	643
+	.long	649
 .asciiz "mii_packet_set_timestamp"
-	.long	1038
+	.long	1044
 .asciiz "mii_packet_get_timestamp_id"
-	.long	415
+	.long	421
 .asciiz "mii_packet_get_length"
-	.long	359
+	.long	365
 .asciiz "delay_microseconds"
-	.long	718
+	.long	724
 .asciiz "mii_packet_get_filter_result"
-	.long	1551
+	.long	1557
 .asciiz "mii_packet_set_crc"
-	.long	1275
+	.long	1281
 .asciiz "mii_packet_set_stage"
-	.long	3563
+	.long	3569
 .asciiz "ethernet_server_two_port.task.ethernet_filter.4"
-	.long	1415
+	.long	1421
 .asciiz "mii_packet_set_tcount"
-	.long	257
+	.long	263
 .asciiz "delay_seconds"
-	.long	2566
+	.long	2572
 .asciiz "ethernet_server_full.task.ethernet_tx_server_wr.2"
 	.long	0
 .Lpubnames_end1:
@@ -2596,25 +2596,25 @@ par.desc.1:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	4900
+	.long	4906
 .asciiz "__TYPE_1"
-	.long	4942
+	.long	4948
 .asciiz "__TYPE_2"
-	.long	4563
+	.long	4569
 .asciiz "__TYPE_3"
-	.long	4611
+	.long	4617
 .asciiz "__TYPE_4"
-	.long	4251
+	.long	4257
 .asciiz "mii_interface_full_t"
-	.long	4653
+	.long	4659
 .asciiz "__TYPE_5"
-	.long	5002
+	.long	5008
 .asciiz "frame.0"
-	.long	4713
+	.long	4719
 .asciiz "frame.1"
-	.long	4152
+	.long	4158
 .asciiz "smi_interface_t"
-	.long	4858
+	.long	4864
 .asciiz "__TYPE_0"
 	.long	0
 .Lpubtypes_end1:
@@ -2755,61 +2755,61 @@ par.desc.1:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_0,.Lxta.call_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	17
 	.long	.Lxta.call_labels0
 .cc_bottom cc_0
 .cc_top cc_1,.Lxta.call_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	18
 	.long	.Lxta.call_labels1
 .cc_bottom cc_1
 .cc_top cc_2,.Lxta.call_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	19
 	.long	.Lxta.call_labels2
 .cc_bottom cc_2
 .cc_top cc_3,.Lxta.call_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	31
 	.long	.Lxta.call_labels3
 .cc_bottom cc_3
 .cc_top cc_4,.Lxta.call_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	32
 	.long	.Lxta.call_labels4
 .cc_bottom cc_4
 .cc_top cc_5,.Lxta.call_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	36
 	.long	.Lxta.call_labels5
 .cc_bottom cc_5
 .cc_top cc_6,.Lxta.call_labels6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	40
 	.long	.Lxta.call_labels6
 .cc_bottom cc_6
 .cc_top cc_7,.Lxta.call_labels7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	41
 	.long	.Lxta.call_labels7
 .cc_bottom cc_7
 .cc_top cc_8,.Lxta.call_labels8
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	43
 	.long	.Lxta.call_labels8
 .cc_bottom cc_8
 .cc_top cc_9,.Lxta.call_labels9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	44
 	.long	.Lxta.call_labels9
@@ -2822,21 +2822,21 @@ par.desc.1:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_10,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	16
 	.long	20
 	.long	.Lxtalabel0
 .cc_bottom cc_10
 .cc_top cc_11,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	29
 	.long	46
 	.long	.Lxtalabel1
 .cc_bottom cc_11
 .cc_top cc_12,.Lxtalabel2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_server.xc"
 	.byte	0
 	.long	79
 	.long	81

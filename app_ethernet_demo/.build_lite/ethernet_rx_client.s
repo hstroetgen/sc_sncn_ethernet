@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
@@ -270,7 +270,7 @@
 	.set mac_get_tile_timer_offset.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.file	2 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/timer.h"
 	.file	3 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/mii_full.h"
 	.section	.debug_info,"",@progbits
@@ -1502,7 +1502,7 @@ ethernet_unified_get_data:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	4455
+	.long	4461
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -1510,7 +1510,7 @@ ethernet_unified_get_data:
 	.ascii	 "XMOS 32-bit XC Compiler Community_13.1.0 (build 12073, May-09-2014)"
 	.byte	0
 	.short	49152
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -1530,7 +1530,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	2342
+	.long	2348
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -1545,7 +1545,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	2342
+	.long	2348
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -1560,7 +1560,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	2342
+	.long	2348
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_length"
@@ -1569,20 +1569,20 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	491
+	.long	497
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	491
+	.long	497
 	.byte	0
 	.byte	6
 	.ascii	 "int"
@@ -1602,13 +1602,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	491
+	.long	497
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	491
+	.long	497
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_timestamp"
@@ -1617,20 +1617,20 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	491
+	.long	497
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_timestamp"
@@ -1645,13 +1645,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	491
+	.long	497
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	491
+	.long	497
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_filter_result"
@@ -1660,20 +1660,20 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	491
+	.long	497
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_filter_result"
@@ -1688,13 +1688,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	491
+	.long	497
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	491
+	.long	497
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_src_port"
@@ -1703,20 +1703,20 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	491
+	.long	497
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_src_port"
@@ -1731,13 +1731,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	491
+	.long	497
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	491
+	.long	497
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_timestamp_id"
@@ -1746,20 +1746,20 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	491
+	.long	497
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_timestamp_id"
@@ -1774,13 +1774,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	491
+	.long	497
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	491
+	.long	497
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_stage"
@@ -1789,20 +1789,20 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	491
+	.long	497
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_stage"
@@ -1817,13 +1817,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	491
+	.long	497
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	491
+	.long	497
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_tcount"
@@ -1832,20 +1832,20 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	491
+	.long	497
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_tcount"
@@ -1860,13 +1860,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	491
+	.long	497
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	491
+	.long	497
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_crc"
@@ -1875,20 +1875,20 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	491
+	.long	497
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_crc"
@@ -1903,13 +1903,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	491
+	.long	497
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	491
+	.long	497
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_forwarding"
@@ -1918,20 +1918,20 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	491
+	.long	497
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_forwarding"
@@ -1946,13 +1946,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	491
+	.long	497
 	.byte	3
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	491
+	.long	497
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_data_ptr"
@@ -1961,14 +1961,14 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	145
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "buf"
 	.byte	0
 	.byte	3
 	.byte	145
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_data_word"
@@ -1983,19 +1983,19 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	491
+	.long	497
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	491
+	.long	497
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	149
-	.long	491
+	.long	497
 	.byte	0
 	.byte	4
 	.ascii	 "mii_packet_get_data_word"
@@ -2004,26 +2004,26 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	491
+	.long	497
 	.byte	1
 	.byte	3
 	.ascii	 "data"
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	491
+	.long	497
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	491
+	.long	497
 	.byte	5
 	.byte	120
 	.byte	0
 	.byte	3
 	.byte	155
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_data"
@@ -2038,19 +2038,19 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	491
+	.long	497
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	491
+	.long	497
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	170
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_data_short"
@@ -2065,19 +2065,19 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	491
+	.long	497
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	491
+	.long	497
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	174
-	.long	491
+	.long	497
 	.byte	0
 	.byte	2
 	.ascii	 "mii_packet_set_data_byte"
@@ -2092,19 +2092,19 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	491
+	.long	497
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	491
+	.long	497
 	.byte	3
 	.byte	118
 	.byte	0
 	.byte	3
 	.byte	178
-	.long	491
+	.long	497
 	.byte	0
 	.byte	7
 	.ascii	 "get_tile_id_from_chanend"
@@ -2113,13 +2113,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	24
-	.long	2342
+	.long	2348
 	.byte	3
 	.byte	99
 	.byte	0
 	.byte	1
 	.byte	24
-	.long	4398
+	.long	4404
 	.byte	8
 	.byte	8
 	.byte	5
@@ -2127,7 +2127,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	25
-	.long	2342
+	.long	2348
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2143,7 +2143,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	35
-	.long	491
+	.long	497
 	.long	.Lfunc_begin12
 	.long	.Lfunc_end12
 	.byte	1
@@ -2154,37 +2154,37 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	4398
+	.long	4404
 	.byte	3
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	4434
+	.long	4440
 	.byte	3
 	.ascii	 "rxTime"
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	4439
+	.long	4445
 	.byte	3
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	4439
+	.long	4445
 	.byte	3
 	.ascii	 "Cmd"
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	2342
+	.long	2348
 	.byte	3
 	.byte	110
 	.byte	0
 	.byte	1
 	.byte	34
-	.long	491
+	.long	497
 	.byte	10
 	.long	.Ltmp151
 	.long	.Ltmp185
@@ -2196,49 +2196,49 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2342
+	.long	2348
 	.long	.Ldebug_loc86+0
 	.byte	11
 	.byte	105
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2342
+	.long	2348
 	.long	.Ldebug_loc89+0
 	.byte	11
 	.byte	106
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2342
+	.long	2348
 	.long	.Ldebug_loc94+0
 	.byte	11
 	.ascii	 "transferCnt"
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2342
+	.long	2348
 	.long	.Ldebug_loc99+0
 	.byte	11
 	.byte	107
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2342
+	.long	2348
 	.long	.Ldebug_loc101+0
 	.byte	11
 	.ascii	 "rxData"
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2342
+	.long	2348
 	.long	.Ldebug_loc107+0
 	.byte	11
 	.ascii	 "temp"
 	.byte	0
 	.byte	1
 	.byte	36
-	.long	2342
+	.long	2348
 	.long	.Ldebug_loc117+0
 	.byte	10
 	.long	.Ltmp169
@@ -2248,7 +2248,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	53
-	.long	491
+	.long	497
 	.long	.Ldebug_loc126+0
 	.byte	0
 	.byte	0
@@ -2272,28 +2272,28 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	88
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc0+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	88
-	.long	4434
+	.long	4440
 	.long	.Ldebug_loc2+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	89
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc4+0
 	.byte	13
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	90
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc7+0
 	.byte	10
 	.long	.Ltmp8
@@ -2306,7 +2306,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	92
-	.long	2342
+	.long	2348
 	.byte	2
 	.byte	145
 	.byte	12
@@ -2331,28 +2331,28 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc75+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	4434
+	.long	4440
 	.long	.Ldebug_loc77+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc79+0
 	.byte	13
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc82+0
 	.byte	10
 	.long	.Ltmp120
@@ -2365,7 +2365,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	99
-	.long	2342
+	.long	2348
 	.byte	2
 	.byte	145
 	.byte	12
@@ -2390,35 +2390,35 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc9+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	4434
+	.long	4440
 	.long	.Ldebug_loc11+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc13+0
 	.byte	13
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc16+0
 	.byte	15
 	.byte	110
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	491
+	.long	497
 	.byte	2
 	.byte	145
 	.byte	24
@@ -2433,7 +2433,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	106
-	.long	2342
+	.long	2348
 	.byte	2
 	.byte	145
 	.byte	12
@@ -2458,35 +2458,35 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	111
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc18+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	111
-	.long	4434
+	.long	4440
 	.long	.Ldebug_loc20+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	111
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc22+0
 	.byte	13
 	.ascii	 "rxTime"
 	.byte	0
 	.byte	1
 	.byte	111
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc25+0
 	.byte	15
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	111
-	.long	4439
+	.long	4445
 	.byte	2
 	.byte	145
 	.byte	20
@@ -2509,35 +2509,35 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc28+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	4434
+	.long	4440
 	.long	.Ldebug_loc30+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc32+0
 	.byte	13
 	.ascii	 "rxTime"
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc35+0
 	.byte	15
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	4439
+	.long	4445
 	.byte	2
 	.byte	145
 	.byte	20
@@ -2546,7 +2546,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	491
+	.long	497
 	.byte	2
 	.byte	145
 	.byte	24
@@ -2563,13 +2563,13 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	123
-	.long	4398
+	.long	4404
 	.byte	3
 	.ascii	 "cmd"
 	.byte	0
 	.byte	1
 	.byte	123
-	.long	491
+	.long	497
 	.byte	0
 	.byte	12
 	.ascii	 "mac_set_drop_packets"
@@ -2589,14 +2589,14 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	134
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc38+0
 	.byte	13
 	.byte	120
 	.byte	0
 	.byte	1
 	.byte	134
-	.long	491
+	.long	497
 	.long	.Ldebug_loc40+0
 	.byte	0
 	.byte	12
@@ -2617,7 +2617,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc84+0
 	.byte	0
 	.byte	12
@@ -2638,14 +2638,14 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	149
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc42+0
 	.byte	13
 	.byte	120
 	.byte	0
 	.byte	1
 	.byte	149
-	.long	491
+	.long	497
 	.long	.Ldebug_loc44+0
 	.byte	0
 	.byte	12
@@ -2666,14 +2666,14 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	156
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc46+0
 	.byte	13
 	.byte	120
 	.byte	0
 	.byte	1
 	.byte	156
-	.long	491
+	.long	497
 	.long	.Ldebug_loc48+0
 	.byte	0
 	.byte	12
@@ -2694,14 +2694,14 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	165
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc50+0
 	.byte	13
 	.ascii	 "dropped"
 	.byte	0
 	.byte	1
 	.byte	165
-	.long	4444
+	.long	4450
 	.long	.Ldebug_loc52+0
 	.byte	0
 	.byte	12
@@ -2722,35 +2722,35 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	173
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc54+0
 	.byte	13
 	.ascii	 "mii_overflow"
 	.byte	0
 	.byte	1
 	.byte	174
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc56+0
 	.byte	13
 	.ascii	 "bad_length"
 	.byte	0
 	.byte	1
 	.byte	175
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc58+0
 	.byte	13
 	.ascii	 "mismatched_address"
 	.byte	0
 	.byte	1
 	.byte	176
-	.long	4439
+	.long	4445
 	.long	.Ldebug_loc60+0
 	.byte	15
 	.ascii	 "filtered"
 	.byte	0
 	.byte	1
 	.byte	177
-	.long	4439
+	.long	4445
 	.byte	2
 	.byte	145
 	.byte	4
@@ -2759,7 +2759,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	179
-	.long	4439
+	.long	4445
 	.byte	2
 	.byte	145
 	.byte	8
@@ -2782,14 +2782,14 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	191
-	.long	4398
+	.long	4404
 	.long	.Ldebug_loc62+0
 	.byte	13
 	.ascii	 "offset"
 	.byte	0
 	.byte	1
 	.byte	191
-	.long	4444
+	.long	4450
 	.long	.Ldebug_loc64+0
 	.byte	10
 	.long	.Ltmp97
@@ -2802,7 +2802,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	193
-	.long	2342
+	.long	2348
 	.long	.Ldebug_loc67+0
 	.byte	10
 	.long	.Ltmp97
@@ -2812,7 +2812,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	194
-	.long	491
+	.long	497
 	.long	.Ldebug_loc69+0
 	.byte	10
 	.long	.Ltmp97
@@ -2822,7 +2822,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	195
-	.long	491
+	.long	497
 	.long	.Ldebug_loc72+0
 	.byte	10
 	.long	.Ltmp97
@@ -2832,7 +2832,7 @@ ethernet_unified_get_data:
 	.byte	0
 	.byte	1
 	.byte	196
-	.long	4449
+	.long	4455
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2853,13 +2853,13 @@ ethernet_unified_get_data:
 	.byte	4
 	.byte	5
 	.byte	18
-	.long	4409
+	.long	4415
 	.byte	19
-	.long	4429
+	.long	4435
 	.byte	19
-	.long	2342
+	.long	2348
 	.byte	19
-	.long	491
+	.long	497
 	.byte	6
 	.ascii	 "timer"
 	.byte	0
@@ -3138,89 +3138,89 @@ ethernet_unified_get_data:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1126
+	.long	1132
 .asciiz "mii_packet_set_timestamp_id"
-	.long	498
+	.long	504
 .asciiz "mii_packet_set_length"
-	.long	808
+	.long	814
 .asciiz "mii_packet_set_filter_result"
-	.long	1617
+	.long	1623
 .asciiz "mii_packet_get_forwarding"
-	.long	1928
+	.long	1934
 .asciiz "mii_packet_get_data_word"
-	.long	2091
+	.long	2097
 .asciiz "mii_packet_set_data_short"
-	.long	2992
+	.long	2998
 .asciiz "safe_mac_rx_full"
-	.long	2678
+	.long	2684
 .asciiz "mac_rx_full"
-	.long	3168
+	.long	3174
 .asciiz "mac_rx_timed"
-	.long	3304
+	.long	3310
 .asciiz "safe_mac_rx_timed"
-	.long	2832
+	.long	2838
 .asciiz "mac_rx_offset2"
-	.long	1698
+	.long	1704
 .asciiz "mii_packet_set_forwarding"
-	.long	306
+	.long	312
 .asciiz "delay_milliseconds"
-	.long	1843
+	.long	1849
 .asciiz "mii_packet_set_data_word"
-	.long	2017
+	.long	2023
 .asciiz "mii_packet_set_data"
-	.long	2358
+	.long	2364
 .asciiz "ethernet_unified_get_data"
-	.long	3769
+	.long	3775
 .asciiz "mac_set_custom_filter"
-	.long	3462
+	.long	3468
 .asciiz "send_cmd"
-	.long	891
+	.long	897
 .asciiz "mii_packet_get_src_port"
-	.long	1775
+	.long	1781
 .asciiz "mii_packet_get_data_ptr"
-	.long	3504
+	.long	3510
 .asciiz "mac_set_drop_packets"
-	.long	3594
+	.long	3600
 .asciiz "mac_request_status_packets"
-	.long	567
+	.long	573
 .asciiz "mii_packet_get_timestamp"
-	.long	1207
+	.long	1213
 .asciiz "mii_packet_get_stage"
-	.long	968
+	.long	974
 .asciiz "mii_packet_set_src_port"
-	.long	1487
+	.long	1493
 .asciiz "mii_packet_get_crc"
-	.long	2177
+	.long	2183
 .asciiz "mii_packet_set_data_byte"
-	.long	3683
+	.long	3689
 .asciiz "mac_set_queue_size"
-	.long	3861
+	.long	3867
 .asciiz "mac_get_link_counters"
-	.long	1345
+	.long	1351
 .asciiz "mii_packet_get_tcount"
-	.long	3959
+	.long	3965
 .asciiz "mac_get_global_counters"
-	.long	646
+	.long	652
 .asciiz "mii_packet_set_timestamp"
-	.long	1041
+	.long	1047
 .asciiz "mii_packet_get_timestamp_id"
-	.long	418
+	.long	424
 .asciiz "mii_packet_get_length"
-	.long	362
+	.long	368
 .asciiz "delay_microseconds"
-	.long	721
+	.long	727
 .asciiz "mii_packet_get_filter_result"
-	.long	1554
+	.long	1560
 .asciiz "mii_packet_set_crc"
-	.long	1278
+	.long	1284
 .asciiz "mii_packet_set_stage"
-	.long	2261
+	.long	2267
 .asciiz "get_tile_id_from_chanend"
-	.long	1418
+	.long	1424
 .asciiz "mii_packet_set_tcount"
-	.long	260
+	.long	266
 .asciiz "delay_seconds"
-	.long	4155
+	.long	4161
 .asciiz "mac_get_tile_timer_offset"
 	.long	0
 .Lpubnames_end1:
@@ -3934,31 +3934,31 @@ ethernet_unified_get_data:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_0,.Lxta.call_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	93
 	.long	.Lxta.call_labels0
 .cc_bottom cc_0
 .cc_top cc_1,.Lxta.call_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	100
 	.long	.Lxta.call_labels4
 .cc_bottom cc_1
 .cc_top cc_2,.Lxta.call_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	107
 	.long	.Lxta.call_labels1
 .cc_bottom cc_2
 .cc_top cc_3,.Lxta.call_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	113
 	.long	.Lxta.call_labels2
 .cc_bottom cc_3
 .cc_top cc_4,.Lxta.call_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	119
 	.long	.Lxta.call_labels3
@@ -3971,319 +3971,319 @@ ethernet_unified_get_data:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_5,.Lxta.endpoint_labels41
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	39
 	.long	.Lxta.endpoint_labels41
 .cc_bottom cc_5
 .cc_top cc_6,.Lxta.endpoint_labels42
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	40
 	.long	.Lxta.endpoint_labels42
 .cc_bottom cc_6
 .cc_top cc_7,.Lxta.endpoint_labels43
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	41
 	.long	.Lxta.endpoint_labels43
 .cc_bottom cc_7
 .cc_top cc_8,.Lxta.endpoint_labels44
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	42
 	.long	.Lxta.endpoint_labels44
 .cc_bottom cc_8
 .cc_top cc_9,.Lxta.endpoint_labels45
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	43
 	.long	.Lxta.endpoint_labels45
 .cc_bottom cc_9
 .cc_top cc_10,.Lxta.endpoint_labels46
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	44
 	.long	.Lxta.endpoint_labels46
 .cc_bottom cc_10
 .cc_top cc_11,.Lxta.endpoint_labels47
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	49
 	.long	.Lxta.endpoint_labels47
 .cc_bottom cc_11
 .cc_top cc_12,.Lxta.endpoint_labels48
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	50
 	.long	.Lxta.endpoint_labels48
 .cc_bottom cc_12
 .cc_top cc_13,.Lxta.endpoint_labels50
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	54
 	.long	.Lxta.endpoint_labels50
 .cc_bottom cc_13
 .cc_top cc_14,.Lxta.endpoint_labels51
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	67
 	.long	.Lxta.endpoint_labels51
 .cc_bottom cc_14
 .cc_top cc_15,.Lxta.endpoint_labels49
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	67
 	.long	.Lxta.endpoint_labels49
 .cc_bottom cc_15
 .cc_top cc_16,.Lxta.endpoint_labels52
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	82
 	.long	.Lxta.endpoint_labels52
 .cc_bottom cc_16
 .cc_top cc_17,.Lxta.endpoint_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	125
 	.long	.Lxta.endpoint_labels0
 .cc_bottom cc_17
 .cc_top cc_18,.Lxta.endpoint_labels36
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	125
 	.long	.Lxta.endpoint_labels36
 .cc_bottom cc_18
 .cc_top cc_19,.Lxta.endpoint_labels29
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	125
 	.long	.Lxta.endpoint_labels29
 .cc_bottom cc_19
 .cc_top cc_20,.Lxta.endpoint_labels20
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	125
 	.long	.Lxta.endpoint_labels20
 .cc_bottom cc_20
 .cc_top cc_21,.Lxta.endpoint_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	125
 	.long	.Lxta.endpoint_labels5
 .cc_bottom cc_21
 .cc_top cc_22,.Lxta.endpoint_labels15
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	125
 	.long	.Lxta.endpoint_labels15
 .cc_bottom cc_22
 .cc_top cc_23,.Lxta.endpoint_labels10
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	125
 	.long	.Lxta.endpoint_labels10
 .cc_bottom cc_23
 .cc_top cc_24,.Lxta.endpoint_labels16
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	126
 	.long	.Lxta.endpoint_labels16
 .cc_bottom cc_24
 .cc_top cc_25,.Lxta.endpoint_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	126
 	.long	.Lxta.endpoint_labels1
 .cc_bottom cc_25
 .cc_top cc_26,.Lxta.endpoint_labels6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	126
 	.long	.Lxta.endpoint_labels6
 .cc_bottom cc_26
 .cc_top cc_27,.Lxta.endpoint_labels11
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	126
 	.long	.Lxta.endpoint_labels11
 .cc_bottom cc_27
 .cc_top cc_28,.Lxta.endpoint_labels37
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	126
 	.long	.Lxta.endpoint_labels37
 .cc_bottom cc_28
 .cc_top cc_29,.Lxta.endpoint_labels30
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	126
 	.long	.Lxta.endpoint_labels30
 .cc_bottom cc_29
 .cc_top cc_30,.Lxta.endpoint_labels21
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	126
 	.long	.Lxta.endpoint_labels21
 .cc_bottom cc_30
 .cc_top cc_31,.Lxta.endpoint_labels17
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	128
 	.long	.Lxta.endpoint_labels17
 .cc_bottom cc_31
 .cc_top cc_32,.Lxta.endpoint_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	128
 	.long	.Lxta.endpoint_labels2
 .cc_bottom cc_32
 .cc_top cc_33,.Lxta.endpoint_labels7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	128
 	.long	.Lxta.endpoint_labels7
 .cc_bottom cc_33
 .cc_top cc_34,.Lxta.endpoint_labels31
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	128
 	.long	.Lxta.endpoint_labels31
 .cc_bottom cc_34
 .cc_top cc_35,.Lxta.endpoint_labels22
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	128
 	.long	.Lxta.endpoint_labels22
 .cc_bottom cc_35
 .cc_top cc_36,.Lxta.endpoint_labels12
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	128
 	.long	.Lxta.endpoint_labels12
 .cc_bottom cc_36
 .cc_top cc_37,.Lxta.endpoint_labels38
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	128
 	.long	.Lxta.endpoint_labels38
 .cc_bottom cc_37
 .cc_top cc_38,.Lxta.endpoint_labels39
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	129
 	.long	.Lxta.endpoint_labels39
 .cc_bottom cc_38
 .cc_top cc_39,.Lxta.endpoint_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	129
 	.long	.Lxta.endpoint_labels3
 .cc_bottom cc_39
 .cc_top cc_40,.Lxta.endpoint_labels18
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	129
 	.long	.Lxta.endpoint_labels18
 .cc_bottom cc_40
 .cc_top cc_41,.Lxta.endpoint_labels8
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	129
 	.long	.Lxta.endpoint_labels8
 .cc_bottom cc_41
 .cc_top cc_42,.Lxta.endpoint_labels23
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	129
 	.long	.Lxta.endpoint_labels23
 .cc_bottom cc_42
 .cc_top cc_43,.Lxta.endpoint_labels13
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	129
 	.long	.Lxta.endpoint_labels13
 .cc_bottom cc_43
 .cc_top cc_44,.Lxta.endpoint_labels32
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	129
 	.long	.Lxta.endpoint_labels32
 .cc_bottom cc_44
 .cc_top cc_45,.Lxta.endpoint_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	137
 	.long	.Lxta.endpoint_labels4
 .cc_bottom cc_45
 .cc_top cc_46,.Lxta.endpoint_labels40
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	145
 	.long	.Lxta.endpoint_labels40
 .cc_bottom cc_46
 .cc_top cc_47,.Lxta.endpoint_labels9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	152
 	.long	.Lxta.endpoint_labels9
 .cc_bottom cc_47
 .cc_top cc_48,.Lxta.endpoint_labels14
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	159
 	.long	.Lxta.endpoint_labels14
 .cc_bottom cc_48
 .cc_top cc_49,.Lxta.endpoint_labels19
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	169
 	.long	.Lxta.endpoint_labels19
 .cc_bottom cc_49
 .cc_top cc_50,.Lxta.endpoint_labels24
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	183
 	.long	.Lxta.endpoint_labels24
 .cc_bottom cc_50
 .cc_top cc_51,.Lxta.endpoint_labels25
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	184
 	.long	.Lxta.endpoint_labels25
 .cc_bottom cc_51
 .cc_top cc_52,.Lxta.endpoint_labels26
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	185
 	.long	.Lxta.endpoint_labels26
 .cc_bottom cc_52
 .cc_top cc_53,.Lxta.endpoint_labels27
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	186
 	.long	.Lxta.endpoint_labels27
 .cc_bottom cc_53
 .cc_top cc_54,.Lxta.endpoint_labels28
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	187
 	.long	.Lxta.endpoint_labels28
 .cc_bottom cc_54
 .cc_top cc_55,.Lxta.endpoint_labels33
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	199
 	.long	.Lxta.endpoint_labels33
 .cc_bottom cc_55
 .cc_top cc_56,.Lxta.endpoint_labels34
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	200
 	.long	.Lxta.endpoint_labels34
 .cc_bottom cc_56
 .cc_top cc_57,.Lxta.endpoint_labels35
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	201
 	.long	.Lxta.endpoint_labels35
@@ -4296,483 +4296,483 @@ ethernet_unified_get_data:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_58,.Lxtalabel9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	25
 	.long	28
 	.long	.Lxtalabel9
 .cc_bottom cc_58
 .cc_top cc_59,.Lxtalabel13
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	35
 	.long	52
 	.long	.Lxtalabel13
 .cc_bottom cc_59
 .cc_top cc_60,.Lxtalabel29
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	53
 	.long	56
 	.long	.Lxtalabel29
 .cc_bottom cc_60
 .cc_top cc_61,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	57
 	.long	58
 	.long	.Lxtalabel15
 .cc_bottom cc_61
 .cc_top cc_62,.Lxtalabel14
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	57
 	.long	58
 	.long	.Lxtalabel14
 .cc_bottom cc_62
 .cc_top cc_63,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	59
 	.long	59
 	.long	.Lxtalabel15
 .cc_bottom cc_63
 .cc_top cc_64,.Lxtalabel14
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	59
 	.long	59
 	.long	.Lxtalabel14
 .cc_bottom cc_64
 .cc_top cc_65,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	60
 	.long	64
 	.long	.Lxtalabel15
 .cc_bottom cc_65
 .cc_top cc_66,.Lxtalabel14
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	60
 	.long	64
 	.long	.Lxtalabel14
 .cc_bottom cc_66
 .cc_top cc_67,.Lxtalabel26
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	65
 	.long	68
 	.long	.Lxtalabel26
 .cc_bottom cc_67
 .cc_top cc_68,.Lxtalabel27
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	65
 	.long	68
 	.long	.Lxtalabel27
 .cc_bottom cc_68
 .cc_top cc_69,.Lxtalabel31
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	65
 	.long	68
 	.long	.Lxtalabel31
 .cc_bottom cc_69
 .cc_top cc_70,.Lxtalabel30
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	65
 	.long	68
 	.long	.Lxtalabel30
 .cc_bottom cc_70
 .cc_top cc_71,.Lxtalabel27
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	69
 	.long	69
 	.long	.Lxtalabel27
 .cc_bottom cc_71
 .cc_top cc_72,.Lxtalabel26
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	69
 	.long	69
 	.long	.Lxtalabel26
 .cc_bottom cc_72
 .cc_top cc_73,.Lxtalabel27
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	70
 	.long	71
 	.long	.Lxtalabel27
 .cc_bottom cc_73
 .cc_top cc_74,.Lxtalabel30
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	70
 	.long	71
 	.long	.Lxtalabel30
 .cc_bottom cc_74
 .cc_top cc_75,.Lxtalabel26
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	70
 	.long	71
 	.long	.Lxtalabel26
 .cc_bottom cc_75
 .cc_top cc_76,.Lxtalabel31
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	70
 	.long	71
 	.long	.Lxtalabel31
 .cc_bottom cc_76
 .cc_top cc_77,.Lxtalabel17
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel17
 .cc_bottom cc_77
 .cc_top cc_78,.Lxtalabel27
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel27
 .cc_bottom cc_78
 .cc_top cc_79,.Lxtalabel26
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel26
 .cc_bottom cc_79
 .cc_top cc_80,.Lxtalabel23
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel23
 .cc_bottom cc_80
 .cc_top cc_81,.Lxtalabel22
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel22
 .cc_bottom cc_81
 .cc_top cc_82,.Lxtalabel20
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel20
 .cc_bottom cc_82
 .cc_top cc_83,.Lxtalabel19
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel19
 .cc_bottom cc_83
 .cc_top cc_84,.Lxtalabel16
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel16
 .cc_bottom cc_84
 .cc_top cc_85,.Lxtalabel40
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel40
 .cc_bottom cc_85
 .cc_top cc_86,.Lxtalabel31
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel31
 .cc_bottom cc_86
 .cc_top cc_87,.Lxtalabel37
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel37
 .cc_bottom cc_87
 .cc_top cc_88,.Lxtalabel30
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel30
 .cc_bottom cc_88
 .cc_top cc_89,.Lxtalabel36
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel36
 .cc_bottom cc_89
 .cc_top cc_90,.Lxtalabel33
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel33
 .cc_bottom cc_90
 .cc_top cc_91,.Lxtalabel34
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel34
 .cc_bottom cc_91
 .cc_top cc_92,.Lxtalabel39
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	72
 	.long	74
 	.long	.Lxtalabel39
 .cc_bottom cc_92
 .cc_top cc_93,.Lxtalabel28
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	75
 	.long	78
 	.long	.Lxtalabel28
 .cc_bottom cc_93
 .cc_top cc_94,.Lxtalabel32
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	75
 	.long	78
 	.long	.Lxtalabel32
 .cc_bottom cc_94
 .cc_top cc_95,.Lxtalabel24
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	75
 	.long	78
 	.long	.Lxtalabel24
 .cc_bottom cc_95
 .cc_top cc_96,.Lxtalabel21
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	75
 	.long	78
 	.long	.Lxtalabel21
 .cc_bottom cc_96
 .cc_top cc_97,.Lxtalabel35
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	75
 	.long	78
 	.long	.Lxtalabel35
 .cc_bottom cc_97
 .cc_top cc_98,.Lxtalabel18
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	75
 	.long	78
 	.long	.Lxtalabel18
 .cc_bottom cc_98
 .cc_top cc_99,.Lxtalabel38
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	75
 	.long	78
 	.long	.Lxtalabel38
 .cc_bottom cc_99
 .cc_top cc_100,.Lxtalabel41
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	75
 	.long	78
 	.long	.Lxtalabel41
 .cc_bottom cc_100
 .cc_top cc_101,.Lxtalabel25
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	81
 	.long	81
 	.long	.Lxtalabel25
 .cc_bottom cc_101
 .cc_top cc_102,.Lxtalabel42
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	81
 	.long	81
 	.long	.Lxtalabel42
 .cc_bottom cc_102
 .cc_top cc_103,.Lxtalabel43
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	82
 	.long	83
 	.long	.Lxtalabel43
 .cc_bottom cc_103
 .cc_top cc_104,.Lxtalabel44
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	84
 	.long	86
 	.long	.Lxtalabel44
 .cc_bottom cc_104
 .cc_top cc_105,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	91
 	.long	95
 	.long	.Lxtalabel0
 .cc_bottom cc_105
 .cc_top cc_106,.Lxtalabel11
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	98
 	.long	102
 	.long	.Lxtalabel11
 .cc_bottom cc_106
 .cc_top cc_107,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	105
 	.long	109
 	.long	.Lxtalabel1
 .cc_bottom cc_107
 .cc_top cc_108,.Lxtalabel2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	112
 	.long	115
 	.long	.Lxtalabel2
 .cc_bottom cc_108
 .cc_top cc_109,.Lxtalabel3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	118
 	.long	121
 	.long	.Lxtalabel3
 .cc_bottom cc_109
 .cc_top cc_110,.Lxtalabel12
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	124
 	.long	131
 	.long	.Lxtalabel12
 .cc_bottom cc_110
 .cc_top cc_111,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	124
 	.long	131
 	.long	.Lxtalabel4
 .cc_bottom cc_111
 .cc_top cc_112,.Lxtalabel5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	124
 	.long	131
 	.long	.Lxtalabel5
 .cc_bottom cc_112
 .cc_top cc_113,.Lxtalabel6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	124
 	.long	131
 	.long	.Lxtalabel6
 .cc_bottom cc_113
 .cc_top cc_114,.Lxtalabel7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	124
 	.long	131
 	.long	.Lxtalabel7
 .cc_bottom cc_114
 .cc_top cc_115,.Lxtalabel8
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	124
 	.long	131
 	.long	.Lxtalabel8
 .cc_bottom cc_115
 .cc_top cc_116,.Lxtalabel9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	124
 	.long	131
 	.long	.Lxtalabel9
 .cc_bottom cc_116
 .cc_top cc_117,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	135
 	.long	139
 	.long	.Lxtalabel4
 .cc_bottom cc_117
 .cc_top cc_118,.Lxtalabel12
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	143
 	.long	147
 	.long	.Lxtalabel12
 .cc_bottom cc_118
 .cc_top cc_119,.Lxtalabel5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	150
 	.long	154
 	.long	.Lxtalabel5
 .cc_bottom cc_119
 .cc_top cc_120,.Lxtalabel6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	157
 	.long	161
 	.long	.Lxtalabel6
 .cc_bottom cc_120
 .cc_top cc_121,.Lxtalabel7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	166
 	.long	171
 	.long	.Lxtalabel7
 .cc_bottom cc_121
 .cc_top cc_122,.Lxtalabel8
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	180
 	.long	189
 	.long	.Lxtalabel8
 .cc_bottom cc_122
 .cc_top cc_123,.Lxtalabel9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	192
 	.long	203
 	.long	.Lxtalabel9
 .cc_bottom cc_123
 .cc_top cc_124,.Lxtalabel10
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	204
 	.long	206
 	.long	.Lxtalabel10
 .cc_bottom cc_124
 .cc_top cc_125,.Lxtalabel9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	207
 	.long	210
 	.long	.Lxtalabel9
 .cc_bottom cc_125
 .cc_top cc_126,.Lxtalabel10
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	211
 	.long	211
@@ -4786,28 +4786,28 @@ ethernet_unified_get_data:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_127,.Lxta.loop_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	65
 	.long	71
 	.long	.Lxta.loop_labels0
 .cc_bottom cc_127
 .cc_top cc_128,.Lxta.loop_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	65
 	.long	71
 	.long	.Lxta.loop_labels1
 .cc_bottom cc_128
 .cc_top cc_129,.Lxta.loop_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	81
 	.long	81
 	.long	.Lxta.loop_labels0
 .cc_bottom cc_129
 .cc_top cc_130,.Lxta.loop_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 	.byte	0
 	.long	81
 	.long	81

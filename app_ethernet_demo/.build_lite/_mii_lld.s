@@ -1,6 +1,6 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lld.S"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lld.S"
 .cc_top _miiLLD.func, _miiLLD
-# 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lld.S"
+# 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lld.S"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -31,8 +31,8 @@
 # 42 "xs1.h" 2 3
 # 1 "xs1_clock.h" 1 3
 # 43 "xs1.h" 2 3
-# 3 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lld.S" 2
-# 32 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lld.S"
+# 3 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lld.S" 2
+# 32 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lld.S"
      .section .cp.rodata, "ac", @progbits
 
     .align 4
@@ -50,7 +50,7 @@ DallFives:
 
     .text
     .align 4
-# 64 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lld.S"
+# 64 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lld.S"
 .globl _miiLLD.nstackwords
 .globl _miiLLD.maxthreads
 .globl _miiLLD.maxtimers

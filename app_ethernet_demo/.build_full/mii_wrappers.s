@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii_wrappers.c"
+	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_wrappers.c"
 
 .set ethernet_rx_server_wr.locnoside, 1
 
@@ -51,11 +51,11 @@
 .set init_mii_mem.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii_wrappers.c"
-	.file	2 "/home/atena/workspace_ethernet_new/module_locks/src/hwlock.h"
-	.file	3 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii_queue.h"
-	.file	4 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii_full.h"
-	.file	5 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii_malloc.h"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_wrappers.c"
+	.file	2 "/home/atena/workspace_ethernet_new_replicated/module_locks/src/hwlock.h"
+	.file	3 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_queue.h"
+	.file	4 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_full.h"
+	.file	5 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_malloc.h"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
 	.section	.debug_abbrev,"",@progbits
@@ -159,7 +159,7 @@ ethernet_tx_server_wr:
 .Ltmp21:
 	.size	ethernet_tx_server_wr, .Ltmp21-ethernet_tx_server_wr
 .Lfunc_end1:
-	.file	7 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.h"
+	.file	7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.h"
 .Ltmp22:
 	.cfi_endproc
 .Leh_func_end1:
@@ -399,7 +399,7 @@ tx_lp_data:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	1308
+	.long	1330
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -407,11 +407,11 @@ tx_lp_data:
 	.ascii	 "4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"
 	.byte	0
 	.short	1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii_wrappers.c"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii_wrappers.c"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 	.byte	1
 	.byte	2
@@ -420,7 +420,7 @@ tx_lp_data:
 	.byte	7
 	.byte	4
 	.byte	3
-	.long	218
+	.long	240
 	.ascii	 "hwlock_t"
 	.byte	0
 	.byte	2
@@ -428,7 +428,7 @@ tx_lp_data:
 	.byte	4
 	.ascii	 "ethernet_memory_lock"
 	.byte	0
-	.long	234
+	.long	256
 	.byte	1
 	.byte	1
 	.byte	23
@@ -444,9 +444,9 @@ tx_lp_data:
 	.byte	4
 	.byte	5
 	.byte	6
-	.long	218
+	.long	240
 	.byte	7
-	.long	292
+	.long	314
 	.byte	5
 	.byte	0
 	.byte	8
@@ -458,7 +458,7 @@ tx_lp_data:
 	.byte	9
 	.ascii	 "lock"
 	.byte	0
-	.long	285
+	.long	307
 	.byte	3
 	.byte	27
 	.byte	2
@@ -468,7 +468,7 @@ tx_lp_data:
 	.byte	9
 	.ascii	 "rdIndex"
 	.byte	0
-	.long	285
+	.long	307
 	.byte	3
 	.byte	28
 	.byte	2
@@ -478,7 +478,7 @@ tx_lp_data:
 	.byte	9
 	.ascii	 "wrIndex"
 	.byte	0
-	.long	285
+	.long	307
 	.byte	3
 	.byte	29
 	.byte	2
@@ -488,7 +488,7 @@ tx_lp_data:
 	.byte	9
 	.ascii	 "fifo"
 	.byte	0
-	.long	295
+	.long	317
 	.byte	3
 	.byte	30
 	.byte	2
@@ -497,21 +497,21 @@ tx_lp_data:
 	.byte	1
 	.byte	0
 	.byte	3
-	.long	307
+	.long	329
 	.ascii	 "mii_ts_queue_t"
 	.byte	0
 	.byte	4
 	.byte	86
 	.byte	6
-	.long	397
+	.long	419
 	.byte	7
-	.long	292
+	.long	314
 	.byte	0
 	.byte	0
 	.byte	4
 	.ascii	 "ts_queue"
 	.byte	0
-	.long	419
+	.long	441
 	.byte	1
 	.byte	1
 	.byte	18
@@ -519,18 +519,18 @@ tx_lp_data:
 	.byte	3
 	.long	ts_queue
 	.byte	6
-	.long	285
+	.long	307
 	.byte	7
-	.long	292
+	.long	314
 	.byte	0
 	.byte	10
-	.long	292
+	.long	314
 	.short	1023
 	.byte	0
 	.byte	4
 	.ascii	 "rx_lp_data"
 	.byte	0
-	.long	454
+	.long	476
 	.byte	1
 	.byte	1
 	.byte	42
@@ -540,7 +540,7 @@ tx_lp_data:
 	.byte	4
 	.ascii	 "tx_lp_data"
 	.byte	0
-	.long	454
+	.long	476
 	.byte	1
 	.byte	1
 	.byte	43
@@ -548,21 +548,21 @@ tx_lp_data:
 	.byte	3
 	.long	tx_lp_data
 	.byte	3
-	.long	218
+	.long	240
 	.ascii	 "mii_mempool_t"
 	.byte	0
 	.byte	5
 	.byte	6
 	.byte	6
-	.long	523
+	.long	545
 	.byte	7
-	.long	292
+	.long	314
 	.byte	0
 	.byte	0
 	.byte	4
 	.ascii	 "rx_mem_lp"
 	.byte	0
-	.long	544
+	.long	566
 	.byte	1
 	.byte	1
 	.byte	45
@@ -572,7 +572,7 @@ tx_lp_data:
 	.byte	4
 	.ascii	 "tx_mem_lp"
 	.byte	0
-	.long	544
+	.long	566
 	.byte	1
 	.byte	1
 	.byte	46
@@ -598,14 +598,14 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	1157
+	.long	1179
 	.long	.Ldebug_loc0+0
 	.byte	12
 	.ascii	 "num_rx"
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	285
+	.long	307
 	.long	.Ldebug_loc3+0
 	.byte	0
 	.byte	11
@@ -627,35 +627,35 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1177
+	.long	1199
 	.long	.Ldebug_loc6+0
 	.byte	12
 	.ascii	 "tx"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1157
+	.long	1179
 	.long	.Ldebug_loc10+0
 	.byte	12
 	.ascii	 "num_q"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	285
+	.long	307
 	.long	.Ldebug_loc12+0
 	.byte	12
 	.ascii	 "num_tx"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	285
+	.long	307
 	.long	.Ldebug_loc15+0
 	.byte	13
 	.ascii	 "smi1"
 	.byte	0
 	.byte	1
 	.byte	113
-	.long	1305
+	.long	1327
 	.byte	2
 	.byte	145
 	.byte	24
@@ -664,7 +664,7 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	117
-	.long	1305
+	.long	1327
 	.byte	2
 	.byte	145
 	.byte	28
@@ -688,14 +688,14 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	96
-	.long	1183
+	.long	1205
 	.long	.Ldebug_loc17+0
 	.byte	12
 	.byte	105
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	285
+	.long	307
 	.long	.Ldebug_loc20+0
 	.byte	0
 	.byte	11
@@ -717,28 +717,28 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	83
-	.long	1183
+	.long	1205
 	.long	.Ldebug_loc23+0
 	.byte	12
 	.ascii	 "p2"
 	.byte	0
 	.byte	1
 	.byte	84
-	.long	1183
+	.long	1205
 	.long	.Ldebug_loc26+0
 	.byte	12
 	.byte	105
 	.byte	0
 	.byte	1
 	.byte	85
-	.long	285
+	.long	307
 	.long	.Ldebug_loc29+0
 	.byte	12
 	.byte	99
 	.byte	0
 	.byte	1
 	.byte	86
-	.long	1142
+	.long	1164
 	.long	.Ldebug_loc32+0
 	.byte	0
 	.byte	14
@@ -749,7 +749,7 @@ tx_lp_data:
 	.byte	2
 	.byte	30
 	.byte	1
-	.long	234
+	.long	256
 	.byte	1
 	.byte	11
 	.ascii	 "init_mii_mem"
@@ -776,19 +776,19 @@ tx_lp_data:
 	.byte	0
 	.byte	1
 	.byte	59
-	.long	285
+	.long	307
 	.long	.Ldebug_loc34+0
 	.byte	0
 	.byte	0
 	.byte	0
 	.byte	3
-	.long	218
+	.long	240
 	.ascii	 "chanend"
 	.byte	0
 	.byte	6
 	.byte	129
 	.byte	17
-	.long	1142
+	.long	1164
 	.byte	4
 	.byte	2
 	.ascii	 "char"
@@ -796,13 +796,13 @@ tx_lp_data:
 	.byte	8
 	.byte	1
 	.byte	18
-	.long	1163
+	.long	1185
 	.byte	1
 	.byte	17
-	.long	1171
+	.long	1193
 	.byte	4
 	.byte	3
-	.long	218
+	.long	240
 	.ascii	 "port"
 	.byte	0
 	.byte	6
@@ -816,7 +816,7 @@ tx_lp_data:
 	.byte	9
 	.ascii	 "phy_address"
 	.byte	0
-	.long	285
+	.long	307
 	.byte	7
 	.byte	44
 	.byte	2
@@ -826,7 +826,7 @@ tx_lp_data:
 	.byte	9
 	.ascii	 "p_smi_mdio"
 	.byte	0
-	.long	1183
+	.long	1205
 	.byte	7
 	.byte	46
 	.byte	2
@@ -836,7 +836,7 @@ tx_lp_data:
 	.byte	9
 	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	1183
+	.long	1205
 	.byte	7
 	.byte	48
 	.byte	2
@@ -845,13 +845,13 @@ tx_lp_data:
 	.byte	1
 	.byte	0
 	.byte	3
-	.long	1195
+	.long	1217
 	.ascii	 "smi_interface_t"
 	.byte	0
 	.byte	3
 	.byte	26
 	.byte	17
-	.long	1282
+	.long	1304
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -1107,29 +1107,29 @@ tx_lp_data:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	498
+	.long	520
 .asciiz "tx_lp_data"
-	.long	1066
+	.long	1088
 .asciiz "init_mii_mem"
-	.long	1031
+	.long	1053
 .asciiz "hwlock_alloc"
-	.long	556
+	.long	578
 .asciiz "rx_mem_lp"
-	.long	580
+	.long	602
 .asciiz "tx_mem_lp"
-	.long	604
+	.long	626
 .asciiz "ethernet_rx_server_wr"
-	.long	697
+	.long	719
 .asciiz "ethernet_tx_server_wr"
-	.long	930
+	.long	952
 .asciiz "mii_rx_pins_wr"
-	.long	431
+	.long	453
 .asciiz "ts_queue"
-	.long	857
+	.long	879
 .asciiz "mii_tx_pins_wr"
-	.long	473
+	.long	495
 .asciiz "rx_lp_data"
-	.long	250
+	.long	272
 .asciiz "ethernet_memory_lock"
 	.long	0
 .Lpubnames_end1:
@@ -1141,9 +1141,9 @@ tx_lp_data:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	307
+	.long	329
 .asciiz "mii_ts_queue_t"
-	.long	1195
+	.long	1217
 .asciiz "smi_interface_t"
 	.long	0
 .Lpubtypes_end1:

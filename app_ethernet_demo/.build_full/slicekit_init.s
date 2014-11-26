@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new/module_slicekit_support/src/SLICEKIT-L2/slicekit_init.S"
-# 8 "/home/atena/workspace_ethernet_new/module_slicekit_support/src/SLICEKIT-L2/slicekit_init.S"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_slicekit_support/src/SLICEKIT-L2/slicekit_init.S"
+# 8 "/home/atena/workspace_ethernet_new_replicated/module_slicekit_support/src/SLICEKIT-L2/slicekit_init.S"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -30,7 +30,7 @@
 # 42 "xs1.h" 2 3
 # 1 "xs1_clock.h" 1 3
 # 43 "xs1.h" 2 3
-# 9 "/home/atena/workspace_ethernet_new/module_slicekit_support/src/SLICEKIT-L2/slicekit_init.S" 2
+# 9 "/home/atena/workspace_ethernet_new_replicated/module_slicekit_support/src/SLICEKIT-L2/slicekit_init.S" 2
 
 .section .cp.rodata.cst4,"aMc",@progbits,4
         .align 4

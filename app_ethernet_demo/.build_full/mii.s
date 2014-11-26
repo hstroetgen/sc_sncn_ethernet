@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
@@ -27,60 +27,60 @@
 	.inline_definition mii_packet_set_data
 	.inline_definition mii_packet_set_data_short
 	.inline_definition mii_packet_set_data_byte
-	.xtacommand "remove exclusion *","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 28
-	.xtacommand "add exclusion mii_rx_eof","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 29
-	.xtacommand "add exclusion mii_rx_begin","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 30
-	.xtacommand "add exclusion mii_eof_case","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 31
-	.xtacommand "add exclusion mii_no_availible_buffers","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 32
-	.xtacommand "analyze endpoints mii_rx_sof mii_rx_first_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 35
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 36
-	.xtacommand "analyze endpoints mii_rx_first_word mii_rx_second_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 38
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 39
-	.xtacommand "analyze endpoints mii_rx_second_word mii_rx_third_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 41
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 42
-	.xtacommand "analyze endpoints mii_rx_third_word mii_rx_ethertype_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 44
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 45
-	.xtacommand "analyze endpoints mii_rx_ethertype_word mii_rx_fifth_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 47
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 48
-	.xtacommand "analyze endpoints mii_rx_fifth_word mii_rx_sixth_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 50
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 51
-	.xtacommand "analyze endpoints mii_rx_sixth_word mii_rx_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 53
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 54
-	.xtacommand "analyze endpoints mii_rx_word mii_rx_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 56
-	.xtacommand "set required - 300 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 57
-	.xtacommand "remove exclusion *","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 66
-	.xtacommand "add exclusion mii_rx_after_preamble","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 67
-	.xtacommand "add exclusion mii_rx_eof","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 68
-	.xtacommand "add exclusion mii_no_availible_buffers","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 69
-	.xtacommand "add exclusion mii_rx_correct_priority_buffer_unavailable","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 70
-	.xtacommand "add exclusion mii_rx_data_inner_loop","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 71
-	.xtacommand "analyze endpoints mii_rx_eof mii_rx_sof","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 72
-	.xtacommand "set required - 1560 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 73
-	.xtacommand "remove exclusion *","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 77
-	.xtacommand "add exclusion mii_tx_start","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 78
-	.xtacommand "add exclusion mii_tx_end","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 79
-	.xtacommand "add loop mii_tx_loop 1","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 81
-	.xtacommand "analyze endpoints mii_tx_sof mii_tx_first_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 83
-	.xtacommand "set required - 640 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 84
-	.xtacommand "analyze endpoints mii_tx_first_word mii_tx_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 86
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 87
-	.xtacommand "analyze endpoints mii_tx_word mii_tx_word","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 89
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 90
-	.xtacommand "add loop mii_tx_loop 0","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 92
-	.xtacommand "analyze endpoints mii_tx_word mii_tx_crc_0","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 94
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 95
-	.xtacommand "analyze endpoints mii_tx_word mii_tx_final_partword_1","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 97
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 98
-	.xtacommand "analyze endpoints mii_tx_word mii_tx_final_partword_2","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 100
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 101
-	.xtacommand "analyze endpoints mii_tx_word mii_tx_final_partword_3","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 103
-	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 104
-	.xtacommand "analyze endpoints mii_tx_final_partword_1 mii_tx_crc_1","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 106
-	.xtacommand "set required - 80 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 107
-	.xtacommand "analyze endpoints mii_tx_final_partword_2 mii_tx_crc_2","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 109
-	.xtacommand "set required - 160 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 110
-	.xtacommand "analyze endpoints mii_tx_final_partword_3 mii_tx_crc_3","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 112
-	.xtacommand "set required - 240 ns","/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc", 113
+	.xtacommand "remove exclusion *","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 28
+	.xtacommand "add exclusion mii_rx_eof","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 29
+	.xtacommand "add exclusion mii_rx_begin","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 30
+	.xtacommand "add exclusion mii_eof_case","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 31
+	.xtacommand "add exclusion mii_no_availible_buffers","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 32
+	.xtacommand "analyze endpoints mii_rx_sof mii_rx_first_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 35
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 36
+	.xtacommand "analyze endpoints mii_rx_first_word mii_rx_second_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 38
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 39
+	.xtacommand "analyze endpoints mii_rx_second_word mii_rx_third_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 41
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 42
+	.xtacommand "analyze endpoints mii_rx_third_word mii_rx_ethertype_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 44
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 45
+	.xtacommand "analyze endpoints mii_rx_ethertype_word mii_rx_fifth_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 47
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 48
+	.xtacommand "analyze endpoints mii_rx_fifth_word mii_rx_sixth_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 50
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 51
+	.xtacommand "analyze endpoints mii_rx_sixth_word mii_rx_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 53
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 54
+	.xtacommand "analyze endpoints mii_rx_word mii_rx_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 56
+	.xtacommand "set required - 300 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 57
+	.xtacommand "remove exclusion *","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 66
+	.xtacommand "add exclusion mii_rx_after_preamble","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 67
+	.xtacommand "add exclusion mii_rx_eof","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 68
+	.xtacommand "add exclusion mii_no_availible_buffers","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 69
+	.xtacommand "add exclusion mii_rx_correct_priority_buffer_unavailable","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 70
+	.xtacommand "add exclusion mii_rx_data_inner_loop","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 71
+	.xtacommand "analyze endpoints mii_rx_eof mii_rx_sof","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 72
+	.xtacommand "set required - 1560 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 73
+	.xtacommand "remove exclusion *","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 77
+	.xtacommand "add exclusion mii_tx_start","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 78
+	.xtacommand "add exclusion mii_tx_end","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 79
+	.xtacommand "add loop mii_tx_loop 1","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 81
+	.xtacommand "analyze endpoints mii_tx_sof mii_tx_first_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 83
+	.xtacommand "set required - 640 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 84
+	.xtacommand "analyze endpoints mii_tx_first_word mii_tx_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 86
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 87
+	.xtacommand "analyze endpoints mii_tx_word mii_tx_word","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 89
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 90
+	.xtacommand "add loop mii_tx_loop 0","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 92
+	.xtacommand "analyze endpoints mii_tx_word mii_tx_crc_0","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 94
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 95
+	.xtacommand "analyze endpoints mii_tx_word mii_tx_final_partword_1","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 97
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 98
+	.xtacommand "analyze endpoints mii_tx_word mii_tx_final_partword_2","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 100
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 101
+	.xtacommand "analyze endpoints mii_tx_word mii_tx_final_partword_3","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 103
+	.xtacommand "set required - 320 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 104
+	.xtacommand "analyze endpoints mii_tx_final_partword_1 mii_tx_crc_1","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 106
+	.xtacommand "set required - 80 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 107
+	.xtacommand "analyze endpoints mii_tx_final_partword_2 mii_tx_crc_2","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 109
+	.xtacommand "set required - 160 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 110
+	.xtacommand "analyze endpoints mii_tx_final_partword_3 mii_tx_crc_3","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 112
+	.xtacommand "set required - 240 ns","/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full" , "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc", 113
 	.set usage.anon.0,0
 	.set usage.anon.1,0
 	.set usage.anon.2,0
@@ -109,8 +109,8 @@
 	.set usage.anon.25,0
 	.set usage.anon.26,0
 	.set usage.anon.27,0
-	.globread ethernet_get_mii_counts,usage.anon.27,"/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc:132: error: previously used here"
-	.globwrite mii_rx_pins,usage.anon.27,"/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc:206: error: previously used here"
+	.globread ethernet_get_mii_counts,usage.anon.27,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc:132: error: previously used here"
+	.globwrite mii_rx_pins,usage.anon.27,"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc:206: error: previously used here"
 	.call mii_tx_pins,usage.anon.14
 	.call mii_tx_pins,usage.anon.13
 	.call mii_tx_pins,usage.anon.11
@@ -935,58 +935,58 @@ ethernet_mii_no_queue_entries:
 .Lentries_start0:
 	.long	.Lentries_end1-.Lentries_start0
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_0,.Lxta.call_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	157
 	.long	.Lxta.call_labels0
 .cc_bottom cc_0
 .cc_top cc_1,.Lxta.call_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	181
 	.long	.Lxta.call_labels2
 .cc_bottom cc_1
 .cc_top cc_2,.Lxta.call_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	352
 	.long	.Lxta.call_labels1
 .cc_bottom cc_2
 .cc_top cc_3,.Lxta.call_labels8
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	478
 	.long	.Lxta.call_labels8
 .cc_bottom cc_3
 .cc_top cc_4,.Lxta.call_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	647
 	.long	.Lxta.call_labels4
 .cc_bottom cc_4
 .cc_top cc_5,.Lxta.call_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	683
 	.long	.Lxta.call_labels5
 .cc_bottom cc_5
 .cc_top cc_6,.Lxta.call_labels6
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	689
 	.long	.Lxta.call_labels6
 .cc_bottom cc_6
 .cc_top cc_7,.Lxta.call_labels7
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	692
 	.long	.Lxta.call_labels7
 .cc_bottom cc_7
 .cc_top cc_8,.Lxta.call_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	695
 	.long	.Lxta.call_labels3
@@ -996,11 +996,11 @@ ethernet_mii_no_queue_entries:
 .Lentries_start2:
 	.long	.Lentries_end3-.Lentries_start2
 	.long	1
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 	.ascii	 "mii_rx_after_preamble"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	194
 	.long	.Laddr_end1-.Laddr_start0
@@ -1012,7 +1012,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end1:
 	.ascii	 "mii_rx_eof"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	320
 	.long	.Laddr_end3-.Laddr_start2
@@ -1024,7 +1024,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end3:
 	.ascii	 "mii_rx_ethertype_word"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	246
 	.long	.Laddr_end5-.Laddr_start4
@@ -1036,7 +1036,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end5:
 	.ascii	 "mii_rx_fifth_word"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	278
 	.long	.Laddr_end7-.Laddr_start6
@@ -1048,7 +1048,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end7:
 	.ascii	 "mii_rx_first_word"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	221
 	.long	.Laddr_end9-.Laddr_start8
@@ -1060,7 +1060,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end9:
 	.ascii	 "mii_rx_second_word"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	229
 	.long	.Laddr_end11-.Laddr_start10
@@ -1072,7 +1072,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end11:
 	.ascii	 "mii_rx_sixth_word"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	294
 	.long	.Laddr_end13-.Laddr_start12
@@ -1084,7 +1084,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end13:
 	.ascii	 "mii_rx_sof"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	191
 	.long	.Laddr_end15-.Laddr_start14
@@ -1096,7 +1096,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end15:
 	.ascii	 "mii_rx_third_word"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	237
 	.long	.Laddr_end17-.Laddr_start16
@@ -1108,7 +1108,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end17:
 	.ascii	 "mii_rx_word"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	309
 	.long	.Laddr_end19-.Laddr_start18
@@ -1120,7 +1120,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end19:
 	.ascii	 "mii_tx_buffer_not_marked_for_transmission"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	678
 	.long	.Laddr_end21-.Laddr_start20
@@ -1132,25 +1132,25 @@ ethernet_mii_no_queue_entries:
 .Laddr_end21:
 	.ascii	 "mii_tx_crc_0"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	518
 	.long	0
 	.ascii	 "mii_tx_crc_1"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	528
 	.long	0
 	.ascii	 "mii_tx_crc_2"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	539
 	.long	0
 	.ascii	 "mii_tx_crc_3"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	551
 	.long	.Laddr_end23-.Laddr_start22
@@ -1162,7 +1162,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end23:
 	.ascii	 "mii_tx_end"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	684
 	.long	.Laddr_end25-.Laddr_start24
@@ -1174,7 +1174,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end25:
 	.ascii	 "mii_tx_final_partword_1"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	524
 	.long	.Laddr_end27-.Laddr_start26
@@ -1186,7 +1186,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end27:
 	.ascii	 "mii_tx_final_partword_2"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	533
 	.long	.Laddr_end29-.Laddr_start28
@@ -1198,7 +1198,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end29:
 	.ascii	 "mii_tx_final_partword_3"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	544
 	.long	.Laddr_end31-.Laddr_start30
@@ -1210,7 +1210,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end31:
 	.ascii	 "mii_tx_first_word"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	490
 	.long	.Laddr_end33-.Laddr_start32
@@ -1222,7 +1222,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end33:
 	.ascii	 "mii_tx_not_valid_to_transmit"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	673
 	.long	.Laddr_end35-.Laddr_start34
@@ -1234,7 +1234,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end35:
 	.ascii	 "mii_tx_sof"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	480
 	.long	.Laddr_end37-.Laddr_start36
@@ -1246,7 +1246,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end37:
 	.ascii	 "mii_tx_start"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	682
 	.long	.Laddr_end39-.Laddr_start38
@@ -1258,7 +1258,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end39:
 	.ascii	 "mii_tx_word"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	504
 	.long	.Laddr_end41-.Laddr_start40
@@ -1273,184 +1273,184 @@ ethernet_mii_no_queue_entries:
 .Lentries_start4:
 	.long	.Lentries_end5-.Lentries_start4
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_30,.Lxta.endpoint_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	159
 	.long	.Lxta.endpoint_labels5
 .cc_bottom cc_30
 .cc_top cc_31,.Lxta.endpoint_labels7
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	192
 	.long	.Lxta.endpoint_labels7
 .cc_bottom cc_31
 .cc_top cc_32,.Lxta.endpoint_labels8
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	195
 	.long	.Lxta.endpoint_labels8
 .cc_bottom cc_32
 .cc_top cc_33,.Lxta.endpoint_labels15
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	208
 	.long	.Lxta.endpoint_labels15
 .cc_bottom cc_33
 .cc_top cc_34,.Lxta.endpoint_labels9
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	222
 	.long	.Lxta.endpoint_labels9
 .cc_bottom cc_34
 .cc_top cc_35,.Lxta.endpoint_labels10
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	230
 	.long	.Lxta.endpoint_labels10
 .cc_bottom cc_35
 .cc_top cc_36,.Lxta.endpoint_labels11
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	238
 	.long	.Lxta.endpoint_labels11
 .cc_bottom cc_36
 .cc_top cc_37,.Lxta.endpoint_labels12
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	247
 	.long	.Lxta.endpoint_labels12
 .cc_bottom cc_37
 .cc_top cc_38,.Lxta.endpoint_labels13
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	279
 	.long	.Lxta.endpoint_labels13
 .cc_bottom cc_38
 .cc_top cc_39,.Lxta.endpoint_labels14
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	295
 	.long	.Lxta.endpoint_labels14
 .cc_bottom cc_39
 .cc_top cc_40,.Lxta.endpoint_labels17
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	307
 	.long	.Lxta.endpoint_labels17
 .cc_bottom cc_40
 .cc_top cc_41,.Lxta.endpoint_labels16
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	307
 	.long	.Lxta.endpoint_labels16
 .cc_bottom cc_41
 .cc_top cc_42,.Lxta.endpoint_labels18
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	344
 	.long	.Lxta.endpoint_labels18
 .cc_bottom cc_42
 .cc_top cc_43,.Lxta.endpoint_labels6
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	351
 	.long	.Lxta.endpoint_labels6
 .cc_bottom cc_43
 .cc_top cc_44,.Lxta.endpoint_labels21
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	481
 	.long	.Lxta.endpoint_labels21
 .cc_bottom cc_44
 .cc_top cc_45,.Lxta.endpoint_labels22
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	482
 	.long	.Lxta.endpoint_labels22
 .cc_bottom cc_45
 .cc_top cc_46,.Lxta.endpoint_labels23
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	485
 	.long	.Lxta.endpoint_labels23
 .cc_bottom cc_46
 .cc_top cc_47,.Lxta.endpoint_labels24
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	491
 	.long	.Lxta.endpoint_labels24
 .cc_bottom cc_47
 .cc_top cc_48,.Lxta.endpoint_labels25
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	505
 	.long	.Lxta.endpoint_labels25
 .cc_bottom cc_48
 .cc_top cc_49,.Lxta.endpoint_labels26
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	525
 	.long	.Lxta.endpoint_labels26
 .cc_bottom cc_49
 .cc_top cc_50,.Lxta.endpoint_labels27
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	534
 	.long	.Lxta.endpoint_labels27
 .cc_bottom cc_50
 .cc_top cc_51,.Lxta.endpoint_labels28
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	545
 	.long	.Lxta.endpoint_labels28
 .cc_bottom cc_51
 .cc_top cc_52,.Lxta.endpoint_labels29
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	552
 	.long	.Lxta.endpoint_labels29
 .cc_bottom cc_52
 .cc_top cc_53,.Lxta.endpoint_labels19
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	667
 	.long	.Lxta.endpoint_labels19
 .cc_bottom cc_53
 .cc_top cc_54,.Lxta.endpoint_labels20
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	686
 	.long	.Lxta.endpoint_labels20
 .cc_bottom cc_54
 .cc_top cc_55,.Lxta.endpoint_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	712
 	.long	.Lxta.endpoint_labels0
 .cc_bottom cc_55
 .cc_top cc_56,.Lxta.endpoint_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	751
 	.long	.Lxta.endpoint_labels1
 .cc_bottom cc_56
 .cc_top cc_57,.Lxta.endpoint_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	752
 	.long	.Lxta.endpoint_labels2
 .cc_bottom cc_57
 .cc_top cc_58,.Lxta.endpoint_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	777
 	.long	.Lxta.endpoint_labels3
 .cc_bottom cc_58
 .cc_top cc_59,.Lxta.endpoint_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	778
 	.long	.Lxta.endpoint_labels4
@@ -1460,11 +1460,11 @@ ethernet_mii_no_queue_entries:
 .Lentries_start6:
 	.long	.Lentries_end7-.Lentries_start6
 	.long	1
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 	.ascii	 "mii_eof_case"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	323
 	.long	.Laddr_end43-.Laddr_start42
@@ -1476,7 +1476,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end43:
 	.ascii	 "mii_no_availible_buffers"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	204
 	.long	.Laddr_end45-.Laddr_start44
@@ -1488,7 +1488,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end45:
 	.ascii	 "mii_rx_begin"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	163
 	.long	.Laddr_end47-.Laddr_start46
@@ -1500,13 +1500,13 @@ ethernet_mii_no_queue_entries:
 .Laddr_end47:
 	.ascii	 "mii_rx_correct_priority_buffer_unavailable"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	284
 	.long	0
 	.ascii	 "mii_rx_data_inner_loop"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	306
 	.long	.Laddr_end49-.Laddr_start48
@@ -1526,7 +1526,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end49:
 	.ascii	 "mii_tx_loop"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	497
 	.long	.Laddr_end51-.Laddr_start50
@@ -1538,7 +1538,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end51:
 	.ascii	 "mii_tx_main_loop"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	587
 	.long	.Laddr_end53-.Laddr_start52
@@ -1561,486 +1561,486 @@ ethernet_mii_no_queue_entries:
 .Lentries_start8:
 	.long	.Lentries_end9-.Lentries_start8
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_70,.Lxtalabel21
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	132
 	.long	133
 	.long	.Lxtalabel21
 .cc_bottom cc_70
 .cc_top cc_71,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	146
 	.long	149
 	.long	.Lxtalabel1
 .cc_bottom cc_71
 .cc_top cc_72,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	152
 	.long	153
 	.long	.Lxtalabel1
 .cc_bottom cc_72
 .cc_top cc_73,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	157
 	.long	161
 	.long	.Lxtalabel1
 .cc_bottom cc_73
 .cc_top cc_74,.Lxtalabel3
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	162
 	.long	174
 	.long	.Lxtalabel3
 .cc_bottom cc_74
 .cc_top cc_75,.Lxtalabel3
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	181
 	.long	182
 	.long	.Lxtalabel3
 .cc_bottom cc_75
 .cc_top cc_76,.Lxtalabel3
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	191
 	.long	197
 	.long	.Lxtalabel3
 .cc_bottom cc_76
 .cc_top cc_77,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	198
 	.long	199
 	.long	.Lxtalabel4
 .cc_bottom cc_77
 .cc_top cc_78,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	203
 	.long	203
 	.long	.Lxtalabel4
 .cc_bottom cc_78
 .cc_top cc_79,.Lxtalabel5
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	204
 	.long	211
 	.long	.Lxtalabel5
 .cc_bottom cc_79
 .cc_top cc_80,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	212
 	.long	214
 	.long	.Lxtalabel4
 .cc_bottom cc_80
 .cc_top cc_81,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	221
 	.long	225
 	.long	.Lxtalabel4
 .cc_bottom cc_81
 .cc_top cc_82,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	229
 	.long	233
 	.long	.Lxtalabel4
 .cc_bottom cc_82
 .cc_top cc_83,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	237
 	.long	241
 	.long	.Lxtalabel4
 .cc_bottom cc_83
 .cc_top cc_84,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	246
 	.long	250
 	.long	.Lxtalabel4
 .cc_bottom cc_84
 .cc_top cc_85,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	254
 	.long	255
 	.long	.Lxtalabel4
 .cc_bottom cc_85
 .cc_top cc_86,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	271
 	.long	283
 	.long	.Lxtalabel4
 .cc_bottom cc_86
 .cc_top cc_87,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	292
 	.long	292
 	.long	.Lxtalabel4
 .cc_bottom cc_87
 .cc_top cc_88,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	294
 	.long	304
 	.long	.Lxtalabel4
 .cc_bottom cc_88
 .cc_top cc_89,.Lxtalabel6
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	305
 	.long	310
 	.long	.Lxtalabel6
 .cc_bottom cc_89
 .cc_top cc_90,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	305
 	.long	310
 	.long	.Lxtalabel4
 .cc_bottom cc_90
 .cc_top cc_91,.Lxtalabel10
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	305
 	.long	310
 	.long	.Lxtalabel10
 .cc_bottom cc_91
 .cc_top cc_92,.Lxtalabel7
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	311
 	.long	311
 	.long	.Lxtalabel7
 .cc_bottom cc_92
 .cc_top cc_93,.Lxtalabel8
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	312
 	.long	316
 	.long	.Lxtalabel8
 .cc_bottom cc_93
 .cc_top cc_94,.Lxtalabel9
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	317
 	.long	317
 	.long	.Lxtalabel9
 .cc_bottom cc_94
 .cc_top cc_95,.Lxtalabel10
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	318
 	.long	318
 	.long	.Lxtalabel10
 .cc_bottom cc_95
 .cc_top cc_96,.Lxtalabel11
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	322
 	.long	327
 	.long	.Lxtalabel11
 .cc_bottom cc_96
 .cc_top cc_97,.Lxtalabel11
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	329
 	.long	348
 	.long	.Lxtalabel11
 .cc_bottom cc_97
 .cc_top cc_98,.Lxtalabel2
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	349
 	.long	353
 	.long	.Lxtalabel2
 .cc_bottom cc_98
 .cc_top cc_99,.Lxtalabel22
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	465
 	.long	496
 	.long	.Lxtalabel22
 .cc_bottom cc_99
 .cc_top cc_100,.Lxtalabel23
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	497
 	.long	500
 	.long	.Lxtalabel23
 .cc_bottom cc_100
 .cc_top cc_101,.Lxtalabel24
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	501
 	.long	501
 	.long	.Lxtalabel24
 .cc_bottom cc_101
 .cc_top cc_102,.Lxtalabel25
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	502
 	.long	506
 	.long	.Lxtalabel25
 .cc_bottom cc_102
 .cc_top cc_103,.Lxtalabel27
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	507
 	.long	507
 	.long	.Lxtalabel27
 .cc_bottom cc_103
 .cc_top cc_104,.Lxtalabel26
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	507
 	.long	507
 	.long	.Lxtalabel26
 .cc_bottom cc_104
 .cc_top cc_105,.Lxtalabel27
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	513
 	.long	515
 	.long	.Lxtalabel27
 .cc_bottom cc_105
 .cc_top cc_106,.Lxtalabel26
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	513
 	.long	515
 	.long	.Lxtalabel26
 .cc_bottom cc_106
 .cc_top cc_107,.Lxtalabel28
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	522
 	.long	531
 	.long	.Lxtalabel28
 .cc_bottom cc_107
 .cc_top cc_108,.Lxtalabel29
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	532
 	.long	542
 	.long	.Lxtalabel29
 .cc_bottom cc_108
 .cc_top cc_109,.Lxtalabel30
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	543
 	.long	554
 	.long	.Lxtalabel30
 .cc_bottom cc_109
 .cc_top cc_110,.Lxtalabel32
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	543
 	.long	554
 	.long	.Lxtalabel32
 .cc_bottom cc_110
 .cc_top cc_111,.Lxtalabel33
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	543
 	.long	554
 	.long	.Lxtalabel33
 .cc_bottom cc_111
 .cc_top cc_112,.Lxtalabel31
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	543
 	.long	554
 	.long	.Lxtalabel31
 .cc_bottom cc_112
 .cc_top cc_113,.Lxtalabel34
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	555
 	.long	555
 	.long	.Lxtalabel34
 .cc_bottom cc_113
 .cc_top cc_114,.Lxtalabel12
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	573
 	.long	574
 	.long	.Lxtalabel12
 .cc_bottom cc_114
 .cc_top cc_115,.Lxtalabel12
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	579
 	.long	582
 	.long	.Lxtalabel12
 .cc_bottom cc_115
 .cc_top cc_116,.Lxtalabel12
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	586
 	.long	586
 	.long	.Lxtalabel12
 .cc_bottom cc_116
 .cc_top cc_117,.Lxtalabel16
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	587
 	.long	592
 	.long	.Lxtalabel16
 .cc_bottom cc_117
 .cc_top cc_118,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	587
 	.long	592
 	.long	.Lxtalabel15
 .cc_bottom cc_118
 .cc_top cc_119,.Lxtalabel14
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	587
 	.long	592
 	.long	.Lxtalabel14
 .cc_bottom cc_119
 .cc_top cc_120,.Lxtalabel16
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	647
 	.long	648
 	.long	.Lxtalabel16
 .cc_bottom cc_120
 .cc_top cc_121,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	647
 	.long	648
 	.long	.Lxtalabel15
 .cc_bottom cc_121
 .cc_top cc_122,.Lxtalabel14
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	647
 	.long	648
 	.long	.Lxtalabel14
 .cc_bottom cc_122
 .cc_top cc_123,.Lxtalabel16
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	667
 	.long	668
 	.long	.Lxtalabel16
 .cc_bottom cc_123
 .cc_top cc_124,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	667
 	.long	668
 	.long	.Lxtalabel15
 .cc_bottom cc_124
 .cc_top cc_125,.Lxtalabel14
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	667
 	.long	668
 	.long	.Lxtalabel14
 .cc_bottom cc_125
 .cc_top cc_126,.Lxtalabel14
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	671
 	.long	672
 	.long	.Lxtalabel14
 .cc_bottom cc_126
 .cc_top cc_127,.Lxtalabel16
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	671
 	.long	672
 	.long	.Lxtalabel16
 .cc_bottom cc_127
 .cc_top cc_128,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	671
 	.long	672
 	.long	.Lxtalabel15
 .cc_bottom cc_128
 .cc_top cc_129,.Lxtalabel17
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	673
 	.long	675
 	.long	.Lxtalabel17
 .cc_bottom cc_129
 .cc_top cc_130,.Lxtalabel17
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	676
 	.long	677
 	.long	.Lxtalabel17
 .cc_bottom cc_130
 .cc_top cc_131,.Lxtalabel17
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	678
 	.long	680
 	.long	.Lxtalabel17
 .cc_bottom cc_131
 .cc_top cc_132,.Lxtalabel18
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	681
 	.long	689
 	.long	.Lxtalabel18
 .cc_bottom cc_132
 .cc_top cc_133,.Lxtalabel19
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	690
 	.long	690
 	.long	.Lxtalabel19
 .cc_bottom cc_133
 .cc_top cc_134,.Lxtalabel20
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	691
 	.long	693
 	.long	.Lxtalabel20
 .cc_bottom cc_134
 .cc_top cc_135,.Lxtalabel13
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	694
 	.long	696
 	.long	.Lxtalabel13
 .cc_bottom cc_135
 .cc_top cc_136,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	707
 	.long	716
 	.long	.Lxtalabel0
 .cc_bottom cc_136
 .cc_top cc_137,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	722
 	.long	742
 	.long	.Lxtalabel0
 .cc_bottom cc_137
 .cc_top cc_138,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	749
 	.long	781
@@ -2114,41 +2114,41 @@ ethernet_mii_no_queue_entries:
 .Lentries_start10:
 	.long	.Lentries_end11-.Lentries_start10
 	.long	1
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 	.ascii	 "mii_eof_case"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	323
 	.long	0
 	.ascii	 "mii_no_availible_buffers"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	204
 	.long	0
 	.ascii	 "mii_rx_begin"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	163
 	.long	0
 	.ascii	 "mii_rx_correct_priority_buffer_unavailable"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	284
 	.long	0
 	.ascii	 "mii_rx_data_inner_loop"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	306
 	.long	0
 	.ascii	 "mii_tx_loop"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	497
 	.long	.Laddr_end55-.Laddr_start54
@@ -2160,7 +2160,7 @@ ethernet_mii_no_queue_entries:
 .Laddr_end55:
 	.ascii	 "mii_tx_main_loop"
 	.byte	0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	587
 	.long	0
@@ -2169,10 +2169,10 @@ ethernet_mii_no_queue_entries:
 .Lentries_start12:
 	.long	.Lentries_end13-.Lentries_start12
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_149,.Lxta.loop_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet/src/full/mii.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/mii.xc"
 	.byte	0
 	.long	497
 	.long	506

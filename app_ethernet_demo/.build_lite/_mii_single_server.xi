@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc"
-# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -300,7 +300,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc" 2
 # 1 "xclib.h" 1 3
 # 35 "xclib.h" 3
 unsigned bitrev(unsigned x);
@@ -308,7 +308,7 @@ unsigned bitrev(unsigned x);
 unsigned byterev(unsigned x);
 # 59 "xclib.h" 3
 int clz(unsigned x);
-# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc" 2
+# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc" 2
 # 1 "print.h" 1 3
 # 34 "print.h" 3
 int printchar(char value);
@@ -342,7 +342,7 @@ int printllonghexln(unsigned long long value);
 int printstr(const char (& alias s)[]);
 # 133 "print.h" 3
 int printstrln(const char (& alias s)[]);
-# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc" 2
+# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc" 2
 # 1 "_mii_driver.h" 1
 # 4 "_mii_driver.h"
 # 1 "_mii.h" 1
@@ -382,7 +382,7 @@ extern tileref tile[2];
 # 7 "_ethernet_conf_derived.h" 2
 # 7 "_mii.h" 2
 # 19 "_mii.h"
-typedef struct mii_interface_full_t {
+typedef struct _mii_interface_full_t {
     __clock_t  clk_mii_rx;
     __clock_t  clk_mii_tx;
 
@@ -394,9 +394,9 @@ typedef struct mii_interface_full_t {
     in port p_mii_txclk;
     out port p_mii_txen;
     out buffered port:32 p_mii_txd;
-} mii_interface_full_t;
+} _mii_interface_full_t;
 
-typedef struct mii_interface_lite_t {
+typedef struct _mii_interface_lite_t {
     __clock_t  clk_mii_rx;
     __clock_t  clk_mii_tx;
 
@@ -411,18 +411,18 @@ typedef struct mii_interface_lite_t {
 # 47 "_mii.h"
     in port p_mii_timing;
 
-} mii_interface_lite_t;
+} _mii_interface_lite_t;
 # 5 "_mii_driver.h" 2
 # 11 "_mii_driver.h"
 extern void _mii_initialise(out port ?p_mii_resetn,
-                           mii_interface_lite_t &m);
+                           _mii_interface_lite_t &m);
 # 25 "_mii_driver.h"
-extern void _mii_driver(mii_interface_lite_t &m, chanend cIn, chanend cOut);
+extern void _mii_driver(_mii_interface_lite_t &m, chanend cIn, chanend cOut);
 
 extern void _phy_reset(out port p_mii_resetn, timer tmr);
-# 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc" 2
+# 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc" 2
 # 1 "_mii.h" 1
-# 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc" 2
+# 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc" 2
 # 1 "_mii_lite.h" 1
 # 4 "_mii_lite.h"
 # 1 "xs1.h" 1 3
@@ -433,10 +433,10 @@ extern void _phy_reset(out port p_mii_resetn, timer tmr);
 # 1 "_mii_driver.h" 1
 # 8 "_mii_lite.h" 2
 # 12 "_mii_lite.h"
-extern void _mii_port_init(mii_interface_lite_t &m);
+extern void _mii_port_init(_mii_interface_lite_t &m);
 # 17 "_mii_lite.h"
 extern void _miiTimeStampInit(unsigned offset);
-# 13 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc" 2
 # 1 "smi.h" 1
 # 9 "smi.h"
 # 1 "xs1.h" 1 3
@@ -445,6 +445,12 @@ extern void _miiTimeStampInit(unsigned offset);
 # 11 "smi.h" 2
 # 13 "smi.h"
 # 1 "ethernet_conf_derived.h" 1
+# 3 "ethernet_conf_derived.h"
+# 1 "platform.h" 1 3
+# 4 "ethernet_conf_derived.h" 2
+# 6 "ethernet_conf_derived.h"
+# 1 "ethernet_conf.h" 1
+# 7 "ethernet_conf_derived.h" 2
 # 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
@@ -472,7 +478,7 @@ int smi_check_link_state( smi_interface_t &smi );
 
 
 int smi_reg( smi_interface_t &smi , unsigned reg, unsigned val, int inning);
-# 14 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc" 2
+# 14 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc" 2
 # 1 "_mii_client.h" 1
 
 
@@ -520,9 +526,9 @@ int _mii_out_packet_(chanend c_out, int buf, int length);
 # 169 "_mii_client.h"
 #pragma select handler
 void _mii_out_packet_done(chanend cOut);
-# 15 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc" 2
+# 15 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc" 2
 # 1 "_ethernet_conf_derived.h" 1
-# 16 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_single_server.xc" 2
+# 16 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc" 2
 
 
 
@@ -612,7 +618,7 @@ static void _the_server(chanend cIn, chanend cOut, chanend cNotifications,
 
 void _mii_single_server(out port ?p_mii_resetn,
                      smi_interface_t &?smi,
-                     mii_interface_lite_t &m,
+                     _mii_interface_lite_t &m,
                      chanend appIn, chanend appOut,
                      unsigned char mac_address[6]) {
     chan cIn, cOut;
@@ -631,7 +637,7 @@ void _mii_single_server(out port ?p_mii_resetn,
 
 }
 
-void _ethernet_server_lite(mii_interface_lite_t &m,
+void _ethernet_server_lite(_mii_interface_lite_t &m,
                           smi_interface_t &?smi,
                           char mac_address[],
                           chanend c_rx[], int num_rx, chanend c_tx[], int num_tx)

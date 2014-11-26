@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
@@ -37,7 +37,7 @@
 	.set _phy_reset.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.file	2 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/timer.h"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
@@ -228,7 +228,7 @@ _mii_port_init:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	877
+	.long	883
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -236,7 +236,7 @@ _mii_port_init:
 	.ascii	 "XMOS 32-bit XC Compiler Community_13.1.0 (build 12073, May-09-2014)"
 	.byte	0
 	.short	49152
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -256,7 +256,7 @@ _mii_port_init:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	604
+	.long	609
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -271,7 +271,7 @@ _mii_port_init:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	604
+	.long	609
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -286,7 +286,7 @@ _mii_port_init:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	604
+	.long	609
 	.byte	0
 	.byte	4
 	.ascii	 "_mii_port_init"
@@ -306,7 +306,7 @@ _mii_port_init:
 	.byte	0
 	.byte	1
 	.byte	15
-	.long	875
+	.long	881
 	.long	.Ldebug_loc7+0
 	.byte	0
 	.byte	4
@@ -327,14 +327,14 @@ _mii_port_init:
 	.byte	0
 	.byte	1
 	.byte	32
-	.long	587
+	.long	592
 	.long	.Ldebug_loc0+0
 	.byte	5
 	.ascii	 "tmr"
 	.byte	0
 	.byte	1
 	.byte	32
-	.long	595
+	.long	600
 	.long	.Ldebug_loc2+0
 	.byte	6
 	.long	.Ltmp1
@@ -347,7 +347,7 @@ _mii_port_init:
 	.byte	0
 	.byte	1
 	.byte	33
-	.long	604
+	.long	609
 	.long	.Ldebug_loc4+0
 	.byte	0
 	.byte	0
@@ -373,13 +373,13 @@ _mii_port_init:
 	.byte	7
 	.byte	4
 	.byte	9
-	.ascii	 "mii_interface_lite_t"
+	.ascii	 "_mii_interface_lite_t"
 	.byte	0
 	.byte	40
 	.byte	10
 	.ascii	 "clk_mii_rx"
 	.byte	0
-	.long	620
+	.long	625
 	.byte	1
 	.byte	15
 	.byte	2
@@ -389,7 +389,7 @@ _mii_port_init:
 	.byte	10
 	.ascii	 "clk_mii_tx"
 	.byte	0
-	.long	620
+	.long	625
 	.byte	1
 	.byte	15
 	.byte	2
@@ -399,7 +399,7 @@ _mii_port_init:
 	.byte	10
 	.ascii	 "p_mii_rxclk"
 	.byte	0
-	.long	587
+	.long	592
 	.byte	1
 	.byte	15
 	.byte	2
@@ -409,7 +409,7 @@ _mii_port_init:
 	.byte	10
 	.ascii	 "p_mii_rxer"
 	.byte	0
-	.long	587
+	.long	592
 	.byte	1
 	.byte	15
 	.byte	2
@@ -419,7 +419,7 @@ _mii_port_init:
 	.byte	10
 	.ascii	 "p_mii_rxd"
 	.byte	0
-	.long	587
+	.long	592
 	.byte	1
 	.byte	15
 	.byte	2
@@ -429,7 +429,7 @@ _mii_port_init:
 	.byte	10
 	.ascii	 "p_mii_rxdv"
 	.byte	0
-	.long	587
+	.long	592
 	.byte	1
 	.byte	15
 	.byte	2
@@ -439,7 +439,7 @@ _mii_port_init:
 	.byte	10
 	.ascii	 "p_mii_txclk"
 	.byte	0
-	.long	587
+	.long	592
 	.byte	1
 	.byte	15
 	.byte	2
@@ -449,7 +449,7 @@ _mii_port_init:
 	.byte	10
 	.ascii	 "p_mii_txen"
 	.byte	0
-	.long	587
+	.long	592
 	.byte	1
 	.byte	15
 	.byte	2
@@ -459,7 +459,7 @@ _mii_port_init:
 	.byte	10
 	.ascii	 "p_mii_txd"
 	.byte	0
-	.long	587
+	.long	592
 	.byte	1
 	.byte	15
 	.byte	2
@@ -469,7 +469,7 @@ _mii_port_init:
 	.byte	10
 	.ascii	 "p_mii_timing"
 	.byte	0
-	.long	587
+	.long	592
 	.byte	1
 	.byte	15
 	.byte	2
@@ -478,7 +478,7 @@ _mii_port_init:
 	.byte	1
 	.byte	0
 	.byte	11
-	.long	629
+	.long	634
 	.byte	0
 .Linfo_end1:
 	.section	.debug_abbrev,"",@progbits
@@ -646,15 +646,15 @@ _mii_port_init:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	469
+	.long	474
 .asciiz "_phy_reset"
-	.long	298
+	.long	303
 .asciiz "delay_milliseconds"
-	.long	410
+	.long	415
 .asciiz "_mii_port_init"
-	.long	354
+	.long	359
 .asciiz "delay_microseconds"
-	.long	252
+	.long	257
 .asciiz "delay_seconds"
 	.long	0
 .Lpubnames_end1:
@@ -666,8 +666,8 @@ _mii_port_init:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	629
-.asciiz "mii_interface_lite_t"
+	.long	634
+.asciiz "_mii_interface_lite_t"
 	.long	0
 .Lpubtypes_end1:
 	.section	.debug_loc,"",@progbits
@@ -734,7 +734,7 @@ _mii_port_init:
 	.typestring configure_in_port_strobed_slave, "f{0}(w:p,i:p,ck)"
 	.typestring configure_clock_src, "f{0}(ck,w:p)"
 	.typestring _phy_reset, "f{0}(o:p,swt)"
-	.typestring _mii_port_init, "f{0}(&(s(mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}))"
+	.typestring _mii_port_init, "f{0}(&(s(_mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}))"
 	.section	.xtacalltable,"",@progbits
 .Lentries_start0:
 	.long	.Lentries_end1-.Lentries_start0
@@ -742,25 +742,25 @@ _mii_port_init:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_0,.Lxta.call_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	16
 	.long	.Lxta.call_labels0
 .cc_bottom cc_0
 .cc_top cc_1,.Lxta.call_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	17
 	.long	.Lxta.call_labels1
 .cc_bottom cc_1
 .cc_top cc_2,.Lxta.call_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	21
 	.long	.Lxta.call_labels2
 .cc_bottom cc_2
 .cc_top cc_3,.Lxta.call_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	22
 	.long	.Lxta.call_labels3
@@ -773,37 +773,37 @@ _mii_port_init:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_4,.Lxta.endpoint_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	35
 	.long	.Lxta.endpoint_labels0
 .cc_bottom cc_4
 .cc_top cc_5,.Lxta.endpoint_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	36
 	.long	.Lxta.endpoint_labels1
 .cc_bottom cc_5
 .cc_top cc_6,.Lxta.endpoint_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	38
 	.long	.Lxta.endpoint_labels2
 .cc_bottom cc_6
 .cc_top cc_7,.Lxta.endpoint_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	40
 	.long	.Lxta.endpoint_labels3
 .cc_bottom cc_7
 .cc_top cc_8,.Lxta.endpoint_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	41
 	.long	.Lxta.endpoint_labels4
 .cc_bottom cc_8
 .cc_top cc_9,.Lxta.endpoint_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	43
 	.long	.Lxta.endpoint_labels5
@@ -816,14 +816,14 @@ _mii_port_init:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_10,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	16
 	.long	26
 	.long	.Lxtalabel1
 .cc_bottom cc_10
 .cc_top cc_11,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_lite.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_lite.xc"
 	.byte	0
 	.long	33
 	.long	44

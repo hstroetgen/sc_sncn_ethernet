@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new/module_locks/src/swlock.c"
+	.file	"/home/atena/workspace_ethernet_new_replicated/module_locks/src/swlock.c"
 
 .set swlock_init.locnoside, 1
 
@@ -31,7 +31,7 @@
 .set swlock_release.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new/module_locks/src/swlock.c"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_locks/src/swlock.c"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
 	.section	.debug_abbrev,"",@progbits
@@ -81,7 +81,7 @@ swlock_init:
 .Ltmp6:
 	.size	swlock_init, .Ltmp6-swlock_init
 .Lfunc_end0:
-	.file	2 "/home/atena/workspace_ethernet_new/module_locks/src/swlock.h"
+	.file	2 "/home/atena/workspace_ethernet_new_replicated/module_locks/src/swlock.h"
 .Ltmp7:
 	.cfi_endproc
 .Leh_func_end0:
@@ -190,7 +190,7 @@ swlock_release:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	477
+	.long	499
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -198,11 +198,11 @@ swlock_release:
 	.ascii	 "4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"
 	.byte	0
 	.short	1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_locks/src/swlock.c"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_locks/src/swlock.c"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 	.byte	2
 	.ascii	 "swlock_init"
@@ -223,7 +223,7 @@ swlock_release:
 	.byte	0
 	.byte	1
 	.byte	9
-	.long	467
+	.long	489
 	.byte	2
 	.byte	145
 	.byte	8
@@ -235,7 +235,7 @@ swlock_release:
 	.byte	0
 	.byte	1
 	.byte	11
-	.long	467
+	.long	489
 	.byte	2
 	.byte	145
 	.byte	4
@@ -260,7 +260,7 @@ swlock_release:
 	.byte	0
 	.byte	1
 	.byte	17
-	.long	467
+	.long	489
 	.byte	2
 	.byte	145
 	.byte	12
@@ -272,7 +272,7 @@ swlock_release:
 	.byte	0
 	.byte	1
 	.byte	19
-	.long	473
+	.long	495
 	.byte	2
 	.byte	145
 	.byte	8
@@ -297,7 +297,7 @@ swlock_release:
 	.byte	0
 	.byte	1
 	.byte	26
-	.long	467
+	.long	489
 	.byte	2
 	.byte	145
 	.byte	4
@@ -308,13 +308,13 @@ swlock_release:
 	.byte	7
 	.byte	4
 	.byte	7
-	.long	435
+	.long	457
 	.ascii	 "swlock_t"
 	.byte	0
 	.byte	2
 	.byte	11
 	.byte	8
-	.long	451
+	.long	473
 	.byte	4
 	.byte	6
 	.ascii	 "int"
@@ -449,11 +449,11 @@ swlock_release:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	373
+	.long	395
 .asciiz "swlock_release"
-	.long	203
+	.long	225
 .asciiz "swlock_init"
-	.long	285
+	.long	307
 .asciiz "swlock_acquire"
 	.long	0
 .Lpubnames_end1:

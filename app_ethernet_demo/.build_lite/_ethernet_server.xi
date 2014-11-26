@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server.xc"
-# 6 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_server.xc"
+# 6 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_server.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -300,7 +300,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server.xc" 2
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_server.xc" 2
 # 1 "_mii_full.h" 1
 # 8 "_mii_full.h"
 # 1 "xs1.h" 1 3
@@ -344,7 +344,7 @@ extern tileref tile[2];
 # 7 "_ethernet_conf_derived.h" 2
 # 7 "_mii.h" 2
 # 19 "_mii.h"
-typedef struct mii_interface_full_t {
+typedef struct _mii_interface_full_t {
     __clock_t  clk_mii_rx;
     __clock_t  clk_mii_tx;
 
@@ -356,9 +356,9 @@ typedef struct mii_interface_full_t {
     in port p_mii_txclk;
     out port p_mii_txen;
     out buffered port:32 p_mii_txd;
-} mii_interface_full_t;
+} _mii_interface_full_t;
 
-typedef struct mii_interface_lite_t {
+typedef struct _mii_interface_lite_t {
     __clock_t  clk_mii_rx;
     __clock_t  clk_mii_tx;
 
@@ -373,7 +373,7 @@ typedef struct mii_interface_lite_t {
 # 47 "_mii.h"
     in port p_mii_timing;
 
-} mii_interface_lite_t;
+} _mii_interface_lite_t;
 # 11 "_mii_full.h" 2
 # 12 "_mii_full.h"
 # 1 "_ethernet_conf_derived.h" 1
@@ -419,11 +419,11 @@ int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 # 80 "_mii_full.h" 2
 
 
-void _mii_init_full( mii_interface_full_t &m );
+void _mii_init_full( _mii_interface_full_t &m );
 
 
 
-typedef struct mii_packet_t {
+typedef struct _mii_packet_t {
 
   int length;
 
@@ -444,7 +444,7 @@ typedef struct mii_packet_t {
   int forwarding;
 
   unsigned int data[( (1518) +3)/4];
-} mii_packet_t;
+} _mii_packet_t;
 # 135 "_mii_full.h"
 inline int _mii_packet_get_length (int buf) { int x; __asm__("ldw %0,%1[" "0" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_length (int buf, int x) { __asm__("stw %1, %0[" "0" "]"::"r"(buf),"r"(x)); }
 inline int _mii_packet_get_timestamp (int buf) { int x; __asm__("ldw %0,%1[" "1" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_timestamp (int buf, int x) { __asm__("stw %1, %0[" "1" "]"::"r"(buf),"r"(x)); }
@@ -500,7 +500,7 @@ void _mii_tx_pins(
                 int ifnum);
 # 237 "_mii_full.h"
 void _ethernet_get_mii_counts( unsigned &dropped );
-# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server.xc" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_server.xc" 2
 # 1 "smi.h" 1
 # 9 "smi.h"
 # 1 "xs1.h" 1 3
@@ -509,6 +509,12 @@ void _ethernet_get_mii_counts( unsigned &dropped );
 # 11 "smi.h" 2
 # 13 "smi.h"
 # 1 "ethernet_conf_derived.h" 1
+# 3 "ethernet_conf_derived.h"
+# 1 "platform.h" 1 3
+# 4 "ethernet_conf_derived.h" 2
+# 6 "ethernet_conf_derived.h"
+# 1 "ethernet_conf.h" 1
+# 7 "ethernet_conf_derived.h" 2
 # 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
@@ -536,7 +542,7 @@ int smi_check_link_state( smi_interface_t &smi );
 
 
 int smi_reg( smi_interface_t &smi , unsigned reg, unsigned val, int inning);
-# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server.xc" 2
+# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_server.xc" 2
 # 1 "_mii_wrappers.h" 1
 
 
@@ -564,7 +570,7 @@ void _ethernet_tx_server_wr(const char mac_addr[], chanend tx[], int num_q, int 
 
 
 void _ethernet_rx_server_wr(chanend rx[], int num_rx);
-# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server.xc" 2
+# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_server.xc" 2
 # 1 "_mii_filter.h" 1
 # 8 "_mii_filter.h"
 # 1 "_mii_full.h" 1
@@ -612,19 +618,19 @@ void _ethernet_get_filter_counts( unsigned &address ,
 								unsigned &filter ,
 								unsigned &length ,
 								unsigned &crc );
-# 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server.xc" 2
+# 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_server.xc" 2
 
 
 
 void _phy_init(smi_interface_t &smi0,
-              mii_interface_full_t &mii0)
+              _mii_interface_full_t &mii0)
 {
   smi_init(smi0);
   _mii_init_full(mii0);
   eth_phy_config(1, smi0);
 }
 
-void _ethernet_server_full(mii_interface_full_t &m,
+void _ethernet_server_full(_mii_interface_full_t &m,
                           smi_interface_t &?smi,
                           char mac_address[],
                           chanend rx[],

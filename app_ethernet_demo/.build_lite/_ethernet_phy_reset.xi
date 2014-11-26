@@ -1,4 +1,4 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_phy_reset.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_phy_reset.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -299,7 +299,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_phy_reset.xc" 2
+# 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_phy_reset.xc" 2
 # 1 "_ethernet_phy_reset.h" 1
 # 3 "_ethernet_phy_reset.h"
 # 1 "platform.h" 1 3
@@ -325,10 +325,10 @@ extern tileref tile[2];
 # 7 "_ethernet_conf_derived.h" 2
 # 8 "_ethernet_phy_reset.h" 2
 # 20 "_ethernet_phy_reset.h"
-typedef int ethernet_reset_interface_t;
+typedef int _ethernet_reset_interface_t;
 
 
-inline void _eth_phy_reset(ethernet_reset_interface_t eth_rst) {}
-# 3 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_phy_reset.xc" 2
-# 18 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_phy_reset.xc"
-extern inline void _eth_phy_reset(ethernet_reset_interface_t eth_rst);
+inline void _eth_phy_reset(_ethernet_reset_interface_t eth_rst) {}
+# 3 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_phy_reset.xc" 2
+# 18 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_phy_reset.xc"
+extern inline void _eth_phy_reset(_ethernet_reset_interface_t eth_rst);

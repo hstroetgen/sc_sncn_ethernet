@@ -1,4 +1,4 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_client_lite.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -299,7 +299,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_client_lite.xc" 2
+# 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite.xc" 2
 # 1 "_ethernet_rx_client.h" 1
 # 9 "_ethernet_rx_client.h"
 # 1 "_ethernet_conf_derived.h" 1
@@ -435,7 +435,7 @@ void _safe_mac_rx(chanend c_mac,
                  unsigned int &len ,
                  unsigned int &src_port ,
                  int n);
-# 3 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_client_lite.xc" 2
+# 3 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite.xc" 2
 # 1 "_ethernet_tx_client.h" 1
 # 20 "_ethernet_tx_client.h"
 # 1 "_ethernet_conf_derived.h" 1
@@ -481,10 +481,10 @@ void _mac_check_link_client(chanend c, unsigned char &linkNum, int &status);
 void _mac_tx(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
 # 52 "_ethernet_tx_client.h"
 int _mac_get_macaddr(chanend c_mac, unsigned char macaddr[]);
-# 4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_client_lite.xc" 2
+# 4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite.xc" 2
 # 1 "_ethernet_conf_derived.h" 1
-# 5 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_client_lite.xc" 2
-# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/lite/_mii_client_lite.xc"
+# 5 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite.xc" 2
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite.xc"
 #pragma select handler
 void _safe_mac_rx_lite(chanend cIn,
                         unsigned char buffer[],

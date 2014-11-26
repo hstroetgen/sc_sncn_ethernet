@@ -49,7 +49,7 @@ void ethernet_server(mii_interface_t &mii,
                      int num_rx,
                      chanend tx[],
                      int num_tx);
-
+/*
 void ethernet_server_two_port(mii_interface_t &mii1,
                               mii_interface_t &mii2,
                               char mac_address[],
@@ -60,7 +60,7 @@ void ethernet_server_two_port(mii_interface_t &mii1,
                               smi_interface_t &?smi1,
                               smi_interface_t &?smi2,
                               chanend ?connect_status);
-
+*/
 #define ethernet_server ADD_SUFFIX(ethernet_server, ETHERNET_DEFAULT_IMPLEMENTATION)
 
 #endif

@@ -1,11 +1,11 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_client_support.c"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_tx_client_support.c"
 # 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_client_support.c"
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server_def.h" 1
-# 20 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server_def.h"
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h" 1
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_tx_client_support.c"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_server_def.h" 1
+# 20 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_server_def.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 1
 
 
 # 1 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 1 3 4
@@ -112,13 +112,13 @@ __attribute__((deprecated)) static inline unsigned get_thread_id(void) {
 }
 # 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 2 3 4
 # 22 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 2 3 4
-# 4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h" 2
+# 4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 2
 
 
 # 1 ".././src/ethernet_conf.h" 1
-# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h" 2
-# 21 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_server_def.h" 2
-# 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_tx_client_support.c" 2
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 2
+# 21 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_server_def.h" 2
+# 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_tx_client_support.c" 2
 
 int _mac_calc_idle_slope(int bps)
 {

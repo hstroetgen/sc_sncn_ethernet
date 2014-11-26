@@ -81,6 +81,12 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/lite}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/lite}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/full}&quot;"/>
 								</option>
 								<option id="com.xmos.xc.compiler.option.defined.symbols.753450792" name="com.xmos.xc.compiler.option.defined.symbols" superClass="com.xmos.xc.compiler.option.defined.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__SHRT_MAX__=32767"/>
@@ -338,6 +344,12 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/lite}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/lite}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/full}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.29426179" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -490,6 +502,12 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/lite}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/lite}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/full}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.54474561" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
@@ -667,6 +685,12 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/lite}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/lite}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/full}&quot;"/>
 								</option>
 								<option id="com.xmos.xc.compiler.option.defined.symbols.1098398873" name="com.xmos.xc.compiler.option.defined.symbols" superClass="com.xmos.xc.compiler.option.defined.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__SHRT_MAX__=32767"/>
@@ -924,6 +948,12 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/lite}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/lite}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/full}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.43560843" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -1076,6 +1106,12 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src/lite}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/lite}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/_module_ethernet_dual/src/full}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.49552257" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>

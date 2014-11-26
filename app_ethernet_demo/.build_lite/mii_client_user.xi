@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc"
-# 6 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc"
+# 6 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -300,7 +300,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc" 2
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc" 2
 # 1 "xclib.h" 1 3
 # 35 "xclib.h" 3
 unsigned bitrev(unsigned x);
@@ -308,7 +308,7 @@ unsigned bitrev(unsigned x);
 unsigned byterev(unsigned x);
 # 59 "xclib.h" 3
 int clz(unsigned x);
-# 8 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc" 2
 # 1 "print.h" 1 3
 # 34 "print.h" 3
 int printchar(char value);
@@ -342,7 +342,7 @@ int printllonghexln(unsigned long long value);
 int printstr(const char (& alias s)[]);
 # 133 "print.h" 3
 int printstrln(const char (& alias s)[]);
-# 9 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc" 2
+# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc" 2
 # 1 "mii_client.h" 1
 
 
@@ -390,13 +390,13 @@ int mii_out_packet_(chanend c_out, int buf, int length);
 # 169 "mii_client.h"
 #pragma select handler
 void mii_out_packet_done(chanend cOut);
-# 10 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc" 2
+# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc" 2
 # 1 "mii_lld.h" 1
 extern unsigned int tailValues[4];
 extern void miiLLD(buffered in port:32 rxd, in port rxdv, buffered out port:32 txd,
                    chanend INchannel, chanend OUTchannel, in port timing,
                    timer tmr);
-# 11 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc" 2
+# 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc" 2
 
 
 
@@ -462,7 +462,7 @@ static int packetGood(struct miiData &this, int base, int end) {
     this.miiPacketsReceived++;
     return length;
 }
-# 111 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc"
+# 111 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc"
 static void set(int addr, int value) {
     asm("stw %0, %1[0]" :: "r" (value), "r" (addr));
 }
@@ -512,7 +512,7 @@ select mii_notified(struct miiData &this, chanend notificationChannel) {
 case  __builtin_in_uchar_byref(notificationChannel, this.notifySeen) :
     break;
 }
-# 161 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc"
+# 161 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc"
 #pragma unsafe arrays
 {unsigned, unsigned, unsigned} mii_get_in_buffer(struct miiData &this) {
     unsigned nBytes, timeStamp;
@@ -535,7 +535,7 @@ case  __builtin_in_uchar_byref(notificationChannel, this.notifySeen) :
     }
     return {0, 0, 0};
 }
-# 184 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc"
+# 184 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc"
 #pragma unsafe arrays
 static void miiCommitBuffer(struct miiData &this, unsigned int currentBuffer, unsigned int length, chanend notificationChannel) {
     int bn = currentBuffer < this.firstPtr[1] ? 0 : 1;
@@ -570,7 +570,7 @@ static void miiCommitBuffer(struct miiData &this, unsigned int currentBuffer, un
 static void miiRejectBuffer(struct miiData &this, unsigned int currentBuffer) {
     this.nextBuffer = currentBuffer;
 }
-# 219 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc"
+# 219 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc"
 #pragma unsafe arrays
 void mii_restart_buffer(struct miiData &this) {
     int bn;
@@ -595,7 +595,7 @@ void mii_restart_buffer(struct miiData &this) {
         }
     }
 }
-# 244 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc"
+# 244 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc"
 #pragma unsafe arrays
 void mii_free_in_buffer(struct miiData &this, int base) {
     int bankNumber = base < this.firstPtr[1] ? 0 : 1;
@@ -624,7 +624,7 @@ void miiTimeStampInit(unsigned offset) {
     int testOffset = 10000;
     globalOffset = (offset + testOffset) & 0x3FFFF;
 }
-# 273 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc"
+# 273 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc"
 #pragma unsafe arrays
 void miiClientUser(struct miiData &this, int base, int end, chanend notificationChannel) {
     int length = packetGood(this, base, end);
@@ -634,7 +634,7 @@ void miiClientUser(struct miiData &this, int base, int end, chanend notification
         miiRejectBuffer(this, base);
     }
 }
-# 283 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_user.xc"
+# 283 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_user.xc"
 #pragma unsafe arrays
 int mii_out_packet(chanend c_out, int b[], int index, int length) {
     int a, roundedLength;

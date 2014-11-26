@@ -50,7 +50,7 @@
 <booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="false"/>
 <booleanAttribute key="org.eclipse.cdt.launch.ENABLE_REGISTER_BOOKKEEPING" value="false"/>
 <booleanAttribute key="org.eclipse.cdt.launch.ENABLE_VARIABLE_BOOKKEEPING" value="false"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="bin/full/app_ethernet_demo_full.xe"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="bin/lite/app_ethernet_demo_lite.xe"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="app_ethernet_demo"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="com.xmos.cdt.toolchain.73630992"/>
 <booleanAttribute key="org.eclipse.cdt.launch.use_terminal" value="true"/>

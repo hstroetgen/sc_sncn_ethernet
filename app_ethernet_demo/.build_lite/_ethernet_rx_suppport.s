@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_suppport.c"
+	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_suppport.c"
 
 .set _mac_rx_send_frame.locnoside, 1
 
@@ -11,7 +11,7 @@
 .set _mac_rx_send_frame.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_suppport.c"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_suppport.c"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
 	.section	.debug_abbrev,"",@progbits
@@ -79,7 +79,7 @@ _mac_rx_send_frame:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	386
+	.long	391
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -87,7 +87,7 @@ _mac_rx_send_frame:
 	.ascii	 "4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"
 	.byte	0
 	.short	1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_ethernet_rx_suppport.c"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_suppport.c"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -113,21 +113,21 @@ _mac_rx_send_frame:
 	.byte	0
 	.byte	1
 	.byte	13
-	.long	351
+	.long	356
 	.long	.Ldebug_loc0+0
 	.byte	3
 	.ascii	 "link"
 	.byte	0
 	.byte	1
 	.byte	14
-	.long	374
+	.long	379
 	.long	.Ldebug_loc2+0
 	.byte	3
 	.ascii	 "cmd"
 	.byte	0
 	.byte	1
 	.byte	15
-	.long	358
+	.long	363
 	.long	.Ldebug_loc4+0
 	.byte	0
 	.byte	4
@@ -141,7 +141,7 @@ _mac_rx_send_frame:
 	.byte	7
 	.byte	4
 	.byte	5
-	.long	358
+	.long	363
 	.ascii	 "chanend"
 	.byte	0
 	.byte	2
@@ -243,7 +243,7 @@ _mac_rx_send_frame:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	250
+	.long	255
 .asciiz "_mac_rx_send_frame"
 	.long	0
 .Lpubnames_end1:
@@ -294,5 +294,5 @@ _mac_rx_send_frame:
 	.section	.debug_macinfo,"",@progbits
 
 	.typestring _mac_rx_send_frame, "f{0}(si,ui,ui)"
-	.typestring _mac_rx_send_frame0, "f{0}(p(s(mii_packet_t){m(length){si},m(timestamp){si},m(filter_result){si},m(src_port){si},m(timestamp_id){si},m(stage){si},m(tcount){si},m(crc){si},m(forwarding){si},m(data){a(380:ui)}}),ui,ui)"
+	.typestring _mac_rx_send_frame0, "f{0}(p(s(_mii_packet_t){m(length){si},m(timestamp){si},m(filter_result){si},m(src_port){si},m(timestamp_id){si},m(stage){si},m(tcount){si},m(crc){si},m(forwarding){si},m(data){a(380:ui)}}),ui,ui)"
 	.ident	"GCC: (GNU) 4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"

@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
-# 16 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
+# 16 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -300,7 +300,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 17 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc" 2
+# 17 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc" 2
 # 1 "xclib.h" 1 3
 # 35 "xclib.h" 3
 unsigned bitrev(unsigned x);
@@ -308,7 +308,7 @@ unsigned bitrev(unsigned x);
 unsigned byterev(unsigned x);
 # 59 "xclib.h" 3
 int clz(unsigned x);
-# 18 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc" 2
+# 18 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc" 2
 # 1 "mii_full.h" 1
 # 8 "mii_full.h"
 # 1 "xs1.h" 1 3
@@ -508,12 +508,12 @@ void mii_tx_pins(
                 int ifnum);
 # 237 "mii_full.h"
 void ethernet_get_mii_counts( unsigned &dropped );
-# 19 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc" 2
+# 19 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc" 2
 # 1 "ethernet_server_def.h" 1
 # 20 "ethernet_server_def.h"
 # 1 "ethernet_conf_derived.h" 1
 # 21 "ethernet_server_def.h" 2
-# 20 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc" 2
+# 20 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc" 2
 # 1 "ethernet_rx_client.h" 1
 # 9 "ethernet_rx_client.h"
 # 1 "ethernet_conf_derived.h" 1
@@ -621,9 +621,9 @@ void safe_mac_rx(chanend c_mac,
                  unsigned int &len ,
                  unsigned int &src_port ,
                  int n);
-# 21 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc" 2
+# 21 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc" 2
 # 1 "ethernet_conf_derived.h" 1
-# 22 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc" 2
+# 22 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc" 2
 # 1 "print.h" 1 3
 # 34 "print.h" 3
 int printchar(char value);
@@ -657,14 +657,14 @@ int printllonghexln(unsigned long long value);
 int printstr(const char (& alias s)[]);
 # 133 "print.h" 3
 int printstrln(const char (& alias s)[]);
-# 23 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc" 2
+# 23 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc" 2
 
 static inline unsigned int get_tile_id_from_chanend(chanend c) {
   unsigned int ci;
   asm("shr %0, %1, 16":"=r"(ci):"r"(c));
   return ci;
 }
-# 33 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+# 33 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 #pragma unsafe arrays
 static int ethernet_unified_get_data(chanend ethernet_rx_svr, unsigned char Buf[], unsigned int &rxTime, unsigned int &src_port, unsigned int Cmd, int n)
 {
@@ -794,7 +794,7 @@ void mac_set_custom_filter(chanend mac_svr, int x)
   mac_svr <: x;
   return;
 }
-# 165 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/ethernet_rx_client.xc"
+# 165 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_rx_client.xc"
 void mac_get_link_counters(chanend mac_svr, int& dropped)
 {
 

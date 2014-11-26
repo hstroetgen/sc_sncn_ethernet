@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
@@ -65,8 +65,8 @@
 	.set smi_check_link_state.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
-	.file	2 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full/timer.h"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.file	2 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/timer.h"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
 	.section	.debug_abbrev,"",@progbits
@@ -825,7 +825,7 @@ smi_bit_shift:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	1454
+	.long	1476
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -833,11 +833,11 @@ smi_bit_shift:
 	.ascii	 "XMOS 32-bit XC Compiler Community_13.1.0 (build 12073, May-09-2014)"
 	.byte	0
 	.short	49152
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 	.byte	1
 	.byte	2
@@ -853,7 +853,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	1441
+	.long	1463
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -868,7 +868,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	1441
+	.long	1463
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -883,7 +883,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	1441
+	.long	1463
 	.byte	0
 	.byte	4
 	.ascii	 "smi_init"
@@ -903,7 +903,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	76
-	.long	1436
+	.long	1458
 	.long	.Ldebug_loc0+0
 	.byte	0
 	.byte	6
@@ -913,7 +913,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	632
+	.long	654
 	.long	.Lfunc_begin7
 	.long	.Lfunc_end7
 	.byte	1
@@ -924,28 +924,28 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	1436
+	.long	1458
 	.long	.Ldebug_loc59+0
 	.byte	5
 	.ascii	 "data"
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	1441
+	.long	1463
 	.long	.Ldebug_loc62+0
 	.byte	5
 	.ascii	 "count"
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	1441
+	.long	1463
 	.long	.Ldebug_loc65+0
 	.byte	5
 	.ascii	 "inning"
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	1441
+	.long	1463
 	.long	.Ldebug_loc68+0
 	.byte	7
 	.long	.Ltmp161
@@ -958,21 +958,21 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	632
+	.long	654
 	.long	.Ldebug_loc71+0
 	.byte	8
 	.byte	116
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	632
+	.long	654
 	.long	.Ldebug_loc75+0
 	.byte	9
 	.ascii	 "dataBit"
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	632
+	.long	654
 	.byte	7
 	.long	.Ltmp166
 	.long	.Ltmp168
@@ -981,7 +981,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	632
+	.long	654
 	.long	.Ldebug_loc78+0
 	.byte	0
 	.byte	0
@@ -999,7 +999,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	632
+	.long	654
 	.byte	1
 	.long	.Lfunc_begin6
 	.long	.Lfunc_end6
@@ -1011,28 +1011,28 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	1436
+	.long	1458
 	.long	.Ldebug_loc46+0
 	.byte	5
 	.ascii	 "reg"
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	1441
+	.long	1463
 	.long	.Ldebug_loc49+0
 	.byte	5
 	.ascii	 "val"
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	1441
+	.long	1463
 	.long	.Ldebug_loc52+0
 	.byte	5
 	.ascii	 "inning"
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	632
+	.long	654
 	.long	.Ldebug_loc56+0
 	.byte	0
 	.byte	11
@@ -1042,7 +1042,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	173
-	.long	632
+	.long	654
 	.byte	1
 	.long	.Lfunc_begin4
 	.long	.Lfunc_end4
@@ -1054,7 +1054,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	173
-	.long	1436
+	.long	1458
 	.long	.Ldebug_loc37+0
 	.byte	7
 	.long	.Ltmp95
@@ -1067,7 +1067,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	174
-	.long	1441
+	.long	1463
 	.long	.Ldebug_loc40+0
 	.byte	7
 	.long	.Ltmp97
@@ -1077,7 +1077,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	175
-	.long	1441
+	.long	1463
 	.long	.Ldebug_loc42+0
 	.byte	0
 	.byte	0
@@ -1101,14 +1101,14 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	179
-	.long	632
+	.long	654
 	.long	.Ldebug_loc2+0
 	.byte	5
 	.ascii	 "smi"
 	.byte	0
 	.byte	1
 	.byte	179
-	.long	1436
+	.long	1458
 	.long	.Ldebug_loc5+0
 	.byte	7
 	.long	.Ltmp22
@@ -1121,14 +1121,14 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	180
-	.long	632
+	.long	654
 	.long	.Ldebug_loc9+0
 	.byte	8
 	.ascii	 "basicControl"
 	.byte	0
 	.byte	1
 	.byte	180
-	.long	632
+	.long	654
 	.long	.Ldebug_loc13+0
 	.byte	0
 	.byte	0
@@ -1151,14 +1151,14 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	208
-	.long	632
+	.long	654
 	.long	.Ldebug_loc17+0
 	.byte	5
 	.ascii	 "smi"
 	.byte	0
 	.byte	1
 	.byte	208
-	.long	1436
+	.long	1458
 	.long	.Ldebug_loc20+0
 	.byte	7
 	.long	.Ltmp50
@@ -1171,7 +1171,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	209
-	.long	632
+	.long	654
 	.long	.Ldebug_loc24+0
 	.byte	0
 	.byte	0
@@ -1194,14 +1194,14 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	221
-	.long	632
+	.long	654
 	.long	.Ldebug_loc27+0
 	.byte	5
 	.ascii	 "smi"
 	.byte	0
 	.byte	1
 	.byte	221
-	.long	1436
+	.long	1458
 	.long	.Ldebug_loc30+0
 	.byte	7
 	.long	.Ltmp72
@@ -1214,7 +1214,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	222
-	.long	632
+	.long	654
 	.long	.Ldebug_loc34+0
 	.byte	0
 	.byte	0
@@ -1226,7 +1226,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	235
-	.long	632
+	.long	654
 	.byte	1
 	.long	.Lfunc_begin5
 	.long	.Lfunc_end5
@@ -1238,7 +1238,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	235
-	.long	1436
+	.long	1458
 	.long	.Ldebug_loc44+0
 	.byte	0
 	.byte	10
@@ -1253,7 +1253,7 @@ smi_bit_shift:
 	.byte	13
 	.ascii	 "phy_address"
 	.byte	0
-	.long	632
+	.long	654
 	.byte	1
 	.byte	76
 	.byte	2
@@ -1263,7 +1263,7 @@ smi_bit_shift:
 	.byte	13
 	.ascii	 "p_smi_mdio"
 	.byte	0
-	.long	1343
+	.long	1365
 	.byte	1
 	.byte	76
 	.byte	2
@@ -1273,7 +1273,7 @@ smi_bit_shift:
 	.byte	13
 	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	1343
+	.long	1365
 	.byte	1
 	.byte	76
 	.byte	2
@@ -1282,7 +1282,7 @@ smi_bit_shift:
 	.byte	1
 	.byte	0
 	.byte	14
-	.long	1351
+	.long	1373
 	.byte	10
 	.ascii	 "unsigned int"
 	.byte	0
@@ -1516,27 +1516,27 @@ smi_bit_shift:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1141
+	.long	1163
 .asciiz "eth_phy_loopback"
-	.long	1266
+	.long	1288
 .asciiz "smi_check_link_state"
-	.long	268
+	.long	290
 .asciiz "delay_milliseconds"
-	.long	429
+	.long	451
 .asciiz "smi_bit_shift"
-	.long	639
+	.long	661
 .asciiz "smi_reg"
-	.long	324
+	.long	346
 .asciiz "delay_microseconds"
-	.long	853
+	.long	875
 .asciiz "eth_phy_config"
-	.long	1004
+	.long	1026
 .asciiz "eth_phy_config_noauto"
-	.long	380
+	.long	402
 .asciiz "smi_init"
-	.long	222
+	.long	244
 .asciiz "delay_seconds"
-	.long	738
+	.long	760
 .asciiz "eth_phy_id"
 	.long	0
 .Lpubnames_end1:
@@ -1548,7 +1548,7 @@ smi_bit_shift:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	1351
+	.long	1373
 .asciiz "smi_interface_t"
 	.long	0
 .Lpubtypes_end1:
@@ -1955,100 +1955,100 @@ smi_bit_shift:
 .Lentries_start0:
 	.long	.Lentries_end1-.Lentries_start0
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_0,.Lxta.call_labels12
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	167
 	.long	.Lxta.call_labels12
 .cc_bottom cc_0
 .cc_top cc_1,.Lxta.call_labels13
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	168
 	.long	.Lxta.call_labels13
 .cc_bottom cc_1
 .cc_top cc_2,.Lxta.call_labels14
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	169
 	.long	.Lxta.call_labels14
 .cc_bottom cc_2
 .cc_top cc_3,.Lxta.call_labels15
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	170
 	.long	.Lxta.call_labels15
 .cc_bottom cc_3
 .cc_top cc_4,.Lxta.call_labels9
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	174
 	.long	.Lxta.call_labels9
 .cc_bottom cc_4
 .cc_top cc_5,.Lxta.call_labels10
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	175
 	.long	.Lxta.call_labels10
 .cc_bottom cc_5
 .cc_top cc_6,.Lxta.call_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	181
 	.long	.Lxta.call_labels0
 .cc_bottom cc_6
 .cc_top cc_7,.Lxta.call_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	194
 	.long	.Lxta.call_labels1
 .cc_bottom cc_7
 .cc_top cc_8,.Lxta.call_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	196
 	.long	.Lxta.call_labels2
 .cc_bottom cc_8
 .cc_top cc_9,.Lxta.call_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	202
 	.long	.Lxta.call_labels3
 .cc_bottom cc_9
 .cc_top cc_10,.Lxta.call_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	205
 	.long	.Lxta.call_labels4
 .cc_bottom cc_10
 .cc_top cc_11,.Lxta.call_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	209
 	.long	.Lxta.call_labels5
 .cc_bottom cc_11
 .cc_top cc_12,.Lxta.call_labels6
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	217
 	.long	.Lxta.call_labels6
 .cc_bottom cc_12
 .cc_top cc_13,.Lxta.call_labels7
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	222
 	.long	.Lxta.call_labels7
 .cc_bottom cc_13
 .cc_top cc_14,.Lxta.call_labels8
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	232
 	.long	.Lxta.call_labels8
 .cc_bottom cc_14
 .cc_top cc_15,.Lxta.call_labels11
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	236
 	.long	.Lxta.call_labels11
@@ -2058,52 +2058,52 @@ smi_bit_shift:
 .Lentries_start2:
 	.long	.Lentries_end3-.Lentries_start2
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_16,.Lxta.endpoint_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	94
 	.long	.Lxta.endpoint_labels0
 .cc_bottom cc_16
 .cc_top cc_17,.Lxta.endpoint_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	137
 	.long	.Lxta.endpoint_labels1
 .cc_bottom cc_17
 .cc_top cc_18,.Lxta.endpoint_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	140
 	.long	.Lxta.endpoint_labels2
 .cc_bottom cc_18
 .cc_top cc_19,.Lxta.endpoint_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	147
 	.long	.Lxta.endpoint_labels3
 .cc_bottom cc_19
 .cc_top cc_20,.Lxta.endpoint_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	149
 	.long	.Lxta.endpoint_labels4
 .cc_bottom cc_20
 .cc_top cc_21,.Lxta.endpoint_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	149
 	.long	.Lxta.endpoint_labels5
 .cc_bottom cc_21
 .cc_top cc_22,.Lxta.endpoint_labels6
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	151
 	.long	.Lxta.endpoint_labels6
 .cc_bottom cc_22
 .cc_top cc_23,.Lxta.endpoint_labels7
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	157
 	.long	.Lxta.endpoint_labels7
@@ -2113,262 +2113,262 @@ smi_bit_shift:
 .Lentries_start4:
 	.long	.Lentries_end5-.Lentries_start4
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_24,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	77
 	.long	77
 	.long	.Lxtalabel0
 .cc_bottom cc_24
 .cc_top cc_25,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	94
 	.long	95
 	.long	.Lxtalabel0
 .cc_bottom cc_25
 .cc_top cc_26,.Lxtalabel13
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	104
 	.long	105
 	.long	.Lxtalabel13
 .cc_bottom cc_26
 .cc_top cc_27,.Lxtalabel13
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	137
 	.long	138
 	.long	.Lxtalabel13
 .cc_bottom cc_27
 .cc_top cc_28,.Lxtalabel14
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	139
 	.long	141
 	.long	.Lxtalabel14
 .cc_bottom cc_28
 .cc_top cc_29,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	142
 	.long	144
 	.long	.Lxtalabel15
 .cc_bottom cc_29
 .cc_top cc_30,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	147
 	.long	148
 	.long	.Lxtalabel15
 .cc_bottom cc_30
 .cc_top cc_31,.Lxtalabel16
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	149
 	.long	150
 	.long	.Lxtalabel16
 .cc_bottom cc_31
 .cc_top cc_32,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	149
 	.long	150
 	.long	.Lxtalabel15
 .cc_bottom cc_32
 .cc_top cc_33,.Lxtalabel16
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	151
 	.long	154
 	.long	.Lxtalabel16
 .cc_bottom cc_33
 .cc_top cc_34,.Lxtalabel17
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	155
 	.long	156
 	.long	.Lxtalabel17
 .cc_bottom cc_34
 .cc_top cc_35,.Lxtalabel18
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	157
 	.long	159
 	.long	.Lxtalabel18
 .cc_bottom cc_35
 .cc_top cc_36,.Lxtalabel18
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	162
 	.long	162
 	.long	.Lxtalabel18
 .cc_bottom cc_36
 .cc_top cc_37,.Lxtalabel12
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	167
 	.long	171
 	.long	.Lxtalabel12
 .cc_bottom cc_37
 .cc_top cc_38,.Lxtalabel10
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	174
 	.long	177
 	.long	.Lxtalabel10
 .cc_bottom cc_38
 .cc_top cc_39,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	180
 	.long	187
 	.long	.Lxtalabel1
 .cc_bottom cc_39
 .cc_top cc_40,.Lxtalabel2
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	180
 	.long	187
 	.long	.Lxtalabel2
 .cc_bottom cc_40
 .cc_top cc_41,.Lxtalabel3
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	180
 	.long	187
 	.long	.Lxtalabel3
 .cc_bottom cc_41
 .cc_top cc_42,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	192
 	.long	206
 	.long	.Lxtalabel1
 .cc_bottom cc_42
 .cc_top cc_43,.Lxtalabel2
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	192
 	.long	206
 	.long	.Lxtalabel2
 .cc_bottom cc_43
 .cc_top cc_44,.Lxtalabel3
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	192
 	.long	206
 	.long	.Lxtalabel3
 .cc_bottom cc_44
 .cc_top cc_45,.Lxtalabel6
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	209
 	.long	214
 	.long	.Lxtalabel6
 .cc_bottom cc_45
 .cc_top cc_46,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	209
 	.long	214
 	.long	.Lxtalabel4
 .cc_bottom cc_46
 .cc_top cc_47,.Lxtalabel5
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	209
 	.long	214
 	.long	.Lxtalabel5
 .cc_bottom cc_47
 .cc_top cc_48,.Lxtalabel6
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	215
 	.long	216
 	.long	.Lxtalabel6
 .cc_bottom cc_48
 .cc_top cc_49,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	215
 	.long	216
 	.long	.Lxtalabel4
 .cc_bottom cc_49
 .cc_top cc_50,.Lxtalabel5
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	215
 	.long	216
 	.long	.Lxtalabel5
 .cc_bottom cc_50
 .cc_top cc_51,.Lxtalabel5
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	217
 	.long	218
 	.long	.Lxtalabel5
 .cc_bottom cc_51
 .cc_top cc_52,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	217
 	.long	218
 	.long	.Lxtalabel4
 .cc_bottom cc_52
 .cc_top cc_53,.Lxtalabel6
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	217
 	.long	218
 	.long	.Lxtalabel6
 .cc_bottom cc_53
 .cc_top cc_54,.Lxtalabel7
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	222
 	.long	227
 	.long	.Lxtalabel7
 .cc_bottom cc_54
 .cc_top cc_55,.Lxtalabel9
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	222
 	.long	227
 	.long	.Lxtalabel9
 .cc_bottom cc_55
 .cc_top cc_56,.Lxtalabel8
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	222
 	.long	227
 	.long	.Lxtalabel8
 .cc_bottom cc_56
 .cc_top cc_57,.Lxtalabel9
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	232
 	.long	233
 	.long	.Lxtalabel9
 .cc_bottom cc_57
 .cc_top cc_58,.Lxtalabel8
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	232
 	.long	233
 	.long	.Lxtalabel8
 .cc_bottom cc_58
 .cc_top cc_59,.Lxtalabel7
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	232
 	.long	233
 	.long	.Lxtalabel7
 .cc_bottom cc_59
 .cc_top cc_60,.Lxtalabel11
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	236
 	.long	237
@@ -2379,17 +2379,17 @@ smi_bit_shift:
 .Lentries_start6:
 	.long	.Lentries_end7-.Lentries_start6
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_61,.Lxta.loop_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	139
 	.long	144
 	.long	.Lxta.loop_labels0
 .cc_bottom cc_61
 .cc_top cc_62,.Lxta.loop_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	147
 	.long	156

@@ -1,15 +1,15 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.c"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.c"
 # 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.c"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.c"
 
 
 
 
 
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.h" 1
-# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.h" 1
+# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.h"
 # 1 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/xccompat.h" 1 3 4
 # 122 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/xccompat.h" 3 4
 typedef unsigned chanend;
@@ -87,9 +87,9 @@ typedef unsigned out_buffered_port_32_t;
 
 
 typedef unsigned clock;
-# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.h" 2
+# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.h" 2
 
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h" 1
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 1
 
 
 # 1 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 1 3 4
@@ -194,13 +194,13 @@ __attribute__((deprecated)) static inline unsigned get_thread_id(void) {
 }
 # 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 2 3 4
 # 22 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 2 3 4
-# 4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h" 2
+# 4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 2
 
 
 # 1 ".././src/ethernet_conf.h" 1
-# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h" 2
-# 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.h" 2
-# 26 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.h"
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 2
+# 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.h" 2
+# 26 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.h"
 typedef struct mii_ts_queue_t {
   int lock;
   int rdIndex;
@@ -230,28 +230,28 @@ int _get_and_dec_transmit_count(int buf_num);
 
 
 int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
-# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.c" 2
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h" 1
-# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/include/_mii.h" 1
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.c" 2
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_full.h" 1
+# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_full.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_mii.h" 1
 
 
 
 
 
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h" 1
-# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/include/_mii.h" 2
-# 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h" 2
-# 79 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.h" 1
-# 80 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h" 2
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 1
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_mii.h" 2
+# 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_full.h" 2
+# 79 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_full.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.h" 1
+# 80 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_full.h" 2
 
 
 
 
 
 
-typedef struct mii_packet_t {
+typedef struct _mii_packet_t {
 
   int length;
 
@@ -272,8 +272,8 @@ typedef struct mii_packet_t {
   int forwarding;
 
   unsigned int data[((1518)+3)/4];
-} mii_packet_t;
-# 135 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
+} _mii_packet_t;
+# 135 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_full.h"
 inline int _mii_packet_get_length (int buf) { int x; __asm__("ldw %0,%1[" "0" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_length (int buf, int x) { __asm__("stw %1, %0[" "0" "]"::"r"(buf),"r"(x)); }
 inline int _mii_packet_get_timestamp (int buf) { int x; __asm__("ldw %0,%1[" "1" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_timestamp (int buf, int x) { __asm__("stw %1, %0[" "1" "]"::"r"(buf),"r"(x)); }
 inline int _mii_packet_get_filter_result (int buf) { int x; __asm__("ldw %0,%1[" "2" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_filter_result (int buf, int x) { __asm__("stw %1, %0[" "2" "]"::"r"(buf),"r"(x)); }
@@ -298,7 +298,7 @@ inline int _mii_packet_get_data_word(int data, int n) {
   __asm__("ldw %0,%1[%2]":"=r"(x):"r"(data),"r"(n));
   return x;
 }
-# 170 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
+# 170 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_full.h"
 inline void _mii_packet_set_data(int buf, int n, int v) {
   __asm__("stw %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+9));
 }
@@ -310,7 +310,7 @@ inline void _mii_packet_set_data_short(int buf, int n, int v) {
 inline void _mii_packet_set_data_byte(int buf, int n, int v) {
   __asm__("st8 %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+(9*4)));
 }
-# 193 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
+# 193 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_full.h"
 void _mii_rx_pins(
 
 
@@ -320,9 +320,9 @@ void _mii_rx_pins(
    port p_mii_rxd,
    int ifnum,
    chanend c);
-# 220 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
+# 220 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_full.h"
 void _mii_tx_pins(
-# 230 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h"
+# 230 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_full.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t *ts_queue,
                 port p_mii_txd,
@@ -331,7 +331,7 @@ void _mii_tx_pins(
 
 
 void _ethernet_get_mii_counts(unsigned *dropped);
-# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.c" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.c" 2
 
 
 
@@ -374,10 +374,10 @@ inline void hwlock_release(hwlock_t lock)
                         : "r" (lock)
                         : "memory");
 }
-# 13 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.c" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_mii_queue.c" 2
 
 
-extern mii_packet_t mii_packet_buf[];
+extern _mii_packet_t mii_packet_buf[];
 
 
 
@@ -387,7 +387,7 @@ extern hwlock_t _ethernet_memory_lock;
 
 
 int _get_and_dec_transmit_count(int buf0) {
-  mii_packet_t *buf = (mii_packet_t *) buf0;
+  _mii_packet_t *buf = (_mii_packet_t *) buf0;
   int count;
 
 
@@ -411,7 +411,7 @@ int _get_and_dec_transmit_count(int buf0) {
 
 int _mii_packet_get_and_clear_forwarding(int buf0, int ifnum)
 {
-  mii_packet_t *buf = (mii_packet_t *) buf0;
+  _mii_packet_t *buf = (_mii_packet_t *) buf0;
   int mask = (1<<ifnum);
   int ret = (buf->forwarding & mask);
 

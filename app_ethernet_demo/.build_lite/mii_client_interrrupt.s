@@ -1,6 +1,6 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_interrrupt.S"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_interrrupt.S"
 .cc_top mii_install_handler.func, mii_install_handler
-# 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_interrrupt.S"
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_interrrupt.S"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -31,7 +31,7 @@
 # 42 "xs1.h" 2 3
 # 1 "xs1_clock.h" 1 3
 # 43 "xs1.h" 2 3
-# 8 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/lite/mii_client_interrrupt.S" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_interrrupt.S" 2
 
 
 

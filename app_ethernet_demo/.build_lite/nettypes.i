@@ -1,15 +1,15 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/nettypes.c"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/nettypes.c"
 # 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/nettypes.c"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/nettypes.c"
 
 
 
 
 
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/nettypes.h" 1
-# 13 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/nettypes.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/nettypes.h" 1
+# 13 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/nettypes.h"
 typedef unsigned char u8_t;
 typedef unsigned short u16_t;
 typedef unsigned int u32_t;
@@ -84,7 +84,7 @@ typedef struct tagged_ethernet_hdr_t {
   unsigned char qtag[2];
   unsigned char ethertype[2];
 } tagged_ethernet_hdr_t;
-# 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/full/nettypes.c" 2
+# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/nettypes.c" 2
 
 extern inline n16_t hton16(u16_t x);
 extern inline u16_t ntoh16(n16_t x);

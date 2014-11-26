@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/common/ethernet_phy_reset.xc"
+	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/ethernet_phy_reset.xc"
 
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
@@ -31,7 +31,7 @@
 	.set eth_phy_reset.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/common/ethernet_phy_reset.xc"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/ethernet_phy_reset.xc"
 	.file	2 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/timer.h"
 	.file	3 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/ethernet_phy_reset.h"
 	.section	.debug_info,"",@progbits
@@ -87,7 +87,7 @@ eth_phy_reset:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	488
+	.long	494
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -95,7 +95,7 @@ eth_phy_reset:
 	.ascii	 "XMOS 32-bit XC Compiler Community_13.1.0 (build 12073, May-09-2014)"
 	.byte	0
 	.short	49152
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet/src/common/ethernet_phy_reset.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/ethernet_phy_reset.xc"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -115,7 +115,7 @@ eth_phy_reset:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	468
+	.long	474
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -130,7 +130,7 @@ eth_phy_reset:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	468
+	.long	474
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -145,7 +145,7 @@ eth_phy_reset:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	468
+	.long	474
 	.byte	0
 	.byte	2
 	.ascii	 "eth_phy_reset"
@@ -160,7 +160,7 @@ eth_phy_reset:
 	.byte	0
 	.byte	3
 	.byte	22
-	.long	484
+	.long	490
 	.byte	0
 	.byte	4
 	.ascii	 "unsigned int"
@@ -244,13 +244,13 @@ eth_phy_reset:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	420
+	.long	426
 .asciiz "eth_phy_reset"
-	.long	308
+	.long	314
 .asciiz "delay_milliseconds"
-	.long	364
+	.long	370
 .asciiz "delay_microseconds"
-	.long	262
+	.long	268
 .asciiz "delay_seconds"
 	.long	0
 .Lpubnames_end1:
