@@ -11,7 +11,6 @@
 #endif
 
 #define NUM_ETHERNET_PORTS 1
-//#define CONFIG_FULL             //TODO remove
 
 #if !defined(ETHERNET_DEFAULT_IMPLEMENTATION)
 #define ETHERNET_DEFAULT_IMPLEMENTATION lite

@@ -762,7 +762,7 @@ _ethernet_filtered_by_bad_crc:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	3269
+	.long	3249
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -1126,18 +1126,6 @@ _ethernet_filtered_by_bad_crc:
 	.byte	3
 	.byte	140
 	.long	732
-	.byte	5
-	.ascii	 "buf"
-	.byte	0
-	.byte	3
-	.byte	140
-	.long	732
-	.byte	5
-	.byte	120
-	.byte	0
-	.byte	3
-	.byte	140
-	.long	732
 	.byte	0
 	.byte	6
 	.ascii	 "_mii_packet_get_tcount"
@@ -1442,29 +1430,29 @@ _ethernet_filtered_by_bad_crc:
 	.byte	0
 	.byte	1
 	.byte	33
-	.long	3257
-	.long	.Ldebug_loc31+0
+	.long	3237
+	.long	.Ldebug_loc29+0
 	.byte	10
 	.ascii	 "filter"
 	.byte	0
 	.byte	1
 	.byte	33
-	.long	3257
-	.long	.Ldebug_loc33+0
+	.long	3237
+	.long	.Ldebug_loc31+0
 	.byte	10
 	.ascii	 "length"
 	.byte	0
 	.byte	1
 	.byte	33
-	.long	3257
-	.long	.Ldebug_loc35+0
+	.long	3237
+	.long	.Ldebug_loc33+0
 	.byte	10
 	.ascii	 "crc"
 	.byte	0
 	.byte	1
 	.byte	33
-	.long	3257
-	.long	.Ldebug_loc37+0
+	.long	3237
+	.long	.Ldebug_loc35+0
 	.byte	0
 	.byte	9
 	.ascii	 "_ethernet_filter"
@@ -1484,14 +1472,14 @@ _ethernet_filtered_by_bad_crc:
 	.byte	0
 	.byte	1
 	.byte	44
-	.long	3212
+	.long	3192
 	.long	.Ldebug_loc0+0
 	.byte	10
 	.byte	99
 	.byte	0
 	.byte	1
 	.byte	44
-	.long	3240
+	.long	3220
 	.long	.Ldebug_loc2+0
 	.byte	11
 	.long	.Ltmp19
@@ -1504,7 +1492,7 @@ _ethernet_filtered_by_bad_crc:
 	.byte	0
 	.byte	1
 	.byte	45
-	.long	3245
+	.long	3225
 	.byte	11
 	.long	.Ltmp19
 	.long	.Ltmp74
@@ -1531,7 +1519,7 @@ _ethernet_filtered_by_bad_crc:
 	.byte	1
 	.byte	60
 	.long	732
-	.long	.Ldebug_loc13+0
+	.long	.Ldebug_loc11+0
 	.byte	13
 	.long	.Ldebug_range+312
 	.byte	14
@@ -1550,7 +1538,7 @@ _ethernet_filtered_by_bad_crc:
 	.byte	1
 	.byte	64
 	.long	254
-	.long	.Ldebug_loc17+0
+	.long	.Ldebug_loc15+0
 	.byte	13
 	.long	.Ldebug_range+200
 	.byte	12
@@ -1559,7 +1547,7 @@ _ethernet_filtered_by_bad_crc:
 	.byte	1
 	.byte	65
 	.long	732
-	.long	.Ldebug_loc23+0
+	.long	.Ldebug_loc21+0
 	.byte	13
 	.long	.Ldebug_range+144
 	.byte	12
@@ -1568,7 +1556,7 @@ _ethernet_filtered_by_bad_crc:
 	.byte	1
 	.byte	66
 	.long	732
-	.long	.Ldebug_loc20+0
+	.long	.Ldebug_loc18+0
 	.byte	13
 	.long	.Ldebug_range+104
 	.byte	12
@@ -1577,7 +1565,7 @@ _ethernet_filtered_by_bad_crc:
 	.byte	1
 	.byte	113
 	.long	732
-	.long	.Ldebug_loc25+0
+	.long	.Ldebug_loc23+0
 	.byte	13
 	.long	.Ldebug_range+56
 	.byte	14
@@ -1604,7 +1592,7 @@ _ethernet_filtered_by_bad_crc:
 	.byte	1
 	.byte	126
 	.long	732
-	.long	.Ldebug_loc28+0
+	.long	.Ldebug_loc26+0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -1638,8 +1626,8 @@ _ethernet_filtered_by_bad_crc:
 	.byte	0
 	.byte	1
 	.byte	148
-	.long	3267
-	.long	.Ldebug_loc39+0
+	.long	3247
+	.long	.Ldebug_loc37+0
 	.byte	0
 	.byte	2
 	.ascii	 "unsigned char"
@@ -1647,31 +1635,31 @@ _ethernet_filtered_by_bad_crc:
 	.byte	8
 	.byte	1
 	.byte	16
-	.long	3182
+	.long	3162
 	.byte	17
 	.byte	4
 	.byte	5
 	.byte	18
-	.long	3199
+	.long	3179
 	.byte	19
-	.long	3207
+	.long	3187
 	.byte	2
 	.ascii	 "chanend"
 	.byte	0
 	.byte	7
 	.byte	4
 	.byte	20
-	.long	3217
+	.long	3197
 	.byte	21
-	.long	3204
+	.long	3184
 	.byte	0
 	.byte	0
 	.byte	19
-	.long	3228
+	.long	3208
 	.byte	20
 	.long	254
 	.byte	21
-	.long	3204
+	.long	3184
 	.byte	1
 	.byte	0
 	.byte	19
@@ -1679,7 +1667,7 @@ _ethernet_filtered_by_bad_crc:
 	.byte	18
 	.long	254
 	.byte	19
-	.long	3262
+	.long	3242
 	.byte	0
 .Linfo_end1:
 	.section	.debug_abbrev,"",@progbits
@@ -1961,23 +1949,23 @@ _ethernet_filtered_by_bad_crc:
 	.long	.Lset1
 	.long	739
 .asciiz "_mii_packet_set_length"
-	.long	2714
+	.long	2694
 .asciiz "_ethernet_filter"
-	.long	1912
+	.long	1892
 .asciiz "_mii_packet_get_forwarding"
 	.long	810
 .asciiz "_mii_packet_get_timestamp"
 	.long	1466
 .asciiz "_mii_packet_get_stage"
-	.long	2398
+	.long	2378
 .asciiz "_mii_packet_set_data_short"
-	.long	1774
+	.long	1754
 .asciiz "_mii_packet_get_crc"
-	.long	2486
+	.long	2466
 .asciiz "_mii_packet_set_data_byte"
-	.long	3093
+	.long	3073
 .asciiz "_mac_custom_filter_coerce1"
-	.long	1995
+	.long	1975
 .asciiz "_mii_packet_set_forwarding"
 	.long	891
 .asciiz "_mii_packet_set_timestamp"
@@ -1987,35 +1975,35 @@ _ethernet_filtered_by_bad_crc:
 .asciiz "_mii_packet_set_stage"
 	.long	968
 .asciiz "_mii_packet_get_filter_result"
-	.long	1847
+	.long	1827
 .asciiz "_mii_packet_set_crc"
-	.long	2322
+	.long	2302
 .asciiz "_mii_packet_set_data"
 	.long	1142
 .asciiz "_mii_packet_get_src_port"
-	.long	2074
+	.long	2054
 .asciiz "_mii_packet_get_data_ptr"
 	.long	1057
 .asciiz "_mii_packet_set_filter_result"
-	.long	2231
+	.long	2211
 .asciiz "_mii_packet_get_data_word"
 	.long	1221
 .asciiz "_mii_packet_set_src_port"
-	.long	1628
+	.long	1608
 .asciiz "_mii_packet_get_tcount"
 	.long	1296
 .asciiz "_mii_packet_get_timestamp_id"
-	.long	2144
+	.long	2124
 .asciiz "_mii_packet_set_data_word"
 	.long	653
 .asciiz "_mii_packet_get_length"
 	.long	597
 .asciiz "delay_microseconds"
-	.long	1703
+	.long	1683
 .asciiz "_mii_packet_set_tcount"
 	.long	495
 .asciiz "delay_seconds"
-	.long	2572
+	.long	2552
 .asciiz "_ethernet_get_filter_counts"
 	.long	1383
 .asciiz "_mii_packet_set_timestamp_id"
@@ -2085,96 +2073,96 @@ _ethernet_filtered_by_bad_crc:
 	.long	0
 	.long	0
 .Ldebug_loc11:
-	.long	.Ltmp29
-	.long	.Ltmp30
+	.long	.Ltmp32
+	.long	.Ltmp36
 .Lset10 = .Ltmp105-.Ltmp104
 	.short	.Lset10
 .Ltmp104:
-	.byte	87
+	.byte	86
 .Ltmp105:
-	.long	0
-	.long	0
-.Ldebug_loc13:
-	.long	.Ltmp32
-	.long	.Ltmp36
+	.long	.Ltmp37
+	.long	.Ltmp39
 .Lset11 = .Ltmp107-.Ltmp106
 	.short	.Lset11
 .Ltmp106:
 	.byte	86
 .Ltmp107:
-	.long	.Ltmp37
-	.long	.Ltmp39
+	.long	.Ltmp44
+	.long	.Ltmp46
 .Lset12 = .Ltmp109-.Ltmp108
 	.short	.Lset12
 .Ltmp108:
 	.byte	86
 .Ltmp109:
-	.long	.Ltmp44
-	.long	.Ltmp46
+	.long	0
+	.long	0
+.Ldebug_loc15:
+	.long	.Ltmp33
+	.long	.Ltmp36
 .Lset13 = .Ltmp111-.Ltmp110
 	.short	.Lset13
 .Ltmp110:
-	.byte	86
+	.byte	90
 .Ltmp111:
-	.long	0
-	.long	0
-.Ldebug_loc17:
-	.long	.Ltmp33
-	.long	.Ltmp36
+	.long	.Ltmp44
+	.long	.Ltmp45
 .Lset14 = .Ltmp113-.Ltmp112
 	.short	.Lset14
 .Ltmp112:
 	.byte	90
 .Ltmp113:
-	.long	.Ltmp44
-	.long	.Ltmp45
+	.long	0
+	.long	0
+.Ldebug_loc18:
+	.long	.Ltmp34
+	.long	.Ltmp36
 .Lset15 = .Ltmp115-.Ltmp114
 	.short	.Lset15
 .Ltmp114:
-	.byte	90
+	.byte	80
 .Ltmp115:
-	.long	0
-	.long	0
-.Ldebug_loc20:
-	.long	.Ltmp34
-	.long	.Ltmp36
+	.long	.Ltmp44
+	.long	.Ltmp45
 .Lset16 = .Ltmp117-.Ltmp116
 	.short	.Lset16
 .Ltmp116:
 	.byte	80
 .Ltmp117:
-	.long	.Ltmp44
-	.long	.Ltmp45
+	.long	0
+	.long	0
+.Ldebug_loc21:
+	.long	.Ltmp35
+	.long	.Ltmp36
 .Lset17 = .Ltmp119-.Ltmp118
 	.short	.Lset17
 .Ltmp118:
-	.byte	80
+	.byte	81
 .Ltmp119:
 	.long	0
 	.long	0
 .Ldebug_loc23:
-	.long	.Ltmp35
-	.long	.Ltmp36
+	.long	.Ltmp55
+	.long	.Ltmp58
 .Lset18 = .Ltmp121-.Ltmp120
 	.short	.Lset18
 .Ltmp120:
-	.byte	81
+	.byte	88
 .Ltmp121:
 	.long	0
 	.long	0
-.Ldebug_loc25:
-	.long	.Ltmp55
-	.long	.Ltmp58
+.Ldebug_loc26:
+	.long	.Ltmp59
+	.long	.Ltmp64
 .Lset19 = .Ltmp123-.Ltmp122
 	.short	.Lset19
 .Ltmp122:
-	.byte	88
+	.byte	80
 .Ltmp123:
 	.long	0
 	.long	0
-.Ldebug_loc28:
-	.long	.Ltmp59
-	.long	.Ltmp64
+.Ldebug_loc29:
+	.long	.Lfunc_begin1
+	.long	.Ltmp79
 .Lset20 = .Ltmp125-.Ltmp124
 	.short	.Lset20
 .Ltmp124:
@@ -2184,11 +2172,11 @@ _ethernet_filtered_by_bad_crc:
 	.long	0
 .Ldebug_loc31:
 	.long	.Lfunc_begin1
-	.long	.Ltmp79
+	.long	.Ltmp80
 .Lset21 = .Ltmp127-.Ltmp126
 	.short	.Lset21
 .Ltmp126:
-	.byte	80
+	.byte	81
 .Ltmp127:
 	.long	0
 	.long	0
@@ -2198,7 +2186,7 @@ _ethernet_filtered_by_bad_crc:
 .Lset22 = .Ltmp129-.Ltmp128
 	.short	.Lset22
 .Ltmp128:
-	.byte	81
+	.byte	82
 .Ltmp129:
 	.long	0
 	.long	0
@@ -2208,31 +2196,21 @@ _ethernet_filtered_by_bad_crc:
 .Lset23 = .Ltmp131-.Ltmp130
 	.short	.Lset23
 .Ltmp130:
-	.byte	82
+	.byte	83
 .Ltmp131:
 	.long	0
 	.long	0
 .Ldebug_loc37:
-	.long	.Lfunc_begin1
-	.long	.Ltmp80
+	.long	.Lfunc_begin2
+	.long	.Ltmp88
 .Lset24 = .Ltmp133-.Ltmp132
 	.short	.Lset24
 .Ltmp132:
-	.byte	83
+	.byte	80
 .Ltmp133:
 	.long	0
 	.long	0
 .Ldebug_loc39:
-	.long	.Lfunc_begin2
-	.long	.Ltmp88
-.Lset25 = .Ltmp135-.Ltmp134
-	.short	.Lset25
-.Ltmp134:
-	.byte	80
-.Ltmp135:
-	.long	0
-	.long	0
-.Ldebug_loc41:
 	.section	.debug_aranges,"",@progbits
 	.section	.debug_ranges,"",@progbits
 	.long	.Ltmp58

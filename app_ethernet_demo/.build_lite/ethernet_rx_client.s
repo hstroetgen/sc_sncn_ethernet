@@ -2197,49 +2197,49 @@ ethernet_unified_get_data:
 	.byte	1
 	.byte	36
 	.long	2342
-	.long	.Ldebug_loc88+0
+	.long	.Ldebug_loc86+0
 	.byte	11
 	.byte	105
 	.byte	0
 	.byte	1
 	.byte	36
 	.long	2342
-	.long	.Ldebug_loc91+0
+	.long	.Ldebug_loc89+0
 	.byte	11
 	.byte	106
 	.byte	0
 	.byte	1
 	.byte	36
 	.long	2342
-	.long	.Ldebug_loc96+0
+	.long	.Ldebug_loc94+0
 	.byte	11
 	.ascii	 "transferCnt"
 	.byte	0
 	.byte	1
 	.byte	36
 	.long	2342
-	.long	.Ldebug_loc101+0
+	.long	.Ldebug_loc99+0
 	.byte	11
 	.byte	107
 	.byte	0
 	.byte	1
 	.byte	36
 	.long	2342
-	.long	.Ldebug_loc103+0
+	.long	.Ldebug_loc101+0
 	.byte	11
 	.ascii	 "rxData"
 	.byte	0
 	.byte	1
 	.byte	36
 	.long	2342
-	.long	.Ldebug_loc109+0
+	.long	.Ldebug_loc107+0
 	.byte	11
 	.ascii	 "temp"
 	.byte	0
 	.byte	1
 	.byte	36
 	.long	2342
-	.long	.Ldebug_loc119+0
+	.long	.Ldebug_loc117+0
 	.byte	10
 	.long	.Ltmp169
 	.long	.Ltmp172
@@ -2249,7 +2249,7 @@ ethernet_unified_get_data:
 	.byte	1
 	.byte	53
 	.long	491
-	.long	.Ldebug_loc128+0
+	.long	.Ldebug_loc126+0
 	.byte	0
 	.byte	0
 	.byte	0
@@ -2332,28 +2332,28 @@ ethernet_unified_get_data:
 	.byte	1
 	.byte	97
 	.long	4398
-	.long	.Ldebug_loc77+0
+	.long	.Ldebug_loc75+0
 	.byte	13
 	.ascii	 "Buf"
 	.byte	0
 	.byte	1
 	.byte	97
 	.long	4434
-	.long	.Ldebug_loc79+0
+	.long	.Ldebug_loc77+0
 	.byte	13
 	.ascii	 "len"
 	.byte	0
 	.byte	1
 	.byte	97
 	.long	4439
-	.long	.Ldebug_loc81+0
+	.long	.Ldebug_loc79+0
 	.byte	13
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
 	.byte	97
 	.long	4439
-	.long	.Ldebug_loc84+0
+	.long	.Ldebug_loc82+0
 	.byte	10
 	.long	.Ltmp120
 	.long	.Ltmp123
@@ -2618,7 +2618,7 @@ ethernet_unified_get_data:
 	.byte	1
 	.byte	142
 	.long	4398
-	.long	.Ldebug_loc86+0
+	.long	.Ldebug_loc84+0
 	.byte	0
 	.byte	12
 	.ascii	 "mac_set_queue_size"
@@ -2695,14 +2695,14 @@ ethernet_unified_get_data:
 	.byte	1
 	.byte	165
 	.long	4398
-	.long	.Ldebug_loc52+0
+	.long	.Ldebug_loc50+0
 	.byte	13
 	.ascii	 "dropped"
 	.byte	0
 	.byte	1
 	.byte	165
 	.long	4444
-	.long	.Ldebug_loc54+0
+	.long	.Ldebug_loc52+0
 	.byte	0
 	.byte	12
 	.ascii	 "mac_get_global_counters"
@@ -2723,28 +2723,28 @@ ethernet_unified_get_data:
 	.byte	1
 	.byte	173
 	.long	4398
-	.long	.Ldebug_loc56+0
+	.long	.Ldebug_loc54+0
 	.byte	13
 	.ascii	 "mii_overflow"
 	.byte	0
 	.byte	1
 	.byte	174
 	.long	4439
-	.long	.Ldebug_loc58+0
+	.long	.Ldebug_loc56+0
 	.byte	13
 	.ascii	 "bad_length"
 	.byte	0
 	.byte	1
 	.byte	175
 	.long	4439
-	.long	.Ldebug_loc60+0
+	.long	.Ldebug_loc58+0
 	.byte	13
 	.ascii	 "mismatched_address"
 	.byte	0
 	.byte	1
 	.byte	176
 	.long	4439
-	.long	.Ldebug_loc62+0
+	.long	.Ldebug_loc60+0
 	.byte	15
 	.ascii	 "filtered"
 	.byte	0
@@ -2783,14 +2783,14 @@ ethernet_unified_get_data:
 	.byte	1
 	.byte	191
 	.long	4398
-	.long	.Ldebug_loc64+0
+	.long	.Ldebug_loc62+0
 	.byte	13
 	.ascii	 "offset"
 	.byte	0
 	.byte	1
 	.byte	191
 	.long	4444
-	.long	.Ldebug_loc66+0
+	.long	.Ldebug_loc64+0
 	.byte	10
 	.long	.Ltmp97
 	.long	.Ltmp109
@@ -2803,7 +2803,7 @@ ethernet_unified_get_data:
 	.byte	1
 	.byte	193
 	.long	2342
-	.long	.Ldebug_loc69+0
+	.long	.Ldebug_loc67+0
 	.byte	10
 	.long	.Ltmp97
 	.long	.Ltmp109
@@ -2813,7 +2813,7 @@ ethernet_unified_get_data:
 	.byte	1
 	.byte	194
 	.long	491
-	.long	.Ldebug_loc71+0
+	.long	.Ldebug_loc69+0
 	.byte	10
 	.long	.Ltmp97
 	.long	.Ltmp109
@@ -2823,7 +2823,7 @@ ethernet_unified_get_data:
 	.byte	1
 	.byte	195
 	.long	491
-	.long	.Ldebug_loc74+0
+	.long	.Ldebug_loc72+0
 	.byte	10
 	.long	.Ltmp97
 	.long	.Ltmp109
@@ -3498,8 +3498,8 @@ ethernet_unified_get_data:
 	.long	0
 	.long	0
 .Ldebug_loc50:
-	.long	.Ltmp73
-	.long	.Ltmp76
+	.long	.Lfunc_begin7
+	.long	.Ltmp82
 .Lset32 = .Ltmp245-.Ltmp244
 	.short	.Lset32
 .Ltmp244:
@@ -3513,121 +3513,121 @@ ethernet_unified_get_data:
 .Lset33 = .Ltmp247-.Ltmp246
 	.short	.Lset33
 .Ltmp246:
-	.byte	80
+	.byte	81
 .Ltmp247:
 	.long	0
 	.long	0
 .Ldebug_loc54:
-	.long	.Lfunc_begin7
-	.long	.Ltmp82
+	.long	.Lfunc_begin8
+	.long	.Ltmp93
 .Lset34 = .Ltmp249-.Ltmp248
 	.short	.Lset34
 .Ltmp248:
-	.byte	81
+	.byte	80
 .Ltmp249:
 	.long	0
 	.long	0
 .Ldebug_loc56:
 	.long	.Lfunc_begin8
-	.long	.Ltmp93
+	.long	.Ltmp91
 .Lset35 = .Ltmp251-.Ltmp250
 	.short	.Lset35
 .Ltmp250:
-	.byte	80
+	.byte	81
 .Ltmp251:
 	.long	0
 	.long	0
 .Ldebug_loc58:
 	.long	.Lfunc_begin8
-	.long	.Ltmp91
+	.long	.Ltmp92
 .Lset36 = .Ltmp253-.Ltmp252
 	.short	.Lset36
 .Ltmp252:
-	.byte	81
+	.byte	82
 .Ltmp253:
 	.long	0
 	.long	0
 .Ldebug_loc60:
 	.long	.Lfunc_begin8
-	.long	.Ltmp92
+	.long	.Ltmp93
 .Lset37 = .Ltmp255-.Ltmp254
 	.short	.Lset37
 .Ltmp254:
-	.byte	82
+	.byte	83
 .Ltmp255:
 	.long	0
 	.long	0
 .Ldebug_loc62:
-	.long	.Lfunc_begin8
-	.long	.Ltmp93
+	.long	.Lfunc_begin9
+	.long	.Ltmp106
 .Lset38 = .Ltmp257-.Ltmp256
 	.short	.Lset38
 .Ltmp256:
-	.byte	83
+	.byte	80
 .Ltmp257:
 	.long	0
 	.long	0
 .Ldebug_loc64:
 	.long	.Lfunc_begin9
-	.long	.Ltmp106
+	.long	.Ltmp109
 .Lset39 = .Ltmp259-.Ltmp258
 	.short	.Lset39
 .Ltmp258:
-	.byte	80
+	.byte	81
 .Ltmp259:
 	.long	0
 	.long	0
-.Ldebug_loc66:
-	.long	.Lfunc_begin9
-	.long	.Ltmp109
+.Ldebug_loc67:
+	.long	.Ltmp101
+	.long	.Ltmp106
 .Lset40 = .Ltmp261-.Ltmp260
 	.short	.Lset40
 .Ltmp260:
-	.byte	81
+	.byte	83
 .Ltmp261:
 	.long	0
 	.long	0
 .Ldebug_loc69:
-	.long	.Ltmp101
+	.long	.Ltmp102
 	.long	.Ltmp106
 .Lset41 = .Ltmp263-.Ltmp262
 	.short	.Lset41
 .Ltmp262:
-	.byte	83
+	.byte	91
 .Ltmp263:
-	.long	0
-	.long	0
-.Ldebug_loc71:
-	.long	.Ltmp102
-	.long	.Ltmp106
+	.long	.Ltmp107
+	.long	.Ltmp109
 .Lset42 = .Ltmp265-.Ltmp264
 	.short	.Lset42
 .Ltmp264:
 	.byte	91
 .Ltmp265:
-	.long	.Ltmp107
-	.long	.Ltmp109
+	.long	0
+	.long	0
+.Ldebug_loc72:
+	.long	.Ltmp103
+	.long	.Ltmp106
 .Lset43 = .Ltmp267-.Ltmp266
 	.short	.Lset43
 .Ltmp266:
-	.byte	91
+	.byte	82
 .Ltmp267:
-	.long	0
-	.long	0
-.Ldebug_loc74:
-	.long	.Ltmp103
-	.long	.Ltmp106
+	.long	.Ltmp107
+	.long	.Ltmp109
 .Lset44 = .Ltmp269-.Ltmp268
 	.short	.Lset44
 .Ltmp268:
 	.byte	82
 .Ltmp269:
-	.long	.Ltmp107
-	.long	.Ltmp109
+	.long	0
+	.long	0
+.Ldebug_loc75:
+	.long	.Lfunc_begin10
+	.long	.Ltmp121
 .Lset45 = .Ltmp271-.Ltmp270
 	.short	.Lset45
 .Ltmp270:
-	.byte	82
+	.byte	80
 .Ltmp271:
 	.long	0
 	.long	0
@@ -3637,290 +3637,280 @@ ethernet_unified_get_data:
 .Lset46 = .Ltmp273-.Ltmp272
 	.short	.Lset46
 .Ltmp272:
-	.byte	80
+	.byte	81
 .Ltmp273:
 	.long	0
 	.long	0
 .Ldebug_loc79:
 	.long	.Lfunc_begin10
-	.long	.Ltmp121
+	.long	.Ltmp119
 .Lset47 = .Ltmp275-.Ltmp274
 	.short	.Lset47
 .Ltmp274:
-	.byte	81
+	.byte	82
 .Ltmp275:
-	.long	0
-	.long	0
-.Ldebug_loc81:
-	.long	.Lfunc_begin10
 	.long	.Ltmp119
+	.long	.Ltmp122
 .Lset48 = .Ltmp277-.Ltmp276
 	.short	.Lset48
 .Ltmp276:
-	.byte	82
+	.byte	84
 .Ltmp277:
-	.long	.Ltmp119
-	.long	.Ltmp122
+	.long	0
+	.long	0
+.Ldebug_loc82:
+	.long	.Lfunc_begin10
+	.long	.Ltmp121
 .Lset49 = .Ltmp279-.Ltmp278
 	.short	.Lset49
 .Ltmp278:
-	.byte	84
+	.byte	83
 .Ltmp279:
 	.long	0
 	.long	0
 .Ldebug_loc84:
-	.long	.Lfunc_begin10
-	.long	.Ltmp121
+	.long	.Lfunc_begin11
+	.long	.Ltmp130
 .Lset50 = .Ltmp281-.Ltmp280
 	.short	.Lset50
 .Ltmp280:
-	.byte	83
+	.byte	80
 .Ltmp281:
 	.long	0
 	.long	0
 .Ldebug_loc86:
-	.long	.Lfunc_begin11
-	.long	.Ltmp130
+	.long	.Ltmp152
+	.long	.Ltmp154
 .Lset51 = .Ltmp283-.Ltmp282
 	.short	.Lset51
 .Ltmp282:
-	.byte	80
+	.byte	83
 .Ltmp283:
 	.long	0
 	.long	0
-.Ldebug_loc88:
-	.long	.Ltmp152
-	.long	.Ltmp154
+.Ldebug_loc89:
+	.long	.Ltmp155
+	.long	.Ltmp164
 .Lset52 = .Ltmp285-.Ltmp284
 	.short	.Lset52
 .Ltmp284:
-	.byte	83
+	.byte	16
+	.byte	0
 .Ltmp285:
-	.long	0
-	.long	0
-.Ldebug_loc91:
-	.long	.Ltmp155
 	.long	.Ltmp164
+	.long	.Ltmp165
 .Lset53 = .Ltmp287-.Ltmp286
 	.short	.Lset53
 .Ltmp286:
-	.byte	16
-	.byte	0
+	.byte	91
 .Ltmp287:
-	.long	.Ltmp164
-	.long	.Ltmp165
+	.long	.Ltmp183
+	.long	.Ltmp184
 .Lset54 = .Ltmp289-.Ltmp288
 	.short	.Lset54
 .Ltmp288:
 	.byte	91
 .Ltmp289:
-	.long	.Ltmp183
 	.long	.Ltmp184
+	.long	.Lfunc_end12
 .Lset55 = .Ltmp291-.Ltmp290
 	.short	.Lset55
 .Ltmp290:
-	.byte	91
+	.byte	16
+	.byte	0
 .Ltmp291:
-	.long	.Ltmp184
-	.long	.Lfunc_end12
+	.long	0
+	.long	0
+.Ldebug_loc94:
+	.long	.Ltmp155
+	.long	.Ltmp158
 .Lset56 = .Ltmp293-.Ltmp292
 	.short	.Lset56
 .Ltmp292:
 	.byte	16
 	.byte	0
 .Ltmp293:
-	.long	0
-	.long	0
-.Ldebug_loc96:
-	.long	.Ltmp155
 	.long	.Ltmp158
+	.long	.Ltmp159
 .Lset57 = .Ltmp295-.Ltmp294
 	.short	.Lset57
 .Ltmp294:
-	.byte	16
-	.byte	0
+	.byte	82
 .Ltmp295:
-	.long	.Ltmp158
-	.long	.Ltmp159
+	.long	.Ltmp176
+	.long	.Ltmp177
 .Lset58 = .Ltmp297-.Ltmp296
 	.short	.Lset58
 .Ltmp296:
-	.byte	82
+	.byte	86
 .Ltmp297:
-	.long	.Ltmp176
-	.long	.Ltmp177
+	.long	.Ltmp184
+	.long	.Lfunc_end12
 .Lset59 = .Ltmp299-.Ltmp298
 	.short	.Lset59
 .Ltmp298:
-	.byte	86
+	.byte	16
+	.byte	0
 .Ltmp299:
-	.long	.Ltmp184
-	.long	.Lfunc_end12
+	.long	0
+	.long	0
+.Ldebug_loc99:
+	.long	.Ltmp155
+	.long	.Ltmp156
 .Lset60 = .Ltmp301-.Ltmp300
 	.short	.Lset60
 .Ltmp300:
-	.byte	16
-	.byte	0
+	.byte	85
 .Ltmp301:
 	.long	0
 	.long	0
 .Ldebug_loc101:
-	.long	.Ltmp155
-	.long	.Ltmp156
+	.long	.Ltmp157
+	.long	.Lfunc_end12
 .Lset61 = .Ltmp303-.Ltmp302
 	.short	.Lset61
 .Ltmp302:
-	.byte	85
+	.byte	16
+	.byte	1
 .Ltmp303:
 	.long	0
 	.long	0
-.Ldebug_loc103:
+.Ldebug_loc107:
 	.long	.Ltmp157
-	.long	.Lfunc_end12
+	.long	.Ltmp159
 .Lset62 = .Ltmp305-.Ltmp304
 	.short	.Lset62
 .Ltmp304:
-	.byte	16
-	.byte	1
+	.byte	90
 .Ltmp305:
-	.long	0
-	.long	0
-.Ldebug_loc109:
-	.long	.Ltmp157
-	.long	.Ltmp159
+	.long	.Ltmp160
+	.long	.Ltmp161
 .Lset63 = .Ltmp307-.Ltmp306
 	.short	.Lset63
 .Ltmp306:
 	.byte	90
 .Ltmp307:
-	.long	.Ltmp160
-	.long	.Ltmp161
+	.long	.Ltmp162
+	.long	.Ltmp163
 .Lset64 = .Ltmp309-.Ltmp308
 	.short	.Lset64
 .Ltmp308:
 	.byte	90
 .Ltmp309:
-	.long	.Ltmp162
-	.long	.Ltmp163
+	.long	.Ltmp166
+	.long	.Ltmp167
 .Lset65 = .Ltmp311-.Ltmp310
 	.short	.Lset65
 .Ltmp310:
-	.byte	90
+	.byte	86
 .Ltmp311:
-	.long	.Ltmp166
 	.long	.Ltmp167
+	.long	.Ltmp168
 .Lset66 = .Ltmp313-.Ltmp312
 	.short	.Lset66
 .Ltmp312:
-	.byte	86
+	.byte	90
 .Ltmp313:
-	.long	.Ltmp167
-	.long	.Ltmp168
+	.long	.Ltmp173
+	.long	.Ltmp174
 .Lset67 = .Ltmp315-.Ltmp314
 	.short	.Lset67
 .Ltmp314:
 	.byte	90
 .Ltmp315:
-	.long	.Ltmp173
-	.long	.Ltmp174
+	.long	.Ltmp175
+	.long	.Ltmp177
 .Lset68 = .Ltmp317-.Ltmp316
 	.short	.Lset68
 .Ltmp316:
 	.byte	90
 .Ltmp317:
-	.long	.Ltmp175
-	.long	.Ltmp177
+	.long	.Ltmp178
+	.long	.Ltmp179
 .Lset69 = .Ltmp319-.Ltmp318
 	.short	.Lset69
 .Ltmp318:
 	.byte	90
 .Ltmp319:
-	.long	.Ltmp178
-	.long	.Ltmp179
+	.long	.Ltmp180
+	.long	.Ltmp181
 .Lset70 = .Ltmp321-.Ltmp320
 	.short	.Lset70
 .Ltmp320:
 	.byte	90
 .Ltmp321:
-	.long	.Ltmp180
-	.long	.Ltmp181
+	.long	0
+	.long	0
+.Ldebug_loc117:
+	.long	.Ltmp157
+	.long	.Ltmp159
 .Lset71 = .Ltmp323-.Ltmp322
 	.short	.Lset71
 .Ltmp322:
 	.byte	90
 .Ltmp323:
-	.long	0
-	.long	0
-.Ldebug_loc119:
-	.long	.Ltmp157
-	.long	.Ltmp159
+	.long	.Ltmp160
+	.long	.Ltmp161
 .Lset72 = .Ltmp325-.Ltmp324
 	.short	.Lset72
 .Ltmp324:
 	.byte	90
 .Ltmp325:
-	.long	.Ltmp160
-	.long	.Ltmp161
+	.long	.Ltmp162
+	.long	.Ltmp163
 .Lset73 = .Ltmp327-.Ltmp326
 	.short	.Lset73
 .Ltmp326:
 	.byte	90
 .Ltmp327:
-	.long	.Ltmp162
-	.long	.Ltmp163
+	.long	.Ltmp167
+	.long	.Ltmp168
 .Lset74 = .Ltmp329-.Ltmp328
 	.short	.Lset74
 .Ltmp328:
 	.byte	90
 .Ltmp329:
-	.long	.Ltmp167
-	.long	.Ltmp168
+	.long	.Ltmp173
+	.long	.Ltmp174
 .Lset75 = .Ltmp331-.Ltmp330
 	.short	.Lset75
 .Ltmp330:
 	.byte	90
 .Ltmp331:
-	.long	.Ltmp173
-	.long	.Ltmp174
+	.long	.Ltmp175
+	.long	.Ltmp177
 .Lset76 = .Ltmp333-.Ltmp332
 	.short	.Lset76
 .Ltmp332:
 	.byte	90
 .Ltmp333:
-	.long	.Ltmp175
-	.long	.Ltmp177
+	.long	.Ltmp178
+	.long	.Ltmp179
 .Lset77 = .Ltmp335-.Ltmp334
 	.short	.Lset77
 .Ltmp334:
 	.byte	90
 .Ltmp335:
-	.long	.Ltmp178
-	.long	.Ltmp179
+	.long	.Ltmp180
+	.long	.Ltmp181
 .Lset78 = .Ltmp337-.Ltmp336
 	.short	.Lset78
 .Ltmp336:
 	.byte	90
 .Ltmp337:
-	.long	.Ltmp180
-	.long	.Ltmp181
+	.long	0
+	.long	0
+.Ldebug_loc126:
+	.long	.Ltmp170
+	.long	.Ltmp171
 .Lset79 = .Ltmp339-.Ltmp338
 	.short	.Lset79
 .Ltmp338:
-	.byte	90
+	.byte	83
 .Ltmp339:
 	.long	0
 	.long	0
 .Ldebug_loc128:
-	.long	.Ltmp170
-	.long	.Ltmp171
-.Lset80 = .Ltmp341-.Ltmp340
-	.short	.Lset80
-.Ltmp340:
-	.byte	83
-.Ltmp341:
-	.long	0
-	.long	0
-.Ldebug_loc130:
 	.section	.debug_aranges,"",@progbits
 	.section	.debug_ranges,"",@progbits
 	.section	.debug_macinfo,"",@progbits

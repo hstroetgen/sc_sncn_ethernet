@@ -47,18 +47,19 @@ void xscope_user_init(void) {
 // Port Definitions
 
 // These ports are for accessing the OTP memory
-on ETHERNET_DEFAULT_TILE: otp_ports_t otp_ports0 = OTP_PORTS_INITIALIZER0;
-on ETHERNET_DEFAULT_TILE: otp_ports_t otp_ports1 = OTP_PORTS_INITIALIZER1;
+
+//on ETHERNET_DEFAULT_TILE0: otp_ports_t otp_ports0 = OTP_PORTS_INITIALIZER0;
+on ETHERNET_DEFAULT_TILE1: otp_ports_t otp_ports1 = OTP_PORTS_INITIALIZER1;
 
 // Here are the port definitions required by ethernet
 // The intializers are taken from the ethernet_board_support.h header for
 // XMOS dev boards. If you are using a different board you will need to
 // supply explicit port structure intializers for these values
-smi_interface_t smi0 = ETHERNET_DEFAULT_SMI_INIT0;
+//smi_interface_t smi0 = ETHERNET_DEFAULT_SMI_INIT0;
 smi_interface_t smi1 = ETHERNET_DEFAULT_SMI_INIT1;
 
-mii_interface_t mii0 = ETHERNET_DEFAULT_MII_INIT0;
-//mii_interface_t mii1 = ETHERNET_DEFAULT_MII_INIT1;
+//mii_interface_t mii0 = ETHERNET_DEFAULT_MII_INIT0;
+mii_interface_t mii1 = ETHERNET_DEFAULT_MII_INIT1;
 
 ethernet_reset_interface_t eth_rst0 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT0;
 ethernet_reset_interface_t eth_rst1 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT1;
@@ -66,8 +67,8 @@ ethernet_reset_interface_t eth_rst1 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT1;
 //::ip_address_define
 // NOTE: YOU MAY NEED TO REDEFINE THIS TO AN IP ADDRESS THAT WORKS
 // FOR YOUR NETWORK
-#define OWN_IP_ADDRESS {192, 168, 101, 63}
-#define OWN_IP_ADDRESS1 {192, 168, 101, 65}
+//#define OWN_IP_ADDRESS {192, 168, 101, 63}
+#define OWN_IP_ADDRESS {192, 168, 101, 65}
 //::
 
 
@@ -383,7 +384,7 @@ int main()
   par
     {
       //::ethernet
-      on ETHERNET_DEFAULT_TILE:
+  /*    on ETHERNET_DEFAULT_TILE0:
       {
         char mac_address[6];
         otp_board_info_get_mac(otp_ports0, 0, mac_address);
@@ -396,11 +397,25 @@ int main()
                         rx, 1,
                         tx, 1);
       }
+*/
+      on ETHERNET_DEFAULT_TILE1:
+      {
+        char mac_address[6];
+        otp_board_info_get_mac(otp_ports1, 0, mac_address);
+        _eth_phy_reset(eth_rst1);
+        smi_init(smi1);
+        eth_phy_config(1, smi1);
+        _ethernet_server(mii1,
+                        null,
+                        mac_address,
+                        rx, 1,
+                        tx, 1);
+      }
 
       //::
 
       //::demo
-      on tile[0]: demo(tx[0], rx[0]);
+      on tile[1]: demo(tx[0], rx[0]);
       //::
     }
 

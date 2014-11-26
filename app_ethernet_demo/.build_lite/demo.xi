@@ -1327,19 +1327,18 @@ void xscope_connect_data_from_host(chanend from_host);
 # 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/xscope_probes.h" 1
 # 411 "xscope.h" 2 3
 # 33 "../src/demo.xc" 2
-# 50 "../src/demo.xc"
-on  tile[1] : otp_ports_t otp_ports0 =  { 0x200100 , 0x100200 , 0x100300 } ;
-on  tile[1] : otp_ports_t otp_ports1 =  { 0x200000 , 0x100000 , 0x100100 } ;
+# 52 "../src/demo.xc"
+on  tile[0] : otp_ports_t otp_ports1 =  { 0x200000 , 0x100000 , 0x100100 } ;
 
 
 
 
 
-smi_interface_t smi0 =  { 0 , on tile[1]: 0x10c00 , on tile[1]: 0x10d00 } ;
+
 smi_interface_t smi1 =  { 0 , on tile[0]: 0x10c00 , on tile[0]: 0x10d00 } ;
 
-mii_interface_full_t  mii0 =  { on tile[1] : 0x106 , on tile[1] : 0x206 , on tile[1]: 0x10800 , on tile[1]: 0x10f00 , on tile[1]: 0x40400 , on tile[1]: 0x10900 , on tile[1]: 0x10a00 , on tile[1]: 0x10b00 , on tile[1]: 0x40500 } ;
 
+mii_interface_full_t  mii1 =  { on tile[0] : 0x106 , on tile[0] : 0x206 , on tile[0]: 0x10800 , on tile[0]: 0x10f00 , on tile[0]: 0x40400 , on tile[0]: 0x10900 , on tile[0]: 0x10a00 , on tile[0]: 0x10b00 , on tile[0]: 0x40500 } ;
 
 ethernet_reset_interface_t eth_rst0 =  0 ;
 ethernet_reset_interface_t eth_rst1 =  0 ;
@@ -1363,13 +1362,13 @@ unsigned char own_mac_addr1[6];
 
 
 void demo(chanend tx, chanend rx);
-# 86 "../src/demo.xc"
+# 87 "../src/demo.xc"
 #pragma unsafe arrays
 int is_ethertype(unsigned char data[], unsigned char type[]){
 	int i = 12;
 	return data[i] == type[0] && data[i + 1] == type[1];
 }
-# 92 "../src/demo.xc"
+# 93 "../src/demo.xc"
 #pragma unsafe arrays
 int is_mac_addr(unsigned char data[], unsigned char addr[]){
 	for (int i=0;i<6;i++){
@@ -1380,7 +1379,7 @@ int is_mac_addr(unsigned char data[], unsigned char addr[]){
 
 	return 1;
 }
-# 103 "../src/demo.xc"
+# 104 "../src/demo.xc"
 #pragma unsafe arrays
 int is_broadcast(unsigned char data[]){
 	for (int i=0;i<6;i++){
@@ -1409,7 +1408,7 @@ int build_arp_response(unsigned char rxbuf[], unsigned int txbuf[], const unsign
 {
   unsigned word;
   unsigned char byte;
-  const unsigned char own_ip_addr[4] =  {192, 168, 101, 63} ;
+  const unsigned char own_ip_addr[4] =  {192, 168, 101, 65} ;
 
   for (int i = 0; i < 6; i++)
     {
@@ -1451,7 +1450,7 @@ int build_arp_response(unsigned char rxbuf[], unsigned int txbuf[], const unsign
 
 int is_valid_arp_packet(const unsigned char rxbuf[], int nbytes)
 {
-  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 63} ;
+  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 65} ;
 
   if (rxbuf[12] != 0x08 || rxbuf[13] != 0x06)
     return 0;
@@ -1488,7 +1487,7 @@ int is_valid_arp_packet(const unsigned char rxbuf[], int nbytes)
 
 int build_icmp_response(unsigned char rxbuf[], unsigned char txbuf[], const unsigned char own_mac_addr[6])
 {
-  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 63} ;
+  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 65} ;
   unsigned icmp_checksum;
   int datalen;
   int totallen;
@@ -1563,7 +1562,7 @@ int build_icmp_response(unsigned char rxbuf[], unsigned char txbuf[], const unsi
 
 int is_valid_icmp_packet(const unsigned char rxbuf[], int nbytes)
 {
-  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 63} ;
+  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 65} ;
   unsigned totallen;
 
 
@@ -1663,15 +1662,15 @@ int main()
 
   par
     {
-
-      on  tile[1] :
+# 401 "../src/demo.xc"
+      on  tile[0] :
       {
         char mac_address[6];
-        otp_board_info_get_mac(otp_ports0, 0, mac_address);
-        _eth_phy_reset(eth_rst0);
-        smi_init(smi0);
-        eth_phy_config(1, smi0);
-        _ethernet_server_full (mii0,
+        otp_board_info_get_mac(otp_ports1, 0, mac_address);
+        _eth_phy_reset(eth_rst1);
+        smi_init(smi1);
+        eth_phy_config(1, smi1);
+        _ethernet_server_full (mii1,
                         null,
                         mac_address,
                         rx, 1,
@@ -1681,7 +1680,7 @@ int main()
 
 
 
-      on tile[0]: demo(tx[0], rx[0]);
+      on tile[1]: demo(tx[0], rx[0]);
 
     }
 
