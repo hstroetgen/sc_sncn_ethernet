@@ -1,8 +1,8 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite_support.c"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_client_lite_support.c"
 # 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite_support.c"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_client_lite_support.c"
 # 1 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/xs1.h" 1 3 4
 # 19 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/xs1.h" 3 4
 # 1 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/timer.h" 1 3 4
@@ -99,7 +99,7 @@ __attribute__((deprecated)) static inline unsigned get_core_id(void) {
 __attribute__((deprecated)) static inline unsigned get_thread_id(void) {
   return __builtin_getid();
 }
-# 2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite_support.c" 2
+# 2 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_client_lite_support.c" 2
 # 1 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/xccompat.h" 1 3 4
 # 122 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/xccompat.h" 3 4
 typedef unsigned chanend;
@@ -173,40 +173,40 @@ typedef unsigned out_buffered_port_16_t;
 
 
 typedef unsigned out_buffered_port_32_t;
-# 3 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite_support.c" 2
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 1
+# 3 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_client_lite_support.c" 2
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/common_p1/ethernet_conf_derived_p1.h" 1
 
 
 # 1 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 1 3 4
 # 21 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 3 4
 # 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 1 3 4
 # 22 "/home/atena/XMOS/xTIMEcomposer/Community_13.1.0/target/include/platform.h" 2 3 4
-# 4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 2
+# 4 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/common_p1/ethernet_conf_derived_p1.h" 2
 
 
 # 1 ".././src/ethernet_conf.h" 1
-# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 2
-# 4 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite_support.c" 2
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client.h" 1
-# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client.h"
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/common/_ethernet_conf_derived.h" 1
-# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client.h" 2
+# 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/common_p1/ethernet_conf_derived_p1.h" 2
+# 4 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_client_lite_support.c" 2
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client.h" 1
+# 9 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/common_p1/ethernet_conf_derived_p1.h" 1
+# 10 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client.h" 2
 
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_lite.h" 1
-# 48 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_lite.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_lite.h" 1
+# 48 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_lite.h"
 void _mac_rx_lite(chanend c_mac,
                  unsigned char buffer[],
                  unsigned int *len,
                  unsigned int *src_port);
-# 73 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_lite.h"
+# 73 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_lite.h"
 void _safe_mac_rx_lite(chanend c_mac,
                       unsigned char buffer[],
                       unsigned int *len,
                       unsigned int *src_port,
                       int n);
-# 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client.h" 2
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_full.h" 1
-# 26 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_full.h"
+# 12 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client.h" 2
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_full.h" 1
+# 26 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_full.h"
 void _mac_rx_full(chanend c_mac,
                  unsigned char buffer[],
                  unsigned int *len,
@@ -221,20 +221,20 @@ void _safe_mac_rx_full(chanend c_mac,
                       unsigned int *len,
                       unsigned int *src_port,
                       int n);
-# 61 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_full.h"
+# 61 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_full.h"
 void _mac_rx_timed(chanend c_mac,
                   unsigned char buffer[],
                   unsigned int *len,
                   unsigned int *time,
                   unsigned int *src_port);
-# 88 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_full.h"
+# 88 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_full.h"
 void _safe_mac_rx_timed(chanend c_mac,
                        unsigned char buffer[],
                        unsigned int *len,
                        unsigned int *time,
                        unsigned int *src_port,
                        int n);
-# 106 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_full.h"
+# 106 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_full.h"
 void _mac_set_drop_packets(chanend c_mac_svr, int x);
 
 
@@ -243,7 +243,7 @@ void _mac_set_drop_packets(chanend c_mac_svr, int x);
 
 
 void _mac_set_queue_size(chanend c_mac_svr, int x);
-# 124 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_full.h"
+# 124 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_full.h"
 void _mac_set_custom_filter(chanend c_mac_svr, int x);
 
 
@@ -252,7 +252,7 @@ void _mac_set_custom_filter(chanend c_mac_svr, int x);
 
 
 void _mac_get_link_counters(chanend mac_svr, int *overflow);
-# 141 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_full.h"
+# 141 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_full.h"
 void _mac_get_global_counters(chanend mac_svr,
                        unsigned *mii_overflow,
                        unsigned *bad_length,
@@ -268,7 +268,7 @@ void _mac_get_global_counters(chanend mac_svr,
 
 
 void _mac_get_tile_timer_offset(chanend mac_svr, int *offset);
-# 173 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client_full.h"
+# 173 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client_full.h"
 void _mac_rx_offset2(chanend c_mac,
                     unsigned char buffer[],
                     unsigned int *len,
@@ -278,35 +278,35 @@ void _mac_rx_offset2(chanend c_mac,
 
 
 void _mac_request_status_packets(chanend c_mac);
-# 13 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client.h" 2
-# 42 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client.h"
+# 13 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client.h" 2
+# 42 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client.h"
 void _mac_rx(chanend c_mac,
             unsigned char buffer[],
             unsigned int *len,
             unsigned int *src_port);
-# 69 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_rx_client.h"
+# 69 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_rx_client.h"
 void _safe_mac_rx(chanend c_mac,
                  unsigned char buffer[],
                  unsigned int *len,
                  unsigned int *src_port,
                  int n);
-# 5 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite_support.c" 2
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client.h" 1
-# 22 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client.h"
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client_lite.h" 1
-# 35 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client_lite.h"
+# 5 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_client_lite_support.c" 2
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client.h" 1
+# 22 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client_lite.h" 1
+# 35 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client_lite.h"
 void _mac_tx_lite(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 49 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client_lite.h"
+# 49 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client_lite.h"
 int _mac_get_macaddr_lite(chanend c_mac, unsigned char macaddr[]);
-# 23 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client.h" 2
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client_full.h" 1
-# 35 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client_full.h"
+# 23 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client.h" 2
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client_full.h" 1
+# 35 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client_full.h"
 void _mac_tx_full(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 54 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client_full.h"
+# 54 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client_full.h"
 void _mac_tx_offset2(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 80 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client_full.h"
+# 80 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client_full.h"
 void mac_tx_timed(chanend c_mac, unsigned int buffer[], int nbytes, unsigned int *time, int ifnum);
-# 94 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client_full.h"
+# 94 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client_full.h"
 int _mac_get_macaddr_full(chanend c_mac, unsigned char macaddr[]);
 
 
@@ -327,15 +327,15 @@ void _send_avb_1722_router_cmd(chanend c,
                               unsigned key1,
                               unsigned link,
                               unsigned hash);
-# 129 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client_full.h"
+# 129 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client_full.h"
 void _mac_set_qav_bandwidth(chanend c_mac,
                            int bits_per_second);
-# 24 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client.h" 2
-# 37 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client.h"
+# 24 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client.h" 2
+# 37 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client.h"
 void _mac_tx(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 52 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/include/_ethernet_tx_client.h"
+# 52 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/_ethernet_tx_client.h"
 int _mac_get_macaddr(chanend c_mac, unsigned char macaddr[]);
-# 6 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_client_lite_support.c" 2
+# 6 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_client_lite_support.c" 2
 
 static unsigned char _mac_s_macaddr[6];
 

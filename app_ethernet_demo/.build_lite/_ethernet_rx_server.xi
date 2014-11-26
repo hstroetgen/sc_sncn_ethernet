@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
-# 20 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
+# 20 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -300,7 +300,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 21 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc" 2
+# 21 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc" 2
 # 1 "xclib.h" 1 3
 # 35 "xclib.h" 3
 unsigned bitrev(unsigned x);
@@ -308,7 +308,7 @@ unsigned bitrev(unsigned x);
 unsigned byterev(unsigned x);
 # 59 "xclib.h" 3
 int clz(unsigned x);
-# 22 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc" 2
+# 22 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc" 2
 # 1 "_mii_full.h" 1
 # 8 "_mii_full.h"
 # 1 "xs1.h" 1 3
@@ -335,8 +335,8 @@ typedef out buffered port:32 out_buffered_port_32_t;
 # 5 "_mii.h" 2
 # 1 "xccompat.h" 1 3
 # 6 "_mii.h" 2
-# 1 "_ethernet_conf_derived.h" 1
-# 3 "_ethernet_conf_derived.h"
+# 1 "ethernet_conf_derived_p1.h" 1
+# 3 "ethernet_conf_derived_p1.h"
 # 1 "platform.h" 1 3
 # 21 "platform.h" 3
 # 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 1
@@ -346,10 +346,10 @@ typedef out buffered port:32 out_buffered_port_32_t;
 # 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
 extern tileref tile[2];
 # 22 "platform.h" 2 3
-# 4 "_ethernet_conf_derived.h" 2
-# 6 "_ethernet_conf_derived.h"
+# 4 "ethernet_conf_derived_p1.h" 2
+# 6 "ethernet_conf_derived_p1.h"
 # 1 "ethernet_conf.h" 1
-# 7 "_ethernet_conf_derived.h" 2
+# 7 "ethernet_conf_derived_p1.h" 2
 # 7 "_mii.h" 2
 # 19 "_mii.h"
 typedef struct _mii_interface_full_t {
@@ -384,7 +384,7 @@ typedef struct _mii_interface_lite_t {
 } _mii_interface_lite_t;
 # 11 "_mii_full.h" 2
 # 12 "_mii_full.h"
-# 1 "_ethernet_conf_derived.h" 1
+# 1 "ethernet_conf_derived_p1.h" 1
 # 13 "_mii_full.h" 2
 # 79 "_mii_full.h"
 # 1 "_mii_queue.h" 1
@@ -392,7 +392,7 @@ typedef struct _mii_interface_lite_t {
 # 1 "xccompat.h" 1 3
 # 10 "_mii_queue.h" 2
 # 11 "_mii_queue.h"
-# 1 "_ethernet_conf_derived.h" 1
+# 1 "ethernet_conf_derived_p1.h" 1
 # 12 "_mii_queue.h" 2
 # 26 "_mii_queue.h"
 typedef struct mii_ts_queue_t {
@@ -508,9 +508,9 @@ void _mii_tx_pins(
                 int ifnum);
 # 237 "_mii_full.h"
 void _ethernet_get_mii_counts( unsigned &dropped );
-# 23 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc" 2
+# 23 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc" 2
 # 1 "_mii_queue.h" 1
-# 24 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc" 2
+# 24 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc" 2
 # 1 "_mii_filter.h" 1
 # 8 "_mii_filter.h"
 # 1 "_mii_full.h" 1
@@ -558,9 +558,9 @@ void _ethernet_get_filter_counts( unsigned &address ,
 								unsigned &filter ,
 								unsigned &length ,
 								unsigned &crc );
-# 25 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc" 2
+# 25 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc" 2
 # 1 "_mii_malloc.h" 1
-# 26 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc" 2
+# 26 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc" 2
 # 1 "_ethernet_rx_server.h" 1
 # 25 "_ethernet_rx_server.h"
 # 1 "xccompat.h" 1 3
@@ -568,7 +568,7 @@ void _ethernet_get_filter_counts( unsigned &address ,
 # 27 "_ethernet_rx_server.h"
 # 1 "_ethernet_server_def.h" 1
 # 20 "_ethernet_server_def.h"
-# 1 "_ethernet_conf_derived.h" 1
+# 1 "ethernet_conf_derived_p1.h" 1
 # 21 "_ethernet_server_def.h" 2
 # 28 "_ethernet_rx_server.h" 2
 # 39 "_ethernet_rx_server.h"
@@ -577,10 +577,10 @@ void _ethernet_rx_server(
 		mii_mempool_t rxmem_lp[],
 		chanend link[],
 		int num_links);
-# 27 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc" 2
+# 27 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc" 2
 # 1 "_ethernet_rx_client.h" 1
 # 9 "_ethernet_rx_client.h"
-# 1 "_ethernet_conf_derived.h" 1
+# 1 "ethernet_conf_derived_p1.h" 1
 # 10 "_ethernet_rx_client.h" 2
 # 11 "_ethernet_rx_client.h"
 # 1 "_ethernet_rx_client_lite.h" 1
@@ -685,7 +685,7 @@ void _safe_mac_rx(chanend c_mac,
                  unsigned int &len ,
                  unsigned int &src_port ,
                  int n);
-# 28 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc" 2
+# 28 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc" 2
 # 1 "_ethernet_link_status.h" 1
 
 
@@ -694,7 +694,7 @@ void _ethernet_update_link_status(int linkNum, int status);
 int _ethernet_get_link_status(int linkNum);
 
 int _ethernet_link_status_notification(int linkNum);
-# 29 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc" 2
+# 29 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc" 2
 # 1 "print.h" 1 3
 # 34 "print.h" 3
 int printchar(char value);
@@ -728,7 +728,7 @@ int printllonghexln(unsigned long long value);
 int printstr(const char (& alias s)[]);
 # 133 "print.h" 3
 int printstrln(const char (& alias s)[]);
-# 30 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc" 2
+# 30 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc" 2
 
 
 
@@ -762,7 +762,7 @@ static inline unsigned int _get_tile_id_from_chanend(chanend c) {
   asm("shr %0, %1, 16":"=r"(ci):"r"(c));
   return ci;
 }
-# 66 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 66 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
 #pragma select handler
 void _serviceLinkCmd(chanend link, int linkIndex, unsigned int &cmd)
 {
@@ -838,7 +838,7 @@ void _serviceLinkCmd(chanend link, int linkIndex, unsigned int &cmd)
       link :> _link_status[linkIndex].wants_status_updates;
       break;
     }
-# 152 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 152 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
     default:
       break;
   }
@@ -846,11 +846,11 @@ void _serviceLinkCmd(chanend link, int linkIndex, unsigned int &cmd)
   if (renotify)
     _notify(link);
 }
-# 164 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 164 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
 void _mac_rx_send_frame(int buf,
                        chanend link,
                        unsigned cmd);
-# 168 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 168 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
 #pragma unsafe arrays
 void _mac_rx_send_frame1(int p,
                         chanend link,
@@ -909,7 +909,7 @@ void _mac_rx_send_frame1(int p,
     }
   }
 }
-# 227 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 227 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
 #pragma unsafe arrays
 void _mac_rx_send_frame0(_mii_packet_t &p,
                         chanend link,
@@ -956,7 +956,7 @@ void _mac_rx_send_frame0(_mii_packet_t &p,
     }
   }
 }
-# 277 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 277 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
 #pragma unsafe arrays
 static void _processReceivedFrame(int buf,
                                  chanend link[],
@@ -1002,7 +1002,7 @@ static void _processReceivedFrame(int buf,
                }
            }
        }
-# 330 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 330 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
    }
 
    if (tcount == 0) {
@@ -1023,21 +1023,21 @@ void _send_status_packet(chanend c, int src_port, int status)
     c <: status;
   }
 }
-# 361 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 361 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
 #pragma unsafe arrays
 void _ethernet_rx_server(
-# 366 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 366 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
     mii_mempool_t rxmem_lp[],
     chanend link[],
     int num_link)
 {
    int i;
    unsigned int cmd;
-# 375 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 375 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
    int rdptr_lp[ 1 ];
 
    for (unsigned p=0; p< 1 ; ++p) {
-# 381 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 381 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
      rdptr_lp[p] = _mii_init_my_rdptr(rxmem_lp[p]);
    }
 
@@ -1057,7 +1057,7 @@ void _ethernet_rx_server(
    while (1)
    {
      int kill_link = -1;
-# 402 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 402 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
 #pragma ordered
      select
        {
@@ -1110,7 +1110,7 @@ void _ethernet_rx_server(
          break;
        default:
          {
-# 466 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_ethernet_rx_server.xc"
+# 466 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.xc"
            for (unsigned p=0; p< 1 ; ++p) {
              int buf = _mii_get_my_next_buf(rxmem_lp[p], rdptr_lp[p]);
              if (buf != 0 && _mii_packet_get_stage(buf) == 1) {

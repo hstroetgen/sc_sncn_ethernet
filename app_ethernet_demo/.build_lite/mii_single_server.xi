@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc"
-# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc"
+# 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -300,7 +300,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
 # 1 "xclib.h" 1 3
 # 35 "xclib.h" 3
 unsigned bitrev(unsigned x);
@@ -308,7 +308,7 @@ unsigned bitrev(unsigned x);
 unsigned byterev(unsigned x);
 # 59 "xclib.h" 3
 int clz(unsigned x);
-# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc" 2
+# 9 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
 # 1 "print.h" 1 3
 # 34 "print.h" 3
 int printchar(char value);
@@ -342,7 +342,7 @@ int printllonghexln(unsigned long long value);
 int printstr(const char (& alias s)[]);
 # 133 "print.h" 3
 int printstrln(const char (& alias s)[]);
-# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc" 2
+# 10 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
 # 1 "mii_driver.h" 1
 # 4 "mii_driver.h"
 # 1 "mii.h" 1
@@ -365,8 +365,8 @@ typedef out buffered port:8 out_buffered_port_8_t;
 typedef out buffered port:16 out_buffered_port_16_t;
 typedef out buffered port:32 out_buffered_port_32_t;
 # 6 "mii.h" 2
-# 1 "ethernet_conf_derived.h" 1
-# 3 "ethernet_conf_derived.h"
+# 1 "ethernet_conf_derived_p2.h" 1
+# 3 "ethernet_conf_derived_p2.h"
 # 1 "platform.h" 1 3
 # 21 "platform.h" 3
 # 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 1
@@ -376,10 +376,10 @@ typedef out buffered port:32 out_buffered_port_32_t;
 # 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
 extern tileref tile[2];
 # 22 "platform.h" 2 3
-# 4 "ethernet_conf_derived.h" 2
-# 6 "ethernet_conf_derived.h"
+# 4 "ethernet_conf_derived_p2.h" 2
+# 6 "ethernet_conf_derived_p2.h"
 # 1 "ethernet_conf.h" 1
-# 7 "ethernet_conf_derived.h" 2
+# 7 "ethernet_conf_derived_p2.h" 2
 # 7 "mii.h" 2
 # 19 "mii.h"
 typedef struct mii_interface_full_t {
@@ -420,9 +420,9 @@ extern void mii_initialise(out port ?p_mii_resetn,
 extern void mii_driver(mii_interface_lite_t &m, chanend cIn, chanend cOut);
 
 extern void phy_reset(out port p_mii_resetn, timer tmr);
-# 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc" 2
+# 11 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
 # 1 "mii.h" 1
-# 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc" 2
+# 12 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
 # 1 "mii_lite.h" 1
 # 4 "mii_lite.h"
 # 1 "xs1.h" 1 3
@@ -436,16 +436,13 @@ extern void phy_reset(out port p_mii_resetn, timer tmr);
 extern void mii_port_init(mii_interface_lite_t &m);
 # 17 "mii_lite.h"
 extern void miiTimeStampInit(unsigned offset);
-# 13 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
 # 1 "smi.h" 1
 # 9 "smi.h"
 # 1 "xs1.h" 1 3
 # 10 "smi.h" 2
 # 1 "xccompat.h" 1 3
 # 11 "smi.h" 2
-# 13 "smi.h"
-# 1 "ethernet_conf_derived.h" 1
-# 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
 # 18 "smi.h" 2
@@ -472,7 +469,7 @@ int smi_check_link_state( smi_interface_t &smi );
 
 
 int smi_reg( smi_interface_t &smi , unsigned reg, unsigned val, int inning);
-# 14 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc" 2
+# 14 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
 # 1 "mii_client.h" 1
 
 
@@ -520,9 +517,9 @@ int mii_out_packet_(chanend c_out, int buf, int length);
 # 169 "mii_client.h"
 #pragma select handler
 void mii_out_packet_done(chanend cOut);
-# 15 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc" 2
-# 1 "ethernet_conf_derived.h" 1
-# 16 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_single_server.xc" 2
+# 15 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
+# 1 "ethernet_conf_derived_p2.h" 1
+# 16 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
 
 
 

@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_link_status.c"
+	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_link_status.c"
 
 .set _ethernet_update_link_status.locnoside, 1
 
@@ -31,7 +31,7 @@
 .set _ethernet_link_status_notification.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_link_status.c"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_link_status.c"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
 	.section	.debug_abbrev,"",@progbits
@@ -188,7 +188,7 @@ _notify:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	650
+	.long	652
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -196,7 +196,7 @@ _notify:
 	.ascii	 "4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"
 	.byte	0
 	.short	1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/_link_status.c"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_link_status.c"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -212,15 +212,15 @@ _notify:
 	.byte	4
 	.byte	5
 	.byte	4
-	.long	246
+	.long	248
 	.byte	5
-	.long	253
+	.long	255
 	.byte	0
 	.byte	0
 	.byte	6
 	.ascii	 "_status"
 	.byte	0
-	.long	256
+	.long	258
 	.byte	1
 	.byte	3
 	.byte	5
@@ -229,7 +229,7 @@ _notify:
 	.byte	6
 	.ascii	 "_notify"
 	.byte	0
-	.long	256
+	.long	258
 	.byte	1
 	.byte	4
 	.byte	5
@@ -254,14 +254,14 @@ _notify:
 	.byte	0
 	.byte	1
 	.byte	6
-	.long	246
+	.long	248
 	.long	.Ldebug_loc0+0
 	.byte	8
 	.ascii	 "new_status"
 	.byte	0
 	.byte	1
 	.byte	6
-	.long	246
+	.long	248
 	.long	.Ldebug_loc3+0
 	.byte	0
 	.byte	9
@@ -272,7 +272,7 @@ _notify:
 	.byte	1
 	.byte	14
 	.byte	1
-	.long	246
+	.long	248
 	.byte	1
 	.long	.Lfunc_begin1
 	.long	.Lfunc_end1
@@ -284,7 +284,7 @@ _notify:
 	.byte	0
 	.byte	1
 	.byte	14
-	.long	246
+	.long	248
 	.long	.Ldebug_loc6+0
 	.byte	0
 	.byte	9
@@ -295,7 +295,7 @@ _notify:
 	.byte	1
 	.byte	18
 	.byte	1
-	.long	246
+	.long	248
 	.byte	1
 	.long	.Lfunc_begin2
 	.long	.Lfunc_end2
@@ -307,7 +307,7 @@ _notify:
 	.byte	0
 	.byte	1
 	.byte	18
-	.long	246
+	.long	248
 	.long	.Ldebug_loc8+0
 	.byte	10
 	.long	.Lfunc_begin2
@@ -317,7 +317,7 @@ _notify:
 	.byte	0
 	.byte	1
 	.byte	19
-	.long	246
+	.long	248
 	.long	.Ldebug_loc10+0
 	.byte	0
 	.byte	0
@@ -496,11 +496,11 @@ _notify:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	310
+	.long	312
 .asciiz "_ethernet_update_link_status"
-	.long	518
+	.long	520
 .asciiz "_ethernet_link_status_notification"
-	.long	426
+	.long	428
 .asciiz "_ethernet_get_link_status"
 	.long	0
 .Lpubnames_end1:

@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_driver.xc"
+	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_driver.xc"
 
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
@@ -37,7 +37,7 @@
 	.set mii_driver.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_driver.xc"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_driver.xc"
 	.file	2 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/timer.h"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
@@ -198,7 +198,7 @@ mii_driver:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	952
+	.long	954
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -206,7 +206,7 @@ mii_driver:
 	.ascii	 "XMOS 32-bit XC Compiler Community_13.1.0 (build 12073, May-09-2014)"
 	.byte	0
 	.short	49152
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_driver.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_driver.xc"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -226,7 +226,7 @@ mii_driver:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	939
+	.long	941
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -241,7 +241,7 @@ mii_driver:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	939
+	.long	941
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -256,7 +256,7 @@ mii_driver:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	939
+	.long	941
 	.byte	0
 	.byte	4
 	.ascii	 "mii_initialise"
@@ -276,14 +276,14 @@ mii_driver:
 	.byte	0
 	.byte	1
 	.byte	15
-	.long	651
+	.long	653
 	.long	.Ldebug_loc0+0
 	.byte	5
 	.byte	109
 	.byte	0
 	.byte	1
 	.byte	16
-	.long	914
+	.long	916
 	.long	.Ldebug_loc3+0
 	.byte	6
 	.long	.Ltmp7
@@ -296,7 +296,7 @@ mii_driver:
 	.byte	0
 	.byte	1
 	.byte	21
-	.long	919
+	.long	921
 	.long	.Ldebug_loc7+0
 	.byte	0
 	.byte	0
@@ -319,21 +319,21 @@ mii_driver:
 	.byte	0
 	.byte	1
 	.byte	31
-	.long	914
+	.long	916
 	.long	.Ldebug_loc9+0
 	.byte	5
 	.ascii	 "cIn"
 	.byte	0
 	.byte	1
 	.byte	31
-	.long	928
+	.long	930
 	.long	.Ldebug_loc11+0
 	.byte	5
 	.ascii	 "cOut"
 	.byte	0
 	.byte	1
 	.byte	31
-	.long	928
+	.long	930
 	.long	.Ldebug_loc14+0
 	.byte	6
 	.long	.Ltmp24
@@ -346,7 +346,7 @@ mii_driver:
 	.byte	0
 	.byte	1
 	.byte	33
-	.long	919
+	.long	921
 	.long	.Ldebug_loc16+0
 	.byte	0
 	.byte	0
@@ -368,7 +368,7 @@ mii_driver:
 	.byte	10
 	.ascii	 "clk_mii_rx"
 	.byte	0
-	.long	659
+	.long	661
 	.byte	1
 	.byte	17
 	.byte	2
@@ -378,7 +378,7 @@ mii_driver:
 	.byte	10
 	.ascii	 "clk_mii_tx"
 	.byte	0
-	.long	659
+	.long	661
 	.byte	1
 	.byte	17
 	.byte	2
@@ -388,7 +388,7 @@ mii_driver:
 	.byte	10
 	.ascii	 "p_mii_rxclk"
 	.byte	0
-	.long	651
+	.long	653
 	.byte	1
 	.byte	17
 	.byte	2
@@ -398,7 +398,7 @@ mii_driver:
 	.byte	10
 	.ascii	 "p_mii_rxer"
 	.byte	0
-	.long	651
+	.long	653
 	.byte	1
 	.byte	17
 	.byte	2
@@ -408,7 +408,7 @@ mii_driver:
 	.byte	10
 	.ascii	 "p_mii_rxd"
 	.byte	0
-	.long	651
+	.long	653
 	.byte	1
 	.byte	17
 	.byte	2
@@ -418,7 +418,7 @@ mii_driver:
 	.byte	10
 	.ascii	 "p_mii_rxdv"
 	.byte	0
-	.long	651
+	.long	653
 	.byte	1
 	.byte	17
 	.byte	2
@@ -428,7 +428,7 @@ mii_driver:
 	.byte	10
 	.ascii	 "p_mii_txclk"
 	.byte	0
-	.long	651
+	.long	653
 	.byte	1
 	.byte	17
 	.byte	2
@@ -438,7 +438,7 @@ mii_driver:
 	.byte	10
 	.ascii	 "p_mii_txen"
 	.byte	0
-	.long	651
+	.long	653
 	.byte	1
 	.byte	17
 	.byte	2
@@ -448,7 +448,7 @@ mii_driver:
 	.byte	10
 	.ascii	 "p_mii_txd"
 	.byte	0
-	.long	651
+	.long	653
 	.byte	1
 	.byte	17
 	.byte	2
@@ -458,7 +458,7 @@ mii_driver:
 	.byte	10
 	.ascii	 "p_mii_timing"
 	.byte	0
-	.long	651
+	.long	653
 	.byte	1
 	.byte	17
 	.byte	2
@@ -467,7 +467,7 @@ mii_driver:
 	.byte	1
 	.byte	0
 	.byte	11
-	.long	668
+	.long	670
 	.byte	8
 	.ascii	 "timer"
 	.byte	0
@@ -650,15 +650,15 @@ mii_driver:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	304
+	.long	306
 .asciiz "delay_milliseconds"
-	.long	360
+	.long	362
 .asciiz "delay_microseconds"
-	.long	416
+	.long	418
 .asciiz "mii_initialise"
-	.long	534
+	.long	536
 .asciiz "mii_driver"
-	.long	258
+	.long	260
 .asciiz "delay_seconds"
 	.long	0
 .Lpubnames_end1:
@@ -670,7 +670,7 @@ mii_driver:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	668
+	.long	670
 .asciiz "mii_interface_lite_t"
 	.long	0
 .Lpubtypes_end1:
@@ -776,19 +776,19 @@ mii_driver:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_0,.Lxta.call_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_driver.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_driver.xc"
 	.byte	0
 	.long	22
 	.long	.Lxta.call_labels0
 .cc_bottom cc_0
 .cc_top cc_1,.Lxta.call_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_driver.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_driver.xc"
 	.byte	0
 	.long	26
 	.long	.Lxta.call_labels1
 .cc_bottom cc_1
 .cc_top cc_2,.Lxta.call_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_driver.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_driver.xc"
 	.byte	0
 	.long	34
 	.long	.Lxta.call_labels2
@@ -801,28 +801,28 @@ mii_driver:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_3,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_driver.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_driver.xc"
 	.byte	0
 	.long	17
 	.long	20
 	.long	.Lxtalabel0
 .cc_bottom cc_3
 .cc_top cc_4,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_driver.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_driver.xc"
 	.byte	0
 	.long	21
 	.long	23
 	.long	.Lxtalabel1
 .cc_bottom cc_4
 .cc_top cc_5,.Lxtalabel2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_driver.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_driver.xc"
 	.byte	0
 	.long	24
 	.long	27
 	.long	.Lxtalabel2
 .cc_bottom cc_5
 .cc_top cc_6,.Lxtalabel3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_driver.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_driver.xc"
 	.byte	0
 	.long	32
 	.long	35

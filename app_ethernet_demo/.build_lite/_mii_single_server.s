@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
@@ -12,7 +12,7 @@
 	.set usage.anon.2,0
 	.set usage.anon.3,0
 	.set usage.anon.4,0
-	.globwrite usage.anon.3,usage.anon.4,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc:53: error: previously used here"
+	.globwrite usage.anon.3,usage.anon.4,"/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc:53: error: previously used here"
 	.call _ethernet_server_lite,usage.anon.3
 	.call _ethernet_server_lite,_mii_port_init
 	.call _ethernet_server_lite,_mii_driver
@@ -33,8 +33,8 @@
 	.call usage.anon.2,delay_ticks_longlong
 	.call usage.anon.1,delay_ticks_longlong
 	.call usage.anon.0,delay_ticks_longlong
-	.par _mii_driver,usage.anon.3,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc:132: error: use of `%s' violates parallel usage rules"
-	.par _mii_driver,usage.anon.3,"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc:117: error: use of `%s' violates parallel usage rules"
+	.par _mii_driver,usage.anon.3,"/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc:132: error: use of `%s' violates parallel usage rules"
+	.par _mii_driver,usage.anon.3,"/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc:117: error: use of `%s' violates parallel usage rules"
 	.set usage.anon.0.locnoside, 1
 	.set usage.anon.1.locnoside, 1
 	.set usage.anon.2.locnoside, 1
@@ -64,7 +64,7 @@
 	.overlay_subgraph_conflict _ethernet_server_lite.task._mii_driver.0, _ethernet_server_lite.task._the_server.1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.file	2 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/timer.h"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
@@ -301,7 +301,7 @@ _the_server:
 	.loc	1 88 0
 .Ltmp39:
 	
-	.xtabranch .LBB0_11, .LBB0_5, .LBB0_4, .LBB0_17
+	.xtabranch .LBB0_5, .LBB0_4, .LBB0_17, .LBB0_11
 waiteu
 .Ltmp40:
 .Ltmp28:
@@ -423,25 +423,26 @@ waiteu
 	.loc	1 65 0
 	add r0, r7, 3
 	ashr r0, r0, 2
-	ldc r1, 0
-	lss r2, r1, r0
+	ldc r3, 0
+	lss r2, r3, r0
 .Ltmp52:
 	.loc	1 64 0
 	chkct res[r8], 1
 	outct res[r8], 1
 	.loc	1 64 0
 .Lxta.endpoint_labels11:
-	in r3, res[r8]
+	in r1, res[r8]
 .Ltmp53:
 	.loc	1 64 0
 	chkct res[r8], 1
 	outct res[r8], 1
+	mov r1, r3
 .Ltmp54:
 	.loc	1 65 0
 	bf r2, .LBB0_9
-.Ltmp55:
 .LBB0_12:
 .Lxtalabel15:
+.Ltmp55:
 	.loc	1 67 0
 	#APP
 	ldw r2, r10[r1]
@@ -477,7 +478,7 @@ waiteu
 
 	.align	4
 	.cc_bottom _the_server.function
-	.set	_the_server.nstackwords,((_mac_set_macaddr_lite.nstackwords $M _mii_buffer_init.nstackwords $M _mii_out_init.nstackwords $M _mii_free_in_buffer.nstackwords $M _mii_restart_buffer.nstackwords $M _mii_get_in_buffer.nstackwords $M smi_check_link_state.nstackwords $M _mii_out_packet.nstackwords $M _mii_out_packet_done.nstackwords) + 6968)
+	.set	_the_server.nstackwords,((_mac_set_macaddr_lite.nstackwords $M _mii_buffer_init.nstackwords $M _mii_out_init.nstackwords $M smi_check_link_state.nstackwords $M _mii_out_packet.nstackwords $M _mii_out_packet_done.nstackwords $M _mii_free_in_buffer.nstackwords $M _mii_restart_buffer.nstackwords $M _mii_get_in_buffer.nstackwords) + 6968)
 	.set	_the_server.maxcores,_mac_set_macaddr_lite.maxcores $M _mii_buffer_init.maxcores $M _mii_free_in_buffer.maxcores $M _mii_get_in_buffer.maxcores $M _mii_out_init.maxcores $M _mii_out_packet.maxcores $M _mii_out_packet_done.maxcores $M _mii_restart_buffer.maxcores $M smi_check_link_state.maxcores $M 1
 	.set	_the_server.maxtimers,_mac_set_macaddr_lite.maxtimers $M _mii_buffer_init.maxtimers $M _mii_free_in_buffer.maxtimers $M _mii_get_in_buffer.maxtimers $M _mii_out_init.maxtimers $M _mii_out_packet.maxtimers $M _mii_out_packet_done.maxtimers $M _mii_restart_buffer.maxtimers $M smi_check_link_state.maxtimers $M 0
 	.set	_the_server.maxchanends,_mac_set_macaddr_lite.maxchanends $M _mii_buffer_init.maxchanends $M _mii_free_in_buffer.maxchanends $M _mii_get_in_buffer.maxchanends $M _mii_out_init.maxchanends $M _mii_out_packet.maxchanends $M _mii_out_packet_done.maxchanends $M _mii_restart_buffer.maxchanends $M smi_check_link_state.maxchanends $M 0
@@ -883,7 +884,7 @@ par.desc.2:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	3273
+	.long	3275
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -891,7 +892,7 @@ par.desc.2:
 	.ascii	 "XMOS 32-bit XC Compiler Community_13.1.0 (build 12073, May-09-2014)"
 	.byte	0
 	.short	49152
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -908,12 +909,12 @@ par.desc.2:
 	.byte	0
 	.ascii	 "phy_status"
 	.byte	0
-	.long	266
+	.long	268
 	.byte	1
 	.byte	46
 	.byte	1
 	.byte	4
-	.long	273
+	.long	275
 	.byte	5
 	.byte	3
 	.long	phy_status.static
@@ -930,7 +931,7 @@ par.desc.2:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	1987
+	.long	1989
 	.byte	0
 	.byte	5
 	.ascii	 "delay_milliseconds"
@@ -945,7 +946,7 @@ par.desc.2:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	1987
+	.long	1989
 	.byte	0
 	.byte	5
 	.ascii	 "delay_microseconds"
@@ -960,7 +961,7 @@ par.desc.2:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	1987
+	.long	1989
 	.byte	0
 	.byte	7
 	.ascii	 "_the_server"
@@ -979,35 +980,35 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	23
-	.long	1806
+	.long	1808
 	.long	.Ldebug_loc0+0
 	.byte	8
 	.ascii	 "cOut"
 	.byte	0
 	.byte	1
 	.byte	23
-	.long	1806
+	.long	1808
 	.long	.Ldebug_loc4+0
 	.byte	8
 	.ascii	 "cNotifications"
 	.byte	0
 	.byte	1
 	.byte	23
-	.long	1806
+	.long	1808
 	.long	.Ldebug_loc9+0
 	.byte	8
 	.ascii	 "smi"
 	.byte	0
 	.byte	1
 	.byte	24
-	.long	1910
+	.long	1912
 	.long	.Ldebug_loc14+0
 	.byte	9
 	.ascii	 "mac_address"
 	.byte	0
 	.byte	1
 	.byte	25
-	.long	1947
+	.long	1949
 	.byte	4
 	.byte	145
 	.ascii	 "\354\331\001"
@@ -1016,14 +1017,14 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	25
-	.long	1806
+	.long	1808
 	.long	.Ldebug_loc18+0
 	.byte	8
 	.ascii	 "appIn"
 	.byte	0
 	.byte	1
 	.byte	25
-	.long	1806
+	.long	1808
 	.long	.Ldebug_loc21+0
 	.byte	10
 	.long	.Ltmp23
@@ -1036,7 +1037,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	26
-	.long	266
+	.long	268
 	.byte	10
 	.long	.Ltmp23
 	.long	.Ltmp60
@@ -1045,7 +1046,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	27
-	.long	266
+	.long	268
 	.long	.Ldebug_loc24+0
 	.byte	10
 	.long	.Ltmp23
@@ -1055,19 +1056,19 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	28
-	.long	266
+	.long	268
 	.byte	11
 	.byte	97
 	.byte	0
 	.byte	1
 	.byte	28
-	.long	266
+	.long	268
 	.byte	11
 	.ascii	 "timeStamp"
 	.byte	0
 	.byte	1
 	.byte	28
-	.long	266
+	.long	268
 	.byte	10
 	.long	.Ltmp23
 	.long	.Ltmp60
@@ -1076,7 +1077,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	29
-	.long	1952
+	.long	1954
 	.byte	10
 	.long	.Ltmp23
 	.long	.Ltmp60
@@ -1085,7 +1086,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	30
-	.long	1965
+	.long	1967
 	.byte	3
 	.byte	145
 	.ascii	 "\204\005"
@@ -1097,7 +1098,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	31
-	.long	1978
+	.long	1980
 	.byte	10
 	.long	.Ltmp23
 	.long	.Ltmp60
@@ -1106,7 +1107,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	32
-	.long	1987
+	.long	1989
 	.byte	2
 	.byte	145
 	.byte	44
@@ -1118,7 +1119,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	33
-	.long	2027
+	.long	2029
 	.byte	2
 	.byte	145
 	.byte	48
@@ -1129,7 +1130,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	82
-	.long	266
+	.long	268
 	.byte	0
 	.byte	10
 	.long	.Ltmp44
@@ -1142,7 +1143,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	47
-	.long	266
+	.long	268
 	.long	.Ldebug_loc27+0
 	.byte	10
 	.long	.Ltmp47
@@ -1152,7 +1153,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	50
-	.long	266
+	.long	268
 	.long	.Ldebug_loc30+0
 	.byte	0
 	.byte	0
@@ -1164,7 +1165,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	65
-	.long	266
+	.long	268
 	.byte	14
 	.long	.Ldebug_range+32
 	.byte	12
@@ -1172,7 +1173,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	66
-	.long	266
+	.long	268
 	.long	.Ldebug_loc34+0
 	.byte	0
 	.byte	0
@@ -1184,7 +1185,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	64
-	.long	266
+	.long	268
 	.long	.Ldebug_loc32+0
 	.byte	0
 	.byte	0
@@ -1214,7 +1215,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	2956
+	.long	2958
 	.long	.Ldebug_loc38+0
 	.byte	0
 	.byte	7
@@ -1234,7 +1235,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	2956
+	.long	2958
 	.long	.Ldebug_loc40+0
 	.byte	0
 	.byte	16
@@ -1255,7 +1256,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	1910
+	.long	1912
 	.byte	2
 	.byte	145
 	.byte	4
@@ -1264,32 +1265,32 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	1817
+	.long	1819
 	.long	.Ldebug_loc36+0
 	.byte	6
 	.byte	109
 	.byte	0
 	.byte	1
 	.byte	105
-	.long	2768
+	.long	2770
 	.byte	6
 	.ascii	 "appIn"
 	.byte	0
 	.byte	1
 	.byte	106
-	.long	1806
+	.long	1808
 	.byte	6
 	.ascii	 "appOut"
 	.byte	0
 	.byte	1
 	.byte	106
-	.long	1806
+	.long	1808
 	.byte	6
 	.ascii	 "mac_address"
 	.byte	0
 	.byte	1
 	.byte	107
-	.long	1947
+	.long	1949
 	.byte	0
 	.byte	7
 	.ascii	 "_ethernet_server_lite.task._mii_driver.0"
@@ -1308,7 +1309,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	3270
+	.long	3272
 	.long	.Ldebug_loc43+0
 	.byte	0
 	.byte	7
@@ -1328,7 +1329,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	3270
+	.long	3272
 	.long	.Ldebug_loc45+0
 	.byte	0
 	.byte	16
@@ -1349,7 +1350,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	124
-	.long	2768
+	.long	2770
 	.byte	2
 	.byte	145
 	.byte	4
@@ -1358,7 +1359,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	127
-	.long	266
+	.long	268
 	.byte	3
 	.byte	145
 .asciiz "\300"
@@ -1367,7 +1368,7 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	127
-	.long	266
+	.long	268
 	.byte	3
 	.byte	145
 .asciiz "\310"
@@ -1376,25 +1377,25 @@ par.desc.2:
 	.byte	0
 	.byte	1
 	.byte	125
-	.long	1910
+	.long	1912
 	.byte	6
 	.ascii	 "mac_address"
 	.byte	0
 	.byte	1
 	.byte	126
-	.long	2967
+	.long	2969
 	.byte	6
 	.ascii	 "c_rx"
 	.byte	0
 	.byte	1
 	.byte	127
-	.long	2977
+	.long	2979
 	.byte	6
 	.ascii	 "c_tx"
 	.byte	0
 	.byte	1
 	.byte	127
-	.long	2977
+	.long	2979
 	.byte	0
 	.byte	2
 	.ascii	 "chanend"
@@ -1413,7 +1414,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "phy_address"
 	.byte	0
-	.long	266
+	.long	268
 	.byte	1
 	.byte	25
 	.byte	2
@@ -1423,7 +1424,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_smi_mdio"
 	.byte	0
-	.long	1817
+	.long	1819
 	.byte	1
 	.byte	25
 	.byte	2
@@ -1433,7 +1434,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	1817
+	.long	1819
 	.byte	1
 	.byte	25
 	.byte	2
@@ -1442,7 +1443,7 @@ par.desc.2:
 	.byte	1
 	.byte	0
 	.byte	19
-	.long	1825
+	.long	1827
 	.byte	2
 	.ascii	 "unsigned char"
 	.byte	0
@@ -1452,23 +1453,23 @@ par.desc.2:
 	.byte	4
 	.byte	5
 	.byte	21
-	.long	1915
+	.long	1917
 	.byte	22
-	.long	1932
+	.long	1934
 	.byte	5
 	.byte	0
 	.byte	19
-	.long	1935
+	.long	1937
 	.byte	21
-	.long	266
+	.long	268
 	.byte	23
-	.long	1932
+	.long	1934
 	.short	6399
 	.byte	0
 	.byte	21
-	.long	266
+	.long	268
 	.byte	23
-	.long	1932
+	.long	1934
 	.short	399
 	.byte	0
 	.byte	2
@@ -1482,15 +1483,15 @@ par.desc.2:
 	.byte	7
 	.byte	4
 	.byte	21
-	.long	266
+	.long	268
 	.byte	22
-	.long	1932
+	.long	1934
 	.byte	1
 	.byte	0
 	.byte	21
-	.long	266
+	.long	268
 	.byte	22
-	.long	1932
+	.long	1934
 	.byte	127
 	.byte	0
 	.byte	24
@@ -1502,7 +1503,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "nextBuffer"
 	.byte	0
-	.long	266
+	.long	268
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1512,7 +1513,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "packetInLLD"
 	.byte	0
-	.long	266
+	.long	268
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1522,7 +1523,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "notificationChannelEnd"
 	.byte	0
-	.long	1987
+	.long	1989
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1532,7 +1533,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "miiChannelEnd"
 	.byte	0
-	.long	1987
+	.long	1989
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1542,7 +1543,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "miiPacketsOverran"
 	.byte	0
-	.long	266
+	.long	268
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1552,7 +1553,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "refillBankNumber"
 	.byte	0
-	.long	266
+	.long	268
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1562,7 +1563,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "freePtr"
 	.byte	0
-	.long	2003
+	.long	2005
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1572,7 +1573,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "wrPtr"
 	.byte	0
-	.long	2003
+	.long	2005
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1582,7 +1583,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "lastSafePtr"
 	.byte	0
-	.long	2003
+	.long	2005
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1592,7 +1593,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "firstPtr"
 	.byte	0
-	.long	2003
+	.long	2005
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1602,7 +1603,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "readPtr"
 	.byte	0
-	.long	2003
+	.long	2005
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1612,7 +1613,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "notifyLast"
 	.byte	0
-	.long	1915
+	.long	1917
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1622,7 +1623,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "notifySeen"
 	.byte	0
-	.long	1915
+	.long	1917
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1632,7 +1633,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "pad0"
 	.byte	0
-	.long	1915
+	.long	1917
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1642,7 +1643,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "pad1"
 	.byte	0
-	.long	1915
+	.long	1917
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1652,7 +1653,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "miiPacketsTransmitted"
 	.byte	0
-	.long	266
+	.long	268
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1662,7 +1663,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "miiPacketsReceived"
 	.byte	0
-	.long	266
+	.long	268
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1672,7 +1673,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "miiPacketsCRCError"
 	.byte	0
-	.long	266
+	.long	268
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1682,7 +1683,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "readBank"
 	.byte	0
-	.long	266
+	.long	268
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1692,7 +1693,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "kernelStack"
 	.byte	0
-	.long	2015
+	.long	2017
 	.byte	1
 	.byte	33
 	.byte	2
@@ -1712,7 +1713,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "clk_mii_rx"
 	.byte	0
-	.long	2512
+	.long	2514
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1722,7 +1723,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "clk_mii_tx"
 	.byte	0
-	.long	2512
+	.long	2514
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1732,7 +1733,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_rxclk"
 	.byte	0
-	.long	1817
+	.long	1819
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1742,7 +1743,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_rxer"
 	.byte	0
-	.long	1817
+	.long	1819
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1752,7 +1753,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_rxd"
 	.byte	0
-	.long	1817
+	.long	1819
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1762,7 +1763,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_rxdv"
 	.byte	0
-	.long	1817
+	.long	1819
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1772,7 +1773,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_txclk"
 	.byte	0
-	.long	1817
+	.long	1819
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1782,7 +1783,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_txen"
 	.byte	0
-	.long	1817
+	.long	1819
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1792,7 +1793,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_txd"
 	.byte	0
-	.long	1817
+	.long	1819
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1802,7 +1803,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "p_mii_timing"
 	.byte	0
-	.long	1817
+	.long	1819
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1811,20 +1812,20 @@ par.desc.2:
 	.byte	1
 	.byte	0
 	.byte	19
-	.long	2521
+	.long	2523
 	.byte	25
-	.long	1825
+	.long	1827
 	.byte	4
 	.byte	25
-	.long	2521
+	.long	2523
 	.byte	4
 	.byte	25
-	.long	1935
+	.long	1937
 	.byte	4
 	.byte	21
-	.long	1806
+	.long	1808
 	.byte	22
-	.long	1932
+	.long	1934
 	.byte	1
 	.byte	0
 	.byte	17
@@ -1834,7 +1835,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "smi"
 	.byte	0
-	.long	2773
+	.long	2775
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1844,7 +1845,7 @@ par.desc.2:
 	.byte	18
 	.byte	109
 	.byte	0
-	.long	2779
+	.long	2781
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1854,7 +1855,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "appIn"
 	.byte	0
-	.long	1806
+	.long	1808
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1864,7 +1865,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "appOut"
 	.byte	0
-	.long	1806
+	.long	1808
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1874,7 +1875,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "mac_address"
 	.byte	0
-	.long	2785
+	.long	2787
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1884,7 +1885,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "cIn"
 	.byte	0
-	.long	2791
+	.long	2793
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1894,7 +1895,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "cOut"
 	.byte	0
-	.long	2791
+	.long	2793
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1904,7 +1905,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "notifications"
 	.byte	0
-	.long	2791
+	.long	2793
 	.byte	1
 	.byte	118
 	.byte	2
@@ -1913,18 +1914,18 @@ par.desc.2:
 	.byte	1
 	.byte	0
 	.byte	25
-	.long	2803
+	.long	2805
 	.byte	4
 	.byte	26
-	.long	1915
+	.long	1917
 	.byte	19
-	.long	2962
+	.long	2964
 	.byte	26
-	.long	1806
+	.long	1808
 	.byte	19
-	.long	2972
+	.long	2974
 	.byte	25
-	.long	2962
+	.long	2964
 	.byte	4
 	.byte	17
 	.ascii	 "__TYPE_0"
@@ -1933,7 +1934,7 @@ par.desc.2:
 	.byte	18
 	.byte	97
 	.byte	0
-	.long	2982
+	.long	2984
 	.byte	1
 	.byte	133
 	.byte	2
@@ -1943,7 +1944,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "bound"
 	.byte	0
-	.long	1987
+	.long	1989
 	.byte	1
 	.byte	133
 	.byte	2
@@ -1952,7 +1953,7 @@ par.desc.2:
 	.byte	1
 	.byte	0
 	.byte	25
-	.long	2972
+	.long	2974
 	.byte	4
 	.byte	17
 	.ascii	 "__TYPE_1"
@@ -1961,7 +1962,7 @@ par.desc.2:
 	.byte	18
 	.byte	97
 	.byte	0
-	.long	3030
+	.long	3032
 	.byte	1
 	.byte	133
 	.byte	2
@@ -1971,7 +1972,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "bound"
 	.byte	0
-	.long	1987
+	.long	1989
 	.byte	1
 	.byte	133
 	.byte	2
@@ -1986,7 +1987,7 @@ par.desc.2:
 	.byte	18
 	.byte	97
 	.byte	0
-	.long	3030
+	.long	3032
 	.byte	1
 	.byte	133
 	.byte	2
@@ -1996,7 +1997,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "bound"
 	.byte	0
-	.long	1987
+	.long	1989
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2011,7 +2012,7 @@ par.desc.2:
 	.byte	18
 	.byte	109
 	.byte	0
-	.long	2779
+	.long	2781
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2021,7 +2022,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "smi"
 	.byte	0
-	.long	2773
+	.long	2775
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2031,7 +2032,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "mac_address"
 	.byte	0
-	.long	2988
+	.long	2990
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2041,7 +2042,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "c_rx"
 	.byte	0
-	.long	3036
+	.long	3038
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2051,7 +2052,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "c_tx"
 	.byte	0
-	.long	3078
+	.long	3080
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2061,7 +2062,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "cIn"
 	.byte	0
-	.long	2791
+	.long	2793
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2071,7 +2072,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "cOut"
 	.byte	0
-	.long	2791
+	.long	2793
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2081,7 +2082,7 @@ par.desc.2:
 	.byte	18
 	.ascii	 "notifications"
 	.byte	0
-	.long	2791
+	.long	2793
 	.byte	1
 	.byte	133
 	.byte	2
@@ -2090,7 +2091,7 @@ par.desc.2:
 	.byte	1
 	.byte	0
 	.byte	25
-	.long	3120
+	.long	3122
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -2434,25 +2435,25 @@ par.desc.2:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1644
+	.long	1646
 .asciiz "_ethernet_server_lite"
-	.long	360
+	.long	362
 .asciiz "delay_milliseconds"
-	.long	1263
+	.long	1265
 .asciiz "_mii_single_server"
-	.long	472
+	.long	474
 .asciiz "_the_server"
-	.long	416
+	.long	418
 .asciiz "delay_microseconds"
-	.long	1410
+	.long	1412
 .asciiz "_ethernet_server_lite.task._mii_driver.0"
-	.long	1152
+	.long	1154
 .asciiz "_mii_single_server.task._the_server.1"
-	.long	1041
+	.long	1043
 .asciiz "_mii_single_server.task._mii_driver.0"
-	.long	314
+	.long	316
 .asciiz "delay_seconds"
-	.long	1527
+	.long	1529
 .asciiz "_ethernet_server_lite.task._the_server.1"
 	.long	0
 .Lpubnames_end1:
@@ -2464,19 +2465,19 @@ par.desc.2:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	3036
+	.long	3038
 .asciiz "__TYPE_1"
-	.long	3078
+	.long	3080
 .asciiz "__TYPE_2"
-	.long	3120
+	.long	3122
 .asciiz "frame.0"
-	.long	2803
+	.long	2805
 .asciiz "frame.1"
-	.long	1825
+	.long	1827
 .asciiz "smi_interface_t"
-	.long	2521
+	.long	2523
 .asciiz "_mii_interface_lite_t"
-	.long	2988
+	.long	2990
 .asciiz "__TYPE_0"
 	.long	0
 .Lpubtypes_end1:
@@ -2624,11 +2625,11 @@ par.desc.2:
 	.long	0
 .Ldebug_loc32:
 	.long	.Ltmp53
-	.long	.Ltmp55
+	.long	.Ltmp54
 .Lset20 = .Ltmp165-.Ltmp164
 	.short	.Lset20
 .Ltmp164:
-	.byte	83
+	.byte	81
 .Ltmp165:
 	.long	0
 	.long	0
@@ -2747,109 +2748,109 @@ par.desc.2:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_0,.Lxta.call_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	34
 	.long	.Lxta.call_labels0
 .cc_bottom cc_0
 .cc_top cc_1,.Lxta.call_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	36
 	.long	.Lxta.call_labels1
 .cc_bottom cc_1
 .cc_top cc_2,.Lxta.call_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	37
 	.long	.Lxta.call_labels2
 .cc_bottom cc_2
 .cc_top cc_3,.Lxta.call_labels6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	47
 	.long	.Lxta.call_labels6
 .cc_bottom cc_3
 .cc_top cc_4,.Lxta.call_labels7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	70
 	.long	.Lxta.call_labels7
 .cc_bottom cc_4
 .cc_top cc_5,.Lxta.call_labels8
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	71
 	.long	.Lxta.call_labels8
 .cc_bottom cc_5
 .cc_top cc_6,.Lxta.call_labels9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	72
 	.long	.Lxta.call_labels9
 .cc_bottom cc_6
 .cc_top cc_7,.Lxta.call_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	86
 	.long	.Lxta.call_labels3
 .cc_bottom cc_7
 .cc_top cc_8,.Lxta.call_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	87
 	.long	.Lxta.call_labels4
 .cc_bottom cc_8
 .cc_top cc_9,.Lxta.call_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	93
 	.long	.Lxta.call_labels5
 .cc_bottom cc_9
 .cc_top cc_10,.Lxta.call_labels10
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	110
 	.long	.Lxta.call_labels10
 .cc_bottom cc_10
 .cc_top cc_11,.Lxta.call_labels11
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	113
 	.long	.Lxta.call_labels11
 .cc_bottom cc_11
 .cc_top cc_12,.Lxta.call_labels12
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	114
 	.long	.Lxta.call_labels12
 .cc_bottom cc_12
 .cc_top cc_13,.Lxta.call_labels13
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	118
 	.long	.Lxta.call_labels13
 .cc_bottom cc_13
 .cc_top cc_14,.Lxta.call_labels14
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	119
 	.long	.Lxta.call_labels14
 .cc_bottom cc_14
 .cc_top cc_15,.Lxta.call_labels15
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	131
 	.long	.Lxta.call_labels15
 .cc_bottom cc_15
 .cc_top cc_16,.Lxta.call_labels16
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	133
 	.long	.Lxta.call_labels16
 .cc_bottom cc_16
 .cc_top cc_17,.Lxta.call_labels17
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	134
 	.long	.Lxta.call_labels17
@@ -2862,79 +2863,79 @@ par.desc.2:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_18,.Lxta.endpoint_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	39
 	.long	.Lxta.endpoint_labels0
 .cc_bottom cc_18
 .cc_top cc_19,.Lxta.endpoint_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	42
 	.long	.Lxta.endpoint_labels1
 .cc_bottom cc_19
 .cc_top cc_20,.Lxta.endpoint_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	42
 	.long	.Lxta.endpoint_labels5
 .cc_bottom cc_20
 .cc_top cc_21,.Lxta.endpoint_labels11
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	42
 	.long	.Lxta.endpoint_labels11
 .cc_bottom cc_21
 .cc_top cc_22,.Lxta.endpoint_labels6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	49
 	.long	.Lxta.endpoint_labels6
 .cc_bottom cc_22
 .cc_top cc_23,.Lxta.endpoint_labels7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	50
 	.long	.Lxta.endpoint_labels7
 .cc_bottom cc_23
 .cc_top cc_24,.Lxta.endpoint_labels8
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	51
 	.long	.Lxta.endpoint_labels8
 .cc_bottom cc_24
 .cc_top cc_25,.Lxta.endpoint_labels9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	52
 	.long	.Lxta.endpoint_labels9
 .cc_bottom cc_25
 .cc_top cc_26,.Lxta.endpoint_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	60
 	.long	.Lxta.endpoint_labels4
 .cc_bottom cc_26
 .cc_top cc_27,.Lxta.endpoint_labels12
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	68
 	.long	.Lxta.endpoint_labels12
 .cc_bottom cc_27
 .cc_top cc_28,.Lxta.endpoint_labels10
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	76
 	.long	.Lxta.endpoint_labels10
 .cc_bottom cc_28
 .cc_top cc_29,.Lxta.endpoint_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	83
 	.long	.Lxta.endpoint_labels2
 .cc_bottom cc_29
 .cc_top cc_30,.Lxta.endpoint_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	96
 	.long	.Lxta.endpoint_labels3
@@ -2947,147 +2948,147 @@ par.desc.2:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_31,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	26
 	.long	41
 	.long	.Lxtalabel0
 .cc_bottom cc_31
 .cc_top cc_32,.Lxtalabel6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	42
 	.long	43
 	.long	.Lxtalabel6
 .cc_bottom cc_32
 .cc_top cc_33,.Lxtalabel8
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	44
 	.long	44
 	.long	.Lxtalabel8
 .cc_bottom cc_33
 .cc_top cc_34,.Lxtalabel10
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	45
 	.long	48
 	.long	.Lxtalabel10
 .cc_bottom cc_34
 .cc_top cc_35,.Lxtalabel11
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	49
 	.long	54
 	.long	.Lxtalabel11
 .cc_bottom cc_35
 .cc_top cc_36,.Lxtalabel9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	56
 	.long	60
 	.long	.Lxtalabel9
 .cc_bottom cc_36
 .cc_top cc_37,.Lxtalabel7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	61
 	.long	64
 	.long	.Lxtalabel7
 .cc_bottom cc_37
 .cc_top cc_38,.Lxtalabel14
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	65
 	.long	65
 	.long	.Lxtalabel14
 .cc_bottom cc_38
 .cc_top cc_39,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	66
 	.long	69
 	.long	.Lxtalabel15
 .cc_bottom cc_39
 .cc_top cc_40,.Lxtalabel12
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	70
 	.long	73
 	.long	.Lxtalabel12
 .cc_bottom cc_40
 .cc_top cc_41,.Lxtalabel12
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	74
 	.long	75
 	.long	.Lxtalabel12
 .cc_bottom cc_41
 .cc_top cc_42,.Lxtalabel13
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	76
 	.long	77
 	.long	.Lxtalabel13
 .cc_bottom cc_42
 .cc_top cc_43,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	82
 	.long	82
 	.long	.Lxtalabel1
 .cc_bottom cc_43
 .cc_top cc_44,.Lxtalabel2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	83
 	.long	84
 	.long	.Lxtalabel2
 .cc_bottom cc_44
 .cc_top cc_45,.Lxtalabel3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	85
 	.long	89
 	.long	.Lxtalabel3
 .cc_bottom cc_45
 .cc_top cc_46,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	93
 	.long	94
 	.long	.Lxtalabel4
 .cc_bottom cc_46
 .cc_top cc_47,.Lxtalabel5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	95
 	.long	97
 	.long	.Lxtalabel5
 .cc_bottom cc_47
 .cc_top cc_48,.Lxtalabel16
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	108
 	.long	112
 	.long	.Lxtalabel16
 .cc_bottom cc_48
 .cc_top cc_49,.Lxtalabel17
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	113
 	.long	115
 	.long	.Lxtalabel17
 .cc_bottom cc_49
 .cc_top cc_50,.Lxtalabel18
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	116
 	.long	122
 	.long	.Lxtalabel18
 .cc_bottom cc_50
 .cc_top cc_51,.Lxtalabel19
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	128
 	.long	137
@@ -3101,14 +3102,14 @@ par.desc.2:
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
 .cc_top cc_52,.Lxta.loop_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	66
 	.long	69
 	.long	.Lxta.loop_labels1
 .cc_bottom cc_52
 .cc_top cc_53,.Lxta.loop_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_single_server.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_single_server.xc"
 	.byte	0
 	.long	83
 	.long	84

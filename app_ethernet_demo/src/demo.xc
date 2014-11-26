@@ -650,7 +650,7 @@ int main()
       {
         char mac_address[6];
         otp_board_info_get_mac(otp_ports0, 0, mac_address);
-        _eth_phy_reset(eth_rst0);
+        eth_phy_reset_p1(eth_rst0);
         smi_init(smi0);
         eth_phy_config(1, smi0);
         _ethernet_server(mii0,
@@ -664,7 +664,7 @@ int main()
       {
         char mac_address[6];
         otp_board_info_get_mac(otp_ports1, 0, mac_address);
-        eth_phy_reset(eth_rst1);
+        eth_phy_reset_p2(eth_rst1);
         smi_init(smi1);
         eth_phy_config(1, smi1);
         ethernet_server(mii1,

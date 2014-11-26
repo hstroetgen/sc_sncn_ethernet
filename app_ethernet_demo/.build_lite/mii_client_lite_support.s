@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_lite_support.c"
+	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_client_lite_support.c"
 
 .set mac_set_macaddr_lite.locnoside, 1
 
@@ -21,7 +21,7 @@
 .set mac_get_macaddr_lite.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_lite_support.c"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_client_lite_support.c"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
 	.section	.debug_abbrev,"",@progbits
@@ -154,7 +154,7 @@ mac_s_macaddr:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	600
+	.long	602
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -162,7 +162,7 @@ mac_s_macaddr:
 	.ascii	 "4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"
 	.byte	0
 	.short	1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/mii_client_lite_support.c"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_client_lite_support.c"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -178,15 +178,15 @@ mac_s_macaddr:
 	.byte	4
 	.byte	5
 	.byte	4
-	.long	257
+	.long	259
 	.byte	5
-	.long	274
+	.long	276
 	.byte	5
 	.byte	0
 	.byte	6
 	.ascii	 "mac_s_macaddr"
 	.byte	0
-	.long	277
+	.long	279
 	.byte	1
 	.byte	7
 	.byte	5
@@ -211,7 +211,7 @@ mac_s_macaddr:
 	.byte	0
 	.byte	1
 	.byte	9
-	.long	566
+	.long	568
 	.long	.Ldebug_loc0+0
 	.byte	9
 	.long	.Ltmp1
@@ -224,7 +224,7 @@ mac_s_macaddr:
 	.byte	0
 	.byte	1
 	.byte	10
-	.long	559
+	.long	561
 	.long	.Ldebug_loc3+0
 	.byte	0
 	.byte	0
@@ -237,7 +237,7 @@ mac_s_macaddr:
 	.byte	1
 	.byte	13
 	.byte	1
-	.long	559
+	.long	561
 	.byte	1
 	.long	.Lfunc_begin1
 	.long	.Lfunc_end1
@@ -249,14 +249,14 @@ mac_s_macaddr:
 	.byte	0
 	.byte	1
 	.byte	13
-	.long	588
+	.long	590
 	.long	.Ldebug_loc6+0
 	.byte	8
 	.ascii	 "macaddr"
 	.byte	0
 	.byte	1
 	.byte	13
-	.long	566
+	.long	568
 	.long	.Ldebug_loc11+0
 	.byte	9
 	.long	.Ltmp9
@@ -269,7 +269,7 @@ mac_s_macaddr:
 	.byte	0
 	.byte	1
 	.byte	16
-	.long	559
+	.long	561
 	.long	.Ldebug_loc14+0
 	.byte	0
 	.byte	0
@@ -280,7 +280,7 @@ mac_s_macaddr:
 	.byte	5
 	.byte	4
 	.byte	12
-	.long	257
+	.long	259
 	.byte	4
 	.byte	2
 	.ascii	 "unsigned int"
@@ -288,7 +288,7 @@ mac_s_macaddr:
 	.byte	7
 	.byte	4
 	.byte	13
-	.long	572
+	.long	574
 	.ascii	 "chanend"
 	.byte	0
 	.byte	2
@@ -490,9 +490,9 @@ mac_s_macaddr:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	316
+	.long	318
 .asciiz "mac_set_macaddr_lite"
-	.long	427
+	.long	429
 .asciiz "mac_get_macaddr_lite"
 	.long	0
 .Lpubnames_end1:

@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_tx_client_support.c"
+	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_client_support.c"
 
 .set mac_calc_idle_slope.locnoside, 1
 
@@ -11,7 +11,7 @@
 .set mac_calc_idle_slope.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_tx_client_support.c"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_client_support.c"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
 	.section	.debug_abbrev,"",@progbits
@@ -93,7 +93,7 @@ mac_calc_idle_slope:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	340
+	.long	342
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -101,7 +101,7 @@ mac_calc_idle_slope:
 	.ascii	 "4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"
 	.byte	0
 	.short	1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/ethernet_tx_client_support.c"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_client_support.c"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -116,7 +116,7 @@ mac_calc_idle_slope:
 	.byte	1
 	.byte	4
 	.byte	1
-	.long	336
+	.long	338
 	.byte	1
 	.long	.Lfunc_begin0
 	.long	.Lfunc_end0
@@ -128,7 +128,7 @@ mac_calc_idle_slope:
 	.byte	0
 	.byte	1
 	.byte	3
-	.long	336
+	.long	338
 	.long	.Ldebug_loc0+0
 	.byte	0
 	.byte	4
@@ -222,7 +222,7 @@ mac_calc_idle_slope:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	260
+	.long	262
 .asciiz "mac_calc_idle_slope"
 	.long	0
 .Lpubnames_end1:

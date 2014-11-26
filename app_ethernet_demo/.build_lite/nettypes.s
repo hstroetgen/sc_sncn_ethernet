@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/nettypes.c"
+	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/nettypes.c"
 
 .set hton16.locnoside, 1
 
@@ -61,8 +61,8 @@
 .set hton80.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/nettypes.c"
-	.file	2 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/nettypes.h"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/nettypes.c"
+	.file	2 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/nettypes.h"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
 	.section	.debug_abbrev,"",@progbits
@@ -413,7 +413,7 @@ hton80:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	936
+	.long	938
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -421,7 +421,7 @@ hton80:
 	.ascii	 "4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"
 	.byte	0
 	.short	1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/full/nettypes.c"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/nettypes.c"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
@@ -436,7 +436,7 @@ hton80:
 	.byte	2
 	.byte	31
 	.byte	1
-	.long	343
+	.long	345
 	.byte	1
 	.long	.Lfunc_begin0
 	.long	.Lfunc_end0
@@ -448,7 +448,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	31
-	.long	412
+	.long	414
 	.long	.Ldebug_loc0+0
 	.byte	0
 	.byte	4
@@ -460,9 +460,9 @@ hton80:
 	.byte	4
 	.byte	5
 	.byte	6
-	.long	290
+	.long	292
 	.byte	7
-	.long	307
+	.long	309
 	.byte	1
 	.byte	0
 	.byte	8
@@ -472,7 +472,7 @@ hton80:
 	.byte	9
 	.ascii	 "data"
 	.byte	0
-	.long	310
+	.long	312
 	.byte	2
 	.byte	24
 	.byte	2
@@ -481,7 +481,7 @@ hton80:
 	.byte	1
 	.byte	0
 	.byte	10
-	.long	322
+	.long	324
 	.ascii	 "n16_t"
 	.byte	0
 	.byte	2
@@ -494,7 +494,7 @@ hton80:
 	.byte	2
 	.byte	38
 	.byte	1
-	.long	412
+	.long	414
 	.byte	1
 	.long	.Lfunc_begin1
 	.long	.Lfunc_end1
@@ -507,7 +507,7 @@ hton80:
 	.byte	7
 	.byte	2
 	.byte	10
-	.long	390
+	.long	392
 	.ascii	 "u16_t"
 	.byte	0
 	.byte	2
@@ -520,7 +520,7 @@ hton80:
 	.byte	2
 	.byte	42
 	.byte	1
-	.long	475
+	.long	477
 	.byte	1
 	.long	.Lfunc_begin2
 	.long	.Lfunc_end2
@@ -533,7 +533,7 @@ hton80:
 	.byte	7
 	.byte	4
 	.byte	10
-	.long	459
+	.long	461
 	.ascii	 "u32_t"
 	.byte	0
 	.byte	2
@@ -546,7 +546,7 @@ hton80:
 	.byte	2
 	.byte	47
 	.byte	1
-	.long	605
+	.long	607
 	.byte	1
 	.long	.Lfunc_begin3
 	.long	.Lfunc_end3
@@ -558,7 +558,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	47
-	.long	885
+	.long	887
 	.byte	2
 	.byte	145
 	.byte	0
@@ -570,7 +570,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	48
-	.long	588
+	.long	590
 	.byte	8
 	.long	0
 	.long	0
@@ -582,7 +582,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	49
-	.long	898
+	.long	900
 	.long	.Ldebug_loc2+0
 	.byte	0
 	.byte	0
@@ -593,7 +593,7 @@ hton80:
 	.byte	5
 	.byte	8
 	.byte	10
-	.long	588
+	.long	590
 	.ascii	 "u64_t"
 	.byte	0
 	.byte	2
@@ -606,7 +606,7 @@ hton80:
 	.byte	2
 	.byte	56
 	.byte	1
-	.long	699
+	.long	701
 	.byte	1
 	.long	.Lfunc_begin4
 	.long	.Lfunc_end4
@@ -618,13 +618,13 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	56
-	.long	475
+	.long	477
 	.long	.Ldebug_loc7+0
 	.byte	0
 	.byte	6
-	.long	290
+	.long	292
 	.byte	7
-	.long	307
+	.long	309
 	.byte	3
 	.byte	0
 	.byte	8
@@ -634,7 +634,7 @@ hton80:
 	.byte	9
 	.ascii	 "data"
 	.byte	0
-	.long	666
+	.long	668
 	.byte	2
 	.byte	25
 	.byte	2
@@ -643,7 +643,7 @@ hton80:
 	.byte	1
 	.byte	0
 	.byte	10
-	.long	678
+	.long	680
 	.ascii	 "n32_t"
 	.byte	0
 	.byte	2
@@ -656,7 +656,7 @@ hton80:
 	.byte	2
 	.byte	66
 	.byte	1
-	.long	839
+	.long	841
 	.byte	1
 	.long	.Lfunc_begin5
 	.long	.Lfunc_end5
@@ -668,7 +668,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	66
-	.long	926
+	.long	928
 	.byte	2
 	.byte	145
 	.byte	16
@@ -680,7 +680,7 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	67
-	.long	839
+	.long	841
 	.byte	2
 	.byte	145
 	.byte	4
@@ -692,15 +692,15 @@ hton80:
 	.byte	0
 	.byte	2
 	.byte	68
-	.long	898
+	.long	900
 	.long	.Ldebug_loc9+0
 	.byte	0
 	.byte	0
 	.byte	0
 	.byte	6
-	.long	290
+	.long	292
 	.byte	7
-	.long	307
+	.long	309
 	.byte	9
 	.byte	0
 	.byte	8
@@ -710,7 +710,7 @@ hton80:
 	.byte	9
 	.ascii	 "data"
 	.byte	0
-	.long	806
+	.long	808
 	.byte	2
 	.byte	27
 	.byte	2
@@ -719,15 +719,15 @@ hton80:
 	.byte	1
 	.byte	0
 	.byte	10
-	.long	818
+	.long	820
 	.ascii	 "n80_t"
 	.byte	0
 	.byte	2
 	.byte	28
 	.byte	6
-	.long	290
+	.long	292
 	.byte	7
-	.long	307
+	.long	309
 	.byte	7
 	.byte	0
 	.byte	8
@@ -737,7 +737,7 @@ hton80:
 	.byte	9
 	.ascii	 "data"
 	.byte	0
-	.long	852
+	.long	854
 	.byte	2
 	.byte	26
 	.byte	2
@@ -746,7 +746,7 @@ hton80:
 	.byte	1
 	.byte	0
 	.byte	10
-	.long	864
+	.long	866
 	.ascii	 "n64_t"
 	.byte	0
 	.byte	2
@@ -763,7 +763,7 @@ hton80:
 	.byte	9
 	.ascii	 "data"
 	.byte	0
-	.long	806
+	.long	808
 	.byte	2
 	.byte	19
 	.byte	2
@@ -772,7 +772,7 @@ hton80:
 	.byte	1
 	.byte	0
 	.byte	10
-	.long	905
+	.long	907
 	.ascii	 "u80_t"
 	.byte	0
 	.byte	2
@@ -1025,17 +1025,17 @@ hton80:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	242
+	.long	244
 .asciiz "hton16"
-	.long	356
+	.long	358
 .asciiz "ntoh16"
-	.long	712
+	.long	714
 .asciiz "hton80"
-	.long	488
+	.long	490
 .asciiz "ntoh64"
-	.long	425
+	.long	427
 .asciiz "ntoh32"
-	.long	618
+	.long	620
 .asciiz "hton32"
 	.long	0
 .Lpubnames_end1:

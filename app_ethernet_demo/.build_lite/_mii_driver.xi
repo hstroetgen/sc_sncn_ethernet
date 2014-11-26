@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_driver.xc"
-# 6 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_driver.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_driver.xc"
+# 6 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_driver.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -300,10 +300,10 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 7 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_driver.xc" 2
-# 8 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_driver.xc"
-# 1 "_ethernet_conf_derived.h" 1
-# 3 "_ethernet_conf_derived.h"
+# 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_driver.xc" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_driver.xc"
+# 1 "ethernet_conf_derived_p1.h" 1
+# 3 "ethernet_conf_derived_p1.h"
 # 1 "platform.h" 1 3
 # 21 "platform.h" 3
 # 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 1
@@ -313,12 +313,12 @@ extern int __builtin_getid(void);
 # 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
 extern tileref tile[2];
 # 22 "platform.h" 2 3
-# 4 "_ethernet_conf_derived.h" 2
-# 6 "_ethernet_conf_derived.h"
+# 4 "ethernet_conf_derived_p1.h" 2
+# 6 "ethernet_conf_derived_p1.h"
 # 1 "ethernet_conf.h" 1
-# 7 "_ethernet_conf_derived.h" 2
-# 9 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_driver.xc" 2
-# 10 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_driver.xc"
+# 7 "ethernet_conf_derived_p1.h" 2
+# 9 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_driver.xc" 2
+# 10 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_driver.xc"
 # 1 "_mii_driver.h" 1
 # 4 "_mii_driver.h"
 # 1 "_mii.h" 1
@@ -341,7 +341,7 @@ typedef out buffered port:8 out_buffered_port_8_t;
 typedef out buffered port:16 out_buffered_port_16_t;
 typedef out buffered port:32 out_buffered_port_32_t;
 # 6 "_mii.h" 2
-# 1 "_ethernet_conf_derived.h" 1
+# 1 "ethernet_conf_derived_p1.h" 1
 # 7 "_mii.h" 2
 # 19 "_mii.h"
 typedef struct _mii_interface_full_t {
@@ -382,15 +382,15 @@ extern void _mii_initialise(out port ?p_mii_resetn,
 extern void _mii_driver(_mii_interface_lite_t &m, chanend cIn, chanend cOut);
 
 extern void _phy_reset(out port p_mii_resetn, timer tmr);
-# 11 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_driver.xc" 2
+# 11 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_driver.xc" 2
 # 1 "_mii_lld.h" 1
 extern unsigned int _tailValues[4];
 extern void _miiLLD(buffered in port:32 rxd, in port rxdv, buffered out port:32 txd,
                    chanend INchannel, chanend OUTchannel, in port timing,
                    timer tmr);
-# 12 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_driver.xc" 2
+# 12 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_driver.xc" 2
 # 1 "_mii.h" 1
-# 13 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_driver.xc" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_driver.xc" 2
 # 1 "_mii_lite.h" 1
 # 4 "_mii_lite.h"
 # 1 "xs1.h" 1 3
@@ -404,7 +404,7 @@ extern void _miiLLD(buffered in port:32 rxd, in port rxdv, buffered out port:32 
 extern void _mii_port_init(_mii_interface_lite_t &m);
 # 17 "_mii_lite.h"
 extern void _miiTimeStampInit(unsigned offset);
-# 14 "/home/atena/workspace_ethernet_new_replicated/_module_ethernet_dual/src/lite/_mii_driver.xc" 2
+# 14 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p1/_mii_driver.xc" 2
 
 void _mii_initialise(out port ?p_mii_resetn,
                    _mii_interface_lite_t &m)
