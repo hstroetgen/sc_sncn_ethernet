@@ -73,7 +73,7 @@
 #else
 // Default to CIRCLE
 
-#define ETHERNET_DEFAULT_TILE0 tile[1]
+#define ETHERNET_DEFAULT_TILE_P1 tile[1]
 #define PORT_ETH_RXCLK0 on tile[1]: XS1_PORT_1J
 #define PORT_ETH_RXD0 on tile[1]: XS1_PORT_4E
 #define PORT_ETH_TXD0 on tile[1]: XS1_PORT_4F
@@ -87,7 +87,7 @@
 
 
 //TRIANGLE
-#define ETHERNET_DEFAULT_TILE1 tile[0]
+#define ETHERNET_DEFAULT_TILE_P2 tile[0]
 #define PORT_ETH_RXCLK1 on tile[0]: XS1_PORT_1J
 #define PORT_ETH_RXD1 on tile[0]: XS1_PORT_4E
 #define PORT_ETH_TXD1 on tile[0]: XS1_PORT_4F

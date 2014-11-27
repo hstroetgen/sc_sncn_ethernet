@@ -16,7 +16,7 @@
  *
  *************************************************************************/
 
-#define CONFIG_FULL
+//#define CONFIG_FULL
 
 #include <xs1.h>
 #include <xclib.h>
@@ -24,8 +24,8 @@
 #include <platform.h>
 #include <stdlib.h>
 #include "ethernet_conf.h"
-#include "_ethernet.h"
-#include "ethernet.h"
+#include "ethernet_p1.h"
+#include "ethernet_p2.h"
 #include "otp_board_info.h"
 #include "ethernet_board_support.h"
 #include "checksum.h"
@@ -48,21 +48,21 @@ void xscope_user_init(void) {
 
 // These ports are for accessing the OTP memory
 
-on ETHERNET_DEFAULT_TILE0: otp_ports_t otp_ports0 = OTP_PORTS_INITIALIZER0;
-on ETHERNET_DEFAULT_TILE1: otp_ports_t otp_ports1 = OTP_PORTS_INITIALIZER1;
+on ETHERNET_DEFAULT_TILE_P1: otp_ports_t otp_ports_p1 = OTP_PORTS_INITIALIZER_P1;
+on ETHERNET_DEFAULT_TILE_P2: otp_ports_t otp_ports_p2 = OTP_PORTS_INITIALIZER_P2;
 
 // Here are the port definitions required by ethernet
 // The intializers are taken from the ethernet_board_support.h header for
 // XMOS dev boards. If you are using a different board you will need to
 // supply explicit port structure intializers for these values
-smi_interface_t smi0 = ETHERNET_DEFAULT_SMI_INIT0;
-smi_interface_t smi1 = ETHERNET_DEFAULT_SMI_INIT1;
+smi_interface_t smi_p1 = ETHERNET_DEFAULT_SMI_INIT_P1;
+smi_interface_t smi_p2 = ETHERNET_DEFAULT_SMI_INIT_P2;
 
-_mii_interface_t mii0 = ETHERNET_DEFAULT_MII_INIT0;
-mii_interface_t mii1 = ETHERNET_DEFAULT_MII_INIT1;
+_mii_interface_t mii_p1 = ETHERNET_DEFAULT_MII_INIT_P1;
+mii_interface_t mii_p2 = ETHERNET_DEFAULT_MII_INIT_P2;
 
-_ethernet_reset_interface_t eth_rst0 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT0;
-ethernet_reset_interface_t eth_rst1 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT1;
+_ethernet_reset_interface_t eth_rst_p1 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P1;
+ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2;
 
 //::ip_address_define
 // NOTE: YOU MAY NEED TO REDEFINE THIS TO AN IP ADDRESS THAT WORKS
@@ -70,7 +70,6 @@ ethernet_reset_interface_t eth_rst1 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT1;
 #define OWN_IP_ADDRESS0 {192, 168, 101, 63}
 #define OWN_IP_ADDRESS1 {192, 168, 101, 65}
 //::
-
 
 unsigned char ethertype_ip0[] = {0x08, 0x00};
 unsigned char ethertype_arp0[] = {0x08, 0x06};
@@ -137,7 +136,6 @@ int _mac_custom_filter(unsigned int data[]){
     return 0;
 }
 //::
-
 
 int build_arp_response0(unsigned char rxbuf[], unsigned int txbuf[], const unsigned char own_mac_addr[6])
 {
@@ -297,7 +295,6 @@ int is_valid_arp_packet1(const unsigned char rxbuf[], int nbytes)
   return 1;
 }
 
-
 int build_icmp_response0(unsigned char rxbuf[], unsigned char txbuf[], const unsigned char own_mac_addr[6])
 {
   static const unsigned char own_ip_addr[4] = OWN_IP_ADDRESS0;
@@ -371,7 +368,6 @@ int build_icmp_response0(unsigned char rxbuf[], unsigned char txbuf[], const uns
   }
   return pad;
 }
-
 
 int build_icmp_response1(unsigned char rxbuf[], unsigned char txbuf[], const unsigned char own_mac_addr[6])
 {
@@ -541,7 +537,6 @@ int is_valid_icmp_packet1(const unsigned char rxbuf[], int nbytes)
   return 1;
 }
 
-
 void demo0(chanend tx, chanend rx)
 {
   unsigned int rxbuf[1600/4];
@@ -556,7 +551,7 @@ void demo0(chanend tx, chanend rx)
   _mac_set_custom_filter(rx, 0x1);
 #endif
   //::
-  printstr("Test started\n");
+  printstr("Test started on P1\n");
 
   //::mainloop
   while (1)
@@ -590,7 +585,6 @@ void demo0(chanend tx, chanend rx)
   }
 }
 
-
 void demo1(chanend tx, chanend rx)
 {
   unsigned int rxbuf[1600/4];
@@ -605,7 +599,7 @@ void demo1(chanend tx, chanend rx)
   _mac_set_custom_filter(rx, 0x1);
 #endif
   //::
-  printstr("Test started\n");
+  printstr("Test started on P2\n");
 
   //::mainloop
   while (1)
@@ -645,40 +639,39 @@ int main()
   chan rx1[1], tx1[1];
   par
     {
+
+      //::demo
+        on ETHERNET_DEFAULT_TILE_P1: demo0(tx0[0], rx0[0]);
+        on ETHERNET_DEFAULT_TILE_P1: demo1(tx1[0], rx1[0]);
+
       //::ethernet
-       on ETHERNET_DEFAULT_TILE0:
+       on ETHERNET_DEFAULT_TILE_P1:
       {
         char mac_address[6];
-        otp_board_info_get_mac(otp_ports0, 0, mac_address);
-        eth_phy_reset_p1(eth_rst0);
-        smi_init(smi0);
-        eth_phy_config(1, smi0);
-        _ethernet_server(mii0,
+        otp_board_info_get_mac(otp_ports_p1, 0, mac_address);
+        eth_phy_reset_p1(eth_rst_p1);
+        smi_init(smi_p1);
+        eth_phy_config(1, smi_p1);
+        _ethernet_server(mii_p1,
                         null,
                         mac_address,
                         rx0, 1,
                         tx0, 1);
       }
 
-      on ETHERNET_DEFAULT_TILE1:
+      on ETHERNET_DEFAULT_TILE_P2:
       {
         char mac_address[6];
-        otp_board_info_get_mac(otp_ports1, 0, mac_address);
-        eth_phy_reset_p2(eth_rst1);
-        smi_init(smi1);
-        eth_phy_config(1, smi1);
-        ethernet_server(mii1,
+        otp_board_info_get_mac(otp_ports_p2, 0, mac_address);
+        eth_phy_reset_p2(eth_rst_p2);
+        smi_init(smi_p2);
+        eth_phy_config(1, smi_p2);
+        ethernet_server(mii_p2,
                         null,
                         mac_address,
                         rx1, 1,
                         tx1, 1);
       }
-
-
-      //::demo
-    on tile[0]: demo0(tx0[0], rx0[0]);
-    on tile[1]: demo1(tx1[0], rx1[0]);
-      //::
     }
 
 	return 0;

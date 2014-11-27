@@ -345,10 +345,10 @@ int printstrln(const char (& alias s)[]);
 # 10 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
 # 1 "mii_driver.h" 1
 # 4 "mii_driver.h"
-# 1 "mii.h" 1
-# 4 "mii.h"
+# 1 "mii_p2.h" 1
+# 4 "mii_p2.h"
 # 1 "xs1.h" 1 3
-# 5 "mii.h" 2
+# 5 "mii_p2.h" 2
 # 1 "xccompat.h" 1 3
 # 201 "xccompat.h" 3
 typedef streaming chanend streaming_chanend_t;
@@ -364,7 +364,7 @@ typedef out buffered port:4 out_buffered_port_4_t;
 typedef out buffered port:8 out_buffered_port_8_t;
 typedef out buffered port:16 out_buffered_port_16_t;
 typedef out buffered port:32 out_buffered_port_32_t;
-# 6 "mii.h" 2
+# 6 "mii_p2.h" 2
 # 1 "ethernet_conf_derived_p2.h" 1
 # 3 "ethernet_conf_derived_p2.h"
 # 1 "platform.h" 1 3
@@ -380,8 +380,8 @@ extern tileref tile[2];
 # 6 "ethernet_conf_derived_p2.h"
 # 1 "ethernet_conf.h" 1
 # 7 "ethernet_conf_derived_p2.h" 2
-# 7 "mii.h" 2
-# 19 "mii.h"
+# 7 "mii_p2.h" 2
+# 19 "mii_p2.h"
 typedef struct mii_interface_full_t {
     __clock_t  clk_mii_rx;
     __clock_t  clk_mii_tx;
@@ -408,7 +408,7 @@ typedef struct mii_interface_lite_t {
     in port p_mii_txclk;
     out port p_mii_txen;
     out buffered port:32 p_mii_txd;
-# 47 "mii.h"
+# 47 "mii_p2.h"
     in port p_mii_timing;
 
 } mii_interface_lite_t;
@@ -421,7 +421,7 @@ extern void mii_driver(mii_interface_lite_t &m, chanend cIn, chanend cOut);
 
 extern void phy_reset(out port p_mii_resetn, timer tmr);
 # 11 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
-# 1 "mii.h" 1
+# 1 "mii_p2.h" 1
 # 12 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_single_server.xc" 2
 # 1 "mii_lite.h" 1
 # 4 "mii_lite.h"

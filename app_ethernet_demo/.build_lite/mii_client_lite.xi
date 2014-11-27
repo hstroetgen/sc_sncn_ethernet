@@ -300,8 +300,8 @@ unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
 # 2 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_client_lite.xc" 2
-# 1 "ethernet_rx_client.h" 1
-# 9 "ethernet_rx_client.h"
+# 1 "ethernet_rx_client_p2.h" 1
+# 9 "ethernet_rx_client_p2.h"
 # 1 "ethernet_conf_derived_p2.h" 1
 # 3 "ethernet_conf_derived_p2.h"
 # 1 "platform.h" 1 3
@@ -317,10 +317,9 @@ extern tileref tile[2];
 # 6 "ethernet_conf_derived_p2.h"
 # 1 "ethernet_conf.h" 1
 # 7 "ethernet_conf_derived_p2.h" 2
-# 10 "ethernet_rx_client.h" 2
-# 11 "ethernet_rx_client.h"
-# 1 "ethernet_rx_client_lite.h" 1
-# 20 "ethernet_rx_client_lite.h"
+# 10 "ethernet_rx_client_p2.h" 2
+# 1 "ethernet_rx_client_lite_p2.h" 1
+# 20 "ethernet_rx_client_lite_p2.h"
 # 1 "xccompat.h" 1 3
 # 201 "xccompat.h" 3
 typedef streaming chanend streaming_chanend_t;
@@ -336,15 +335,15 @@ typedef out buffered port:4 out_buffered_port_4_t;
 typedef out buffered port:8 out_buffered_port_8_t;
 typedef out buffered port:16 out_buffered_port_16_t;
 typedef out buffered port:32 out_buffered_port_32_t;
-# 21 "ethernet_rx_client_lite.h" 2
-# 46 "ethernet_rx_client_lite.h"
+# 21 "ethernet_rx_client_lite_p2.h" 2
+# 46 "ethernet_rx_client_lite_p2.h"
 #pragma select handler
 
 void mac_rx_lite(chanend c_mac,
                  unsigned char buffer[],
                  unsigned int &len ,
                  unsigned int &src_port );
-# 71 "ethernet_rx_client_lite.h"
+# 71 "ethernet_rx_client_lite_p2.h"
 #pragma select handler
 
 void safe_mac_rx_lite(chanend c_mac,
@@ -352,19 +351,19 @@ void safe_mac_rx_lite(chanend c_mac,
                       unsigned int &len ,
                       unsigned int &src_port ,
                       int n);
-# 12 "ethernet_rx_client.h" 2
-# 1 "ethernet_rx_client_full.h" 1
-# 20 "ethernet_rx_client_full.h"
+# 11 "ethernet_rx_client_p2.h" 2
+# 1 "ethernet_rx_client_full_p2.h" 1
+# 20 "ethernet_rx_client_full_p2.h"
 # 1 "xccompat.h" 1 3
-# 21 "ethernet_rx_client_full.h" 2
-# 24 "ethernet_rx_client_full.h"
+# 21 "ethernet_rx_client_full_p2.h" 2
+# 24 "ethernet_rx_client_full_p2.h"
 #pragma select handler
 
 void mac_rx_full(chanend c_mac,
                  unsigned char buffer[],
                  unsigned int &len ,
                  unsigned int &src_port );
-# 33 "ethernet_rx_client_full.h"
+# 33 "ethernet_rx_client_full_p2.h"
 #pragma select handler
 
 void safe_mac_rx_full(chanend c_mac,
@@ -372,7 +371,7 @@ void safe_mac_rx_full(chanend c_mac,
                       unsigned int &len ,
                       unsigned int &src_port ,
                       int n);
-# 59 "ethernet_rx_client_full.h"
+# 59 "ethernet_rx_client_full_p2.h"
 #pragma select handler
 
 void mac_rx_timed(chanend c_mac,
@@ -380,7 +379,7 @@ void mac_rx_timed(chanend c_mac,
                   unsigned int &len ,
                   unsigned int &time ,
                   unsigned int &src_port );
-# 86 "ethernet_rx_client_full.h"
+# 86 "ethernet_rx_client_full_p2.h"
 #pragma select handler
 
 void safe_mac_rx_timed(chanend c_mac,
@@ -389,15 +388,15 @@ void safe_mac_rx_timed(chanend c_mac,
                        unsigned int &time ,
                        unsigned int &src_port ,
                        int n);
-# 106 "ethernet_rx_client_full.h"
+# 106 "ethernet_rx_client_full_p2.h"
 void mac_set_drop_packets(chanend c_mac_svr, int x);
-# 113 "ethernet_rx_client_full.h"
+# 113 "ethernet_rx_client_full_p2.h"
 void mac_set_queue_size(chanend c_mac_svr, int x);
-# 124 "ethernet_rx_client_full.h"
+# 124 "ethernet_rx_client_full_p2.h"
 void mac_set_custom_filter(chanend c_mac_svr, int x);
-# 131 "ethernet_rx_client_full.h"
+# 131 "ethernet_rx_client_full_p2.h"
 void mac_get_link_counters(chanend mac_svr,  int &overflow );
-# 141 "ethernet_rx_client_full.h"
+# 141 "ethernet_rx_client_full_p2.h"
 void mac_get_global_counters(chanend mac_svr,
 		                     unsigned &mii_overflow ,
 		                     unsigned &bad_length ,
@@ -405,9 +404,9 @@ void mac_get_global_counters(chanend mac_svr,
 		                     unsigned &filtered ,
 		                     unsigned &bad_crc
 		                     );
-# 155 "ethernet_rx_client_full.h"
+# 155 "ethernet_rx_client_full_p2.h"
 void mac_get_tile_timer_offset(chanend mac_svr,  int &offset );
-# 171 "ethernet_rx_client_full.h"
+# 171 "ethernet_rx_client_full_p2.h"
 #pragma select handler
 
 void mac_rx_offset2(chanend c_mac,
@@ -419,15 +418,15 @@ void mac_rx_offset2(chanend c_mac,
 
 
 void mac_request_status_packets(chanend c_mac);
-# 13 "ethernet_rx_client.h" 2
-# 40 "ethernet_rx_client.h"
+# 12 "ethernet_rx_client_p2.h" 2
+# 39 "ethernet_rx_client_p2.h"
 #pragma select handler
 
 void mac_rx(chanend c_mac,
             unsigned char buffer[],
             unsigned int &len ,
             unsigned int &src_port );
-# 67 "ethernet_rx_client.h"
+# 66 "ethernet_rx_client_p2.h"
 #pragma select handler
 
 void safe_mac_rx(chanend c_mac,
@@ -436,50 +435,50 @@ void safe_mac_rx(chanend c_mac,
                  unsigned int &src_port ,
                  int n);
 # 3 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_client_lite.xc" 2
-# 1 "ethernet_tx_client.h" 1
-# 20 "ethernet_tx_client.h"
+# 1 "ethernet_tx_client_p2.h" 1
+# 20 "ethernet_tx_client_p2.h"
 # 1 "ethernet_conf_derived_p2.h" 1
-# 21 "ethernet_tx_client.h" 2
-# 22 "ethernet_tx_client.h"
-# 1 "ethernet_tx_client_lite.h" 1
-# 19 "ethernet_tx_client_lite.h"
+# 21 "ethernet_tx_client_p2.h" 2
+# 22 "ethernet_tx_client_p2.h"
+# 1 "ethernet_tx_client_lite_p2.h" 1
+# 19 "ethernet_tx_client_lite_p2.h"
 # 1 "xccompat.h" 1 3
-# 20 "ethernet_tx_client_lite.h" 2
-# 35 "ethernet_tx_client_lite.h"
+# 20 "ethernet_tx_client_lite_p2.h" 2
+# 35 "ethernet_tx_client_lite_p2.h"
 void mac_tx_lite(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 49 "ethernet_tx_client_lite.h"
+# 49 "ethernet_tx_client_lite_p2.h"
 int mac_get_macaddr_lite(chanend c_mac, unsigned char macaddr[]);
-# 23 "ethernet_tx_client.h" 2
-# 1 "ethernet_tx_client_full.h" 1
-# 19 "ethernet_tx_client_full.h"
+# 23 "ethernet_tx_client_p2.h" 2
+# 1 "ethernet_tx_client_full_p2.h" 1
+# 19 "ethernet_tx_client_full_p2.h"
 # 1 "xccompat.h" 1 3
-# 20 "ethernet_tx_client_full.h" 2
-# 35 "ethernet_tx_client_full.h"
+# 20 "ethernet_tx_client_full_p2.h" 2
+# 35 "ethernet_tx_client_full_p2.h"
 void mac_tx_full(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 54 "ethernet_tx_client_full.h"
+# 54 "ethernet_tx_client_full_p2.h"
 void mac_tx_offset2(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 78 "ethernet_tx_client_full.h"
+# 78 "ethernet_tx_client_full_p2.h"
 void mac_tx_timed(chanend c_mac, unsigned int buffer[], int nbytes, unsigned int &time, int ifnum);
-# 94 "ethernet_tx_client_full.h"
+# 94 "ethernet_tx_client_full_p2.h"
 int mac_get_macaddr_full(chanend c_mac, unsigned char macaddr[]);
-# 102 "ethernet_tx_client_full.h"
+# 102 "ethernet_tx_client_full_p2.h"
 void mac_initialize_routing_table(chanend c);
-# 109 "ethernet_tx_client_full.h"
+# 109 "ethernet_tx_client_full_p2.h"
 void send_avb_1722_router_cmd(chanend c,
                               unsigned key0,
                               unsigned key1,
                               unsigned link,
                               unsigned hash);
-# 129 "ethernet_tx_client_full.h"
+# 129 "ethernet_tx_client_full_p2.h"
 void mac_set_qav_bandwidth(chanend c_mac,
                            int bits_per_second);
-# 135 "ethernet_tx_client_full.h"
+# 135 "ethernet_tx_client_full_p2.h"
 #pragma select handler
 void mac_check_link_client(chanend c, unsigned char &linkNum, int &status);
-# 24 "ethernet_tx_client.h" 2
-# 37 "ethernet_tx_client.h"
+# 24 "ethernet_tx_client_p2.h" 2
+# 37 "ethernet_tx_client_p2.h"
 void mac_tx(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 52 "ethernet_tx_client.h"
+# 52 "ethernet_tx_client_p2.h"
 int mac_get_macaddr(chanend c_mac, unsigned char macaddr[]);
 # 4 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/lite_p2/mii_client_lite.xc" 2
 # 1 "ethernet_conf_derived_p2.h" 1

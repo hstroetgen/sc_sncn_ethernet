@@ -322,23 +322,6 @@ typedef out buffered port:8 out_buffered_port_8_t;
 typedef out buffered port:16 out_buffered_port_16_t;
 typedef out buffered port:32 out_buffered_port_32_t;
 # 11 "smi.h" 2
-# 13 "smi.h"
-# 1 "ethernet_conf_derived.h" 1
-# 3 "ethernet_conf_derived.h"
-# 1 "platform.h" 1 3
-# 21 "platform.h" 3
-# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h" 1
-# 4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h"
-# 1 "xs1.h" 1 3
-# 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h" 2
-# 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SLICEKIT-L2.h"
-extern tileref tile[2];
-# 22 "platform.h" 2 3
-# 4 "ethernet_conf_derived.h" 2
-# 6 "ethernet_conf_derived.h"
-# 1 "ethernet_conf.h" 1
-# 7 "ethernet_conf_derived.h" 2
-# 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
 # 18 "smi.h" 2

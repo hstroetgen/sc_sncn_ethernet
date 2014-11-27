@@ -724,22 +724,22 @@ int _safe_system(const char (&?string)[]);
 # 26 "../src/demo.xc" 2
 # 1 "ethernet_conf.h" 1
 # 27 "../src/demo.xc" 2
-# 1 "_ethernet.h" 1
-# 4 "_ethernet.h"
-# 1 "_ethernet_conf_derived.h" 1
-# 3 "_ethernet_conf_derived.h"
+# 1 "ethernet_p1.h" 1
+# 4 "ethernet_p1.h"
+# 1 "ethernet_conf_derived_p1.h" 1
+# 3 "ethernet_conf_derived_p1.h"
 # 1 "platform.h" 1 3
-# 4 "_ethernet_conf_derived.h" 2
-# 6 "_ethernet_conf_derived.h"
+# 4 "ethernet_conf_derived_p1.h" 2
+# 6 "ethernet_conf_derived_p1.h"
 # 1 "ethernet_conf.h" 1
-# 7 "_ethernet_conf_derived.h" 2
-# 5 "_ethernet.h" 2
+# 7 "ethernet_conf_derived_p1.h" 2
+# 5 "ethernet_p1.h" 2
 # 1 "platform.h" 1 3
-# 6 "_ethernet.h" 2
-# 1 "_mii.h" 1
-# 4 "_mii.h"
+# 6 "ethernet_p1.h" 2
+# 1 "mii_p1.h" 1
+# 4 "mii_p1.h"
 # 1 "xs1.h" 1 3
-# 5 "_mii.h" 2
+# 5 "mii_p1.h" 2
 # 1 "xccompat.h" 1 3
 # 201 "xccompat.h" 3
 typedef streaming chanend streaming_chanend_t;
@@ -755,10 +755,10 @@ typedef out buffered port:4 out_buffered_port_4_t;
 typedef out buffered port:8 out_buffered_port_8_t;
 typedef out buffered port:16 out_buffered_port_16_t;
 typedef out buffered port:32 out_buffered_port_32_t;
-# 6 "_mii.h" 2
-# 1 "_ethernet_conf_derived.h" 1
-# 7 "_mii.h" 2
-# 19 "_mii.h"
+# 6 "mii_p1.h" 2
+# 1 "ethernet_conf_derived_p1.h" 1
+# 7 "mii_p1.h" 2
+# 19 "mii_p1.h"
 typedef struct _mii_interface_full_t {
     __clock_t  clk_mii_rx;
     __clock_t  clk_mii_tx;
@@ -785,26 +785,17 @@ typedef struct _mii_interface_lite_t {
     in port p_mii_txclk;
     out port p_mii_txen;
     out buffered port:32 p_mii_txd;
-# 47 "_mii.h"
+# 47 "mii_p1.h"
     in port p_mii_timing;
 
 } _mii_interface_lite_t;
-# 7 "_ethernet.h" 2
+# 7 "ethernet_p1.h" 2
 # 1 "smi.h" 1
 # 9 "smi.h"
 # 1 "xs1.h" 1 3
 # 10 "smi.h" 2
 # 1 "xccompat.h" 1 3
 # 11 "smi.h" 2
-# 13 "smi.h"
-# 1 "ethernet_conf_derived.h" 1
-# 3 "ethernet_conf_derived.h"
-# 1 "platform.h" 1 3
-# 4 "ethernet_conf_derived.h" 2
-# 6 "ethernet_conf_derived.h"
-# 1 "ethernet_conf.h" 1
-# 7 "ethernet_conf_derived.h" 2
-# 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
 # 18 "smi.h" 2
@@ -831,31 +822,31 @@ int smi_check_link_state( smi_interface_t &smi );
 
 
 int smi_reg( smi_interface_t &smi , unsigned reg, unsigned val, int inning);
-# 8 "_ethernet.h" 2
-# 1 "_ethernet_server.h" 1
-# 9 "_ethernet_server.h"
+# 8 "ethernet_p1.h" 2
+# 1 "ethernet_server_p1.h" 1
+# 9 "ethernet_server_p1.h"
 # 1 "smi.h" 1
-# 10 "_ethernet_server.h" 2
-# 1 "_mii_full.h" 1
-# 8 "_mii_full.h"
+# 10 "ethernet_server_p1.h" 2
+# 1 "mii_full_p1.h" 1
+# 8 "mii_full_p1.h"
 # 1 "xs1.h" 1 3
-# 9 "_mii_full.h" 2
+# 9 "mii_full_p1.h" 2
 # 1 "xccompat.h" 1 3
-# 10 "_mii_full.h" 2
-# 1 "_mii.h" 1
-# 11 "_mii_full.h" 2
-# 12 "_mii_full.h"
-# 1 "_ethernet_conf_derived.h" 1
-# 13 "_mii_full.h" 2
-# 79 "_mii_full.h"
-# 1 "_mii_queue.h" 1
-# 9 "_mii_queue.h"
+# 10 "mii_full_p1.h" 2
+# 1 "mii_p1.h" 1
+# 11 "mii_full_p1.h" 2
+# 12 "mii_full_p1.h"
+# 1 "ethernet_conf_derived_p1.h" 1
+# 13 "mii_full_p1.h" 2
+# 79 "mii_full_p1.h"
+# 1 "mii_queue_p1.h" 1
+# 9 "mii_queue_p1.h"
 # 1 "xccompat.h" 1 3
-# 10 "_mii_queue.h" 2
-# 11 "_mii_queue.h"
-# 1 "_ethernet_conf_derived.h" 1
-# 12 "_mii_queue.h" 2
-# 26 "_mii_queue.h"
+# 10 "mii_queue_p1.h" 2
+# 11 "mii_queue_p1.h"
+# 1 "ethernet_conf_derived_p1.h" 1
+# 12 "mii_queue_p1.h" 2
+# 26 "mii_queue_p1.h"
 typedef struct mii_ts_queue_t {
   int lock;
   int rdIndex;
@@ -885,7 +876,7 @@ int _get_and_dec_transmit_count(int buf_num);
 
 
 int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
-# 80 "_mii_full.h" 2
+# 80 "mii_full_p1.h" 2
 
 
 void _mii_init_full( _mii_interface_full_t &m );
@@ -914,7 +905,7 @@ typedef struct _mii_packet_t {
 
   unsigned int data[( (1518) +3)/4];
 } _mii_packet_t;
-# 135 "_mii_full.h"
+# 135 "mii_full_p1.h"
 inline int _mii_packet_get_length (int buf) { int x; __asm__("ldw %0,%1[" "0" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_length (int buf, int x) { __asm__("stw %1, %0[" "0" "]"::"r"(buf),"r"(x)); }
 inline int _mii_packet_get_timestamp (int buf) { int x; __asm__("ldw %0,%1[" "1" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_timestamp (int buf, int x) { __asm__("stw %1, %0[" "1" "]"::"r"(buf),"r"(x)); }
 inline int _mii_packet_get_filter_result (int buf) { int x; __asm__("ldw %0,%1[" "2" "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_filter_result (int buf, int x) { __asm__("stw %1, %0[" "2" "]"::"r"(buf),"r"(x)); }
@@ -939,7 +930,7 @@ inline int _mii_packet_get_data_word(int data, int n) {
   __asm__("ldw %0,%1[%2]":"=r"(x):"r"(data),"r"(n));
   return x;
 }
-# 170 "_mii_full.h"
+# 170 "mii_full_p1.h"
 inline void _mii_packet_set_data(int buf, int n, int v) {
   __asm__("stw %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+ 9 ));
 }
@@ -954,33 +945,33 @@ inline void _mii_packet_set_data_byte(int buf, int n, int v) {
 
 
 void _mii_rx_pins(
-# 187 "_mii_full.h"
+# 187 "mii_full_p1.h"
 		 unsigned rxmem_lp,
 		 in port p_mii_rxdv,
 		 in buffered port:32 p_mii_rxd,
 		 int ifnum,
 		 streaming chanend c);
-# 205 "_mii_full.h"
+# 205 "mii_full_p1.h"
 void _mii_tx_pins(
-# 215 "_mii_full.h"
+# 215 "mii_full_p1.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t &ts_queue,
                 out buffered port:32 p_mii_txd,
                 int ifnum);
-# 237 "_mii_full.h"
+# 237 "mii_full_p1.h"
 void _ethernet_get_mii_counts( unsigned &dropped );
-# 11 "_ethernet_server.h" 2
-# 1 "_ethernet_conf_derived.h" 1
-# 12 "_ethernet_server.h" 2
-# 15 "_ethernet_server.h"
-# 1 "_ethernet_server_full.h" 1
-# 9 "_ethernet_server_full.h"
+# 11 "ethernet_server_p1.h" 2
+# 1 "ethernet_conf_derived_p1.h" 1
+# 12 "ethernet_server_p1.h" 2
+# 15 "ethernet_server_p1.h"
+# 1 "ethernet_server_full_p1.h" 1
+# 9 "ethernet_server_full_p1.h"
 # 1 "smi.h" 1
-# 10 "_ethernet_server_full.h" 2
-# 1 "_mii.h" 1
-# 11 "_ethernet_server_full.h" 2
-# 1 "_ethernet_conf_derived.h" 1
-# 12 "_ethernet_server_full.h" 2
+# 10 "ethernet_server_full_p1.h" 2
+# 1 "mii_p1.h" 1
+# 11 "ethernet_server_full_p1.h" 2
+# 1 "ethernet_conf_derived_p1.h" 1
+# 12 "ethernet_server_full_p1.h" 2
 
 
 
@@ -991,15 +982,15 @@ void _ethernet_server_full(_mii_interface_full_t &mii,
                           int num_rx,
                           chanend tx[],
                           int num_tx);
-# 16 "_ethernet_server.h" 2
-# 1 "_ethernet_server_lite.h" 1
-# 9 "_ethernet_server_lite.h"
+# 16 "ethernet_server_p1.h" 2
+# 1 "ethernet_server_lite_p1.h" 1
+# 9 "ethernet_server_lite_p1.h"
 # 1 "smi.h" 1
-# 10 "_ethernet_server_lite.h" 2
-# 1 "_mii.h" 1
-# 11 "_ethernet_server_lite.h" 2
-# 1 "_ethernet_conf_derived.h" 1
-# 12 "_ethernet_server_lite.h" 2
+# 10 "ethernet_server_lite_p1.h" 2
+# 1 "mii_p1.h" 1
+# 11 "ethernet_server_lite_p1.h" 2
+# 1 "ethernet_conf_derived_p1.h" 1
+# 12 "ethernet_server_lite_p1.h" 2
 
 
 
@@ -1010,8 +1001,8 @@ void _ethernet_server_lite(_mii_interface_lite_t &mii,
                           int num_rx,
                           chanend tx[],
                           int num_tx);
-# 17 "_ethernet_server.h" 2
-# 45 "_ethernet_server.h"
+# 17 "ethernet_server_p1.h" 2
+# 45 "ethernet_server_p1.h"
 void _ethernet_server( _mii_interface_full_t  &mii,
                      smi_interface_t &?smi,
                      char mac_address[],
@@ -1019,24 +1010,24 @@ void _ethernet_server( _mii_interface_full_t  &mii,
                      int num_rx,
                      chanend tx[],
                      int num_tx);
-# 9 "_ethernet.h" 2
-# 1 "_ethernet_rx_client.h" 1
-# 9 "_ethernet_rx_client.h"
-# 1 "_ethernet_conf_derived.h" 1
-# 10 "_ethernet_rx_client.h" 2
-# 11 "_ethernet_rx_client.h"
-# 1 "_ethernet_rx_client_lite.h" 1
-# 20 "_ethernet_rx_client_lite.h"
+# 9 "ethernet_p1.h" 2
+# 1 "ethernet_rx_client_p1.h" 1
+# 9 "ethernet_rx_client_p1.h"
+# 1 "ethernet_conf_derived_p1.h" 1
+# 10 "ethernet_rx_client_p1.h" 2
+# 11 "ethernet_rx_client_p1.h"
+# 1 "ethernet_rx_client_lite_p1.h" 1
+# 20 "ethernet_rx_client_lite_p1.h"
 # 1 "xccompat.h" 1 3
-# 21 "_ethernet_rx_client_lite.h" 2
-# 46 "_ethernet_rx_client_lite.h"
+# 21 "ethernet_rx_client_lite_p1.h" 2
+# 46 "ethernet_rx_client_lite_p1.h"
 #pragma select handler
 
 void _mac_rx_lite(chanend c_mac,
                  unsigned char buffer[],
                  unsigned int &len ,
                  unsigned int &src_port );
-# 71 "_ethernet_rx_client_lite.h"
+# 71 "ethernet_rx_client_lite_p1.h"
 #pragma select handler
 
 void _safe_mac_rx_lite(chanend c_mac,
@@ -1044,19 +1035,19 @@ void _safe_mac_rx_lite(chanend c_mac,
                       unsigned int &len ,
                       unsigned int &src_port ,
                       int n);
-# 12 "_ethernet_rx_client.h" 2
-# 1 "_ethernet_rx_client_full.h" 1
-# 20 "_ethernet_rx_client_full.h"
+# 12 "ethernet_rx_client_p1.h" 2
+# 1 "ethernet_rx_client_full_p1.h" 1
+# 20 "ethernet_rx_client_full_p1.h"
 # 1 "xccompat.h" 1 3
-# 21 "_ethernet_rx_client_full.h" 2
-# 24 "_ethernet_rx_client_full.h"
+# 21 "ethernet_rx_client_full_p1.h" 2
+# 24 "ethernet_rx_client_full_p1.h"
 #pragma select handler
 
 void _mac_rx_full(chanend c_mac,
                  unsigned char buffer[],
                  unsigned int &len ,
                  unsigned int &src_port );
-# 33 "_ethernet_rx_client_full.h"
+# 33 "ethernet_rx_client_full_p1.h"
 #pragma select handler
 
 void _safe_mac_rx_full(chanend c_mac,
@@ -1064,7 +1055,7 @@ void _safe_mac_rx_full(chanend c_mac,
                       unsigned int &len ,
                       unsigned int &src_port ,
                       int n);
-# 59 "_ethernet_rx_client_full.h"
+# 59 "ethernet_rx_client_full_p1.h"
 #pragma select handler
 
 void _mac_rx_timed(chanend c_mac,
@@ -1072,7 +1063,7 @@ void _mac_rx_timed(chanend c_mac,
                   unsigned int &len ,
                   unsigned int &time ,
                   unsigned int &src_port );
-# 86 "_ethernet_rx_client_full.h"
+# 86 "ethernet_rx_client_full_p1.h"
 #pragma select handler
 
 void _safe_mac_rx_timed(chanend c_mac,
@@ -1081,15 +1072,15 @@ void _safe_mac_rx_timed(chanend c_mac,
                        unsigned int &time ,
                        unsigned int &src_port ,
                        int n);
-# 106 "_ethernet_rx_client_full.h"
+# 106 "ethernet_rx_client_full_p1.h"
 void _mac_set_drop_packets(chanend c_mac_svr, int x);
-# 113 "_ethernet_rx_client_full.h"
+# 113 "ethernet_rx_client_full_p1.h"
 void _mac_set_queue_size(chanend c_mac_svr, int x);
-# 124 "_ethernet_rx_client_full.h"
+# 124 "ethernet_rx_client_full_p1.h"
 void _mac_set_custom_filter(chanend c_mac_svr, int x);
-# 131 "_ethernet_rx_client_full.h"
+# 131 "ethernet_rx_client_full_p1.h"
 void _mac_get_link_counters(chanend mac_svr,  int &overflow );
-# 141 "_ethernet_rx_client_full.h"
+# 141 "ethernet_rx_client_full_p1.h"
 void _mac_get_global_counters(chanend mac_svr,
 		                     unsigned &mii_overflow ,
 		                     unsigned &bad_length ,
@@ -1097,9 +1088,9 @@ void _mac_get_global_counters(chanend mac_svr,
 		                     unsigned &filtered ,
 		                     unsigned &bad_crc
 		                     );
-# 155 "_ethernet_rx_client_full.h"
+# 155 "ethernet_rx_client_full_p1.h"
 void _mac_get_tile_timer_offset(chanend mac_svr,  int &offset );
-# 171 "_ethernet_rx_client_full.h"
+# 171 "ethernet_rx_client_full_p1.h"
 #pragma select handler
 
 void _mac_rx_offset2(chanend c_mac,
@@ -1111,15 +1102,15 @@ void _mac_rx_offset2(chanend c_mac,
 
 
 void _mac_request_status_packets(chanend c_mac);
-# 13 "_ethernet_rx_client.h" 2
-# 40 "_ethernet_rx_client.h"
+# 13 "ethernet_rx_client_p1.h" 2
+# 40 "ethernet_rx_client_p1.h"
 #pragma select handler
 
 void _mac_rx(chanend c_mac,
             unsigned char buffer[],
             unsigned int &len ,
             unsigned int &src_port );
-# 67 "_ethernet_rx_client.h"
+# 67 "ethernet_rx_client_p1.h"
 #pragma select handler
 
 void _safe_mac_rx(chanend c_mac,
@@ -1127,85 +1118,90 @@ void _safe_mac_rx(chanend c_mac,
                  unsigned int &len ,
                  unsigned int &src_port ,
                  int n);
-# 10 "_ethernet.h" 2
-# 1 "_ethernet_tx_client.h" 1
-# 20 "_ethernet_tx_client.h"
-# 1 "_ethernet_conf_derived.h" 1
-# 21 "_ethernet_tx_client.h" 2
-# 22 "_ethernet_tx_client.h"
-# 1 "_ethernet_tx_client_lite.h" 1
-# 19 "_ethernet_tx_client_lite.h"
+# 10 "ethernet_p1.h" 2
+# 1 "ethernet_tx_client_p1.h" 1
+# 20 "ethernet_tx_client_p1.h"
+# 1 "ethernet_conf_derived_p1.h" 1
+# 21 "ethernet_tx_client_p1.h" 2
+# 22 "ethernet_tx_client_p1.h"
+# 1 "ethernet_tx_client_lite_p1.h" 1
+# 19 "ethernet_tx_client_lite_p1.h"
 # 1 "xccompat.h" 1 3
-# 20 "_ethernet_tx_client_lite.h" 2
-# 35 "_ethernet_tx_client_lite.h"
+# 20 "ethernet_tx_client_lite_p1.h" 2
+# 35 "ethernet_tx_client_lite_p1.h"
 void _mac_tx_lite(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 49 "_ethernet_tx_client_lite.h"
+# 49 "ethernet_tx_client_lite_p1.h"
 int _mac_get_macaddr_lite(chanend c_mac, unsigned char macaddr[]);
-# 23 "_ethernet_tx_client.h" 2
-# 1 "_ethernet_tx_client_full.h" 1
-# 19 "_ethernet_tx_client_full.h"
+# 23 "ethernet_tx_client_p1.h" 2
+# 1 "ethernet_tx_client_full_p1.h" 1
+# 19 "ethernet_tx_client_full_p1.h"
 # 1 "xccompat.h" 1 3
-# 20 "_ethernet_tx_client_full.h" 2
-# 35 "_ethernet_tx_client_full.h"
+# 20 "ethernet_tx_client_full_p1.h" 2
+# 35 "ethernet_tx_client_full_p1.h"
 void _mac_tx_full(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 54 "_ethernet_tx_client_full.h"
+# 54 "ethernet_tx_client_full_p1.h"
 void _mac_tx_offset2(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 78 "_ethernet_tx_client_full.h"
+# 78 "ethernet_tx_client_full_p1.h"
 void _mac_tx_timed(chanend c_mac, unsigned int buffer[], int nbytes, unsigned int &time, int ifnum);
-# 94 "_ethernet_tx_client_full.h"
+# 94 "ethernet_tx_client_full_p1.h"
 int _mac_get_macaddr_full(chanend c_mac, unsigned char macaddr[]);
-# 102 "_ethernet_tx_client_full.h"
+# 102 "ethernet_tx_client_full_p1.h"
 void _mac_initialize_routing_table(chanend c);
-# 109 "_ethernet_tx_client_full.h"
+# 109 "ethernet_tx_client_full_p1.h"
 void _send_avb_1722_router_cmd(chanend c,
                               unsigned key0,
                               unsigned key1,
                               unsigned link,
                               unsigned hash);
-# 129 "_ethernet_tx_client_full.h"
+# 129 "ethernet_tx_client_full_p1.h"
 void _mac_set_qav_bandwidth(chanend c_mac,
                            int bits_per_second);
-# 135 "_ethernet_tx_client_full.h"
+# 135 "ethernet_tx_client_full_p1.h"
 #pragma select handler
 void _mac_check_link_client(chanend c, unsigned char &linkNum, int &status);
-# 24 "_ethernet_tx_client.h" 2
-# 37 "_ethernet_tx_client.h"
+# 24 "ethernet_tx_client_p1.h" 2
+# 37 "ethernet_tx_client_p1.h"
 void _mac_tx(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 52 "_ethernet_tx_client.h"
+# 52 "ethernet_tx_client_p1.h"
 int _mac_get_macaddr(chanend c_mac, unsigned char macaddr[]);
-# 11 "_ethernet.h" 2
-# 1 "_ethernet_phy_reset.h" 1
-# 3 "_ethernet_phy_reset.h"
+# 11 "ethernet_p1.h" 2
+# 1 "ethernet_phy_reset_p1.h" 1
+# 3 "ethernet_phy_reset_p1.h"
 # 1 "platform.h" 1 3
-# 4 "_ethernet_phy_reset.h" 2
-# 5 "_ethernet_phy_reset.h"
+# 4 "ethernet_phy_reset_p1.h" 2
+# 5 "ethernet_phy_reset_p1.h"
 # 1 "ethernet_board_conf.h" 1
-# 6 "_ethernet_phy_reset.h" 2
-# 7 "_ethernet_phy_reset.h"
-# 1 "_ethernet_conf_derived.h" 1
-# 8 "_ethernet_phy_reset.h" 2
-# 20 "_ethernet_phy_reset.h"
+# 6 "ethernet_phy_reset_p1.h" 2
+# 7 "ethernet_phy_reset_p1.h"
+# 1 "ethernet_conf_derived_p1.h" 1
+# 8 "ethernet_phy_reset_p1.h" 2
+# 20 "ethernet_phy_reset_p1.h"
 typedef int _ethernet_reset_interface_t;
 
-
-inline void _eth_phy_reset(_ethernet_reset_interface_t eth_rst) {}
-# 12 "_ethernet.h" 2
+inline void eth_phy_reset_p1(_ethernet_reset_interface_t eth_rst) {}
+# 12 "ethernet_p1.h" 2
 # 28 "../src/demo.xc" 2
-# 1 "ethernet.h" 1
-# 4 "ethernet.h"
-# 1 "ethernet_conf_derived.h" 1
-# 5 "ethernet.h" 2
+# 1 "ethernet_p2.h" 1
+# 4 "ethernet_p2.h"
+# 1 "ethernet_conf_derived_p2.h" 1
+# 3 "ethernet_conf_derived_p2.h"
 # 1 "platform.h" 1 3
-# 6 "ethernet.h" 2
-# 1 "mii.h" 1
-# 4 "mii.h"
+# 4 "ethernet_conf_derived_p2.h" 2
+# 6 "ethernet_conf_derived_p2.h"
+# 1 "ethernet_conf.h" 1
+# 7 "ethernet_conf_derived_p2.h" 2
+# 5 "ethernet_p2.h" 2
+# 1 "platform.h" 1 3
+# 6 "ethernet_p2.h" 2
+# 1 "mii_p2.h" 1
+# 4 "mii_p2.h"
 # 1 "xs1.h" 1 3
-# 5 "mii.h" 2
+# 5 "mii_p2.h" 2
 # 1 "xccompat.h" 1 3
-# 6 "mii.h" 2
-# 1 "ethernet_conf_derived.h" 1
-# 7 "mii.h" 2
-# 19 "mii.h"
+# 6 "mii_p2.h" 2
+# 1 "ethernet_conf_derived_p2.h" 1
+# 7 "mii_p2.h" 2
+# 19 "mii_p2.h"
 typedef struct mii_interface_full_t {
     __clock_t  clk_mii_rx;
     __clock_t  clk_mii_tx;
@@ -1232,31 +1228,31 @@ typedef struct mii_interface_lite_t {
     in port p_mii_txclk;
     out port p_mii_txen;
     out buffered port:32 p_mii_txd;
-# 47 "mii.h"
+# 47 "mii_p2.h"
     in port p_mii_timing;
 
 } mii_interface_lite_t;
-# 7 "ethernet.h" 2
+# 7 "ethernet_p2.h" 2
 # 1 "smi.h" 1
-# 8 "ethernet.h" 2
-# 1 "ethernet_server.h" 1
-# 9 "ethernet_server.h"
+# 8 "ethernet_p2.h" 2
+# 1 "ethernet_server_p2.h" 1
+# 9 "ethernet_server_p2.h"
 # 1 "smi.h" 1
-# 10 "ethernet_server.h" 2
-# 1 "mii_full.h" 1
-# 8 "mii_full.h"
+# 10 "ethernet_server_p2.h" 2
+# 1 "mii_full_p2.h" 1
+# 8 "mii_full_p2.h"
 # 1 "xs1.h" 1 3
-# 9 "mii_full.h" 2
+# 9 "mii_full_p2.h" 2
 # 1 "xccompat.h" 1 3
-# 10 "mii_full.h" 2
-# 1 "mii.h" 1
-# 11 "mii_full.h" 2
-# 12 "mii_full.h"
-# 1 "ethernet_conf_derived.h" 1
-# 13 "mii_full.h" 2
-# 79 "mii_full.h"
-# 1 "mii_queue.h" 1
-# 80 "mii_full.h" 2
+# 10 "mii_full_p2.h" 2
+# 1 "mii_p2.h" 1
+# 11 "mii_full_p2.h" 2
+# 12 "mii_full_p2.h"
+# 1 "ethernet_conf_derived_p2.h" 1
+# 13 "mii_full_p2.h" 2
+# 79 "mii_full_p2.h"
+# 1 "mii_queue_p2.h" 1
+# 80 "mii_full_p2.h" 2
 
 
 void mii_init_full( mii_interface_full_t &m );
@@ -1285,7 +1281,7 @@ typedef struct mii_packet_t {
 
   unsigned int data[( (1518) +3)/4];
 } mii_packet_t;
-# 135 "mii_full.h"
+# 135 "mii_full_p2.h"
 inline int mii_packet_get_length (int buf) { int x; __asm__("ldw %0,%1[" "0" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_length (int buf, int x) { __asm__("stw %1, %0[" "0" "]"::"r"(buf),"r"(x)); }
 inline int mii_packet_get_timestamp (int buf) { int x; __asm__("ldw %0,%1[" "1" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_timestamp (int buf, int x) { __asm__("stw %1, %0[" "1" "]"::"r"(buf),"r"(x)); }
 inline int mii_packet_get_filter_result (int buf) { int x; __asm__("ldw %0,%1[" "2" "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_filter_result (int buf, int x) { __asm__("stw %1, %0[" "2" "]"::"r"(buf),"r"(x)); }
@@ -1310,7 +1306,7 @@ inline int mii_packet_get_data_word(int data, int n) {
   __asm__("ldw %0,%1[%2]":"=r"(x):"r"(data),"r"(n));
   return x;
 }
-# 170 "mii_full.h"
+# 170 "mii_full_p2.h"
 inline void mii_packet_set_data(int buf, int n, int v) {
   __asm__("stw %0,%1[%2]"::"r"(v),"r"(buf),"r"(n+ 9 ));
 }
@@ -1325,33 +1321,33 @@ inline void mii_packet_set_data_byte(int buf, int n, int v) {
 
 
 void mii_rx_pins(
-# 187 "mii_full.h"
+# 187 "mii_full_p2.h"
 		 unsigned rxmem_lp,
 		 in port p_mii_rxdv,
 		 in buffered port:32 p_mii_rxd,
 		 int ifnum,
 		 streaming chanend c);
-# 205 "mii_full.h"
+# 205 "mii_full_p2.h"
 void mii_tx_pins(
-# 215 "mii_full.h"
+# 215 "mii_full_p2.h"
                 unsigned lp_mempool,
                 mii_ts_queue_t &ts_queue,
                 out buffered port:32 p_mii_txd,
                 int ifnum);
-# 237 "mii_full.h"
+# 237 "mii_full_p2.h"
 void ethernet_get_mii_counts( unsigned &dropped );
-# 11 "ethernet_server.h" 2
-# 1 "ethernet_conf_derived.h" 1
-# 12 "ethernet_server.h" 2
-# 15 "ethernet_server.h"
-# 1 "ethernet_server_full.h" 1
-# 9 "ethernet_server_full.h"
+# 11 "ethernet_server_p2.h" 2
+# 1 "ethernet_conf_derived_p2.h" 1
+# 12 "ethernet_server_p2.h" 2
+# 15 "ethernet_server_p2.h"
+# 1 "ethernet_server_full_p2.h" 1
+# 9 "ethernet_server_full_p2.h"
 # 1 "smi.h" 1
-# 10 "ethernet_server_full.h" 2
-# 1 "mii.h" 1
-# 11 "ethernet_server_full.h" 2
-# 1 "ethernet_conf_derived.h" 1
-# 12 "ethernet_server_full.h" 2
+# 10 "ethernet_server_full_p2.h" 2
+# 1 "mii_p2.h" 1
+# 11 "ethernet_server_full_p2.h" 2
+# 1 "ethernet_conf_derived_p2.h" 1
+# 12 "ethernet_server_full_p2.h" 2
 
 
 
@@ -1362,15 +1358,15 @@ void ethernet_server_full(mii_interface_full_t &mii,
                           int num_rx,
                           chanend tx[],
                           int num_tx);
-# 16 "ethernet_server.h" 2
-# 1 "ethernet_server_lite.h" 1
-# 9 "ethernet_server_lite.h"
+# 16 "ethernet_server_p2.h" 2
+# 1 "ethernet_server_lite_p2.h" 1
+# 9 "ethernet_server_lite_p2.h"
 # 1 "smi.h" 1
-# 10 "ethernet_server_lite.h" 2
-# 1 "mii.h" 1
-# 11 "ethernet_server_lite.h" 2
-# 1 "ethernet_conf_derived.h" 1
-# 12 "ethernet_server_lite.h" 2
+# 10 "ethernet_server_lite_p2.h" 2
+# 1 "mii_p2.h" 1
+# 11 "ethernet_server_lite_p2.h" 2
+# 1 "ethernet_conf_derived_p2.h" 1
+# 12 "ethernet_server_lite_p2.h" 2
 
 
 
@@ -1381,8 +1377,8 @@ void ethernet_server_lite(mii_interface_lite_t &mii,
                           int num_rx,
                           chanend tx[],
                           int num_tx);
-# 17 "ethernet_server.h" 2
-# 45 "ethernet_server.h"
+# 17 "ethernet_server_p2.h" 2
+# 45 "ethernet_server_p2.h"
 void ethernet_server( mii_interface_full_t  &mii,
                      smi_interface_t &?smi,
                      char mac_address[],
@@ -1390,26 +1386,25 @@ void ethernet_server( mii_interface_full_t  &mii,
                      int num_rx,
                      chanend tx[],
                      int num_tx);
-# 9 "ethernet.h" 2
-# 1 "ethernet_rx_client.h" 1
-# 9 "ethernet_rx_client.h"
-# 1 "ethernet_conf_derived.h" 1
-# 10 "ethernet_rx_client.h" 2
-# 11 "ethernet_rx_client.h"
-# 1 "ethernet_rx_client_lite.h" 1
-# 12 "ethernet_rx_client.h" 2
-# 1 "ethernet_rx_client_full.h" 1
-# 181 "ethernet_rx_client_full.h"
+# 9 "ethernet_p2.h" 2
+# 1 "ethernet_rx_client_p2.h" 1
+# 9 "ethernet_rx_client_p2.h"
+# 1 "ethernet_conf_derived_p2.h" 1
+# 10 "ethernet_rx_client_p2.h" 2
+# 1 "ethernet_rx_client_lite_p2.h" 1
+# 11 "ethernet_rx_client_p2.h" 2
+# 1 "ethernet_rx_client_full_p2.h" 1
+# 181 "ethernet_rx_client_full_p2.h"
 void mac_request_status_packets(chanend c_mac);
-# 13 "ethernet_rx_client.h" 2
-# 40 "ethernet_rx_client.h"
+# 12 "ethernet_rx_client_p2.h" 2
+# 39 "ethernet_rx_client_p2.h"
 #pragma select handler
 
 void mac_rx(chanend c_mac,
             unsigned char buffer[],
             unsigned int &len ,
             unsigned int &src_port );
-# 67 "ethernet_rx_client.h"
+# 66 "ethernet_rx_client_p2.h"
 #pragma select handler
 
 void safe_mac_rx(chanend c_mac,
@@ -1417,36 +1412,37 @@ void safe_mac_rx(chanend c_mac,
                  unsigned int &len ,
                  unsigned int &src_port ,
                  int n);
-# 10 "ethernet.h" 2
-# 1 "ethernet_tx_client.h" 1
-# 20 "ethernet_tx_client.h"
-# 1 "ethernet_conf_derived.h" 1
-# 21 "ethernet_tx_client.h" 2
-# 22 "ethernet_tx_client.h"
-# 1 "ethernet_tx_client_lite.h" 1
-# 23 "ethernet_tx_client.h" 2
-# 1 "ethernet_tx_client_full.h" 1
-# 24 "ethernet_tx_client.h" 2
-# 37 "ethernet_tx_client.h"
+# 10 "ethernet_p2.h" 2
+# 1 "ethernet_tx_client_p2.h" 1
+# 20 "ethernet_tx_client_p2.h"
+# 1 "ethernet_conf_derived_p2.h" 1
+# 21 "ethernet_tx_client_p2.h" 2
+# 22 "ethernet_tx_client_p2.h"
+# 1 "ethernet_tx_client_lite_p2.h" 1
+# 23 "ethernet_tx_client_p2.h" 2
+# 1 "ethernet_tx_client_full_p2.h" 1
+# 24 "ethernet_tx_client_p2.h" 2
+# 37 "ethernet_tx_client_p2.h"
 void mac_tx(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-# 52 "ethernet_tx_client.h"
+# 52 "ethernet_tx_client_p2.h"
 int mac_get_macaddr(chanend c_mac, unsigned char macaddr[]);
-# 11 "ethernet.h" 2
-# 1 "ethernet_phy_reset.h" 1
-# 3 "ethernet_phy_reset.h"
+# 11 "ethernet_p2.h" 2
+# 1 "ethernet_phy_reset_p2.h" 1
+# 3 "ethernet_phy_reset_p2.h"
 # 1 "platform.h" 1 3
-# 4 "ethernet_phy_reset.h" 2
-# 5 "ethernet_phy_reset.h"
+# 4 "ethernet_phy_reset_p2.h" 2
+# 5 "ethernet_phy_reset_p2.h"
 # 1 "ethernet_board_conf.h" 1
-# 6 "ethernet_phy_reset.h" 2
-# 7 "ethernet_phy_reset.h"
-# 1 "ethernet_conf_derived.h" 1
-# 8 "ethernet_phy_reset.h" 2
-# 20 "ethernet_phy_reset.h"
+# 6 "ethernet_phy_reset_p2.h" 2
+# 7 "ethernet_phy_reset_p2.h"
+# 1 "ethernet_conf_derived_p2.h" 1
+# 8 "ethernet_phy_reset_p2.h" 2
+# 20 "ethernet_phy_reset_p2.h"
 typedef int ethernet_reset_interface_t;
 
-inline void eth_phy_reset(ethernet_reset_interface_t eth_rst) {}
-# 12 "ethernet.h" 2
+
+inline void eth_phy_reset_p2(ethernet_reset_interface_t eth_rst) {}
+# 12 "ethernet_p2.h" 2
 # 29 "../src/demo.xc" 2
 # 1 "otp_board_info.h" 1
 # 12 "otp_board_info.h"
@@ -1475,7 +1471,7 @@ int otp_board_info_get_serial( otp_ports_t &ports ,
 # 1 "ethernet_board_conf.h" 1
 # 14 "ethernet_board_support.h" 2
 # 15 "ethernet_board_support.h"
-# 1 "_ethernet_conf_derived.h" 1
+# 1 "ethernet_conf_derived_p1.h" 1
 # 16 "ethernet_board_support.h" 2
 # 31 "../src/demo.xc" 2
 # 1 "checksum.h" 1
@@ -1578,22 +1574,21 @@ void xscope_connect_data_from_host(chanend from_host);
 # 411 "xscope.h" 2 3
 # 33 "../src/demo.xc" 2
 # 51 "../src/demo.xc"
-on  tile[1] : otp_ports_t otp_ports0 =  { 0x200100 , 0x100200 , 0x100300 } ;
-on  tile[0] : otp_ports_t otp_ports1 =  { 0x200000 , 0x100000 , 0x100100 } ;
+on  tile[1] : otp_ports_t otp_ports_p1 =  { 0x200100 , 0x100200 , 0x100300 } ;
+on  tile[0] : otp_ports_t otp_ports_p2 =  { 0x200000 , 0x100000 , 0x100100 } ;
 
 
 
 
 
-smi_interface_t smi0 =  { 0 , on tile[1]: 0x10c00 , on tile[1]: 0x10d00 } ;
-smi_interface_t smi1 =  { 0 , on tile[0]: 0x10c00 , on tile[0]: 0x10d00 } ;
+smi_interface_t smi_p1 =  { 0 , on tile[1]: 0x10c00 , on tile[1]: 0x10d00 } ;
+smi_interface_t smi_p2 =  { 0 , on tile[0]: 0x10c00 , on tile[0]: 0x10d00 } ;
 
-_mii_interface_full_t  mii0 =  { on tile[1] : 0x106 , on tile[1] : 0x206 , on tile[1]: 0x10800 , on tile[1]: 0x10f00 , on tile[1]: 0x40400 , on tile[1]: 0x10900 , on tile[1]: 0x10a00 , on tile[1]: 0x10b00 , on tile[1]: 0x40500 } ;
-mii_interface_full_t  mii1 =  { on tile[0] : 0x106 , on tile[0] : 0x206 , on tile[0]: 0x10800 , on tile[0]: 0x10f00 , on tile[0]: 0x40400 , on tile[0]: 0x10900 , on tile[0]: 0x10a00 , on tile[0]: 0x10b00 , on tile[0]: 0x40500 } ;
+_mii_interface_full_t  mii_p1 =  { on tile[1] : 0x106 , on tile[1] : 0x206 , on tile[1]: 0x10800 , on tile[1]: 0x10f00 , on tile[1]: 0x40400 , on tile[1]: 0x10900 , on tile[1]: 0x10a00 , on tile[1]: 0x10b00 , on tile[1]: 0x40500 } ;
+mii_interface_full_t  mii_p2 =  { on tile[0] : 0x106 , on tile[0] : 0x206 , on tile[0]: 0x10800 , on tile[0]: 0x10f00 , on tile[0]: 0x40400 , on tile[0]: 0x10900 , on tile[0]: 0x10a00 , on tile[0]: 0x10b00 , on tile[0]: 0x40500 } ;
 
-_ethernet_reset_interface_t eth_rst0 =  0 ;
-ethernet_reset_interface_t eth_rst1 =  0 ;
-
+_ethernet_reset_interface_t eth_rst_p1 =  0 ;
+ethernet_reset_interface_t eth_rst_p2 =  0 ;
 
 
 
@@ -1617,13 +1612,13 @@ unsigned char own_mac_addr1[6];
 
 void demo0(chanend tx, chanend rx);
 void demo1(chanend tx, chanend rx);
-# 91 "../src/demo.xc"
+# 90 "../src/demo.xc"
 #pragma unsafe arrays
 int is_ethertype(unsigned char data[], unsigned char type[]){
 	int i = 12;
 	return data[i] == type[0] && data[i + 1] == type[1];
 }
-# 97 "../src/demo.xc"
+# 96 "../src/demo.xc"
 #pragma unsafe arrays
 int is_mac_addr(unsigned char data[], unsigned char addr[]){
 	for (int i=0;i<6;i++){
@@ -1634,7 +1629,7 @@ int is_mac_addr(unsigned char data[], unsigned char addr[]){
 
 	return 1;
 }
-# 108 "../src/demo.xc"
+# 107 "../src/demo.xc"
 #pragma unsafe arrays
 int is_broadcast(unsigned char data[]){
 	for (int i=0;i<6;i++){
@@ -1666,7 +1661,6 @@ int _mac_custom_filter(unsigned int data[]){
 
     return 0;
 }
-
 
 
 int build_arp_response0(unsigned char rxbuf[], unsigned int txbuf[], const unsigned char own_mac_addr[6])
@@ -1827,7 +1821,6 @@ int is_valid_arp_packet1(const unsigned char rxbuf[], int nbytes)
   return 1;
 }
 
-
 int build_icmp_response0(unsigned char rxbuf[], unsigned char txbuf[], const unsigned char own_mac_addr[6])
 {
   static const unsigned char own_ip_addr[4] =  {192, 168, 101, 63} ;
@@ -1901,7 +1894,6 @@ int build_icmp_response0(unsigned char rxbuf[], unsigned char txbuf[], const uns
   }
   return pad;
 }
-
 
 int build_icmp_response1(unsigned char rxbuf[], unsigned char txbuf[], const unsigned char own_mac_addr[6])
 {
@@ -2071,7 +2063,6 @@ int is_valid_icmp_packet1(const unsigned char rxbuf[], int nbytes)
   return 1;
 }
 
-
 void demo0(chanend tx, chanend rx)
 {
   unsigned int rxbuf[1600/4];
@@ -2094,7 +2085,7 @@ void demo0(chanend tx, chanend rx)
     unsigned int src_port;
     unsigned int nbytes;
     _mac_rx_full (rx, (rxbuf,char[]), nbytes, src_port);
-# 576 "../src/demo.xc"
+# 571 "../src/demo.xc"
     if (is_valid_arp_packet0((rxbuf,char[]), nbytes))
       {
         build_arp_response0((rxbuf,char[]), txbuf, own_mac_addr0);
@@ -2111,7 +2102,6 @@ void demo0(chanend tx, chanend rx)
 
   }
 }
-
 
 void demo1(chanend tx, chanend rx)
 {
@@ -2135,7 +2125,7 @@ void demo1(chanend tx, chanend rx)
     unsigned int src_port;
     unsigned int nbytes;
     _mac_rx_full (rx, (rxbuf,char[]), nbytes, src_port);
-# 625 "../src/demo.xc"
+# 619 "../src/demo.xc"
     if (is_valid_arp_packet1((rxbuf,char[]), nbytes))
       {
         build_arp_response1((rxbuf,char[]), txbuf, own_mac_addr1);
@@ -2163,11 +2153,11 @@ int main()
        on  tile[1] :
       {
         char mac_address[6];
-        otp_board_info_get_mac(otp_ports0, 0, mac_address);
-        _eth_phy_reset(eth_rst0);
-        smi_init(smi0);
-        eth_phy_config(1, smi0);
-        _ethernet_server_full (mii0,
+        otp_board_info_get_mac(otp_ports_p1, 0, mac_address);
+        eth_phy_reset_p1(eth_rst_p1);
+        smi_init(smi_p1);
+        eth_phy_config(1, smi_p1);
+        _ethernet_server_full (mii_p1,
                         null,
                         mac_address,
                         rx0, 1,
@@ -2177,11 +2167,11 @@ int main()
       on  tile[0] :
       {
         char mac_address[6];
-        otp_board_info_get_mac(otp_ports1, 0, mac_address);
-        eth_phy_reset(eth_rst1);
-        smi_init(smi1);
-        eth_phy_config(1, smi1);
-        ethernet_server_full (mii1,
+        otp_board_info_get_mac(otp_ports_p2, 0, mac_address);
+        eth_phy_reset_p2(eth_rst_p2);
+        smi_init(smi_p2);
+        eth_phy_config(1, smi_p2);
+        ethernet_server_full (mii_p2,
                         null,
                         mac_address,
                         rx1, 1,
@@ -2189,10 +2179,8 @@ int main()
       }
 
 
-
-
-    on tile[0]: demo0(tx0[0], rx0[0]);
-    on tile[1]: demo1(tx1[0], rx1[0]);
+    on  tile[1] : demo0(tx0[0], rx0[0]);
+    on  tile[0] : demo1(tx1[0], rx1[0]);
 
     }
 

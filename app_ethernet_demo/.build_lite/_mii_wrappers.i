@@ -429,8 +429,8 @@ void _ethernet_get_filter_counts(unsigned *address,
         unsigned *length,
         unsigned *crc);
 # 12 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_mii_wrappers.c" 2
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_tx_server.h" 1
-# 12 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_tx_server.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.h" 1
+# 12 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.h"
 void _ethernet_tx_server_no_buffer(const char mac_addr[],
                                   chanend tx[],
                                   int num_tx,
@@ -440,7 +440,7 @@ void _ethernet_tx_server_no_buffer(const char mac_addr[],
                                   port p_mii_txd,
 
                                   smi_interface_t *smi1);
-# 36 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_tx_server.h"
+# 36 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.h"
 void _ethernet_tx_server(
 
 
@@ -453,11 +453,11 @@ void _ethernet_tx_server(
                         smi_interface_t *smi1,
                         smi_interface_t *smi2);
 # 13 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_mii_wrappers.c" 2
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.h" 1
-# 27 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.h"
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_server_def.h" 1
-# 28 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.h" 2
-# 39 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_rx_server.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_rx_server_p1.h" 1
+# 27 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_rx_server_p1.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_server_def_p1.h" 1
+# 28 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_rx_server_p1.h" 2
+# 39 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_rx_server_p1.h"
 void _ethernet_rx_server(
 
 

@@ -53,44 +53,44 @@
 	.inline_definition mii_packet_set_data_short
 	.inline_definition mii_packet_set_data_byte
 	.inline_definition eth_phy_reset_p2
-	.globalresource 0x200100,"otp_ports0.data","tile[1]"
-	.globalresource 0x100200,"otp_ports0.addr","tile[1]"
-	.globalresource 0x100300,"otp_ports0.ctrl","tile[1]"
-	.globalresource 0x200000,"otp_ports1.data","tile[0]"
-	.globalresource 0x100000,"otp_ports1.addr","tile[0]"
-	.globalresource 0x100100,"otp_ports1.ctrl","tile[0]"
-	.globalresource 0x10c00,"smi0.p_smi_mdio","tile[1]"
-	.globalresource 0x10d00,"smi0.p_smi_mdc","tile[1]"
-	.globalresource 0x10c00,"smi1.p_smi_mdio","tile[0]"
-	.globalresource 0x10d00,"smi1.p_smi_mdc","tile[0]"
-	.globalresource 0x106,"mii0.clk_mii_rx","tile[1]"
-	.globalresource 0x206,"mii0.clk_mii_tx","tile[1]"
-	.globalresource 0x10800,"mii0.p_mii_rxclk","tile[1]"
-	.globalresource 0x10f00,"mii0.p_mii_rxer","tile[1]"
-	.globalresource 0x40400,"mii0.p_mii_rxd","tile[1]"
-	.globalresource 0x10900,"mii0.p_mii_rxdv","tile[1]"
-	.globalresource 0x10a00,"mii0.p_mii_txclk","tile[1]"
-	.globalresource 0x10b00,"mii0.p_mii_txen","tile[1]"
-	.globalresource 0x40500,"mii0.p_mii_txd","tile[1]"
-	.globalresource 0x106,"mii1.clk_mii_rx","tile[0]"
-	.globalresource 0x206,"mii1.clk_mii_tx","tile[0]"
-	.globalresource 0x10800,"mii1.p_mii_rxclk","tile[0]"
-	.globalresource 0x10f00,"mii1.p_mii_rxer","tile[0]"
-	.globalresource 0x40400,"mii1.p_mii_rxd","tile[0]"
-	.globalresource 0x10900,"mii1.p_mii_rxdv","tile[0]"
-	.globalresource 0x10a00,"mii1.p_mii_txclk","tile[0]"
-	.globalresource 0x10b00,"mii1.p_mii_txen","tile[0]"
-	.globalresource 0x40500,"mii1.p_mii_txd","tile[0]"
+	.globalresource 0x200100,"otp_ports_p1.data","tile[1]"
+	.globalresource 0x100200,"otp_ports_p1.addr","tile[1]"
+	.globalresource 0x100300,"otp_ports_p1.ctrl","tile[1]"
+	.globalresource 0x200000,"otp_ports_p2.data","tile[0]"
+	.globalresource 0x100000,"otp_ports_p2.addr","tile[0]"
+	.globalresource 0x100100,"otp_ports_p2.ctrl","tile[0]"
+	.globalresource 0x10c00,"smi_p1.p_smi_mdio","tile[1]"
+	.globalresource 0x10d00,"smi_p1.p_smi_mdc","tile[1]"
+	.globalresource 0x10c00,"smi_p2.p_smi_mdio","tile[0]"
+	.globalresource 0x10d00,"smi_p2.p_smi_mdc","tile[0]"
+	.globalresource 0x106,"mii_p1.clk_mii_rx","tile[1]"
+	.globalresource 0x206,"mii_p1.clk_mii_tx","tile[1]"
+	.globalresource 0x10800,"mii_p1.p_mii_rxclk","tile[1]"
+	.globalresource 0x10f00,"mii_p1.p_mii_rxer","tile[1]"
+	.globalresource 0x40400,"mii_p1.p_mii_rxd","tile[1]"
+	.globalresource 0x10900,"mii_p1.p_mii_rxdv","tile[1]"
+	.globalresource 0x10a00,"mii_p1.p_mii_txclk","tile[1]"
+	.globalresource 0x10b00,"mii_p1.p_mii_txen","tile[1]"
+	.globalresource 0x40500,"mii_p1.p_mii_txd","tile[1]"
+	.globalresource 0x80200,"mii_p1.p_mii_timing","tile[1]"
+	.globalresource 0x106,"mii_p2.clk_mii_rx","tile[0]"
+	.globalresource 0x206,"mii_p2.clk_mii_tx","tile[0]"
+	.globalresource 0x10800,"mii_p2.p_mii_rxclk","tile[0]"
+	.globalresource 0x10f00,"mii_p2.p_mii_rxer","tile[0]"
+	.globalresource 0x40400,"mii_p2.p_mii_rxd","tile[0]"
+	.globalresource 0x10900,"mii_p2.p_mii_rxdv","tile[0]"
+	.globalresource 0x10a00,"mii_p2.p_mii_txclk","tile[0]"
+	.globalresource 0x10b00,"mii_p2.p_mii_txen","tile[0]"
+	.globalresource 0x40500,"mii_p2.p_mii_txd","tile[0]"
+	.globalresource 0x80000,"mii_p2.p_mii_timing","tile[0]"
 	.set __main__main_tile_1.savedstate,10
 	.globl __main__main_tile_1.savedstate
-	.set __main__main_tile_0.savedstate,10
-	.globl __main__main_tile_0.savedstate
 	.section .netinfo, "", @netinfo
 	.int      0x1eaba15c
 	main.parinfo.debugstring0:
-	.asciiz "# 646 \"../src/demo.xc\""
+	.asciiz "# 640 \"../src/demo.xc\""
 	main.parinfo.debugstring1:
-	.asciiz "# 685 \"../src/demo.xc\""
+	.asciiz "# 678 \"../src/demo.xc\""
 	.cc_top main.parinfo.cc, main.parinfo
 	.globl main.parinfo
 	.type main.parinfo, @object
@@ -104,160 +104,166 @@
 	.int $N __main__main_tile_1
 	.long tile + 4
 	.call __main__main_tile_1,usage.anon.61
-	.int 0x00000004
+	.int 0x00000002
 	.int 0x00000001
 	.int 0x00000002
-	.int 0x00000003
-	.int 0x00000004
 	.int $N __main__main_tile_0
 	.long tile + 0
 	.call __main__main_tile_0,usage.anon.62
-	.int 0x00000004
+	.int 0x00000002
 	.int 0x00000001
 	.int 0x00000002
-	.int 0x00000003
-	.int 0x00000004
 	.cc_bottom main.parinfo.cc
 .locl __xcc1_internal_1.info, "p"
 __xcc1_internal_1.info:
 	.int 0x00200100
 	.long tile + 4
-.sameresource __xcc1_internal_1, otp_ports0, 0
+.sameresource __xcc1_internal_1, otp_ports_p1, 0
 .locl __xcc1_internal_2.info, "o:p"
 __xcc1_internal_2.info:
 	.int 0x00100200
 	.long tile + 4
-.sameresource __xcc1_internal_2, otp_ports0, 4
+.sameresource __xcc1_internal_2, otp_ports_p1, 4
 .locl __xcc1_internal_3.info, "o:p"
 __xcc1_internal_3.info:
 	.int 0x00100300
 	.long tile + 4
-.sameresource __xcc1_internal_3, otp_ports0, 8
+.sameresource __xcc1_internal_3, otp_ports_p1, 8
 .locl __xcc1_internal_4.info, "p"
 __xcc1_internal_4.info:
 	.int 0x00200000
 	.long tile + 0
-.sameresource __xcc1_internal_4, otp_ports1, 0
+.sameresource __xcc1_internal_4, otp_ports_p2, 0
 .locl __xcc1_internal_5.info, "o:p"
 __xcc1_internal_5.info:
 	.int 0x00100000
 	.long tile + 0
-.sameresource __xcc1_internal_5, otp_ports1, 4
+.sameresource __xcc1_internal_5, otp_ports_p2, 4
 .locl __xcc1_internal_6.info, "o:p"
 __xcc1_internal_6.info:
 	.int 0x00100100
 	.long tile + 0
-.sameresource __xcc1_internal_6, otp_ports1, 8
+.sameresource __xcc1_internal_6, otp_ports_p2, 8
 .locl __xcc1_internal_7.info, "p"
 __xcc1_internal_7.info:
 	.int 0x00010c00
 	.long tile + 4
-.sameresource __xcc1_internal_7, smi0, 4
+.sameresource __xcc1_internal_7, smi_p1, 4
 .locl __xcc1_internal_8.info, "p"
 __xcc1_internal_8.info:
 	.int 0x00010d00
 	.long tile + 4
-.sameresource __xcc1_internal_8, smi0, 8
+.sameresource __xcc1_internal_8, smi_p1, 8
 .locl __xcc1_internal_9.info, "p"
 __xcc1_internal_9.info:
 	.int 0x00010c00
 	.long tile + 0
-.sameresource __xcc1_internal_9, smi1, 4
+.sameresource __xcc1_internal_9, smi_p2, 4
 .locl __xcc1_internal_10.info, "p"
 __xcc1_internal_10.info:
 	.int 0x00010d00
 	.long tile + 0
-.sameresource __xcc1_internal_10, smi1, 8
+.sameresource __xcc1_internal_10, smi_p2, 8
 .locl __xcc1_internal_11.info, "ck"
 __xcc1_internal_11.info:
 	.int 0x00000106
 	.long tile + 4
-.sameresource __xcc1_internal_11, mii0, 0
+.sameresource __xcc1_internal_11, mii_p1, 0
 .locl __xcc1_internal_12.info, "ck"
 __xcc1_internal_12.info:
 	.int 0x00000206
 	.long tile + 4
-.sameresource __xcc1_internal_12, mii0, 4
+.sameresource __xcc1_internal_12, mii_p1, 4
 .locl __xcc1_internal_13.info, "i:p"
 __xcc1_internal_13.info:
 	.int 0x00010800
 	.long tile + 4
-.sameresource __xcc1_internal_13, mii0, 8
+.sameresource __xcc1_internal_13, mii_p1, 8
 .locl __xcc1_internal_14.info, "i:p"
 __xcc1_internal_14.info:
 	.int 0x00010f00
 	.long tile + 4
-.sameresource __xcc1_internal_14, mii0, 12
+.sameresource __xcc1_internal_14, mii_p1, 12
 .locl __xcc1_internal_15.info, "bi:p:32"
 __xcc1_internal_15.info:
 	.int 0x00040400
 	.long tile + 4
-.sameresource __xcc1_internal_15, mii0, 16
+.sameresource __xcc1_internal_15, mii_p1, 16
 .locl __xcc1_internal_16.info, "i:p"
 __xcc1_internal_16.info:
 	.int 0x00010900
 	.long tile + 4
-.sameresource __xcc1_internal_16, mii0, 20
+.sameresource __xcc1_internal_16, mii_p1, 20
 .locl __xcc1_internal_17.info, "i:p"
 __xcc1_internal_17.info:
 	.int 0x00010a00
 	.long tile + 4
-.sameresource __xcc1_internal_17, mii0, 24
+.sameresource __xcc1_internal_17, mii_p1, 24
 .locl __xcc1_internal_18.info, "o:p"
 __xcc1_internal_18.info:
 	.int 0x00010b00
 	.long tile + 4
-.sameresource __xcc1_internal_18, mii0, 28
+.sameresource __xcc1_internal_18, mii_p1, 28
 .locl __xcc1_internal_19.info, "bo:p:32"
 __xcc1_internal_19.info:
 	.int 0x00040500
 	.long tile + 4
-.sameresource __xcc1_internal_19, mii0, 32
-.locl __xcc1_internal_20.info, "ck"
+.sameresource __xcc1_internal_19, mii_p1, 32
+.locl __xcc1_internal_20.info, "i:p"
 __xcc1_internal_20.info:
-	.int 0x00000106
-	.long tile + 0
-.sameresource __xcc1_internal_20, mii1, 0
+	.int 0x00080200
+	.long tile + 4
+.sameresource __xcc1_internal_20, mii_p1, 36
 .locl __xcc1_internal_21.info, "ck"
 __xcc1_internal_21.info:
+	.int 0x00000106
+	.long tile + 0
+.sameresource __xcc1_internal_21, mii_p2, 0
+.locl __xcc1_internal_22.info, "ck"
+__xcc1_internal_22.info:
 	.int 0x00000206
 	.long tile + 0
-.sameresource __xcc1_internal_21, mii1, 4
-.locl __xcc1_internal_22.info, "i:p"
-__xcc1_internal_22.info:
-	.int 0x00010800
-	.long tile + 0
-.sameresource __xcc1_internal_22, mii1, 8
+.sameresource __xcc1_internal_22, mii_p2, 4
 .locl __xcc1_internal_23.info, "i:p"
 __xcc1_internal_23.info:
+	.int 0x00010800
+	.long tile + 0
+.sameresource __xcc1_internal_23, mii_p2, 8
+.locl __xcc1_internal_24.info, "i:p"
+__xcc1_internal_24.info:
 	.int 0x00010f00
 	.long tile + 0
-.sameresource __xcc1_internal_23, mii1, 12
-.locl __xcc1_internal_24.info, "bi:p:32"
-__xcc1_internal_24.info:
+.sameresource __xcc1_internal_24, mii_p2, 12
+.locl __xcc1_internal_25.info, "bi:p:32"
+__xcc1_internal_25.info:
 	.int 0x00040400
 	.long tile + 0
-.sameresource __xcc1_internal_24, mii1, 16
-.locl __xcc1_internal_25.info, "i:p"
-__xcc1_internal_25.info:
-	.int 0x00010900
-	.long tile + 0
-.sameresource __xcc1_internal_25, mii1, 20
+.sameresource __xcc1_internal_25, mii_p2, 16
 .locl __xcc1_internal_26.info, "i:p"
 __xcc1_internal_26.info:
+	.int 0x00010900
+	.long tile + 0
+.sameresource __xcc1_internal_26, mii_p2, 20
+.locl __xcc1_internal_27.info, "i:p"
+__xcc1_internal_27.info:
 	.int 0x00010a00
 	.long tile + 0
-.sameresource __xcc1_internal_26, mii1, 24
-.locl __xcc1_internal_27.info, "o:p"
-__xcc1_internal_27.info:
+.sameresource __xcc1_internal_27, mii_p2, 24
+.locl __xcc1_internal_28.info, "o:p"
+__xcc1_internal_28.info:
 	.int 0x00010b00
 	.long tile + 0
-.sameresource __xcc1_internal_27, mii1, 28
-.locl __xcc1_internal_28.info, "bo:p:32"
-__xcc1_internal_28.info:
+.sameresource __xcc1_internal_28, mii_p2, 28
+.locl __xcc1_internal_29.info, "bo:p:32"
+__xcc1_internal_29.info:
 	.int 0x00040500
 	.long tile + 0
-.sameresource __xcc1_internal_28, mii1, 32
+.sameresource __xcc1_internal_29, mii_p2, 32
+.locl __xcc1_internal_30.info, "i:p"
+__xcc1_internal_30.info:
+	.int 0x00080000
+	.long tile + 0
+.sameresource __xcc1_internal_30, mii_p2, 36
 	.set usage.anon.0,0
 	.set usage.anon.1,0
 	.set usage.anon.2,0
@@ -321,52 +327,52 @@ __xcc1_internal_28.info:
 	.set usage.anon.60,0
 	.set usage.anon.61,0
 	.set usage.anon.62,0
-	.globread usage.anon.60,eth_rst1,"../src/demo.xc:667: error: previously used here"
-	.globread usage.anon.59,eth_rst0,"../src/demo.xc:653: error: previously used here"
-	.globread is_valid_icmp_packet1,usage.anon.58,"../src/demo.xc:520: error: previously used here"
-	.globread is_valid_icmp_packet0,usage.anon.57,"../src/demo.xc:473: error: previously used here"
-	.globread build_icmp_response1,usage.anon.56,3,1,"../src/demo.xc:423: error: previously used here (bytes 3..4)"
-	.globread build_icmp_response1,usage.anon.56,2,1,"../src/demo.xc:423: error: previously used here (bytes 2..3)"
-	.globread build_icmp_response1,usage.anon.56,1,1,"../src/demo.xc:422: error: previously used here (bytes 1..2)"
-	.globread build_icmp_response1,usage.anon.56,"../src/demo.xc:420: error: previously used here"
-	.globread build_icmp_response1,usage.anon.56,0,1,"../src/demo.xc:422: error: previously used here (bytes 0..1)"
-	.globread build_icmp_response0,usage.anon.55,3,1,"../src/demo.xc:348: error: previously used here (bytes 3..4)"
-	.globread build_icmp_response0,usage.anon.55,2,1,"../src/demo.xc:348: error: previously used here (bytes 2..3)"
-	.globread build_icmp_response0,usage.anon.55,1,1,"../src/demo.xc:347: error: previously used here (bytes 1..2)"
-	.globread build_icmp_response0,usage.anon.55,"../src/demo.xc:345: error: previously used here"
-	.globread build_icmp_response0,usage.anon.55,0,1,"../src/demo.xc:347: error: previously used here (bytes 0..1)"
-	.globread is_valid_arp_packet1,usage.anon.54,"../src/demo.xc:290: error: previously used here"
-	.globread is_valid_arp_packet0,usage.anon.53,"../src/demo.xc:254: error: previously used here"
-	.globwrite usage.anon.62,mii1,"../src/demo.xc:670: error: previously used here"
-	.globwrite usage.anon.62,smi1,"../src/demo.xc:668: error: previously used here"
-	.globwrite usage.anon.62,otp_ports1,"../src/demo.xc:666: error: previously used here"
-	.globwrite usage.anon.61,mii0,"../src/demo.xc:656: error: previously used here"
-	.globwrite usage.anon.61,smi0,"../src/demo.xc:654: error: previously used here"
-	.globwrite usage.anon.61,otp_ports0,"../src/demo.xc:652: error: previously used here"
-	.globwrite usage.anon.60,mii1,"../src/demo.xc:670: error: previously used here"
-	.globwrite usage.anon.60,smi1,"../src/demo.xc:668: error: previously used here"
-	.globwrite usage.anon.60,otp_ports1,"../src/demo.xc:666: error: previously used here"
-	.globwrite usage.anon.59,mii0,"../src/demo.xc:656: error: previously used here"
-	.globwrite usage.anon.59,smi0,"../src/demo.xc:654: error: previously used here"
-	.globwrite usage.anon.59,otp_ports0,"../src/demo.xc:652: error: previously used here"
-	.globwrite demo1,own_mac_addr1,"../src/demo.xc:600: error: previously used here"
-	.globwrite demo0,own_mac_addr0,"../src/demo.xc:551: error: previously used here"
-	.globwrite _mac_custom_filter,ethertype_arp1,"../src/demo.xc:131: error: previously used here"
-	.globwrite _mac_custom_filter,ethertype_ip1,"../src/demo.xc:133: error: previously used here"
-	.globwrite mac_custom_filter,ethertype_arp0,"../src/demo.xc:121: error: previously used here"
-	.globwrite mac_custom_filter,ethertype_ip0,"../src/demo.xc:123: error: previously used here"
-	.call usage.anon.61,demo1
-	.call usage.anon.62,demo0
+	.globread usage.anon.60,eth_rst_p2,"../src/demo.xc:666: error: previously used here"
+	.globread usage.anon.59,eth_rst_p1,"../src/demo.xc:652: error: previously used here"
+	.globread is_valid_icmp_packet1,usage.anon.58,"../src/demo.xc:516: error: previously used here"
+	.globread is_valid_icmp_packet0,usage.anon.57,"../src/demo.xc:469: error: previously used here"
+	.globread build_icmp_response1,usage.anon.56,3,1,"../src/demo.xc:419: error: previously used here (bytes 3..4)"
+	.globread build_icmp_response1,usage.anon.56,2,1,"../src/demo.xc:419: error: previously used here (bytes 2..3)"
+	.globread build_icmp_response1,usage.anon.56,1,1,"../src/demo.xc:418: error: previously used here (bytes 1..2)"
+	.globread build_icmp_response1,usage.anon.56,"../src/demo.xc:416: error: previously used here"
+	.globread build_icmp_response1,usage.anon.56,0,1,"../src/demo.xc:418: error: previously used here (bytes 0..1)"
+	.globread build_icmp_response0,usage.anon.55,3,1,"../src/demo.xc:345: error: previously used here (bytes 3..4)"
+	.globread build_icmp_response0,usage.anon.55,2,1,"../src/demo.xc:345: error: previously used here (bytes 2..3)"
+	.globread build_icmp_response0,usage.anon.55,1,1,"../src/demo.xc:344: error: previously used here (bytes 1..2)"
+	.globread build_icmp_response0,usage.anon.55,"../src/demo.xc:342: error: previously used here"
+	.globread build_icmp_response0,usage.anon.55,0,1,"../src/demo.xc:344: error: previously used here (bytes 0..1)"
+	.globread is_valid_arp_packet1,usage.anon.54,"../src/demo.xc:288: error: previously used here"
+	.globread is_valid_arp_packet0,usage.anon.53,"../src/demo.xc:252: error: previously used here"
+	.globwrite usage.anon.62,mii_p2,"../src/demo.xc:669: error: previously used here"
+	.globwrite usage.anon.62,smi_p2,"../src/demo.xc:667: error: previously used here"
+	.globwrite usage.anon.62,otp_ports_p2,"../src/demo.xc:665: error: previously used here"
+	.globwrite usage.anon.61,mii_p1,"../src/demo.xc:655: error: previously used here"
+	.globwrite usage.anon.61,smi_p1,"../src/demo.xc:653: error: previously used here"
+	.globwrite usage.anon.61,otp_ports_p1,"../src/demo.xc:651: error: previously used here"
+	.globwrite usage.anon.60,mii_p2,"../src/demo.xc:669: error: previously used here"
+	.globwrite usage.anon.60,smi_p2,"../src/demo.xc:667: error: previously used here"
+	.globwrite usage.anon.60,otp_ports_p2,"../src/demo.xc:665: error: previously used here"
+	.globwrite usage.anon.59,mii_p1,"../src/demo.xc:655: error: previously used here"
+	.globwrite usage.anon.59,smi_p1,"../src/demo.xc:653: error: previously used here"
+	.globwrite usage.anon.59,otp_ports_p1,"../src/demo.xc:651: error: previously used here"
+	.globwrite demo1,own_mac_addr1,"../src/demo.xc:594: error: previously used here"
+	.globwrite demo0,own_mac_addr0,"../src/demo.xc:546: error: previously used here"
+	.globwrite _mac_custom_filter,ethertype_arp1,"../src/demo.xc:130: error: previously used here"
+	.globwrite _mac_custom_filter,ethertype_ip1,"../src/demo.xc:132: error: previously used here"
+	.globwrite mac_custom_filter,ethertype_arp0,"../src/demo.xc:120: error: previously used here"
+	.globwrite mac_custom_filter,ethertype_ip0,"../src/demo.xc:122: error: previously used here"
 	.call usage.anon.62,usage.anon.52
 	.call usage.anon.62,smi_init
 	.call usage.anon.62,otp_board_info_get_mac
-	.call usage.anon.62,ethernet_server_full
+	.call usage.anon.62,ethernet_server_lite
 	.call usage.anon.62,eth_phy_config
 	.call usage.anon.61,usage.anon.27
 	.call usage.anon.61,smi_init
 	.call usage.anon.61,otp_board_info_get_mac
 	.call usage.anon.61,eth_phy_config
-	.call usage.anon.61,_ethernet_server_full
+	.call usage.anon.61,_ethernet_server_lite
+	.call usage.anon.61,demo1
+	.call usage.anon.61,demo0
 	.call main,usage.anon.60
 	.call main,usage.anon.59
 	.call main,demo1
@@ -374,13 +380,13 @@ __xcc1_internal_28.info:
 	.call usage.anon.60,usage.anon.52
 	.call usage.anon.60,smi_init
 	.call usage.anon.60,otp_board_info_get_mac
-	.call usage.anon.60,ethernet_server_full
+	.call usage.anon.60,ethernet_server_lite
 	.call usage.anon.60,eth_phy_config
 	.call usage.anon.59,usage.anon.27
 	.call usage.anon.59,smi_init
 	.call usage.anon.59,otp_board_info_get_mac
 	.call usage.anon.59,eth_phy_config
-	.call usage.anon.59,_ethernet_server_full
+	.call usage.anon.59,_ethernet_server_lite
 	.call demo1,printstr
 	.call demo1,mac_custom_filter
 	.call demo1,is_valid_icmp_packet1
@@ -389,10 +395,9 @@ __xcc1_internal_28.info:
 	.call demo1,is_broadcast
 	.call demo1,build_icmp_response1
 	.call demo1,build_arp_response1
-	.call demo1,_mac_tx_full
-	.call demo1,_mac_set_custom_filter
-	.call demo1,_mac_rx_full
-	.call demo1,_mac_get_macaddr_full
+	.call demo1,_mac_tx_lite
+	.call demo1,_mac_rx_lite
+	.call demo1,_mac_get_macaddr_lite
 	.call demo0,printstr
 	.call demo0,is_valid_icmp_packet0
 	.call demo0,is_valid_arp_packet0
@@ -400,10 +405,9 @@ __xcc1_internal_28.info:
 	.call demo0,is_broadcast
 	.call demo0,build_icmp_response0
 	.call demo0,build_arp_response0
-	.call demo0,_mac_tx_full
-	.call demo0,_mac_set_custom_filter
-	.call demo0,_mac_rx_full
-	.call demo0,_mac_get_macaddr_full
+	.call demo0,_mac_tx_lite
+	.call demo0,_mac_rx_lite
+	.call demo0,_mac_get_macaddr_lite
 	.call demo0,_mac_custom_filter
 	.call is_valid_icmp_packet1,printstr
 	.call is_valid_icmp_packet1,printintln
@@ -415,12 +419,12 @@ __xcc1_internal_28.info:
 	.call usage.anon.2,delay_ticks_longlong
 	.call usage.anon.1,delay_ticks_longlong
 	.call usage.anon.0,delay_ticks_longlong
-	.par usage.anon.59,usage.anon.60,"../src/demo.xc:646: error: use of `%s' violates parallel usage rules"
-	.par usage.anon.59,demo0,"../src/demo.xc:646: error: use of `%s' violates parallel usage rules"
-	.par usage.anon.59,demo1,"../src/demo.xc:646: error: use of `%s' violates parallel usage rules"
-	.par usage.anon.60,demo0,"../src/demo.xc:646: error: use of `%s' violates parallel usage rules"
-	.par usage.anon.60,demo1,"../src/demo.xc:646: error: use of `%s' violates parallel usage rules"
-	.par demo0,demo1,"../src/demo.xc:646: error: use of `%s' violates parallel usage rules"
+	.par demo0,demo1,"../src/demo.xc:640: error: use of `%s' violates parallel usage rules"
+	.par demo0,usage.anon.59,"../src/demo.xc:640: error: use of `%s' violates parallel usage rules"
+	.par demo0,usage.anon.60,"../src/demo.xc:640: error: use of `%s' violates parallel usage rules"
+	.par demo1,usage.anon.59,"../src/demo.xc:640: error: use of `%s' violates parallel usage rules"
+	.par demo1,usage.anon.60,"../src/demo.xc:640: error: use of `%s' violates parallel usage rules"
+	.par usage.anon.59,usage.anon.60,"../src/demo.xc:640: error: use of `%s' violates parallel usage rules"
 	.set usage.anon.59.locnoside, 1
 	.set usage.anon.60.locnoside, 1
 	.set usage.anon.0.locnoside, 1
@@ -761,35 +765,34 @@ __xcc1_internal_28.info:
 	.set demo0.locnonotificationselect, 1
 	.set demo1.locnonotificationselect, 1
 	.set main.locnonotificationselect, 1
-	.globpassesref ethernet_server_full, mii1,"../src/demo.xc:670: error: call to `ethernet_server_full' in `main' makes alias of global 'mii1'"
-	.globpassesref eth_phy_config, smi1,"../src/demo.xc:669: error: call to `eth_phy_config' in `main' makes alias of global 'smi1'"
-	.globpassesref smi_init, smi1,"../src/demo.xc:668: error: call to `smi_init' in `main' makes alias of global 'smi1'"
-	.globpassesref otp_board_info_get_mac, otp_ports1,"../src/demo.xc:666: error: call to `otp_board_info_get_mac' in `main' makes alias of global 'otp_ports1'"
-	.globpassesref _ethernet_server_full, mii0,"../src/demo.xc:656: error: call to `_ethernet_server_full' in `main' makes alias of global 'mii0'"
-	.globpassesref eth_phy_config, smi0,"../src/demo.xc:655: error: call to `eth_phy_config' in `main' makes alias of global 'smi0'"
-	.globpassesref smi_init, smi0,"../src/demo.xc:654: error: call to `smi_init' in `main' makes alias of global 'smi0'"
-	.globpassesref otp_board_info_get_mac, otp_ports0,"../src/demo.xc:652: error: call to `otp_board_info_get_mac' in `main' makes alias of global 'otp_ports0'"
-	.globpassesref build_icmp_response1, own_mac_addr1,"../src/demo.xc:634: error: call to `build_icmp_response1' in `demo1' makes alias of global 'own_mac_addr1'"
-	.globpassesref build_arp_response1, own_mac_addr1,"../src/demo.xc:627: error: call to `build_arp_response1' in `demo1' makes alias of global 'own_mac_addr1'"
-	.globpassesref is_mac_addr, own_mac_addr1,"../src/demo.xc:617: error: call to `is_mac_addr' in `demo1' makes alias of global 'own_mac_addr1'"
-	.globpassesref _mac_get_macaddr_full, own_mac_addr1,"../src/demo.xc:600: error: call to `_mac_get_macaddr_full' in `demo1' makes alias of global 'own_mac_addr1'"
-	.globpassesref build_icmp_response0, own_mac_addr0,"../src/demo.xc:585: error: call to `build_icmp_response0' in `demo0' makes alias of global 'own_mac_addr0'"
-	.globpassesref build_arp_response0, own_mac_addr0,"../src/demo.xc:578: error: call to `build_arp_response0' in `demo0' makes alias of global 'own_mac_addr0'"
-	.globpassesref is_mac_addr, own_mac_addr0,"../src/demo.xc:568: error: call to `is_mac_addr' in `demo0' makes alias of global 'own_mac_addr0'"
-	.globpassesref _mac_get_macaddr_full, own_mac_addr0,"../src/demo.xc:551: error: call to `_mac_get_macaddr_full' in `demo0' makes alias of global 'own_mac_addr0'"
-	.globpassesref is_ethertype, ethertype_ip1,"../src/demo.xc:133: error: call to `is_ethertype' in `_mac_custom_filter' makes alias of global 'ethertype_ip1'"
-	.globpassesref is_ethertype, ethertype_arp1,"../src/demo.xc:131: error: call to `is_ethertype' in `_mac_custom_filter' makes alias of global 'ethertype_arp1'"
-	.globpassesref is_ethertype, ethertype_ip0,"../src/demo.xc:123: error: call to `is_ethertype' in `mac_custom_filter' makes alias of global 'ethertype_ip0'"
-	.globpassesref is_ethertype, ethertype_arp0,"../src/demo.xc:121: error: call to `is_ethertype' in `mac_custom_filter' makes alias of global 'ethertype_arp0'"
-	.overlay_subgraph_conflict __main__main_tile_1_task__ethernet_server_full_0, __main__main_tile_1_task_demo1_3
-	.overlay_subgraph_conflict __main__main_tile_0_task_ethernet_server_full_1, __main__main_tile_0_task_demo0_2
+	.globpassesref ethernet_server_lite, mii_p2,"../src/demo.xc:669: error: call to `ethernet_server_lite' in `main' makes alias of global 'mii_p2'"
+	.globpassesref eth_phy_config, smi_p2,"../src/demo.xc:668: error: call to `eth_phy_config' in `main' makes alias of global 'smi_p2'"
+	.globpassesref smi_init, smi_p2,"../src/demo.xc:667: error: call to `smi_init' in `main' makes alias of global 'smi_p2'"
+	.globpassesref otp_board_info_get_mac, otp_ports_p2,"../src/demo.xc:665: error: call to `otp_board_info_get_mac' in `main' makes alias of global 'otp_ports_p2'"
+	.globpassesref _ethernet_server_lite, mii_p1,"../src/demo.xc:655: error: call to `_ethernet_server_lite' in `main' makes alias of global 'mii_p1'"
+	.globpassesref eth_phy_config, smi_p1,"../src/demo.xc:654: error: call to `eth_phy_config' in `main' makes alias of global 'smi_p1'"
+	.globpassesref smi_init, smi_p1,"../src/demo.xc:653: error: call to `smi_init' in `main' makes alias of global 'smi_p1'"
+	.globpassesref otp_board_info_get_mac, otp_ports_p1,"../src/demo.xc:651: error: call to `otp_board_info_get_mac' in `main' makes alias of global 'otp_ports_p1'"
+	.globpassesref build_icmp_response1, own_mac_addr1,"../src/demo.xc:628: error: call to `build_icmp_response1' in `demo1' makes alias of global 'own_mac_addr1'"
+	.globpassesref build_arp_response1, own_mac_addr1,"../src/demo.xc:621: error: call to `build_arp_response1' in `demo1' makes alias of global 'own_mac_addr1'"
+	.globpassesref is_mac_addr, own_mac_addr1,"../src/demo.xc:611: error: call to `is_mac_addr' in `demo1' makes alias of global 'own_mac_addr1'"
+	.globpassesref _mac_get_macaddr_lite, own_mac_addr1,"../src/demo.xc:594: error: call to `_mac_get_macaddr_lite' in `demo1' makes alias of global 'own_mac_addr1'"
+	.globpassesref build_icmp_response0, own_mac_addr0,"../src/demo.xc:580: error: call to `build_icmp_response0' in `demo0' makes alias of global 'own_mac_addr0'"
+	.globpassesref build_arp_response0, own_mac_addr0,"../src/demo.xc:573: error: call to `build_arp_response0' in `demo0' makes alias of global 'own_mac_addr0'"
+	.globpassesref is_mac_addr, own_mac_addr0,"../src/demo.xc:563: error: call to `is_mac_addr' in `demo0' makes alias of global 'own_mac_addr0'"
+	.globpassesref _mac_get_macaddr_lite, own_mac_addr0,"../src/demo.xc:546: error: call to `_mac_get_macaddr_lite' in `demo0' makes alias of global 'own_mac_addr0'"
+	.globpassesref is_ethertype, ethertype_ip1,"../src/demo.xc:132: error: call to `is_ethertype' in `_mac_custom_filter' makes alias of global 'ethertype_ip1'"
+	.globpassesref is_ethertype, ethertype_arp1,"../src/demo.xc:130: error: call to `is_ethertype' in `_mac_custom_filter' makes alias of global 'ethertype_arp1'"
+	.globpassesref is_ethertype, ethertype_ip0,"../src/demo.xc:122: error: call to `is_ethertype' in `mac_custom_filter' makes alias of global 'ethertype_ip0'"
+	.globpassesref is_ethertype, ethertype_arp0,"../src/demo.xc:120: error: call to `is_ethertype' in `mac_custom_filter' makes alias of global 'ethertype_arp0'"
+	.overlay_subgraph_conflict __main__main_tile_1_task_demo0_0, __main__main_tile_1_task_demo1_1, __main__main_tile_1_task__ethernet_server_lite_2
 
 
 	.file	1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/../src/demo.xc"
 	.file	2 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/timer.h"
-	.file	3 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/_mii_full.h"
+	.file	3 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/mii_full_p1.h"
 	.file	4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/ethernet_phy_reset_p1.h"
-	.file	5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/mii_full.h"
+	.file	5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/mii_full_p2.h"
 	.file	6 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/ethernet_phy_reset_p2.h"
 	.file	7 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/<synthesized>"
 	.section	.debug_info,"",@progbits
@@ -821,7 +824,7 @@ demo0:
 .Ltmp2:
 	.cfi_startproc
 .Lfunc_begin53:
-	.loc	1 546 0
+	.loc	1 541 0
 	entsp 823
 .Ltmp3:
 	.cfi_def_cfa_offset 3292
@@ -838,38 +841,31 @@ demo0:
 	stw r1, sp[819]
 .Lxtalabel0:
 .Ltmp6:
-	.loc	1 551 0 prologue_end
+	.loc	1 546 0 prologue_end
 	ldw r0, sp[820]
 	ldc r2, 6
-	.loc	1 551 0
+	.loc	1 546 0
 	ldaw r1, dp[own_mac_addr0]
 .Lxta.call_labels0:
-	bl _mac_get_macaddr_full
-	.loc	1 556 0
-	ldw r1, sp[819]
-	mkmsk r2, 1
-	.loc	1 556 0
+	bl _mac_get_macaddr_lite
+	ldc r1, 20
+	.loc	1 554 0
+	ldaw r2, dp[.str7]
 	stw r0, sp[13]
-	mov r0, r1
-	mov r1, r2
+	mov r0, r2
 .Lxta.call_labels1:
-	bl _mac_set_custom_filter
-	ldc r1, 14
-	.loc	1 559 0
-	ldaw r0, dp[.str7]
-.Lxta.call_labels2:
 	bl printstr
-	.loc	1 562 0
+	.loc	1 557 0
 	stw r0, sp[12]
 	bu .LBB53_19
 .LBB53_3:
 .Lxtalabel1:
 .Ltmp7:
-	.loc	1 566 0
+	.loc	1 561 0
 	ldw r0, sp[819]
 	ldaw r1, sp[419]
 	ldc r2, 1600
-	.loc	1 566 0
+	.loc	1 561 0
 	stw r2, sp[1]
 	ldaw r3, sp[17]
 	ldaw r11, sp[18]
@@ -877,34 +873,34 @@ demo0:
 	stw r2, sp[10]
 	mov r2, r3
 	mov r3, r11
-.Lxta.call_labels3:
-	bl _mac_rx_full
-	.loc	1 568 0
+.Lxta.call_labels2:
+	bl _mac_rx_lite
+	.loc	1 563 0
 	ldw r0, sp[11]
 	ldw r1, sp[10]
-.Lxta.call_labels4:
+.Lxta.call_labels3:
 	bl is_broadcast
-	.loc	1 568 0
+	.loc	1 563 0
 	bt r0, .LBB53_8
 	bu .LBB53_7
 .LBB53_4:
 .Lxtalabel2:
-	.loc	1 569 0
+	.loc	1 564 0
 	bu .LBB53_19
 .LBB53_5:
 .Lxtalabel3:
 	ldaw r0, sp[419]
 	ldc r1, 400
-	.loc	1 570 0
-.Lxta.call_labels5:
+	.loc	1 565 0
+.Lxta.call_labels4:
 	bl _mac_custom_filter
-	.loc	1 570 0
+	.loc	1 565 0
 	eq r0, r0, 1
 	bf r0, .LBB53_10
 	bu .LBB53_11
 .LBB53_6:
 	mkmsk r0, 1
-	.loc	1 568 0
+	.loc	1 563 0
 	stw r0, sp[16]
 	bu .LBB53_9
 .LBB53_7:
@@ -924,18 +920,18 @@ demo0:
 	bu .LBB53_5
 .LBB53_10:
 .Lxtalabel4:
-	.loc	1 571 0
+	.loc	1 566 0
 	bu .LBB53_19
 .LBB53_11:
 .Lxtalabel5:
 	ldaw r0, sp[419]
-	.loc	1 576 0
+	.loc	1 571 0
 	ldw r1, sp[17]
 	ldc r2, 1600
-	.loc	1 576 0
-.Lxta.call_labels6:
+	.loc	1 571 0
+.Lxta.call_labels5:
 	bl is_valid_arp_packet0
-	.loc	1 576 0
+	.loc	1 571 0
 	bf r0, .LBB53_14
 	bu .LBB53_12
 .LBB53_12:
@@ -943,7 +939,7 @@ demo0:
 	ldaw r0, sp[419]
 	ldaw r1, sp[19]
 	mkmsk r2, 1
-	.loc	1 578 0
+	.loc	1 573 0
 	stw r0, sp[9]
 	stw r1, sp[8]
 	ecallf r2
@@ -953,24 +949,24 @@ demo0:
 .Lxtalabel7:
 .Lxta.loop_labels0:
 	# LOOPMARKER 0
-	.loc	1 562 0
+	.loc	1 557 0
 	bu .LBB53_19
 .LBB53_14:
 .Lxtalabel8:
 	ldaw r0, sp[419]
-	.loc	1 583 0
+	.loc	1 578 0
 .Ltmp9:
 	ldw r1, sp[17]
 	ldc r2, 1600
-	.loc	1 583 0
-.Lxta.call_labels7:
+	.loc	1 578 0
+.Lxta.call_labels6:
 	bl is_valid_icmp_packet0
-	.loc	1 583 0
+	.loc	1 578 0
 	bt r0, .LBB53_16
 	bu .LBB53_17
 .LBB53_15:
 	ldc r0, 400
-	.loc	1 578 0
+	.loc	1 573 0
 	stw r0, sp[1]
 	ldc r3, 1600
 	ldaw r2, dp[own_mac_addr0]
@@ -978,13 +974,13 @@ demo0:
 	stw r0, sp[7]
 	mov r0, r1
 	ldw r1, sp[8]
-.Lxta.call_labels8:
+.Lxta.call_labels7:
 	bl build_arp_response0
-	.loc	1 579 0
+	.loc	1 574 0
 	ldw r1, sp[820]
 	ldaw r2, sp[19]
 	ldw r3, sp[17]
-	.loc	1 579 0
+	.loc	1 574 0
 	ldw r11, sp[7]
 	stw r11, sp[1]
 	mkmsk r4, 32
@@ -993,26 +989,26 @@ demo0:
 	mov r1, r2
 	mov r2, r3
 	mov r3, r4
-.Lxta.call_labels9:
-	bl _mac_tx_full
-	.loc	1 579 0
+.Lxta.call_labels8:
+	bl _mac_tx_lite
+	.loc	1 574 0
 	bu .LBB53_13
 .LBB53_16:
 .Lxtalabel9:
 	ldaw r0, sp[419]
 	ldaw r1, sp[19]
 	mkmsk r2, 1
-	.loc	1 585 0
+	.loc	1 580 0
 	stw r0, sp[5]
 	stw r1, sp[4]
 	ecallf r2
 	bu .LBB53_18
 .LBB53_17:
-	.loc	1 586 0
+	.loc	1 581 0
 	bu .LBB53_13
 .LBB53_18:
 	ldc r0, 1600
-	.loc	1 585 0
+	.loc	1 580 0
 	stw r0, sp[1]
 	ldaw r2, dp[own_mac_addr0]
 	ldw r1, sp[5]
@@ -1020,14 +1016,14 @@ demo0:
 	mov r0, r1
 	ldw r1, sp[4]
 	ldw r3, sp[3]
-.Lxta.call_labels10:
+.Lxta.call_labels9:
 	bl build_icmp_response0
-	.loc	1 586 0
+	.loc	1 581 0
 	ldw r1, sp[820]
 	ldaw r2, sp[19]
 	ldw r3, sp[17]
 	ldc r11, 400
-	.loc	1 586 0
+	.loc	1 581 0
 	stw r11, sp[1]
 	mkmsk r11, 32
 	stw r0, sp[2]
@@ -1035,14 +1031,14 @@ demo0:
 	mov r1, r2
 	mov r2, r3
 	mov r3, r11
-.Lxta.call_labels11:
-	bl _mac_tx_full
-	.loc	1 586 0
+.Lxta.call_labels10:
+	bl _mac_tx_lite
+	.loc	1 581 0
 	bu .LBB53_17
 .Ltmp10:
 .LBB53_19:
 	mkmsk r0, 1
-	.loc	1 562 0
+	.loc	1 557 0
 	bt r0, .LBB53_3
 	bu .LBB53_20
 .Ltmp11:
@@ -1062,13 +1058,13 @@ demo0:
 
 	.align	4
 	.cc_bottom demo0.function
-	.set	demo0.nstackwords,((_mac_get_macaddr_full.nstackwords $M _mac_set_custom_filter.nstackwords $M printstr.nstackwords $M _mac_rx_full.nstackwords $M is_broadcast.nstackwords $M _mac_custom_filter.nstackwords $M is_valid_arp_packet0.nstackwords $M build_arp_response0.nstackwords $M is_valid_icmp_packet0.nstackwords $M build_icmp_response0.nstackwords $M _mac_tx_full.nstackwords $M is_mac_addr.nstackwords) + 823)
+	.set	demo0.nstackwords,((_mac_get_macaddr_lite.nstackwords $M printstr.nstackwords $M _mac_rx_lite.nstackwords $M is_broadcast.nstackwords $M _mac_custom_filter.nstackwords $M is_valid_arp_packet0.nstackwords $M build_arp_response0.nstackwords $M is_valid_icmp_packet0.nstackwords $M build_icmp_response0.nstackwords $M _mac_tx_lite.nstackwords $M is_mac_addr.nstackwords) + 823)
 	.globl	demo0.nstackwords
-	.set	demo0.maxcores,_mac_custom_filter.maxcores $M _mac_get_macaddr_full.maxcores $M _mac_rx_full.maxcores $M _mac_set_custom_filter.maxcores $M _mac_tx_full.maxcores $M build_arp_response0.maxcores $M build_icmp_response0.maxcores $M is_broadcast.maxcores $M is_mac_addr.maxcores $M is_valid_arp_packet0.maxcores $M is_valid_icmp_packet0.maxcores $M printstr.maxcores $M 1
+	.set	demo0.maxcores,_mac_custom_filter.maxcores $M _mac_get_macaddr_lite.maxcores $M _mac_rx_lite.maxcores $M _mac_tx_lite.maxcores $M build_arp_response0.maxcores $M build_icmp_response0.maxcores $M is_broadcast.maxcores $M is_mac_addr.maxcores $M is_valid_arp_packet0.maxcores $M is_valid_icmp_packet0.maxcores $M printstr.maxcores $M 1
 	.globl	demo0.maxcores
-	.set	demo0.maxtimers,_mac_custom_filter.maxtimers $M _mac_get_macaddr_full.maxtimers $M _mac_rx_full.maxtimers $M _mac_set_custom_filter.maxtimers $M _mac_tx_full.maxtimers $M build_arp_response0.maxtimers $M build_icmp_response0.maxtimers $M is_broadcast.maxtimers $M is_mac_addr.maxtimers $M is_valid_arp_packet0.maxtimers $M is_valid_icmp_packet0.maxtimers $M printstr.maxtimers $M 0
+	.set	demo0.maxtimers,_mac_custom_filter.maxtimers $M _mac_get_macaddr_lite.maxtimers $M _mac_rx_lite.maxtimers $M _mac_tx_lite.maxtimers $M build_arp_response0.maxtimers $M build_icmp_response0.maxtimers $M is_broadcast.maxtimers $M is_mac_addr.maxtimers $M is_valid_arp_packet0.maxtimers $M is_valid_icmp_packet0.maxtimers $M printstr.maxtimers $M 0
 	.globl	demo0.maxtimers
-	.set	demo0.maxchanends,_mac_custom_filter.maxchanends $M _mac_get_macaddr_full.maxchanends $M _mac_rx_full.maxchanends $M _mac_set_custom_filter.maxchanends $M _mac_tx_full.maxchanends $M build_arp_response0.maxchanends $M build_icmp_response0.maxchanends $M is_broadcast.maxchanends $M is_mac_addr.maxchanends $M is_valid_arp_packet0.maxchanends $M is_valid_icmp_packet0.maxchanends $M printstr.maxchanends $M 0
+	.set	demo0.maxchanends,_mac_custom_filter.maxchanends $M _mac_get_macaddr_lite.maxchanends $M _mac_rx_lite.maxchanends $M _mac_tx_lite.maxchanends $M build_arp_response0.maxchanends $M build_icmp_response0.maxchanends $M is_broadcast.maxchanends $M is_mac_addr.maxchanends $M is_valid_arp_packet0.maxchanends $M is_valid_icmp_packet0.maxchanends $M printstr.maxchanends $M 0
 	.globl	demo0.maxchanends
 	.cc_top demo1.function
 	.globl	demo1
@@ -1078,7 +1074,7 @@ demo1:
 .Ltmp16:
 	.cfi_startproc
 .Lfunc_begin54:
-	.loc	1 595 0
+	.loc	1 589 0
 	entsp 823
 .Ltmp17:
 	.cfi_def_cfa_offset 3292
@@ -1095,38 +1091,31 @@ demo1:
 	stw r1, sp[819]
 .Lxtalabel11:
 .Ltmp20:
-	.loc	1 600 0 prologue_end
+	.loc	1 594 0 prologue_end
 	ldw r0, sp[820]
 	ldc r2, 6
-	.loc	1 600 0
+	.loc	1 594 0
 	ldaw r1, dp[own_mac_addr1]
-.Lxta.call_labels12:
-	bl _mac_get_macaddr_full
-	.loc	1 605 0
-	ldw r1, sp[819]
-	mkmsk r2, 1
-	.loc	1 605 0
+.Lxta.call_labels11:
+	bl _mac_get_macaddr_lite
+	ldc r1, 20
+	.loc	1 602 0
+	ldaw r2, dp[.str8]
 	stw r0, sp[13]
-	mov r0, r1
-	mov r1, r2
-.Lxta.call_labels13:
-	bl _mac_set_custom_filter
-	ldc r1, 14
-	.loc	1 608 0
-	ldaw r0, dp[.str8]
-.Lxta.call_labels14:
+	mov r0, r2
+.Lxta.call_labels12:
 	bl printstr
-	.loc	1 611 0
+	.loc	1 605 0
 	stw r0, sp[12]
 	bu .LBB54_19
 .LBB54_3:
 .Lxtalabel12:
 .Ltmp21:
-	.loc	1 615 0
+	.loc	1 609 0
 	ldw r0, sp[819]
 	ldaw r1, sp[419]
 	ldc r2, 1600
-	.loc	1 615 0
+	.loc	1 609 0
 	stw r2, sp[1]
 	ldaw r3, sp[17]
 	ldaw r11, sp[18]
@@ -1134,34 +1123,34 @@ demo1:
 	stw r2, sp[10]
 	mov r2, r3
 	mov r3, r11
-.Lxta.call_labels15:
-	bl _mac_rx_full
-	.loc	1 617 0
+.Lxta.call_labels13:
+	bl _mac_rx_lite
+	.loc	1 611 0
 	ldw r0, sp[11]
 	ldw r1, sp[10]
-.Lxta.call_labels16:
+.Lxta.call_labels14:
 	bl is_broadcast
-	.loc	1 617 0
+	.loc	1 611 0
 	bt r0, .LBB54_8
 	bu .LBB54_7
 .LBB54_4:
 .Lxtalabel13:
-	.loc	1 618 0
+	.loc	1 612 0
 	bu .LBB54_19
 .LBB54_5:
 .Lxtalabel14:
 	ldaw r0, sp[419]
 	ldc r1, 400
-	.loc	1 619 0
-.Lxta.call_labels17:
+	.loc	1 613 0
+.Lxta.call_labels15:
 	bl mac_custom_filter
-	.loc	1 619 0
+	.loc	1 613 0
 	eq r0, r0, 1
 	bf r0, .LBB54_10
 	bu .LBB54_11
 .LBB54_6:
 	mkmsk r0, 1
-	.loc	1 617 0
+	.loc	1 611 0
 	stw r0, sp[16]
 	bu .LBB54_9
 .LBB54_7:
@@ -1181,18 +1170,18 @@ demo1:
 	bu .LBB54_5
 .LBB54_10:
 .Lxtalabel15:
-	.loc	1 620 0
+	.loc	1 614 0
 	bu .LBB54_19
 .LBB54_11:
 .Lxtalabel16:
 	ldaw r0, sp[419]
-	.loc	1 625 0
+	.loc	1 619 0
 	ldw r1, sp[17]
 	ldc r2, 1600
-	.loc	1 625 0
-.Lxta.call_labels18:
+	.loc	1 619 0
+.Lxta.call_labels16:
 	bl is_valid_arp_packet1
-	.loc	1 625 0
+	.loc	1 619 0
 	bf r0, .LBB54_14
 	bu .LBB54_12
 .LBB54_12:
@@ -1200,7 +1189,7 @@ demo1:
 	ldaw r0, sp[419]
 	ldaw r1, sp[19]
 	mkmsk r2, 1
-	.loc	1 627 0
+	.loc	1 621 0
 	stw r0, sp[9]
 	stw r1, sp[8]
 	ecallf r2
@@ -1210,24 +1199,24 @@ demo1:
 .Lxtalabel18:
 .Lxta.loop_labels1:
 	# LOOPMARKER 0
-	.loc	1 611 0
+	.loc	1 605 0
 	bu .LBB54_19
 .LBB54_14:
 .Lxtalabel19:
 	ldaw r0, sp[419]
-	.loc	1 632 0
+	.loc	1 626 0
 .Ltmp23:
 	ldw r1, sp[17]
 	ldc r2, 1600
-	.loc	1 632 0
-.Lxta.call_labels19:
+	.loc	1 626 0
+.Lxta.call_labels17:
 	bl is_valid_icmp_packet1
-	.loc	1 632 0
+	.loc	1 626 0
 	bt r0, .LBB54_16
 	bu .LBB54_17
 .LBB54_15:
 	ldc r0, 400
-	.loc	1 627 0
+	.loc	1 621 0
 	stw r0, sp[1]
 	ldc r3, 1600
 	ldaw r2, dp[own_mac_addr1]
@@ -1235,13 +1224,13 @@ demo1:
 	stw r0, sp[7]
 	mov r0, r1
 	ldw r1, sp[8]
-.Lxta.call_labels20:
+.Lxta.call_labels18:
 	bl build_arp_response1
-	.loc	1 628 0
+	.loc	1 622 0
 	ldw r1, sp[820]
 	ldaw r2, sp[19]
 	ldw r3, sp[17]
-	.loc	1 628 0
+	.loc	1 622 0
 	ldw r11, sp[7]
 	stw r11, sp[1]
 	mkmsk r4, 32
@@ -1250,26 +1239,26 @@ demo1:
 	mov r1, r2
 	mov r2, r3
 	mov r3, r4
-.Lxta.call_labels21:
-	bl _mac_tx_full
-	.loc	1 628 0
+.Lxta.call_labels19:
+	bl _mac_tx_lite
+	.loc	1 622 0
 	bu .LBB54_13
 .LBB54_16:
 .Lxtalabel20:
 	ldaw r0, sp[419]
 	ldaw r1, sp[19]
 	mkmsk r2, 1
-	.loc	1 634 0
+	.loc	1 628 0
 	stw r0, sp[5]
 	stw r1, sp[4]
 	ecallf r2
 	bu .LBB54_18
 .LBB54_17:
-	.loc	1 635 0
+	.loc	1 629 0
 	bu .LBB54_13
 .LBB54_18:
 	ldc r0, 1600
-	.loc	1 634 0
+	.loc	1 628 0
 	stw r0, sp[1]
 	ldaw r2, dp[own_mac_addr1]
 	ldw r1, sp[5]
@@ -1277,14 +1266,14 @@ demo1:
 	mov r0, r1
 	ldw r1, sp[4]
 	ldw r3, sp[3]
-.Lxta.call_labels22:
+.Lxta.call_labels20:
 	bl build_icmp_response1
-	.loc	1 635 0
+	.loc	1 629 0
 	ldw r1, sp[820]
 	ldaw r2, sp[19]
 	ldw r3, sp[17]
 	ldc r11, 400
-	.loc	1 635 0
+	.loc	1 629 0
 	stw r11, sp[1]
 	mkmsk r11, 32
 	stw r0, sp[2]
@@ -1292,14 +1281,14 @@ demo1:
 	mov r1, r2
 	mov r2, r3
 	mov r3, r11
-.Lxta.call_labels23:
-	bl _mac_tx_full
-	.loc	1 635 0
+.Lxta.call_labels21:
+	bl _mac_tx_lite
+	.loc	1 629 0
 	bu .LBB54_17
 .Ltmp24:
 .LBB54_19:
 	mkmsk r0, 1
-	.loc	1 611 0
+	.loc	1 605 0
 	bt r0, .LBB54_3
 	bu .LBB54_20
 .Ltmp25:
@@ -1319,13 +1308,13 @@ demo1:
 
 	.align	4
 	.cc_bottom demo1.function
-	.set	demo1.nstackwords,((_mac_get_macaddr_full.nstackwords $M _mac_set_custom_filter.nstackwords $M printstr.nstackwords $M _mac_rx_full.nstackwords $M is_broadcast.nstackwords $M mac_custom_filter.nstackwords $M is_valid_arp_packet1.nstackwords $M build_arp_response1.nstackwords $M is_valid_icmp_packet1.nstackwords $M build_icmp_response1.nstackwords $M _mac_tx_full.nstackwords $M is_mac_addr.nstackwords) + 823)
+	.set	demo1.nstackwords,((_mac_get_macaddr_lite.nstackwords $M printstr.nstackwords $M _mac_rx_lite.nstackwords $M is_broadcast.nstackwords $M mac_custom_filter.nstackwords $M is_valid_arp_packet1.nstackwords $M build_arp_response1.nstackwords $M is_valid_icmp_packet1.nstackwords $M build_icmp_response1.nstackwords $M _mac_tx_lite.nstackwords $M is_mac_addr.nstackwords) + 823)
 	.globl	demo1.nstackwords
-	.set	demo1.maxcores,_mac_get_macaddr_full.maxcores $M _mac_rx_full.maxcores $M _mac_set_custom_filter.maxcores $M _mac_tx_full.maxcores $M build_arp_response1.maxcores $M build_icmp_response1.maxcores $M is_broadcast.maxcores $M is_mac_addr.maxcores $M is_valid_arp_packet1.maxcores $M is_valid_icmp_packet1.maxcores $M mac_custom_filter.maxcores $M printstr.maxcores $M 1
+	.set	demo1.maxcores,_mac_get_macaddr_lite.maxcores $M _mac_rx_lite.maxcores $M _mac_tx_lite.maxcores $M build_arp_response1.maxcores $M build_icmp_response1.maxcores $M is_broadcast.maxcores $M is_mac_addr.maxcores $M is_valid_arp_packet1.maxcores $M is_valid_icmp_packet1.maxcores $M mac_custom_filter.maxcores $M printstr.maxcores $M 1
 	.globl	demo1.maxcores
-	.set	demo1.maxtimers,_mac_get_macaddr_full.maxtimers $M _mac_rx_full.maxtimers $M _mac_set_custom_filter.maxtimers $M _mac_tx_full.maxtimers $M build_arp_response1.maxtimers $M build_icmp_response1.maxtimers $M is_broadcast.maxtimers $M is_mac_addr.maxtimers $M is_valid_arp_packet1.maxtimers $M is_valid_icmp_packet1.maxtimers $M mac_custom_filter.maxtimers $M printstr.maxtimers $M 0
+	.set	demo1.maxtimers,_mac_get_macaddr_lite.maxtimers $M _mac_rx_lite.maxtimers $M _mac_tx_lite.maxtimers $M build_arp_response1.maxtimers $M build_icmp_response1.maxtimers $M is_broadcast.maxtimers $M is_mac_addr.maxtimers $M is_valid_arp_packet1.maxtimers $M is_valid_icmp_packet1.maxtimers $M mac_custom_filter.maxtimers $M printstr.maxtimers $M 0
 	.globl	demo1.maxtimers
-	.set	demo1.maxchanends,_mac_get_macaddr_full.maxchanends $M _mac_rx_full.maxchanends $M _mac_set_custom_filter.maxchanends $M _mac_tx_full.maxchanends $M build_arp_response1.maxchanends $M build_icmp_response1.maxchanends $M is_broadcast.maxchanends $M is_mac_addr.maxchanends $M is_valid_arp_packet1.maxchanends $M is_valid_icmp_packet1.maxchanends $M mac_custom_filter.maxchanends $M printstr.maxchanends $M 0
+	.set	demo1.maxchanends,_mac_get_macaddr_lite.maxchanends $M _mac_rx_lite.maxchanends $M _mac_tx_lite.maxchanends $M build_arp_response1.maxchanends $M build_icmp_response1.maxchanends $M is_broadcast.maxchanends $M is_mac_addr.maxchanends $M is_valid_arp_packet1.maxchanends $M is_valid_icmp_packet1.maxchanends $M mac_custom_filter.maxchanends $M printstr.maxchanends $M 0
 	.globl	demo1.maxchanends
 	.cc_top is_ethertype.function
 	.globl	is_ethertype
@@ -1335,7 +1324,7 @@ is_ethertype:
 .Ltmp29:
 	.cfi_startproc
 .Lfunc_begin55:
-	.loc	1 92 0
+	.loc	1 91 0
 	entsp 12
 .Ltmp30:
 	.cfi_def_cfa_offset 48
@@ -1356,10 +1345,10 @@ is_ethertype:
 .Lxtalabel22:
 .Ltmp32:
 	ldc r0, 12
-	.loc	1 93 0 prologue_end
+	.loc	1 92 0 prologue_end
 .Ltmp33:
 	stw r0, sp[5]
-	.loc	1 94 0
+	.loc	1 93 0
 	ldw r1, sp[10]
 	ldw r2, sp[8]
 	ldc r3, 0
@@ -1417,7 +1406,7 @@ is_mac_addr:
 .Ltmp38:
 	.cfi_startproc
 .Lfunc_begin56:
-	.loc	1 98 0
+	.loc	1 97 0
 	entsp 11
 .Ltmp39:
 	.cfi_def_cfa_offset 44
@@ -1437,14 +1426,14 @@ is_mac_addr:
 	stw r3, sp[6]
 .Lxtalabel23:
 	ldc r0, 0
-	.loc	1 99 0 prologue_end
+	.loc	1 98 0 prologue_end
 .Ltmp41:
 	stw r0, sp[4]
 .Ltmp42:
 	bu .LBB56_7
 .LBB56_3:
 .Lxtalabel24:
-	.loc	1 100 0
+	.loc	1 99 0
 	ldw r0, sp[9]
 	ldw r1, sp[4]
 	ldw r2, sp[7]
@@ -1456,12 +1445,12 @@ is_mac_addr:
 .LBB56_4:
 .Lxtalabel25:
 	ldc r0, 0
-	.loc	1 101 0
+	.loc	1 100 0
 	stw r0, sp[5]
 	bu .LBB56_9
 .LBB56_5:
 .Lxtalabel26:
-	.loc	1 99 0
+	.loc	1 98 0
 	ldw r0, sp[4]
 	add r0, r0, 1
 	stw r0, sp[4]
@@ -1477,7 +1466,7 @@ is_mac_addr:
 .LBB56_8:
 .Lxtalabel27:
 	mkmsk r0, 1
-	.loc	1 105 0
+	.loc	1 104 0
 	stw r0, sp[5]
 .Ltmp44:
 .LBB56_9:
@@ -1508,7 +1497,7 @@ is_broadcast:
 .Ltmp48:
 	.cfi_startproc
 .Lfunc_begin57:
-	.loc	1 109 0
+	.loc	1 108 0
 	entsp 7
 .Ltmp49:
 	.cfi_def_cfa_offset 28
@@ -1522,14 +1511,14 @@ is_broadcast:
 	stw r1, sp[4]
 .Lxtalabel28:
 	ldc r0, 0
-	.loc	1 110 0 prologue_end
+	.loc	1 109 0 prologue_end
 .Ltmp51:
 	stw r0, sp[2]
 .Ltmp52:
 	bu .LBB57_7
 .LBB57_3:
 .Lxtalabel29:
-	.loc	1 111 0
+	.loc	1 110 0
 	ldw r0, sp[5]
 	ldw r1, sp[2]
 	ld8u r0, r0[r1]
@@ -1540,12 +1529,12 @@ is_broadcast:
 .LBB57_4:
 .Lxtalabel30:
 	ldc r0, 0
-	.loc	1 112 0
+	.loc	1 111 0
 	stw r0, sp[3]
 	bu .LBB57_9
 .LBB57_5:
 .Lxtalabel31:
-	.loc	1 110 0
+	.loc	1 109 0
 	ldw r0, sp[2]
 	add r0, r0, 1
 	stw r0, sp[2]
@@ -1561,7 +1550,7 @@ is_broadcast:
 .LBB57_8:
 .Lxtalabel32:
 	mkmsk r0, 1
-	.loc	1 116 0
+	.loc	1 115 0
 	stw r0, sp[3]
 .Ltmp54:
 .LBB57_9:
@@ -1592,7 +1581,7 @@ mac_custom_filter:
 .Ltmp58:
 	.cfi_startproc
 .Lfunc_begin58:
-	.loc	1 120 0
+	.loc	1 119 0
 	entsp 9
 .Ltmp59:
 	.cfi_def_cfa_offset 36
@@ -1605,54 +1594,54 @@ mac_custom_filter:
 	ldw r1, sp[3]
 	stw r1, sp[6]
 .Lxtalabel33:
-	.loc	1 121 0 prologue_end
+	.loc	1 120 0 prologue_end
 .Ltmp61:
 	ldw r0, sp[6]
 	ldw r1, sp[7]
 	ldc r3, 2
 	shl r2, r0, 2
-	.loc	1 121 0
+	.loc	1 120 0
 	ldaw r0, dp[ethertype_arp0]
 	stw r0, sp[2]
 	mov r0, r1
 	ldw r1, sp[2]
-.Lxta.call_labels24:
+.Lxta.call_labels22:
 	bl is_ethertype
-	.loc	1 121 0
+	.loc	1 120 0
 	bf r0, .LBB58_5
 	bu .LBB58_3
 .LBB58_3:
 .Lxtalabel34:
 	mkmsk r0, 1
-	.loc	1 122 0
+	.loc	1 121 0
 	stw r0, sp[5]
 	bu .LBB58_8
 .LBB58_4:
 .Lxtalabel35:
 	ldc r0, 0
-	.loc	1 127 0
+	.loc	1 126 0
 	stw r0, sp[5]
 	bu .LBB58_8
 .LBB58_5:
-	.loc	1 123 0
+	.loc	1 122 0
 	ldw r0, sp[6]
 	ldw r1, sp[7]
 	ldc r3, 2
 	shl r2, r0, 2
-	.loc	1 123 0
+	.loc	1 122 0
 	ldaw r0, dp[ethertype_ip0]
 	stw r0, sp[1]
 	mov r0, r1
 	ldw r1, sp[1]
-.Lxta.call_labels25:
+.Lxta.call_labels23:
 	bl is_ethertype
-	.loc	1 123 0
+	.loc	1 122 0
 	bf r0, .LBB58_7
 	bu .LBB58_6
 .LBB58_6:
 .Lxtalabel36:
 	mkmsk r0, 1
-	.loc	1 124 0
+	.loc	1 123 0
 	stw r0, sp[5]
 	bu .LBB58_8
 .LBB58_7:
@@ -1686,7 +1675,7 @@ _mac_custom_filter:
 .Ltmp66:
 	.cfi_startproc
 .Lfunc_begin59:
-	.loc	1 130 0
+	.loc	1 129 0
 	entsp 9
 .Ltmp67:
 	.cfi_def_cfa_offset 36
@@ -1699,54 +1688,54 @@ _mac_custom_filter:
 	ldw r1, sp[3]
 	stw r1, sp[6]
 .Lxtalabel37:
-	.loc	1 131 0 prologue_end
+	.loc	1 130 0 prologue_end
 .Ltmp69:
 	ldw r0, sp[6]
 	ldw r1, sp[7]
 	ldc r3, 2
 	shl r2, r0, 2
-	.loc	1 131 0
+	.loc	1 130 0
 	ldaw r0, dp[ethertype_arp1]
 	stw r0, sp[2]
 	mov r0, r1
 	ldw r1, sp[2]
-.Lxta.call_labels26:
+.Lxta.call_labels24:
 	bl is_ethertype
-	.loc	1 131 0
+	.loc	1 130 0
 	bf r0, .LBB59_5
 	bu .LBB59_3
 .LBB59_3:
 .Lxtalabel38:
 	mkmsk r0, 1
-	.loc	1 132 0
+	.loc	1 131 0
 	stw r0, sp[5]
 	bu .LBB59_8
 .LBB59_4:
 .Lxtalabel39:
 	ldc r0, 0
-	.loc	1 137 0
+	.loc	1 136 0
 	stw r0, sp[5]
 	bu .LBB59_8
 .LBB59_5:
-	.loc	1 133 0
+	.loc	1 132 0
 	ldw r0, sp[6]
 	ldw r1, sp[7]
 	ldc r3, 2
 	shl r2, r0, 2
-	.loc	1 133 0
+	.loc	1 132 0
 	ldaw r0, dp[ethertype_ip1]
 	stw r0, sp[1]
 	mov r0, r1
 	ldw r1, sp[1]
-.Lxta.call_labels27:
+.Lxta.call_labels25:
 	bl is_ethertype
-	.loc	1 133 0
+	.loc	1 132 0
 	bf r0, .LBB59_7
 	bu .LBB59_6
 .LBB59_6:
 .Lxtalabel40:
 	mkmsk r0, 1
-	.loc	1 134 0
+	.loc	1 133 0
 	stw r0, sp[5]
 	bu .LBB59_8
 .LBB59_7:
@@ -1802,7 +1791,7 @@ build_arp_response0:
 .Ltmp75:
 	.cfi_startproc
 .Lfunc_begin60:
-	.loc	1 143 0
+	.loc	1 141 0
 	entsp 49
 .Ltmp76:
 	.cfi_def_cfa_offset 196
@@ -1833,7 +1822,7 @@ build_arp_response0:
 	ldc r1, 2
 	ldc r2, 0
 	ldw r3, cp[.LCPI60_0]
-	.loc	1 146 0 prologue_end
+	.loc	1 144 0 prologue_end
 .Ltmp80:
 	st8 r3, r0[r2]
 	mkmsk r3, 1
@@ -1847,14 +1836,14 @@ build_arp_response0:
 	or r0, r0, r1
 	mkmsk r1, 6
 	st8 r1, r0[r2]
-	.loc	1 148 0
+	.loc	1 146 0
 .Ltmp81:
 	stw r2, sp[37]
 .Ltmp82:
 	bu .LBB60_8
 .LBB60_3:
 .Lxtalabel42:
-	.loc	1 150 0
+	.loc	1 148 0
 	ldw r0, sp[45]
 	ldw r1, sp[46]
 	ldw r2, sp[37]
@@ -1872,7 +1861,7 @@ build_arp_response0:
 	ld8u r3, r1[r2]
 	ldc r11, 0
 	st8 r3, r0[r11]
-	.loc	1 151 0
+	.loc	1 149 0
 	ldw r0, sp[43]
 	ldw r3, sp[44]
 	ldw r11, sp[37]
@@ -1889,7 +1878,7 @@ build_arp_response0:
 	ldw r1, sp[26]
 	ldw r2, sp[25]
 	st8 r0, r1[r2]
-	.loc	1 152 0
+	.loc	1 150 0
 	ldw r0, sp[43]
 	ldw r3, sp[44]
 	ldw r11, sp[37]
@@ -1907,7 +1896,7 @@ build_arp_response0:
 	ldw r1, sp[24]
 	ldw r2, sp[23]
 	st8 r0, r1[r2]
-	.loc	1 148 0
+	.loc	1 146 0
 	ldw r0, sp[37]
 	add r0, r0, 1
 	stw r0, sp[37]
@@ -1922,7 +1911,7 @@ build_arp_response0:
 .Ltmp83:
 .LBB60_9:
 .Lxtalabel43:
-	.loc	1 154 0
+	.loc	1 152 0
 	ldw r0, sp[45]
 	ldw r1, sp[46]
 	shr r0, r0, 2
@@ -1936,14 +1925,14 @@ build_arp_response0:
 	ldw r1, r0[7]
 	stw r1, sp[40]
 	ldc r1, 0
-	.loc	1 155 0
+	.loc	1 153 0
 .Ltmp84:
 	stw r1, sp[36]
 .Ltmp85:
 	bu .LBB60_14
 .LBB60_11:
 .Lxtalabel44:
-	.loc	1 157 0
+	.loc	1 155 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	ldw r2, sp[36]
@@ -1960,11 +1949,11 @@ build_arp_response0:
 	ldw r1, sp[21]
 	ldw r2, sp[20]
 	st8 r0, r1[r2]
-	.loc	1 158 0
+	.loc	1 156 0
 	ldw r0, sp[40]
 	shr r0, r0, 8
 	stw r0, sp[40]
-	.loc	1 155 0
+	.loc	1 153 0
 	ldw r0, sp[36]
 	add r0, r0, 1
 	stw r0, sp[36]
@@ -1979,7 +1968,7 @@ build_arp_response0:
 .Ltmp86:
 .LBB60_15:
 .Lxtalabel45:
-	.loc	1 161 0
+	.loc	1 159 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	shl r0, r0, 2
@@ -1995,7 +1984,7 @@ build_arp_response0:
 	ld8u r1, r1[r2]
 	ldw r2, sp[19]
 	st8 r1, r2[r0]
-	.loc	1 162 0
+	.loc	1 160 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	shl r0, r0, 2
@@ -2013,7 +2002,7 @@ build_arp_response0:
 	ld8u r1, r1[r2]
 	ldw r2, sp[18]
 	st8 r1, r2[r0]
-	.loc	1 163 0
+	.loc	1 161 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	shl r0, r0, 2
@@ -2031,7 +2020,7 @@ build_arp_response0:
 	ld8u r1, r1[r2]
 	ldw r2, sp[17]
 	st8 r1, r2[r0]
-	.loc	1 164 0
+	.loc	1 162 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	shl r0, r0, 2
@@ -2049,14 +2038,14 @@ build_arp_response0:
 	mkmsk r2, 5
 	ldw r3, sp[16]
 	st8 r0, r3[r2]
-	.loc	1 166 0
+	.loc	1 164 0
 .Ltmp87:
 	stw r1, sp[35]
 .Ltmp88:
 	bu .LBB60_26
 .LBB60_20:
 .Lxtalabel46:
-	.loc	1 168 0
+	.loc	1 166 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	ldw r2, sp[35]
@@ -2088,7 +2077,7 @@ build_arp_response0:
 	ldc r3, 0
 	ldw r11, sp[12]
 	st8 r2, r11[r3]
-	.loc	1 169 0
+	.loc	1 167 0
 	ldw r2, sp[43]
 	ldw r3, sp[44]
 	ldw r4, sp[35]
@@ -2119,7 +2108,7 @@ build_arp_response0:
 	ldc r3, 0
 	ldw r11, sp[7]
 	st8 r2, r11[r3]
-	.loc	1 166 0
+	.loc	1 164 0
 	ldw r0, sp[35]
 	add r0, r0, 1
 	stw r0, sp[35]
@@ -2134,7 +2123,7 @@ build_arp_response0:
 .Ltmp89:
 .LBB60_27:
 .Lxtalabel47:
-	.loc	1 171 0
+	.loc	1 169 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	ldc r2, 4
@@ -2146,7 +2135,7 @@ build_arp_response0:
 	ldw r0, cp[.LCPI60_2]
 	ldw r1, sp[5]
 	stw r0, r1[3]
-	.loc	1 172 0
+	.loc	1 170 0
 	ldw r0, sp[43]
 	ldw r2, sp[44]
 	ldc r3, 5
@@ -2158,7 +2147,7 @@ build_arp_response0:
 	ldw r0, cp[.LCPI60_3]
 	ldw r1, sp[4]
 	stw r0, r1[4]
-	.loc	1 173 0
+	.loc	1 171 0
 	ldw r0, sp[43]
 	ldw r2, sp[44]
 	shl r0, r0, 2
@@ -2172,7 +2161,7 @@ build_arp_response0:
 	ldc r1, 0
 	ldw r2, sp[3]
 	st8 r1, r2[r0]
-	.loc	1 174 0
+	.loc	1 172 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	shl r0, r0, 2
@@ -2188,13 +2177,13 @@ build_arp_response0:
 	ldc r2, 2
 	ldw r3, sp[2]
 	st8 r2, r3[r0]
-	.loc	1 177 0
+	.loc	1 175 0
 .Ltmp91:
 	stw r1, sp[34]
 	bu .LBB60_35
 .LBB60_32:
 .Lxtalabel48:
-	.loc	1 179 0
+	.loc	1 177 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	ldw r2, sp[34]
@@ -2209,7 +2198,7 @@ build_arp_response0:
 	ldw r1, sp[0]
 	ldw r2, sp[1]
 	st8 r0, r1[r2]
-	.loc	1 177 0
+	.loc	1 175 0
 	ldw r0, sp[34]
 	add r0, r0, 1
 	stw r0, sp[34]
@@ -2225,7 +2214,7 @@ build_arp_response0:
 .LBB60_36:
 .Lxtalabel49:
 	ldc r0, 64
-	.loc	1 182 0
+	.loc	1 180 0
 	stw r0, sp[41]
 .Ltmp93:
 	ldw r0, sp[41]
@@ -2281,7 +2270,7 @@ build_arp_response1:
 .Ltmp98:
 	.cfi_startproc
 .Lfunc_begin61:
-	.loc	1 186 0
+	.loc	1 184 0
 	entsp 49
 .Ltmp99:
 	.cfi_def_cfa_offset 196
@@ -2312,7 +2301,7 @@ build_arp_response1:
 	ldc r1, 2
 	ldc r2, 0
 	ldw r3, cp[.LCPI61_0]
-	.loc	1 189 0 prologue_end
+	.loc	1 187 0 prologue_end
 .Ltmp103:
 	st8 r3, r0[r2]
 	mkmsk r3, 1
@@ -2326,14 +2315,14 @@ build_arp_response1:
 	or r0, r0, r1
 	ldc r1, 65
 	st8 r1, r0[r2]
-	.loc	1 191 0
+	.loc	1 189 0
 .Ltmp104:
 	stw r2, sp[37]
 .Ltmp105:
 	bu .LBB61_8
 .LBB61_3:
 .Lxtalabel51:
-	.loc	1 193 0
+	.loc	1 191 0
 	ldw r0, sp[45]
 	ldw r1, sp[46]
 	ldw r2, sp[37]
@@ -2351,7 +2340,7 @@ build_arp_response1:
 	ld8u r3, r1[r2]
 	ldc r11, 0
 	st8 r3, r0[r11]
-	.loc	1 194 0
+	.loc	1 192 0
 	ldw r0, sp[43]
 	ldw r3, sp[44]
 	ldw r11, sp[37]
@@ -2368,7 +2357,7 @@ build_arp_response1:
 	ldw r1, sp[26]
 	ldw r2, sp[25]
 	st8 r0, r1[r2]
-	.loc	1 195 0
+	.loc	1 193 0
 	ldw r0, sp[43]
 	ldw r3, sp[44]
 	ldw r11, sp[37]
@@ -2386,7 +2375,7 @@ build_arp_response1:
 	ldw r1, sp[24]
 	ldw r2, sp[23]
 	st8 r0, r1[r2]
-	.loc	1 191 0
+	.loc	1 189 0
 	ldw r0, sp[37]
 	add r0, r0, 1
 	stw r0, sp[37]
@@ -2401,7 +2390,7 @@ build_arp_response1:
 .Ltmp106:
 .LBB61_9:
 .Lxtalabel52:
-	.loc	1 197 0
+	.loc	1 195 0
 	ldw r0, sp[45]
 	ldw r1, sp[46]
 	shr r0, r0, 2
@@ -2415,14 +2404,14 @@ build_arp_response1:
 	ldw r1, r0[7]
 	stw r1, sp[40]
 	ldc r1, 0
-	.loc	1 198 0
+	.loc	1 196 0
 .Ltmp107:
 	stw r1, sp[36]
 .Ltmp108:
 	bu .LBB61_14
 .LBB61_11:
 .Lxtalabel53:
-	.loc	1 200 0
+	.loc	1 198 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	ldw r2, sp[36]
@@ -2439,11 +2428,11 @@ build_arp_response1:
 	ldw r1, sp[21]
 	ldw r2, sp[20]
 	st8 r0, r1[r2]
-	.loc	1 201 0
+	.loc	1 199 0
 	ldw r0, sp[40]
 	shr r0, r0, 8
 	stw r0, sp[40]
-	.loc	1 198 0
+	.loc	1 196 0
 	ldw r0, sp[36]
 	add r0, r0, 1
 	stw r0, sp[36]
@@ -2458,7 +2447,7 @@ build_arp_response1:
 .Ltmp109:
 .LBB61_15:
 .Lxtalabel54:
-	.loc	1 204 0
+	.loc	1 202 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	shl r0, r0, 2
@@ -2474,7 +2463,7 @@ build_arp_response1:
 	ld8u r1, r1[r2]
 	ldw r2, sp[19]
 	st8 r1, r2[r0]
-	.loc	1 205 0
+	.loc	1 203 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	shl r0, r0, 2
@@ -2492,7 +2481,7 @@ build_arp_response1:
 	ld8u r1, r1[r2]
 	ldw r2, sp[18]
 	st8 r1, r2[r0]
-	.loc	1 206 0
+	.loc	1 204 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	shl r0, r0, 2
@@ -2510,7 +2499,7 @@ build_arp_response1:
 	ld8u r1, r1[r2]
 	ldw r2, sp[17]
 	st8 r1, r2[r0]
-	.loc	1 207 0
+	.loc	1 205 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	shl r0, r0, 2
@@ -2528,14 +2517,14 @@ build_arp_response1:
 	mkmsk r2, 5
 	ldw r3, sp[16]
 	st8 r0, r3[r2]
-	.loc	1 209 0
+	.loc	1 207 0
 .Ltmp110:
 	stw r1, sp[35]
 .Ltmp111:
 	bu .LBB61_26
 .LBB61_20:
 .Lxtalabel55:
-	.loc	1 211 0
+	.loc	1 209 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	ldw r2, sp[35]
@@ -2567,7 +2556,7 @@ build_arp_response1:
 	ldc r3, 0
 	ldw r11, sp[12]
 	st8 r2, r11[r3]
-	.loc	1 212 0
+	.loc	1 210 0
 	ldw r2, sp[43]
 	ldw r3, sp[44]
 	ldw r4, sp[35]
@@ -2598,7 +2587,7 @@ build_arp_response1:
 	ldc r3, 0
 	ldw r11, sp[7]
 	st8 r2, r11[r3]
-	.loc	1 209 0
+	.loc	1 207 0
 	ldw r0, sp[35]
 	add r0, r0, 1
 	stw r0, sp[35]
@@ -2613,7 +2602,7 @@ build_arp_response1:
 .Ltmp112:
 .LBB61_27:
 .Lxtalabel56:
-	.loc	1 214 0
+	.loc	1 212 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	ldc r2, 4
@@ -2625,7 +2614,7 @@ build_arp_response1:
 	ldw r0, cp[.LCPI61_2]
 	ldw r1, sp[5]
 	stw r0, r1[3]
-	.loc	1 215 0
+	.loc	1 213 0
 	ldw r0, sp[43]
 	ldw r2, sp[44]
 	ldc r3, 5
@@ -2637,7 +2626,7 @@ build_arp_response1:
 	ldw r0, cp[.LCPI61_3]
 	ldw r1, sp[4]
 	stw r0, r1[4]
-	.loc	1 216 0
+	.loc	1 214 0
 	ldw r0, sp[43]
 	ldw r2, sp[44]
 	shl r0, r0, 2
@@ -2651,7 +2640,7 @@ build_arp_response1:
 	ldc r1, 0
 	ldw r2, sp[3]
 	st8 r1, r2[r0]
-	.loc	1 217 0
+	.loc	1 215 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	shl r0, r0, 2
@@ -2667,13 +2656,13 @@ build_arp_response1:
 	ldc r2, 2
 	ldw r3, sp[2]
 	st8 r2, r3[r0]
-	.loc	1 220 0
+	.loc	1 218 0
 .Ltmp114:
 	stw r1, sp[34]
 	bu .LBB61_35
 .LBB61_32:
 .Lxtalabel57:
-	.loc	1 222 0
+	.loc	1 220 0
 	ldw r0, sp[43]
 	ldw r1, sp[44]
 	ldw r2, sp[34]
@@ -2688,7 +2677,7 @@ build_arp_response1:
 	ldw r1, sp[0]
 	ldw r2, sp[1]
 	st8 r0, r1[r2]
-	.loc	1 220 0
+	.loc	1 218 0
 	ldw r0, sp[34]
 	add r0, r0, 1
 	stw r0, sp[34]
@@ -2704,7 +2693,7 @@ build_arp_response1:
 .LBB61_36:
 .Lxtalabel58:
 	ldc r0, 64
-	.loc	1 225 0
+	.loc	1 223 0
 	stw r0, sp[41]
 .Ltmp116:
 	ldw r0, sp[41]
@@ -2750,7 +2739,7 @@ is_valid_arp_packet0:
 .Ltmp120:
 	.cfi_startproc
 .Lfunc_begin62:
-	.loc	1 229 0
+	.loc	1 227 0
 	entsp 19
 .Ltmp121:
 	.cfi_def_cfa_offset 76
@@ -2766,7 +2755,7 @@ is_valid_arp_packet0:
 	ldw r2, sp[10]
 	stw r2, sp[15]
 .Lxtalabel59:
-	.loc	1 232 0 prologue_end
+	.loc	1 230 0 prologue_end
 .Ltmp123:
 	ldw r0, sp[16]
 	ldw r1, sp[17]
@@ -2778,12 +2767,12 @@ is_valid_arp_packet0:
 .LBB62_3:
 .Lxtalabel60:
 	ldc r0, 0
-	.loc	1 233 0
+	.loc	1 231 0
 	stw r0, sp[14]
 	bu .LBB62_28
 .LBB62_4:
 .Lxtalabel61:
-	.loc	1 237 0
+	.loc	1 235 0
 	ldw r0, sp[16]
 	ldw r1, sp[17]
 	shr r0, r0, 2
@@ -2794,7 +2783,7 @@ is_valid_arp_packet0:
 	bu .LBB62_13
 .LBB62_5:
 	ldc r0, 12
-	.loc	1 232 0
+	.loc	1 230 0
 	ldw r1, sp[8]
 	ld8u r0, r1[r0]
 	eq r0, r0, 8
@@ -2829,12 +2818,12 @@ is_valid_arp_packet0:
 .LBB62_11:
 .Lxtalabel62:
 	ldc r0, 0
-	.loc	1 240 0
+	.loc	1 238 0
 	stw r0, sp[14]
 	bu .LBB62_28
 .LBB62_12:
 .Lxtalabel63:
-	.loc	1 242 0
+	.loc	1 240 0
 	ldw r0, sp[16]
 	ldw r1, sp[17]
 	ldc r2, 4
@@ -2844,7 +2833,7 @@ is_valid_arp_packet0:
 	ecallf r0
 	bu .LBB62_16
 .LBB62_13:
-	.loc	1 237 0
+	.loc	1 235 0
 	ldw r0, sp[7]
 	ldw r1, r0[3]
 	ldw r2, cp[.LCPI62_0]
@@ -2854,12 +2843,12 @@ is_valid_arp_packet0:
 .LBB62_14:
 .Lxtalabel64:
 	ldc r0, 0
-	.loc	1 245 0
+	.loc	1 243 0
 	stw r0, sp[14]
 	bu .LBB62_28
 .LBB62_15:
 .Lxtalabel65:
-	.loc	1 247 0
+	.loc	1 245 0
 	ldw r0, sp[16]
 	ldw r1, sp[17]
 	ldc r2, 5
@@ -2869,7 +2858,7 @@ is_valid_arp_packet0:
 	ecallf r0
 	bu .LBB62_19
 .LBB62_16:
-	.loc	1 242 0
+	.loc	1 240 0
 	ldw r0, sp[5]
 	ldw r1, r0[4]
 	ldw r2, cp[.LCPI62_1]
@@ -2879,20 +2868,20 @@ is_valid_arp_packet0:
 .LBB62_17:
 .Lxtalabel66:
 	ldc r0, 0
-	.loc	1 250 0
+	.loc	1 248 0
 	stw r0, sp[14]
 	bu .LBB62_28
 .LBB62_18:
 .Lxtalabel67:
 	ldc r0, 0
-	.loc	1 252 0
+	.loc	1 250 0
 .Ltmp124:
 	stw r0, sp[12]
 .Ltmp125:
 	bu .LBB62_26
 .Ltmp126:
 .LBB62_19:
-	.loc	1 247 0
+	.loc	1 245 0
 	ldw r0, sp[4]
 	ldaw r1, r0[5]
 	ldc r2, 256
@@ -2904,7 +2893,7 @@ is_valid_arp_packet0:
 	bu .LBB62_18
 .LBB62_20:
 .Lxtalabel68:
-	.loc	1 254 0
+	.loc	1 252 0
 .Ltmp127:
 	ldw r0, sp[16]
 	ldw r1, sp[17]
@@ -2919,14 +2908,14 @@ is_valid_arp_packet0:
 .LBB62_21:
 .Lxtalabel69:
 	ldc r0, 0
-	.loc	1 257 0
+	.loc	1 255 0
 	stw r0, sp[14]
 	bu .LBB62_28
 .LBB62_22:
 .Lxtalabel70:
 	bu .LBB62_25
 .LBB62_23:
-	.loc	1 254 0
+	.loc	1 252 0
 	ldw r0, sp[12]
 	ldw r1, sp[2]
 	ldw r2, sp[3]
@@ -2947,7 +2936,7 @@ is_valid_arp_packet0:
 	bf r0, .LBB62_21
 	bu .LBB62_22
 .LBB62_25:
-	.loc	1 252 0
+	.loc	1 250 0
 	ldw r0, sp[12]
 	add r0, r0, 1
 	stw r0, sp[12]
@@ -2963,7 +2952,7 @@ is_valid_arp_packet0:
 .LBB62_27:
 .Lxtalabel71:
 	mkmsk r0, 1
-	.loc	1 261 0
+	.loc	1 259 0
 	stw r0, sp[14]
 .Ltmp129:
 .LBB62_28:
@@ -3009,7 +2998,7 @@ is_valid_arp_packet1:
 .Ltmp133:
 	.cfi_startproc
 .Lfunc_begin63:
-	.loc	1 265 0
+	.loc	1 263 0
 	entsp 19
 .Ltmp134:
 	.cfi_def_cfa_offset 76
@@ -3025,7 +3014,7 @@ is_valid_arp_packet1:
 	ldw r2, sp[10]
 	stw r2, sp[15]
 .Lxtalabel72:
-	.loc	1 268 0 prologue_end
+	.loc	1 266 0 prologue_end
 .Ltmp136:
 	ldw r0, sp[16]
 	ldw r1, sp[17]
@@ -3037,12 +3026,12 @@ is_valid_arp_packet1:
 .LBB63_3:
 .Lxtalabel73:
 	ldc r0, 0
-	.loc	1 269 0
+	.loc	1 267 0
 	stw r0, sp[14]
 	bu .LBB63_28
 .LBB63_4:
 .Lxtalabel74:
-	.loc	1 273 0
+	.loc	1 271 0
 	ldw r0, sp[16]
 	ldw r1, sp[17]
 	shr r0, r0, 2
@@ -3053,7 +3042,7 @@ is_valid_arp_packet1:
 	bu .LBB63_13
 .LBB63_5:
 	ldc r0, 12
-	.loc	1 268 0
+	.loc	1 266 0
 	ldw r1, sp[8]
 	ld8u r0, r1[r0]
 	eq r0, r0, 8
@@ -3088,12 +3077,12 @@ is_valid_arp_packet1:
 .LBB63_11:
 .Lxtalabel75:
 	ldc r0, 0
-	.loc	1 276 0
+	.loc	1 274 0
 	stw r0, sp[14]
 	bu .LBB63_28
 .LBB63_12:
 .Lxtalabel76:
-	.loc	1 278 0
+	.loc	1 276 0
 	ldw r0, sp[16]
 	ldw r1, sp[17]
 	ldc r2, 4
@@ -3103,7 +3092,7 @@ is_valid_arp_packet1:
 	ecallf r0
 	bu .LBB63_16
 .LBB63_13:
-	.loc	1 273 0
+	.loc	1 271 0
 	ldw r0, sp[7]
 	ldw r1, r0[3]
 	ldw r2, cp[.LCPI63_0]
@@ -3113,12 +3102,12 @@ is_valid_arp_packet1:
 .LBB63_14:
 .Lxtalabel77:
 	ldc r0, 0
-	.loc	1 281 0
+	.loc	1 279 0
 	stw r0, sp[14]
 	bu .LBB63_28
 .LBB63_15:
 .Lxtalabel78:
-	.loc	1 283 0
+	.loc	1 281 0
 	ldw r0, sp[16]
 	ldw r1, sp[17]
 	ldc r2, 5
@@ -3128,7 +3117,7 @@ is_valid_arp_packet1:
 	ecallf r0
 	bu .LBB63_19
 .LBB63_16:
-	.loc	1 278 0
+	.loc	1 276 0
 	ldw r0, sp[5]
 	ldw r1, r0[4]
 	ldw r2, cp[.LCPI63_1]
@@ -3138,20 +3127,20 @@ is_valid_arp_packet1:
 .LBB63_17:
 .Lxtalabel79:
 	ldc r0, 0
-	.loc	1 286 0
+	.loc	1 284 0
 	stw r0, sp[14]
 	bu .LBB63_28
 .LBB63_18:
 .Lxtalabel80:
 	ldc r0, 0
-	.loc	1 288 0
+	.loc	1 286 0
 .Ltmp137:
 	stw r0, sp[12]
 .Ltmp138:
 	bu .LBB63_26
 .Ltmp139:
 .LBB63_19:
-	.loc	1 283 0
+	.loc	1 281 0
 	ldw r0, sp[4]
 	ldaw r1, r0[5]
 	ldc r2, 256
@@ -3163,7 +3152,7 @@ is_valid_arp_packet1:
 	bu .LBB63_18
 .LBB63_20:
 .Lxtalabel81:
-	.loc	1 290 0
+	.loc	1 288 0
 .Ltmp140:
 	ldw r0, sp[16]
 	ldw r1, sp[17]
@@ -3178,14 +3167,14 @@ is_valid_arp_packet1:
 .LBB63_21:
 .Lxtalabel82:
 	ldc r0, 0
-	.loc	1 293 0
+	.loc	1 291 0
 	stw r0, sp[14]
 	bu .LBB63_28
 .LBB63_22:
 .Lxtalabel83:
 	bu .LBB63_25
 .LBB63_23:
-	.loc	1 290 0
+	.loc	1 288 0
 	ldw r0, sp[12]
 	ldw r1, sp[2]
 	ldw r2, sp[3]
@@ -3206,7 +3195,7 @@ is_valid_arp_packet1:
 	bf r0, .LBB63_21
 	bu .LBB63_22
 .LBB63_25:
-	.loc	1 288 0
+	.loc	1 286 0
 	ldw r0, sp[12]
 	add r0, r0, 1
 	stw r0, sp[12]
@@ -3222,7 +3211,7 @@ is_valid_arp_packet1:
 .LBB63_27:
 .Lxtalabel84:
 	mkmsk r0, 1
-	.loc	1 297 0
+	.loc	1 295 0
 	stw r0, sp[14]
 .Ltmp142:
 .LBB63_28:
@@ -3268,7 +3257,7 @@ build_icmp_response0:
 .Ltmp148:
 	.cfi_startproc
 .Lfunc_begin64:
-	.loc	1 302 0
+	.loc	1 299 0
 	entsp 75
 .Ltmp149:
 	.cfi_def_cfa_offset 300
@@ -3299,22 +3288,22 @@ build_icmp_response0:
 .Lxtalabel85:
 .Ltmp153:
 	ldc r0, 64
-	.loc	1 307 0 prologue_end
+	.loc	1 304 0 prologue_end
 .Ltmp154:
 	stw r0, sp[62]
 	ldc r0, 389
 .Ltmp155:
-	.loc	1 311 0
+	.loc	1 308 0
 	stw r0, sp[60]
 	ldc r0, 0
-	.loc	1 313 0
+	.loc	1 310 0
 .Ltmp156:
 	stw r0, sp[59]
 .Ltmp157:
 	bu .LBB64_7
 .LBB64_3:
 .Lxtalabel86:
-	.loc	1 315 0
+	.loc	1 312 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[59]
@@ -3344,7 +3333,7 @@ build_icmp_response0:
 	ldc r3, 0
 	ldw r11, sp[46]
 	st8 r2, r11[r3]
-	.loc	1 313 0
+	.loc	1 310 0
 	ldw r0, sp[59]
 	add r0, r0, 1
 	stw r0, sp[59]
@@ -3360,14 +3349,14 @@ build_icmp_response0:
 .LBB64_8:
 .Lxtalabel87:
 	ldc r0, 0
-	.loc	1 317 0
+	.loc	1 314 0
 .Ltmp159:
 	stw r0, sp[58]
 .Ltmp160:
 	bu .LBB64_13
 .LBB64_9:
 .Lxtalabel88:
-	.loc	1 319 0
+	.loc	1 316 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[58]
@@ -3400,7 +3389,7 @@ build_icmp_response0:
 	ldc r3, 0
 	ldw r11, sp[41]
 	st8 r2, r11[r3]
-	.loc	1 317 0
+	.loc	1 314 0
 	ldw r0, sp[58]
 	add r0, r0, 1
 	stw r0, sp[58]
@@ -3415,7 +3404,7 @@ build_icmp_response0:
 .Ltmp161:
 .LBB64_14:
 .Lxtalabel89:
-	.loc	1 321 0
+	.loc	1 318 0
 	ldw r0, sp[70]
 	ldw r1, sp[71]
 	shr r0, r0, 2
@@ -3431,14 +3420,14 @@ build_icmp_response0:
 	shr r1, r1, 16
 	stw r1, sp[65]
 	ldc r1, 0
-	.loc	1 322 0
+	.loc	1 319 0
 .Ltmp162:
 	stw r1, sp[57]
 .Ltmp163:
 	bu .LBB64_20
 .LBB64_16:
 .Lxtalabel90:
-	.loc	1 324 0
+	.loc	1 321 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[57]
@@ -3471,7 +3460,7 @@ build_icmp_response0:
 	ldc r3, 0
 	ldw r11, sp[34]
 	st8 r2, r11[r3]
-	.loc	1 322 0
+	.loc	1 319 0
 	ldw r0, sp[57]
 	add r0, r0, 1
 	stw r0, sp[57]
@@ -3486,7 +3475,7 @@ build_icmp_response0:
 .Ltmp164:
 .LBB64_21:
 .Lxtalabel91:
-	.loc	1 326 0
+	.loc	1 323 0
 	ldw r0, sp[70]
 	ldw r1, sp[71]
 	shr r0, r0, 2
@@ -3501,18 +3490,18 @@ build_icmp_response0:
 	byterev r1, r1
 	shr r1, r1, 16
 	stw r1, sp[63]
-	.loc	1 327 0
+	.loc	1 324 0
 	ldaw r1, r1[-7]
 	stw r1, sp[64]
 	ldc r1, 0
-	.loc	1 328 0
+	.loc	1 325 0
 .Ltmp165:
 	stw r1, sp[56]
 .Ltmp166:
 	bu .LBB64_27
 .LBB64_23:
 .Lxtalabel92:
-	.loc	1 330 0
+	.loc	1 327 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[56]
@@ -3545,7 +3534,7 @@ build_icmp_response0:
 	ldc r3, 0
 	ldw r11, sp[27]
 	st8 r2, r11[r3]
-	.loc	1 328 0
+	.loc	1 325 0
 	ldw r0, sp[56]
 	add r0, r0, 1
 	stw r0, sp[56]
@@ -3561,14 +3550,14 @@ build_icmp_response0:
 .LBB64_28:
 .Lxtalabel93:
 	ldc r0, 0
-	.loc	1 333 0
+	.loc	1 330 0
 .Ltmp168:
 	stw r0, sp[55]
 .Ltmp169:
 	bu .LBB64_33
 .LBB64_29:
 .Lxtalabel94:
-	.loc	1 335 0
+	.loc	1 332 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[55]
@@ -3598,7 +3587,7 @@ build_icmp_response0:
 	ldc r3, 0
 	ldw r11, sp[22]
 	st8 r2, r11[r3]
-	.loc	1 333 0
+	.loc	1 330 0
 	ldw r0, sp[55]
 	add r0, r0, 1
 	stw r0, sp[55]
@@ -3613,7 +3602,7 @@ build_icmp_response0:
 .Ltmp170:
 .LBB64_34:
 .Lxtalabel95:
-	.loc	1 337 0
+	.loc	1 334 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	shr r0, r0, 2
@@ -3626,13 +3615,13 @@ build_icmp_response0:
 	ldw r0, cp[.LCPI64_0]
 	ldw r1, sp[21]
 	stw r0, r1[3]
-	.loc	1 338 0
+	.loc	1 335 0
 	ldw r0, sp[64]
 	ldaw r0, r0[7]
 	byterev r0, r0
 	shr r0, r0, 16
 	stw r0, sp[63]
-	.loc	1 339 0
+	.loc	1 336 0
 	ldw r0, sp[68]
 	ldw r2, sp[69]
 	shr r0, r0, 2
@@ -3645,12 +3634,12 @@ build_icmp_response0:
 	ldw r0, sp[63]
 	ldw r1, sp[20]
 	stw r0, r1[4]
-	.loc	1 340 0
+	.loc	1 337 0
 	ldw r0, sp[63]
 	ldw r2, sp[60]
 	add r0, r2, r0
 	stw r0, sp[60]
-	.loc	1 341 0
+	.loc	1 338 0
 	ldw r0, sp[68]
 	ldw r2, sp[69]
 	shr r0, r0, 2
@@ -3666,7 +3655,7 @@ build_icmp_response0:
 	or r0, r0, r1
 	ldw r1, sp[19]
 	stw r0, r1[5]
-	.loc	1 342 0
+	.loc	1 339 0
 	ldw r0, sp[68]
 	ldw r2, sp[69]
 	shr r0, r0, 2
@@ -3679,14 +3668,14 @@ build_icmp_response0:
 	ldc r0, 0
 	ldw r1, sp[18]
 	stw r0, r1[6]
-	.loc	1 343 0
+	.loc	1 340 0
 .Ltmp171:
 	stw r0, sp[54]
 .Ltmp172:
 	bu .LBB64_43
 .LBB64_39:
 .Lxtalabel96:
-	.loc	1 345 0
+	.loc	1 342 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[54]
@@ -3715,7 +3704,7 @@ build_icmp_response0:
 	ldc r2, 0
 	ldw r3, sp[15]
 	st8 r0, r3[r2]
-	.loc	1 343 0
+	.loc	1 340 0
 	ldw r0, sp[54]
 	add r0, r0, 1
 	stw r0, sp[54]
@@ -3731,7 +3720,7 @@ build_icmp_response0:
 .LBB64_44:
 .Lxtalabel97:
 	mkmsk r0, 1
-	.loc	1 347 0
+	.loc	1 344 0
 	ldaw r1, dp[own_ip_addr.static2]
 	ld8u r0, r1[r0]
 	shl r0, r0, 8
@@ -3743,14 +3732,14 @@ build_icmp_response0:
 	stw r0, sp[60]
 	ldc r2, 2
 	mkmsk r3, 2
-	.loc	1 348 0
+	.loc	1 345 0
 	ld8u r3, r1[r3]
 	shl r3, r3, 8
 	ld8u r1, r1[r2]
 	or r1, r1, r3
 	add r0, r0, r1
 	stw r0, sp[60]
-	.loc	1 349 0
+	.loc	1 346 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	mkmsk r2, 5
@@ -3781,7 +3770,7 @@ build_icmp_response0:
 	ldw r2, sp[60]
 	add r0, r2, r0
 	stw r0, sp[60]
-	.loc	1 350 0
+	.loc	1 347 0
 	ldw r0, sp[68]
 	ldw r2, sp[69]
 	ldc r3, 33
@@ -3812,7 +3801,7 @@ build_icmp_response0:
 	ldw r2, sp[60]
 	add r0, r2, r0
 	stw r0, sp[60]
-	.loc	1 352 0
+	.loc	1 349 0
 	ldw r0, sp[68]
 	ldw r2, sp[69]
 	ldc r3, 35
@@ -3825,7 +3814,7 @@ build_icmp_response0:
 	ldc r1, 0
 	ldw r2, sp[7]
 	st8 r1, r2[r0]
-	.loc	1 353 0
+	.loc	1 350 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldc r3, 36
@@ -3838,16 +3827,16 @@ build_icmp_response0:
 	ldc r1, 0
 	ldw r2, sp[6]
 	st8 r1, r2[r0]
-	.loc	1 355 0
+	.loc	1 352 0
 	ldw r0, sp[65]
 	ldc r1, 2048
 	add r0, r0, r1
 	stw r0, sp[65]
-	.loc	1 356 0
+	.loc	1 353 0
 	shr r1, r0, 16
 	add r0, r0, r1
 	stw r0, sp[65]
-	.loc	1 357 0
+	.loc	1 354 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldc r3, 37
@@ -3861,7 +3850,7 @@ build_icmp_response0:
 	shr r1, r1, 8
 	ldw r2, sp[5]
 	st8 r1, r2[r0]
-	.loc	1 358 0
+	.loc	1 355 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldc r3, 38
@@ -3874,11 +3863,11 @@ build_icmp_response0:
 	ldw r1, sp[65]
 	ldw r2, sp[4]
 	st8 r1, r2[r0]
-	.loc	1 360 0
+	.loc	1 357 0
 	bu .LBB64_54
 .LBB64_53:
 .Lxtalabel98:
-	.loc	1 362 0
+	.loc	1 359 0
 	ldw r0, sp[60]
 	shr r1, r0, 16
 	zext r0, 16
@@ -3889,7 +3878,7 @@ build_icmp_response0:
 .LBB64_54:
 	ldaw r0, sp[60]
 	ldc r1, 2
-	.loc	1 360 0
+	.loc	1 357 0
 	or r0, r0, r1
 	ldc r1, 0
 	ld16s r0, r0[r1]
@@ -3898,13 +3887,13 @@ build_icmp_response0:
 	bu .LBB64_55
 .LBB64_55:
 .Lxtalabel99:
-	.loc	1 364 0
+	.loc	1 361 0
 	ldw r0, sp[60]
 	not r0, r0
 	byterev r0, r0
 	shr r0, r0, 16
 	stw r0, sp[60]
-	.loc	1 365 0
+	.loc	1 362 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldc r2, 25
@@ -3918,7 +3907,7 @@ build_icmp_response0:
 	shr r1, r1, 8
 	ldw r2, sp[3]
 	st8 r1, r2[r0]
-	.loc	1 366 0
+	.loc	1 363 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldc r3, 26
@@ -3931,7 +3920,7 @@ build_icmp_response0:
 	ldw r1, sp[60]
 	ldw r2, sp[2]
 	st8 r1, r2[r0]
-	.loc	1 368 0
+	.loc	1 365 0
 	ldw r0, sp[64]
 	ldc r1, 42
 	add r0, r0, r1
@@ -3939,7 +3928,7 @@ build_icmp_response0:
 	bu .LBB64_61
 .LBB64_58:
 .Lxtalabel100:
-	.loc	1 370 0
+	.loc	1 367 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[61]
@@ -3953,7 +3942,7 @@ build_icmp_response0:
 	ldw r1, sp[1]
 	ldw r2, sp[0]
 	st8 r0, r1[r2]
-	.loc	1 368 0
+	.loc	1 365 0
 	ldw r0, sp[61]
 	add r0, r0, 1
 	stw r0, sp[61]
@@ -3967,7 +3956,7 @@ build_icmp_response0:
 	bu .LBB64_62
 .LBB64_62:
 .Lxtalabel101:
-	.loc	1 372 0
+	.loc	1 369 0
 	ldw r0, sp[61]
 	stw r0, sp[66]
 .Ltmp174:
@@ -4015,7 +4004,7 @@ build_icmp_response1:
 .Ltmp180:
 	.cfi_startproc
 .Lfunc_begin65:
-	.loc	1 377 0
+	.loc	1 373 0
 	entsp 75
 .Ltmp181:
 	.cfi_def_cfa_offset 300
@@ -4046,22 +4035,22 @@ build_icmp_response1:
 .Lxtalabel102:
 .Ltmp185:
 	ldc r0, 64
-	.loc	1 382 0 prologue_end
+	.loc	1 378 0 prologue_end
 .Ltmp186:
 	stw r0, sp[62]
 	ldc r0, 389
 .Ltmp187:
-	.loc	1 386 0
+	.loc	1 382 0
 	stw r0, sp[60]
 	ldc r0, 0
-	.loc	1 388 0
+	.loc	1 384 0
 .Ltmp188:
 	stw r0, sp[59]
 .Ltmp189:
 	bu .LBB65_7
 .LBB65_3:
 .Lxtalabel103:
-	.loc	1 390 0
+	.loc	1 386 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[59]
@@ -4091,7 +4080,7 @@ build_icmp_response1:
 	ldc r3, 0
 	ldw r11, sp[46]
 	st8 r2, r11[r3]
-	.loc	1 388 0
+	.loc	1 384 0
 	ldw r0, sp[59]
 	add r0, r0, 1
 	stw r0, sp[59]
@@ -4107,14 +4096,14 @@ build_icmp_response1:
 .LBB65_8:
 .Lxtalabel104:
 	ldc r0, 0
-	.loc	1 392 0
+	.loc	1 388 0
 .Ltmp191:
 	stw r0, sp[58]
 .Ltmp192:
 	bu .LBB65_13
 .LBB65_9:
 .Lxtalabel105:
-	.loc	1 394 0
+	.loc	1 390 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[58]
@@ -4147,7 +4136,7 @@ build_icmp_response1:
 	ldc r3, 0
 	ldw r11, sp[41]
 	st8 r2, r11[r3]
-	.loc	1 392 0
+	.loc	1 388 0
 	ldw r0, sp[58]
 	add r0, r0, 1
 	stw r0, sp[58]
@@ -4162,7 +4151,7 @@ build_icmp_response1:
 .Ltmp193:
 .LBB65_14:
 .Lxtalabel106:
-	.loc	1 396 0
+	.loc	1 392 0
 	ldw r0, sp[70]
 	ldw r1, sp[71]
 	shr r0, r0, 2
@@ -4178,14 +4167,14 @@ build_icmp_response1:
 	shr r1, r1, 16
 	stw r1, sp[65]
 	ldc r1, 0
-	.loc	1 397 0
+	.loc	1 393 0
 .Ltmp194:
 	stw r1, sp[57]
 .Ltmp195:
 	bu .LBB65_20
 .LBB65_16:
 .Lxtalabel107:
-	.loc	1 399 0
+	.loc	1 395 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[57]
@@ -4218,7 +4207,7 @@ build_icmp_response1:
 	ldc r3, 0
 	ldw r11, sp[34]
 	st8 r2, r11[r3]
-	.loc	1 397 0
+	.loc	1 393 0
 	ldw r0, sp[57]
 	add r0, r0, 1
 	stw r0, sp[57]
@@ -4233,7 +4222,7 @@ build_icmp_response1:
 .Ltmp196:
 .LBB65_21:
 .Lxtalabel108:
-	.loc	1 401 0
+	.loc	1 397 0
 	ldw r0, sp[70]
 	ldw r1, sp[71]
 	shr r0, r0, 2
@@ -4248,18 +4237,18 @@ build_icmp_response1:
 	byterev r1, r1
 	shr r1, r1, 16
 	stw r1, sp[63]
-	.loc	1 402 0
+	.loc	1 398 0
 	ldaw r1, r1[-7]
 	stw r1, sp[64]
 	ldc r1, 0
-	.loc	1 403 0
+	.loc	1 399 0
 .Ltmp197:
 	stw r1, sp[56]
 .Ltmp198:
 	bu .LBB65_27
 .LBB65_23:
 .Lxtalabel109:
-	.loc	1 405 0
+	.loc	1 401 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[56]
@@ -4292,7 +4281,7 @@ build_icmp_response1:
 	ldc r3, 0
 	ldw r11, sp[27]
 	st8 r2, r11[r3]
-	.loc	1 403 0
+	.loc	1 399 0
 	ldw r0, sp[56]
 	add r0, r0, 1
 	stw r0, sp[56]
@@ -4308,14 +4297,14 @@ build_icmp_response1:
 .LBB65_28:
 .Lxtalabel110:
 	ldc r0, 0
-	.loc	1 408 0
+	.loc	1 404 0
 .Ltmp200:
 	stw r0, sp[55]
 .Ltmp201:
 	bu .LBB65_33
 .LBB65_29:
 .Lxtalabel111:
-	.loc	1 410 0
+	.loc	1 406 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[55]
@@ -4345,7 +4334,7 @@ build_icmp_response1:
 	ldc r3, 0
 	ldw r11, sp[22]
 	st8 r2, r11[r3]
-	.loc	1 408 0
+	.loc	1 404 0
 	ldw r0, sp[55]
 	add r0, r0, 1
 	stw r0, sp[55]
@@ -4360,7 +4349,7 @@ build_icmp_response1:
 .Ltmp202:
 .LBB65_34:
 .Lxtalabel112:
-	.loc	1 412 0
+	.loc	1 408 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	shr r0, r0, 2
@@ -4373,13 +4362,13 @@ build_icmp_response1:
 	ldw r0, cp[.LCPI65_0]
 	ldw r1, sp[21]
 	stw r0, r1[3]
-	.loc	1 413 0
+	.loc	1 409 0
 	ldw r0, sp[64]
 	ldaw r0, r0[7]
 	byterev r0, r0
 	shr r0, r0, 16
 	stw r0, sp[63]
-	.loc	1 414 0
+	.loc	1 410 0
 	ldw r0, sp[68]
 	ldw r2, sp[69]
 	shr r0, r0, 2
@@ -4392,12 +4381,12 @@ build_icmp_response1:
 	ldw r0, sp[63]
 	ldw r1, sp[20]
 	stw r0, r1[4]
-	.loc	1 415 0
+	.loc	1 411 0
 	ldw r0, sp[63]
 	ldw r2, sp[60]
 	add r0, r2, r0
 	stw r0, sp[60]
-	.loc	1 416 0
+	.loc	1 412 0
 	ldw r0, sp[68]
 	ldw r2, sp[69]
 	shr r0, r0, 2
@@ -4413,7 +4402,7 @@ build_icmp_response1:
 	or r0, r0, r1
 	ldw r1, sp[19]
 	stw r0, r1[5]
-	.loc	1 417 0
+	.loc	1 413 0
 	ldw r0, sp[68]
 	ldw r2, sp[69]
 	shr r0, r0, 2
@@ -4426,14 +4415,14 @@ build_icmp_response1:
 	ldc r0, 0
 	ldw r1, sp[18]
 	stw r0, r1[6]
-	.loc	1 418 0
+	.loc	1 414 0
 .Ltmp203:
 	stw r0, sp[54]
 .Ltmp204:
 	bu .LBB65_43
 .LBB65_39:
 .Lxtalabel113:
-	.loc	1 420 0
+	.loc	1 416 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[54]
@@ -4462,7 +4451,7 @@ build_icmp_response1:
 	ldc r2, 0
 	ldw r3, sp[15]
 	st8 r0, r3[r2]
-	.loc	1 418 0
+	.loc	1 414 0
 	ldw r0, sp[54]
 	add r0, r0, 1
 	stw r0, sp[54]
@@ -4478,7 +4467,7 @@ build_icmp_response1:
 .LBB65_44:
 .Lxtalabel114:
 	mkmsk r0, 1
-	.loc	1 422 0
+	.loc	1 418 0
 	ldaw r1, dp[own_ip_addr.static3]
 	ld8u r0, r1[r0]
 	shl r0, r0, 8
@@ -4490,14 +4479,14 @@ build_icmp_response1:
 	stw r0, sp[60]
 	ldc r2, 2
 	mkmsk r3, 2
-	.loc	1 423 0
+	.loc	1 419 0
 	ld8u r3, r1[r3]
 	shl r3, r3, 8
 	ld8u r1, r1[r2]
 	or r1, r1, r3
 	add r0, r0, r1
 	stw r0, sp[60]
-	.loc	1 424 0
+	.loc	1 420 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	mkmsk r2, 5
@@ -4528,7 +4517,7 @@ build_icmp_response1:
 	ldw r2, sp[60]
 	add r0, r2, r0
 	stw r0, sp[60]
-	.loc	1 425 0
+	.loc	1 421 0
 	ldw r0, sp[68]
 	ldw r2, sp[69]
 	ldc r3, 33
@@ -4559,7 +4548,7 @@ build_icmp_response1:
 	ldw r2, sp[60]
 	add r0, r2, r0
 	stw r0, sp[60]
-	.loc	1 427 0
+	.loc	1 423 0
 	ldw r0, sp[68]
 	ldw r2, sp[69]
 	ldc r3, 35
@@ -4572,7 +4561,7 @@ build_icmp_response1:
 	ldc r1, 0
 	ldw r2, sp[7]
 	st8 r1, r2[r0]
-	.loc	1 428 0
+	.loc	1 424 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldc r3, 36
@@ -4585,16 +4574,16 @@ build_icmp_response1:
 	ldc r1, 0
 	ldw r2, sp[6]
 	st8 r1, r2[r0]
-	.loc	1 430 0
+	.loc	1 426 0
 	ldw r0, sp[65]
 	ldc r1, 2048
 	add r0, r0, r1
 	stw r0, sp[65]
-	.loc	1 431 0
+	.loc	1 427 0
 	shr r1, r0, 16
 	add r0, r0, r1
 	stw r0, sp[65]
-	.loc	1 432 0
+	.loc	1 428 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldc r3, 37
@@ -4608,7 +4597,7 @@ build_icmp_response1:
 	shr r1, r1, 8
 	ldw r2, sp[5]
 	st8 r1, r2[r0]
-	.loc	1 433 0
+	.loc	1 429 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldc r3, 38
@@ -4621,11 +4610,11 @@ build_icmp_response1:
 	ldw r1, sp[65]
 	ldw r2, sp[4]
 	st8 r1, r2[r0]
-	.loc	1 435 0
+	.loc	1 431 0
 	bu .LBB65_54
 .LBB65_53:
 .Lxtalabel115:
-	.loc	1 437 0
+	.loc	1 433 0
 	ldw r0, sp[60]
 	shr r1, r0, 16
 	zext r0, 16
@@ -4636,7 +4625,7 @@ build_icmp_response1:
 .LBB65_54:
 	ldaw r0, sp[60]
 	ldc r1, 2
-	.loc	1 435 0
+	.loc	1 431 0
 	or r0, r0, r1
 	ldc r1, 0
 	ld16s r0, r0[r1]
@@ -4645,13 +4634,13 @@ build_icmp_response1:
 	bu .LBB65_55
 .LBB65_55:
 .Lxtalabel116:
-	.loc	1 439 0
+	.loc	1 435 0
 	ldw r0, sp[60]
 	not r0, r0
 	byterev r0, r0
 	shr r0, r0, 16
 	stw r0, sp[60]
-	.loc	1 440 0
+	.loc	1 436 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldc r2, 25
@@ -4665,7 +4654,7 @@ build_icmp_response1:
 	shr r1, r1, 8
 	ldw r2, sp[3]
 	st8 r1, r2[r0]
-	.loc	1 441 0
+	.loc	1 437 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldc r3, 26
@@ -4678,7 +4667,7 @@ build_icmp_response1:
 	ldw r1, sp[60]
 	ldw r2, sp[2]
 	st8 r1, r2[r0]
-	.loc	1 443 0
+	.loc	1 439 0
 	ldw r0, sp[64]
 	ldc r1, 42
 	add r0, r0, r1
@@ -4686,7 +4675,7 @@ build_icmp_response1:
 	bu .LBB65_61
 .LBB65_58:
 .Lxtalabel117:
-	.loc	1 445 0
+	.loc	1 441 0
 	ldw r0, sp[68]
 	ldw r1, sp[69]
 	ldw r2, sp[61]
@@ -4700,7 +4689,7 @@ build_icmp_response1:
 	ldw r1, sp[1]
 	ldw r2, sp[0]
 	st8 r0, r1[r2]
-	.loc	1 443 0
+	.loc	1 439 0
 	ldw r0, sp[61]
 	add r0, r0, 1
 	stw r0, sp[61]
@@ -4714,7 +4703,7 @@ build_icmp_response1:
 	bu .LBB65_62
 .LBB65_62:
 .Lxtalabel118:
-	.loc	1 447 0
+	.loc	1 443 0
 	ldw r0, sp[61]
 	stw r0, sp[66]
 .Ltmp206:
@@ -4757,7 +4746,7 @@ is_valid_icmp_packet0:
 .Ltmp210:
 	.cfi_startproc
 .Lfunc_begin66:
-	.loc	1 451 0
+	.loc	1 447 0
 	entsp 22
 .Ltmp211:
 	.cfi_def_cfa_offset 88
@@ -4774,7 +4763,7 @@ is_valid_icmp_packet0:
 	stw r2, sp[18]
 .Lxtalabel119:
 .Ltmp213:
-	.loc	1 456 0 prologue_end
+	.loc	1 452 0 prologue_end
 	ldw r0, sp[19]
 	ldw r1, sp[20]
 	ldc r2, 23
@@ -4785,12 +4774,12 @@ is_valid_icmp_packet0:
 .LBB66_3:
 .Lxtalabel120:
 	ldc r0, 0
-	.loc	1 457 0
+	.loc	1 453 0
 	stw r0, sp[17]
 	bu .LBB66_29
 .LBB66_4:
 .Lxtalabel121:
-	.loc	1 461 0
+	.loc	1 457 0
 	ldw r0, sp[19]
 	ldw r1, sp[20]
 	shr r0, r0, 2
@@ -4801,7 +4790,7 @@ is_valid_icmp_packet0:
 	bu .LBB66_8
 .LBB66_5:
 	ldc r0, 23
-	.loc	1 456 0
+	.loc	1 452 0
 	ldw r1, sp[10]
 	ld8u r0, r1[r0]
 	eq r0, r0, 1
@@ -4810,12 +4799,12 @@ is_valid_icmp_packet0:
 .LBB66_6:
 .Lxtalabel122:
 	ldc r0, 0
-	.loc	1 464 0
+	.loc	1 460 0
 	stw r0, sp[17]
 	bu .LBB66_29
 .LBB66_7:
 .Lxtalabel123:
-	.loc	1 466 0
+	.loc	1 462 0
 	ldw r0, sp[19]
 	ldw r1, sp[20]
 	ldc r2, 8
@@ -4825,7 +4814,7 @@ is_valid_icmp_packet0:
 	ecallf r0
 	bu .LBB66_11
 .LBB66_8:
-	.loc	1 461 0
+	.loc	1 457 0
 	ldw r0, sp[9]
 	ldw r1, r0[3]
 	ldw r2, cp[.LCPI66_0]
@@ -4835,13 +4824,13 @@ is_valid_icmp_packet0:
 .LBB66_9:
 .Lxtalabel124:
 	ldc r0, 0
-	.loc	1 469 0
+	.loc	1 465 0
 	stw r0, sp[17]
 	bu .LBB66_29
 .LBB66_10:
 .Lxtalabel125:
 	ldc r0, 0
-	.loc	1 471 0
+	.loc	1 467 0
 .Ltmp214:
 	stw r0, sp[15]
 .Ltmp215:
@@ -4849,7 +4838,7 @@ is_valid_icmp_packet0:
 .Ltmp216:
 .LBB66_11:
 	ldc r0, 34
-	.loc	1 466 0
+	.loc	1 462 0
 	ldw r1, sp[8]
 	add r0, r1, r0
 	ldc r2, 0
@@ -4860,7 +4849,7 @@ is_valid_icmp_packet0:
 	bu .LBB66_10
 .LBB66_12:
 .Lxtalabel126:
-	.loc	1 473 0
+	.loc	1 469 0
 .Ltmp217:
 	ldw r0, sp[19]
 	ldw r1, sp[20]
@@ -4875,14 +4864,14 @@ is_valid_icmp_packet0:
 .LBB66_13:
 .Lxtalabel127:
 	ldc r0, 0
-	.loc	1 476 0
+	.loc	1 472 0
 	stw r0, sp[17]
 	bu .LBB66_29
 .LBB66_14:
 .Lxtalabel128:
 	bu .LBB66_17
 .LBB66_15:
-	.loc	1 473 0
+	.loc	1 469 0
 	ldw r0, sp[15]
 	ldw r1, sp[6]
 	ldw r2, sp[7]
@@ -4903,7 +4892,7 @@ is_valid_icmp_packet0:
 	bf r0, .LBB66_13
 	bu .LBB66_14
 .LBB66_17:
-	.loc	1 471 0
+	.loc	1 467 0
 	ldw r0, sp[15]
 	add r0, r0, 1
 	stw r0, sp[15]
@@ -4918,7 +4907,7 @@ is_valid_icmp_packet0:
 .Ltmp218:
 .LBB66_19:
 .Lxtalabel129:
-	.loc	1 480 0
+	.loc	1 476 0
 	ldw r0, sp[19]
 	ldw r1, sp[20]
 	shr r0, r0, 2
@@ -4933,7 +4922,7 @@ is_valid_icmp_packet0:
 	byterev r1, r1
 	shr r1, r1, 16
 	stw r1, sp[16]
-	.loc	1 481 0
+	.loc	1 477 0
 	ldw r1, sp[18]
 	ldc r2, 61
 	lss r1, r1, r2
@@ -4941,39 +4930,39 @@ is_valid_icmp_packet0:
 	bu .LBB66_24
 .LBB66_21:
 .Lxtalabel130:
-	.loc	1 484 0
+	.loc	1 480 0
 	ldw r0, sp[18]
-	.loc	1 484 0
-.Lxta.call_labels28:
+	.loc	1 480 0
+.Lxta.call_labels26:
 	bl printintln
-	.loc	1 485 0
+	.loc	1 481 0
 	ldw r1, sp[16]
 	ldc r2, 14
 	add r1, r1, r2
-	.loc	1 485 0
+	.loc	1 481 0
 	stw r0, sp[2]
 	mov r0, r1
-.Lxta.call_labels29:
+.Lxta.call_labels27:
 	bl printintln
 	ldc r1, 0
-	.loc	1 486 0
+	.loc	1 482 0
 	stw r1, sp[17]
 	stw r0, sp[1]
 	bu .LBB66_29
 .LBB66_22:
 .Lxtalabel131:
-	.loc	1 488 0
+	.loc	1 484 0
 	ldw r1, sp[19]
 	ldw r0, sp[20]
-	.loc	1 488 0
-.Lxta.call_labels30:
+	.loc	1 484 0
+.Lxta.call_labels28:
 	bl checksum_ip
-	.loc	1 488 0
+	.loc	1 484 0
 	bt r0, .LBB66_27
 	bu .LBB66_28
 .LBB66_23:
 	mkmsk r0, 1
-	.loc	1 481 0
+	.loc	1 477 0
 	stw r0, sp[14]
 	bu .LBB66_26
 .LBB66_24:
@@ -4994,13 +4983,13 @@ is_valid_icmp_packet0:
 .LBB66_27:
 .Lxtalabel132:
 	ldc r0, 0
-	.loc	1 491 0
+	.loc	1 487 0
 	stw r0, sp[17]
 	bu .LBB66_29
 .LBB66_28:
 .Lxtalabel133:
 	mkmsk r0, 1
-	.loc	1 494 0
+	.loc	1 490 0
 	stw r0, sp[17]
 .Ltmp219:
 .LBB66_29:
@@ -5041,7 +5030,7 @@ is_valid_icmp_packet1:
 .Ltmp223:
 	.cfi_startproc
 .Lfunc_begin67:
-	.loc	1 498 0
+	.loc	1 494 0
 	entsp 25
 .Ltmp224:
 	.cfi_def_cfa_offset 100
@@ -5058,7 +5047,7 @@ is_valid_icmp_packet1:
 	stw r2, sp[21]
 .Lxtalabel134:
 .Ltmp226:
-	.loc	1 503 0 prologue_end
+	.loc	1 499 0 prologue_end
 	ldw r0, sp[22]
 	ldw r1, sp[23]
 	ldc r2, 23
@@ -5069,12 +5058,12 @@ is_valid_icmp_packet1:
 .LBB67_3:
 .Lxtalabel135:
 	ldc r0, 0
-	.loc	1 504 0
+	.loc	1 500 0
 	stw r0, sp[20]
 	bu .LBB67_29
 .LBB67_4:
 .Lxtalabel136:
-	.loc	1 508 0
+	.loc	1 504 0
 	ldw r0, sp[22]
 	ldw r1, sp[23]
 	shr r0, r0, 2
@@ -5085,7 +5074,7 @@ is_valid_icmp_packet1:
 	bu .LBB67_8
 .LBB67_5:
 	ldc r0, 23
-	.loc	1 503 0
+	.loc	1 499 0
 	ldw r1, sp[13]
 	ld8u r0, r1[r0]
 	eq r0, r0, 1
@@ -5094,12 +5083,12 @@ is_valid_icmp_packet1:
 .LBB67_6:
 .Lxtalabel137:
 	ldc r0, 0
-	.loc	1 511 0
+	.loc	1 507 0
 	stw r0, sp[20]
 	bu .LBB67_29
 .LBB67_7:
 .Lxtalabel138:
-	.loc	1 513 0
+	.loc	1 509 0
 	ldw r0, sp[22]
 	ldw r1, sp[23]
 	ldc r2, 8
@@ -5109,7 +5098,7 @@ is_valid_icmp_packet1:
 	ecallf r0
 	bu .LBB67_11
 .LBB67_8:
-	.loc	1 508 0
+	.loc	1 504 0
 	ldw r0, sp[12]
 	ldw r1, r0[3]
 	ldw r2, cp[.LCPI67_0]
@@ -5119,13 +5108,13 @@ is_valid_icmp_packet1:
 .LBB67_9:
 .Lxtalabel139:
 	ldc r0, 0
-	.loc	1 516 0
+	.loc	1 512 0
 	stw r0, sp[20]
 	bu .LBB67_29
 .LBB67_10:
 .Lxtalabel140:
 	ldc r0, 0
-	.loc	1 518 0
+	.loc	1 514 0
 .Ltmp227:
 	stw r0, sp[18]
 .Ltmp228:
@@ -5133,7 +5122,7 @@ is_valid_icmp_packet1:
 .Ltmp229:
 .LBB67_11:
 	ldc r0, 34
-	.loc	1 513 0
+	.loc	1 509 0
 	ldw r1, sp[11]
 	add r0, r1, r0
 	ldc r2, 0
@@ -5144,7 +5133,7 @@ is_valid_icmp_packet1:
 	bu .LBB67_10
 .LBB67_12:
 .Lxtalabel141:
-	.loc	1 520 0
+	.loc	1 516 0
 .Ltmp230:
 	ldw r0, sp[22]
 	ldw r1, sp[23]
@@ -5159,14 +5148,14 @@ is_valid_icmp_packet1:
 .LBB67_13:
 .Lxtalabel142:
 	ldc r0, 0
-	.loc	1 523 0
+	.loc	1 519 0
 	stw r0, sp[20]
 	bu .LBB67_29
 .LBB67_14:
 .Lxtalabel143:
 	bu .LBB67_17
 .LBB67_15:
-	.loc	1 520 0
+	.loc	1 516 0
 	ldw r0, sp[18]
 	ldw r1, sp[9]
 	ldw r2, sp[10]
@@ -5187,7 +5176,7 @@ is_valid_icmp_packet1:
 	bf r0, .LBB67_13
 	bu .LBB67_14
 .LBB67_17:
-	.loc	1 518 0
+	.loc	1 514 0
 	ldw r0, sp[18]
 	add r0, r0, 1
 	stw r0, sp[18]
@@ -5202,7 +5191,7 @@ is_valid_icmp_packet1:
 .Ltmp231:
 .LBB67_19:
 .Lxtalabel144:
-	.loc	1 527 0
+	.loc	1 523 0
 	ldw r0, sp[22]
 	ldw r1, sp[23]
 	shr r0, r0, 2
@@ -5217,7 +5206,7 @@ is_valid_icmp_packet1:
 	byterev r1, r1
 	shr r1, r1, 16
 	stw r1, sp[19]
-	.loc	1 528 0
+	.loc	1 524 0
 	ldw r1, sp[21]
 	ldc r2, 61
 	lss r1, r1, r2
@@ -5226,48 +5215,48 @@ is_valid_icmp_packet1:
 .LBB67_21:
 .Lxtalabel145:
 	ldc r0, 14
-	.loc	1 530 0
+	.loc	1 526 0
 	ldaw r1, dp[.str]
 	stw r0, sp[5]
 	mov r0, r1
 	ldw r1, sp[5]
-.Lxta.call_labels31:
+.Lxta.call_labels29:
 	bl printstr
-	.loc	1 531 0
+	.loc	1 527 0
 	ldw r1, sp[21]
-	.loc	1 531 0
+	.loc	1 527 0
 	stw r0, sp[4]
 	mov r0, r1
-.Lxta.call_labels32:
+.Lxta.call_labels30:
 	bl printintln
-	.loc	1 532 0
+	.loc	1 528 0
 	ldw r1, sp[19]
 	ldw r2, sp[5]
 	add r1, r1, r2
-	.loc	1 532 0
+	.loc	1 528 0
 	stw r0, sp[3]
 	mov r0, r1
-.Lxta.call_labels33:
+.Lxta.call_labels31:
 	bl printintln
 	ldc r1, 0
-	.loc	1 533 0
+	.loc	1 529 0
 	stw r1, sp[20]
 	stw r0, sp[2]
 	bu .LBB67_29
 .LBB67_22:
 .Lxtalabel146:
-	.loc	1 535 0
+	.loc	1 531 0
 	ldw r1, sp[22]
 	ldw r0, sp[23]
-	.loc	1 535 0
-.Lxta.call_labels34:
+	.loc	1 531 0
+.Lxta.call_labels32:
 	bl checksum_ip
-	.loc	1 535 0
+	.loc	1 531 0
 	bt r0, .LBB67_27
 	bu .LBB67_28
 .LBB67_23:
 	mkmsk r0, 1
-	.loc	1 528 0
+	.loc	1 524 0
 	stw r0, sp[17]
 	bu .LBB67_26
 .LBB67_24:
@@ -5288,19 +5277,19 @@ is_valid_icmp_packet1:
 .LBB67_27:
 .Lxtalabel147:
 	ldc r1, 14
-	.loc	1 537 0
+	.loc	1 533 0
 	ldaw r0, dp[.str6]
-.Lxta.call_labels35:
+.Lxta.call_labels33:
 	bl printstr
 	ldc r1, 0
-	.loc	1 538 0
+	.loc	1 534 0
 	stw r1, sp[20]
 	stw r0, sp[1]
 	bu .LBB67_29
 .LBB67_28:
 .Lxtalabel148:
 	mkmsk r0, 1
-	.loc	1 541 0
+	.loc	1 537 0
 	stw r0, sp[20]
 .Ltmp232:
 .LBB67_29:
@@ -5333,64 +5322,104 @@ is_valid_icmp_packet1:
 __main__main_tile_1:
 .Ltmp236:
 	.cfi_startproc
-	entsp 24
+	entsp 27
 .Ltmp237:
-	.cfi_def_cfa_offset 96
+	.cfi_def_cfa_offset 108
 .Ltmp238:
 	.cfi_offset 15, 0
+	ldc r2, 0
+	stw r2, sp[11]
 	stw r1, sp[8]
-	stw r3, sp[7]
-	stw r0, sp[6]
-	stw r2, sp[5]
-	ldw r0, sp[6]
-	stw r0, sp[12]
+	stw r0, sp[7]
+	ldw r0, sp[7]
+	stw r0, sp[15]
 	ldw r1, sp[8]
-	stw r1, sp[11]
-	ldw r2, sp[5]
-	stw r2, sp[10]
-	ldw r3, sp[7]
-	stw r3, sp[9]
-	ldaw r0, sp[19]
+	stw r1, sp[14]
+	ldaw r0, sp[22]
+	getr r1, 2
+	getr r2, 2
+	setd res[r1], r2
+	setd res[r2], r1
+	stw r1, sp[13]
+	stw r2, sp[12]
 	ldc r1, 0
-	stw r0, sp[4]
-	ecallt r1
-	bu .LBB68_3
-.LBB68_3:
-	ldw r0, sp[12]
-	ldw r1, sp[4]
-	stw r0, r1[0]
-	ldaw r0, sp[17]
-	ldc r2, 0
-	stw r0, sp[3]
-	ecallt r2
+	stw r1, sp[11]
+	getr r1, 2
+	getr r2, 2
+	setd res[r1], r2
+	setd res[r2], r1
+	stw r1, sp[10]
+	stw r2, sp[9]
+	mkmsk r1, 1
+	stw r0, sp[6]
+	ecallf r1
 	bu .LBB68_4
+.LBB68_3:
+	ldw r0, sp[13]
+	ldw r1, sp[12]
+	freer res[r0]
+	freer res[r1]
+	ldw r0, sp[10]
+	ldw r1, sp[9]
+	freer res[r0]
+	freer res[r1]
+	bu .LBB68_10
 .LBB68_4:
-	ldw r0, sp[11]
-	ldw r1, sp[3]
+	ldw r0, sp[13]
+	ldw r1, sp[6]
 	stw r0, r1[0]
-	ldaw r0, sp[16]
+	ldaw r0, sp[23]
 	ldc r2, 0
-	stw r0, sp[2]
+	stw r0, sp[5]
 	ecallt r2
 	bu .LBB68_5
 .LBB68_5:
-	ldw r0, sp[10]
-	ldw r1, sp[2]
+	ldw r0, sp[12]
+	ldw r1, sp[5]
 	stw r0, r1[0]
-	ldaw r0, sp[14]
+	ldaw r0, sp[20]
 	ldc r2, 0
-	stw r0, sp[1]
+	stw r0, sp[4]
 	ecallt r2
 	bu .LBB68_6
 .LBB68_6:
+	ldw r0, sp[10]
+	ldw r1, sp[4]
+	stw r0, r1[0]
+	ldaw r0, sp[21]
+	ldc r2, 0
+	stw r0, sp[3]
+	ecallt r2
+	bu .LBB68_7
+.LBB68_7:
 	ldw r0, sp[9]
+	ldw r1, sp[3]
+	stw r0, r1[0]
+	ldaw r0, sp[18]
+	ldc r2, 0
+	stw r0, sp[2]
+	ecallt r2
+	bu .LBB68_8
+.LBB68_8:
+	ldw r0, sp[15]
+	ldw r1, sp[2]
+	stw r0, r1[0]
+	ldaw r0, sp[16]
+	ldc r2, 0
+	stw r0, sp[1]
+	ecallt r2
+	bu .LBB68_9
+.LBB68_9:
+	ldw r0, sp[14]
 	ldw r1, sp[1]
 	stw r0, r1[0]
-	ldaw r0, sp[13]
+	ldaw r0, sp[16]
 	ldaw r1, dp[par.desc.1]
 	bl __start_other_cores
-	retsp 24
-.LBB68_8:
+	bu .LBB68_3
+.LBB68_10:
+	retsp 27
+.LBB68_12:
 	ldc r0, 0
 	ecallf r0
 .Ltmp239:
@@ -5401,111 +5430,64 @@ __main__main_tile_1:
 
 	.align	4
 	.cc_bottom __main__main_tile_1.function
-	.set	__main__main_tile_1.nstackwords,((par.extra_stackwords + 1 + __main__main_tile_1_task__ethernet_server_full_0.nstackwords + 1 + __main__main_tile_1_task_demo1_3.nstackwords) + 24)
+	.set	__main__main_tile_1.nstackwords,((par.extra_stackwords + 1 + __main__main_tile_1_task_demo0_0.nstackwords + 1 + __main__main_tile_1_task_demo1_1.nstackwords + 1 + __main__main_tile_1_task__ethernet_server_lite_2.nstackwords) + 27)
 	.globl	__main__main_tile_1.nstackwords
-	.set	__main__main_tile_1.maxcores,(0 + __main__main_tile_1_task__ethernet_server_full_0.maxcores + __main__main_tile_1_task_demo1_3.maxcores) $M 1
+	.set	__main__main_tile_1.maxcores,(0 + __main__main_tile_1_task_demo0_0.maxcores + __main__main_tile_1_task_demo1_1.maxcores + __main__main_tile_1_task__ethernet_server_lite_2.maxcores) $M 1
 	.globl	__main__main_tile_1.maxcores
-	.set	__main__main_tile_1.maxtimers,(1 + __main__main_tile_1_task__ethernet_server_full_0.maxtimers + __main__main_tile_1_task_demo1_3.maxtimers) $M 0
+	.set	__main__main_tile_1.maxtimers,(2 + __main__main_tile_1_task_demo0_0.maxtimers + __main__main_tile_1_task_demo1_1.maxtimers + __main__main_tile_1_task__ethernet_server_lite_2.maxtimers) $M 0
 	.globl	__main__main_tile_1.maxtimers
-	.set	__main__main_tile_1.maxchanends,(0 + __main__main_tile_1_task__ethernet_server_full_0.maxchanends + __main__main_tile_1_task_demo1_3.maxchanends) $M 0
+	.set	__main__main_tile_1.maxchanends,(4 + (0 + __main__main_tile_1_task_demo0_0.maxchanends + __main__main_tile_1_task_demo1_1.maxchanends + __main__main_tile_1_task__ethernet_server_lite_2.maxchanends)) $M 4
 	.globl	__main__main_tile_1.maxchanends
-	.cc_top __main__main_tile_1_task__ethernet_server_full_0.function
+	.cc_top __main__main_tile_1_task_demo0_0.function
 	.align	4
-	.type	__main__main_tile_1_task__ethernet_server_full_0,@function
-__main__main_tile_1_task__ethernet_server_full_0:
+	.type	__main__main_tile_1_task_demo0_0,@function
+__main__main_tile_1_task_demo0_0:
 .Ltmp242:
 	.cfi_startproc
 .Lfunc_begin69:
-	.loc	1 650 0
-	entsp 15
+	.loc	1 644 0
+	entsp 5
 .Ltmp243:
-	.cfi_def_cfa_offset 60
+	.cfi_def_cfa_offset 20
 .Ltmp244:
 	.cfi_offset 15, 0
-	stw r0, sp[12]
-	ldw r0, sp[12]
-	stw r0, sp[13]
-	.loc	1 651 0 prologue_end
-.Ltmp245:
-	ldw r0, sp[13]
-	ldaw r2, r0[8]
-	ldc r0, 0
-	.loc	1 652 0
-	stw r2, sp[11]
-	ecallt r0
-	bu .LBB69_3
-.LBB69_3:
-	ldc r0, 0
-	.loc	1 652 0
-	ldaw r1, dp[otp_ports0]
-	stw r0, sp[10]
-	mov r0, r1
-	ldw r1, sp[10]
-	ldw r2, sp[11]
-.Lxta.call_labels36:
-	bl otp_board_info_get_mac
-	.loc	1 653 0
-	ldw r1, dp[eth_rst0]
-	.loc	1 653 0
-	stw r0, sp[9]
-	mov r0, r1
-.Lxta.call_labels37:
-	bl eth_phy_reset_p1
-	.loc	1 654 0
-	ldaw r0, dp[smi0]
-	stw r0, sp[8]
-.Lxta.call_labels38:
-	bl smi_init
-	mkmsk r0, 1
-	.loc	1 655 0
-	stw r0, sp[7]
-	ldw r1, sp[8]
-.Lxta.call_labels39:
-	bl eth_phy_config
-	.loc	1 660 0
-	ldw r0, sp[13]
-	ldaw r2, r0[8]
-	ldaw r3, r0[6]
-	ldaw r0, r0[4]
-	.loc	1 660 0
-	ldw r1, sp[7]
-	stw r1, sp[6]
-	stw r1, sp[5]
-	ldc r11, 6
-	stw r11, sp[4]
-	stw r1, sp[3]
 	stw r0, sp[2]
-	stw r1, sp[1]
-	ldaw r0, dp[mii0]
-	ldw r1, sp[10]
-.Lxta.call_labels40:
-	bl _ethernet_server_full
+	ldw r0, sp[2]
+	stw r0, sp[3]
+	.loc	1 644 0 prologue_end
+.Ltmp245:
+	ldw r0, sp[3]
+	ldw r1, r0[4]
+	ldw r0, r0[6]
+	.loc	1 644 0
+	stw r0, sp[1]
+	mov r0, r1
+	ldw r1, sp[1]
+.Lxta.call_labels34:
+	bl demo0
 .Ltmp246:
-	retsp 15
-.LBB69_5:
-	ldc r0, 0
-	ecallf r0
+	retsp 5
 .Ltmp247:
-	.size	__main__main_tile_1_task__ethernet_server_full_0, .Ltmp247-__main__main_tile_1_task__ethernet_server_full_0
+	.size	__main__main_tile_1_task_demo0_0, .Ltmp247-__main__main_tile_1_task_demo0_0
 .Lfunc_end69:
 .Ltmp248:
 	.cfi_endproc
 .Leh_func_end69:
 
 	.align	4
-	.cc_bottom __main__main_tile_1_task__ethernet_server_full_0.function
-	.set	__main__main_tile_1_task__ethernet_server_full_0.nstackwords,((otp_board_info_get_mac.nstackwords $M eth_phy_reset_p1.nstackwords $M smi_init.nstackwords $M eth_phy_config.nstackwords $M _ethernet_server_full.nstackwords) + 15)
-	.set	__main__main_tile_1_task__ethernet_server_full_0.maxcores,_ethernet_server_full.maxcores $M eth_phy_config.maxcores $M eth_phy_reset_p1.maxcores $M otp_board_info_get_mac.maxcores $M smi_init.maxcores $M 1
-	.set	__main__main_tile_1_task__ethernet_server_full_0.maxtimers,_ethernet_server_full.maxtimers $M eth_phy_config.maxtimers $M eth_phy_reset_p1.maxtimers $M otp_board_info_get_mac.maxtimers $M smi_init.maxtimers $M 0
-	.set	__main__main_tile_1_task__ethernet_server_full_0.maxchanends,_ethernet_server_full.maxchanends $M eth_phy_config.maxchanends $M eth_phy_reset_p1.maxchanends $M otp_board_info_get_mac.maxchanends $M smi_init.maxchanends $M 0
-	.cc_top __main__main_tile_1_task_demo1_3.function
+	.cc_bottom __main__main_tile_1_task_demo0_0.function
+	.set	__main__main_tile_1_task_demo0_0.nstackwords,(demo0.nstackwords + 5)
+	.set	__main__main_tile_1_task_demo0_0.maxcores,demo0.maxcores $M 1
+	.set	__main__main_tile_1_task_demo0_0.maxtimers,demo0.maxtimers $M 0
+	.set	__main__main_tile_1_task_demo0_0.maxchanends,demo0.maxchanends $M 0
+	.cc_top __main__main_tile_1_task_demo1_1.function
 	.align	4
-	.type	__main__main_tile_1_task_demo1_3,@function
-__main__main_tile_1_task_demo1_3:
+	.type	__main__main_tile_1_task_demo1_1,@function
+__main__main_tile_1_task_demo1_1:
 .Ltmp250:
 	.cfi_startproc
 .Lfunc_begin70:
-	.loc	1 680 0
+	.loc	1 645 0
 	entsp 5
 .Ltmp251:
 	.cfi_def_cfa_offset 20
@@ -5514,173 +5496,203 @@ __main__main_tile_1_task_demo1_3:
 	stw r0, sp[2]
 	ldw r0, sp[2]
 	stw r0, sp[3]
-	.loc	1 680 0 prologue_end
+	.loc	1 645 0 prologue_end
 .Ltmp253:
 	ldw r0, sp[3]
-	ldw r1, r0[1]
-	ldw r0, r0[3]
-	.loc	1 680 0
+	ldw r1, r0[0]
+	ldw r0, r0[2]
+	.loc	1 645 0
 	stw r0, sp[1]
 	mov r0, r1
 	ldw r1, sp[1]
-.Lxta.call_labels41:
+.Lxta.call_labels35:
 	bl demo1
 .Ltmp254:
 	retsp 5
 .Ltmp255:
-	.size	__main__main_tile_1_task_demo1_3, .Ltmp255-__main__main_tile_1_task_demo1_3
+	.size	__main__main_tile_1_task_demo1_1, .Ltmp255-__main__main_tile_1_task_demo1_1
 .Lfunc_end70:
 .Ltmp256:
 	.cfi_endproc
 .Leh_func_end70:
 
 	.align	4
-	.cc_bottom __main__main_tile_1_task_demo1_3.function
-	.set	__main__main_tile_1_task_demo1_3.nstackwords,(demo1.nstackwords + 5)
-	.set	__main__main_tile_1_task_demo1_3.maxcores,demo1.maxcores $M 1
-	.set	__main__main_tile_1_task_demo1_3.maxtimers,demo1.maxtimers $M 0
-	.set	__main__main_tile_1_task_demo1_3.maxchanends,demo1.maxchanends $M 0
+	.cc_bottom __main__main_tile_1_task_demo1_1.function
+	.set	__main__main_tile_1_task_demo1_1.nstackwords,(demo1.nstackwords + 5)
+	.set	__main__main_tile_1_task_demo1_1.maxcores,demo1.maxcores $M 1
+	.set	__main__main_tile_1_task_demo1_1.maxtimers,demo1.maxtimers $M 0
+	.set	__main__main_tile_1_task_demo1_1.maxchanends,demo1.maxchanends $M 0
+	.cc_top __main__main_tile_1_task__ethernet_server_lite_2.function
+	.align	4
+	.type	__main__main_tile_1_task__ethernet_server_lite_2,@function
+__main__main_tile_1_task__ethernet_server_lite_2:
+.Ltmp258:
+	.cfi_startproc
+.Lfunc_begin71:
+	.loc	1 649 0
+	entsp 15
+.Ltmp259:
+	.cfi_def_cfa_offset 60
+.Ltmp260:
+	.cfi_offset 15, 0
+	stw r0, sp[12]
+	ldw r0, sp[12]
+	stw r0, sp[13]
+	.loc	1 650 0 prologue_end
+.Ltmp261:
+	ldw r0, sp[13]
+	ldaw r2, r0[8]
+	ldc r0, 0
+	.loc	1 651 0
+	stw r2, sp[11]
+	ecallt r0
+	bu .LBB71_3
+.LBB71_3:
+	ldc r0, 0
+	.loc	1 651 0
+	ldaw r1, dp[otp_ports_p1]
+	stw r0, sp[10]
+	mov r0, r1
+	ldw r1, sp[10]
+	ldw r2, sp[11]
+.Lxta.call_labels36:
+	bl otp_board_info_get_mac
+	.loc	1 652 0
+	ldw r1, dp[eth_rst_p1]
+	.loc	1 652 0
+	stw r0, sp[9]
+	mov r0, r1
+.Lxta.call_labels37:
+	bl eth_phy_reset_p1
+	.loc	1 653 0
+	ldaw r0, dp[smi_p1]
+	stw r0, sp[8]
+.Lxta.call_labels38:
+	bl smi_init
+	mkmsk r0, 1
+	.loc	1 654 0
+	stw r0, sp[7]
+	ldw r1, sp[8]
+.Lxta.call_labels39:
+	bl eth_phy_config
+	.loc	1 659 0
+	ldw r0, sp[13]
+	ldaw r2, r0[8]
+	.loc	1 659 0
+	ldw r1, sp[7]
+	stw r1, sp[6]
+	stw r1, sp[5]
+	ldc r3, 6
+	stw r3, sp[4]
+	stw r1, sp[3]
+	.loc	1 659 0
+	ldaw r3, r0[5]
+	.loc	1 659 0
+	stw r3, sp[2]
+	stw r1, sp[1]
+	.loc	1 659 0
+	ldaw r3, r0[7]
+	.loc	1 659 0
+	ldaw r0, dp[mii_p1]
+	ldw r1, sp[10]
+.Lxta.call_labels40:
+	bl _ethernet_server_lite
+.Ltmp262:
+	retsp 15
+.LBB71_5:
+	ldc r0, 0
+	ecallf r0
+.Ltmp263:
+	.size	__main__main_tile_1_task__ethernet_server_lite_2, .Ltmp263-__main__main_tile_1_task__ethernet_server_lite_2
+.Lfunc_end71:
+.Ltmp264:
+	.cfi_endproc
+.Leh_func_end71:
+
+	.align	4
+	.cc_bottom __main__main_tile_1_task__ethernet_server_lite_2.function
+	.set	__main__main_tile_1_task__ethernet_server_lite_2.nstackwords,((otp_board_info_get_mac.nstackwords $M eth_phy_reset_p1.nstackwords $M smi_init.nstackwords $M eth_phy_config.nstackwords $M _ethernet_server_lite.nstackwords) + 15)
+	.set	__main__main_tile_1_task__ethernet_server_lite_2.maxcores,_ethernet_server_lite.maxcores $M eth_phy_config.maxcores $M eth_phy_reset_p1.maxcores $M otp_board_info_get_mac.maxcores $M smi_init.maxcores $M 1
+	.set	__main__main_tile_1_task__ethernet_server_lite_2.maxtimers,_ethernet_server_lite.maxtimers $M eth_phy_config.maxtimers $M eth_phy_reset_p1.maxtimers $M otp_board_info_get_mac.maxtimers $M smi_init.maxtimers $M 0
+	.set	__main__main_tile_1_task__ethernet_server_lite_2.maxchanends,_ethernet_server_lite.maxchanends $M eth_phy_config.maxchanends $M eth_phy_reset_p1.maxchanends $M otp_board_info_get_mac.maxchanends $M smi_init.maxchanends $M 0
 	.cc_top __main__main_tile_0.function
 	.globl	__main__main_tile_0
 	.align	4
 	.type	__main__main_tile_0,@function
 __main__main_tile_0:
-.Ltmp258:
-	.cfi_startproc
-	entsp 24
-.Ltmp259:
-	.cfi_def_cfa_offset 96
-.Ltmp260:
-	.cfi_offset 15, 0
-	stw r1, sp[8]
-	stw r3, sp[7]
-	stw r0, sp[6]
-	stw r2, sp[5]
-	ldw r0, sp[6]
-	stw r0, sp[12]
-	ldw r1, sp[8]
-	stw r1, sp[11]
-	ldw r2, sp[5]
-	stw r2, sp[10]
-	ldw r3, sp[7]
-	stw r3, sp[9]
-	ldaw r0, sp[20]
-	ldc r1, 0
-	stw r0, sp[4]
-	ecallt r1
-	bu .LBB71_3
-.LBB71_3:
-	ldw r0, sp[12]
-	ldw r1, sp[4]
-	stw r0, r1[0]
-	ldaw r0, sp[18]
-	ldc r2, 0
-	stw r0, sp[3]
-	ecallt r2
-	bu .LBB71_4
-.LBB71_4:
-	ldw r0, sp[11]
-	ldw r1, sp[3]
-	stw r0, r1[0]
-	ldaw r0, sp[15]
-	ldc r2, 0
-	stw r0, sp[2]
-	ecallt r2
-	bu .LBB71_5
-.LBB71_5:
-	ldw r0, sp[10]
-	ldw r1, sp[2]
-	stw r0, r1[0]
-	ldaw r0, sp[13]
-	ldc r2, 0
-	stw r0, sp[1]
-	ecallt r2
-	bu .LBB71_6
-.LBB71_6:
-	ldw r0, sp[9]
-	ldw r1, sp[1]
-	stw r0, r1[0]
-	ldaw r0, sp[13]
-	ldaw r1, dp[par.desc.2]
-	bl __start_other_cores
-	retsp 24
-.LBB71_8:
-	ldc r0, 0
-	ecallf r0
-.Ltmp261:
-	.size	__main__main_tile_0, .Ltmp261-__main__main_tile_0
-.Ltmp262:
-	.cfi_endproc
-.Leh_func_end71:
-
-	.align	4
-	.cc_bottom __main__main_tile_0.function
-	.set	__main__main_tile_0.nstackwords,((par.extra_stackwords + 1 + __main__main_tile_0_task_ethernet_server_full_1.nstackwords + 1 + __main__main_tile_0_task_demo0_2.nstackwords) + 24)
-	.globl	__main__main_tile_0.nstackwords
-	.set	__main__main_tile_0.maxcores,(0 + __main__main_tile_0_task_ethernet_server_full_1.maxcores + __main__main_tile_0_task_demo0_2.maxcores) $M 1
-	.globl	__main__main_tile_0.maxcores
-	.set	__main__main_tile_0.maxtimers,(1 + __main__main_tile_0_task_ethernet_server_full_1.maxtimers + __main__main_tile_0_task_demo0_2.maxtimers) $M 0
-	.globl	__main__main_tile_0.maxtimers
-	.set	__main__main_tile_0.maxchanends,(0 + __main__main_tile_0_task_ethernet_server_full_1.maxchanends + __main__main_tile_0_task_demo0_2.maxchanends) $M 0
-	.globl	__main__main_tile_0.maxchanends
-	.cc_top __main__main_tile_0_task_ethernet_server_full_1.function
-	.align	4
-	.type	__main__main_tile_0_task_ethernet_server_full_1,@function
-__main__main_tile_0_task_ethernet_server_full_1:
-.Ltmp264:
+.Ltmp266:
 	.cfi_startproc
 .Lfunc_begin72:
-	.loc	1 664 0
-	entsp 15
-.Ltmp265:
-	.cfi_def_cfa_offset 60
-.Ltmp266:
-	.cfi_offset 15, 0
-	stw r0, sp[12]
-	ldw r0, sp[12]
-	stw r0, sp[13]
-	.loc	1 665 0 prologue_end
+	.loc	7 0 0
+	entsp 25
 .Ltmp267:
-	ldw r0, sp[13]
-	ldaw r2, r0[8]
-	ldc r0, 0
-	.loc	1 666 0
-	stw r2, sp[11]
-	ecallt r0
+	.cfi_def_cfa_offset 100
+.Ltmp268:
+	.cfi_offset 15, 0
+	stw r1, sp[15]
+	stw r0, sp[14]
+	ldw r0, sp[14]
+	stw r0, sp[23]
+	ldw r1, sp[15]
+	stw r1, sp[22]
+	ldaw r0, sp[18]
+	ldc r1, 0
+	stw r0, sp[13]
+	ecallt r1
 	bu .LBB72_3
 .LBB72_3:
+	ldw r0, sp[23]
+	ldw r1, sp[13]
+	stw r0, r1[0]
+	ldaw r0, sp[20]
+	ldc r2, 0
+	stw r0, sp[12]
+	ecallt r2
+	bu .LBB72_4
+.LBB72_4:
+	ldw r0, sp[22]
+	ldw r1, sp[12]
+	stw r0, r1[0]
+	ldaw r2, sp[16]
+.Ltmp269:
 	ldc r0, 0
-	.loc	1 666 0
-	ldaw r1, dp[otp_ports1]
+	.loc	1 665 0 prologue_end
+.Ltmp270:
+	stw r2, sp[11]
+	ecallt r0
+	bu .LBB72_5
+.LBB72_5:
+	ldc r0, 0
+	.loc	1 665 0
+	ldaw r1, dp[otp_ports_p2]
 	stw r0, sp[10]
 	mov r0, r1
 	ldw r1, sp[10]
 	ldw r2, sp[11]
-.Lxta.call_labels42:
+.Lxta.call_labels41:
 	bl otp_board_info_get_mac
-	.loc	1 667 0
-	ldw r1, dp[eth_rst1]
-	.loc	1 667 0
+	.loc	1 666 0
+	ldw r1, dp[eth_rst_p2]
+	.loc	1 666 0
 	stw r0, sp[9]
 	mov r0, r1
-.Lxta.call_labels43:
+.Lxta.call_labels42:
 	bl eth_phy_reset_p2
-	.loc	1 668 0
-	ldaw r0, dp[smi1]
+	.loc	1 667 0
+	ldaw r0, dp[smi_p2]
 	stw r0, sp[8]
-.Lxta.call_labels44:
+.Lxta.call_labels43:
 	bl smi_init
 	mkmsk r0, 1
-	.loc	1 669 0
+	.loc	1 668 0
 	stw r0, sp[7]
 	ldw r1, sp[8]
-.Lxta.call_labels45:
+.Lxta.call_labels44:
 	bl eth_phy_config
-	.loc	1 674 0
-	ldw r0, sp[13]
-	ldaw r2, r0[8]
-	add r3, r0, 8
-	.loc	1 674 0
+	ldaw r2, sp[16]
+	ldaw r3, sp[18]
+	ldaw r0, sp[20]
+	.loc	1 673 0
 	ldw r1, sp[7]
 	stw r1, sp[6]
 	stw r1, sp[5]
@@ -5689,119 +5701,81 @@ __main__main_tile_0_task_ethernet_server_full_1:
 	stw r1, sp[3]
 	stw r0, sp[2]
 	stw r1, sp[1]
-	ldaw r0, dp[mii1]
+	ldaw r0, dp[mii_p2]
 	ldw r1, sp[10]
-.Lxta.call_labels46:
-	bl ethernet_server_full
-.Ltmp268:
-	retsp 15
-.LBB72_5:
+.Lxta.call_labels45:
+	bl ethernet_server_lite
+.Ltmp271:
+	retsp 25
+.LBB72_7:
 	ldc r0, 0
 	ecallf r0
-.Ltmp269:
-	.size	__main__main_tile_0_task_ethernet_server_full_1, .Ltmp269-__main__main_tile_0_task_ethernet_server_full_1
+.Ltmp272:
+	.size	__main__main_tile_0, .Ltmp272-__main__main_tile_0
 .Lfunc_end72:
-.Ltmp270:
+.Ltmp273:
 	.cfi_endproc
 .Leh_func_end72:
 
 	.align	4
-	.cc_bottom __main__main_tile_0_task_ethernet_server_full_1.function
-	.set	__main__main_tile_0_task_ethernet_server_full_1.nstackwords,((otp_board_info_get_mac.nstackwords $M eth_phy_reset_p2.nstackwords $M smi_init.nstackwords $M eth_phy_config.nstackwords $M ethernet_server_full.nstackwords) + 15)
-	.set	__main__main_tile_0_task_ethernet_server_full_1.maxcores,eth_phy_config.maxcores $M eth_phy_reset_p2.maxcores $M ethernet_server_full.maxcores $M otp_board_info_get_mac.maxcores $M smi_init.maxcores $M 1
-	.set	__main__main_tile_0_task_ethernet_server_full_1.maxtimers,eth_phy_config.maxtimers $M eth_phy_reset_p2.maxtimers $M ethernet_server_full.maxtimers $M otp_board_info_get_mac.maxtimers $M smi_init.maxtimers $M 0
-	.set	__main__main_tile_0_task_ethernet_server_full_1.maxchanends,eth_phy_config.maxchanends $M eth_phy_reset_p2.maxchanends $M ethernet_server_full.maxchanends $M otp_board_info_get_mac.maxchanends $M smi_init.maxchanends $M 0
-	.cc_top __main__main_tile_0_task_demo0_2.function
-	.align	4
-	.type	__main__main_tile_0_task_demo0_2,@function
-__main__main_tile_0_task_demo0_2:
-.Ltmp272:
-	.cfi_startproc
-.Lfunc_begin73:
-	.loc	1 679 0
-	entsp 5
-.Ltmp273:
-	.cfi_def_cfa_offset 20
-.Ltmp274:
-	.cfi_offset 15, 0
-	stw r0, sp[2]
-	ldw r0, sp[2]
-	stw r0, sp[3]
-	.loc	1 679 0 prologue_end
-.Ltmp275:
-	ldw r0, sp[3]
-	ldw r1, r0[5]
-	ldw r0, r0[7]
-	.loc	1 679 0
-	stw r0, sp[1]
-	mov r0, r1
-	ldw r1, sp[1]
-.Lxta.call_labels47:
-	bl demo0
-.Ltmp276:
-	retsp 5
-.Ltmp277:
-	.size	__main__main_tile_0_task_demo0_2, .Ltmp277-__main__main_tile_0_task_demo0_2
-.Lfunc_end73:
-.Ltmp278:
-	.cfi_endproc
-.Leh_func_end73:
-
-	.align	4
-	.cc_bottom __main__main_tile_0_task_demo0_2.function
-	.set	__main__main_tile_0_task_demo0_2.nstackwords,(demo0.nstackwords + 5)
-	.set	__main__main_tile_0_task_demo0_2.maxcores,demo0.maxcores $M 1
-	.set	__main__main_tile_0_task_demo0_2.maxtimers,demo0.maxtimers $M 0
-	.set	__main__main_tile_0_task_demo0_2.maxchanends,demo0.maxchanends $M 0
+	.cc_bottom __main__main_tile_0.function
+	.set	__main__main_tile_0.nstackwords,((otp_board_info_get_mac.nstackwords $M eth_phy_reset_p2.nstackwords $M smi_init.nstackwords $M eth_phy_config.nstackwords $M ethernet_server_lite.nstackwords) + 25)
+	.globl	__main__main_tile_0.nstackwords
+	.set	__main__main_tile_0.maxcores,eth_phy_config.maxcores $M eth_phy_reset_p2.maxcores $M ethernet_server_lite.maxcores $M otp_board_info_get_mac.maxcores $M smi_init.maxcores $M 1
+	.globl	__main__main_tile_0.maxcores
+	.set	__main__main_tile_0.maxtimers,eth_phy_config.maxtimers $M eth_phy_reset_p2.maxtimers $M ethernet_server_lite.maxtimers $M otp_board_info_get_mac.maxtimers $M smi_init.maxtimers $M 0
+	.globl	__main__main_tile_0.maxtimers
+	.set	__main__main_tile_0.maxchanends,eth_phy_config.maxchanends $M eth_phy_reset_p2.maxchanends $M ethernet_server_lite.maxchanends $M otp_board_info_get_mac.maxchanends $M smi_init.maxchanends $M 0
+	.globl	__main__main_tile_0.maxchanends
 	.section	.dp.rodata,"awd",@progbits
-	.cc_top otp_ports0.data
-	.globl	otp_ports0
+	.cc_top otp_ports_p1.data
+	.globl	otp_ports_p1
 	.align	4
-	.type	otp_ports0,@object
-	.size otp_ports0,12
-otp_ports0:
+	.type	otp_ports_p1,@object
+	.size otp_ports_p1,12
+otp_ports_p1:
 	.long	2097408
 	.long	1049088
 	.long	1049344
-	.cc_bottom otp_ports0.data
-	.cc_top otp_ports1.data
-	.globl	otp_ports1
+	.cc_bottom otp_ports_p1.data
+	.cc_top otp_ports_p2.data
+	.globl	otp_ports_p2
 	.align	4
-	.type	otp_ports1,@object
-	.size otp_ports1,12
-otp_ports1:
+	.type	otp_ports_p2,@object
+	.size otp_ports_p2,12
+otp_ports_p2:
 	.long	2097152
 	.long	1048576
 	.long	1048832
-	.cc_bottom otp_ports1.data
+	.cc_bottom otp_ports_p2.data
 	.section	.dp.data,"awd",@progbits
-	.cc_top smi0.data
-	.globl	smi0
+	.cc_top smi_p1.data
+	.globl	smi_p1
 	.align	4
-	.type	smi0,@object
-	.size smi0,12
-smi0:
+	.type	smi_p1,@object
+	.size smi_p1,12
+smi_p1:
 	.long	0
 	.long	68608
 	.long	68864
-	.cc_bottom smi0.data
-	.cc_top smi1.data
-	.globl	smi1
+	.cc_bottom smi_p1.data
+	.cc_top smi_p2.data
+	.globl	smi_p2
 	.align	4
-	.type	smi1,@object
-	.size smi1,12
-smi1:
+	.type	smi_p2,@object
+	.size smi_p2,12
+smi_p2:
 	.long	0
 	.long	68608
 	.long	68864
-	.cc_bottom smi1.data
+	.cc_bottom smi_p2.data
 	.section	.dp.rodata,"awd",@progbits
-	.cc_top mii0.data
-	.globl	mii0
+	.cc_top mii_p1.data
+	.globl	mii_p1
 	.align	4
-	.type	mii0,@object
-	.size mii0,36
-mii0:
+	.type	mii_p1,@object
+	.size mii_p1,40
+mii_p1:
 	.long	262
 	.long	518
 	.long	67584
@@ -5811,13 +5785,14 @@ mii0:
 	.long	68096
 	.long	68352
 	.long	263424
-	.cc_bottom mii0.data
-	.cc_top mii1.data
-	.globl	mii1
+	.long	524800
+	.cc_bottom mii_p1.data
+	.cc_top mii_p2.data
+	.globl	mii_p2
 	.align	4
-	.type	mii1,@object
-	.size mii1,36
-mii1:
+	.type	mii_p2,@object
+	.size mii_p2,40
+mii_p2:
 	.long	262
 	.long	518
 	.long	67584
@@ -5827,24 +5802,25 @@ mii1:
 	.long	68096
 	.long	68352
 	.long	263424
-	.cc_bottom mii1.data
+	.long	524288
+	.cc_bottom mii_p2.data
 	.section	.dp.bss,"awd",@nobits
-	.cc_top eth_rst0.data
-	.globl	eth_rst0
+	.cc_top eth_rst_p1.data
+	.globl	eth_rst_p1
 	.align	4
-	.type	eth_rst0,@object
-	.size eth_rst0,4
-eth_rst0:
+	.type	eth_rst_p1,@object
+	.size eth_rst_p1,4
+eth_rst_p1:
 	.long	0
-	.cc_bottom eth_rst0.data
-	.cc_top eth_rst1.data
-	.globl	eth_rst1
+	.cc_bottom eth_rst_p1.data
+	.cc_top eth_rst_p2.data
+	.globl	eth_rst_p2
 	.align	4
-	.type	eth_rst1,@object
-	.size eth_rst1,4
-eth_rst1:
+	.type	eth_rst_p2,@object
+	.size eth_rst_p2,4
+eth_rst_p2:
 	.long	0
-	.cc_bottom eth_rst1.data
+	.cc_bottom eth_rst_p2.data
 	.section	.dp.data,"awd",@progbits
 	.cc_top ethertype_ip0.data
 	.globl	ethertype_ip0.globound
@@ -5971,38 +5947,30 @@ own_ip_addr.static5:
 	.cc_top .str7.data
 	.align	4
 	.type	.str7,@object
-	.size .str7,14
+	.size .str7,20
 .str7:
-.asciiz "Test started\n"
+.asciiz "Test started on P1\n"
 	.cc_bottom .str7.data
 	.cc_top .str8.data
 	.align	4
 	.type	.str8,@object
-	.size .str8,14
+	.size .str8,20
 .str8:
-.asciiz "Test started\n"
+.asciiz "Test started on P2\n"
 	.cc_bottom .str8.data
 	.section	.dp.data,"awd",@progbits
 	.cc_top par.desc.1.data
 	.align	4
 	.type	par.desc.1,@object
-	.size par.desc.1,16
+	.size par.desc.1,24
 par.desc.1:
-	.long	__main__main_tile_1_task__ethernet_server_full_0
-	.long	__main__main_tile_1_task_demo1_3.nstackwords
+	.long	__main__main_tile_1_task_demo1_1
+	.long	__main__main_tile_1_task__ethernet_server_lite_2.nstackwords
+	.long	__main__main_tile_1_task_demo0_0
+	.long	__main__main_tile_1_task_demo1_1.nstackwords
 	.long	0
-	.long	__main__main_tile_1_task_demo1_3
+	.long	__main__main_tile_1_task__ethernet_server_lite_2
 	.cc_bottom par.desc.1.data
-	.cc_top par.desc.2.data
-	.align	4
-	.type	par.desc.2,@object
-	.size par.desc.2,16
-par.desc.2:
-	.long	__main__main_tile_0_task_ethernet_server_full_1
-	.long	__main__main_tile_0_task_demo0_2.nstackwords
-	.long	0
-	.long	__main__main_tile_0_task_demo0_2
-	.cc_bottom par.desc.2.data
 	.cc_top __xcc1_internal_1.data
 	.align	4
 	.type	__xcc1_internal_1,@object
@@ -6141,64 +6109,78 @@ __xcc1_internal_19:
 	.type	__xcc1_internal_20,@object
 	.size __xcc1_internal_20,4
 __xcc1_internal_20:
-	.long	262
+	.long	524800
 	.cc_bottom __xcc1_internal_20.data
 	.cc_top __xcc1_internal_21.data
 	.align	4
 	.type	__xcc1_internal_21,@object
 	.size __xcc1_internal_21,4
 __xcc1_internal_21:
-	.long	518
+	.long	262
 	.cc_bottom __xcc1_internal_21.data
 	.cc_top __xcc1_internal_22.data
 	.align	4
 	.type	__xcc1_internal_22,@object
 	.size __xcc1_internal_22,4
 __xcc1_internal_22:
-	.long	67584
+	.long	518
 	.cc_bottom __xcc1_internal_22.data
 	.cc_top __xcc1_internal_23.data
 	.align	4
 	.type	__xcc1_internal_23,@object
 	.size __xcc1_internal_23,4
 __xcc1_internal_23:
-	.long	69376
+	.long	67584
 	.cc_bottom __xcc1_internal_23.data
 	.cc_top __xcc1_internal_24.data
 	.align	4
 	.type	__xcc1_internal_24,@object
 	.size __xcc1_internal_24,4
 __xcc1_internal_24:
-	.long	263168
+	.long	69376
 	.cc_bottom __xcc1_internal_24.data
 	.cc_top __xcc1_internal_25.data
 	.align	4
 	.type	__xcc1_internal_25,@object
 	.size __xcc1_internal_25,4
 __xcc1_internal_25:
-	.long	67840
+	.long	263168
 	.cc_bottom __xcc1_internal_25.data
 	.cc_top __xcc1_internal_26.data
 	.align	4
 	.type	__xcc1_internal_26,@object
 	.size __xcc1_internal_26,4
 __xcc1_internal_26:
-	.long	68096
+	.long	67840
 	.cc_bottom __xcc1_internal_26.data
 	.cc_top __xcc1_internal_27.data
 	.align	4
 	.type	__xcc1_internal_27,@object
 	.size __xcc1_internal_27,4
 __xcc1_internal_27:
-	.long	68352
+	.long	68096
 	.cc_bottom __xcc1_internal_27.data
 	.cc_top __xcc1_internal_28.data
 	.align	4
 	.type	__xcc1_internal_28,@object
 	.size __xcc1_internal_28,4
 __xcc1_internal_28:
-	.long	263424
+	.long	68352
 	.cc_bottom __xcc1_internal_28.data
+	.cc_top __xcc1_internal_29.data
+	.align	4
+	.type	__xcc1_internal_29,@object
+	.size __xcc1_internal_29,4
+__xcc1_internal_29:
+	.long	263424
+	.cc_bottom __xcc1_internal_29.data
+	.cc_top __xcc1_internal_30.data
+	.align	4
+	.type	__xcc1_internal_30,@object
+	.size __xcc1_internal_30,4
+__xcc1_internal_30:
+	.long	524288
+	.cc_bottom __xcc1_internal_30.data
 	.cfi_sections .debug_frame
 	.text
 .Ltext_end:
@@ -6208,7 +6190,7 @@ __xcc1_internal_28:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	8289
+	.long	8215
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -6263,9 +6245,9 @@ __xcc1_internal_28:
 	.byte	1
 	.byte	0
 	.byte	5
-	.ascii	 "otp_ports0"
+	.ascii	 "otp_ports_p1"
 	.byte	0
-	.ascii	 "otp_ports0"
+	.ascii	 "otp_ports_p1"
 	.byte	0
 	.long	189
 	.byte	1
@@ -6273,11 +6255,11 @@ __xcc1_internal_28:
 	.byte	51
 	.byte	5
 	.byte	3
-	.long	otp_ports0
+	.long	otp_ports_p1
 	.byte	5
-	.ascii	 "otp_ports1"
+	.ascii	 "otp_ports_p2"
 	.byte	0
-	.ascii	 "otp_ports1"
+	.ascii	 "otp_ports_p2"
 	.byte	0
 	.long	189
 	.byte	1
@@ -6285,7 +6267,7 @@ __xcc1_internal_28:
 	.byte	52
 	.byte	5
 	.byte	3
-	.long	otp_ports1
+	.long	otp_ports_p2
 	.byte	2
 	.ascii	 "int"
 	.byte	0
@@ -6298,7 +6280,7 @@ __xcc1_internal_28:
 	.byte	4
 	.ascii	 "phy_address"
 	.byte	0
-	.long	324
+	.long	332
 	.byte	1
 	.byte	58
 	.byte	2
@@ -6327,42 +6309,42 @@ __xcc1_internal_28:
 	.byte	1
 	.byte	0
 	.byte	5
-	.ascii	 "smi0"
+	.ascii	 "smi_p1"
 	.byte	0
-	.ascii	 "smi0"
+	.ascii	 "smi_p1"
 	.byte	0
-	.long	331
+	.long	339
 	.byte	1
 	.byte	1
 	.byte	58
 	.byte	5
 	.byte	3
-	.long	smi0
+	.long	smi_p1
 	.byte	5
-	.ascii	 "smi1"
+	.ascii	 "smi_p2"
 	.byte	0
-	.ascii	 "smi1"
+	.ascii	 "smi_p2"
 	.byte	0
-	.long	331
+	.long	339
 	.byte	1
 	.byte	1
 	.byte	59
 	.byte	5
 	.byte	3
-	.long	smi1
+	.long	smi_p2
 	.byte	2
 	.ascii	 "clock"
 	.byte	0
 	.byte	7
 	.byte	4
 	.byte	3
-	.ascii	 "_mii_interface_full_t"
+	.ascii	 "_mii_interface_lite_t"
 	.byte	0
-	.byte	36
+	.byte	40
 	.byte	4
 	.ascii	 "clk_mii_rx"
 	.byte	0
-	.long	464
+	.long	480
 	.byte	1
 	.byte	61
 	.byte	2
@@ -6372,7 +6354,7 @@ __xcc1_internal_28:
 	.byte	4
 	.ascii	 "clk_mii_tx"
 	.byte	0
-	.long	464
+	.long	480
 	.byte	1
 	.byte	61
 	.byte	2
@@ -6449,27 +6431,37 @@ __xcc1_internal_28:
 	.byte	35
 	.byte	32
 	.byte	1
+	.byte	4
+	.ascii	 "p_mii_timing"
+	.byte	0
+	.long	181
+	.byte	1
+	.byte	61
+	.byte	2
+	.byte	35
+	.byte	36
+	.byte	1
 	.byte	0
 	.byte	5
-	.ascii	 "mii0"
+	.ascii	 "mii_p1"
 	.byte	0
-	.ascii	 "mii0"
+	.ascii	 "mii_p1"
 	.byte	0
-	.long	473
+	.long	489
 	.byte	1
 	.byte	1
 	.byte	61
 	.byte	5
 	.byte	3
-	.long	mii0
+	.long	mii_p1
 	.byte	3
-	.ascii	 "mii_interface_full_t"
+	.ascii	 "mii_interface_lite_t"
 	.byte	0
-	.byte	36
+	.byte	40
 	.byte	4
 	.ascii	 "clk_mii_rx"
 	.byte	0
-	.long	464
+	.long	480
 	.byte	1
 	.byte	62
 	.byte	2
@@ -6479,7 +6471,7 @@ __xcc1_internal_28:
 	.byte	4
 	.ascii	 "clk_mii_tx"
 	.byte	0
-	.long	464
+	.long	480
 	.byte	1
 	.byte	62
 	.byte	2
@@ -6556,43 +6548,53 @@ __xcc1_internal_28:
 	.byte	35
 	.byte	32
 	.byte	1
+	.byte	4
+	.ascii	 "p_mii_timing"
+	.byte	0
+	.long	181
+	.byte	1
+	.byte	62
+	.byte	2
+	.byte	35
+	.byte	36
+	.byte	1
 	.byte	0
 	.byte	5
-	.ascii	 "mii1"
+	.ascii	 "mii_p2"
 	.byte	0
-	.ascii	 "mii1"
+	.ascii	 "mii_p2"
 	.byte	0
-	.long	720
+	.long	764
 	.byte	1
 	.byte	1
 	.byte	62
 	.byte	5
 	.byte	3
-	.long	mii1
+	.long	mii_p2
 	.byte	5
-	.ascii	 "eth_rst0"
+	.ascii	 "eth_rst_p1"
 	.byte	0
-	.ascii	 "eth_rst0"
+	.ascii	 "eth_rst_p1"
 	.byte	0
-	.long	324
+	.long	332
 	.byte	1
 	.byte	1
 	.byte	64
 	.byte	5
 	.byte	3
-	.long	eth_rst0
+	.long	eth_rst_p1
 	.byte	5
-	.ascii	 "eth_rst1"
+	.ascii	 "eth_rst_p2"
 	.byte	0
-	.ascii	 "eth_rst1"
+	.ascii	 "eth_rst_p2"
 	.byte	0
-	.long	324
+	.long	332
 	.byte	1
 	.byte	1
 	.byte	65
 	.byte	5
 	.byte	3
-	.long	eth_rst1
+	.long	eth_rst_p2
 	.byte	2
 	.ascii	 "unsigned char"
 	.byte	0
@@ -6602,9 +6604,9 @@ __xcc1_internal_28:
 	.byte	4
 	.byte	5
 	.byte	7
-	.long	1030
+	.long	1110
 	.byte	8
-	.long	1047
+	.long	1127
 	.byte	1
 	.byte	0
 	.byte	5
@@ -6612,10 +6614,10 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "ethertype_ip0"
 	.byte	0
-	.long	1050
+	.long	1130
 	.byte	1
 	.byte	1
-	.byte	75
+	.byte	74
 	.byte	5
 	.byte	3
 	.long	ethertype_ip0
@@ -6624,10 +6626,10 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "ethertype_arp0"
 	.byte	0
-	.long	1050
+	.long	1130
 	.byte	1
 	.byte	1
-	.byte	76
+	.byte	75
 	.byte	5
 	.byte	3
 	.long	ethertype_arp0
@@ -6636,10 +6638,10 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "ethertype_ip1"
 	.byte	0
-	.long	1050
+	.long	1130
 	.byte	1
 	.byte	1
-	.byte	78
+	.byte	77
 	.byte	5
 	.byte	3
 	.long	ethertype_ip1
@@ -6648,17 +6650,17 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "ethertype_arp1"
 	.byte	0
-	.long	1050
+	.long	1130
 	.byte	1
 	.byte	1
-	.byte	79
+	.byte	78
 	.byte	5
 	.byte	3
 	.long	ethertype_arp1
 	.byte	7
-	.long	1030
+	.long	1110
 	.byte	8
-	.long	1047
+	.long	1127
 	.byte	5
 	.byte	0
 	.byte	5
@@ -6666,10 +6668,10 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "own_mac_addr0"
 	.byte	0
-	.long	1234
+	.long	1314
 	.byte	1
 	.byte	1
-	.byte	81
+	.byte	80
 	.byte	5
 	.byte	3
 	.long	own_mac_addr0
@@ -6678,19 +6680,19 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "own_mac_addr1"
 	.byte	0
-	.long	1234
+	.long	1314
 	.byte	1
 	.byte	1
-	.byte	82
+	.byte	81
 	.byte	5
 	.byte	3
 	.long	own_mac_addr1
 	.byte	9
-	.long	1030
+	.long	1110
 	.byte	7
-	.long	1330
+	.long	1410
 	.byte	8
-	.long	1047
+	.long	1127
 	.byte	3
 	.byte	0
 	.byte	10
@@ -6698,12 +6700,12 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1335
+	.long	1415
 	.byte	1
-	.byte	230
+	.byte	228
 	.byte	1
 	.byte	11
-	.long	1347
+	.long	1427
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static
@@ -6712,12 +6714,12 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1335
+	.long	1415
 	.byte	1
-	.short	266
+	.short	264
 	.byte	1
 	.byte	11
-	.long	1390
+	.long	1470
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static1
@@ -6726,12 +6728,12 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1335
+	.long	1415
 	.byte	1
-	.short	303
+	.short	300
 	.byte	1
 	.byte	11
-	.long	1434
+	.long	1514
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static2
@@ -6740,12 +6742,12 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1335
+	.long	1415
 	.byte	1
-	.short	378
+	.short	374
 	.byte	1
 	.byte	11
-	.long	1478
+	.long	1558
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static3
@@ -6754,12 +6756,12 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1335
+	.long	1415
 	.byte	1
-	.short	452
+	.short	448
 	.byte	1
 	.byte	11
-	.long	1522
+	.long	1602
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static4
@@ -6768,12 +6770,12 @@ __xcc1_internal_28:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1335
+	.long	1415
 	.byte	1
-	.short	499
+	.short	495
 	.byte	1
 	.byte	11
-	.long	1566
+	.long	1646
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static5
@@ -6808,7 +6810,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	135
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_length"
@@ -6825,7 +6827,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	136
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_timestamp"
@@ -6842,7 +6844,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	137
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_filter_result"
@@ -6859,7 +6861,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	138
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_src_port"
@@ -6876,7 +6878,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	139
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_timestamp_id"
@@ -6893,7 +6895,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	140
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_stage"
@@ -6910,7 +6912,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	141
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_tcount"
@@ -6927,7 +6929,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	142
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_crc"
@@ -6944,7 +6946,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	143
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_forwarding"
@@ -6961,7 +6963,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	145
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_data_word"
@@ -6978,7 +6980,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	3
 	.byte	154
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "_mii_packet_set_data"
@@ -7010,7 +7012,7 @@ __xcc1_internal_28:
 	.ascii	 "eth_phy_reset_p1"
 	.byte	0
 	.byte	4
-	.byte	23
+	.byte	22
 	.byte	1
 	.byte	14
 	.ascii	 "mii_packet_get_length"
@@ -7019,7 +7021,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	135
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_length"
@@ -7036,7 +7038,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	136
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_timestamp"
@@ -7053,7 +7055,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	137
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_filter_result"
@@ -7070,7 +7072,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	138
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_src_port"
@@ -7087,7 +7089,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	139
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_timestamp_id"
@@ -7104,7 +7106,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	140
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_stage"
@@ -7121,7 +7123,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	141
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_tcount"
@@ -7138,7 +7140,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	142
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_crc"
@@ -7155,7 +7157,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	143
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_forwarding"
@@ -7172,7 +7174,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	145
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_data_word"
@@ -7189,7 +7191,7 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	5
 	.byte	154
-	.long	324
+	.long	332
 	.byte	1
 	.byte	13
 	.ascii	 "mii_packet_set_data"
@@ -7221,7 +7223,7 @@ __xcc1_internal_28:
 	.ascii	 "eth_phy_reset_p2"
 	.byte	0
 	.byte	6
-	.byte	22
+	.byte	23
 	.byte	1
 	.byte	15
 	.ascii	 "is_ethertype"
@@ -7229,8 +7231,8 @@ __xcc1_internal_28:
 	.ascii	 "is_ethertype"
 	.byte	0
 	.byte	1
-	.byte	92
-	.long	324
+	.byte	91
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin55
 	.long	.Lfunc_end55
@@ -7241,8 +7243,8 @@ __xcc1_internal_28:
 	.ascii	 "data"
 	.byte	0
 	.byte	1
-	.byte	92
-	.long	8017
+	.byte	91
+	.long	8048
 	.byte	2
 	.byte	145
 	.byte	40
@@ -7250,8 +7252,8 @@ __xcc1_internal_28:
 	.ascii	 "type"
 	.byte	0
 	.byte	1
-	.byte	92
-	.long	8017
+	.byte	91
+	.long	8048
 	.byte	2
 	.byte	145
 	.byte	32
@@ -7265,8 +7267,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	93
-	.long	324
+	.byte	92
+	.long	332
 	.byte	2
 	.byte	145
 	.byte	20
@@ -7279,8 +7281,8 @@ __xcc1_internal_28:
 	.ascii	 "is_mac_addr"
 	.byte	0
 	.byte	1
-	.byte	98
-	.long	324
+	.byte	97
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin56
 	.long	.Lfunc_end56
@@ -7291,8 +7293,8 @@ __xcc1_internal_28:
 	.ascii	 "data"
 	.byte	0
 	.byte	1
-	.byte	98
-	.long	8017
+	.byte	97
+	.long	8048
 	.byte	2
 	.byte	145
 	.byte	36
@@ -7300,8 +7302,8 @@ __xcc1_internal_28:
 	.ascii	 "addr"
 	.byte	0
 	.byte	1
-	.byte	98
-	.long	8017
+	.byte	97
+	.long	8048
 	.byte	2
 	.byte	145
 	.byte	28
@@ -7315,8 +7317,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	99
-	.long	324
+	.byte	98
+	.long	332
 	.byte	2
 	.byte	145
 	.byte	16
@@ -7329,8 +7331,8 @@ __xcc1_internal_28:
 	.ascii	 "is_broadcast"
 	.byte	0
 	.byte	1
-	.byte	109
-	.long	324
+	.byte	108
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin57
 	.long	.Lfunc_end57
@@ -7341,8 +7343,8 @@ __xcc1_internal_28:
 	.ascii	 "data"
 	.byte	0
 	.byte	1
-	.byte	109
-	.long	8017
+	.byte	108
+	.long	8048
 	.byte	2
 	.byte	145
 	.byte	20
@@ -7356,8 +7358,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	110
-	.long	324
+	.byte	109
+	.long	332
 	.byte	2
 	.byte	145
 	.byte	8
@@ -7370,8 +7372,8 @@ __xcc1_internal_28:
 	.ascii	 "mac_custom_filter"
 	.byte	0
 	.byte	1
-	.byte	120
-	.long	324
+	.byte	119
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin58
 	.long	.Lfunc_end58
@@ -7382,8 +7384,8 @@ __xcc1_internal_28:
 	.ascii	 "data"
 	.byte	0
 	.byte	1
-	.byte	120
-	.long	8027
+	.byte	119
+	.long	8058
 	.byte	2
 	.byte	145
 	.byte	28
@@ -7394,8 +7396,8 @@ __xcc1_internal_28:
 	.ascii	 "_mac_custom_filter"
 	.byte	0
 	.byte	1
-	.byte	130
-	.long	324
+	.byte	129
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin59
 	.long	.Lfunc_end59
@@ -7406,8 +7408,8 @@ __xcc1_internal_28:
 	.ascii	 "data"
 	.byte	0
 	.byte	1
-	.byte	130
-	.long	8027
+	.byte	129
+	.long	8058
 	.byte	2
 	.byte	145
 	.byte	28
@@ -7418,8 +7420,8 @@ __xcc1_internal_28:
 	.ascii	 "build_arp_response0"
 	.byte	0
 	.byte	1
-	.byte	143
-	.long	324
+	.byte	141
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin60
 	.long	.Lfunc_end60
@@ -7430,8 +7432,8 @@ __xcc1_internal_28:
 	.ascii	 "rxbuf"
 	.byte	0
 	.byte	1
-	.byte	142
-	.long	8017
+	.byte	140
+	.long	8048
 	.byte	3
 	.byte	145
 	.ascii	 "\270\001"
@@ -7439,8 +7441,8 @@ __xcc1_internal_28:
 	.ascii	 "txbuf"
 	.byte	0
 	.byte	1
-	.byte	142
-	.long	8027
+	.byte	140
+	.long	8058
 	.byte	3
 	.byte	145
 	.ascii	 "\260\001"
@@ -7448,8 +7450,8 @@ __xcc1_internal_28:
 	.ascii	 "own_mac_addr"
 	.byte	0
 	.byte	1
-	.byte	142
-	.long	8044
+	.byte	140
+	.long	8075
 	.byte	3
 	.byte	145
 	.ascii	 "\250\001"
@@ -7463,8 +7465,8 @@ __xcc1_internal_28:
 	.ascii	 "word"
 	.byte	0
 	.byte	1
-	.byte	144
-	.long	7983
+	.byte	142
+	.long	8014
 	.byte	3
 	.byte	145
 	.ascii	 "\240\001"
@@ -7475,8 +7477,8 @@ __xcc1_internal_28:
 	.ascii	 "byte"
 	.byte	0
 	.byte	1
-	.byte	145
-	.long	1030
+	.byte	143
+	.long	1110
 	.byte	3
 	.byte	145
 	.ascii	 "\234\001"
@@ -7487,8 +7489,8 @@ __xcc1_internal_28:
 	.ascii	 "own_ip_addr"
 	.byte	0
 	.byte	1
-	.byte	146
-	.long	1335
+	.byte	144
+	.long	1415
 	.byte	3
 	.byte	145
 	.ascii	 "\230\001"
@@ -7499,8 +7501,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	148
-	.long	324
+	.byte	146
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\224\001"
@@ -7512,8 +7514,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	155
-	.long	324
+	.byte	153
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\220\001"
@@ -7525,8 +7527,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	166
-	.long	324
+	.byte	164
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\214\001"
@@ -7538,8 +7540,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	177
-	.long	324
+	.byte	175
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\210\001"
@@ -7555,8 +7557,8 @@ __xcc1_internal_28:
 	.ascii	 "build_arp_response1"
 	.byte	0
 	.byte	1
-	.byte	186
-	.long	324
+	.byte	184
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin61
 	.long	.Lfunc_end61
@@ -7567,8 +7569,8 @@ __xcc1_internal_28:
 	.ascii	 "rxbuf"
 	.byte	0
 	.byte	1
-	.byte	185
-	.long	8017
+	.byte	183
+	.long	8048
 	.byte	3
 	.byte	145
 	.ascii	 "\270\001"
@@ -7576,8 +7578,8 @@ __xcc1_internal_28:
 	.ascii	 "txbuf"
 	.byte	0
 	.byte	1
-	.byte	185
-	.long	8027
+	.byte	183
+	.long	8058
 	.byte	3
 	.byte	145
 	.ascii	 "\260\001"
@@ -7585,8 +7587,8 @@ __xcc1_internal_28:
 	.ascii	 "own_mac_addr"
 	.byte	0
 	.byte	1
-	.byte	185
-	.long	8044
+	.byte	183
+	.long	8075
 	.byte	3
 	.byte	145
 	.ascii	 "\250\001"
@@ -7600,8 +7602,8 @@ __xcc1_internal_28:
 	.ascii	 "word"
 	.byte	0
 	.byte	1
-	.byte	187
-	.long	7983
+	.byte	185
+	.long	8014
 	.byte	3
 	.byte	145
 	.ascii	 "\240\001"
@@ -7612,8 +7614,8 @@ __xcc1_internal_28:
 	.ascii	 "byte"
 	.byte	0
 	.byte	1
-	.byte	188
-	.long	1030
+	.byte	186
+	.long	1110
 	.byte	3
 	.byte	145
 	.ascii	 "\234\001"
@@ -7624,8 +7626,8 @@ __xcc1_internal_28:
 	.ascii	 "own_ip_addr"
 	.byte	0
 	.byte	1
-	.byte	189
-	.long	1335
+	.byte	187
+	.long	1415
 	.byte	3
 	.byte	145
 	.ascii	 "\230\001"
@@ -7636,8 +7638,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	191
-	.long	324
+	.byte	189
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\224\001"
@@ -7649,8 +7651,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	198
-	.long	324
+	.byte	196
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\220\001"
@@ -7662,8 +7664,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	209
-	.long	324
+	.byte	207
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\214\001"
@@ -7675,8 +7677,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	220
-	.long	324
+	.byte	218
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\210\001"
@@ -7692,8 +7694,8 @@ __xcc1_internal_28:
 	.ascii	 "is_valid_arp_packet0"
 	.byte	0
 	.byte	1
-	.byte	229
-	.long	324
+	.byte	227
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin62
 	.long	.Lfunc_end62
@@ -7704,8 +7706,8 @@ __xcc1_internal_28:
 	.ascii	 "rxbuf"
 	.byte	0
 	.byte	1
-	.byte	228
-	.long	8054
+	.byte	226
+	.long	8085
 	.byte	3
 	.byte	145
 .asciiz "\304"
@@ -7713,8 +7715,8 @@ __xcc1_internal_28:
 	.ascii	 "nbytes"
 	.byte	0
 	.byte	1
-	.byte	228
-	.long	324
+	.byte	226
+	.long	332
 	.byte	2
 	.byte	145
 	.byte	60
@@ -7730,8 +7732,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.byte	252
-	.long	324
+	.byte	250
+	.long	332
 	.byte	2
 	.byte	145
 	.byte	48
@@ -7745,8 +7747,8 @@ __xcc1_internal_28:
 	.ascii	 "is_valid_arp_packet1"
 	.byte	0
 	.byte	1
-	.short	265
-	.long	324
+	.short	263
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin63
 	.long	.Lfunc_end63
@@ -7757,8 +7759,8 @@ __xcc1_internal_28:
 	.ascii	 "rxbuf"
 	.byte	0
 	.byte	1
-	.short	264
-	.long	8054
+	.short	262
+	.long	8085
 	.byte	3
 	.byte	145
 .asciiz "\304"
@@ -7766,8 +7768,8 @@ __xcc1_internal_28:
 	.ascii	 "nbytes"
 	.byte	0
 	.byte	1
-	.short	264
-	.long	324
+	.short	262
+	.long	332
 	.byte	2
 	.byte	145
 	.byte	60
@@ -7783,8 +7785,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	288
-	.long	324
+	.short	286
+	.long	332
 	.byte	2
 	.byte	145
 	.byte	48
@@ -7798,8 +7800,8 @@ __xcc1_internal_28:
 	.ascii	 "build_icmp_response0"
 	.byte	0
 	.byte	1
-	.short	302
-	.long	324
+	.short	299
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin64
 	.long	.Lfunc_end64
@@ -7810,8 +7812,8 @@ __xcc1_internal_28:
 	.ascii	 "rxbuf"
 	.byte	0
 	.byte	1
-	.short	301
-	.long	8017
+	.short	298
+	.long	8048
 	.byte	3
 	.byte	145
 	.ascii	 "\234\002"
@@ -7819,8 +7821,8 @@ __xcc1_internal_28:
 	.ascii	 "txbuf"
 	.byte	0
 	.byte	1
-	.short	301
-	.long	8017
+	.short	298
+	.long	8048
 	.byte	3
 	.byte	145
 	.ascii	 "\224\002"
@@ -7828,8 +7830,8 @@ __xcc1_internal_28:
 	.ascii	 "own_mac_addr"
 	.byte	0
 	.byte	1
-	.short	301
-	.long	8044
+	.short	298
+	.long	8075
 	.byte	3
 	.byte	145
 	.ascii	 "\214\002"
@@ -7846,8 +7848,8 @@ __xcc1_internal_28:
 	.ascii	 "icmp_checksum"
 	.byte	0
 	.byte	1
-	.short	304
-	.long	7983
+	.short	301
+	.long	8014
 	.byte	3
 	.byte	145
 	.ascii	 "\204\002"
@@ -7858,8 +7860,8 @@ __xcc1_internal_28:
 	.ascii	 "datalen"
 	.byte	0
 	.byte	1
-	.short	305
-	.long	324
+	.short	302
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\200\002"
@@ -7870,8 +7872,8 @@ __xcc1_internal_28:
 	.ascii	 "totallen"
 	.byte	0
 	.byte	1
-	.short	306
-	.long	324
+	.short	303
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\374\001"
@@ -7882,8 +7884,8 @@ __xcc1_internal_28:
 	.ascii	 "ttl"
 	.byte	0
 	.byte	1
-	.short	307
-	.long	8059
+	.short	304
+	.long	8090
 	.byte	3
 	.byte	145
 	.ascii	 "\370\001"
@@ -7894,8 +7896,8 @@ __xcc1_internal_28:
 	.ascii	 "pad"
 	.byte	0
 	.byte	1
-	.short	308
-	.long	324
+	.short	305
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\364\001"
@@ -7906,8 +7908,8 @@ __xcc1_internal_28:
 	.ascii	 "ip_checksum"
 	.byte	0
 	.byte	1
-	.short	311
-	.long	7983
+	.short	308
+	.long	8014
 	.byte	3
 	.byte	145
 	.ascii	 "\360\001"
@@ -7918,8 +7920,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	313
-	.long	324
+	.short	310
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\354\001"
@@ -7931,8 +7933,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	317
-	.long	324
+	.short	314
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\350\001"
@@ -7944,8 +7946,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	322
-	.long	324
+	.short	319
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\344\001"
@@ -7957,8 +7959,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	328
-	.long	324
+	.short	325
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\340\001"
@@ -7970,8 +7972,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	333
-	.long	324
+	.short	330
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\334\001"
@@ -7983,8 +7985,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	343
-	.long	324
+	.short	340
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\330\001"
@@ -8004,8 +8006,8 @@ __xcc1_internal_28:
 	.ascii	 "build_icmp_response1"
 	.byte	0
 	.byte	1
-	.short	377
-	.long	324
+	.short	373
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin65
 	.long	.Lfunc_end65
@@ -8016,8 +8018,8 @@ __xcc1_internal_28:
 	.ascii	 "rxbuf"
 	.byte	0
 	.byte	1
-	.short	376
-	.long	8017
+	.short	372
+	.long	8048
 	.byte	3
 	.byte	145
 	.ascii	 "\234\002"
@@ -8025,8 +8027,8 @@ __xcc1_internal_28:
 	.ascii	 "txbuf"
 	.byte	0
 	.byte	1
-	.short	376
-	.long	8017
+	.short	372
+	.long	8048
 	.byte	3
 	.byte	145
 	.ascii	 "\224\002"
@@ -8034,8 +8036,8 @@ __xcc1_internal_28:
 	.ascii	 "own_mac_addr"
 	.byte	0
 	.byte	1
-	.short	376
-	.long	8044
+	.short	372
+	.long	8075
 	.byte	3
 	.byte	145
 	.ascii	 "\214\002"
@@ -8052,8 +8054,8 @@ __xcc1_internal_28:
 	.ascii	 "icmp_checksum"
 	.byte	0
 	.byte	1
-	.short	379
-	.long	7983
+	.short	375
+	.long	8014
 	.byte	3
 	.byte	145
 	.ascii	 "\204\002"
@@ -8064,8 +8066,8 @@ __xcc1_internal_28:
 	.ascii	 "datalen"
 	.byte	0
 	.byte	1
-	.short	380
-	.long	324
+	.short	376
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\200\002"
@@ -8076,8 +8078,8 @@ __xcc1_internal_28:
 	.ascii	 "totallen"
 	.byte	0
 	.byte	1
-	.short	381
-	.long	324
+	.short	377
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\374\001"
@@ -8088,8 +8090,8 @@ __xcc1_internal_28:
 	.ascii	 "ttl"
 	.byte	0
 	.byte	1
-	.short	382
-	.long	8059
+	.short	378
+	.long	8090
 	.byte	3
 	.byte	145
 	.ascii	 "\370\001"
@@ -8100,8 +8102,8 @@ __xcc1_internal_28:
 	.ascii	 "pad"
 	.byte	0
 	.byte	1
-	.short	383
-	.long	324
+	.short	379
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\364\001"
@@ -8112,8 +8114,8 @@ __xcc1_internal_28:
 	.ascii	 "ip_checksum"
 	.byte	0
 	.byte	1
-	.short	386
-	.long	7983
+	.short	382
+	.long	8014
 	.byte	3
 	.byte	145
 	.ascii	 "\360\001"
@@ -8124,8 +8126,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	388
-	.long	324
+	.short	384
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\354\001"
@@ -8137,8 +8139,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	392
-	.long	324
+	.short	388
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\350\001"
@@ -8150,8 +8152,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	397
-	.long	324
+	.short	393
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\344\001"
@@ -8163,8 +8165,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	403
-	.long	324
+	.short	399
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\340\001"
@@ -8176,8 +8178,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	408
-	.long	324
+	.short	404
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\334\001"
@@ -8189,8 +8191,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	418
-	.long	324
+	.short	414
+	.long	332
 	.byte	3
 	.byte	145
 	.ascii	 "\330\001"
@@ -8210,8 +8212,8 @@ __xcc1_internal_28:
 	.ascii	 "is_valid_icmp_packet0"
 	.byte	0
 	.byte	1
-	.short	451
-	.long	324
+	.short	447
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin66
 	.long	.Lfunc_end66
@@ -8222,8 +8224,8 @@ __xcc1_internal_28:
 	.ascii	 "rxbuf"
 	.byte	0
 	.byte	1
-	.short	450
-	.long	8054
+	.short	446
+	.long	8085
 	.byte	3
 	.byte	145
 .asciiz "\320"
@@ -8231,8 +8233,8 @@ __xcc1_internal_28:
 	.ascii	 "nbytes"
 	.byte	0
 	.byte	1
-	.short	450
-	.long	324
+	.short	446
+	.long	332
 	.byte	3
 	.byte	145
 .asciiz "\310"
@@ -8249,8 +8251,8 @@ __xcc1_internal_28:
 	.ascii	 "totallen"
 	.byte	0
 	.byte	1
-	.short	453
-	.long	7983
+	.short	449
+	.long	8014
 	.byte	3
 	.byte	145
 .asciiz "\300"
@@ -8260,8 +8262,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	471
-	.long	324
+	.short	467
+	.long	332
 	.byte	2
 	.byte	145
 	.byte	60
@@ -8276,8 +8278,8 @@ __xcc1_internal_28:
 	.ascii	 "is_valid_icmp_packet1"
 	.byte	0
 	.byte	1
-	.short	498
-	.long	324
+	.short	494
+	.long	332
 	.byte	1
 	.long	.Lfunc_begin67
 	.long	.Lfunc_end67
@@ -8288,8 +8290,8 @@ __xcc1_internal_28:
 	.ascii	 "rxbuf"
 	.byte	0
 	.byte	1
-	.short	497
-	.long	8054
+	.short	493
+	.long	8085
 	.byte	3
 	.byte	145
 .asciiz "\334"
@@ -8297,8 +8299,8 @@ __xcc1_internal_28:
 	.ascii	 "nbytes"
 	.byte	0
 	.byte	1
-	.short	497
-	.long	324
+	.short	493
+	.long	332
 	.byte	3
 	.byte	145
 .asciiz "\324"
@@ -8315,8 +8317,8 @@ __xcc1_internal_28:
 	.ascii	 "totallen"
 	.byte	0
 	.byte	1
-	.short	500
-	.long	7983
+	.short	496
+	.long	8014
 	.byte	3
 	.byte	145
 .asciiz "\314"
@@ -8326,8 +8328,8 @@ __xcc1_internal_28:
 	.byte	105
 	.byte	0
 	.byte	1
-	.short	518
-	.long	324
+	.short	514
+	.long	332
 	.byte	3
 	.byte	145
 .asciiz "\310"
@@ -8342,7 +8344,7 @@ __xcc1_internal_28:
 	.ascii	 "demo0"
 	.byte	0
 	.byte	1
-	.short	546
+	.short	541
 	.byte	1
 	.long	.Lfunc_begin53
 	.long	.Lfunc_end53
@@ -8353,8 +8355,8 @@ __xcc1_internal_28:
 	.ascii	 "tx"
 	.byte	0
 	.byte	1
-	.short	545
-	.long	7972
+	.short	540
+	.long	8003
 	.byte	3
 	.byte	145
 	.ascii	 "\320\031"
@@ -8362,8 +8364,8 @@ __xcc1_internal_28:
 	.ascii	 "rx"
 	.byte	0
 	.byte	1
-	.short	545
-	.long	7972
+	.short	540
+	.long	8003
 	.byte	3
 	.byte	145
 	.ascii	 "\314\031"
@@ -8377,8 +8379,8 @@ __xcc1_internal_28:
 	.ascii	 "rxbuf"
 	.byte	0
 	.byte	1
-	.short	547
-	.long	7999
+	.short	542
+	.long	8030
 	.byte	3
 	.byte	145
 	.ascii	 "\214\r"
@@ -8389,8 +8391,8 @@ __xcc1_internal_28:
 	.ascii	 "txbuf"
 	.byte	0
 	.byte	1
-	.short	548
-	.long	7999
+	.short	543
+	.long	8030
 	.byte	3
 	.byte	145
 .asciiz "\314"
@@ -8400,8 +8402,8 @@ __xcc1_internal_28:
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
-	.short	564
-	.long	7983
+	.short	559
+	.long	8014
 	.byte	3
 	.byte	145
 .asciiz "\310"
@@ -8411,8 +8413,8 @@ __xcc1_internal_28:
 	.ascii	 "nbytes"
 	.byte	0
 	.byte	1
-	.short	565
-	.long	7983
+	.short	560
+	.long	8014
 	.byte	3
 	.byte	145
 .asciiz "\304"
@@ -8428,7 +8430,7 @@ __xcc1_internal_28:
 	.ascii	 "demo1"
 	.byte	0
 	.byte	1
-	.short	595
+	.short	589
 	.byte	1
 	.long	.Lfunc_begin54
 	.long	.Lfunc_end54
@@ -8439,8 +8441,8 @@ __xcc1_internal_28:
 	.ascii	 "tx"
 	.byte	0
 	.byte	1
-	.short	594
-	.long	7972
+	.short	588
+	.long	8003
 	.byte	3
 	.byte	145
 	.ascii	 "\320\031"
@@ -8448,8 +8450,8 @@ __xcc1_internal_28:
 	.ascii	 "rx"
 	.byte	0
 	.byte	1
-	.short	594
-	.long	7972
+	.short	588
+	.long	8003
 	.byte	3
 	.byte	145
 	.ascii	 "\314\031"
@@ -8463,8 +8465,8 @@ __xcc1_internal_28:
 	.ascii	 "rxbuf"
 	.byte	0
 	.byte	1
-	.short	596
-	.long	7999
+	.short	590
+	.long	8030
 	.byte	3
 	.byte	145
 	.ascii	 "\214\r"
@@ -8475,8 +8477,8 @@ __xcc1_internal_28:
 	.ascii	 "txbuf"
 	.byte	0
 	.byte	1
-	.short	597
-	.long	7999
+	.short	591
+	.long	8030
 	.byte	3
 	.byte	145
 .asciiz "\314"
@@ -8486,8 +8488,8 @@ __xcc1_internal_28:
 	.ascii	 "src_port"
 	.byte	0
 	.byte	1
-	.short	613
-	.long	7983
+	.short	607
+	.long	8014
 	.byte	3
 	.byte	145
 .asciiz "\310"
@@ -8497,8 +8499,8 @@ __xcc1_internal_28:
 	.ascii	 "nbytes"
 	.byte	0
 	.byte	1
-	.short	614
-	.long	7983
+	.short	608
+	.long	8014
 	.byte	3
 	.byte	145
 .asciiz "\304"
@@ -8509,12 +8511,12 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	0
 	.byte	24
-	.ascii	 "__main__main_tile_1_task__ethernet_server_full_0"
+	.ascii	 "__main__main_tile_1_task_demo0_0"
 	.byte	0
-	.ascii	 "__main__main_tile_1_task__ethernet_server_full_0"
+	.ascii	 "__main__main_tile_1_task_demo0_0"
 	.byte	0
 	.byte	1
-	.short	650
+	.short	644
 	.long	.Lfunc_begin69
 	.long	.Lfunc_end69
 	.byte	1
@@ -8525,18 +8527,18 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	8181
+	.long	8212
 	.byte	2
 	.byte	145
-	.byte	52
+	.byte	12
 	.byte	0
 	.byte	24
-	.ascii	 "__main__main_tile_1_task_demo1_3"
+	.ascii	 "__main__main_tile_1_task_demo1_1"
 	.byte	0
-	.ascii	 "__main__main_tile_1_task_demo1_3"
+	.ascii	 "__main__main_tile_1_task_demo1_1"
 	.byte	0
 	.byte	1
-	.short	680
+	.short	645
 	.long	.Lfunc_begin70
 	.long	.Lfunc_end70
 	.byte	1
@@ -8547,10 +8549,32 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	8181
+	.long	8212
 	.byte	2
 	.byte	145
 	.byte	12
+	.byte	0
+	.byte	24
+	.ascii	 "__main__main_tile_1_task__ethernet_server_lite_2"
+	.byte	0
+	.ascii	 "__main__main_tile_1_task__ethernet_server_lite_2"
+	.byte	0
+	.byte	1
+	.short	649
+	.long	.Lfunc_begin71
+	.long	.Lfunc_end71
+	.byte	1
+	.byte	94
+	.byte	1
+	.byte	25
+	.ascii	 "frame"
+	.byte	0
+	.byte	1
+	.long	16777215
+	.long	8212
+	.byte	2
+	.byte	145
+	.byte	52
 	.byte	0
 	.byte	26
 	.ascii	 "__main__main_tile_1"
@@ -8560,58 +8584,46 @@ __xcc1_internal_28:
 	.byte	7
 	.long	4294967295
 	.byte	1
-	.byte	24
-	.ascii	 "__main__main_tile_0_task_ethernet_server_full_1"
+	.byte	27
+	.ascii	 "__main__main_tile_0"
 	.byte	0
-	.ascii	 "__main__main_tile_0_task_ethernet_server_full_1"
+	.ascii	 "__main__main_tile_0"
 	.byte	0
+	.byte	7
+	.long	4294967295
 	.byte	1
-	.short	664
 	.long	.Lfunc_begin72
 	.long	.Lfunc_end72
 	.byte	1
 	.byte	94
 	.byte	1
 	.byte	25
-	.ascii	 "frame"
-	.byte	0
-	.byte	1
-	.long	16777215
-	.long	8286
-	.byte	2
-	.byte	145
-	.byte	52
-	.byte	0
-	.byte	24
-	.ascii	 "__main__main_tile_0_task_demo0_2"
-	.byte	0
-	.ascii	 "__main__main_tile_0_task_demo0_2"
-	.byte	0
-	.byte	1
-	.short	679
-	.long	.Lfunc_begin73
-	.long	.Lfunc_end73
-	.byte	1
-	.byte	94
-	.byte	1
-	.byte	25
-	.ascii	 "frame"
-	.byte	0
-	.byte	1
-	.long	16777215
-	.long	8286
-	.byte	2
-	.byte	145
-	.byte	12
-	.byte	0
-	.byte	26
-	.ascii	 "__main__main_tile_0"
-	.byte	0
-	.ascii	 "__main__main_tile_0"
+	.ascii	 "formal.tx16"
 	.byte	0
 	.byte	7
-	.long	4294967295
+	.long	16777215
+	.long	8003
+	.byte	3
+	.byte	145
+.asciiz "\330"
+	.byte	17
+	.long	.Ltmp270
+	.long	.Ltmp271
+	.byte	17
+	.long	.Ltmp270
+	.long	.Ltmp271
+	.byte	22
+	.ascii	 "mac_address"
+	.byte	0
 	.byte	1
+	.short	664
+	.long	1314
+	.byte	3
+	.byte	145
+.asciiz "\300"
+	.byte	0
+	.byte	0
+	.byte	0
 	.byte	2
 	.ascii	 "chanend"
 	.byte	0
@@ -8623,157 +8635,99 @@ __xcc1_internal_28:
 	.byte	7
 	.byte	4
 	.byte	7
-	.long	7983
-	.byte	27
-	.long	1047
+	.long	8014
+	.byte	28
+	.long	1127
 	.short	399
 	.byte	0
-	.byte	28
-	.long	1030
 	.byte	29
-	.long	8012
-	.byte	28
-	.long	7983
+	.long	1110
+	.byte	30
+	.long	8043
 	.byte	29
-	.long	8022
+	.long	8014
+	.byte	30
+	.long	8053
 	.byte	7
-	.long	1330
+	.long	1410
 	.byte	8
-	.long	1047
+	.long	1127
 	.byte	5
 	.byte	0
+	.byte	30
+	.long	8063
 	.byte	29
-	.long	8032
-	.byte	28
-	.long	1330
-	.byte	29
-	.long	8049
+	.long	1410
+	.byte	30
+	.long	8080
 	.byte	9
-	.long	324
+	.long	332
 	.byte	7
-	.long	7972
+	.long	8003
 	.byte	8
-	.long	1047
+	.long	1127
 	.byte	1
 	.byte	8
-	.long	1047
+	.long	1127
 	.byte	0
 	.byte	0
-	.byte	3
-	.ascii	 "frame.1"
-	.byte	0
-	.byte	40
-	.byte	30
-	.ascii	 "tx1"
-	.byte	0
-	.long	8064
-	.byte	1
-	.short	650
-	.byte	2
-	.byte	35
-	.byte	0
-	.byte	1
-	.byte	30
-	.ascii	 "rx1"
-	.byte	0
-	.long	8064
-	.byte	1
-	.short	650
-	.byte	2
-	.byte	35
-	.byte	8
-	.byte	1
-	.byte	30
-	.ascii	 "tx0"
-	.byte	0
-	.long	8064
-	.byte	1
-	.short	650
-	.byte	2
-	.byte	35
-	.byte	16
-	.byte	1
-	.byte	30
-	.ascii	 "rx0"
-	.byte	0
-	.long	8064
-	.byte	1
-	.short	650
-	.byte	2
-	.byte	35
-	.byte	24
-	.byte	1
-	.byte	30
-	.ascii	 "mac_address"
-	.byte	0
-	.long	1234
-	.byte	1
-	.short	650
-	.byte	2
-	.byte	35
-	.byte	32
-	.byte	1
-	.byte	0
-	.byte	31
-	.long	8082
-	.byte	4
 	.byte	3
 	.ascii	 "frame.0"
 	.byte	0
 	.byte	40
-	.byte	30
+	.byte	31
 	.ascii	 "tx1"
 	.byte	0
-	.long	8064
+	.long	8095
 	.byte	1
-	.short	664
+	.short	644
 	.byte	2
 	.byte	35
 	.byte	0
 	.byte	1
-	.byte	30
+	.byte	31
 	.ascii	 "rx1"
 	.byte	0
-	.long	8064
+	.long	8095
 	.byte	1
-	.short	664
+	.short	644
 	.byte	2
 	.byte	35
 	.byte	8
 	.byte	1
-	.byte	30
+	.byte	31
 	.ascii	 "tx0"
 	.byte	0
-	.long	8064
+	.long	8095
 	.byte	1
-	.short	664
+	.short	644
 	.byte	2
 	.byte	35
 	.byte	16
 	.byte	1
-	.byte	30
+	.byte	31
 	.ascii	 "rx0"
 	.byte	0
-	.long	8064
+	.long	8095
 	.byte	1
-	.short	664
+	.short	644
 	.byte	2
 	.byte	35
 	.byte	24
 	.byte	1
-	.byte	30
+	.byte	31
 	.ascii	 "mac_address"
 	.byte	0
-	.long	1234
+	.long	1314
 	.byte	1
-	.short	664
+	.short	644
 	.byte	2
 	.byte	35
 	.byte	32
 	.byte	1
 	.byte	0
-	.byte	31
-	.long	8187
+	.byte	32
+	.long	8113
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -9160,6 +9114,29 @@ __xcc1_internal_28:
 	.byte	0
 	.byte	0
 	.byte	27
+	.byte	46
+	.byte	1
+	.ascii	 "\207@"
+	.byte	8
+	.byte	3
+	.byte	8
+	.byte	58
+	.byte	11
+	.byte	59
+	.byte	6
+	.byte	63
+	.byte	12
+	.byte	17
+	.byte	1
+	.byte	18
+	.byte	1
+	.byte	64
+	.byte	10
+	.ascii	 "\347\177"
+	.byte	12
+	.byte	0
+	.byte	0
+	.byte	28
 	.byte	33
 	.byte	0
 	.byte	73
@@ -9168,21 +9145,21 @@ __xcc1_internal_28:
 	.byte	5
 	.byte	0
 	.byte	0
-	.byte	28
+	.byte	29
 	.byte	1
 	.byte	0
 	.byte	73
 	.byte	19
 	.byte	0
 	.byte	0
-	.byte	29
+	.byte	30
 	.byte	16
 	.byte	0
 	.byte	73
 	.byte	19
 	.byte	0
 	.byte	0
-	.byte	30
+	.byte	31
 	.byte	13
 	.byte	0
 	.byte	3
@@ -9199,7 +9176,7 @@ __xcc1_internal_28:
 	.byte	12
 	.byte	0
 	.byte	0
-	.byte	31
+	.byte	32
 	.byte	15
 	.byte	0
 	.byte	73
@@ -9218,181 +9195,179 @@ __xcc1_internal_28:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	3618
+	.long	1010
+.asciiz "mii_p2"
+	.long	3698
 .asciiz "mii_packet_set_timestamp_id"
-	.long	1062
+	.long	1142
 .asciiz "ethertype_ip0"
-	.long	1148
+	.long	1228
 .asciiz "ethertype_ip1"
-	.long	3384
+	.long	3464
 .asciiz "mii_packet_set_filter_result"
-	.long	3158
+	.long	3238
 .asciiz "mii_packet_set_length"
-	.long	7646
+	.long	7827
 .asciiz "__main__main_tile_1"
-	.long	2318
+	.long	2398
 .asciiz "_mii_packet_get_stage"
-	.long	2954
+	.long	3034
 .asciiz "_mii_packet_set_data_short"
-	.long	966
-.asciiz "eth_rst0"
-	.long	998
-.asciiz "eth_rst1"
-	.long	3012
-.asciiz "_mii_packet_set_data_byte"
-	.long	3962
+	.long	736
+.asciiz "mii_p1"
+	.long	4042
 .asciiz "mii_packet_get_forwarding"
-	.long	7824
-.asciiz "__main__main_tile_0_task_demo0_2"
-	.long	4889
+	.long	3092
+.asciiz "_mii_packet_set_data_byte"
+	.long	4969
 .asciiz "build_arp_response0"
-	.long	5194
+	.long	5274
 .asciiz "build_arp_response1"
-	.long	3068
-.asciiz "eth_phy_reset_p1"
-	.long	2370
+	.long	2450
 .asciiz "_mii_packet_set_stage"
-	.long	4400
+	.long	3148
+.asciiz "eth_phy_reset_p1"
+	.long	4480
 .asciiz "eth_phy_reset_p2"
-	.long	4022
+	.long	4102
 .asciiz "mii_packet_set_forwarding"
-	.long	5771
+	.long	5851
 .asciiz "build_icmp_response0"
-	.long	6242
+	.long	6322
 .asciiz "build_icmp_response1"
-	.long	6713
+	.long	7492
+.asciiz "__main__main_tile_1_task_demo0_0"
+	.long	6793
 .asciiz "is_valid_icmp_packet0"
-	.long	6885
+	.long	6965
 .asciiz "is_valid_icmp_packet1"
-	.long	7925
+	.long	7874
 .asciiz "__main__main_tile_0"
-	.long	2734
+	.long	2814
 .asciiz "_mii_packet_get_data_ptr"
-	.long	4078
+	.long	4158
 .asciiz "mii_packet_get_data_ptr"
-	.long	2848
+	.long	2928
 .asciiz "_mii_packet_get_data_word"
-	.long	3678
+	.long	3758
 .asciiz "mii_packet_get_stage"
-	.long	7693
-.asciiz "__main__main_tile_0_task_ethernet_server_full_1"
-	.long	1104
+	.long	1184
 .asciiz "ethertype_arp0"
-	.long	1190
+	.long	1270
 .asciiz "ethertype_arp1"
-	.long	4346
+	.long	4426
 .asciiz "mii_packet_set_data_byte"
-	.long	696
-.asciiz "mii0"
-	.long	942
-.asciiz "mii1"
-	.long	3774
-.asciiz "mii_packet_get_tcount"
-	.long	3874
+	.long	3954
 .asciiz "mii_packet_get_crc"
-	.long	4745
+	.long	4825
 .asciiz "mac_custom_filter"
-	.long	2792
+	.long	3854
+.asciiz "mii_packet_get_tcount"
+	.long	2872
 .asciiz "_mii_packet_set_data_word"
-	.long	1726
+	.long	1806
 .asciiz "_mii_packet_get_length"
-	.long	5633
+	.long	5713
 .asciiz "is_valid_arp_packet1"
-	.long	3728
+	.long	3808
 .asciiz "mii_packet_set_stage"
-	.long	3920
+	.long	4000
 .asciiz "mii_packet_set_crc"
-	.long	5499
+	.long	5579
 .asciiz "is_valid_arp_packet0"
-	.long	3826
+	.long	3906
 .asciiz "mii_packet_set_tcount"
-	.long	1780
+	.long	1860
 .asciiz "_mii_packet_set_length"
-	.long	2614
+	.long	2694
 .asciiz "_mii_packet_get_forwarding"
-	.long	1830
+	.long	1910
 .asciiz "_mii_packet_get_timestamp"
-	.long	4188
-.asciiz "mii_packet_get_data_word"
-	.long	4290
-.asciiz "mii_packet_set_data_short"
-	.long	2522
+	.long	424
+.asciiz "smi_p1"
+	.long	452
+.asciiz "smi_p2"
+	.long	2602
 .asciiz "_mii_packet_get_crc"
-	.long	7412
-.asciiz "__main__main_tile_1_task__ethernet_server_full_0"
-	.long	1246
+	.long	4268
+.asciiz "mii_packet_get_data_word"
+	.long	1326
 .asciiz "own_mac_addr0"
-	.long	1288
+	.long	1368
 .asciiz "own_mac_addr1"
-	.long	4652
+	.long	7694
+.asciiz "__main__main_tile_1_task__ethernet_server_lite_2"
+	.long	4732
 .asciiz "is_broadcast"
-	.long	2676
+	.long	2756
 .asciiz "_mii_packet_set_forwarding"
-	.long	1890
+	.long	1970
 .asciiz "_mii_packet_set_timestamp"
-	.long	1642
+	.long	1722
 .asciiz "delay_milliseconds"
-	.long	4134
+	.long	4214
 .asciiz "mii_packet_set_data_word"
-	.long	7058
+	.long	7138
 .asciiz "demo0"
-	.long	1946
+	.long	2026
 .asciiz "_mii_packet_get_filter_result"
-	.long	2570
+	.long	2650
 .asciiz "_mii_packet_set_crc"
-	.long	2908
-.asciiz "_mii_packet_set_data"
-	.long	252
-.asciiz "otp_ports0"
-	.long	288
-.asciiz "otp_ports1"
-	.long	7235
-.asciiz "demo1"
-	.long	4246
+	.long	1038
+.asciiz "eth_rst_p1"
+	.long	1074
+.asciiz "eth_rst_p2"
+	.long	4326
 .asciiz "mii_packet_set_data"
-	.long	2078
+	.long	2988
+.asciiz "_mii_packet_set_data"
+	.long	7593
+.asciiz "__main__main_tile_1_task_demo1_1"
+	.long	4370
+.asciiz "mii_packet_set_data_short"
+	.long	2158
 .asciiz "_mii_packet_get_src_port"
-	.long	3446
+	.long	3526
 .asciiz "mii_packet_get_src_port"
-	.long	7545
-.asciiz "__main__main_tile_1_task_demo1_3"
-	.long	2014
+	.long	2094
 .asciiz "_mii_packet_set_filter_result"
-	.long	4546
+	.long	7315
+.asciiz "demo1"
+	.long	4626
 .asciiz "is_mac_addr"
-	.long	3206
+	.long	3286
 .asciiz "mii_packet_get_timestamp"
-	.long	2136
+	.long	252
+.asciiz "otp_ports_p1"
+	.long	292
+.asciiz "otp_ports_p2"
+	.long	2216
 .asciiz "_mii_packet_set_src_port"
-	.long	3502
+	.long	3582
 .asciiz "mii_packet_set_src_port"
-	.long	4816
+	.long	4896
 .asciiz "_mac_custom_filter"
-	.long	2418
+	.long	2498
 .asciiz "_mii_packet_get_tcount"
-	.long	2190
+	.long	2270
 .asciiz "_mii_packet_get_timestamp_id"
-	.long	3264
+	.long	3344
 .asciiz "mii_packet_set_timestamp"
-	.long	3554
+	.long	3634
 .asciiz "mii_packet_get_timestamp_id"
-	.long	3106
+	.long	3186
 .asciiz "mii_packet_get_length"
-	.long	1684
+	.long	1764
 .asciiz "delay_microseconds"
-	.long	3318
+	.long	3398
 .asciiz "mii_packet_get_filter_result"
-	.long	416
-.asciiz "smi0"
-	.long	440
-.asciiz "smi1"
-	.long	4438
+	.long	4518
 .asciiz "is_ethertype"
-	.long	2472
+	.long	2552
 .asciiz "_mii_packet_set_tcount"
-	.long	1610
+	.long	1690
 .asciiz "delay_seconds"
-	.long	2256
+	.long	2336
 .asciiz "_mii_packet_set_timestamp_id"
 	.long	0
 .Lpubnames_end1:
@@ -9404,18 +9379,16 @@ __xcc1_internal_28:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	473
-.asciiz "_mii_interface_full_t"
-	.long	720
-.asciiz "mii_interface_full_t"
-	.long	8187
+	.long	8113
 .asciiz "frame.0"
-	.long	8082
-.asciiz "frame.1"
-	.long	331
+	.long	339
 .asciiz "smi_interface_t"
 	.long	189
 .asciiz "otp_ports_t"
+	.long	489
+.asciiz "_mii_interface_lite_t"
+	.long	764
+.asciiz "mii_interface_lite_t"
 	.long	0
 .Lpubtypes_end1:
 	.section	.debug_aranges,"",@progbits
@@ -9758,7 +9731,7 @@ __xcc1_internal_28:
 	.typestring _ethernet_get_mii_counts, "f{0}(&(ui))"
 	.typestring _ethernet_server_full, "f{0}(&(s(_mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
 	.typestring _ethernet_server_lite, "f{0}(&(s(_mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
-	.typestring _ethernet_server, "f{0}(&(s(_mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
+	.typestring _ethernet_server, "f{0}(&(s(_mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
 	.typestring _mac_rx_lite, "f{0}(chd,&(a(:uc)),&(ui),&(ui))"
 	.typestring _safe_mac_rx_lite, "f{0}(chd,&(a(:uc)),&(ui),&(ui),si)"
 	.typestring _mac_rx_full, "f{0}(chd,&(a(:uc)),&(ui),&(ui))"
@@ -9818,7 +9791,7 @@ __xcc1_internal_28:
 	.typestring ethernet_get_mii_counts, "f{0}(&(ui))"
 	.typestring ethernet_server_full, "f{0}(&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
 	.typestring ethernet_server_lite, "f{0}(&(s(mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
-	.typestring ethernet_server, "f{0}(&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
+	.typestring ethernet_server, "f{0}(&(s(mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
 	.typestring mac_request_status_packets, "f{0}(chd)"
 	.typestring mac_rx, "f{0}(chd,&(a(:uc)),&(ui),&(ui))"
 	.typestring safe_mac_rx, "f{0}(chd,&(a(:uc)),&(ui),&(ui),si)"
@@ -9873,21 +9846,21 @@ __xcc1_internal_28:
 	.typestring build_icmp_response1, "f{si}(&(a(:uc)),&(a(:uc)),&(a(6:c:uc)))"
 	.typestring is_valid_icmp_packet0, "f{si}(&(a(:c:uc)),si)"
 	.typestring is_valid_icmp_packet1, "f{si}(&(a(:c:uc)),si)"
-	.typestring __main__main_tile_1, "f{0}(chd,chd,chd,chd)"
-	.typestring __main__main_tile_0, "f{0}(chd,chd,chd,chd)"
+	.typestring __main__main_tile_1, "f{0}(chd,chd)"
+	.typestring __main__main_tile_0, "f{0}(chd,chd)"
 	.typestring tile, "a(2:cr)"
 	.typestring __stdin, "u:q(s(__sFILE){})"
 	.typestring __stdout, "u:q(s(__sFILE){})"
 	.typestring __stderr, "u:q(s(__sFILE){})"
 	.typestring __mb_cur_max, "si"
-	.typestring otp_ports0, "s(otp_ports_t){m(data){p},m(addr){o:p},m(ctrl){o:p}}"
-	.typestring otp_ports1, "s(otp_ports_t){m(data){p},m(addr){o:p},m(ctrl){o:p}}"
-	.typestring smi0, "s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}"
-	.typestring smi1, "s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}"
-	.typestring mii0, "s(_mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}"
-	.typestring mii1, "s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}"
-	.typestring eth_rst0, "si"
-	.typestring eth_rst1, "si"
+	.typestring otp_ports_p1, "s(otp_ports_t){m(data){p},m(addr){o:p},m(ctrl){o:p}}"
+	.typestring otp_ports_p2, "s(otp_ports_t){m(data){p},m(addr){o:p},m(ctrl){o:p}}"
+	.typestring smi_p1, "s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}"
+	.typestring smi_p2, "s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}"
+	.typestring mii_p1, "s(_mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}"
+	.typestring mii_p2, "s(mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}"
+	.typestring eth_rst_p1, "si"
+	.typestring eth_rst_p2, "si"
 	.typestring ethertype_ip0, "a(2:uc)"
 	.typestring ethertype_arp0, "a(2:uc)"
 	.typestring ethertype_ip1, "a(2:uc)"
@@ -9900,294 +9873,282 @@ __xcc1_internal_28:
 	.long	0
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
-.cc_top cc_0,.Lxta.call_labels24
+.cc_top cc_0,.Lxta.call_labels22
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	121
-	.long	.Lxta.call_labels24
+	.long	120
+	.long	.Lxta.call_labels22
 .cc_bottom cc_0
-.cc_top cc_1,.Lxta.call_labels25
+.cc_top cc_1,.Lxta.call_labels23
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	123
-	.long	.Lxta.call_labels25
+	.long	122
+	.long	.Lxta.call_labels23
 .cc_bottom cc_1
-.cc_top cc_2,.Lxta.call_labels26
+.cc_top cc_2,.Lxta.call_labels24
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	131
-	.long	.Lxta.call_labels26
+	.long	130
+	.long	.Lxta.call_labels24
 .cc_bottom cc_2
-.cc_top cc_3,.Lxta.call_labels27
+.cc_top cc_3,.Lxta.call_labels25
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	133
-	.long	.Lxta.call_labels27
+	.long	132
+	.long	.Lxta.call_labels25
 .cc_bottom cc_3
-.cc_top cc_4,.Lxta.call_labels28
+.cc_top cc_4,.Lxta.call_labels26
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	480
+	.long	.Lxta.call_labels26
+.cc_bottom cc_4
+.cc_top cc_5,.Lxta.call_labels27
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	481
+	.long	.Lxta.call_labels27
+.cc_bottom cc_5
+.cc_top cc_6,.Lxta.call_labels28
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	484
 	.long	.Lxta.call_labels28
-.cc_bottom cc_4
-.cc_top cc_5,.Lxta.call_labels29
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	485
-	.long	.Lxta.call_labels29
-.cc_bottom cc_5
-.cc_top cc_6,.Lxta.call_labels30
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	488
-	.long	.Lxta.call_labels30
 .cc_bottom cc_6
-.cc_top cc_7,.Lxta.call_labels31
+.cc_top cc_7,.Lxta.call_labels29
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	530
-	.long	.Lxta.call_labels31
+	.long	526
+	.long	.Lxta.call_labels29
 .cc_bottom cc_7
-.cc_top cc_8,.Lxta.call_labels32
+.cc_top cc_8,.Lxta.call_labels30
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	527
+	.long	.Lxta.call_labels30
+.cc_bottom cc_8
+.cc_top cc_9,.Lxta.call_labels31
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	528
+	.long	.Lxta.call_labels31
+.cc_bottom cc_9
+.cc_top cc_10,.Lxta.call_labels32
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	531
 	.long	.Lxta.call_labels32
-.cc_bottom cc_8
-.cc_top cc_9,.Lxta.call_labels33
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	532
-	.long	.Lxta.call_labels33
-.cc_bottom cc_9
-.cc_top cc_10,.Lxta.call_labels34
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	535
-	.long	.Lxta.call_labels34
 .cc_bottom cc_10
-.cc_top cc_11,.Lxta.call_labels35
+.cc_top cc_11,.Lxta.call_labels33
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	537
-	.long	.Lxta.call_labels35
+	.long	533
+	.long	.Lxta.call_labels33
 .cc_bottom cc_11
 .cc_top cc_12,.Lxta.call_labels0
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	551
+	.long	546
 	.long	.Lxta.call_labels0
 .cc_bottom cc_12
 .cc_top cc_13,.Lxta.call_labels1
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	556
+	.long	554
 	.long	.Lxta.call_labels1
 .cc_bottom cc_13
 .cc_top cc_14,.Lxta.call_labels2
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	559
+	.long	561
 	.long	.Lxta.call_labels2
 .cc_bottom cc_14
 .cc_top cc_15,.Lxta.call_labels3
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	566
+	.long	563
 	.long	.Lxta.call_labels3
 .cc_bottom cc_15
 .cc_top cc_16,.Lxta.call_labels4
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	568
+	.long	565
 	.long	.Lxta.call_labels4
 .cc_bottom cc_16
 .cc_top cc_17,.Lxta.call_labels5
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	570
+	.long	571
 	.long	.Lxta.call_labels5
 .cc_bottom cc_17
-.cc_top cc_18,.Lxta.call_labels6
+.cc_top cc_18,.Lxta.call_labels7
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	576
-	.long	.Lxta.call_labels6
+	.long	573
+	.long	.Lxta.call_labels7
 .cc_bottom cc_18
 .cc_top cc_19,.Lxta.call_labels8
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	578
+	.long	574
 	.long	.Lxta.call_labels8
 .cc_bottom cc_19
-.cc_top cc_20,.Lxta.call_labels9
+.cc_top cc_20,.Lxta.call_labels6
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	579
-	.long	.Lxta.call_labels9
+	.long	578
+	.long	.Lxta.call_labels6
 .cc_bottom cc_20
-.cc_top cc_21,.Lxta.call_labels7
+.cc_top cc_21,.Lxta.call_labels9
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	583
-	.long	.Lxta.call_labels7
+	.long	580
+	.long	.Lxta.call_labels9
 .cc_bottom cc_21
 .cc_top cc_22,.Lxta.call_labels10
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	585
+	.long	581
 	.long	.Lxta.call_labels10
 .cc_bottom cc_22
 .cc_top cc_23,.Lxta.call_labels11
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	586
+	.long	594
 	.long	.Lxta.call_labels11
 .cc_bottom cc_23
 .cc_top cc_24,.Lxta.call_labels12
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	600
+	.long	602
 	.long	.Lxta.call_labels12
 .cc_bottom cc_24
 .cc_top cc_25,.Lxta.call_labels13
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	605
+	.long	609
 	.long	.Lxta.call_labels13
 .cc_bottom cc_25
 .cc_top cc_26,.Lxta.call_labels14
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	608
+	.long	611
 	.long	.Lxta.call_labels14
 .cc_bottom cc_26
 .cc_top cc_27,.Lxta.call_labels15
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	615
+	.long	613
 	.long	.Lxta.call_labels15
 .cc_bottom cc_27
 .cc_top cc_28,.Lxta.call_labels16
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	617
+	.long	619
 	.long	.Lxta.call_labels16
 .cc_bottom cc_28
-.cc_top cc_29,.Lxta.call_labels17
+.cc_top cc_29,.Lxta.call_labels18
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	619
-	.long	.Lxta.call_labels17
-.cc_bottom cc_29
-.cc_top cc_30,.Lxta.call_labels18
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	625
+	.long	621
 	.long	.Lxta.call_labels18
-.cc_bottom cc_30
-.cc_top cc_31,.Lxta.call_labels20
+.cc_bottom cc_29
+.cc_top cc_30,.Lxta.call_labels19
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	627
-	.long	.Lxta.call_labels20
+	.long	622
+	.long	.Lxta.call_labels19
+.cc_bottom cc_30
+.cc_top cc_31,.Lxta.call_labels17
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	626
+	.long	.Lxta.call_labels17
 .cc_bottom cc_31
-.cc_top cc_32,.Lxta.call_labels21
+.cc_top cc_32,.Lxta.call_labels20
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	628
-	.long	.Lxta.call_labels21
+	.long	.Lxta.call_labels20
 .cc_bottom cc_32
-.cc_top cc_33,.Lxta.call_labels19
+.cc_top cc_33,.Lxta.call_labels21
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	632
-	.long	.Lxta.call_labels19
+	.long	629
+	.long	.Lxta.call_labels21
 .cc_bottom cc_33
-.cc_top cc_34,.Lxta.call_labels22
+.cc_top cc_34,.Lxta.call_labels34
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	634
-	.long	.Lxta.call_labels22
+	.long	644
+	.long	.Lxta.call_labels34
 .cc_bottom cc_34
-.cc_top cc_35,.Lxta.call_labels23
+.cc_top cc_35,.Lxta.call_labels35
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	635
-	.long	.Lxta.call_labels23
+	.long	645
+	.long	.Lxta.call_labels35
 .cc_bottom cc_35
 .cc_top cc_36,.Lxta.call_labels36
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	652
+	.long	651
 	.long	.Lxta.call_labels36
 .cc_bottom cc_36
 .cc_top cc_37,.Lxta.call_labels37
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	653
+	.long	652
 	.long	.Lxta.call_labels37
 .cc_bottom cc_37
 .cc_top cc_38,.Lxta.call_labels38
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	654
+	.long	653
 	.long	.Lxta.call_labels38
 .cc_bottom cc_38
 .cc_top cc_39,.Lxta.call_labels39
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	655
+	.long	654
 	.long	.Lxta.call_labels39
 .cc_bottom cc_39
 .cc_top cc_40,.Lxta.call_labels40
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	656
+	.long	655
 	.long	.Lxta.call_labels40
 .cc_bottom cc_40
-.cc_top cc_41,.Lxta.call_labels42
+.cc_top cc_41,.Lxta.call_labels41
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	665
+	.long	.Lxta.call_labels41
+.cc_bottom cc_41
+.cc_top cc_42,.Lxta.call_labels42
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	666
 	.long	.Lxta.call_labels42
-.cc_bottom cc_41
-.cc_top cc_42,.Lxta.call_labels43
+.cc_bottom cc_42
+.cc_top cc_43,.Lxta.call_labels43
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	667
 	.long	.Lxta.call_labels43
-.cc_bottom cc_42
-.cc_top cc_43,.Lxta.call_labels44
+.cc_bottom cc_43
+.cc_top cc_44,.Lxta.call_labels44
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	668
 	.long	.Lxta.call_labels44
-.cc_bottom cc_43
-.cc_top cc_44,.Lxta.call_labels45
+.cc_bottom cc_44
+.cc_top cc_45,.Lxta.call_labels45
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	669
 	.long	.Lxta.call_labels45
-.cc_bottom cc_44
-.cc_top cc_45,.Lxta.call_labels46
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	670
-	.long	.Lxta.call_labels46
 .cc_bottom cc_45
-.cc_top cc_46,.Lxta.call_labels47
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	679
-	.long	.Lxta.call_labels47
-.cc_bottom cc_46
-.cc_top cc_47,.Lxta.call_labels41
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	680
-	.long	.Lxta.call_labels41
-.cc_bottom cc_47
 .Lentries_end1:
 	.section	.xtalabeltable,"",@progbits
 .Lentries_start2:
@@ -10195,1047 +10156,1061 @@ __xcc1_internal_28:
 	.long	0
 	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
 	.byte	0
-.cc_top cc_48,.Lxtalabel22
+.cc_top cc_46,.Lxtalabel22
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	93
-	.long	95
+	.long	92
+	.long	94
 	.long	.Lxtalabel22
-.cc_bottom cc_48
-.cc_top cc_49,.Lxtalabel23
+.cc_bottom cc_46
+.cc_top cc_47,.Lxtalabel23
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	99
-	.long	99
+	.long	98
+	.long	98
 	.long	.Lxtalabel23
-.cc_bottom cc_49
-.cc_top cc_50,.Lxtalabel24
+.cc_bottom cc_47
+.cc_top cc_48,.Lxtalabel24
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	100
-	.long	100
+	.long	99
+	.long	99
 	.long	.Lxtalabel24
-.cc_bottom cc_50
-.cc_top cc_51,.Lxtalabel25
+.cc_bottom cc_48
+.cc_top cc_49,.Lxtalabel25
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	100
 	.long	101
-	.long	102
 	.long	.Lxtalabel25
-.cc_bottom cc_51
-.cc_top cc_52,.Lxtalabel26
+.cc_bottom cc_49
+.cc_top cc_50,.Lxtalabel26
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	103
-	.long	103
+	.long	102
+	.long	102
 	.long	.Lxtalabel26
-.cc_bottom cc_52
-.cc_top cc_53,.Lxtalabel27
+.cc_bottom cc_50
+.cc_top cc_51,.Lxtalabel27
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	104
-	.long	106
+	.long	103
+	.long	105
 	.long	.Lxtalabel27
-.cc_bottom cc_53
-.cc_top cc_54,.Lxtalabel28
+.cc_bottom cc_51
+.cc_top cc_52,.Lxtalabel28
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	110
-	.long	110
+	.long	109
+	.long	109
 	.long	.Lxtalabel28
-.cc_bottom cc_54
-.cc_top cc_55,.Lxtalabel29
+.cc_bottom cc_52
+.cc_top cc_53,.Lxtalabel29
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	111
-	.long	111
+	.long	110
+	.long	110
 	.long	.Lxtalabel29
-.cc_bottom cc_55
-.cc_top cc_56,.Lxtalabel30
+.cc_bottom cc_53
+.cc_top cc_54,.Lxtalabel30
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	111
 	.long	112
-	.long	113
 	.long	.Lxtalabel30
-.cc_bottom cc_56
-.cc_top cc_57,.Lxtalabel31
+.cc_bottom cc_54
+.cc_top cc_55,.Lxtalabel31
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	114
-	.long	114
+	.long	113
+	.long	113
 	.long	.Lxtalabel31
-.cc_bottom cc_57
-.cc_top cc_58,.Lxtalabel32
+.cc_bottom cc_55
+.cc_top cc_56,.Lxtalabel32
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	115
-	.long	117
+	.long	114
+	.long	116
 	.long	.Lxtalabel32
-.cc_bottom cc_58
-.cc_top cc_59,.Lxtalabel33
+.cc_bottom cc_56
+.cc_top cc_57,.Lxtalabel33
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	121
-	.long	121
+	.long	120
+	.long	120
 	.long	.Lxtalabel33
-.cc_bottom cc_59
-.cc_top cc_60,.Lxtalabel34
+.cc_bottom cc_57
+.cc_top cc_58,.Lxtalabel34
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	121
 	.long	122
-	.long	123
 	.long	.Lxtalabel34
-.cc_bottom cc_60
-.cc_top cc_61,.Lxtalabel36
+.cc_bottom cc_58
+.cc_top cc_59,.Lxtalabel36
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	123
 	.long	124
-	.long	125
 	.long	.Lxtalabel36
-.cc_bottom cc_61
-.cc_top cc_62,.Lxtalabel35
+.cc_bottom cc_59
+.cc_top cc_60,.Lxtalabel35
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	126
-	.long	128
+	.long	125
+	.long	127
 	.long	.Lxtalabel35
-.cc_bottom cc_62
-.cc_top cc_63,.Lxtalabel37
+.cc_bottom cc_60
+.cc_top cc_61,.Lxtalabel37
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	131
-	.long	131
+	.long	130
+	.long	130
 	.long	.Lxtalabel37
-.cc_bottom cc_63
-.cc_top cc_64,.Lxtalabel38
+.cc_bottom cc_61
+.cc_top cc_62,.Lxtalabel38
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	131
 	.long	132
-	.long	133
 	.long	.Lxtalabel38
-.cc_bottom cc_64
-.cc_top cc_65,.Lxtalabel40
+.cc_bottom cc_62
+.cc_top cc_63,.Lxtalabel40
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	133
 	.long	134
-	.long	135
 	.long	.Lxtalabel40
-.cc_bottom cc_65
-.cc_top cc_66,.Lxtalabel39
+.cc_bottom cc_63
+.cc_top cc_64,.Lxtalabel39
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	136
-	.long	138
+	.long	135
+	.long	137
 	.long	.Lxtalabel39
-.cc_bottom cc_66
-.cc_top cc_67,.Lxtalabel41
+.cc_bottom cc_64
+.cc_top cc_65,.Lxtalabel41
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	143
-	.long	148
+	.long	141
+	.long	146
 	.long	.Lxtalabel41
-.cc_bottom cc_67
-.cc_top cc_68,.Lxtalabel42
+.cc_bottom cc_65
+.cc_top cc_66,.Lxtalabel42
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	149
-	.long	153
+	.long	147
+	.long	151
 	.long	.Lxtalabel42
-.cc_bottom cc_68
-.cc_top cc_69,.Lxtalabel43
+.cc_bottom cc_66
+.cc_top cc_67,.Lxtalabel43
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	152
+	.long	153
+	.long	.Lxtalabel43
+.cc_bottom cc_67
+.cc_top cc_68,.Lxtalabel44
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	154
-	.long	155
-	.long	.Lxtalabel43
-.cc_bottom cc_69
-.cc_top cc_70,.Lxtalabel44
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	156
-	.long	159
+	.long	157
 	.long	.Lxtalabel44
-.cc_bottom cc_70
-.cc_top cc_71,.Lxtalabel45
+.cc_bottom cc_68
+.cc_top cc_69,.Lxtalabel45
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	160
-	.long	166
+	.long	158
+	.long	164
 	.long	.Lxtalabel45
-.cc_bottom cc_71
-.cc_top cc_72,.Lxtalabel46
+.cc_bottom cc_69
+.cc_top cc_70,.Lxtalabel46
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	167
-	.long	170
+	.long	165
+	.long	168
 	.long	.Lxtalabel46
-.cc_bottom cc_72
-.cc_top cc_73,.Lxtalabel47
+.cc_bottom cc_70
+.cc_top cc_71,.Lxtalabel47
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	171
-	.long	177
+	.long	169
+	.long	175
 	.long	.Lxtalabel47
-.cc_bottom cc_73
-.cc_top cc_74,.Lxtalabel48
+.cc_bottom cc_71
+.cc_top cc_72,.Lxtalabel48
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	176
 	.long	178
-	.long	180
 	.long	.Lxtalabel48
-.cc_bottom cc_74
-.cc_top cc_75,.Lxtalabel49
+.cc_bottom cc_72
+.cc_top cc_73,.Lxtalabel49
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	179
 	.long	181
-	.long	183
 	.long	.Lxtalabel49
-.cc_bottom cc_75
-.cc_top cc_76,.Lxtalabel50
+.cc_bottom cc_73
+.cc_top cc_74,.Lxtalabel50
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	186
-	.long	191
+	.long	184
+	.long	189
 	.long	.Lxtalabel50
-.cc_bottom cc_76
-.cc_top cc_77,.Lxtalabel51
+.cc_bottom cc_74
+.cc_top cc_75,.Lxtalabel51
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	192
-	.long	196
+	.long	190
+	.long	194
 	.long	.Lxtalabel51
-.cc_bottom cc_77
-.cc_top cc_78,.Lxtalabel52
+.cc_bottom cc_75
+.cc_top cc_76,.Lxtalabel52
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	195
+	.long	196
+	.long	.Lxtalabel52
+.cc_bottom cc_76
+.cc_top cc_77,.Lxtalabel53
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	197
-	.long	198
-	.long	.Lxtalabel52
-.cc_bottom cc_78
-.cc_top cc_79,.Lxtalabel53
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	199
-	.long	202
+	.long	200
 	.long	.Lxtalabel53
-.cc_bottom cc_79
-.cc_top cc_80,.Lxtalabel54
+.cc_bottom cc_77
+.cc_top cc_78,.Lxtalabel54
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	203
-	.long	209
+	.long	201
+	.long	207
 	.long	.Lxtalabel54
-.cc_bottom cc_80
-.cc_top cc_81,.Lxtalabel55
+.cc_bottom cc_78
+.cc_top cc_79,.Lxtalabel55
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	210
-	.long	213
+	.long	208
+	.long	211
 	.long	.Lxtalabel55
-.cc_bottom cc_81
-.cc_top cc_82,.Lxtalabel56
+.cc_bottom cc_79
+.cc_top cc_80,.Lxtalabel56
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	214
-	.long	220
+	.long	212
+	.long	218
 	.long	.Lxtalabel56
-.cc_bottom cc_82
-.cc_top cc_83,.Lxtalabel57
+.cc_bottom cc_80
+.cc_top cc_81,.Lxtalabel57
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	219
 	.long	221
-	.long	223
 	.long	.Lxtalabel57
-.cc_bottom cc_83
-.cc_top cc_84,.Lxtalabel58
+.cc_bottom cc_81
+.cc_top cc_82,.Lxtalabel58
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	222
 	.long	224
-	.long	226
 	.long	.Lxtalabel58
-.cc_bottom cc_84
-.cc_top cc_85,.Lxtalabel59
+.cc_bottom cc_82
+.cc_top cc_83,.Lxtalabel59
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	229
-	.long	232
+	.long	227
+	.long	230
 	.long	.Lxtalabel59
-.cc_bottom cc_85
-.cc_top cc_86,.Lxtalabel60
+.cc_bottom cc_83
+.cc_top cc_84,.Lxtalabel60
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	233
-	.long	233
+	.long	231
+	.long	231
 	.long	.Lxtalabel60
-.cc_bottom cc_86
-.cc_top cc_87,.Lxtalabel61
+.cc_bottom cc_84
+.cc_top cc_85,.Lxtalabel61
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	234
-	.long	237
+	.long	232
+	.long	235
 	.long	.Lxtalabel61
-.cc_bottom cc_87
-.cc_top cc_88,.Lxtalabel62
+.cc_bottom cc_85
+.cc_top cc_86,.Lxtalabel62
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	238
-	.long	241
+	.long	236
+	.long	239
 	.long	.Lxtalabel62
-.cc_bottom cc_88
-.cc_top cc_89,.Lxtalabel63
+.cc_bottom cc_86
+.cc_top cc_87,.Lxtalabel63
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	242
-	.long	242
+	.long	240
+	.long	240
 	.long	.Lxtalabel63
-.cc_bottom cc_89
-.cc_top cc_90,.Lxtalabel64
+.cc_bottom cc_87
+.cc_top cc_88,.Lxtalabel64
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	243
-	.long	246
+	.long	241
+	.long	244
 	.long	.Lxtalabel64
-.cc_bottom cc_90
-.cc_top cc_91,.Lxtalabel65
+.cc_bottom cc_88
+.cc_top cc_89,.Lxtalabel65
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	247
-	.long	247
+	.long	245
+	.long	245
 	.long	.Lxtalabel65
-.cc_bottom cc_91
-.cc_top cc_92,.Lxtalabel66
+.cc_bottom cc_89
+.cc_top cc_90,.Lxtalabel66
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	248
-	.long	251
+	.long	246
+	.long	249
 	.long	.Lxtalabel66
-.cc_bottom cc_92
-.cc_top cc_93,.Lxtalabel67
+.cc_bottom cc_90
+.cc_top cc_91,.Lxtalabel67
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	252
-	.long	252
+	.long	250
+	.long	250
 	.long	.Lxtalabel67
-.cc_bottom cc_93
-.cc_top cc_94,.Lxtalabel68
+.cc_bottom cc_91
+.cc_top cc_92,.Lxtalabel68
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	251
+	.long	252
+	.long	.Lxtalabel68
+.cc_bottom cc_92
+.cc_top cc_93,.Lxtalabel69
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	253
-	.long	254
-	.long	.Lxtalabel68
-.cc_bottom cc_94
-.cc_top cc_95,.Lxtalabel69
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	255
-	.long	258
+	.long	256
 	.long	.Lxtalabel69
-.cc_bottom cc_95
-.cc_top cc_96,.Lxtalabel70
+.cc_bottom cc_93
+.cc_top cc_94,.Lxtalabel70
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	259
-	.long	259
+	.long	257
+	.long	257
 	.long	.Lxtalabel70
-.cc_bottom cc_96
-.cc_top cc_97,.Lxtalabel71
+.cc_bottom cc_94
+.cc_top cc_95,.Lxtalabel71
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	258
 	.long	260
-	.long	262
 	.long	.Lxtalabel71
-.cc_bottom cc_97
-.cc_top cc_98,.Lxtalabel72
+.cc_bottom cc_95
+.cc_top cc_96,.Lxtalabel72
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	265
-	.long	268
+	.long	263
+	.long	266
 	.long	.Lxtalabel72
-.cc_bottom cc_98
-.cc_top cc_99,.Lxtalabel73
+.cc_bottom cc_96
+.cc_top cc_97,.Lxtalabel73
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	269
-	.long	269
+	.long	267
+	.long	267
 	.long	.Lxtalabel73
-.cc_bottom cc_99
-.cc_top cc_100,.Lxtalabel74
+.cc_bottom cc_97
+.cc_top cc_98,.Lxtalabel74
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	270
-	.long	273
+	.long	268
+	.long	271
 	.long	.Lxtalabel74
-.cc_bottom cc_100
-.cc_top cc_101,.Lxtalabel75
+.cc_bottom cc_98
+.cc_top cc_99,.Lxtalabel75
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	274
-	.long	277
+	.long	272
+	.long	275
 	.long	.Lxtalabel75
-.cc_bottom cc_101
-.cc_top cc_102,.Lxtalabel76
+.cc_bottom cc_99
+.cc_top cc_100,.Lxtalabel76
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	278
-	.long	278
+	.long	276
+	.long	276
 	.long	.Lxtalabel76
-.cc_bottom cc_102
-.cc_top cc_103,.Lxtalabel77
+.cc_bottom cc_100
+.cc_top cc_101,.Lxtalabel77
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	279
-	.long	282
+	.long	277
+	.long	280
 	.long	.Lxtalabel77
-.cc_bottom cc_103
-.cc_top cc_104,.Lxtalabel78
+.cc_bottom cc_101
+.cc_top cc_102,.Lxtalabel78
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	283
-	.long	283
+	.long	281
+	.long	281
 	.long	.Lxtalabel78
-.cc_bottom cc_104
-.cc_top cc_105,.Lxtalabel79
+.cc_bottom cc_102
+.cc_top cc_103,.Lxtalabel79
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	284
-	.long	287
+	.long	282
+	.long	285
 	.long	.Lxtalabel79
-.cc_bottom cc_105
-.cc_top cc_106,.Lxtalabel80
+.cc_bottom cc_103
+.cc_top cc_104,.Lxtalabel80
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	288
-	.long	288
+	.long	286
+	.long	286
 	.long	.Lxtalabel80
-.cc_bottom cc_106
-.cc_top cc_107,.Lxtalabel81
+.cc_bottom cc_104
+.cc_top cc_105,.Lxtalabel81
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	287
+	.long	288
+	.long	.Lxtalabel81
+.cc_bottom cc_105
+.cc_top cc_106,.Lxtalabel82
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	289
-	.long	290
-	.long	.Lxtalabel81
-.cc_bottom cc_107
-.cc_top cc_108,.Lxtalabel82
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	291
-	.long	294
+	.long	292
 	.long	.Lxtalabel82
-.cc_bottom cc_108
-.cc_top cc_109,.Lxtalabel83
+.cc_bottom cc_106
+.cc_top cc_107,.Lxtalabel83
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	295
-	.long	295
+	.long	293
+	.long	293
 	.long	.Lxtalabel83
-.cc_bottom cc_109
-.cc_top cc_110,.Lxtalabel84
+.cc_bottom cc_107
+.cc_top cc_108,.Lxtalabel84
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	294
 	.long	296
-	.long	298
 	.long	.Lxtalabel84
-.cc_bottom cc_110
-.cc_top cc_111,.Lxtalabel85
+.cc_bottom cc_108
+.cc_top cc_109,.Lxtalabel85
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	302
-	.long	313
+	.long	299
+	.long	310
 	.long	.Lxtalabel85
-.cc_bottom cc_111
-.cc_top cc_112,.Lxtalabel86
+.cc_bottom cc_109
+.cc_top cc_110,.Lxtalabel86
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	311
+	.long	313
+	.long	.Lxtalabel86
+.cc_bottom cc_110
+.cc_top cc_111,.Lxtalabel87
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	314
-	.long	316
-	.long	.Lxtalabel86
-.cc_bottom cc_112
-.cc_top cc_113,.Lxtalabel87
+	.long	314
+	.long	.Lxtalabel87
+.cc_bottom cc_111
+.cc_top cc_112,.Lxtalabel88
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	315
 	.long	317
-	.long	317
-	.long	.Lxtalabel87
-.cc_bottom cc_113
-.cc_top cc_114,.Lxtalabel88
+	.long	.Lxtalabel88
+.cc_bottom cc_112
+.cc_top cc_113,.Lxtalabel89
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	318
-	.long	320
-	.long	.Lxtalabel88
-.cc_bottom cc_114
-.cc_top cc_115,.Lxtalabel89
+	.long	319
+	.long	.Lxtalabel89
+.cc_bottom cc_113
+.cc_top cc_114,.Lxtalabel90
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	321
+	.long	320
 	.long	322
-	.long	.Lxtalabel89
-.cc_bottom cc_115
-.cc_top cc_116,.Lxtalabel90
+	.long	.Lxtalabel90
+.cc_bottom cc_114
+.cc_top cc_115,.Lxtalabel91
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	323
 	.long	325
-	.long	.Lxtalabel90
-.cc_bottom cc_116
-.cc_top cc_117,.Lxtalabel91
+	.long	.Lxtalabel91
+.cc_bottom cc_115
+.cc_top cc_116,.Lxtalabel92
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	326
 	.long	328
-	.long	.Lxtalabel91
-.cc_bottom cc_117
-.cc_top cc_118,.Lxtalabel92
+	.long	.Lxtalabel92
+.cc_bottom cc_116
+.cc_top cc_117,.Lxtalabel93
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	329
-	.long	331
-	.long	.Lxtalabel92
-.cc_bottom cc_118
-.cc_top cc_119,.Lxtalabel93
+	.long	330
+	.long	.Lxtalabel93
+.cc_bottom cc_117
+.cc_top cc_118,.Lxtalabel94
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	332
+	.long	331
 	.long	333
-	.long	.Lxtalabel93
-.cc_bottom cc_119
-.cc_top cc_120,.Lxtalabel94
+	.long	.Lxtalabel94
+.cc_bottom cc_118
+.cc_top cc_119,.Lxtalabel95
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	334
-	.long	336
-	.long	.Lxtalabel94
-.cc_bottom cc_120
-.cc_top cc_121,.Lxtalabel95
+	.long	340
+	.long	.Lxtalabel95
+.cc_bottom cc_119
+.cc_top cc_120,.Lxtalabel96
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	337
+	.long	341
 	.long	343
-	.long	.Lxtalabel95
-.cc_bottom cc_121
-.cc_top cc_122,.Lxtalabel96
+	.long	.Lxtalabel96
+.cc_bottom cc_120
+.cc_top cc_121,.Lxtalabel97
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	344
-	.long	346
-	.long	.Lxtalabel96
-.cc_bottom cc_122
-.cc_top cc_123,.Lxtalabel97
+	.long	357
+	.long	.Lxtalabel97
+.cc_bottom cc_121
+.cc_top cc_122,.Lxtalabel98
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	347
+	.long	358
 	.long	360
-	.long	.Lxtalabel97
-.cc_bottom cc_123
-.cc_top cc_124,.Lxtalabel98
+	.long	.Lxtalabel98
+.cc_bottom cc_122
+.cc_top cc_123,.Lxtalabel99
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	361
-	.long	363
-	.long	.Lxtalabel98
-.cc_bottom cc_124
-.cc_top cc_125,.Lxtalabel99
+	.long	365
+	.long	.Lxtalabel99
+.cc_bottom cc_123
+.cc_top cc_124,.Lxtalabel100
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	364
+	.long	366
 	.long	368
-	.long	.Lxtalabel99
-.cc_bottom cc_125
-.cc_top cc_126,.Lxtalabel100
+	.long	.Lxtalabel100
+.cc_bottom cc_124
+.cc_top cc_125,.Lxtalabel101
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	369
-	.long	371
-	.long	.Lxtalabel100
-.cc_bottom cc_126
-.cc_top cc_127,.Lxtalabel101
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	372
-	.long	373
+	.long	370
 	.long	.Lxtalabel101
-.cc_bottom cc_127
-.cc_top cc_128,.Lxtalabel102
+.cc_bottom cc_125
+.cc_top cc_126,.Lxtalabel102
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	377
-	.long	388
+	.long	373
+	.long	384
 	.long	.Lxtalabel102
+.cc_bottom cc_126
+.cc_top cc_127,.Lxtalabel103
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	385
+	.long	387
+	.long	.Lxtalabel103
+.cc_bottom cc_127
+.cc_top cc_128,.Lxtalabel104
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	388
+	.long	388
+	.long	.Lxtalabel104
 .cc_bottom cc_128
-.cc_top cc_129,.Lxtalabel103
+.cc_top cc_129,.Lxtalabel105
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	389
 	.long	391
-	.long	.Lxtalabel103
-.cc_bottom cc_129
-.cc_top cc_130,.Lxtalabel104
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	392
-	.long	392
-	.long	.Lxtalabel104
-.cc_bottom cc_130
-.cc_top cc_131,.Lxtalabel105
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	393
-	.long	395
 	.long	.Lxtalabel105
-.cc_bottom cc_131
-.cc_top cc_132,.Lxtalabel106
+.cc_bottom cc_129
+.cc_top cc_130,.Lxtalabel106
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	396
-	.long	397
+	.long	392
+	.long	393
 	.long	.Lxtalabel106
-.cc_bottom cc_132
-.cc_top cc_133,.Lxtalabel107
+.cc_bottom cc_130
+.cc_top cc_131,.Lxtalabel107
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	398
-	.long	400
+	.long	394
+	.long	396
 	.long	.Lxtalabel107
-.cc_bottom cc_133
-.cc_top cc_134,.Lxtalabel108
+.cc_bottom cc_131
+.cc_top cc_132,.Lxtalabel108
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	401
-	.long	403
+	.long	397
+	.long	399
 	.long	.Lxtalabel108
-.cc_bottom cc_134
-.cc_top cc_135,.Lxtalabel109
+.cc_bottom cc_132
+.cc_top cc_133,.Lxtalabel109
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	404
-	.long	406
+	.long	400
+	.long	402
 	.long	.Lxtalabel109
-.cc_bottom cc_135
-.cc_top cc_136,.Lxtalabel110
+.cc_bottom cc_133
+.cc_top cc_134,.Lxtalabel110
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	407
-	.long	408
+	.long	403
+	.long	404
 	.long	.Lxtalabel110
-.cc_bottom cc_136
-.cc_top cc_137,.Lxtalabel111
+.cc_bottom cc_134
+.cc_top cc_135,.Lxtalabel111
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	409
-	.long	411
+	.long	405
+	.long	407
 	.long	.Lxtalabel111
-.cc_bottom cc_137
-.cc_top cc_138,.Lxtalabel112
+.cc_bottom cc_135
+.cc_top cc_136,.Lxtalabel112
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	412
-	.long	418
+	.long	408
+	.long	414
 	.long	.Lxtalabel112
-.cc_bottom cc_138
-.cc_top cc_139,.Lxtalabel113
+.cc_bottom cc_136
+.cc_top cc_137,.Lxtalabel113
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	419
-	.long	421
+	.long	415
+	.long	417
 	.long	.Lxtalabel113
-.cc_bottom cc_139
-.cc_top cc_140,.Lxtalabel114
+.cc_bottom cc_137
+.cc_top cc_138,.Lxtalabel114
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	422
-	.long	435
+	.long	418
+	.long	431
 	.long	.Lxtalabel114
-.cc_bottom cc_140
-.cc_top cc_141,.Lxtalabel115
+.cc_bottom cc_138
+.cc_top cc_139,.Lxtalabel115
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	436
-	.long	438
+	.long	432
+	.long	434
 	.long	.Lxtalabel115
-.cc_bottom cc_141
-.cc_top cc_142,.Lxtalabel116
+.cc_bottom cc_139
+.cc_top cc_140,.Lxtalabel116
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	435
 	.long	439
-	.long	443
 	.long	.Lxtalabel116
-.cc_bottom cc_142
-.cc_top cc_143,.Lxtalabel117
+.cc_bottom cc_140
+.cc_top cc_141,.Lxtalabel117
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	444
-	.long	446
+	.long	440
+	.long	442
 	.long	.Lxtalabel117
-.cc_bottom cc_143
-.cc_top cc_144,.Lxtalabel118
+.cc_bottom cc_141
+.cc_top cc_142,.Lxtalabel118
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	443
+	.long	444
+	.long	.Lxtalabel118
+.cc_bottom cc_142
+.cc_top cc_143,.Lxtalabel119
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	447
-	.long	448
-	.long	.Lxtalabel118
-.cc_bottom cc_144
-.cc_top cc_145,.Lxtalabel119
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	451
-	.long	456
+	.long	452
 	.long	.Lxtalabel119
-.cc_bottom cc_145
-.cc_top cc_146,.Lxtalabel120
+.cc_bottom cc_143
+.cc_top cc_144,.Lxtalabel120
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	457
-	.long	457
+	.long	453
+	.long	453
 	.long	.Lxtalabel120
-.cc_bottom cc_146
-.cc_top cc_147,.Lxtalabel121
+.cc_bottom cc_144
+.cc_top cc_145,.Lxtalabel121
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	454
+	.long	457
+	.long	.Lxtalabel121
+.cc_bottom cc_145
+.cc_top cc_146,.Lxtalabel122
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	458
 	.long	461
-	.long	.Lxtalabel121
-.cc_bottom cc_147
-.cc_top cc_148,.Lxtalabel122
+	.long	.Lxtalabel122
+.cc_bottom cc_146
+.cc_top cc_147,.Lxtalabel123
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	462
-	.long	465
-	.long	.Lxtalabel122
-.cc_bottom cc_148
-.cc_top cc_149,.Lxtalabel123
+	.long	462
+	.long	.Lxtalabel123
+.cc_bottom cc_147
+.cc_top cc_148,.Lxtalabel124
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	463
 	.long	466
-	.long	466
-	.long	.Lxtalabel123
-.cc_bottom cc_149
-.cc_top cc_150,.Lxtalabel124
+	.long	.Lxtalabel124
+.cc_bottom cc_148
+.cc_top cc_149,.Lxtalabel125
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	467
-	.long	470
-	.long	.Lxtalabel124
-.cc_bottom cc_150
-.cc_top cc_151,.Lxtalabel125
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	471
-	.long	471
+	.long	467
 	.long	.Lxtalabel125
-.cc_bottom cc_151
-.cc_top cc_152,.Lxtalabel126
+.cc_bottom cc_149
+.cc_top cc_150,.Lxtalabel126
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	472
-	.long	473
+	.long	468
+	.long	469
 	.long	.Lxtalabel126
-.cc_bottom cc_152
-.cc_top cc_153,.Lxtalabel127
+.cc_bottom cc_150
+.cc_top cc_151,.Lxtalabel127
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	470
+	.long	473
+	.long	.Lxtalabel127
+.cc_bottom cc_151
+.cc_top cc_152,.Lxtalabel128
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	474
-	.long	477
-	.long	.Lxtalabel127
-.cc_bottom cc_153
-.cc_top cc_154,.Lxtalabel128
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	478
-	.long	478
+	.long	474
 	.long	.Lxtalabel128
-.cc_bottom cc_154
-.cc_top cc_155,.Lxtalabel129
+.cc_bottom cc_152
+.cc_top cc_153,.Lxtalabel129
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	479
-	.long	481
+	.long	475
+	.long	477
 	.long	.Lxtalabel129
-.cc_bottom cc_155
-.cc_top cc_156,.Lxtalabel130
+.cc_bottom cc_153
+.cc_top cc_154,.Lxtalabel130
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	482
-	.long	487
+	.long	478
+	.long	483
 	.long	.Lxtalabel130
-.cc_bottom cc_156
-.cc_top cc_157,.Lxtalabel131
+.cc_bottom cc_154
+.cc_top cc_155,.Lxtalabel131
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	488
-	.long	488
+	.long	484
+	.long	484
 	.long	.Lxtalabel131
-.cc_bottom cc_157
-.cc_top cc_158,.Lxtalabel132
+.cc_bottom cc_155
+.cc_top cc_156,.Lxtalabel132
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	485
+	.long	488
+	.long	.Lxtalabel132
+.cc_bottom cc_156
+.cc_top cc_157,.Lxtalabel133
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	489
-	.long	492
-	.long	.Lxtalabel132
-.cc_bottom cc_158
-.cc_top cc_159,.Lxtalabel133
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	493
-	.long	495
+	.long	491
 	.long	.Lxtalabel133
-.cc_bottom cc_159
-.cc_top cc_160,.Lxtalabel134
+.cc_bottom cc_157
+.cc_top cc_158,.Lxtalabel134
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	498
-	.long	503
+	.long	494
+	.long	499
 	.long	.Lxtalabel134
-.cc_bottom cc_160
-.cc_top cc_161,.Lxtalabel135
+.cc_bottom cc_158
+.cc_top cc_159,.Lxtalabel135
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	504
-	.long	504
+	.long	500
+	.long	500
 	.long	.Lxtalabel135
-.cc_bottom cc_161
-.cc_top cc_162,.Lxtalabel136
+.cc_bottom cc_159
+.cc_top cc_160,.Lxtalabel136
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	501
+	.long	504
+	.long	.Lxtalabel136
+.cc_bottom cc_160
+.cc_top cc_161,.Lxtalabel137
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	505
 	.long	508
-	.long	.Lxtalabel136
-.cc_bottom cc_162
-.cc_top cc_163,.Lxtalabel137
+	.long	.Lxtalabel137
+.cc_bottom cc_161
+.cc_top cc_162,.Lxtalabel138
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	509
-	.long	512
-	.long	.Lxtalabel137
-.cc_bottom cc_163
-.cc_top cc_164,.Lxtalabel138
+	.long	509
+	.long	.Lxtalabel138
+.cc_bottom cc_162
+.cc_top cc_163,.Lxtalabel139
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	510
 	.long	513
-	.long	513
-	.long	.Lxtalabel138
-.cc_bottom cc_164
-.cc_top cc_165,.Lxtalabel139
+	.long	.Lxtalabel139
+.cc_bottom cc_163
+.cc_top cc_164,.Lxtalabel140
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	514
-	.long	517
-	.long	.Lxtalabel139
-.cc_bottom cc_165
-.cc_top cc_166,.Lxtalabel140
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	518
-	.long	518
+	.long	514
 	.long	.Lxtalabel140
-.cc_bottom cc_166
-.cc_top cc_167,.Lxtalabel141
+.cc_bottom cc_164
+.cc_top cc_165,.Lxtalabel141
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	519
-	.long	520
+	.long	515
+	.long	516
 	.long	.Lxtalabel141
-.cc_bottom cc_167
-.cc_top cc_168,.Lxtalabel142
+.cc_bottom cc_165
+.cc_top cc_166,.Lxtalabel142
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	517
+	.long	520
+	.long	.Lxtalabel142
+.cc_bottom cc_166
+.cc_top cc_167,.Lxtalabel143
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	521
-	.long	524
-	.long	.Lxtalabel142
-.cc_bottom cc_168
-.cc_top cc_169,.Lxtalabel143
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	525
-	.long	525
+	.long	521
 	.long	.Lxtalabel143
-.cc_bottom cc_169
-.cc_top cc_170,.Lxtalabel144
+.cc_bottom cc_167
+.cc_top cc_168,.Lxtalabel144
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	526
-	.long	528
+	.long	522
+	.long	524
 	.long	.Lxtalabel144
-.cc_bottom cc_170
-.cc_top cc_171,.Lxtalabel145
+.cc_bottom cc_168
+.cc_top cc_169,.Lxtalabel145
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	529
-	.long	534
+	.long	525
+	.long	530
 	.long	.Lxtalabel145
-.cc_bottom cc_171
-.cc_top cc_172,.Lxtalabel146
+.cc_bottom cc_169
+.cc_top cc_170,.Lxtalabel146
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	535
-	.long	535
+	.long	531
+	.long	531
 	.long	.Lxtalabel146
-.cc_bottom cc_172
-.cc_top cc_173,.Lxtalabel147
+.cc_bottom cc_170
+.cc_top cc_171,.Lxtalabel147
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	532
+	.long	535
+	.long	.Lxtalabel147
+.cc_bottom cc_171
+.cc_top cc_172,.Lxtalabel148
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	536
-	.long	539
-	.long	.Lxtalabel147
-.cc_bottom cc_173
-.cc_top cc_174,.Lxtalabel148
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	540
-	.long	542
+	.long	538
 	.long	.Lxtalabel148
-.cc_bottom cc_174
-.cc_top cc_175,.Lxtalabel0
+.cc_bottom cc_172
+.cc_top cc_173,.Lxtalabel0
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	546
-	.long	562
+	.long	541
+	.long	547
 	.long	.Lxtalabel0
-.cc_bottom cc_175
-.cc_top cc_176,.Lxtalabel1
+.cc_bottom cc_173
+.cc_top cc_174,.Lxtalabel0
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	554
+	.long	557
+	.long	.Lxtalabel0
+.cc_bottom cc_174
+.cc_top cc_175,.Lxtalabel1
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	558
 	.long	563
-	.long	568
 	.long	.Lxtalabel1
-.cc_bottom cc_176
-.cc_top cc_177,.Lxtalabel2
+.cc_bottom cc_175
+.cc_top cc_176,.Lxtalabel2
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	569
-	.long	569
+	.long	564
+	.long	564
 	.long	.Lxtalabel2
-.cc_bottom cc_177
-.cc_top cc_178,.Lxtalabel3
+.cc_bottom cc_176
+.cc_top cc_177,.Lxtalabel3
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	570
-	.long	570
+	.long	565
+	.long	565
 	.long	.Lxtalabel3
-.cc_bottom cc_178
-.cc_top cc_179,.Lxtalabel4
+.cc_bottom cc_177
+.cc_top cc_178,.Lxtalabel4
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	571
-	.long	571
+	.long	566
+	.long	566
 	.long	.Lxtalabel4
+.cc_bottom cc_178
+.cc_top cc_179,.Lxtalabel5
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	567
+	.long	571
+	.long	.Lxtalabel5
 .cc_bottom cc_179
-.cc_top cc_180,.Lxtalabel5
+.cc_top cc_180,.Lxtalabel6
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	572
 	.long	576
-	.long	.Lxtalabel5
+	.long	.Lxtalabel6
 .cc_bottom cc_180
-.cc_top cc_181,.Lxtalabel6
+.cc_top cc_181,.Lxtalabel8
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	577
-	.long	581
-	.long	.Lxtalabel6
+	.long	578
+	.long	.Lxtalabel8
 .cc_bottom cc_181
-.cc_top cc_182,.Lxtalabel8
+.cc_top cc_182,.Lxtalabel9
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	582
+	.long	579
 	.long	583
-	.long	.Lxtalabel8
+	.long	.Lxtalabel9
 .cc_bottom cc_182
-.cc_top cc_183,.Lxtalabel9
+.cc_top cc_183,.Lxtalabel7
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	584
-	.long	588
-	.long	.Lxtalabel9
+	.long	585
+	.long	.Lxtalabel7
 .cc_bottom cc_183
-.cc_top cc_184,.Lxtalabel7
+.cc_top cc_184,.Lxtalabel10
+	.ascii	 "../src/demo.xc"
+	.byte	0
+	.long	586
+	.long	586
+	.long	.Lxtalabel10
+.cc_bottom cc_184
+.cc_top cc_185,.Lxtalabel11
 	.ascii	 "../src/demo.xc"
 	.byte	0
 	.long	589
-	.long	590
-	.long	.Lxtalabel7
-.cc_bottom cc_184
-.cc_top cc_185,.Lxtalabel10
-	.ascii	 "../src/demo.xc"
-	.byte	0
-	.long	591
-	.long	591
-	.long	.Lxtalabel10
+	.long	595
+	.long	.Lxtalabel11
 .cc_bottom cc_185
 .cc_top cc_186,.Lxtalabel11
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	595
-	.long	611
+	.long	602
+	.long	605
 	.long	.Lxtalabel11
 .cc_bottom cc_186
 .cc_top cc_187,.Lxtalabel12
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	612
-	.long	617
+	.long	606
+	.long	611
 	.long	.Lxtalabel12
 .cc_bottom cc_187
 .cc_top cc_188,.Lxtalabel13
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	618
-	.long	618
+	.long	612
+	.long	612
 	.long	.Lxtalabel13
 .cc_bottom cc_188
 .cc_top cc_189,.Lxtalabel14
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	619
-	.long	619
+	.long	613
+	.long	613
 	.long	.Lxtalabel14
 .cc_bottom cc_189
 .cc_top cc_190,.Lxtalabel15
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	620
-	.long	620
+	.long	614
+	.long	614
 	.long	.Lxtalabel15
 .cc_bottom cc_190
 .cc_top cc_191,.Lxtalabel16
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	621
-	.long	625
+	.long	615
+	.long	619
 	.long	.Lxtalabel16
 .cc_bottom cc_191
 .cc_top cc_192,.Lxtalabel17
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	626
-	.long	630
+	.long	620
+	.long	624
 	.long	.Lxtalabel17
 .cc_bottom cc_192
 .cc_top cc_193,.Lxtalabel19
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	631
-	.long	632
+	.long	625
+	.long	626
 	.long	.Lxtalabel19
 .cc_bottom cc_193
 .cc_top cc_194,.Lxtalabel20
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	633
-	.long	637
+	.long	627
+	.long	631
 	.long	.Lxtalabel20
 .cc_bottom cc_194
 .cc_top cc_195,.Lxtalabel18
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	638
-	.long	639
+	.long	632
+	.long	633
 	.long	.Lxtalabel18
 .cc_bottom cc_195
 .cc_top cc_196,.Lxtalabel21
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	640
-	.long	640
+	.long	634
+	.long	634
 	.long	.Lxtalabel21
 .cc_bottom cc_196
 .Lentries_end3:
@@ -11248,225 +11223,225 @@ __xcc1_internal_28:
 .cc_top cc_197,.Lxta.loop_labels2
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	100
-	.long	103
+	.long	99
+	.long	102
 	.long	.Lxta.loop_labels2
 .cc_bottom cc_197
 .cc_top cc_198,.Lxta.loop_labels3
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	111
-	.long	114
+	.long	110
+	.long	113
 	.long	.Lxta.loop_labels3
 .cc_bottom cc_198
 .cc_top cc_199,.Lxta.loop_labels4
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	149
-	.long	153
+	.long	147
+	.long	151
 	.long	.Lxta.loop_labels4
 .cc_bottom cc_199
 .cc_top cc_200,.Lxta.loop_labels5
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	156
-	.long	159
+	.long	154
+	.long	157
 	.long	.Lxta.loop_labels5
 .cc_bottom cc_200
 .cc_top cc_201,.Lxta.loop_labels6
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	167
-	.long	170
+	.long	165
+	.long	168
 	.long	.Lxta.loop_labels6
 .cc_bottom cc_201
 .cc_top cc_202,.Lxta.loop_labels7
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	176
 	.long	178
-	.long	180
 	.long	.Lxta.loop_labels7
 .cc_bottom cc_202
 .cc_top cc_203,.Lxta.loop_labels8
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	192
-	.long	196
+	.long	190
+	.long	194
 	.long	.Lxta.loop_labels8
 .cc_bottom cc_203
 .cc_top cc_204,.Lxta.loop_labels9
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	199
-	.long	202
+	.long	197
+	.long	200
 	.long	.Lxta.loop_labels9
 .cc_bottom cc_204
 .cc_top cc_205,.Lxta.loop_labels10
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	210
-	.long	213
+	.long	208
+	.long	211
 	.long	.Lxta.loop_labels10
 .cc_bottom cc_205
 .cc_top cc_206,.Lxta.loop_labels11
 	.ascii	 "../src/demo.xc"
 	.byte	0
+	.long	219
 	.long	221
-	.long	223
 	.long	.Lxta.loop_labels11
 .cc_bottom cc_206
 .cc_top cc_207,.Lxta.loop_labels12
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	253
-	.long	259
+	.long	251
+	.long	257
 	.long	.Lxta.loop_labels12
 .cc_bottom cc_207
 .cc_top cc_208,.Lxta.loop_labels13
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	289
-	.long	295
+	.long	287
+	.long	293
 	.long	.Lxta.loop_labels13
 .cc_bottom cc_208
 .cc_top cc_209,.Lxta.loop_labels14
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	314
-	.long	316
+	.long	311
+	.long	313
 	.long	.Lxta.loop_labels14
 .cc_bottom cc_209
 .cc_top cc_210,.Lxta.loop_labels15
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	318
-	.long	320
+	.long	315
+	.long	317
 	.long	.Lxta.loop_labels15
 .cc_bottom cc_210
 .cc_top cc_211,.Lxta.loop_labels16
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	323
-	.long	325
+	.long	320
+	.long	322
 	.long	.Lxta.loop_labels16
 .cc_bottom cc_211
 .cc_top cc_212,.Lxta.loop_labels17
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	329
-	.long	331
+	.long	326
+	.long	328
 	.long	.Lxta.loop_labels17
 .cc_bottom cc_212
 .cc_top cc_213,.Lxta.loop_labels18
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	334
-	.long	336
+	.long	331
+	.long	333
 	.long	.Lxta.loop_labels18
 .cc_bottom cc_213
 .cc_top cc_214,.Lxta.loop_labels19
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	344
-	.long	346
+	.long	341
+	.long	343
 	.long	.Lxta.loop_labels19
 .cc_bottom cc_214
 .cc_top cc_215,.Lxta.loop_labels20
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	361
-	.long	363
+	.long	358
+	.long	360
 	.long	.Lxta.loop_labels20
 .cc_bottom cc_215
 .cc_top cc_216,.Lxta.loop_labels21
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	369
-	.long	371
+	.long	366
+	.long	368
 	.long	.Lxta.loop_labels21
 .cc_bottom cc_216
 .cc_top cc_217,.Lxta.loop_labels22
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	389
-	.long	391
+	.long	385
+	.long	387
 	.long	.Lxta.loop_labels22
 .cc_bottom cc_217
 .cc_top cc_218,.Lxta.loop_labels23
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	393
-	.long	395
+	.long	389
+	.long	391
 	.long	.Lxta.loop_labels23
 .cc_bottom cc_218
 .cc_top cc_219,.Lxta.loop_labels24
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	398
-	.long	400
+	.long	394
+	.long	396
 	.long	.Lxta.loop_labels24
 .cc_bottom cc_219
 .cc_top cc_220,.Lxta.loop_labels25
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	404
-	.long	406
+	.long	400
+	.long	402
 	.long	.Lxta.loop_labels25
 .cc_bottom cc_220
 .cc_top cc_221,.Lxta.loop_labels26
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	409
-	.long	411
+	.long	405
+	.long	407
 	.long	.Lxta.loop_labels26
 .cc_bottom cc_221
 .cc_top cc_222,.Lxta.loop_labels27
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	419
-	.long	421
+	.long	415
+	.long	417
 	.long	.Lxta.loop_labels27
 .cc_bottom cc_222
 .cc_top cc_223,.Lxta.loop_labels28
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	436
-	.long	438
+	.long	432
+	.long	434
 	.long	.Lxta.loop_labels28
 .cc_bottom cc_223
 .cc_top cc_224,.Lxta.loop_labels29
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	444
-	.long	446
+	.long	440
+	.long	442
 	.long	.Lxta.loop_labels29
 .cc_bottom cc_224
 .cc_top cc_225,.Lxta.loop_labels30
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	472
-	.long	478
+	.long	468
+	.long	474
 	.long	.Lxta.loop_labels30
 .cc_bottom cc_225
 .cc_top cc_226,.Lxta.loop_labels31
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	519
-	.long	525
+	.long	515
+	.long	521
 	.long	.Lxta.loop_labels31
 .cc_bottom cc_226
 .cc_top cc_227,.Lxta.loop_labels0
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	563
-	.long	590
+	.long	558
+	.long	585
 	.long	.Lxta.loop_labels0
 .cc_bottom cc_227
 .cc_top cc_228,.Lxta.loop_labels1
 	.ascii	 "../src/demo.xc"
 	.byte	0
-	.long	612
-	.long	639
+	.long	606
+	.long	633
 	.long	.Lxta.loop_labels1
 .cc_bottom cc_228
 .Lentries_end5:

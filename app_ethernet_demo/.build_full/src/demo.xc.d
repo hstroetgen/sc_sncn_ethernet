@@ -1,37 +1,37 @@
 .build_full/src/demo.xc.d ./.build_full/src/demo.xc.o: ./src/demo.xc \
   ../../workspace_ethernet_new_replicated/app_ethernet_demo/src/ethernet_conf.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_conf_derived.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_mii.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/ethernet_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/common_p1/ethernet_conf_derived_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/mii_p1.h \
   ../../workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/common/ethernet_conf_derived.h \
   ../../workspace_ethernet_new_replicated/module_ethernet_board_support/SLICEKIT-L2/ethernet_board_conf.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_server.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_full.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/full/_mii_queue.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_server_full.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_server_lite.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_rx_client.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_rx_client_lite.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_rx_client_full.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_tx_client.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_tx_client_lite.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/include/_ethernet_tx_client_full.h \
-  ../../workspace_ethernet_new_replicated/_module_ethernet/src/common/_ethernet_phy_reset.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/ethernet.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/mii.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/ethernet_server.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/full/mii_full.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/full/mii_queue.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/ethernet_server_full.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/ethernet_server_lite.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/ethernet_rx_client.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/ethernet_rx_client_lite.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/ethernet_rx_client_full.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/ethernet_tx_client.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/ethernet_tx_client_lite.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/include/ethernet_tx_client_full.h \
-  ../../workspace_ethernet_new_replicated/module_ethernet/src/common/ethernet_phy_reset.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/ethernet_server_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_full_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_queue_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/ethernet_server_full_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/ethernet_server_lite_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/ethernet_rx_client_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/ethernet_rx_client_lite_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/ethernet_rx_client_full_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/ethernet_tx_client_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/ethernet_tx_client_lite_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p1/ethernet_tx_client_full_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/common_p1/ethernet_phy_reset_p1.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/common_p2/ethernet_conf_derived_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/mii_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_server_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/mii_full_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/mii_queue_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_server_full_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_server_lite_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_rx_client_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_rx_client_lite_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_rx_client_full_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_tx_client_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_tx_client_lite_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_tx_client_full_p2.h \
+  ../../workspace_ethernet_new_replicated/module_ethernet_dual/src/common_p2/ethernet_phy_reset_p2.h \
   ../../workspace_ethernet_new_replicated/module_otp_board_info/src/otp_board_info.h \
   ../../workspace_ethernet_new_replicated/module_ethernet_board_support/common/ethernet_board_support.h \
   ../../workspace_ethernet_new_replicated/app_ethernet_demo/src/checksum.h

@@ -501,10 +501,10 @@ void _ethernet_get_mii_counts( unsigned &dropped );
 # 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_mii_filter.xc" 2
 # 1 "_mii_queue.h" 1
 # 8 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_mii_filter.xc" 2
-# 1 "_ethernet_server_def.h" 1
-# 20 "_ethernet_server_def.h"
+# 1 "ethernet_server_def_p1.h" 1
+# 20 "ethernet_server_def_p1.h"
 # 1 "ethernet_conf_derived_p1.h" 1
-# 21 "_ethernet_server_def.h" 2
+# 21 "ethernet_server_def_p1.h" 2
 # 9 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_mii_filter.xc" 2
 # 1 "xccompat.h" 1 3
 # 10 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_mii_filter.xc" 2

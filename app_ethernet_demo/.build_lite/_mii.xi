@@ -967,10 +967,10 @@ int _load_image(char dst[count], unsigned int src, ___size_t count);
 # 90 "syscall.h" 3
 void _plugins(int type, unsigned arg1, unsigned arg2);
 # 13 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_mii.xc" 2
-# 1 "_ethernet_server_def.h" 1
-# 20 "_ethernet_server_def.h"
+# 1 "ethernet_server_def_p1.h" 1
+# 20 "ethernet_server_def_p1.h"
 # 1 "ethernet_conf_derived_p1.h" 1
-# 21 "_ethernet_server_def.h" 2
+# 21 "ethernet_server_def_p1.h" 2
 # 14 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_mii.xc" 2
 # 1 "xclib.h" 1 3
 # 35 "xclib.h" 3

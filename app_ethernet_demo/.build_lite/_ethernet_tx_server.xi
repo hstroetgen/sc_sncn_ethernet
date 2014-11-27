@@ -534,12 +534,12 @@ void _ethernet_get_mii_counts( unsigned &dropped );
 # 8 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_tx_server.xc" 2
 # 1 "_mii_queue.h" 1
 # 9 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_tx_server.xc" 2
-# 1 "_ethernet_server_def.h" 1
-# 20 "_ethernet_server_def.h"
+# 1 "ethernet_server_def_p1.h" 1
+# 20 "ethernet_server_def_p1.h"
 # 1 "ethernet_conf_derived_p1.h" 1
-# 21 "_ethernet_server_def.h" 2
+# 21 "ethernet_server_def_p1.h" 2
 # 10 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/_ethernet_tx_server.xc" 2
-# 1 "_ethernet_link_status.h" 1
+# 1 "ethernet_link_status_p1.h" 1
 
 
 void _ethernet_update_link_status(int linkNum, int status);
