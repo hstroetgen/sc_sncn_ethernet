@@ -15,8 +15,8 @@
  *
  *************************************************************************/
  
-#ifndef _ETHERNET_RX_CLIENT_LITE_H_
-#define _ETHERNET_RX_CLIENT_LITE_H_ 1
+#ifndef _ETHERNET_RX_CLIENT_LITE_P1_H_
+#define _ETHERNET_RX_CLIENT_LITE_P1_H_ 1
 #include <xccompat.h>
 
 /** This function receives a complete frame (i.e. src/dest MAC address,

@@ -3,8 +3,8 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#ifndef __mii_full_h__
-#define __mii_full_h__
+#ifndef __mii_full_p2_h__
+#define __mii_full_p2_h__
 #include <xs1.h>
 #include <xccompat.h>
 #include "mii.h"

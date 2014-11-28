@@ -1,5 +1,5 @@
-#ifndef __ethernet_link_status_h__
-#define __ethernet_link_status_h__
+#ifndef __ethernet_link_status_p1_h__
+#define __ethernet_link_status_p1_h__
 void _ethernet_update_link_status(int linkNum, int status);
 
 int _ethernet_get_link_status(int linkNum);

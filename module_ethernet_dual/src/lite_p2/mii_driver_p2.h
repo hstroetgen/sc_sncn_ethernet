@@ -1,5 +1,5 @@
-#ifndef __miiDriver_h__
-#define __miiDriver_h__
+#ifndef __miiDriver_p2_h__
+#define __miiDriver_p2_h__
 #define MII_FORCE_USE_LITE
 #include "mii.h"
 

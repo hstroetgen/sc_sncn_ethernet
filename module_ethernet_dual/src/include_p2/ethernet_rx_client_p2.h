@@ -3,8 +3,8 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#ifndef __ethernet_rx_client_h__
-#define __ethernet_rx_client_h__
+#ifndef __ethernet_rx_client_p2_h__
+#define __ethernet_rx_client_p2_h__
 
 #include "ethernet_conf_derived.h"
 #include "ethernet_rx_client_lite_p2.h"

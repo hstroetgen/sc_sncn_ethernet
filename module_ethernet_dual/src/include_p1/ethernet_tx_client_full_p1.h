@@ -14,8 +14,8 @@
  *
  *************************************************************************/
 
-#ifndef _ETHERNET_TX_CLIENT_FULL_H_
-#define _ETHERNET_TX_CLIENT_FULL_H_ 1
+#ifndef _ETHERNET_TX_CLIENT_FULL_P1_H_
+#define _ETHERNET_TX_CLIENT_FULL_P1_H_ 1
 #include <xccompat.h>
 
 #define ETH_BROADCAST (-1)

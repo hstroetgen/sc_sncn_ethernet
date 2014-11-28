@@ -3,8 +3,8 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#ifndef __mii_filter_h__
-#define __mii_filter_h__
+#ifndef __mii_filter_p2_h__
+#define __mii_filter_p2_h__
 #include "mii_full_p2.h"
 #include "mii_queue_p2.h"
 #include "mii_malloc_p2.h"

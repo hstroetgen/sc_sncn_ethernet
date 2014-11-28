@@ -1,5 +1,5 @@
-#ifndef _mii_lite_h_
-#define _mii_lite_h_
+#ifndef _mii_lite_p1_h_
+#define _mii_lite_p1_h_
 
 #include <xs1.h>
 #include <xccompat.h>

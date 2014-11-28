@@ -3,8 +3,8 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#ifndef _ethernet_server_full_h_
-#define _ethernet_server_full_h_
+#ifndef _ethernet_server_full_p2_h_
+#define _ethernet_server_full_p2_h_
 
 #include "smi.h"
 #include "mii.h"

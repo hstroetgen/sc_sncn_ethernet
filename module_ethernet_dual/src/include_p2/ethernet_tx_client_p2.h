@@ -14,8 +14,8 @@
  *
  *************************************************************************/
 
-#ifndef _ETHERNET_TX_CLIENT_H_
-#define _ETHERNET_TX_CLIENT_H_ 1
+#ifndef _ETHERNET_TX_CLIENT_P2_H_
+#define _ETHERNET_TX_CLIENT_P2_H_ 1
 
 #include "ethernet_conf_derived.h"
 

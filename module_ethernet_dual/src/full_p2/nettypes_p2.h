@@ -3,8 +3,8 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#ifndef __nettypes_h__
-#define __nettypes_h__
+#ifndef __nettypes_p2_h__
+#define __nettypes_p2_h__
 
 /* Useful types for network packet processing */
 

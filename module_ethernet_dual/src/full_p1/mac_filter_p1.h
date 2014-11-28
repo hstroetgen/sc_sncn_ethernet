@@ -1,5 +1,5 @@
-#ifndef __mac_filter_h__
-#define __mac_filter_h__
+#ifndef __mac_filter_p1_h__
+#define __mac_filter_p1_h__
 
 #include "ethernet_conf_derived.h"
 

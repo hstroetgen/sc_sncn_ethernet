@@ -1,5 +1,5 @@
-#ifndef __ethernet0__h__
-#define __ethernet0__h__
+#ifndef __ethernet_p1__h__
+#define __ethernet_p1__h__
 
 #include "ethernet_conf_derived.h"
 #include "platform.h"

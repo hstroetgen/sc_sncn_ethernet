@@ -1,5 +1,5 @@
-#ifndef __mii_malloc_h__
-#define __mii_malloc_h__
+#ifndef __mii_malloc_p1_h__
+#define __mii_malloc_p1_h__
 #include "mii_full_p1.h"
 #include <xccompat.h>
 typedef unsigned mii_mempool_t;

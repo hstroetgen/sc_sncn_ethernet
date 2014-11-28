@@ -9,8 +9,8 @@
  */
 
 
-#ifndef _SW_COMPS_COMMON_H_
-#define _SW_COMPS_COMMON_H_  1
+#ifndef _SW_COMPS_COMMON_P1_H_
+#define _SW_COMPS_COMMON_P1_H_  1
 
 // Generic definations.
 #ifndef NULL

@@ -20,8 +20,8 @@
  *
  *************************************************************************/
 
-#ifndef _ETHERNET_RX_SERVER_H_
-#define _ETHERNET_RX_SERVER_H_ 
+#ifndef _ETHERNET_RX_SERVER_P2_H_
+#define _ETHERNET_RX_SERVER_P2_H_
 #include <xccompat.h>
 // Common definations for Ethernet server.
 #include "ethernet_server_def_p2.h"

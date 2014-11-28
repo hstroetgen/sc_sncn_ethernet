@@ -15,8 +15,8 @@
  *
  *************************************************************************/
  
-#ifndef _ETHERNET_RX_CLIENT_FULL_H_
-#define _ETHERNET_RX_CLIENT_FULL_H_ 1
+#ifndef _ETHERNET_RX_CLIENT_FULL_P1_H_
+#define _ETHERNET_RX_CLIENT_FULL_P1_H_ 1
 #include <xccompat.h>
 
 

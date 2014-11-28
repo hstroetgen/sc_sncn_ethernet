@@ -1,4 +1,4 @@
-#ifndef __ethernet_link_status_h__
+#ifndef __ethernet_link_status_p1_h__
 
 void ethernet_update_link_status(int linkNum, int status);
 

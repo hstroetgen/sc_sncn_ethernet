@@ -14,8 +14,8 @@
  *
  *************************************************************************/
  
-#ifndef _ETHERNET_SERVER_DEF_H_
-#define _ETHERNET_SERVER_DEF_H_ 1
+#ifndef _ETHERNET_SERVER_DEF_P2_H_
+#define _ETHERNET_SERVER_DEF_P2_H_ 1
 
 #include "ethernet_conf_derived.h"
 
