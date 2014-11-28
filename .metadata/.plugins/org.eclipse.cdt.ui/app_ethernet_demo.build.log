@@ -3,5 +3,62 @@
 
 xmake CONFIG=lite all 
 Using modules: module_ethernet_dual module_ethernet_board_support module_otp_board_info module_slicekit_support module_ethernet_smi module_locks
-xmake[1]: `bin/lite/app_ethernet_demo_lite.xe' is up to date.
+Creating dependencies for demo.xc
+/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/mii_full_p2.h:109: warning: The macro is redefined
+    #define MII_PACKET_HEADER_SIZE (sizeof(mii_packet_t) - ((MAX_ETHERNET_PACKET_SIZE+3)/4)*4)
+    from /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_server_p2.h: 10:    #include "mii_full_p2.h"
+    from /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_p2.h: 8:    #include "ethernet_server_p2.h"
+    from ../src/demo.xc: 28:    #include "ethernet_p2.h"
+    previously macro "MII_PACKET_HEADER_SIZE" defined as: #define MII_PACKET_HEADER_SIZE (sizeof(_mii_packet_t) - ((MAX_ETHERNET_PACKET_SIZE+3)/4)*4) 	/* /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_full_p1.h:109	*/
+/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/mii_full_p2.h:125: warning: The macro is redefined
+    #define create_buf_getset(field) inline int mii_packet_get_##field (int buf) { int x; __asm__("ldw %0,%1[" STRINGIFY(BUF_OFFSET_ ## field) "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_##field (int buf, int x) { __asm__("stw %1, %0[" STRINGIFY(BUF_OFFSET_ ## field) "]"::"r"(buf),"r"(x)); }
+    from /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_server_p2.h: 10:    #include "mii_full_p2.h"
+    from /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_p2.h: 8:    #include "ethernet_server_p2.h"
+    from ../src/demo.xc: 28:    #include "ethernet_p2.h"
+    previously macro "create_buf_getset" defined as: #define create_buf_getset(field) inline int _mii_packet_get_##field (int buf) { int x; __asm__("ldw %0,%1[" STRINGIFY(BUF_OFFSET_ ## field) "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_##field (int buf, int x) { __asm__("stw %1, %0[" STRINGIFY(BUF_OFFSET_ ## field) "]"::"r"(buf),"r"(x)); } 	/* /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_full_p1.h:125	*/
+Compiling demo.xc
+/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/mii_full_p2.h:109: warning: The macro is redefined
+    #define MII_PACKET_HEADER_SIZE (sizeof(mii_packet_t) - ((MAX_ETHERNET_PACKET_SIZE+3)/4)*4)
+    from /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_server_p2.h: 10:    #include "mii_full_p2.h"
+    from /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_p2.h: 8:    #include "ethernet_server_p2.h"
+    from ../src/demo.xc: 28:    #include "ethernet_p2.h"
+    previously macro "MII_PACKET_HEADER_SIZE" defined as: #define MII_PACKET_HEADER_SIZE (sizeof(_mii_packet_t) - ((MAX_ETHERNET_PACKET_SIZE+3)/4)*4) 	/* /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_full_p1.h:109	*/
+/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/mii_full_p2.h:125: warning: The macro is redefined
+    #define create_buf_getset(field) inline int mii_packet_get_##field (int buf) { int x; __asm__("ldw %0,%1[" STRINGIFY(BUF_OFFSET_ ## field) "]":"=r"(x):"r"(buf)); return x; } inline void mii_packet_set_##field (int buf, int x) { __asm__("stw %1, %0[" STRINGIFY(BUF_OFFSET_ ## field) "]"::"r"(buf),"r"(x)); }
+    from /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_server_p2.h: 10:    #include "mii_full_p2.h"
+    from /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_p2.h: 8:    #include "ethernet_server_p2.h"
+    from ../src/demo.xc: 28:    #include "ethernet_p2.h"
+    previously macro "create_buf_getset" defined as: #define create_buf_getset(field) inline int _mii_packet_get_##field (int buf) { int x; __asm__("ldw %0,%1[" STRINGIFY(BUF_OFFSET_ ## field) "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_##field (int buf, int x) { __asm__("stw %1, %0[" STRINGIFY(BUF_OFFSET_ ## field) "]"::"r"(buf),"r"(x)); } 	/* /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_full_p1.h:125	*/
+../src/demo.xc: In function `main':
+../src/demo.xc:639: warning: unused variable `rx1'
+../src/demo.xc:639: warning: unused variable `tx1'
+Creating app_ethernet_demo_lite.xe
+Constraint check for "tile[0]" (node "0", tile 0):
+  Cores available:            8,   used:          3 .  OKAY
+  Timers available:          10,   used:          3 .  OKAY
+  Chanends available:        32,   used:         10 .  OKAY
+  Memory available:       65536,   used:      42240 .  OKAY
+    (Stack: 32032, Code: 9256, Data: 952)
+Constraints checks PASSED.
+Constraint check for "tile[1]" (node "1", tile 0):
+  Cores available:            8,   used:          1 .  OKAY
+  Timers available:          10,   used:          1 .  OKAY
+  Chanends available:        32,   used:          0 .  OKAY
+  Memory available:       65536,   used:       1988 .  OKAY
+    (Stack: 336, Code: 1412, Data: 240)
+Constraints checks PASSED.
+Constraint check for "tile[2]" (node "2", tile 0):
+  Cores available:            8,   used:          1 .  OKAY
+  Timers available:          10,   used:          1 .  OKAY
+  Chanends available:        32,   used:          0 .  OKAY
+  Memory available:       65536,   used:       1988 .  OKAY
+    (Stack: 336, Code: 1412, Data: 240)
+Constraints checks PASSED.
+Constraint check for "tile[3]" (node "3", tile 0):
+  Cores available:            8,   used:          1 .  OKAY
+  Timers available:          10,   used:          1 .  OKAY
+  Chanends available:        32,   used:          0 .  OKAY
+  Memory available:       65536,   used:       1988 .  OKAY
+    (Stack: 336, Code: 1412, Data: 240)
+Constraints checks PASSED.
 Build Complete

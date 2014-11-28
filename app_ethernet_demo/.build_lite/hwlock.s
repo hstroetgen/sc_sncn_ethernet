@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/module_locks/src/hwlock.c"
+	.file	"/home/atena/workspace_ethernet_new_replicated_rec/module_locks/src/hwlock.c"
 
 .set hwlock_alloc.locnoside, 1
 
@@ -41,8 +41,8 @@
 .set hwlock_release.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_locks/src/hwlock.c"
-	.file	2 "/home/atena/workspace_ethernet_new_replicated/module_locks/src/hwlock.h"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated_rec/module_locks/src/hwlock.c"
+	.file	2 "/home/atena/workspace_ethernet_new_replicated_rec/module_locks/src/hwlock.h"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
 	.section	.debug_abbrev,"",@progbits
@@ -241,7 +241,7 @@ hwlock_release:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	506
+	.long	514
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -249,11 +249,11 @@ hwlock_release:
 	.ascii	 "4.2.1 (LLVM build) XMOS Community_13.1.0 (build 12073)"
 	.byte	0
 	.short	1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_locks/src/hwlock.c"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_locks/src/hwlock.c"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_lite"
 	.byte	0
 	.byte	2
 	.ascii	 "hwlock_alloc"
@@ -263,7 +263,7 @@ hwlock_release:
 	.byte	2
 	.byte	30
 	.byte	1
-	.long	313
+	.long	321
 	.byte	1
 	.long	.Lfunc_begin0
 	.long	.Lfunc_end0
@@ -278,7 +278,7 @@ hwlock_release:
 	.byte	0
 	.byte	2
 	.byte	31
-	.long	313
+	.long	321
 	.byte	2
 	.byte	145
 	.byte	0
@@ -290,7 +290,7 @@ hwlock_release:
 	.byte	7
 	.byte	4
 	.byte	6
-	.long	297
+	.long	305
 	.ascii	 "hwlock_t"
 	.byte	0
 	.byte	2
@@ -314,7 +314,7 @@ hwlock_release:
 	.byte	0
 	.byte	2
 	.byte	45
-	.long	313
+	.long	321
 	.byte	2
 	.byte	145
 	.byte	4
@@ -338,7 +338,7 @@ hwlock_release:
 	.byte	0
 	.byte	2
 	.byte	60
-	.long	313
+	.long	321
 	.byte	2
 	.byte	145
 	.byte	4
@@ -362,7 +362,7 @@ hwlock_release:
 	.byte	0
 	.byte	2
 	.byte	75
-	.long	313
+	.long	321
 	.byte	2
 	.byte	145
 	.byte	4
@@ -513,13 +513,13 @@ hwlock_release:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	385
+	.long	393
 .asciiz "hwlock_acquire"
-	.long	225
+	.long	233
 .asciiz "hwlock_alloc"
-	.long	447
+	.long	455
 .asciiz "hwlock_release"
-	.long	329
+	.long	337
 .asciiz "hwlock_free"
 	.long	0
 .Lpubnames_end1:

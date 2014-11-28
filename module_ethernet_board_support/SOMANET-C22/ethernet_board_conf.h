@@ -71,77 +71,39 @@
 #define PORT_ETH_ERR on tile[1]: XS1_PORT_4D
 
 #else
-// Default to CIRCLE
-/*
-#define ETHERNET_DEFAULT_TILE_P1 tile[1]
-#define PORT_ETH_RXCLK0 on tile[1]: XS1_PORT_1J
-#define PORT_ETH_RXD0 on tile[1]: XS1_PORT_4E
-#define PORT_ETH_TXD0 on tile[1]: XS1_PORT_4F
-#define PORT_ETH_RXDV0 on tile[1]: XS1_PORT_1K
-#define PORT_ETH_TXEN0 on tile[1]: XS1_PORT_1L
-#define PORT_ETH_TXCLK0 on tile[1]: XS1_PORT_1I
-#define PORT_ETH_MDIO0 on tile[1]: XS1_PORT_1M
-#define PORT_ETH_MDC0 on tile[1]: XS1_PORT_1N
-#define PORT_ETH_INT0 on tile[1]: XS1_PORT_1O
-#define PORT_ETH_ERR0 on tile[1]: XS1_PORT_1P
 
+#define PORT_ETH_RST_N 1
 
-//TRIANGLE
+#define SMI_COMBINE_MDC_MDIO 1
+#define SMI_MDC_BIT 0
+#define SMI_MDIO_BIT 1
+
+#define ETHERNET_DEFAULT_TILE_P1 tile[0]
+#define PORT_ETH_RST_N0 on tile[0]: XS1_PORT_1P;
+#define PORT_ETH_RXCLK0 on tile[0]: XS1_PORT_1G
+#define PORT_ETH_RXD0 on tile[0]: XS1_PORT_4E
+#define PORT_ETH_TXD0 on tile[0]: XS1_PORT_4F
+#define PORT_ETH_RXDV0 on tile[0]: XS1_PORT_1O
+#define PORT_ETH_TXEN0 on tile[0]: XS1_PORT_1N
+#define PORT_ETH_TXCLK0 on tile[0]: XS1_PORT_1I
+#define PORT_ETH_MDIOC0 on tile[0]: XS1_PORT_4D
+#define PORT_ETH_MDIOFAKE0 on tile[0]: XS1_PORT_8B
+#define PORT_ETH_ERR0 on tile[0]: XS1_PORT_1M
+
 #define ETHERNET_DEFAULT_TILE_P2 tile[0]
+#define PORT_ETH_RST_N1 on tile[0]: XS1_PORT_1F;
 #define PORT_ETH_RXCLK1 on tile[0]: XS1_PORT_1J
-#define PORT_ETH_RXD1 on tile[0]: XS1_PORT_4E
-#define PORT_ETH_TXD1 on tile[0]: XS1_PORT_4F
-#define PORT_ETH_RXDV1 on tile[0]: XS1_PORT_1K
-#define PORT_ETH_TXEN1 on tile[0]: XS1_PORT_1L
-#define PORT_ETH_TXCLK1 on tile[0]: XS1_PORT_1I
-#define PORT_ETH_MDIO1 on tile[0]: XS1_PORT_1M
-#define PORT_ETH_MDC1 on tile[0]: XS1_PORT_1N
-#define PORT_ETH_INT1 on tile[0]: XS1_PORT_1O
-#define PORT_ETH_ERR1 on tile[0]: XS1_PORT_1P
-
-*/
-/*
-#define SMI_COMBINE_MDC_MDIO 1
-#define SMI_MDC_BIT 0
-#define SMI_MDIO_BIT 1
-#define ETHERNET_DEFAULT_TILE_P1 tile[1]
-#define PORT_ETH_RXCLK on tile[0]: XS1_PORT_1G
-#define PORT_ETH_RXD on tile[0]: XS1_PORT_4E
-#define PORT_ETH_TXD on tile[0]: XS1_PORT_4F
-#define PORT_ETH_RXDV on tile[0]: XS1_PORT_1O
-#define PORT_ETH_TXEN on tile[0]: XS1_PORT_1N
-#define PORT_ETH_TXCLK on tile[0]: XS1_PORT_1I
-#define PORT_ETH_MDIOC on tile[0]: XS1_PORT_4D
-#define PORT_ETH_MDIOFAKE on tile[0]: XS1_PORT_8B
-#define PORT_ETH_ERR on tile[0]: XS1_PORT_1M
-*/
-/*
-#define SMI_COMBINE_MDC_MDIO 1
-#define SMI_MDC_BIT 0
-#define SMI_MDIO_BIT 1
-#define ETHERNET_DEFAULT_TILE_P1 tile[1]
-#define PORT_ETH_RXCLK0 on tile[1]: XS1_PORT_1B
-#define PORT_ETH_RXD0 on tile[1]: XS1_PORT_4A
-#define PORT_ETH_TXD0 on tile[1]: XS1_PORT_4B
-#define PORT_ETH_RXDV0 on tile[1]: XS1_PORT_1C
-#define PORT_ETH_TXEN0 on tile[1]: XS1_PORT_1F
-#define PORT_ETH_TXCLK0 on tile[1]: XS1_PORT_1G
-#define PORT_ETH_MDIOC0 on tile[1]: XS1_PORT_4C
-#define PORT_ETH_MDIOFAKE0 on tile[1]: XS1_PORT_8A
-#define PORT_ETH_ERR0 on tile[1]: XS1_PORT_4D
-
-
-#define ETHERNET_DEFAULT_TILE_P2 tile[0]
-#define PORT_ETH_RXCLK1 on tile[0]: XS1_PORT_1B
-#define PORT_ETH_RXD1 on tile[0]: XS1_PORT_4A
-#define PORT_ETH_TXD1 on tile[0]: XS1_PORT_4B
-#define PORT_ETH_RXDV1 on tile[0]: XS1_PORT_1C
-#define PORT_ETH_TXEN1 on tile[0]: XS1_PORT_1F
-#define PORT_ETH_TXCLK1 on tile[0]: XS1_PORT_1G
+#define PORT_ETH_RXD1 on tile[0]: XS1_PORT_4B
+#define PORT_ETH_TXD1 on tile[0]: XS1_PORT_4A
+#define PORT_ETH_RXDV1 on tile[0]: XS1_PORT_1L
+#define PORT_ETH_TXEN1 on tile[0]: XS1_PORT_1K
+#define PORT_ETH_TXCLK1 on tile[0]: XS1_PORT_1H
 #define PORT_ETH_MDIOC1 on tile[0]: XS1_PORT_4C
 #define PORT_ETH_MDIOFAKE1 on tile[0]: XS1_PORT_8A
-#define PORT_ETH_ERR1 on tile[0]: XS1_PORT_4D
-*/
+#define PORT_ETH_ERR1 on tile[0]: XS1_PORT_1E
+
+
+
 #endif
 #endif
 #endif

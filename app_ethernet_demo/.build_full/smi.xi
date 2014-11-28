@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-# 6 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+# 6 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -300,8 +300,8 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 7 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc" 2
-# 8 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+# 7 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 # 1 "smi.h" 1
 # 9 "smi.h"
 # 1 "xs1.h" 1 3
@@ -322,15 +322,30 @@ typedef out buffered port:8 out_buffered_port_8_t;
 typedef out buffered port:16 out_buffered_port_16_t;
 typedef out buffered port:32 out_buffered_port_32_t;
 # 11 "smi.h" 2
+# 13 "smi.h"
+# 1 "ethernet_conf_derived.h" 1
+# 3 "ethernet_conf_derived.h"
+# 1 "platform.h" 1 3
+# 21 "platform.h" 3
+# 1 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full/SOMANET-C22.h" 1
+# 4 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full/SOMANET-C22.h"
+# 1 "xs1.h" 1 3
+# 5 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full/SOMANET-C22.h" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full/SOMANET-C22.h"
+extern tileref tile[4];
+# 22 "platform.h" 2 3
+# 4 "ethernet_conf_derived.h" 2
+# 6 "ethernet_conf_derived.h"
+# 1 "ethernet_conf.h" 1
+# 7 "ethernet_conf_derived.h" 2
+# 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
 # 18 "smi.h" 2
 # 43 "smi.h"
 typedef struct smi_interface_t {
     int phy_address;
-
-    port p_smi_mdio;
-
+# 48 "smi.h"
     port p_smi_mdc;
 } smi_interface_t;
 # 56 "smi.h"
@@ -348,7 +363,7 @@ int smi_check_link_state( smi_interface_t &smi );
 
 
 int smi_reg( smi_interface_t &smi , unsigned reg, unsigned val, int inning);
-# 9 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc" 2
+# 9 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc" 2
 # 1 "print.h" 1 3
 # 34 "print.h" 3
 int printchar(char value);
@@ -382,10 +397,15 @@ int printllonghexln(unsigned long long value);
 int printstr(const char (& alias s)[]);
 # 133 "print.h" 3
 int printstrln(const char (& alias s)[]);
-# 10 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc" 2
-# 76 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+# 10 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc" 2
+# 76 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 void smi_init(smi_interface_t &smi) {
-# 94 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+# 89 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+  if ( 1  || (smi.phy_address < 0)) {
+    smi.p_smi_mdc <: 1 <<  0 ;
+    return;
+  }
+
   smi.p_smi_mdc <: 1;
 }
 
@@ -397,28 +417,37 @@ void smi_init(smi_interface_t &smi) {
 
 static int smi_bit_shift(smi_interface_t &smi, unsigned data, unsigned count, unsigned inning) {
     int i = count, dataBit = 0, t;
-# 137 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-    smi.p_smi_mdc <: ~0 @ t;
-    while (i != 0) {
-        i--;
-        smi.p_smi_mdc @ (t+30) <: 0;
-        if (!inning) {
-          int dataBit;
-          dataBit = ((data >> i) & 1) <<  0 ;
-# 147 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-          smi.p_smi_mdio <: dataBit;
-        }
-        smi.p_smi_mdc @ (t+60) <: ~0;
+
+
+    if ( 1  || (smi.phy_address < 0)) {
+        smi.p_smi_mdc :> void @ t;
         if (inning) {
-          smi.p_smi_mdio :> dataBit;
-          dataBit = dataBit >>  0 ;
-          data = (data << 1) | dataBit;
+            while (i != 0) {
+                i--;
+                smi.p_smi_mdc @ (t + 30) :> dataBit;
+                dataBit &= (1 <<  1 );
+                smi.p_smi_mdc <: dataBit;
+                data = (data << 1) | (dataBit >>  1 );
+                smi.p_smi_mdc @ (t + 60) <: 1 <<  0  | dataBit;
+                smi.p_smi_mdc :> void;
+                t += 60;
+            }
+            smi.p_smi_mdc @ (t+30) :> void;
+        } else {
+          while (i != 0) {
+                i--;
+                dataBit = ((data >> i) & 1) <<  1 ;
+                smi.p_smi_mdc @ (t + 30) <: dataBit;
+                smi.p_smi_mdc @ (t + 60) <: 1 <<  0  | dataBit;
+                t += 60;
+            }
+            smi.p_smi_mdc @ (t+30) <: 1 <<  0  | dataBit;
         }
-        t += 60;
+        return data;
     }
-    smi.p_smi_mdc @ (t+30) <: ~0;
-    return data;
-# 162 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+# 160 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+    return 0;
+
 }
 
 

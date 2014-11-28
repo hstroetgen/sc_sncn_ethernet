@@ -1,4 +1,4 @@
-	.file	"/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.file	"/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 
 	.inline_definition delay_seconds
 	.inline_definition delay_milliseconds
@@ -65,8 +65,8 @@
 	.set smi_check_link_state.locnonotificationselect, 1
 
 
-	.file	1 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-	.file	2 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/timer.h"
+	.file	1 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+	.file	2 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full/timer.h"
 	.section	.debug_info,"",@progbits
 .Lsection_info:
 	.section	.debug_abbrev,"",@progbits
@@ -98,11 +98,11 @@ smi_init:
 .Lfunc_begin0:
 	.loc	1 76 0
 .Lxtalabel0:
-	.loc	1 94 0 prologue_end
-	ldw r0, r0[2]
+	.loc	1 90 0 prologue_end
+	ldw r0, r0[1]
 .Ltmp1:
 	mkmsk r1, 1
-	.loc	1 94 0
+	.loc	1 90 0
 .Lxta.endpoint_labels0:
 	out res[r0], r1
 	retsp 0
@@ -676,144 +676,178 @@ smi_reg:
 	.align	2
 	.type	smi_bit_shift,@function
 smi_bit_shift:
-.Ltmp150:
+.Ltmp148:
 	.cfi_startproc
 .Lfunc_begin7:
 	.loc	1 103 0
 .Lxtalabel13:
-	entsp 7
-.Ltmp151:
-	.cfi_def_cfa_offset 28
-.Ltmp152:
+	entsp 5
+.Ltmp149:
+	.cfi_def_cfa_offset 20
+.Ltmp150:
 	.cfi_offset 15, 0
 	.loc	1 103 0 prologue_end
-.Ltmp153:
-	stw r4, sp[6]
-.Ltmp154:
+.Ltmp151:
+	stw r4, sp[4]
+.Ltmp152:
 	.cfi_offset 4, -4
-	stw r5, sp[5]
-.Ltmp155:
+	stw r5, sp[3]
+.Ltmp153:
 	.cfi_offset 5, -8
-	stw r6, sp[4]
-.Ltmp156:
+	stw r6, sp[2]
+.Ltmp154:
 	.cfi_offset 6, -12
-	stw r7, sp[3]
-.Ltmp157:
+	stw r7, sp[1]
+.Ltmp155:
 	.cfi_offset 7, -16
-	stw r8, sp[2]
-.Ltmp158:
+	stw r8, sp[0]
+.Ltmp156:
 	.cfi_offset 8, -20
-	stw r9, sp[1]
+.Ltmp157:
+	.loc	1 108 0
+	ldw r0, r0[1]
+.Ltmp158:
+	setc res[r0], 1
+	.loc	1 108 0
 .Ltmp159:
-	.cfi_offset 9, -24
-	stw r10, sp[0]
-.Ltmp160:
-	.cfi_offset 10, -28
-.Ltmp161:
-	.loc	1 137 0
-	ldw r11, r0[2]
-	mkmsk r4, 32
-	.loc	1 137 0
 .Lxta.endpoint_labels1:
-	out res[r11], r4
-	.loc	1 137 0
-	syncr res[r11]
-	getts r5, res[r11]
-.Ltmp162:
-	bf r2, .LBB7_6
-.Ltmp163:
-	ldc r6, 30
-	ldc r7, 0
-	ldc r8, 60
-.Ltmp164:
-.LBB7_2:
+	in r11, res[r0]
+	.loc	1 108 0
+	getts r11, res[r0]
+.Ltmp160:
+	.loc	1 109 0
+	bf r3, .LBB7_6
+.Ltmp161:
 .Lxtalabel14:
-	.loc	1 140 0
-	add r9, r5, r6
-	setpt res[r11], r9
-	.loc	1 140 0
-.Lxta.endpoint_labels2:
-	out res[r11], r7
-	.loc	1 139 0
-	sub r2, r2, 1
-.Ltmp165:
-	.loc	1 141 0
-	bt r3, .LBB7_4
+	.loc	1 110 0
+	bf r2, .LBB7_4
+.Ltmp162:
+	ldc r3, 30
+	ldc r4, 2
+	ldc r5, 60
+	mkmsk r6, 1
+.Ltmp163:
+.LBB7_3:
 .Lxtalabel15:
-	.loc	1 143 0
-.Ltmp166:
-	shr r9, r1, r2
-	zext r9, 1
-.Ltmp167:
-	.loc	1 147 0
-	ldw r10, r0[1]
-	.loc	1 147 0
+	.loc	1 112 0
+	add r7, r11, r3
+	setc res[r0], 1
+	setpt res[r0], r7
+	.loc	1 112 0
+.Lxta.endpoint_labels2:
+	in r7, res[r0]
+	.loc	1 113 0
+	and r7, r7, r4
+	.loc	1 114 0
 .Lxta.endpoint_labels3:
-	out res[r10], r9
-.Ltmp168:
-	.loc	1 149 0
-	add r5, r5, r8
-	setpt res[r11], r5
-	.loc	1 149 0
+	out res[r0], r7
+	.loc	1 116 0
+	add r11, r11, r5
+.Ltmp164:
+	setpt res[r0], r11
+	or r8, r7, r6
+	.loc	1 116 0
 .Lxta.endpoint_labels4:
-	out res[r11], r4
-	bu .LBB7_5
-.Ltmp169:
-.LBB7_4:
-.Lxtalabel16:
-	.loc	1 149 0
-	add r5, r5, r8
-.Ltmp170:
-	setpt res[r11], r5
-	.loc	1 149 0
-.Lxta.endpoint_labels5:
-	out res[r11], r4
-	.loc	1 153 0
+	out res[r0], r8
+	.loc	1 115 0
+	shr r7, r7, 1
 	shl r1, r1, 1
-	.loc	1 151 0
-	ldw r9, r0[1]
-	setc res[r9], 1
-	.loc	1 151 0
-.Lxta.endpoint_labels6:
-	in r9, res[r9]
-	.loc	1 153 0
-	or r1, r9, r1
-.Ltmp171:
-.LBB7_5:
-.Lxtalabel17:
+	or r1, r7, r1
+.Ltmp165:
+	.loc	1 117 0
+.Lxta.endpoint_labels5:
+	in r7, res[r0]
 .Lxta.loop_labels0:
 	# LOOPMARKER 0
-	.loc	1 138 0
-	bt r2, .LBB7_2
-.Ltmp172:
+.Ltmp166:
+	.loc	1 111 0
+	sub r2, r2, 1
+.Ltmp167:
+	bt r2, .LBB7_3
+.Ltmp168:
+.LBB7_4:
+.Lxtalabel16:
+	ldc r2, 30
+	.loc	1 120 0
+.Ltmp169:
+	add r2, r11, r2
+	setc res[r0], 1
+	setpt res[r0], r2
+	.loc	1 120 0
+.Ltmp170:
+.Lxta.endpoint_labels6:
+	in r0, res[r0]
+.LBB7_5:
+.Lxtalabel17:
+	mov r0, r1
+	ldw r8, sp[0]
+	ldw r7, sp[1]
+	ldw r6, sp[2]
+	ldw r5, sp[3]
+	ldw r4, sp[4]
+	retsp 5
 .LBB7_6:
 .Lxtalabel18:
-	ldc r0, 30
-	.loc	1 157 0
-	add r0, r5, r0
-	setpt res[r11], r0
-	.loc	1 157 0
+.Ltmp171:
+	.loc	1 122 0
+	bt r2, .LBB7_9
+.Ltmp172:
+	mkmsk r7, 1
+.LBB7_8:
+.Lxtalabel19:
+	ldc r2, 30
+	.loc	1 129 0
+	add r2, r11, r2
+	setpt res[r0], r2
+	.loc	1 129 0
 .Lxta.endpoint_labels7:
-	out res[r11], r4
-	mov r0, r1
-	ldw r10, sp[0]
-	ldw r9, sp[1]
-	ldw r8, sp[2]
-	ldw r7, sp[3]
-	ldw r6, sp[4]
-	ldw r5, sp[5]
-	ldw r4, sp[6]
-	retsp 7
+	out res[r0], r7
+	bu .LBB7_5
+.LBB7_9:
 .Ltmp173:
+	ldc r3, 30
+	ldc r4, 2
+	ldc r5, 60
+	mkmsk r6, 1
 .Ltmp174:
-	.size	smi_bit_shift, .Ltmp174-smi_bit_shift
-.Lfunc_end7:
+.LBB7_10:
+.Lxtalabel20:
+	.loc	1 125 0
+	add r7, r11, r3
+	setpt res[r0], r7
+	.loc	1 123 0
+	sub r2, r2, 1
 .Ltmp175:
+	.loc	1 124 0
+	shr r7, r1, r2
+	shl r7, r7, 1
+	and r7, r7, r4
+	.loc	1 125 0
+.Lxta.endpoint_labels8:
+	out res[r0], r7
+	.loc	1 126 0
+	add r11, r11, r5
+.Ltmp176:
+	setpt res[r0], r11
+	or r7, r7, r6
+	.loc	1 126 0
+.Lxta.endpoint_labels9:
+	out res[r0], r7
+.Lxta.loop_labels1:
+	# LOOPMARKER 1
+	.loc	1 122 0
+	bt r2, .LBB7_10
+	bu .LBB7_8
+.Ltmp177:
+.Ltmp178:
+	.size	smi_bit_shift, .Ltmp178-smi_bit_shift
+.Lfunc_end7:
+.Ltmp179:
 	.cfi_endproc
 .Leh_func_end7:
 
 	.cc_bottom smi_bit_shift.function
-	.set	smi_bit_shift.nstackwords,7
+	.set	smi_bit_shift.nstackwords,5
 	.set	smi_bit_shift.maxcores,1
 	.set	smi_bit_shift.maxtimers,0
 	.set	smi_bit_shift.maxchanends,0
@@ -825,7 +859,7 @@ smi_bit_shift:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	1476
+	.long	1433
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -833,11 +867,11 @@ smi_bit_shift:
 	.ascii	 "XMOS 32-bit XC Compiler Community_13.1.0 (build 12073, May-09-2014)"
 	.byte	0
 	.short	49152
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	0
 	.long	.Lsection_line
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full"
 	.byte	0
 	.byte	1
 	.byte	2
@@ -853,7 +887,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	2
 	.byte	46
-	.long	1463
+	.long	1420
 	.byte	0
 	.byte	2
 	.ascii	 "delay_milliseconds"
@@ -868,7 +902,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	2
 	.byte	54
-	.long	1463
+	.long	1420
 	.byte	0
 	.byte	2
 	.ascii	 "delay_microseconds"
@@ -883,7 +917,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	2
 	.byte	62
-	.long	1463
+	.long	1420
 	.byte	0
 	.byte	4
 	.ascii	 "smi_init"
@@ -903,7 +937,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	76
-	.long	1458
+	.long	1415
 	.long	.Ldebug_loc0+0
 	.byte	0
 	.byte	6
@@ -913,7 +947,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	654
+	.long	633
 	.long	.Lfunc_begin7
 	.long	.Lfunc_end7
 	.byte	1
@@ -924,66 +958,55 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	1458
+	.long	1415
 	.long	.Ldebug_loc59+0
 	.byte	5
 	.ascii	 "data"
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	1463
-	.long	.Ldebug_loc62+0
+	.long	1420
+	.long	.Ldebug_loc61+0
 	.byte	5
 	.ascii	 "count"
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	1463
-	.long	.Ldebug_loc65+0
+	.long	1420
+	.long	.Ldebug_loc66+0
 	.byte	5
 	.ascii	 "inning"
 	.byte	0
 	.byte	1
 	.byte	103
-	.long	1463
-	.long	.Ldebug_loc68+0
+	.long	1420
+	.long	.Ldebug_loc70+0
 	.byte	7
-	.long	.Ltmp161
-	.long	.Ltmp173
+	.long	.Ltmp157
+	.long	.Ltmp177
 	.byte	7
-	.long	.Ltmp161
-	.long	.Ltmp173
+	.long	.Ltmp157
+	.long	.Ltmp177
 	.byte	8
 	.byte	105
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	654
-	.long	.Ldebug_loc71+0
+	.long	633
+	.long	.Ldebug_loc72+0
 	.byte	8
 	.byte	116
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	654
-	.long	.Ldebug_loc75+0
+	.long	633
+	.long	.Ldebug_loc77+0
 	.byte	9
 	.ascii	 "dataBit"
 	.byte	0
 	.byte	1
 	.byte	104
-	.long	654
-	.byte	7
-	.long	.Ltmp166
-	.long	.Ltmp168
-	.byte	8
-	.ascii	 "dataBit"
-	.byte	0
-	.byte	1
-	.byte	142
-	.long	654
-	.long	.Ldebug_loc78+0
-	.byte	0
+	.long	633
 	.byte	0
 	.byte	0
 	.byte	0
@@ -999,7 +1022,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	654
+	.long	633
 	.byte	1
 	.long	.Lfunc_begin6
 	.long	.Lfunc_end6
@@ -1011,28 +1034,28 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	1458
+	.long	1415
 	.long	.Ldebug_loc46+0
 	.byte	5
 	.ascii	 "reg"
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	1463
+	.long	1420
 	.long	.Ldebug_loc49+0
 	.byte	5
 	.ascii	 "val"
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	1463
+	.long	1420
 	.long	.Ldebug_loc52+0
 	.byte	5
 	.ascii	 "inning"
 	.byte	0
 	.byte	1
 	.byte	166
-	.long	654
+	.long	633
 	.long	.Ldebug_loc56+0
 	.byte	0
 	.byte	11
@@ -1042,7 +1065,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	173
-	.long	654
+	.long	633
 	.byte	1
 	.long	.Lfunc_begin4
 	.long	.Lfunc_end4
@@ -1054,7 +1077,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	173
-	.long	1458
+	.long	1415
 	.long	.Ldebug_loc37+0
 	.byte	7
 	.long	.Ltmp95
@@ -1067,7 +1090,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	174
-	.long	1463
+	.long	1420
 	.long	.Ldebug_loc40+0
 	.byte	7
 	.long	.Ltmp97
@@ -1077,7 +1100,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	175
-	.long	1463
+	.long	1420
 	.long	.Ldebug_loc42+0
 	.byte	0
 	.byte	0
@@ -1101,14 +1124,14 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	179
-	.long	654
+	.long	633
 	.long	.Ldebug_loc2+0
 	.byte	5
 	.ascii	 "smi"
 	.byte	0
 	.byte	1
 	.byte	179
-	.long	1458
+	.long	1415
 	.long	.Ldebug_loc5+0
 	.byte	7
 	.long	.Ltmp22
@@ -1121,14 +1144,14 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	180
-	.long	654
+	.long	633
 	.long	.Ldebug_loc9+0
 	.byte	8
 	.ascii	 "basicControl"
 	.byte	0
 	.byte	1
 	.byte	180
-	.long	654
+	.long	633
 	.long	.Ldebug_loc13+0
 	.byte	0
 	.byte	0
@@ -1151,14 +1174,14 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	208
-	.long	654
+	.long	633
 	.long	.Ldebug_loc17+0
 	.byte	5
 	.ascii	 "smi"
 	.byte	0
 	.byte	1
 	.byte	208
-	.long	1458
+	.long	1415
 	.long	.Ldebug_loc20+0
 	.byte	7
 	.long	.Ltmp50
@@ -1171,7 +1194,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	209
-	.long	654
+	.long	633
 	.long	.Ldebug_loc24+0
 	.byte	0
 	.byte	0
@@ -1194,14 +1217,14 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	221
-	.long	654
+	.long	633
 	.long	.Ldebug_loc27+0
 	.byte	5
 	.ascii	 "smi"
 	.byte	0
 	.byte	1
 	.byte	221
-	.long	1458
+	.long	1415
 	.long	.Ldebug_loc30+0
 	.byte	7
 	.long	.Ltmp72
@@ -1214,7 +1237,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	222
-	.long	654
+	.long	633
 	.long	.Ldebug_loc34+0
 	.byte	0
 	.byte	0
@@ -1226,7 +1249,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	235
-	.long	654
+	.long	633
 	.byte	1
 	.long	.Lfunc_begin5
 	.long	.Lfunc_end5
@@ -1238,7 +1261,7 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	235
-	.long	1458
+	.long	1415
 	.long	.Ldebug_loc44+0
 	.byte	0
 	.byte	10
@@ -1249,11 +1272,11 @@ smi_bit_shift:
 	.byte	12
 	.ascii	 "smi_interface_t"
 	.byte	0
-	.byte	12
+	.byte	8
 	.byte	13
 	.ascii	 "phy_address"
 	.byte	0
-	.long	654
+	.long	633
 	.byte	1
 	.byte	76
 	.byte	2
@@ -1261,28 +1284,18 @@ smi_bit_shift:
 	.byte	0
 	.byte	1
 	.byte	13
-	.ascii	 "p_smi_mdio"
+	.ascii	 "p_smi_mdc"
 	.byte	0
-	.long	1365
+	.long	1344
 	.byte	1
 	.byte	76
 	.byte	2
 	.byte	35
 	.byte	4
 	.byte	1
-	.byte	13
-	.ascii	 "p_smi_mdc"
-	.byte	0
-	.long	1365
-	.byte	1
-	.byte	76
-	.byte	2
-	.byte	35
-	.byte	8
-	.byte	1
 	.byte	0
 	.byte	14
-	.long	1373
+	.long	1352
 	.byte	10
 	.ascii	 "unsigned int"
 	.byte	0
@@ -1516,27 +1529,27 @@ smi_bit_shift:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	1163
+	.long	1142
 .asciiz "eth_phy_loopback"
-	.long	1288
+	.long	1267
 .asciiz "smi_check_link_state"
-	.long	290
+	.long	298
 .asciiz "delay_milliseconds"
-	.long	451
+	.long	459
 .asciiz "smi_bit_shift"
-	.long	661
+	.long	640
 .asciiz "smi_reg"
-	.long	346
+	.long	354
 .asciiz "delay_microseconds"
-	.long	875
+	.long	854
 .asciiz "eth_phy_config"
-	.long	1026
+	.long	1005
 .asciiz "eth_phy_config_noauto"
-	.long	402
+	.long	410
 .asciiz "smi_init"
-	.long	244
+	.long	252
 .asciiz "delay_seconds"
-	.long	760
+	.long	739
 .asciiz "eth_phy_id"
 	.long	0
 .Lpubnames_end1:
@@ -1548,7 +1561,7 @@ smi_bit_shift:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	1373
+	.long	1352
 .asciiz "smi_interface_t"
 	.long	0
 .Lpubtypes_end1:
@@ -1556,499 +1569,538 @@ smi_bit_shift:
 .Ldebug_loc0:
 	.long	.Lfunc_begin0
 	.long	.Ltmp1
-.Lset4 = .Ltmp177-.Ltmp176
+.Lset4 = .Ltmp181-.Ltmp180
 	.short	.Lset4
-.Ltmp176:
+.Ltmp180:
 	.byte	80
-.Ltmp177:
+.Ltmp181:
 	.long	0
 	.long	0
 .Ldebug_loc2:
 	.long	.Lfunc_begin1
 	.long	.Ltmp21
-.Lset5 = .Ltmp179-.Ltmp178
+.Lset5 = .Ltmp183-.Ltmp182
 	.short	.Lset5
-.Ltmp178:
+.Ltmp182:
 	.byte	80
-.Ltmp179:
+.Ltmp183:
 	.long	.Ltmp21
 	.long	.Ltmp25
-.Lset6 = .Ltmp181-.Ltmp180
+.Lset6 = .Ltmp185-.Ltmp184
 	.short	.Lset6
-.Ltmp180:
+.Ltmp184:
 	.byte	88
-.Ltmp181:
+.Ltmp185:
 	.long	0
 	.long	0
 .Ldebug_loc5:
 	.long	.Lfunc_begin1
 	.long	.Ltmp20
-.Lset7 = .Ltmp183-.Ltmp182
+.Lset7 = .Ltmp187-.Ltmp186
 	.short	.Lset7
-.Ltmp182:
+.Ltmp186:
 	.byte	81
-.Ltmp183:
+.Ltmp187:
 	.long	.Ltmp20
 	.long	.Ltmp33
-.Lset8 = .Ltmp185-.Ltmp184
+.Lset8 = .Ltmp189-.Ltmp188
 	.short	.Lset8
-.Ltmp184:
+.Ltmp188:
 	.byte	84
-.Ltmp185:
+.Ltmp189:
 	.long	0
 	.long	0
 .Ldebug_loc9:
 	.long	.Ltmp23
 	.long	.Ltmp24
-.Lset9 = .Ltmp187-.Ltmp186
+.Lset9 = .Ltmp191-.Ltmp190
 	.short	.Lset9
-.Ltmp186:
+.Ltmp190:
 	.byte	80
-.Ltmp187:
+.Ltmp191:
 	.long	.Ltmp25
 	.long	.Ltmp27
-.Lset10 = .Ltmp189-.Ltmp188
+.Lset10 = .Ltmp193-.Ltmp192
 	.short	.Lset10
-.Ltmp188:
+.Ltmp192:
 	.byte	80
-.Ltmp189:
+.Ltmp193:
 	.long	0
 	.long	0
 .Ldebug_loc13:
 	.long	.Ltmp28
 	.long	.Ltmp29
-.Lset11 = .Ltmp191-.Ltmp190
+.Lset11 = .Ltmp195-.Ltmp194
 	.short	.Lset11
-.Ltmp190:
+.Ltmp194:
 	.byte	86
-.Ltmp191:
+.Ltmp195:
 	.long	.Ltmp29
 	.long	.Ltmp30
-.Lset12 = .Ltmp193-.Ltmp192
+.Lset12 = .Ltmp197-.Ltmp196
 	.short	.Lset12
-.Ltmp192:
+.Ltmp196:
 	.byte	82
-.Ltmp193:
+.Ltmp197:
 	.long	.Ltmp31
 	.long	.Ltmp32
-.Lset13 = .Ltmp195-.Ltmp194
+.Lset13 = .Ltmp199-.Ltmp198
 	.short	.Lset13
-.Ltmp194:
+.Ltmp198:
 	.byte	82
-.Ltmp195:
+.Ltmp199:
 	.long	0
 	.long	0
 .Ldebug_loc17:
 	.long	.Lfunc_begin2
 	.long	.Ltmp49
-.Lset14 = .Ltmp197-.Ltmp196
+.Lset14 = .Ltmp201-.Ltmp200
 	.short	.Lset14
-.Ltmp196:
+.Ltmp200:
 	.byte	80
-.Ltmp197:
+.Ltmp201:
 	.long	.Ltmp49
 	.long	.Ltmp52
-.Lset15 = .Ltmp199-.Ltmp198
+.Lset15 = .Ltmp203-.Ltmp202
 	.short	.Lset15
-.Ltmp198:
+.Ltmp202:
 	.byte	86
-.Ltmp199:
+.Ltmp203:
 	.long	0
 	.long	0
 .Ldebug_loc20:
 	.long	.Lfunc_begin2
 	.long	.Ltmp48
-.Lset16 = .Ltmp201-.Ltmp200
+.Lset16 = .Ltmp205-.Ltmp204
 	.short	.Lset16
-.Ltmp200:
+.Ltmp204:
 	.byte	81
-.Ltmp201:
+.Ltmp205:
 	.long	.Ltmp48
 	.long	.Ltmp55
-.Lset17 = .Ltmp203-.Ltmp202
+.Lset17 = .Ltmp207-.Ltmp206
 	.short	.Lset17
-.Ltmp202:
+.Ltmp206:
 	.byte	85
-.Ltmp203:
+.Ltmp207:
 	.long	0
 	.long	0
 .Ldebug_loc24:
 	.long	.Ltmp51
 	.long	.Ltmp54
-.Lset18 = .Ltmp205-.Ltmp204
+.Lset18 = .Ltmp209-.Ltmp208
 	.short	.Lset18
-.Ltmp204:
+.Ltmp208:
 	.byte	80
-.Ltmp205:
+.Ltmp209:
 	.long	0
 	.long	0
 .Ldebug_loc27:
 	.long	.Lfunc_begin3
 	.long	.Ltmp71
-.Lset19 = .Ltmp207-.Ltmp206
+.Lset19 = .Ltmp211-.Ltmp210
 	.short	.Lset19
-.Ltmp206:
+.Ltmp210:
 	.byte	80
-.Ltmp207:
+.Ltmp211:
 	.long	.Ltmp71
 	.long	.Ltmp74
-.Lset20 = .Ltmp209-.Ltmp208
+.Lset20 = .Ltmp213-.Ltmp212
 	.short	.Lset20
-.Ltmp208:
+.Ltmp212:
 	.byte	86
-.Ltmp209:
+.Ltmp213:
 	.long	0
 	.long	0
 .Ldebug_loc30:
 	.long	.Lfunc_begin3
 	.long	.Ltmp70
-.Lset21 = .Ltmp211-.Ltmp210
+.Lset21 = .Ltmp215-.Ltmp214
 	.short	.Lset21
-.Ltmp210:
+.Ltmp214:
 	.byte	81
-.Ltmp211:
+.Ltmp215:
 	.long	.Ltmp70
 	.long	.Ltmp77
-.Lset22 = .Ltmp213-.Ltmp212
+.Lset22 = .Ltmp217-.Ltmp216
 	.short	.Lset22
-.Ltmp212:
+.Ltmp216:
 	.byte	85
-.Ltmp213:
+.Ltmp217:
 	.long	0
 	.long	0
 .Ldebug_loc34:
 	.long	.Ltmp73
 	.long	.Ltmp76
-.Lset23 = .Ltmp215-.Ltmp214
+.Lset23 = .Ltmp219-.Ltmp218
 	.short	.Lset23
-.Ltmp214:
+.Ltmp218:
 	.byte	80
-.Ltmp215:
+.Ltmp219:
 	.long	0
 	.long	0
 .Ldebug_loc37:
 	.long	.Lfunc_begin4
 	.long	.Ltmp94
-.Lset24 = .Ltmp217-.Ltmp216
+.Lset24 = .Ltmp221-.Ltmp220
 	.short	.Lset24
-.Ltmp216:
+.Ltmp220:
 	.byte	80
-.Ltmp217:
+.Ltmp221:
 	.long	.Ltmp94
 	.long	.Ltmp101
-.Lset25 = .Ltmp219-.Ltmp218
+.Lset25 = .Ltmp223-.Ltmp222
 	.short	.Lset25
-.Ltmp218:
+.Ltmp222:
 	.byte	84
-.Ltmp219:
+.Ltmp223:
 	.long	0
 	.long	0
 .Ldebug_loc40:
 	.long	.Ltmp96
 	.long	.Ltmp100
-.Lset26 = .Ltmp221-.Ltmp220
+.Lset26 = .Ltmp225-.Ltmp224
 	.short	.Lset26
-.Ltmp220:
+.Ltmp224:
 	.byte	85
-.Ltmp221:
+.Ltmp225:
 	.long	0
 	.long	0
 .Ldebug_loc42:
 	.long	.Ltmp98
 	.long	.Ltmp99
-.Lset27 = .Ltmp223-.Ltmp222
+.Lset27 = .Ltmp227-.Ltmp226
 	.short	.Lset27
-.Ltmp222:
+.Ltmp226:
 	.byte	80
-.Ltmp223:
+.Ltmp227:
 	.long	0
 	.long	0
 .Ldebug_loc44:
 	.long	.Lfunc_begin5
 	.long	.Ltmp110
-.Lset28 = .Ltmp225-.Ltmp224
+.Lset28 = .Ltmp229-.Ltmp228
 	.short	.Lset28
-.Ltmp224:
+.Ltmp228:
 	.byte	80
-.Ltmp225:
+.Ltmp229:
 	.long	0
 	.long	0
 .Ldebug_loc46:
 	.long	.Lfunc_begin6
 	.long	.Ltmp132
-.Lset29 = .Ltmp227-.Ltmp226
+.Lset29 = .Ltmp231-.Ltmp230
 	.short	.Lset29
-.Ltmp226:
+.Ltmp230:
 	.byte	80
-.Ltmp227:
+.Ltmp231:
 	.long	.Ltmp132
 	.long	.Ltmp137
-.Lset30 = .Ltmp229-.Ltmp228
+.Lset30 = .Ltmp233-.Ltmp232
 	.short	.Lset30
-.Ltmp228:
+.Ltmp232:
 	.byte	86
-.Ltmp229:
+.Ltmp233:
 	.long	0
 	.long	0
 .Ldebug_loc49:
 	.long	.Lfunc_begin6
 	.long	.Ltmp131
-.Lset31 = .Ltmp231-.Ltmp230
+.Lset31 = .Ltmp235-.Ltmp234
 	.short	.Lset31
-.Ltmp230:
+.Ltmp234:
 	.byte	81
-.Ltmp231:
+.Ltmp235:
 	.long	.Ltmp131
 	.long	.Ltmp136
-.Lset32 = .Ltmp233-.Ltmp232
+.Lset32 = .Ltmp237-.Ltmp236
 	.short	.Lset32
-.Ltmp232:
+.Ltmp236:
 	.byte	88
-.Ltmp233:
+.Ltmp237:
 	.long	0
 	.long	0
 .Ldebug_loc52:
 	.long	.Lfunc_begin6
 	.long	.Ltmp130
-.Lset33 = .Ltmp235-.Ltmp234
+.Lset33 = .Ltmp239-.Ltmp238
 	.short	.Lset33
-.Ltmp234:
+.Ltmp238:
 	.byte	82
-.Ltmp235:
+.Ltmp239:
 	.long	.Ltmp130
 	.long	.Ltmp134
-.Lset34 = .Ltmp237-.Ltmp236
+.Lset34 = .Ltmp241-.Ltmp240
 	.short	.Lset34
-.Ltmp236:
+.Ltmp240:
 	.byte	85
-.Ltmp237:
+.Ltmp241:
 	.long	.Ltmp134
 	.long	.Ltmp135
-.Lset35 = .Ltmp239-.Ltmp238
+.Lset35 = .Ltmp243-.Ltmp242
 	.short	.Lset35
-.Ltmp238:
+.Ltmp242:
 	.byte	81
-.Ltmp239:
+.Ltmp243:
 	.long	0
 	.long	0
 .Ldebug_loc56:
 	.long	.Lfunc_begin6
 	.long	.Ltmp129
-.Lset36 = .Ltmp241-.Ltmp240
+.Lset36 = .Ltmp245-.Ltmp244
 	.short	.Lset36
-.Ltmp240:
+.Ltmp244:
 	.byte	83
-.Ltmp241:
+.Ltmp245:
 	.long	.Ltmp129
 	.long	.Ltmp138
-.Lset37 = .Ltmp243-.Ltmp242
+.Lset37 = .Ltmp247-.Ltmp246
 	.short	.Lset37
-.Ltmp242:
+.Ltmp246:
 	.byte	84
-.Ltmp243:
+.Ltmp247:
 	.long	0
 	.long	0
 .Ldebug_loc59:
 	.long	.Lfunc_begin7
-	.long	.Ltmp172
-.Lset38 = .Ltmp245-.Ltmp244
+	.long	.Ltmp158
+.Lset38 = .Ltmp249-.Ltmp248
 	.short	.Lset38
-.Ltmp244:
-	.byte	80
-.Ltmp245:
-	.long	0
-	.long	0
-.Ldebug_loc62:
-	.long	.Lfunc_begin7
-	.long	.Ltmp164
-.Lset39 = .Ltmp247-.Ltmp246
-	.short	.Lset39
-.Ltmp246:
-	.byte	81
-.Ltmp247:
-	.long	.Ltmp171
-	.long	.Ltmp171
-.Lset40 = .Ltmp249-.Ltmp248
-	.short	.Lset40
 .Ltmp248:
-	.byte	81
+	.byte	80
 .Ltmp249:
 	.long	0
 	.long	0
-.Ldebug_loc65:
+.Ldebug_loc61:
 	.long	.Lfunc_begin7
-	.long	.Ltmp164
-.Lset41 = .Ltmp251-.Ltmp250
-	.short	.Lset41
-.Ltmp250:
-	.byte	82
-.Ltmp251:
-	.long	0
-	.long	0
-.Ldebug_loc68:
-	.long	.Lfunc_begin7
-	.long	.Ltmp172
-.Lset42 = .Ltmp253-.Ltmp252
-	.short	.Lset42
-.Ltmp252:
-	.byte	83
-.Ltmp253:
-	.long	0
-	.long	0
-.Ldebug_loc71:
-	.long	.Ltmp161
 	.long	.Ltmp163
-.Lset43 = .Ltmp255-.Ltmp254
-	.short	.Lset43
-.Ltmp254:
-	.byte	82
-.Ltmp255:
+.Lset39 = .Ltmp251-.Ltmp250
+	.short	.Lset39
+.Ltmp250:
+	.byte	81
+.Ltmp251:
 	.long	.Ltmp165
-	.long	.Ltmp172
-.Lset44 = .Ltmp257-.Ltmp256
-	.short	.Lset44
+	.long	.Ltmp168
+.Lset40 = .Ltmp253-.Ltmp252
+	.short	.Lset40
+.Ltmp252:
+	.byte	81
+.Ltmp253:
+	.long	.Ltmp171
+	.long	.Ltmp177
+.Lset41 = .Ltmp255-.Ltmp254
+	.short	.Lset41
+.Ltmp254:
+	.byte	81
+.Ltmp255:
+	.long	0
+	.long	0
+.Ldebug_loc66:
+	.long	.Lfunc_begin7
+	.long	.Ltmp163
+.Lset42 = .Ltmp257-.Ltmp256
+	.short	.Lset42
 .Ltmp256:
 	.byte	82
 .Ltmp257:
-	.long	0
-	.long	0
-.Ldebug_loc75:
-	.long	.Ltmp162
-	.long	.Ltmp163
-.Lset45 = .Ltmp259-.Ltmp258
-	.short	.Lset45
-.Ltmp258:
-	.byte	85
-.Ltmp259:
-	.long	.Ltmp170
 	.long	.Ltmp171
-.Lset46 = .Ltmp261-.Ltmp260
-	.short	.Lset46
+	.long	.Ltmp172
+.Lset43 = .Ltmp259-.Ltmp258
+	.short	.Lset43
+.Ltmp258:
+	.byte	82
+.Ltmp259:
+	.long	.Ltmp173
+	.long	.Ltmp174
+.Lset44 = .Ltmp261-.Ltmp260
+	.short	.Lset44
 .Ltmp260:
-	.byte	85
+	.byte	82
 .Ltmp261:
 	.long	0
 	.long	0
-.Ldebug_loc78:
-	.long	.Ltmp167
-	.long	.Ltmp169
-.Lset47 = .Ltmp263-.Ltmp262
-	.short	.Lset47
+.Ldebug_loc70:
+	.long	.Lfunc_begin7
+	.long	.Ltmp161
+.Lset45 = .Ltmp263-.Ltmp262
+	.short	.Lset45
 .Ltmp262:
-	.byte	89
+	.byte	83
 .Ltmp263:
 	.long	0
 	.long	0
-.Ldebug_loc80:
+.Ldebug_loc72:
+	.long	.Ltmp157
+	.long	.Ltmp162
+.Lset46 = .Ltmp265-.Ltmp264
+	.short	.Lset46
+.Ltmp264:
+	.byte	82
+.Ltmp265:
+	.long	.Ltmp167
+	.long	.Ltmp168
+.Lset47 = .Ltmp267-.Ltmp266
+	.short	.Lset47
+.Ltmp266:
+	.byte	82
+.Ltmp267:
+	.long	.Ltmp171
+	.long	.Ltmp172
+.Lset48 = .Ltmp269-.Ltmp268
+	.short	.Lset48
+.Ltmp268:
+	.byte	82
+.Ltmp269:
+	.long	.Ltmp175
+	.long	.Ltmp177
+.Lset49 = .Ltmp271-.Ltmp270
+	.short	.Lset49
+.Ltmp270:
+	.byte	82
+.Ltmp271:
+	.long	0
+	.long	0
+.Ldebug_loc77:
+	.long	.Ltmp160
+	.long	.Ltmp162
+.Lset50 = .Ltmp273-.Ltmp272
+	.short	.Lset50
+.Ltmp272:
+	.byte	91
+.Ltmp273:
+	.long	.Ltmp164
+	.long	.Ltmp168
+.Lset51 = .Ltmp275-.Ltmp274
+	.short	.Lset51
+.Ltmp274:
+	.byte	91
+.Ltmp275:
+	.long	.Ltmp171
+	.long	.Ltmp172
+.Lset52 = .Ltmp277-.Ltmp276
+	.short	.Lset52
+.Ltmp276:
+	.byte	91
+.Ltmp277:
+	.long	.Ltmp176
+	.long	.Ltmp177
+.Lset53 = .Ltmp279-.Ltmp278
+	.short	.Lset53
+.Ltmp278:
+	.byte	91
+.Ltmp279:
+	.long	0
+	.long	0
+.Ldebug_loc82:
 	.section	.debug_aranges,"",@progbits
 	.section	.debug_ranges,"",@progbits
 	.section	.debug_macinfo,"",@progbits
 
-	.typestring smi_init, "f{0}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
-	.typestring eth_phy_config, "f{0}(si,&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
-	.typestring eth_phy_config_noauto, "f{0}(si,&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
-	.typestring eth_phy_loopback, "f{0}(si,&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
-	.typestring eth_phy_id, "f{si}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
-	.typestring smi_check_link_state, "f{si}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}))"
-	.typestring smi_reg, "f{si}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdio){p},m(p_smi_mdc){p}}),ui,ui,si)"
+	.typestring smi_init, "f{0}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}))"
+	.typestring eth_phy_config, "f{0}(si,&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}))"
+	.typestring eth_phy_config_noauto, "f{0}(si,&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}))"
+	.typestring eth_phy_loopback, "f{0}(si,&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}))"
+	.typestring eth_phy_id, "f{si}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}))"
+	.typestring smi_check_link_state, "f{si}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}))"
+	.typestring smi_reg, "f{si}(&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}),ui,ui,si)"
 	.section	.xtacalltable,"",@progbits
 .Lentries_start0:
 	.long	.Lentries_end1-.Lentries_start0
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_0,.Lxta.call_labels12
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	167
 	.long	.Lxta.call_labels12
 .cc_bottom cc_0
 .cc_top cc_1,.Lxta.call_labels13
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	168
 	.long	.Lxta.call_labels13
 .cc_bottom cc_1
 .cc_top cc_2,.Lxta.call_labels14
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	169
 	.long	.Lxta.call_labels14
 .cc_bottom cc_2
 .cc_top cc_3,.Lxta.call_labels15
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	170
 	.long	.Lxta.call_labels15
 .cc_bottom cc_3
 .cc_top cc_4,.Lxta.call_labels9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	174
 	.long	.Lxta.call_labels9
 .cc_bottom cc_4
 .cc_top cc_5,.Lxta.call_labels10
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	175
 	.long	.Lxta.call_labels10
 .cc_bottom cc_5
 .cc_top cc_6,.Lxta.call_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	181
 	.long	.Lxta.call_labels0
 .cc_bottom cc_6
 .cc_top cc_7,.Lxta.call_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	194
 	.long	.Lxta.call_labels1
 .cc_bottom cc_7
 .cc_top cc_8,.Lxta.call_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	196
 	.long	.Lxta.call_labels2
 .cc_bottom cc_8
 .cc_top cc_9,.Lxta.call_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	202
 	.long	.Lxta.call_labels3
 .cc_bottom cc_9
 .cc_top cc_10,.Lxta.call_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	205
 	.long	.Lxta.call_labels4
 .cc_bottom cc_10
 .cc_top cc_11,.Lxta.call_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	209
 	.long	.Lxta.call_labels5
 .cc_bottom cc_11
 .cc_top cc_12,.Lxta.call_labels6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	217
 	.long	.Lxta.call_labels6
 .cc_bottom cc_12
 .cc_top cc_13,.Lxta.call_labels7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	222
 	.long	.Lxta.call_labels7
 .cc_bottom cc_13
 .cc_top cc_14,.Lxta.call_labels8
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	232
 	.long	.Lxta.call_labels8
 .cc_bottom cc_14
 .cc_top cc_15,.Lxta.call_labels11
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	236
 	.long	.Lxta.call_labels11
@@ -2058,317 +2110,315 @@ smi_bit_shift:
 .Lentries_start2:
 	.long	.Lentries_end3-.Lentries_start2
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_16,.Lxta.endpoint_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	94
+	.long	90
 	.long	.Lxta.endpoint_labels0
 .cc_bottom cc_16
 .cc_top cc_17,.Lxta.endpoint_labels1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	137
+	.long	108
 	.long	.Lxta.endpoint_labels1
 .cc_bottom cc_17
 .cc_top cc_18,.Lxta.endpoint_labels2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	140
+	.long	112
 	.long	.Lxta.endpoint_labels2
 .cc_bottom cc_18
 .cc_top cc_19,.Lxta.endpoint_labels3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	147
+	.long	114
 	.long	.Lxta.endpoint_labels3
 .cc_bottom cc_19
 .cc_top cc_20,.Lxta.endpoint_labels4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	149
+	.long	116
 	.long	.Lxta.endpoint_labels4
 .cc_bottom cc_20
 .cc_top cc_21,.Lxta.endpoint_labels5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	149
+	.long	117
 	.long	.Lxta.endpoint_labels5
 .cc_bottom cc_21
 .cc_top cc_22,.Lxta.endpoint_labels6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	151
+	.long	120
 	.long	.Lxta.endpoint_labels6
 .cc_bottom cc_22
-.cc_top cc_23,.Lxta.endpoint_labels7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_23,.Lxta.endpoint_labels8
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	157
-	.long	.Lxta.endpoint_labels7
+	.long	125
+	.long	.Lxta.endpoint_labels8
 .cc_bottom cc_23
+.cc_top cc_24,.Lxta.endpoint_labels9
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+	.byte	0
+	.long	126
+	.long	.Lxta.endpoint_labels9
+.cc_bottom cc_24
+.cc_top cc_25,.Lxta.endpoint_labels7
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+	.byte	0
+	.long	129
+	.long	.Lxta.endpoint_labels7
+.cc_bottom cc_25
 .Lentries_end3:
 	.section	.xtalabeltable,"",@progbits
 .Lentries_start4:
 	.long	.Lentries_end5-.Lentries_start4
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full"
 	.byte	0
-.cc_top cc_24,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_26,.Lxtalabel0
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	77
 	.long	77
 	.long	.Lxtalabel0
-.cc_bottom cc_24
-.cc_top cc_25,.Lxtalabel0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_bottom cc_26
+.cc_top cc_27,.Lxtalabel0
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	94
-	.long	95
+	.long	89
+	.long	89
 	.long	.Lxtalabel0
-.cc_bottom cc_25
-.cc_top cc_26,.Lxtalabel13
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_bottom cc_27
+.cc_top cc_28,.Lxtalabel13
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	104
-	.long	105
+	.long	107
 	.long	.Lxtalabel13
-.cc_bottom cc_26
-.cc_top cc_27,.Lxtalabel13
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-	.byte	0
-	.long	137
-	.long	138
-	.long	.Lxtalabel13
-.cc_bottom cc_27
-.cc_top cc_28,.Lxtalabel14
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-	.byte	0
-	.long	139
-	.long	141
-	.long	.Lxtalabel14
 .cc_bottom cc_28
-.cc_top cc_29,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_29,.Lxtalabel13
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	142
-	.long	144
-	.long	.Lxtalabel15
+	.long	108
+	.long	109
+	.long	.Lxtalabel13
 .cc_bottom cc_29
-.cc_top cc_30,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_30,.Lxtalabel14
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	147
-	.long	148
-	.long	.Lxtalabel15
+	.long	110
+	.long	110
+	.long	.Lxtalabel14
 .cc_bottom cc_30
-.cc_top cc_31,.Lxtalabel16
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_31,.Lxtalabel15
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	149
-	.long	150
-	.long	.Lxtalabel16
-.cc_bottom cc_31
-.cc_top cc_32,.Lxtalabel15
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-	.byte	0
-	.long	149
-	.long	150
+	.long	111
+	.long	119
 	.long	.Lxtalabel15
-.cc_bottom cc_32
-.cc_top cc_33,.Lxtalabel16
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_bottom cc_31
+.cc_top cc_32,.Lxtalabel16
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	151
-	.long	154
+	.long	120
+	.long	121
 	.long	.Lxtalabel16
+.cc_bottom cc_32
+.cc_top cc_33,.Lxtalabel18
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+	.byte	0
+	.long	122
+	.long	122
+	.long	.Lxtalabel18
 .cc_bottom cc_33
-.cc_top cc_34,.Lxtalabel17
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_34,.Lxtalabel20
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	155
-	.long	156
-	.long	.Lxtalabel17
+	.long	123
+	.long	128
+	.long	.Lxtalabel20
 .cc_bottom cc_34
-.cc_top cc_35,.Lxtalabel18
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_35,.Lxtalabel19
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	157
-	.long	159
-	.long	.Lxtalabel18
+	.long	129
+	.long	130
+	.long	.Lxtalabel19
 .cc_bottom cc_35
-.cc_top cc_36,.Lxtalabel18
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_36,.Lxtalabel17
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	162
-	.long	162
-	.long	.Lxtalabel18
+	.long	131
+	.long	132
+	.long	.Lxtalabel17
 .cc_bottom cc_36
 .cc_top cc_37,.Lxtalabel12
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	167
 	.long	171
 	.long	.Lxtalabel12
 .cc_bottom cc_37
 .cc_top cc_38,.Lxtalabel10
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	174
 	.long	177
 	.long	.Lxtalabel10
 .cc_bottom cc_38
 .cc_top cc_39,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	180
 	.long	187
 	.long	.Lxtalabel1
 .cc_bottom cc_39
 .cc_top cc_40,.Lxtalabel2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	180
 	.long	187
 	.long	.Lxtalabel2
 .cc_bottom cc_40
 .cc_top cc_41,.Lxtalabel3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	180
 	.long	187
 	.long	.Lxtalabel3
 .cc_bottom cc_41
 .cc_top cc_42,.Lxtalabel1
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	192
 	.long	206
 	.long	.Lxtalabel1
 .cc_bottom cc_42
 .cc_top cc_43,.Lxtalabel2
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	192
 	.long	206
 	.long	.Lxtalabel2
 .cc_bottom cc_43
 .cc_top cc_44,.Lxtalabel3
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	192
 	.long	206
 	.long	.Lxtalabel3
 .cc_bottom cc_44
-.cc_top cc_45,.Lxtalabel6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-	.byte	0
-	.long	209
-	.long	214
-	.long	.Lxtalabel6
-.cc_bottom cc_45
-.cc_top cc_46,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-	.byte	0
-	.long	209
-	.long	214
-	.long	.Lxtalabel4
-.cc_bottom cc_46
-.cc_top cc_47,.Lxtalabel5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_45,.Lxtalabel5
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	209
 	.long	214
 	.long	.Lxtalabel5
-.cc_bottom cc_47
-.cc_top cc_48,.Lxtalabel6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_bottom cc_45
+.cc_top cc_46,.Lxtalabel6
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	215
-	.long	216
+	.long	209
+	.long	214
 	.long	.Lxtalabel6
-.cc_bottom cc_48
-.cc_top cc_49,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_bottom cc_46
+.cc_top cc_47,.Lxtalabel4
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+	.byte	0
+	.long	209
+	.long	214
+	.long	.Lxtalabel4
+.cc_bottom cc_47
+.cc_top cc_48,.Lxtalabel4
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	215
 	.long	216
 	.long	.Lxtalabel4
+.cc_bottom cc_48
+.cc_top cc_49,.Lxtalabel6
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+	.byte	0
+	.long	215
+	.long	216
+	.long	.Lxtalabel6
 .cc_bottom cc_49
 .cc_top cc_50,.Lxtalabel5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	215
 	.long	216
 	.long	.Lxtalabel5
 .cc_bottom cc_50
-.cc_top cc_51,.Lxtalabel5
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-	.byte	0
-	.long	217
-	.long	218
-	.long	.Lxtalabel5
-.cc_bottom cc_51
-.cc_top cc_52,.Lxtalabel4
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
-	.byte	0
-	.long	217
-	.long	218
-	.long	.Lxtalabel4
-.cc_bottom cc_52
-.cc_top cc_53,.Lxtalabel6
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_51,.Lxtalabel6
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	217
 	.long	218
 	.long	.Lxtalabel6
-.cc_bottom cc_53
-.cc_top cc_54,.Lxtalabel7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_bottom cc_51
+.cc_top cc_52,.Lxtalabel5
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	222
-	.long	227
-	.long	.Lxtalabel7
-.cc_bottom cc_54
-.cc_top cc_55,.Lxtalabel9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.long	217
+	.long	218
+	.long	.Lxtalabel5
+.cc_bottom cc_52
+.cc_top cc_53,.Lxtalabel4
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+	.byte	0
+	.long	217
+	.long	218
+	.long	.Lxtalabel4
+.cc_bottom cc_53
+.cc_top cc_54,.Lxtalabel9
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	222
 	.long	227
 	.long	.Lxtalabel9
-.cc_bottom cc_55
-.cc_top cc_56,.Lxtalabel8
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_bottom cc_54
+.cc_top cc_55,.Lxtalabel8
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	222
 	.long	227
 	.long	.Lxtalabel8
+.cc_bottom cc_55
+.cc_top cc_56,.Lxtalabel7
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
+	.byte	0
+	.long	222
+	.long	227
+	.long	.Lxtalabel7
 .cc_bottom cc_56
 .cc_top cc_57,.Lxtalabel9
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	232
 	.long	233
 	.long	.Lxtalabel9
 .cc_bottom cc_57
 .cc_top cc_58,.Lxtalabel8
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	232
 	.long	233
 	.long	.Lxtalabel8
 .cc_bottom cc_58
 .cc_top cc_59,.Lxtalabel7
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	232
 	.long	233
 	.long	.Lxtalabel7
 .cc_bottom cc_59
 .cc_top cc_60,.Lxtalabel11
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
 	.long	236
 	.long	237
@@ -2379,20 +2429,20 @@ smi_bit_shift:
 .Lentries_start6:
 	.long	.Lentries_end7-.Lentries_start6
 	.long	0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full"
 	.byte	0
 .cc_top cc_61,.Lxta.loop_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	139
-	.long	144
+	.long	111
+	.long	119
 	.long	.Lxta.loop_labels0
 .cc_bottom cc_61
-.cc_top cc_62,.Lxta.loop_labels0
-	.ascii	 "/home/atena/workspace_ethernet_new_replicated/module_ethernet_smi/src/smi.xc"
+.cc_top cc_62,.Lxta.loop_labels1
+	.ascii	 "/home/atena/workspace_ethernet_new_replicated_rec/module_ethernet_smi/src/smi.xc"
 	.byte	0
-	.long	147
-	.long	156
-	.long	.Lxta.loop_labels0
+	.long	123
+	.long	128
+	.long	.Lxta.loop_labels1
 .cc_bottom cc_62
 .Lentries_end7:

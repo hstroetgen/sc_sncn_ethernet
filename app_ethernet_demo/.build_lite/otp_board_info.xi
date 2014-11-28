@@ -1,5 +1,5 @@
-# 1 "/home/atena/workspace_ethernet_new_replicated/module_otp_board_info/src/otp_board_info.xc"
-# 6 "/home/atena/workspace_ethernet_new_replicated/module_otp_board_info/src/otp_board_info.xc"
+# 1 "/home/atena/workspace_ethernet_new_replicated_rec/module_otp_board_info/src/otp_board_info.xc"
+# 6 "/home/atena/workspace_ethernet_new_replicated_rec/module_otp_board_info/src/otp_board_info.xc"
 # 1 "otp_board_info.h" 1
 # 12 "otp_board_info.h"
 # 1 "xccompat.h" 1 3
@@ -32,7 +32,7 @@ int otp_board_info_get_mac( otp_ports_t &ports , unsigned index,
 # 67 "otp_board_info.h"
 int otp_board_info_get_serial( otp_ports_t &ports ,
                               unsigned &value );
-# 7 "/home/atena/workspace_ethernet_new_replicated/module_otp_board_info/src/otp_board_info.xc" 2
+# 7 "/home/atena/workspace_ethernet_new_replicated_rec/module_otp_board_info/src/otp_board_info.xc" 2
 # 1 "xs1.h" 1 3
 # 19 "xs1.h" 3
 # 1 "timer.h" 1 3
@@ -333,7 +333,7 @@ unsigned get_tile_id(tileref t);
 unsigned get_logical_core_id(void);
 # 1934 "xs1.h" 3
 extern int __builtin_getid(void);
-# 8 "/home/atena/workspace_ethernet_new_replicated/module_otp_board_info/src/otp_board_info.xc" 2
+# 8 "/home/atena/workspace_ethernet_new_replicated_rec/module_otp_board_info/src/otp_board_info.xc" 2
 # 1 "xclib.h" 1 3
 # 35 "xclib.h" 3
 unsigned bitrev(unsigned x);
@@ -341,7 +341,7 @@ unsigned bitrev(unsigned x);
 unsigned byterev(unsigned x);
 # 59 "xclib.h" 3
 int clz(unsigned x);
-# 9 "/home/atena/workspace_ethernet_new_replicated/module_otp_board_info/src/otp_board_info.xc" 2
+# 9 "/home/atena/workspace_ethernet_new_replicated_rec/module_otp_board_info/src/otp_board_info.xc" 2
 
 
 

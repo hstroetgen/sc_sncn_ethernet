@@ -13,8 +13,8 @@
 #ifdef PORT_ETH_RST_N
 #ifdef __XC__
 typedef out port ethernet_reset_interface_t;
-#define ETHERNET_DEFAULT_RESET_INTERFACE_INIT PORT_ETH_RST_N
-void eth_phy_reset(ethernet_reset_interface_t eth_rst);
+#define ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2 PORT_ETH_RST_N1
+void eth_phy_reset_p2(ethernet_reset_interface_t eth_rst);
 #endif
 #else
 typedef int ethernet_reset_interface_t;

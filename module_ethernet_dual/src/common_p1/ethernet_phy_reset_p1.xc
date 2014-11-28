@@ -6,7 +6,7 @@
 #endif
 
 #ifdef PORT_ETH_RST_N
-void _eth_phy_reset(ethernet_reset_interface_t p_eth_rst) {
+void eth_phy_reset_p1(_ethernet_reset_interface_t p_eth_rst) {
   timer tmr;
   int t;
   tmr :> t;
