@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;module_ethernet&apos; to &apos;_module_ethernet&apos;" description="Rename resource &apos;module_ethernet&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/module_ethernet" name="_module_ethernet" stamp="1416406360888" updateReferences="true"/>&#x0A;<refactoring comment="Delete resource &apos;module_ethernet&apos;" deleteContents="true" description="Delete resource &apos;module_ethernet&apos;" element1="/module_ethernet" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1416475693353"/>
-</session>
