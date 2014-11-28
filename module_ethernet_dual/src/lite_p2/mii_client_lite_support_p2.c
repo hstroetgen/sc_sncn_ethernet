@@ -1,6 +1,6 @@
 #include <xs1.h>
 #include <xccompat.h>
-#include "ethernet_conf_derived_p2.h"
+#include "ethernet_conf_derived.h"
 #include "ethernet_rx_client_p2.h"
 #include "ethernet_tx_client_p2.h"
 

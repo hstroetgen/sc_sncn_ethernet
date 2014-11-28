@@ -3,7 +3,7 @@
 
 #include <xs1.h>
 #include <xccompat.h>
-#include "ethernet_conf_derived_p2.h"
+#include "ethernet_conf_derived.h"
 
 #ifdef __XC__
 /** Structure containing resources required for the MII ethernet interface.

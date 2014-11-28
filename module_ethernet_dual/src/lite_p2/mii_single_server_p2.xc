@@ -8,11 +8,11 @@
 #include <xclib.h>
 #include <print.h>
 #include "mii_driver_p2.h"
-#include "mii_p2.h"
+#include "mii.h"
 #include "mii_lite_p2.h"
 #include "smi.h"
 #include "mii_client_p2.h"
-#include "ethernet_conf_derived_p2.h"
+#include "ethernet_conf_derived.h"
 
 #ifndef ETHERNET_LITE_RX_BUFSIZE
 #define ETHERNET_LITE_RX_BUFSIZE (3200*4)

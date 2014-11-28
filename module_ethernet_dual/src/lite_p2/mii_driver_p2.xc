@@ -5,11 +5,11 @@
 
 #include <xs1.h>
 #define MII_FORCE_USE_LITE
-#include "ethernet_conf_derived_p2.h"
+#include "ethernet_conf_derived.h"
 
 #include "mii_driver_p2.h"
 #include "mii_lld_p2.h"
-#include "mii_p2.h"
+#include "mii.h"
 #include "mii_lite_p2.h"
 
 void mii_initialise(out port ?p_mii_resetn,

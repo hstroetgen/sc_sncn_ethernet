@@ -7,8 +7,8 @@
 #define _ethernet_server_full_h_
 
 #include "smi.h"
-#include "mii_p2.h"
-#include "ethernet_conf_derived_p2.h"
+#include "mii.h"
+#include "ethernet_conf_derived.h"
 
 #ifdef __XC__
 

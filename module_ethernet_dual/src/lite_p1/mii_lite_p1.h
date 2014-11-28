@@ -9,7 +9,7 @@
 /**
  * This funciton initialises all MII ports
  */
-extern void _mii_port_init(_mii_interface_lite_t &m);
+extern void _mii_port_init(mii_interface_lite_t &m);
 
 /**
  * This funciton initializes the MII timestamp

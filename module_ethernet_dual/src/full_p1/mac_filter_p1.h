@@ -1,7 +1,7 @@
 #ifndef __mac_filter_h__
 #define __mac_filter_h__
 
-#include "ethernet_conf_derived_p1.h"
+#include "ethernet_conf_derived.h"
 
 #ifdef ETHERNET_CUSTOM_FILTER_HEADER
 #include ETHERNET_CUSTOM_FILTER_HEADER

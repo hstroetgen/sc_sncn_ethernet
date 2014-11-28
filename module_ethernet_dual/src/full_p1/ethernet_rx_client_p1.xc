@@ -18,7 +18,7 @@
 #include "mii_full_p1.h"
 #include "ethernet_server_def_p1.h"
 #include "ethernet_rx_client_p1.h"
-#include "ethernet_conf_derived_p1.h"
+#include "ethernet_conf_derived.h"
 #include <print.h>
 
 static inline unsigned int _get_tile_id_from_chanend(chanend c) {

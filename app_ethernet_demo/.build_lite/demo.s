@@ -282,14 +282,14 @@ eth_rst_p2.info:
 	.call usage.anon.58,demo0
 	.call usage.anon.58,smi_init
 	.call usage.anon.58,otp_board_info_get_mac
-	.call usage.anon.58,eth_phy_reset_p1
+	.call usage.anon.58,eth_phy_reset_p2
 	.call usage.anon.58,eth_phy_config
 	.call usage.anon.58,_ethernet_server_lite
 	.call main,usage.anon.57
 	.call main,demo0
 	.call usage.anon.57,smi_init
 	.call usage.anon.57,otp_board_info_get_mac
-	.call usage.anon.57,eth_phy_reset_p1
+	.call usage.anon.57,eth_phy_reset_p2
 	.call usage.anon.57,eth_phy_config
 	.call usage.anon.57,_ethernet_server_lite
 	.call demo1,printstr
@@ -656,7 +656,7 @@ eth_rst_p2.info:
 	.globpassesref _ethernet_server_lite, mii_p2,"../src/demo.xc:651: error: call to `_ethernet_server_lite' in `main' makes alias of global 'mii_p2'"
 	.globpassesref eth_phy_config, smi_p2,"../src/demo.xc:650: error: call to `eth_phy_config' in `main' makes alias of global 'smi_p2'"
 	.globpassesref smi_init, smi_p2,"../src/demo.xc:649: error: call to `smi_init' in `main' makes alias of global 'smi_p2'"
-	.globpassesref eth_phy_reset_p1, eth_rst_p2,"../src/demo.xc:648: error: call to `eth_phy_reset_p1' in `main' makes alias of global 'eth_rst_p2'"
+	.globpassesref eth_phy_reset_p2, eth_rst_p2,"../src/demo.xc:648: error: call to `eth_phy_reset_p2' in `main' makes alias of global 'eth_rst_p2'"
 	.globpassesref otp_board_info_get_mac, otp_ports_p2,"../src/demo.xc:647: error: call to `otp_board_info_get_mac' in `main' makes alias of global 'otp_ports_p2'"
 	.globpassesref build_icmp_response1, own_mac_addr1,"../src/demo.xc:628: error: call to `build_icmp_response1' in `demo1' makes alias of global 'own_mac_addr1'"
 	.globpassesref build_arp_response1, own_mac_addr1,"../src/demo.xc:621: error: call to `build_arp_response1' in `demo1' makes alias of global 'own_mac_addr1'"
@@ -5434,7 +5434,7 @@ __main__main_tile_0_task__ethernet_server_lite_0:
 	stw r0, sp[9]
 	mov r0, r1
 .Lxta.call_labels51:
-	bl eth_phy_reset_p1
+	bl eth_phy_reset_p2
 	.loc	1 649 0
 	ldaw r0, dp[smi_p2]
 	stw r0, sp[8]
@@ -5477,10 +5477,10 @@ __main__main_tile_0_task__ethernet_server_lite_0:
 
 	.align	4
 	.cc_bottom __main__main_tile_0_task__ethernet_server_lite_0.function
-	.set	__main__main_tile_0_task__ethernet_server_lite_0.nstackwords,((otp_board_info_get_mac.nstackwords $M eth_phy_reset_p1.nstackwords $M smi_init.nstackwords $M eth_phy_config.nstackwords $M _ethernet_server_lite.nstackwords) + 15)
-	.set	__main__main_tile_0_task__ethernet_server_lite_0.maxcores,_ethernet_server_lite.maxcores $M eth_phy_config.maxcores $M eth_phy_reset_p1.maxcores $M otp_board_info_get_mac.maxcores $M smi_init.maxcores $M 1
-	.set	__main__main_tile_0_task__ethernet_server_lite_0.maxtimers,_ethernet_server_lite.maxtimers $M eth_phy_config.maxtimers $M eth_phy_reset_p1.maxtimers $M otp_board_info_get_mac.maxtimers $M smi_init.maxtimers $M 0
-	.set	__main__main_tile_0_task__ethernet_server_lite_0.maxchanends,_ethernet_server_lite.maxchanends $M eth_phy_config.maxchanends $M eth_phy_reset_p1.maxchanends $M otp_board_info_get_mac.maxchanends $M smi_init.maxchanends $M 0
+	.set	__main__main_tile_0_task__ethernet_server_lite_0.nstackwords,((otp_board_info_get_mac.nstackwords $M eth_phy_reset_p2.nstackwords $M smi_init.nstackwords $M eth_phy_config.nstackwords $M _ethernet_server_lite.nstackwords) + 15)
+	.set	__main__main_tile_0_task__ethernet_server_lite_0.maxcores,_ethernet_server_lite.maxcores $M eth_phy_config.maxcores $M eth_phy_reset_p2.maxcores $M otp_board_info_get_mac.maxcores $M smi_init.maxcores $M 1
+	.set	__main__main_tile_0_task__ethernet_server_lite_0.maxtimers,_ethernet_server_lite.maxtimers $M eth_phy_config.maxtimers $M eth_phy_reset_p2.maxtimers $M otp_board_info_get_mac.maxtimers $M smi_init.maxtimers $M 0
+	.set	__main__main_tile_0_task__ethernet_server_lite_0.maxchanends,_ethernet_server_lite.maxchanends $M eth_phy_config.maxchanends $M eth_phy_reset_p2.maxchanends $M otp_board_info_get_mac.maxchanends $M smi_init.maxchanends $M 0
 	.cc_top __main__main_tile_0_task_demo0_1.function
 	.align	4
 	.type	__main__main_tile_0_task_demo0_1,@function
@@ -5976,7 +5976,7 @@ __xcc1_internal_18:
 .Lsection_end1:
 	.section	.debug_info,"",@progbits
 .Linfo_begin1:
-	.long	7585
+	.long	7584
 	.short	2
 	.long	.Labbrev_begin
 	.byte	4
@@ -6114,7 +6114,7 @@ __xcc1_internal_18:
 	.byte	7
 	.byte	4
 	.byte	3
-	.ascii	 "_mii_interface_lite_t"
+	.ascii	 "mii_interface_lite_t"
 	.byte	0
 	.byte	40
 	.byte	4
@@ -6263,9 +6263,9 @@ __xcc1_internal_18:
 	.byte	4
 	.byte	5
 	.byte	7
-	.long	814
+	.long	813
 	.byte	8
-	.long	831
+	.long	830
 	.byte	1
 	.byte	0
 	.byte	5
@@ -6273,7 +6273,7 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "ethertype_ip0"
 	.byte	0
-	.long	834
+	.long	833
 	.byte	1
 	.byte	1
 	.byte	74
@@ -6285,7 +6285,7 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "ethertype_arp0"
 	.byte	0
-	.long	834
+	.long	833
 	.byte	1
 	.byte	1
 	.byte	75
@@ -6297,7 +6297,7 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "ethertype_ip1"
 	.byte	0
-	.long	834
+	.long	833
 	.byte	1
 	.byte	1
 	.byte	77
@@ -6309,7 +6309,7 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "ethertype_arp1"
 	.byte	0
-	.long	834
+	.long	833
 	.byte	1
 	.byte	1
 	.byte	78
@@ -6317,9 +6317,9 @@ __xcc1_internal_18:
 	.byte	3
 	.long	ethertype_arp1
 	.byte	7
-	.long	814
+	.long	813
 	.byte	8
-	.long	831
+	.long	830
 	.byte	5
 	.byte	0
 	.byte	5
@@ -6327,7 +6327,7 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "own_mac_addr0"
 	.byte	0
-	.long	1018
+	.long	1017
 	.byte	1
 	.byte	1
 	.byte	80
@@ -6339,7 +6339,7 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "own_mac_addr1"
 	.byte	0
-	.long	1018
+	.long	1017
 	.byte	1
 	.byte	1
 	.byte	81
@@ -6347,11 +6347,11 @@ __xcc1_internal_18:
 	.byte	3
 	.long	own_mac_addr1
 	.byte	9
-	.long	814
+	.long	813
 	.byte	7
-	.long	1114
+	.long	1113
 	.byte	8
-	.long	831
+	.long	830
 	.byte	3
 	.byte	0
 	.byte	10
@@ -6359,12 +6359,12 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1119
+	.long	1118
 	.byte	1
 	.byte	228
 	.byte	1
 	.byte	11
-	.long	1131
+	.long	1130
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static
@@ -6373,12 +6373,12 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1119
+	.long	1118
 	.byte	1
 	.short	264
 	.byte	1
 	.byte	11
-	.long	1174
+	.long	1173
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static5
@@ -6387,12 +6387,12 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1119
+	.long	1118
 	.byte	1
 	.short	300
 	.byte	1
 	.byte	11
-	.long	1218
+	.long	1217
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static8
@@ -6401,12 +6401,12 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1119
+	.long	1118
 	.byte	1
 	.short	374
 	.byte	1
 	.byte	11
-	.long	1262
+	.long	1261
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static9
@@ -6415,12 +6415,12 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1119
+	.long	1118
 	.byte	1
 	.short	448
 	.byte	1
 	.byte	11
-	.long	1306
+	.long	1305
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static10
@@ -6429,12 +6429,12 @@ __xcc1_internal_18:
 	.byte	0
 	.ascii	 "own_ip_addr"
 	.byte	0
-	.long	1119
+	.long	1118
 	.byte	1
 	.short	495
 	.byte	1
 	.byte	11
-	.long	1350
+	.long	1349
 	.byte	5
 	.byte	3
 	.long	own_ip_addr.static15
@@ -6887,7 +6887,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	91
-	.long	7450
+	.long	7449
 	.byte	2
 	.byte	145
 	.byte	40
@@ -6896,7 +6896,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	91
-	.long	7450
+	.long	7449
 	.byte	2
 	.byte	145
 	.byte	32
@@ -6937,7 +6937,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	7450
+	.long	7449
 	.byte	2
 	.byte	145
 	.byte	36
@@ -6946,7 +6946,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	97
-	.long	7450
+	.long	7449
 	.byte	2
 	.byte	145
 	.byte	28
@@ -6987,7 +6987,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	108
-	.long	7450
+	.long	7449
 	.byte	2
 	.byte	145
 	.byte	20
@@ -7028,7 +7028,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	119
-	.long	7460
+	.long	7459
 	.byte	2
 	.byte	145
 	.byte	28
@@ -7052,7 +7052,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	129
-	.long	7460
+	.long	7459
 	.byte	2
 	.byte	145
 	.byte	28
@@ -7076,7 +7076,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	140
-	.long	7450
+	.long	7449
 	.byte	3
 	.byte	145
 	.ascii	 "\270\001"
@@ -7085,7 +7085,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	140
-	.long	7460
+	.long	7459
 	.byte	3
 	.byte	145
 	.ascii	 "\260\001"
@@ -7094,7 +7094,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	140
-	.long	7477
+	.long	7476
 	.byte	3
 	.byte	145
 	.ascii	 "\250\001"
@@ -7109,7 +7109,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	142
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 	.ascii	 "\240\001"
@@ -7121,7 +7121,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	143
-	.long	814
+	.long	813
 	.byte	3
 	.byte	145
 	.ascii	 "\234\001"
@@ -7133,7 +7133,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	144
-	.long	1119
+	.long	1118
 	.byte	3
 	.byte	145
 	.ascii	 "\230\001"
@@ -7213,7 +7213,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	183
-	.long	7450
+	.long	7449
 	.byte	3
 	.byte	145
 	.ascii	 "\270\001"
@@ -7222,7 +7222,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	183
-	.long	7460
+	.long	7459
 	.byte	3
 	.byte	145
 	.ascii	 "\260\001"
@@ -7231,7 +7231,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	183
-	.long	7477
+	.long	7476
 	.byte	3
 	.byte	145
 	.ascii	 "\250\001"
@@ -7246,7 +7246,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	185
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 	.ascii	 "\240\001"
@@ -7258,7 +7258,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	186
-	.long	814
+	.long	813
 	.byte	3
 	.byte	145
 	.ascii	 "\234\001"
@@ -7270,7 +7270,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	187
-	.long	1119
+	.long	1118
 	.byte	3
 	.byte	145
 	.ascii	 "\230\001"
@@ -7350,7 +7350,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.byte	226
-	.long	7487
+	.long	7486
 	.byte	3
 	.byte	145
 .asciiz "\334"
@@ -7403,7 +7403,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	262
-	.long	7487
+	.long	7486
 	.byte	3
 	.byte	145
 .asciiz "\320"
@@ -7456,7 +7456,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	298
-	.long	7450
+	.long	7449
 	.byte	3
 	.byte	145
 	.ascii	 "\234\002"
@@ -7465,7 +7465,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	298
-	.long	7450
+	.long	7449
 	.byte	3
 	.byte	145
 	.ascii	 "\224\002"
@@ -7474,7 +7474,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	298
-	.long	7477
+	.long	7476
 	.byte	3
 	.byte	145
 	.ascii	 "\214\002"
@@ -7492,7 +7492,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	301
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 	.ascii	 "\204\002"
@@ -7528,7 +7528,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	304
-	.long	7492
+	.long	7491
 	.byte	3
 	.byte	145
 	.ascii	 "\370\001"
@@ -7552,7 +7552,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	308
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 	.ascii	 "\360\001"
@@ -7662,7 +7662,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	372
-	.long	7450
+	.long	7449
 	.byte	3
 	.byte	145
 	.ascii	 "\234\002"
@@ -7671,7 +7671,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	372
-	.long	7450
+	.long	7449
 	.byte	3
 	.byte	145
 	.ascii	 "\224\002"
@@ -7680,7 +7680,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	372
-	.long	7477
+	.long	7476
 	.byte	3
 	.byte	145
 	.ascii	 "\214\002"
@@ -7698,7 +7698,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	375
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 	.ascii	 "\204\002"
@@ -7734,7 +7734,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	378
-	.long	7492
+	.long	7491
 	.byte	3
 	.byte	145
 	.ascii	 "\370\001"
@@ -7758,7 +7758,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	382
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 	.ascii	 "\360\001"
@@ -7868,7 +7868,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	446
-	.long	7487
+	.long	7486
 	.byte	3
 	.byte	145
 .asciiz "\340"
@@ -7895,7 +7895,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	449
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 .asciiz "\320"
@@ -7934,7 +7934,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	493
-	.long	7487
+	.long	7486
 	.byte	3
 	.byte	145
 .asciiz "\350"
@@ -7961,7 +7961,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	496
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 .asciiz "\330"
@@ -7999,7 +7999,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	540
-	.long	7405
+	.long	7404
 	.byte	3
 	.byte	145
 	.ascii	 "\320\031"
@@ -8008,7 +8008,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	540
-	.long	7405
+	.long	7404
 	.byte	3
 	.byte	145
 	.ascii	 "\314\031"
@@ -8023,7 +8023,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	542
-	.long	7432
+	.long	7431
 	.byte	3
 	.byte	145
 	.ascii	 "\214\r"
@@ -8035,7 +8035,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	543
-	.long	7432
+	.long	7431
 	.byte	3
 	.byte	145
 .asciiz "\314"
@@ -8046,7 +8046,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	559
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 .asciiz "\310"
@@ -8057,7 +8057,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	560
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 .asciiz "\304"
@@ -8085,7 +8085,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	588
-	.long	7405
+	.long	7404
 	.byte	3
 	.byte	145
 	.ascii	 "\330\031"
@@ -8094,7 +8094,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	588
-	.long	7405
+	.long	7404
 	.byte	3
 	.byte	145
 	.ascii	 "\324\031"
@@ -8109,7 +8109,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	590
-	.long	7432
+	.long	7431
 	.byte	3
 	.byte	145
 	.ascii	 "\224\r"
@@ -8121,7 +8121,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	591
-	.long	7432
+	.long	7431
 	.byte	3
 	.byte	145
 .asciiz "\324"
@@ -8132,7 +8132,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	607
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 .asciiz "\320"
@@ -8143,7 +8143,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.short	608
-	.long	7416
+	.long	7415
 	.byte	3
 	.byte	145
 .asciiz "\314"
@@ -8170,7 +8170,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	7582
+	.long	7581
 	.byte	2
 	.byte	145
 	.byte	52
@@ -8192,7 +8192,7 @@ __xcc1_internal_18:
 	.byte	0
 	.byte	1
 	.long	16777215
-	.long	7582
+	.long	7581
 	.byte	2
 	.byte	145
 	.byte	12
@@ -8216,40 +8216,40 @@ __xcc1_internal_18:
 	.byte	7
 	.byte	4
 	.byte	7
-	.long	7416
+	.long	7415
 	.byte	27
-	.long	831
+	.long	830
 	.short	399
 	.byte	0
 	.byte	28
-	.long	814
+	.long	813
 	.byte	29
-	.long	7445
+	.long	7444
 	.byte	28
-	.long	7416
+	.long	7415
 	.byte	29
-	.long	7455
+	.long	7454
 	.byte	7
-	.long	1114
+	.long	1113
 	.byte	8
-	.long	831
+	.long	830
 	.byte	5
 	.byte	0
 	.byte	29
-	.long	7465
+	.long	7464
 	.byte	28
-	.long	1114
+	.long	1113
 	.byte	29
-	.long	7482
+	.long	7481
 	.byte	9
 	.long	332
 	.byte	7
-	.long	7405
+	.long	7404
 	.byte	8
-	.long	831
+	.long	830
 	.byte	1
 	.byte	8
-	.long	831
+	.long	830
 	.byte	0
 	.byte	0
 	.byte	3
@@ -8259,7 +8259,7 @@ __xcc1_internal_18:
 	.byte	30
 	.ascii	 "tx0"
 	.byte	0
-	.long	7497
+	.long	7496
 	.byte	1
 	.short	645
 	.byte	2
@@ -8269,7 +8269,7 @@ __xcc1_internal_18:
 	.byte	30
 	.ascii	 "rx0"
 	.byte	0
-	.long	7497
+	.long	7496
 	.byte	1
 	.short	645
 	.byte	2
@@ -8279,7 +8279,7 @@ __xcc1_internal_18:
 	.byte	30
 	.ascii	 "mac_address"
 	.byte	0
-	.long	1018
+	.long	1017
 	.byte	1
 	.short	645
 	.byte	2
@@ -8288,7 +8288,7 @@ __xcc1_internal_18:
 	.byte	1
 	.byte	0
 	.byte	31
-	.long	7515
+	.long	7514
 	.byte	4
 	.byte	0
 .Linfo_end1:
@@ -8733,169 +8733,169 @@ __xcc1_internal_18:
 	.long	.Linfo_begin1
 .Lset1 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset1
-	.long	714
+	.long	713
 .asciiz "mii_p2"
-	.long	3364
+	.long	3363
 .asciiz "mii_packet_set_timestamp_id"
-	.long	846
+	.long	845
 .asciiz "ethertype_ip0"
-	.long	932
+	.long	931
 .asciiz "ethertype_ip1"
-	.long	3130
+	.long	3129
 .asciiz "mii_packet_set_filter_result"
-	.long	2904
+	.long	2903
 .asciiz "mii_packet_set_length"
-	.long	2102
+	.long	2101
 .asciiz "_mii_packet_get_stage"
-	.long	2738
+	.long	2737
 .asciiz "_mii_packet_set_data_short"
-	.long	3708
+	.long	3707
 .asciiz "mii_packet_get_forwarding"
-	.long	2796
+	.long	2795
 .asciiz "_mii_packet_set_data_byte"
-	.long	4597
+	.long	4596
 .asciiz "build_arp_response0"
-	.long	4902
+	.long	4901
 .asciiz "build_arp_response1"
-	.long	2154
+	.long	2153
 .asciiz "_mii_packet_set_stage"
-	.long	3768
+	.long	3767
 .asciiz "mii_packet_set_forwarding"
-	.long	5482
+	.long	5481
 .asciiz "build_icmp_response0"
-	.long	5953
+	.long	5952
 .asciiz "build_icmp_response1"
-	.long	6424
+	.long	6423
 .asciiz "is_valid_icmp_packet0"
-	.long	6597
+	.long	6596
 .asciiz "is_valid_icmp_packet1"
-	.long	7358
+	.long	7357
 .asciiz "__main__main_tile_0"
-	.long	2518
+	.long	2517
 .asciiz "_mii_packet_get_data_ptr"
-	.long	3824
+	.long	3823
 .asciiz "mii_packet_get_data_ptr"
-	.long	7124
+	.long	7123
 .asciiz "__main__main_tile_0_task__ethernet_server_lite_0"
-	.long	2632
+	.long	2631
 .asciiz "_mii_packet_get_data_word"
-	.long	3424
+	.long	3423
 .asciiz "mii_packet_get_stage"
-	.long	888
+	.long	887
 .asciiz "ethertype_arp0"
-	.long	974
+	.long	973
 .asciiz "ethertype_arp1"
-	.long	4092
+	.long	4091
 .asciiz "mii_packet_set_data_byte"
-	.long	3620
+	.long	3619
 .asciiz "mii_packet_get_crc"
-	.long	4453
+	.long	4452
 .asciiz "mac_custom_filter"
-	.long	3520
+	.long	3519
 .asciiz "mii_packet_get_tcount"
-	.long	2576
+	.long	2575
 .asciiz "_mii_packet_set_data_word"
-	.long	1510
+	.long	1509
 .asciiz "_mii_packet_get_length"
-	.long	5343
+	.long	5342
 .asciiz "is_valid_arp_packet1"
-	.long	3474
+	.long	3473
 .asciiz "mii_packet_set_stage"
-	.long	3666
+	.long	3665
 .asciiz "mii_packet_set_crc"
-	.long	5207
+	.long	5206
 .asciiz "is_valid_arp_packet0"
-	.long	3572
+	.long	3571
 .asciiz "mii_packet_set_tcount"
-	.long	1564
+	.long	1563
 .asciiz "_mii_packet_set_length"
-	.long	2398
+	.long	2397
 .asciiz "_mii_packet_get_forwarding"
-	.long	1614
+	.long	1613
 .asciiz "_mii_packet_get_timestamp"
 	.long	402
 .asciiz "smi_p1"
 	.long	430
 .asciiz "smi_p2"
-	.long	2306
+	.long	2305
 .asciiz "_mii_packet_get_crc"
-	.long	3934
+	.long	3933
 .asciiz "mii_packet_get_data_word"
-	.long	1030
+	.long	1029
 .asciiz "own_mac_addr0"
-	.long	1072
+	.long	1071
 .asciiz "own_mac_addr1"
-	.long	4360
+	.long	4359
 .asciiz "is_broadcast"
-	.long	2460
+	.long	2459
 .asciiz "_mii_packet_set_forwarding"
-	.long	1674
+	.long	1673
 .asciiz "_mii_packet_set_timestamp"
-	.long	1426
+	.long	1425
 .asciiz "delay_milliseconds"
-	.long	3880
+	.long	3879
 .asciiz "mii_packet_set_data_word"
-	.long	6770
+	.long	6769
 .asciiz "demo0"
-	.long	1730
+	.long	1729
 .asciiz "_mii_packet_get_filter_result"
-	.long	2354
+	.long	2353
 .asciiz "_mii_packet_set_crc"
-	.long	742
+	.long	741
 .asciiz "eth_rst_p1"
-	.long	778
+	.long	777
 .asciiz "eth_rst_p2"
-	.long	3992
+	.long	3991
 .asciiz "mii_packet_set_data"
-	.long	2692
+	.long	2691
 .asciiz "_mii_packet_set_data"
-	.long	4036
+	.long	4035
 .asciiz "mii_packet_set_data_short"
-	.long	1862
+	.long	1861
 .asciiz "_mii_packet_get_src_port"
-	.long	3192
+	.long	3191
 .asciiz "mii_packet_get_src_port"
-	.long	1798
+	.long	1797
 .asciiz "_mii_packet_set_filter_result"
-	.long	6947
+	.long	6946
 .asciiz "demo1"
-	.long	4254
+	.long	4253
 .asciiz "is_mac_addr"
-	.long	2952
+	.long	2951
 .asciiz "mii_packet_get_timestamp"
 	.long	252
 .asciiz "otp_ports_p1"
 	.long	292
 .asciiz "otp_ports_p2"
-	.long	1920
+	.long	1919
 .asciiz "_mii_packet_set_src_port"
-	.long	3248
+	.long	3247
 .asciiz "mii_packet_set_src_port"
-	.long	4524
+	.long	4523
 .asciiz "_mac_custom_filter"
-	.long	2202
+	.long	2201
 .asciiz "_mii_packet_get_tcount"
-	.long	1974
+	.long	1973
 .asciiz "_mii_packet_get_timestamp_id"
-	.long	3010
+	.long	3009
 .asciiz "mii_packet_set_timestamp"
-	.long	3300
+	.long	3299
 .asciiz "mii_packet_get_timestamp_id"
-	.long	2852
+	.long	2851
 .asciiz "mii_packet_get_length"
-	.long	1468
+	.long	1467
 .asciiz "delay_microseconds"
-	.long	3064
+	.long	3063
 .asciiz "mii_packet_get_filter_result"
-	.long	7257
+	.long	7256
 .asciiz "__main__main_tile_0_task_demo0_1"
-	.long	4146
+	.long	4145
 .asciiz "is_ethertype"
-	.long	2256
+	.long	2255
 .asciiz "_mii_packet_set_tcount"
-	.long	1394
+	.long	1393
 .asciiz "delay_seconds"
-	.long	2040
+	.long	2039
 .asciiz "_mii_packet_set_timestamp_id"
 	.long	0
 .Lpubnames_end1:
@@ -8907,14 +8907,14 @@ __xcc1_internal_18:
 	.long	.Linfo_begin1
 .Lset3 = .Linfo_end1-.Linfo_begin1
 	.long	.Lset3
-	.long	7515
+	.long	7514
 .asciiz "frame.0"
 	.long	339
 .asciiz "smi_interface_t"
 	.long	189
 .asciiz "otp_ports_t"
 	.long	467
-.asciiz "_mii_interface_lite_t"
+.asciiz "mii_interface_lite_t"
 	.long	0
 .Lpubtypes_end1:
 	.section	.debug_aranges,"",@progbits
@@ -9227,7 +9227,7 @@ __xcc1_internal_18:
 	.typestring _add_ts_queue_entry, "f{0}(&(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}),si)"
 	.typestring _get_and_dec_transmit_count, "f{si}(si)"
 	.typestring _mii_packet_get_and_clear_forwarding, "f{si}(si,si)"
-	.typestring _mii_init_full, "f{0}(&(s(_mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}))"
+	.typestring _mii_init_full, "f{0}(&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}))"
 	.typestring _mii_packet_get_length, "f{si}(si)"
 	.typestring _mii_packet_set_length, "f{0}(si,si)"
 	.typestring _mii_packet_get_timestamp, "f{si}(si)"
@@ -9255,9 +9255,9 @@ __xcc1_internal_18:
 	.typestring _mii_rx_pins, "f{0}(ui,i:p,bi:p:32,si,m:chd)"
 	.typestring _mii_tx_pins, "f{0}(ui,&(s(mii_ts_queue_t){m(lock){si},m(rdIndex){si},m(wrIndex){si},m(fifo){a(6:ui)}}),bo:p:32,si)"
 	.typestring _ethernet_get_mii_counts, "f{0}(&(ui))"
-	.typestring _ethernet_server_full, "f{0}(&(s(_mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
-	.typestring _ethernet_server_lite, "f{0}(&(s(_mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
-	.typestring _ethernet_server, "f{0}(&(s(_mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
+	.typestring _ethernet_server_full, "f{0}(&(s(mii_interface_full_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
+	.typestring _ethernet_server_lite, "f{0}(&(s(mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
+	.typestring _ethernet_server, "f{0}(&(s(mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}),n:&(s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}),&(a(:uc)),&(a(:chd)),si,&(a(:chd)),si)"
 	.typestring _mac_rx_lite, "f{0}(chd,&(a(:uc)),&(ui),&(ui))"
 	.typestring _safe_mac_rx_lite, "f{0}(chd,&(a(:uc)),&(ui),&(ui),si)"
 	.typestring _mac_rx_full, "f{0}(chd,&(a(:uc)),&(ui),&(ui))"
@@ -9382,7 +9382,7 @@ __xcc1_internal_18:
 	.typestring otp_ports_p2, "s(otp_ports_t){m(data){p},m(addr){o:p},m(ctrl){o:p}}"
 	.typestring smi_p1, "s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}"
 	.typestring smi_p2, "s(smi_interface_t){m(phy_address){si},m(p_smi_mdc){p}}"
-	.typestring mii_p2, "s(_mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}"
+	.typestring mii_p2, "s(mii_interface_lite_t){m(clk_mii_rx){ck},m(clk_mii_tx){ck},m(p_mii_rxclk){i:p},m(p_mii_rxer){i:p},m(p_mii_rxd){bi:p:32},m(p_mii_rxdv){i:p},m(p_mii_txclk){i:p},m(p_mii_txen){o:p},m(p_mii_txd){bo:p:32},m(p_mii_timing){i:p}}"
 	.typestring eth_rst_p1, "o:p"
 	.typestring eth_rst_p2, "o:p"
 	.typestring ethertype_ip0, "a(2:uc)"

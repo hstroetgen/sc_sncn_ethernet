@@ -5,15 +5,15 @@
 
 #include <xs1.h>
 #define MII_FORCE_USE_LITE
-#include "ethernet_conf_derived_p1.h"
+#include "ethernet_conf_derived.h"
 
 #include "mii_driver_p1.h"
 #include "mii_lld_p1.h"
-#include "mii_p1.h"
+#include "mii.h"
 #include "mii_lite_p1.h"
 
 void _mii_initialise(out port ?p_mii_resetn,
-                   _mii_interface_lite_t &m)
+                   mii_interface_lite_t &m)
 {
 #ifndef MII_DRIVER_SIMULATION
 #ifndef MII_NO_RESET
@@ -28,7 +28,7 @@ void _mii_initialise(out port ?p_mii_resetn,
 
 
 // TODO: implement miiDriver straight in miiLLD.
-void _mii_driver(_mii_interface_lite_t &m, chanend cIn, chanend cOut)
+void _mii_driver(mii_interface_lite_t &m, chanend cIn, chanend cOut)
 {
     timer tmr;
     _miiLLD(m.p_mii_rxd, m.p_mii_rxdv, m.p_mii_txd, cIn, cOut, m.p_mii_timing, tmr);

@@ -7,12 +7,12 @@
 #define _ethernet_server_lite0_h_
 
 #include "smi.h"
-#include "mii_p1.h"
-#include "ethernet_conf_derived_p1.h"
+#include "mii.h"
+#include "ethernet_conf_derived.h"
 
 #ifdef __XC__
 
-void _ethernet_server_lite(_mii_interface_lite_t &mii,
+void _ethernet_server_lite(mii_interface_lite_t &mii,
                           smi_interface_t &?smi,
                           char mac_address[],
                           chanend rx[],

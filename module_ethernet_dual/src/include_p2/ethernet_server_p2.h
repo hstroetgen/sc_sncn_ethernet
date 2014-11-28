@@ -8,7 +8,7 @@
 
 #include "smi.h"
 #include "mii_full_p2.h"
-#include "ethernet_conf_derived_p2.h"
+#include "ethernet_conf_derived.h"
 
 #ifdef __XC__
 

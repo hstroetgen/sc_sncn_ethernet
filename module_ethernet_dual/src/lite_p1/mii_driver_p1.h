@@ -1,7 +1,7 @@
 #ifndef __miiDriver_h__
 #define __miiDriver_h__
 #define MII_FORCE_USE_LITE
-#include "mii_p1.h"
+#include "mii.h"
 
 /** This function intiializes the MII low level driver.
  *
@@ -9,7 +9,7 @@
  *  \param m              the MII control structure
  */
 extern void _mii_initialise(out port ?p_mii_resetn,
-                           _mii_interface_lite_t &m);
+                           mii_interface_lite_t &m);
 
 /** This function runs the MII low level driver. It requires at least 62.5
  * MIPS in order to be able to transmit and receive MII packets
@@ -22,7 +22,7 @@ extern void _mii_initialise(out port ?p_mii_resetn,
  *  \param cIn    input channel to the client thread.
  *  \param cOut   output channel to the client thread.
  */
-extern void _mii_driver(_mii_interface_lite_t &m, chanend cIn, chanend cOut);
+extern void _mii_driver(mii_interface_lite_t &m, chanend cIn, chanend cOut);
 
 extern void _phy_reset(out port p_mii_resetn, timer tmr);
 

@@ -16,7 +16,7 @@
 #include <xs1.h>
 #include <xclib.h>
 
-#include "ethernet_conf_derived_p2.h"
+#include "ethernet_conf_derived.h"
 #include "ethernet_server_def_p2.h"
 
 #include "ethernet_tx_client_full_p2.h"

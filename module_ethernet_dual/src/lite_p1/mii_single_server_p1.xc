@@ -8,11 +8,11 @@
 #include <xclib.h>
 #include <print.h>
 #include "mii_driver_p1.h"
-#include "mii_p1.h"
+#include "mii.h"
 #include "mii_lite_p1.h"
 #include "smi.h"
 #include "mii_client_p1.h"
-#include "ethernet_conf_derived_p1.h"
+#include "ethernet_conf_derived.h"
 
 #ifndef ETHERNET_LITE_RX_BUFSIZE
 #define ETHERNET_LITE_RX_BUFSIZE (3200*4)
@@ -102,7 +102,7 @@ static void _the_server(chanend cIn, chanend cOut, chanend cNotifications,
 
 void _mii_single_server(out port ?p_mii_resetn,
                      smi_interface_t &?smi,
-                     _mii_interface_lite_t &m,
+                     mii_interface_lite_t &m,
                      chanend appIn, chanend appOut,
                      unsigned char mac_address[6]) {
     chan cIn, cOut;
@@ -121,7 +121,7 @@ void _mii_single_server(out port ?p_mii_resetn,
 
 }
 
-void _ethernet_server_lite(_mii_interface_lite_t &m,
+void _ethernet_server_lite(mii_interface_lite_t &m,
                           smi_interface_t &?smi,
                           char mac_address[],
                           chanend c_rx[], int num_rx, chanend c_tx[], int num_tx)

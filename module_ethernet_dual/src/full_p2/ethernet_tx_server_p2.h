@@ -7,7 +7,7 @@
 #include "mii_full_p2.h"
 #include "mii_queue_p2.h"
 #include "mii_malloc_p2.h"
-#include "ethernet_conf_derived_p2.h"
+#include "ethernet_conf_derived.h"
 
 void ethernet_tx_server_no_buffer(const char mac_addr[],
                                   chanend tx[],

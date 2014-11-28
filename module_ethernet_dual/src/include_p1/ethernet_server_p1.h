@@ -8,7 +8,7 @@
 
 #include "smi.h"
 #include "mii_full_p1.h"
-#include "ethernet_conf_derived_p1.h"
+#include "ethernet_conf_derived.h"
 
 #ifdef __XC__
 
@@ -42,7 +42,7 @@
  * server using the APIs found in ethernet_rx_client.h and ethernet_tx_client.h
  *
  **/
-void _ethernet_server(_mii_interface_t &mii,
+void _ethernet_server(mii_interface_t &mii,
                      smi_interface_t &?smi,
                      char mac_address[],
                      chanend rx[],

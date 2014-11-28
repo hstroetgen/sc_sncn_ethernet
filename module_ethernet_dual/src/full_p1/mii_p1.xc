@@ -5,7 +5,7 @@
 
 #include <xs1.h>
 #include "mii_queue_p1.h"
-#include "mii_p1.h"
+#include "mii.h"
 #include "mii_malloc_p1.h"
 #include <print.h>
 #include <stdlib.h>
@@ -703,7 +703,7 @@ void _mii_tx_pins(
 extern clock ETH_REF_CLOCK;
 #endif
 
-void _mii_init_full(_mii_interface_full_t &m) {
+void _mii_init_full(mii_interface_full_t &m) {
 #ifndef SIMULATION
 	timer tmr;
 	unsigned t;

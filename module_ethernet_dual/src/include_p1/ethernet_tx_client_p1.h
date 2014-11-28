@@ -17,7 +17,7 @@
 #ifndef _ETHERNET_TX_CLIENT0_H_
 #define _ETHERNET_TX_CLIENT0_H_ 1
 
-#include "ethernet_conf_derived_p1.h"
+#include "ethernet_conf_derived.h"
 
 #include "ethernet_tx_client_lite_p1.h"
 #include "ethernet_tx_client_full_p1.h"

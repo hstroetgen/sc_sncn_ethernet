@@ -1,7 +1,7 @@
 #ifndef __miiDriver_h__
 #define __miiDriver_h__
 #define MII_FORCE_USE_LITE
-#include "mii_p2.h"
+#include "mii.h"
 
 /** This function intiializes the MII low level driver.
  *

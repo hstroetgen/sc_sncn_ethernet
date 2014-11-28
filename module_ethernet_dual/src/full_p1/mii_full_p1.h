@@ -7,9 +7,9 @@
 #define __mii_full0_h__
 #include <xs1.h>
 #include <xccompat.h>
-#include "mii_p1.h"
+#include "mii.h"
 
-#include "ethernet_conf_derived_p1.h"
+#include "ethernet_conf_derived.h"
 
 #ifndef NUM_ETHERNET_PORTS
 #define NUM_ETHERNET_PORTS (2)      //TODO 2 = 1
@@ -79,7 +79,7 @@
 #include "mii_queue_p1.h"
 
 #ifdef __XC__
-void _mii_init_full(REFERENCE_PARAM(_mii_interface_full_t, m));
+void _mii_init_full(REFERENCE_PARAM(mii_interface_full_t, m));
 #endif
 
 

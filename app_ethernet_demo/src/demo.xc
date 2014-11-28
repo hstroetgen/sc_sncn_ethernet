@@ -58,8 +58,8 @@ on ETHERNET_DEFAULT_TILE_P2: otp_ports_t otp_ports_p2 = OTP_PORTS_INITIALIZER_P2
 smi_interface_t smi_p1 = ETHERNET_DEFAULT_SMI_INIT_P1;
 smi_interface_t smi_p2 = ETHERNET_DEFAULT_SMI_INIT_P2;
 
-//mii_interface_t mii_p1 = ETHERNET_DEFAULT_MII_INIT_P1_lite;
-_mii_interface_t mii_p2 = ETHERNET_DEFAULT_MII_INIT_P2_lite;
+mii_interface_t mii_p1 = ETHERNET_DEFAULT_MII_INIT_P1;
+//mii_interface_t mii_p2 = ETHERNET_DEFAULT_MII_INIT_P2;
 
 _ethernet_reset_interface_t eth_rst_p1 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P1;
 ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2;
@@ -644,11 +644,11 @@ int main()
             on ETHERNET_DEFAULT_TILE_P1:
       {
         char mac_address[6];
-        otp_board_info_get_mac(otp_ports_p2, 0, mac_address);
-        eth_phy_reset_p1(eth_rst_p2);
-        smi_init(smi_p2);
-        eth_phy_config(1, smi_p2);
-        _ethernet_server(mii_p2,
+        otp_board_info_get_mac(otp_ports_p1, 0, mac_address);
+        eth_phy_reset_p2(eth_rst_p1);
+        smi_init(smi_p1);
+        eth_phy_config(1, smi_p1);
+        _ethernet_server(mii_p1,
                         null,
                         mac_address,
                         rx0, 1,
@@ -670,7 +670,7 @@ int main()
       }
 */
       //::demo
-        on tile[0]:  demo0(tx0[0], rx0[0]);
+        on tile[1]:  demo0(tx0[0], rx0[0]);
  //       on ETHERNET_DEFAULT_TILE_P2: demo1(tx1[0], rx1[0]);
     }
 

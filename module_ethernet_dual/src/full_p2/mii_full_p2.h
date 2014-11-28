@@ -7,9 +7,9 @@
 #define __mii_full_h__
 #include <xs1.h>
 #include <xccompat.h>
-#include "mii_p2.h"
+#include "mii.h"
 
-#include "ethernet_conf_derived_p2.h"
+#include "ethernet_conf_derived.h"
 
 #ifndef NUM_ETHERNET_PORTS
 #define NUM_ETHERNET_PORTS (2)      //TODO 2 = 1

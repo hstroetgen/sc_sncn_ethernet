@@ -12,14 +12,14 @@
 #if (NUM_ETHERNET_PORTS == 1)
 
 void _phy_init(smi_interface_t &smi0,
-              _mii_interface_full_t &mii0)
+              mii_interface_full_t &mii0)
 {
   smi_init(smi0);
   _mii_init_full(mii0);
   eth_phy_config(1, smi0);
 }
 
-void _ethernet_server_full(_mii_interface_full_t &m,
+void _ethernet_server_full(mii_interface_full_t &m,
                           smi_interface_t &?smi,
                           char mac_address[],
                           chanend rx[],

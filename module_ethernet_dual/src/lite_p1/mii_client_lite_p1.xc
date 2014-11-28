@@ -1,7 +1,7 @@
 #include <xs1.h>
 #include "ethernet_rx_client_p1.h"
 #include "ethernet_tx_client_p1.h"
-#include "ethernet_conf_derived_p1.h"
+#include "ethernet_conf_derived.h"
 
 
 #pragma select handler

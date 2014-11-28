@@ -5,7 +5,7 @@
 
 #include <xs1.h>
 #include "mii_queue_p2.h"
-#include "mii_p2.h"
+#include "mii.h"
 #include "mii_malloc_p2.h"
 #include <print.h>
 #include <stdlib.h>

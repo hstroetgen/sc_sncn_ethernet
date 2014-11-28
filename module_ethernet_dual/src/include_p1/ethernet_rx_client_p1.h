@@ -6,7 +6,7 @@
 #ifndef __ethernet_rx_client0_h__
 #define __ethernet_rx_client0_h__
 
-#include "ethernet_conf_derived_p1.h"
+#include "ethernet_conf_derived.h"
 
 #include "ethernet_rx_client_lite_p1.h"
 #include "ethernet_rx_client_full_p1.h"

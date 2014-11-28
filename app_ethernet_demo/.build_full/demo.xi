@@ -345,11 +345,11 @@ int printstrln(const char (& alias s)[]);
 # 24 "../src/demo.xc" 2
 # 1 "platform.h" 1 3
 # 21 "platform.h" 3
-# 1 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full/SOMANET-C22.h" 1
-# 4 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full/SOMANET-C22.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SOMANET-C22.h" 1
+# 4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SOMANET-C22.h"
 # 1 "xs1.h" 1 3
-# 5 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full/SOMANET-C22.h" 2
-# 13 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full/SOMANET-C22.h"
+# 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SOMANET-C22.h" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/SOMANET-C22.h"
 extern tileref tile[4];
 # 22 "platform.h" 2 3
 # 25 "../src/demo.xc" 2
@@ -726,20 +726,20 @@ int _safe_system(const char (&?string)[]);
 # 27 "../src/demo.xc" 2
 # 1 "ethernet_p1.h" 1
 # 4 "ethernet_p1.h"
-# 1 "ethernet_conf_derived_p1.h" 1
-# 3 "ethernet_conf_derived_p1.h"
+# 1 "ethernet_conf_derived.h" 1
+# 3 "ethernet_conf_derived.h"
 # 1 "platform.h" 1 3
-# 4 "ethernet_conf_derived_p1.h" 2
-# 6 "ethernet_conf_derived_p1.h"
+# 4 "ethernet_conf_derived.h" 2
+# 6 "ethernet_conf_derived.h"
 # 1 "ethernet_conf.h" 1
-# 7 "ethernet_conf_derived_p1.h" 2
+# 7 "ethernet_conf_derived.h" 2
 # 5 "ethernet_p1.h" 2
 # 1 "platform.h" 1 3
 # 6 "ethernet_p1.h" 2
-# 1 "mii_p1.h" 1
-# 4 "mii_p1.h"
+# 1 "mii.h" 1
+# 4 "mii.h"
 # 1 "xs1.h" 1 3
-# 5 "mii_p1.h" 2
+# 5 "mii.h" 2
 # 1 "xccompat.h" 1 3
 # 201 "xccompat.h" 3
 typedef streaming chanend streaming_chanend_t;
@@ -755,11 +755,11 @@ typedef out buffered port:4 out_buffered_port_4_t;
 typedef out buffered port:8 out_buffered_port_8_t;
 typedef out buffered port:16 out_buffered_port_16_t;
 typedef out buffered port:32 out_buffered_port_32_t;
-# 6 "mii_p1.h" 2
-# 1 "ethernet_conf_derived_p1.h" 1
-# 7 "mii_p1.h" 2
-# 19 "mii_p1.h"
-typedef struct _mii_interface_full_t {
+# 6 "mii.h" 2
+# 1 "ethernet_conf_derived.h" 1
+# 7 "mii.h" 2
+# 19 "mii.h"
+typedef struct mii_interface_full_t {
     __clock_t  clk_mii_rx;
     __clock_t  clk_mii_tx;
 
@@ -771,9 +771,9 @@ typedef struct _mii_interface_full_t {
     in port p_mii_txclk;
     out port p_mii_txen;
     out buffered port:32 p_mii_txd;
-} _mii_interface_full_t;
+} mii_interface_full_t;
 
-typedef struct _mii_interface_lite_t {
+typedef struct mii_interface_lite_t {
     __clock_t  clk_mii_rx;
     __clock_t  clk_mii_tx;
 
@@ -785,10 +785,10 @@ typedef struct _mii_interface_lite_t {
     in port p_mii_txclk;
     out port p_mii_txen;
     out buffered port:32 p_mii_txd;
-# 47 "mii_p1.h"
+# 47 "mii.h"
     in port p_mii_timing;
 
-} _mii_interface_lite_t;
+} mii_interface_lite_t;
 # 7 "ethernet_p1.h" 2
 # 1 "smi.h" 1
 # 9 "smi.h"
@@ -798,12 +798,6 @@ typedef struct _mii_interface_lite_t {
 # 11 "smi.h" 2
 # 13 "smi.h"
 # 1 "ethernet_conf_derived.h" 1
-# 3 "ethernet_conf_derived.h"
-# 1 "platform.h" 1 3
-# 4 "ethernet_conf_derived.h" 2
-# 6 "ethernet_conf_derived.h"
-# 1 "ethernet_conf.h" 1
-# 7 "ethernet_conf_derived.h" 2
 # 14 "smi.h" 2
 # 17 "smi.h"
 # 1 "ethernet_board_conf.h" 1
@@ -840,10 +834,10 @@ int smi_reg( smi_interface_t &smi , unsigned reg, unsigned val, int inning);
 # 9 "mii_full_p1.h" 2
 # 1 "xccompat.h" 1 3
 # 10 "mii_full_p1.h" 2
-# 1 "mii_p1.h" 1
+# 1 "mii.h" 1
 # 11 "mii_full_p1.h" 2
 # 12 "mii_full_p1.h"
-# 1 "ethernet_conf_derived_p1.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 13 "mii_full_p1.h" 2
 # 79 "mii_full_p1.h"
 # 1 "mii_queue_p1.h" 1
@@ -851,7 +845,7 @@ int smi_reg( smi_interface_t &smi , unsigned reg, unsigned val, int inning);
 # 1 "xccompat.h" 1 3
 # 10 "mii_queue_p1.h" 2
 # 11 "mii_queue_p1.h"
-# 1 "ethernet_conf_derived_p1.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 12 "mii_queue_p1.h" 2
 # 26 "mii_queue_p1.h"
 typedef struct mii_ts_queue_t {
@@ -886,7 +880,7 @@ int _mii_packet_get_and_clear_forwarding(int buf_num, int ifnum);
 # 80 "mii_full_p1.h" 2
 
 
-void _mii_init_full( _mii_interface_full_t &m );
+void _mii_init_full( mii_interface_full_t &m );
 
 
 
@@ -968,21 +962,21 @@ void _mii_tx_pins(
 # 237 "mii_full_p1.h"
 void _ethernet_get_mii_counts( unsigned &dropped );
 # 11 "ethernet_server_p1.h" 2
-# 1 "ethernet_conf_derived_p1.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 12 "ethernet_server_p1.h" 2
 # 15 "ethernet_server_p1.h"
 # 1 "ethernet_server_full_p1.h" 1
 # 9 "ethernet_server_full_p1.h"
 # 1 "smi.h" 1
 # 10 "ethernet_server_full_p1.h" 2
-# 1 "mii_p1.h" 1
+# 1 "mii.h" 1
 # 11 "ethernet_server_full_p1.h" 2
-# 1 "ethernet_conf_derived_p1.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 12 "ethernet_server_full_p1.h" 2
 
 
 
-void _ethernet_server_full(_mii_interface_full_t &mii,
+void _ethernet_server_full(mii_interface_full_t &mii,
                           smi_interface_t &?smi,
                           char mac_address[],
                           chanend rx[],
@@ -994,14 +988,14 @@ void _ethernet_server_full(_mii_interface_full_t &mii,
 # 9 "ethernet_server_lite_p1.h"
 # 1 "smi.h" 1
 # 10 "ethernet_server_lite_p1.h" 2
-# 1 "mii_p1.h" 1
+# 1 "mii.h" 1
 # 11 "ethernet_server_lite_p1.h" 2
-# 1 "ethernet_conf_derived_p1.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 12 "ethernet_server_lite_p1.h" 2
 
 
 
-void _ethernet_server_lite(_mii_interface_lite_t &mii,
+void _ethernet_server_lite(mii_interface_lite_t &mii,
                           smi_interface_t &?smi,
                           char mac_address[],
                           chanend rx[],
@@ -1010,7 +1004,7 @@ void _ethernet_server_lite(_mii_interface_lite_t &mii,
                           int num_tx);
 # 17 "ethernet_server_p1.h" 2
 # 45 "ethernet_server_p1.h"
-void _ethernet_server( _mii_interface_full_t  &mii,
+void _ethernet_server( mii_interface_full_t  &mii,
                      smi_interface_t &?smi,
                      char mac_address[],
                      chanend rx[],
@@ -1020,7 +1014,7 @@ void _ethernet_server( _mii_interface_full_t  &mii,
 # 9 "ethernet_p1.h" 2
 # 1 "ethernet_rx_client_p1.h" 1
 # 9 "ethernet_rx_client_p1.h"
-# 1 "ethernet_conf_derived_p1.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 10 "ethernet_rx_client_p1.h" 2
 # 11 "ethernet_rx_client_p1.h"
 # 1 "ethernet_rx_client_lite_p1.h" 1
@@ -1128,7 +1122,7 @@ void _safe_mac_rx(chanend c_mac,
 # 10 "ethernet_p1.h" 2
 # 1 "ethernet_tx_client_p1.h" 1
 # 20 "ethernet_tx_client_p1.h"
-# 1 "ethernet_conf_derived_p1.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 21 "ethernet_tx_client_p1.h" 2
 # 22 "ethernet_tx_client_p1.h"
 # 1 "ethernet_tx_client_lite_p1.h" 1
@@ -1180,7 +1174,7 @@ int _mac_get_macaddr(chanend c_mac, unsigned char macaddr[]);
 # 1 "ethernet_board_conf.h" 1
 # 6 "ethernet_phy_reset_p1.h" 2
 # 7 "ethernet_phy_reset_p1.h"
-# 1 "ethernet_conf_derived_p1.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 8 "ethernet_phy_reset_p1.h" 2
 # 15 "ethernet_phy_reset_p1.h"
 typedef out port _ethernet_reset_interface_t;
@@ -1190,55 +1184,11 @@ void eth_phy_reset_p1(_ethernet_reset_interface_t eth_rst);
 # 28 "../src/demo.xc" 2
 # 1 "ethernet_p2.h" 1
 # 4 "ethernet_p2.h"
-# 1 "ethernet_conf_derived_p2.h" 1
-# 3 "ethernet_conf_derived_p2.h"
-# 1 "platform.h" 1 3
-# 4 "ethernet_conf_derived_p2.h" 2
-# 6 "ethernet_conf_derived_p2.h"
-# 1 "ethernet_conf.h" 1
-# 7 "ethernet_conf_derived_p2.h" 2
+# 1 "ethernet_conf_derived.h" 1
 # 5 "ethernet_p2.h" 2
 # 1 "platform.h" 1 3
 # 6 "ethernet_p2.h" 2
-# 1 "mii_p2.h" 1
-# 4 "mii_p2.h"
-# 1 "xs1.h" 1 3
-# 5 "mii_p2.h" 2
-# 1 "xccompat.h" 1 3
-# 6 "mii_p2.h" 2
-# 1 "ethernet_conf_derived_p2.h" 1
-# 7 "mii_p2.h" 2
-# 19 "mii_p2.h"
-typedef struct mii_interface_full_t {
-    __clock_t  clk_mii_rx;
-    __clock_t  clk_mii_tx;
-
-    in port p_mii_rxclk;
-    in port p_mii_rxer;
-    in buffered port:32 p_mii_rxd;
-    in port p_mii_rxdv;
-
-    in port p_mii_txclk;
-    out port p_mii_txen;
-    out buffered port:32 p_mii_txd;
-} mii_interface_full_t;
-
-typedef struct mii_interface_lite_t {
-    __clock_t  clk_mii_rx;
-    __clock_t  clk_mii_tx;
-
-    in port p_mii_rxclk;
-    in port p_mii_rxer;
-    in buffered port:32 p_mii_rxd;
-    in port p_mii_rxdv;
-
-    in port p_mii_txclk;
-    out port p_mii_txen;
-    out buffered port:32 p_mii_txd;
-# 47 "mii_p2.h"
-    in port p_mii_timing;
-
-} mii_interface_lite_t;
+# 1 "mii.h" 1
 # 7 "ethernet_p2.h" 2
 # 1 "smi.h" 1
 # 8 "ethernet_p2.h" 2
@@ -1252,10 +1202,10 @@ typedef struct mii_interface_lite_t {
 # 9 "mii_full_p2.h" 2
 # 1 "xccompat.h" 1 3
 # 10 "mii_full_p2.h" 2
-# 1 "mii_p2.h" 1
+# 1 "mii.h" 1
 # 11 "mii_full_p2.h" 2
 # 12 "mii_full_p2.h"
-# 1 "ethernet_conf_derived_p2.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 13 "mii_full_p2.h" 2
 # 79 "mii_full_p2.h"
 # 1 "mii_queue_p2.h" 1
@@ -1344,16 +1294,16 @@ void mii_tx_pins(
 # 237 "mii_full_p2.h"
 void ethernet_get_mii_counts( unsigned &dropped );
 # 11 "ethernet_server_p2.h" 2
-# 1 "ethernet_conf_derived_p2.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 12 "ethernet_server_p2.h" 2
 # 15 "ethernet_server_p2.h"
 # 1 "ethernet_server_full_p2.h" 1
 # 9 "ethernet_server_full_p2.h"
 # 1 "smi.h" 1
 # 10 "ethernet_server_full_p2.h" 2
-# 1 "mii_p2.h" 1
+# 1 "mii.h" 1
 # 11 "ethernet_server_full_p2.h" 2
-# 1 "ethernet_conf_derived_p2.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 12 "ethernet_server_full_p2.h" 2
 
 
@@ -1370,9 +1320,9 @@ void ethernet_server_full(mii_interface_full_t &mii,
 # 9 "ethernet_server_lite_p2.h"
 # 1 "smi.h" 1
 # 10 "ethernet_server_lite_p2.h" 2
-# 1 "mii_p2.h" 1
+# 1 "mii.h" 1
 # 11 "ethernet_server_lite_p2.h" 2
-# 1 "ethernet_conf_derived_p2.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 12 "ethernet_server_lite_p2.h" 2
 
 
@@ -1396,7 +1346,7 @@ void ethernet_server( mii_interface_full_t  &mii,
 # 9 "ethernet_p2.h" 2
 # 1 "ethernet_rx_client_p2.h" 1
 # 9 "ethernet_rx_client_p2.h"
-# 1 "ethernet_conf_derived_p2.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 10 "ethernet_rx_client_p2.h" 2
 # 1 "ethernet_rx_client_lite_p2.h" 1
 # 11 "ethernet_rx_client_p2.h" 2
@@ -1422,7 +1372,7 @@ void safe_mac_rx(chanend c_mac,
 # 10 "ethernet_p2.h" 2
 # 1 "ethernet_tx_client_p2.h" 1
 # 20 "ethernet_tx_client_p2.h"
-# 1 "ethernet_conf_derived_p2.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 21 "ethernet_tx_client_p2.h" 2
 # 22 "ethernet_tx_client_p2.h"
 # 1 "ethernet_tx_client_lite_p2.h" 1
@@ -1442,7 +1392,7 @@ int mac_get_macaddr(chanend c_mac, unsigned char macaddr[]);
 # 1 "ethernet_board_conf.h" 1
 # 6 "ethernet_phy_reset_p2.h" 2
 # 7 "ethernet_phy_reset_p2.h"
-# 1 "ethernet_conf_derived_p2.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 8 "ethernet_phy_reset_p2.h" 2
 # 15 "ethernet_phy_reset_p2.h"
 typedef out port ethernet_reset_interface_t;
@@ -1477,7 +1427,7 @@ int otp_board_info_get_serial( otp_ports_t &ports ,
 # 1 "ethernet_board_conf.h" 1
 # 14 "ethernet_board_support.h" 2
 # 15 "ethernet_board_support.h"
-# 1 "ethernet_conf_derived_p1.h" 1
+# 1 "ethernet_conf_derived.h" 1
 # 16 "ethernet_board_support.h" 2
 # 31 "../src/demo.xc" 2
 # 1 "checksum.h" 1
@@ -1576,7 +1526,7 @@ void xscope_data_from_host(chanend c, char buf[256], int &n);
 # 352 "xscope.h" 3
 void xscope_connect_data_from_host(chanend from_host);
 # 410 "xscope.h" 3
-# 1 "/home/atena/workspace_ethernet_new_replicated_rec/app_ethernet_demo/.build_full/xscope_probes.h" 1
+# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_full/xscope_probes.h" 1
 # 411 "xscope.h" 2 3
 # 33 "../src/demo.xc" 2
 # 51 "../src/demo.xc"
@@ -1591,7 +1541,7 @@ smi_interface_t smi_p1 =  { 0 , on tile[0]: 0x40300 } ;
 smi_interface_t smi_p2 =  { 0 , on tile[0]: 0x40200 } ;
 
 mii_interface_full_t  mii_p1 =  { on tile[0] : 0x106 , on tile[0] : 0x206 , on tile[0]: 0x10500 , on tile[0]: 0x10c00 , on tile[0]: 0x40400 , on tile[0]: 0x10e00 , on tile[0]: 0x10a00 , on tile[0]: 0x10d00 , on tile[0]: 0x40500 } ;
-_mii_interface_full_t  mii_p2 =  { on tile[0] : 0x306 , on tile[0] : 0x406 , on tile[0]: 0x10800 , on tile[0]: 0x10600 , on tile[0]: 0x40100 , on tile[0]: 0x10b00 , on tile[0]: 0x10700 , on tile[0]: 0x10900 , on tile[0]: 0x40000 } ;
+
 
 _ethernet_reset_interface_t eth_rst_p1 =  on tile[0]: 0x10f00 ; ;
 ethernet_reset_interface_t eth_rst_p2 =  on tile[0]: 0x10400 ; ;
@@ -2160,18 +2110,18 @@ int main()
             on  tile[0] :
       {
         char mac_address[6];
-        otp_board_info_get_mac(otp_ports_p2, 0, mac_address);
-        eth_phy_reset_p1(eth_rst_p2);
-        smi_init(smi_p2);
-        eth_phy_config(1, smi_p2);
-        _ethernet_server_full (mii_p2,
+        otp_board_info_get_mac(otp_ports_p1, 0, mac_address);
+        eth_phy_reset_p2(eth_rst_p1);
+        smi_init(smi_p1);
+        eth_phy_config(1, smi_p1);
+        _ethernet_server_full (mii_p1,
                         null,
                         mac_address,
                         rx0, 1,
                         tx0, 1);
       }
 # 673 "../src/demo.xc"
-        on tile[0]: demo0(tx0[0], rx0[0]);
+        on tile[1]: demo0(tx0[0], rx0[0]);
 
     }
 
