@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include "ethernet_conf.h"
 #include "ethernet_p1.h"
-#include "ethernet_p2.h"
+//#include "ethernet_p2.h"
 #include "otp_board_info.h"
 #include "ethernet_board_support.h"
 #include "checksum.h"
@@ -536,7 +536,7 @@ int is_valid_icmp_packet1(const unsigned char rxbuf[], int nbytes)
 
   return 1;
 }
-/*
+
 void demo0(chanend tx, chanend rx)
 {
   unsigned int rxbuf[1600/4];
@@ -584,7 +584,7 @@ void demo0(chanend tx, chanend rx)
   //::
   }
 }
-*/
+/*
 void demo1(chanend tx, chanend rx)
 {
   unsigned int rxbuf[1600/4];
@@ -632,7 +632,7 @@ void demo1(chanend tx, chanend rx)
   //::
   }
 }
-
+*/
 int main()
 {
   chan rx0[1], tx0[1];
@@ -645,10 +645,10 @@ int main()
       {
         char mac_address[6];
         otp_board_info_get_mac(otp_ports_p2, 0, mac_address);
-        eth_phy_reset_p2(eth_rst_p2);
+        eth_phy_reset(eth_rst_p2);
         smi_init(smi_p2);
         eth_phy_config(1, smi_p2);
-        ethernet_server(mii_p2,
+        _ethernet_server(mii_p2,
                         null,
                         mac_address,
                         rx0, 1,
@@ -670,8 +670,8 @@ int main()
       }
 */
       //::demo
-        on tile[0]:  demo1(tx0[0], rx0[0]);
-    //    on ETHERNET_DEFAULT_TILE_P2: demo1(tx0[0], rx0[0]);
+   //     on tile[0]:  demo1(tx0[0], rx0[0]);
+        on ETHERNET_DEFAULT_TILE_P2: demo0(tx0[0], rx0[0]);
     }
 
 	return 0;
