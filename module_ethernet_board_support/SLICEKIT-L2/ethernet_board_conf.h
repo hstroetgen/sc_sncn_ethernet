@@ -115,7 +115,7 @@
 #define PORT_ETH_MDIOFAKE on tile[0]: XS1_PORT_8B
 #define PORT_ETH_ERR on tile[0]: XS1_PORT_1M
 */
-/*
+
 #define SMI_COMBINE_MDC_MDIO 1
 #define SMI_MDC_BIT 0
 #define SMI_MDIO_BIT 1
@@ -141,7 +141,7 @@
 #define PORT_ETH_MDIOC1 on tile[0]: XS1_PORT_4C
 #define PORT_ETH_MDIOFAKE1 on tile[0]: XS1_PORT_8A
 #define PORT_ETH_ERR1 on tile[0]: XS1_PORT_4D
-*/
+
 #endif
 #endif
 #endif

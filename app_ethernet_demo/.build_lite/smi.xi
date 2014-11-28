@@ -327,12 +327,12 @@ typedef out buffered port:32 out_buffered_port_32_t;
 # 3 "ethernet_conf_derived.h"
 # 1 "platform.h" 1 3
 # 21 "platform.h" 3
-# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SOMANET-C22.h" 1
-# 4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SOMANET-C22.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 1
+# 4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
 # 1 "xs1.h" 1 3
-# 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SOMANET-C22.h" 2
-# 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SOMANET-C22.h"
-extern tileref tile[4];
+# 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
+extern tileref tile[2];
 # 22 "platform.h" 2 3
 # 4 "ethernet_conf_derived.h" 2
 # 6 "ethernet_conf_derived.h"

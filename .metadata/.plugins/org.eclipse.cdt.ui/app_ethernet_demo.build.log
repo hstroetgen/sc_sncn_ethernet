@@ -3,38 +3,6 @@
 
 xmake CONFIG=lite all 
 Using modules: module_ethernet_dual module_ethernet_board_support module_otp_board_info module_slicekit_support module_ethernet_smi module_locks
-Creating dependencies for swlock_asm.S
-Creating dependencies for mii_lld_p2.S
-Creating dependencies for mii_client_interrrupt_p2.S
-Creating dependencies for mii_lld_p1.S
-Creating dependencies for mii_client_interrrupt_p1.S
-Creating dependencies for smi.xc
-Creating dependencies for otp_board_info.xc
-Creating dependencies for mii_single_server_p2.xc
-Creating dependencies for mii_lite_p2.xc
-Creating dependencies for mii_driver_p2.xc
-Creating dependencies for mii_client_user_p2.xc
-Creating dependencies for mii_client_lite_p2.xc
-Creating dependencies for mii_single_server_p1.xc
-Creating dependencies for mii_lite_p1.xc
-Creating dependencies for mii_driver_p1.xc
-Creating dependencies for mii_client_user_p1.xc
-Creating dependencies for mii_client_lite_p1.xc
-Creating dependencies for mii_p2.xc
-Creating dependencies for mii_filter_p2.xc
-Creating dependencies for ethernet_tx_server_p2.xc
-Creating dependencies for ethernet_tx_client_p2.xc
-Creating dependencies for ethernet_server_p2.xc
-Creating dependencies for ethernet_rx_server_p2.xc
-Creating dependencies for ethernet_rx_client_p2.xc
-Creating dependencies for mii_p1.xc
-Creating dependencies for mii_filter_p1.xc
-Creating dependencies for ethernet_tx_server_p1.xc
-Creating dependencies for ethernet_tx_client_p1.xc
-Creating dependencies for ethernet_server_p1.xc
-Creating dependencies for ethernet_rx_server_p1.xc
-Creating dependencies for ethernet_rx_client_p1.xc
-Creating dependencies for ethernet_phy_reset.xc
 Creating dependencies for demo.xc
 /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/mii_full_p2.h:109: warning: The macro is redefined
     #define MII_PACKET_HEADER_SIZE (sizeof(mii_packet_t) - ((MAX_ETHERNET_PACKET_SIZE+3)/4)*4)
@@ -48,94 +16,6 @@ Creating dependencies for demo.xc
     from /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_p2.h: 8:    #include "ethernet_server_p2.h"
     from ../src/demo.xc: 28:    #include "ethernet_p2.h"
     previously macro "create_buf_getset" defined as: #define create_buf_getset(field) inline int _mii_packet_get_##field (int buf) { int x; __asm__("ldw %0,%1[" STRINGIFY(BUF_OFFSET_ ## field) "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_##field (int buf, int x) { __asm__("stw %1, %0[" STRINGIFY(BUF_OFFSET_ ## field) "]"::"r"(buf),"r"(x)); } 	/* /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_full_p1.h:125	*/
-Creating dependencies for swlock.c
-Creating dependencies for hwlock.c
-Creating dependencies for check_slot.c
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_board_support/SOMANET-C22/check_slot.c:6:2: warning: #warning No define of form ETHERNET_USE_{STAR|TRIANGLE|CIRCLE|SQUARE}_SLOT found in ethernet_conf.h
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_board_support/SOMANET-C22/check_slot.c:7:2: warning: #warning Assuming ETHERNET_USE_CIRCLE_SLOT
-Creating dependencies for mii_client_lite_support_p2.c
-Creating dependencies for mii_client_lite_support_p1.c
-Creating dependencies for nettypes_p2.c
-Creating dependencies for mii_wrappers_p2.c
-Creating dependencies for mii_queue_p2.c
-Creating dependencies for mii_packet_p2.c
-Creating dependencies for mii_malloc_p2.c
-Creating dependencies for mii_filter_support_p2.c
-Creating dependencies for link_status_p2.c
-Creating dependencies for ethernet_tx_client_support_p2.c
-Creating dependencies for ethernet_rx_suppport_p2.c
-Creating dependencies for nettypes_p1.c
-Creating dependencies for mii_wrappers_p1.c
-Creating dependencies for mii_queue_p1.c
-Creating dependencies for mii_packet_p1.c
-Creating dependencies for mii_malloc_p1.c
-Creating dependencies for mii_filter_support_p1.c
-Creating dependencies for link_status_p1.c
-Creating dependencies for ethernet_tx_client_support_p1.c
-Creating dependencies for ethernet_rx_suppport_p1.c
-Creating dependencies for checksum.c
-Compiling checksum.c
-Compiling ethernet_rx_suppport_p1.c
-Compiling ethernet_tx_client_support_p1.c
-Compiling link_status_p1.c
-Compiling mii_filter_support_p1.c
-Compiling mii_malloc_p1.c
-Compiling mii_packet_p1.c
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:32: warning: inline function ‘mii_packet_set_forwarding’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:32: warning: inline function ‘mii_packet_get_forwarding’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:31: warning: inline function ‘mii_packet_set_crc’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:31: warning: inline function ‘mii_packet_get_crc’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:30: warning: inline function ‘mii_packet_set_tcount’ declared but never defined
-Compiling mii_queue_p1.c
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:30: warning: inline function ‘mii_packet_get_tcount’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:29: warning: inline function ‘mii_packet_set_stage’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:29: warning: inline function ‘mii_packet_get_stage’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:28: warning: inline function ‘mii_packet_set_timestamp_id’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:28: warning: inline function ‘mii_packet_get_timestamp_id’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:27: warning: inline function ‘mii_packet_set_src_port’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:27: warning: inline function ‘mii_packet_get_src_port’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:26: warning: inline function ‘mii_packet_set_filter_result’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:26: warning: inline function ‘mii_packet_get_filter_result’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:25: warning: inline function ‘mii_packet_set_timestamp’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:25: warning: inline function ‘mii_packet_get_timestamp’ declared but never defined
-Compiling mii_wrappers_p1.c
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:24: warning: inline function ‘mii_packet_set_length’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:24: warning: inline function ‘mii_packet_get_length’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:32: warning: inline function ‘mii_packet_set_forwarding’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:32: warning: inline function ‘mii_packet_get_forwarding’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:31: warning: inline function ‘mii_packet_set_crc’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:31: warning: inline function ‘mii_packet_get_crc’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:30: warning: inline function ‘mii_packet_set_tcount’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:30: warning: inline function ‘mii_packet_get_tcount’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:29: warning: inline function ‘mii_packet_set_stage’ declared but never defined
-Compiling nettypes_p1.c
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:29: warning: inline function ‘mii_packet_get_stage’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:28: warning: inline function ‘mii_packet_set_timestamp_id’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:28: warning: inline function ‘mii_packet_get_timestamp_id’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:27: warning: inline function ‘mii_packet_set_src_port’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:27: warning: inline function ‘mii_packet_get_src_port’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:26: warning: inline function ‘mii_packet_set_filter_result’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:26: warning: inline function ‘mii_packet_get_filter_result’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:25: warning: inline function ‘mii_packet_set_timestamp’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:25: warning: inline function ‘mii_packet_get_timestamp’ declared but never defined
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:24: warning: inline function ‘mii_packet_set_length’ declared but never defined
-Compiling ethernet_rx_suppport_p2.c
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_packet_p1.c:24: warning: inline function ‘mii_packet_get_length’ declared but never defined
-Compiling ethernet_tx_client_support_p2.c
-Compiling link_status_p2.c
-Compiling mii_filter_support_p2.c
-Compiling mii_malloc_p2.c
-Compiling mii_packet_p2.c
-Compiling mii_queue_p2.c
-Compiling mii_wrappers_p2.c
-Compiling nettypes_p2.c
-Compiling mii_client_lite_support_p1.c
-Compiling mii_client_lite_support_p2.c
-Compiling check_slot.c
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_board_support/SOMANET-C22/check_slot.c:6:2: warning: #warning No define of form ETHERNET_USE_{STAR|TRIANGLE|CIRCLE|SQUARE}_SLOT found in ethernet_conf.h
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_board_support/SOMANET-C22/check_slot.c:7:2: warning: #warning Assuming ETHERNET_USE_CIRCLE_SLOT
-Compiling hwlock.c
-Compiling swlock.c
 Compiling demo.xc
 /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/mii_full_p2.h:109: warning: The macro is redefined
     #define MII_PACKET_HEADER_SIZE (sizeof(mii_packet_t) - ((MAX_ETHERNET_PACKET_SIZE+3)/4)*4)
@@ -149,98 +29,19 @@ Compiling demo.xc
     from /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/include_p2/ethernet_p2.h: 8:    #include "ethernet_server_p2.h"
     from ../src/demo.xc: 28:    #include "ethernet_p2.h"
     previously macro "create_buf_getset" defined as: #define create_buf_getset(field) inline int _mii_packet_get_##field (int buf) { int x; __asm__("ldw %0,%1[" STRINGIFY(BUF_OFFSET_ ## field) "]":"=r"(x):"r"(buf)); return x; } inline void _mii_packet_set_##field (int buf, int x) { __asm__("stw %1, %0[" STRINGIFY(BUF_OFFSET_ ## field) "]"::"r"(buf),"r"(x)); } 	/* /home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/mii_full_p1.h:125	*/
-../src/demo.xc: In function `main':
-../src/demo.xc:639: warning: unused variable `rx1'
-../src/demo.xc:639: warning: unused variable `tx1'
-Compiling ethernet_phy_reset.xc
-Compiling ethernet_rx_client_p1.xc
-Compiling ethernet_rx_server_p1.xc
-Compiling ethernet_server_p1.xc
-Compiling ethernet_tx_client_p1.xc
-Compiling ethernet_tx_server_p1.xc
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc: In function `_ethernet_tx_server':
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:241: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:241: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:243: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:243: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:244: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:244: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:247: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:247: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:255: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:255: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:256: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:256: warning: this usage is deprecated and may not be supported in future tools
-Compiling mii_filter_p1.xc
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:262: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p1/ethernet_tx_server_p1.xc:262: warning: this usage is deprecated and may not be supported in future tools
-Compiling mii_p1.xc
-Compiling ethernet_rx_client_p2.xc
-Compiling ethernet_rx_server_p2.xc
-Compiling ethernet_server_p2.xc
-Compiling ethernet_tx_client_p2.xc
-Compiling ethernet_tx_server_p2.xc
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc: In function `ethernet_tx_server':
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:241: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:241: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:243: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:243: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:244: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:244: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:247: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:247: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:255: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:255: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:256: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:256: warning: this usage is deprecated and may not be supported in future tools
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:262: warning: multiple use of complex chanend expression within transaction
-/home/atena/workspace_ethernet_new_replicated/module_ethernet_dual/src/full_p2/ethernet_tx_server_p2.xc:262: warning: this usage is deprecated and may not be supported in future tools
-Compiling mii_filter_p2.xc
-Compiling mii_p2.xc
-Compiling mii_client_lite_p1.xc
-Compiling mii_client_user_p1.xc
-Compiling mii_driver_p1.xc
-Compiling mii_lite_p1.xc
-Compiling mii_single_server_p1.xc
-Compiling mii_client_lite_p2.xc
-Compiling mii_client_user_p2.xc
-Compiling mii_driver_p2.xc
-Compiling mii_lite_p2.xc
-Compiling mii_single_server_p2.xc
-Compiling otp_board_info.xc
-Compiling smi.xc
-Compiling mii_client_interrrupt_p1.S
-Compiling mii_lld_p1.S
-Compiling mii_client_interrrupt_p2.S
-Compiling mii_lld_p2.S
-Compiling swlock_asm.S
 Creating app_ethernet_demo_lite.xe
 Constraint check for "tile[0]" (node "0", tile 0):
   Cores available:            8,   used:          3 .  OKAY
   Timers available:          10,   used:          3 .  OKAY
   Chanends available:        32,   used:         10 .  OKAY
-  Memory available:       65536,   used:      41920 .  OKAY
-    (Stack: 32032, Code: 9124, Data: 764)
+  Memory available:       65536,   used:      41732 .  OKAY
+    (Stack: 32032, Code: 8992, Data: 708)
 Constraints checks PASSED.
 Constraint check for "tile[1]" (node "1", tile 0):
-  Cores available:            8,   used:          1 .  OKAY
-  Timers available:          10,   used:          1 .  OKAY
-  Chanends available:        32,   used:          0 .  OKAY
-  Memory available:       65536,   used:       1988 .  OKAY
-    (Stack: 336, Code: 1412, Data: 240)
-Constraints checks PASSED.
-Constraint check for "tile[2]" (node "2", tile 0):
-  Cores available:            8,   used:          1 .  OKAY
-  Timers available:          10,   used:          1 .  OKAY
-  Chanends available:        32,   used:          0 .  OKAY
-  Memory available:       65536,   used:       1988 .  OKAY
-    (Stack: 336, Code: 1412, Data: 240)
-Constraints checks PASSED.
-Constraint check for "tile[3]" (node "3", tile 0):
-  Cores available:            8,   used:          1 .  OKAY
-  Timers available:          10,   used:          1 .  OKAY
-  Chanends available:        32,   used:          0 .  OKAY
-  Memory available:       65536,   used:       1988 .  OKAY
-    (Stack: 336, Code: 1412, Data: 240)
+  Cores available:            8,   used:          3 .  OKAY
+  Timers available:          10,   used:          3 .  OKAY
+  Chanends available:        32,   used:         10 .  OKAY
+  Memory available:       65536,   used:      41480 .  OKAY
+    (Stack: 32040, Code: 8752, Data: 688)
 Constraints checks PASSED.
 Build Complete

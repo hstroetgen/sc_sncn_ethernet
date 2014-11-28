@@ -345,12 +345,12 @@ int printstrln(const char (& alias s)[]);
 # 24 "../src/demo.xc" 2
 # 1 "platform.h" 1 3
 # 21 "platform.h" 3
-# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SOMANET-C22.h" 1
-# 4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SOMANET-C22.h"
+# 1 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 1
+# 4 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
 # 1 "xs1.h" 1 3
-# 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SOMANET-C22.h" 2
-# 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SOMANET-C22.h"
-extern tileref tile[4];
+# 5 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h" 2
+# 13 "/home/atena/workspace_ethernet_new_replicated/app_ethernet_demo/.build_lite/SLICEKIT-L2.h"
+extern tileref tile[2];
 # 22 "platform.h" 2 3
 # 25 "../src/demo.xc" 2
 # 1 "stdlib.h" 1 3
@@ -1178,11 +1178,11 @@ int _mac_get_macaddr(chanend c_mac, unsigned char macaddr[]);
 # 7 "ethernet_phy_reset.h"
 # 1 "ethernet_conf_derived.h" 1
 # 8 "ethernet_phy_reset.h" 2
-# 15 "ethernet_phy_reset.h"
-typedef out port ethernet_reset_interface_t;
+# 21 "ethernet_phy_reset.h"
+typedef int ethernet_reset_interface_t;
 
 
-void eth_phy_reset(ethernet_reset_interface_t eth_rst);
+inline void eth_phy_reset(ethernet_reset_interface_t eth_rst) {}
 # 12 "ethernet_p1.h" 2
 # 28 "../src/demo.xc" 2
 # 1 "ethernet_p2.h" 1
@@ -1664,21 +1664,21 @@ void xscope_connect_data_from_host(chanend from_host);
 # 411 "xscope.h" 2 3
 # 33 "../src/demo.xc" 2
 # 51 "../src/demo.xc"
-on  tile[0] : otp_ports_t otp_ports_p1 =  { 0x200100 , 0x100200 , 0x100300 } ;
+on  tile[1] : otp_ports_t otp_ports_p1 =  { 0x200100 , 0x100200 , 0x100300 } ;
 on  tile[0] : otp_ports_t otp_ports_p2 =  { 0x200000 , 0x100000 , 0x100100 } ;
 
 
 
 
 
-smi_interface_t smi_p1 =  { 0 , on tile[0]: 0x40300 } ;
+smi_interface_t smi_p1 =  { 0 , on tile[1]: 0x40200 } ;
 smi_interface_t smi_p2 =  { 0 , on tile[0]: 0x40200 } ;
 
+mii_interface_lite_t  mii_p1 =  { on tile[1] : 0x106 , on tile[1] : 0x206 , on tile[1]: 0x10000 , on tile[1]: 0x40300 , on tile[1]: 0x40000 , on tile[1]: 0x10100 , on tile[1]: 0x10500 , on tile[1]: 0x10400 , on tile[1]: 0x40100 , on tile[1] : 0x80200 } ;
+mii_interface_lite_t  mii_p2 =  { on tile[0] : 0x406 , on tile[0] : 0x506 , on tile[0]: 0x10000 , on tile[0]: 0x40300 , on tile[0]: 0x40000 , on tile[0]: 0x10100 , on tile[0]: 0x10500 , on tile[0]: 0x10400 , on tile[0]: 0x40100 , on tile[0] : 0x80200 } ;
 
-mii_interface_lite_t  mii_p2 =  { on tile[0] : 0x306 , on tile[0] : 0x406 , on tile[0]: 0x10800 , on tile[0]: 0x10600 , on tile[0]: 0x40100 , on tile[0]: 0x10b00 , on tile[0]: 0x10700 , on tile[0]: 0x10900 , on tile[0]: 0x40000 , on tile[0] : 0x80200 } ;
-
-
-ethernet_reset_interface_t eth_rst_p2 =  on tile[0]: 0x10400 ; ;
+ethernet_reset_interface_t eth_rst_p1 =  0 ;
+ethernet_reset_interface_t eth_rst_p2 =  0 ;
 
 
 
@@ -1800,7 +1800,7 @@ int build_arp_response1(unsigned char rxbuf[], unsigned int txbuf[], const unsig
 {
   unsigned word;
   unsigned char byte;
-  const unsigned char own_ip_addr[4] =  {192, 168, 101, 70} ;
+  const unsigned char own_ip_addr[4] =  {192, 168, 101, 71} ;
 
   for (int i = 0; i < 6; i++)
     {
@@ -1877,7 +1877,7 @@ int is_valid_arp_packet0(const unsigned char rxbuf[], int nbytes)
 
 int is_valid_arp_packet1(const unsigned char rxbuf[], int nbytes)
 {
-  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 70} ;
+  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 71} ;
 
   if (rxbuf[12] != 0x08 || rxbuf[13] != 0x06)
     return 0;
@@ -1987,7 +1987,7 @@ int build_icmp_response0(unsigned char rxbuf[], unsigned char txbuf[], const uns
 
 int build_icmp_response1(unsigned char rxbuf[], unsigned char txbuf[], const unsigned char own_mac_addr[6])
 {
-  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 70} ;
+  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 71} ;
   unsigned icmp_checksum;
   int datalen;
   int totallen;
@@ -2108,7 +2108,7 @@ int is_valid_icmp_packet0(const unsigned char rxbuf[], int nbytes)
 
 int is_valid_icmp_packet1(const unsigned char rxbuf[], int nbytes)
 {
-  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 70} ;
+  static const unsigned char own_ip_addr[4] =  {192, 168, 101, 71} ;
   unsigned totallen;
 
 
@@ -2245,7 +2245,21 @@ int main()
     {
 
 
-            on  tile[0] :
+            on  tile[1] :
+      {
+        char mac_address[6];
+        otp_board_info_get_mac(otp_ports_p1, 0, mac_address);
+        eth_phy_reset(eth_rst_p1);
+        smi_init(smi_p1);
+        eth_phy_config(1, smi_p1);
+        _ethernet_server_lite (mii_p1,
+                        null,
+                        mac_address,
+                        rx0, 1,
+                        tx0, 1);
+      }
+
+      on  tile[0] :
       {
         char mac_address[6];
         otp_board_info_get_mac(otp_ports_p2, 0, mac_address);
@@ -2255,11 +2269,13 @@ int main()
         ethernet_server_lite (mii_p2,
                         null,
                         mac_address,
-                        rx0, 1,
-                        tx0, 1);
+                        rx1, 1,
+                        tx1, 1);
       }
-# 674 "../src/demo.xc"
-        on  tile[0] : demo1(tx0[0], rx0[0]);
+
+
+        on tile[1]: demo0(tx0[0], rx0[0]);
+        on tile[0]: demo1(tx1[0], rx1[0]);
     }
 
 	return 0;
