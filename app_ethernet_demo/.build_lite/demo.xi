@@ -1543,7 +1543,7 @@ smi_interface_t smi_p2 =  { 0 , on tile[0]: 0x40200 } ;
 
 mii_interface_lite_t  mii_p2 =  { on tile[0] : 0x306 , on tile[0] : 0x406 , on tile[0]: 0x10800 , on tile[0]: 0x10600 , on tile[0]: 0x40100 , on tile[0]: 0x10b00 , on tile[0]: 0x10700 , on tile[0]: 0x10900 , on tile[0]: 0x40000 , on tile[0] : 0x80200 } ;
 
-_ethernet_reset_interface_t eth_rst_p1 =  on tile[0]: 0x10f00 ; ;
+
 ethernet_reset_interface_t eth_rst_p2 =  on tile[0]: 0x10400 ; ;
 
 
@@ -1712,28 +1712,28 @@ int is_valid_arp_packet0(const unsigned char rxbuf[], int nbytes)
   if (rxbuf[12] != 0x08 || rxbuf[13] != 0x06)
     return 0;
 
-  printstr("ARP packet received\n");
+
 
   if ((rxbuf, const unsigned[])[3] != 0x01000608)
   {
-    printstr("Invalid et_htype\n");
+
     return 0;
   }
   if ((rxbuf, const unsigned[])[4] != 0x04060008)
   {
-    printstr("Invalid ptype_hlen\n");
+
     return 0;
   }
   if (((rxbuf, const unsigned[])[5] & 0xFFFF) != 0x0100)
   {
-    printstr("Not a request\n");
+
     return 0;
   }
   for (int i = 0; i < 4; i++)
   {
     if (rxbuf[38 + i] != own_ip_addr[i])
     {
-      printstr("Not for us\n");
+
       return 0;
     }
   }
@@ -1748,7 +1748,7 @@ int is_valid_arp_packet1(const unsigned char rxbuf[], int nbytes)
   if (rxbuf[12] != 0x08 || rxbuf[13] != 0x06)
     return 0;
 
- printstr("ARP packet received\n");
+
 
   if ((rxbuf, const unsigned[])[3] != 0x01000608)
   {
@@ -1769,7 +1769,7 @@ int is_valid_arp_packet1(const unsigned char rxbuf[], int nbytes)
   {
     if (rxbuf[38 + i] != own_ip_addr[i])
     {
-      printstr("Not for us\n");
+
       return 0;
     }
   }
@@ -1934,23 +1934,23 @@ int is_valid_icmp_packet0(const unsigned char rxbuf[], int nbytes)
   if (rxbuf[23] != 0x01)
     return 0;
 
-  printstr("ICMP packet received\n");
+
 
   if ((rxbuf, const unsigned[])[3] != 0x00450008)
   {
-    printstr("Invalid et_ver_hdrl_tos\n");
+
     return 0;
   }
   if (((rxbuf, const unsigned[])[8] >> 16) != 0x0008)
   {
-    printstr("Invalid type_code\n");
+
     return 0;
   }
   for (int i = 0; i < 4; i++)
   {
     if (rxbuf[30 + i] != own_ip_addr[i])
     {
-      printstr("Not for us\n");
+
       return 0;
     }
   }
@@ -1981,7 +1981,7 @@ int is_valid_icmp_packet1(const unsigned char rxbuf[], int nbytes)
   if (rxbuf[23] != 0x01)
     return 0;
 
-  printstr("ICMP packet received\n");
+
 
   if ((rxbuf, const unsigned[])[3] != 0x00450008)
   {
@@ -1990,14 +1990,14 @@ int is_valid_icmp_packet1(const unsigned char rxbuf[], int nbytes)
   }
   if (((rxbuf, const unsigned[])[8] >> 16) != 0x0008)
   {
-   printstr("Invalid type_code\n");
+
     return 0;
   }
   for (int i = 0; i < 4; i++)
   {
     if (rxbuf[30 + i] != own_ip_addr[i])
     {
-      printstr("Not for us\n");
+
       return 0;
     }
   }
@@ -2005,69 +2005,27 @@ int is_valid_icmp_packet1(const unsigned char rxbuf[], int nbytes)
   totallen =  __builtin_byterev((rxbuf, const unsigned[])[4])  >> 16;
   if (nbytes > 60 && nbytes != totallen + 14)
   {
-    printstr("Invalid size\n");
+
     printintln(nbytes);
     printintln(totallen+14);
     return 0;
   }
   if (checksum_ip(rxbuf) != 0)
   {
-    printstr("Bad checksum\n");
+
     return 0;
   }
 
   return 1;
 }
-
-void demo0(chanend tx, chanend rx)
-{
-  unsigned int rxbuf[1600/4];
-  unsigned int txbuf[1600/4];
-
-
-  _mac_get_macaddr_lite (tx, own_mac_addr0);
-# 554 "../src/demo.xc"
-  printstr("Test started on P1\n");
-
-
-  while (1)
-  {
-    unsigned int src_port;
-    unsigned int nbytes;
-    _mac_rx_lite (rx, (rxbuf,char[]), nbytes, src_port);
-
-    if (!is_broadcast((rxbuf,char[])) && !is_mac_addr((rxbuf,char[]), own_mac_addr0))
-      continue;
-    if (_mac_custom_filter(rxbuf) != 0x1)
-      continue;
-
-
-
-
-    if (is_valid_arp_packet0((rxbuf,char[]), nbytes))
-      {
-        build_arp_response0((rxbuf,char[]), txbuf, own_mac_addr0);
-        _mac_tx_lite (tx, txbuf, nbytes,  (-1) );
-
-      }
-
-    else if (is_valid_icmp_packet0((rxbuf,char[]), nbytes))
-      {
-        build_icmp_response0((rxbuf,char[]), (txbuf, unsigned char[]), own_mac_addr0);
-        _mac_tx_lite (tx, txbuf, nbytes,  (-1) );
-
-      }
-
-  }
-}
-
+# 588 "../src/demo.xc"
 void demo1(chanend tx, chanend rx)
 {
   unsigned int rxbuf[1600/4];
   unsigned int txbuf[1600/4];
 
 
-  _mac_get_macaddr_lite (tx, own_mac_addr1);
+  mac_get_macaddr_lite (tx, own_mac_addr1);
 # 602 "../src/demo.xc"
   printstr("Test started on P2\n");
 
@@ -2076,7 +2034,7 @@ void demo1(chanend tx, chanend rx)
   {
     unsigned int src_port;
     unsigned int nbytes;
-    _mac_rx_lite (rx, (rxbuf,char[]), nbytes, src_port);
+    mac_rx_lite (rx, (rxbuf,char[]), nbytes, src_port);
 
     if (!is_broadcast((rxbuf,char[])) && !is_mac_addr((rxbuf,char[]), own_mac_addr1))
       continue;
@@ -2089,15 +2047,15 @@ void demo1(chanend tx, chanend rx)
     if (is_valid_arp_packet1((rxbuf,char[]), nbytes))
       {
         build_arp_response1((rxbuf,char[]), txbuf, own_mac_addr1);
-        _mac_tx_lite (tx, txbuf, nbytes,  (-1) );
-        printstr("ARP response sent\n");
+        mac_tx_lite (tx, txbuf, nbytes,  (-1) );
+
       }
 
     else if (is_valid_icmp_packet1((rxbuf,char[]), nbytes))
       {
         build_icmp_response1((rxbuf,char[]), (txbuf, unsigned char[]), own_mac_addr1);
-        _mac_tx_lite (tx, txbuf, nbytes,  (-1) );
-        printstr("ICMP response sent\n");
+        mac_tx_lite (tx, txbuf, nbytes,  (-1) );
+
       }
 
   }
@@ -2118,14 +2076,14 @@ int main()
         eth_phy_reset_p2(eth_rst_p2);
         smi_init(smi_p2);
         eth_phy_config(1, smi_p2);
-        _ethernet_server_lite (mii_p2,
+        ethernet_server_lite (mii_p2,
                         null,
                         mac_address,
                         rx0, 1,
                         tx0, 1);
       }
 # 673 "../src/demo.xc"
-        on tile[0]: demo0(tx0[0], rx0[0]);
+        on tile[0]: demo1(tx0[0], rx0[0]);
 
     }
 
