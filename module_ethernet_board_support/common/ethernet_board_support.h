@@ -48,7 +48,7 @@
 #endif
 
 #ifndef PORT_ETH_FAKE1
-#define PORT_ETH_FAKE1 on ETHERNET_DEFAULT_TILE_P2: XS1_PORT_8C
+#define PORT_ETH_FAKE1 on ETHERNET_DEFAULT_TILE_P2: XS1_PORT_8D
 #endif
 
 // Ethernet Ports

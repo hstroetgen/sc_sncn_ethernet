@@ -68,7 +68,7 @@ ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2
 // NOTE: YOU MAY NEED TO REDEFINE THIS TO AN IP ADDRESS THAT WORKS
 // FOR YOUR NETWORK
 #define OWN_IP_ADDRESS0 {192, 168, 101, 70}
-#define OWN_IP_ADDRESS1 {192, 168, 101, 71}
+#define OWN_IP_ADDRESS1 {192, 168, 101, 70}
 //::
 
 unsigned char ethertype_ip0[] = {0x08, 0x00};
@@ -641,7 +641,7 @@ int main()
     {
 
       //::ethernet
-            on ETHERNET_DEFAULT_TILE_P1:
+         /*   on ETHERNET_DEFAULT_TILE_P1:
       {
         char mac_address[6];
         otp_board_info_get_mac(otp_ports_p1, 0, mac_address);
@@ -653,7 +653,7 @@ int main()
                         mac_address,
                         rx0, 1,
                         tx0, 1);
-      }
+      }*/
 
       on ETHERNET_DEFAULT_TILE_P2:
       {
@@ -670,7 +670,7 @@ int main()
       }
 
       //::demo
-        on tile[1]:  demo0(tx0[0], rx0[0]);
+    //    on tile[0]:  demo0(tx0[0], rx0[0]);
         on tile[0]: demo1(tx1[0], rx1[0]);
     }
 
