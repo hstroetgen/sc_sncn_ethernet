@@ -42,7 +42,7 @@
  * server using the APIs found in ethernet_rx_client.h and ethernet_tx_client.h
  *
  **/
-void _ethernet_server(mii_interface_t &mii,
+void ethernet_server_p1(mii_interface_t &mii,
                      smi_interface_t &?smi,
                      char mac_address[],
                      chanend rx[],
@@ -61,7 +61,7 @@ void ethernet_server_two_port(mii_interface_t &mii1,
                               smi_interface_t &?smi2,
                               chanend ?connect_status);
 */
-#define _ethernet_server ADD_SUFFIX(_ethernet_server, ETHERNET_DEFAULT_IMPLEMENTATION)
+#define ethernet_server_p1 ADD_SUFFIX(ethernet_server_p1, ETHERNET_DEFAULT_IMPLEMENTATION)
 
 #endif
 

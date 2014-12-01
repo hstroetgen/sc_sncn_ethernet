@@ -20,7 +20,7 @@ APP_NAME =
 # xcc for the final link (mapping) stage.
 
 XCC_FLAGS_full = -g -report -DCONFIG_FULL  -save-temps
-XCC_FLAGS_lite = -g -report -DCONFIG_LITE  -save-temps
+XCC_FLAGS_lite = -O3 -g -report -DCONFIG_LITE  -save-temps
 
 # The USED_MODULES variable lists other module used by the application. 
 

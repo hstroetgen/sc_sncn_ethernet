@@ -121,7 +121,7 @@ void mii_single_server(out port ?p_mii_resetn,
 
 }
 
-void ethernet_server_lite(mii_interface_lite_t &m,
+void ethernet_server_p2_lite(mii_interface_lite_t &m,
                           smi_interface_t &?smi,
                           char mac_address[],
                           chanend c_rx[], int num_rx, chanend c_tx[], int num_tx)

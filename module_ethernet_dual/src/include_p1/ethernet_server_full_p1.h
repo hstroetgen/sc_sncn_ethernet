@@ -12,7 +12,7 @@
 
 #ifdef __XC__
 
-void _ethernet_server_full(mii_interface_full_t &mii,
+void ethernet_server_p1_full(mii_interface_full_t &mii,
                           smi_interface_t &?smi,
                           char mac_address[],
                           chanend rx[],

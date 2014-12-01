@@ -12,7 +12,7 @@
 
 #ifdef __XC__
 
-void _ethernet_server_lite(mii_interface_lite_t &mii,
+void ethernet_server_p1_lite(mii_interface_lite_t &mii,
                           smi_interface_t &?smi,
                           char mac_address[],
                           chanend rx[],
