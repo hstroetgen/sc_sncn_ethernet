@@ -39,12 +39,12 @@
 #ifdef __XC__
 #pragma select handler
 #endif
-void _mac_rx(chanend c_mac,
+void mac_rx_p1(chanend c_mac,
             unsigned char buffer[], 
             REFERENCE_PARAM(unsigned int, len),
             REFERENCE_PARAM(unsigned int, src_port));
 
-#define _mac_rx ADD_SUFFIX(_mac_rx, ETHERNET_DEFAULT_IMPLEMENTATION)
+#define mac_rx_p1 ADD_SUFFIX(mac_rx_p1, ETHERNET_DEFAULT_IMPLEMENTATION)
 
 /** This function receives a complete frame (i.e. src/dest MAC address,
  *  type & payload),  excluding pre-amble, SoF & CRC32. In addition it

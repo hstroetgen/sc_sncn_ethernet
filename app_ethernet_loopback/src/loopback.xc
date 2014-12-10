@@ -15,7 +15,6 @@
 #include "mac_custom_filter.h"
 #include <print.h>
 
-
 #define COM_TILE tile[0]
 
 smi_interface_t smi_p1 = ETHERNET_DEFAULT_SMI_INIT_P1;
@@ -35,25 +34,40 @@ void set_filter_broadcast(chanend rx);
 
 void receiver(chanend rx, chanend loopback);
 void transmitter(chanend tx, chanend loopback);
-void init_macAddress_p1(char mac_address_p1[6]){
+void init_macAddress_p1(char mac_address[6]){
 
-    mac_address_p1[0] = MAC_ADDRESS_P1[0];
-    mac_address_p1[1] = MAC_ADDRESS_P1[1];
-    mac_address_p1[2] = MAC_ADDRESS_P1[2];
-    mac_address_p1[3] = MAC_ADDRESS_P1[3];
-    mac_address_p1[4] = MAC_ADDRESS_P1[4];
-    mac_address_p1[5] = MAC_ADDRESS_P1[5];
+    mac_address[0] = MAC_ADDRESS_P1[0];
+    mac_address[1] = MAC_ADDRESS_P1[1];
+    mac_address[2] = MAC_ADDRESS_P1[2];
+    mac_address[3] = MAC_ADDRESS_P1[3];
+    mac_address[4] = MAC_ADDRESS_P1[4];
+    mac_address[5] = MAC_ADDRESS_P1[5];
 
+    printstr("MAC on P1: ");
+    printhex(mac_address[0]); printstr(":");
+    printhex(mac_address[1]); printstr(":");
+    printhex(mac_address[2]); printstr(":");
+    printhex(mac_address[3]); printstr(":");
+    printhex(mac_address[4]); printstr(":");
+    printhex(mac_address[5]); printstr("\n");
 }
 
-void init_macAddress_p2(char mac_address_p2[6]){
+void init_macAddress_p2(char mac_address[6]){
 
-    mac_address_p2[0] = MAC_ADDRESS_P2[0];
-    mac_address_p2[1] = MAC_ADDRESS_P2[1];
-    mac_address_p2[2] = MAC_ADDRESS_P2[2];
-    mac_address_p2[3] = MAC_ADDRESS_P2[3];
-    mac_address_p2[4] = MAC_ADDRESS_P2[4];
-    mac_address_p2[5] = MAC_ADDRESS_P2[5];
+    mac_address[0] = MAC_ADDRESS_P2[0];
+    mac_address[1] = MAC_ADDRESS_P2[1];
+    mac_address[2] = MAC_ADDRESS_P2[2];
+    mac_address[3] = MAC_ADDRESS_P2[3];
+    mac_address[4] = MAC_ADDRESS_P2[4];
+    mac_address[5] = MAC_ADDRESS_P2[5];
+
+    printstr("MAC on P2: ");
+    printhex(mac_address[0]); printstr(":");
+    printhex(mac_address[1]); printstr(":");
+    printhex(mac_address[2]); printstr(":");
+    printhex(mac_address[3]); printstr(":");
+    printhex(mac_address[4]); printstr(":");
+    printhex(mac_address[5]); printstr("\n");
 
 }
 
@@ -110,7 +124,7 @@ void receiver(chanend rx, chanend loopback)
       unsigned int src_port;
       unsigned int nbytes, time;
 
-      mac_rx_p2(rx, (rxbuffer, char[]), nbytes, src_port);
+      mac_rx_p1(rx, (rxbuffer, char[]), nbytes, src_port);
    //   printuintln(nbytes);
 
       pass_frame(loopback, (rxbuffer,char[]), nbytes);
@@ -130,7 +144,7 @@ void transmitter(chanend tx, chanend loopback)
  //         printhexln((txbuffer,char[])[i]);
  //     }
      // printstrln("fetched_frame");
-      mac_tx_p2(tx, (txbuffer), nbytes, ETH_BROADCAST);
+      mac_tx_p1(tx, (txbuffer), nbytes, ETH_BROADCAST);
       printstrln("tx");
     }
 }
@@ -158,12 +172,21 @@ int main()
         eth_phy_config(1, smi_p1);
         eth_phy_config(1, smi_p2);
 
+        par{
 
-        ethernet_server_p2(mii_p2,
-                        null,
-                        mac_address_p2,
-                        rx, 1,
-                        tx, 1);
+            ethernet_server_p1(mii_p1,
+                            null,
+                            mac_address_p1,
+                            rx, 1,
+                            tx, 1);
+
+    /*        ethernet_server_p2(mii_p2,
+                            null,
+                            mac_address_p2,
+                            rx, 1,
+                            tx, 1);
+*/
+        }
       }
         on tile[1] : test(tx[0], rx[0]);
     }

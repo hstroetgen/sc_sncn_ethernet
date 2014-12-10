@@ -32,7 +32,7 @@
  *                   (use ETH_BROADCAST transmits to all ports)
  *
  */
-void _mac_tx_lite(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
+void mac_tx_p1_lite(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
 
 
 /** Get the device MAC address.

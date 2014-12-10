@@ -45,7 +45,7 @@
 #ifdef __XC__
 #pragma select handler
 #endif
-void _mac_rx_lite(chanend c_mac,
+void mac_rx_p1_lite(chanend c_mac,
                  unsigned char buffer[],
                  REFERENCE_PARAM(unsigned int, len),
                  REFERENCE_PARAM(unsigned int, src_port));
