@@ -34,9 +34,9 @@
  *                   (use ETH_BROADCAST transmits to all ports)
  *
  */
-void mac_tx(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
+void mac_tx_p2(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
 
-#define mac_tx ADD_SUFFIX(mac_tx, ETHERNET_DEFAULT_IMPLEMENTATION)
+#define mac_tx_p2 ADD_SUFFIX(mac_tx_p2, ETHERNET_DEFAULT_IMPLEMENTATION)
 
 /** Get the device MAC address.
  *

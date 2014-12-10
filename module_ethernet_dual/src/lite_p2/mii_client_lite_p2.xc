@@ -28,7 +28,7 @@ void safe_mac_rx_lite(chanend cIn,
 }
 
 
-void mac_rx_lite(chanend cIn,
+void mac_rx_p2_lite(chanend cIn,
                         unsigned char buffer[], 
                         unsigned int &len,
                         unsigned int &src_port)
@@ -39,7 +39,7 @@ void mac_rx_lite(chanend cIn,
 void mac_set_custom_filter_lite(chanend c_mac_svr, int x) {
 }
 
-void mac_tx_lite(chanend cOut, unsigned int buffer[], int nBytes, int ifnum) {
+void mac_tx_p2_lite(chanend cOut, unsigned int buffer[], int nBytes, int ifnum) {
     cOut <: nBytes;
     for(int i = 0; i< ((nBytes+3)>>2); i++) {
         cOut <: buffer[i];

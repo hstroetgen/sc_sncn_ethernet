@@ -37,19 +37,19 @@ void xscope_user_init(void) {
 }
 #endif
 
-
+#define COM_TILE tile[0]
 // Port Definitions
 
 // These ports are for accessing the OTP memory
-on ETHERNET_DEFAULT_TILE_P1: otp_ports_t otp_ports_p1 = OTP_PORTS_INITIALIZER_P1;
-on ETHERNET_DEFAULT_TILE_P2: otp_ports_t otp_ports_p2 = OTP_PORTS_INITIALIZER_P2;
+//on COM_TILE: otp_ports_t otp_ports_p1 = OTP_PORTS_INITIALIZER_P1;
+//on COM_TILE: otp_ports_t otp_ports_p2 = OTP_PORTS_INITIALIZER_P2;
 
 // Here are the port definitions required by ethernet
 // The intializers are taken from the ethernet_board_support.h header for
 // XMOS dev boards. If you are using a different board you will need to
 // supply explicit port structure intializers for these values
 smi_interface_t smi_p1 = ETHERNET_DEFAULT_SMI_INIT_P1;
-smi_interface_t smi_p2 = ETHERNET_DEFAULT_SMI_INIT_P2;
+//smi_interface_t smi_p2 = ETHERNET_DEFAULT_SMI_INIT_P2;
 
 mii_interface_t mii_p1 = ETHERNET_DEFAULT_MII_INIT_P1;
 mii_interface_t mii_p2 = ETHERNET_DEFAULT_MII_INIT_P2;
@@ -60,11 +60,38 @@ ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2
 //ip_address_define
 // NOTE: YOU MAY NEED TO REDEFINE THIS TO AN IP ADDRESS THAT WORKS
 // FOR YOUR NETWORK
-const unsigned char OWN_IP_ADDRESS_P1[4] = {192, 168, 101, 70};
+const unsigned char OWN_IP_ADDRESS_P1[4] = {192, 168, 101, 80};
 const unsigned char OWN_IP_ADDRESS_P2[4] = {192, 168, 101, 80};
+
+const unsigned char MAC_ADDERSS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
+const unsigned char MAC_ADDRESS_P2[6] = {0xCA, 0xFE, 0xCA, 0xFE, 0xCA, 0xFE};
 
 unsigned char own_mac_addr_p1[6];
 unsigned char own_mac_addr_p2[6];
+
+
+void init_macAddress_p1(char &mac_address_p1){
+
+    mac_address_p1[0] = MAC_ADDERSS_P1[0];
+    mac_address_p1[1] = MAC_ADDERSS_P1[1];
+    mac_address_p1[2] = MAC_ADDERSS_P1[2];
+    mac_address_p1[3] = MAC_ADDERSS_P1[3];
+    mac_address_p1[4] = MAC_ADDERSS_P1[4];
+    mac_address_p1[5] = MAC_ADDERSS_P1[5];
+
+}
+
+void init_macAddress_p2(char &mac_address_p2){
+
+    mac_address_p2[0] = MAC_ADDERSS_P2[0];
+    mac_address_p2[1] = MAC_ADDERSS_P2[1];
+    mac_address_p2[2] = MAC_ADDERSS_P2[2];
+    mac_address_p2[3] = MAC_ADDERSS_P2[3];
+    mac_address_p2[4] = MAC_ADDERSS_P2[4];
+    mac_address_p2[5] = MAC_ADDERSS_P2[5];
+
+}
+
 
 void ping_p1(chanend tx, chanend rx)
 {
@@ -91,6 +118,7 @@ void ping_p1(chanend tx, chanend rx)
     unsigned int src_port;
     unsigned int nbytes;
     _mac_rx(rx, (rxbuf,char[]), nbytes, src_port);
+    printuintln(nbytes);
 #ifdef CONFIG_LITE
     if (!is_broadcast((rxbuf,char[])) && !is_mac_addr((rxbuf,char[]), own_mac_addr_p1))
       continue;
@@ -110,6 +138,9 @@ void ping_p1(chanend tx, chanend rx)
     else if (is_valid_icmp_packet((rxbuf,char[]), nbytes, OWN_IP_ADDRESS_P1))
       {
         build_icmp_response((rxbuf,char[]), (txbuf, unsigned char[]), own_mac_addr_p1, OWN_IP_ADDRESS_P1);
+    //    for(int i = 0; i <nbytes;i++){
+    //              printstrln((txbuf,char[])[i]);
+    //          }
         _mac_tx(tx, txbuf, nbytes, ETH_BROADCAST);
         printstr("ICMP response sent\n");
       }
@@ -176,41 +207,46 @@ int main()
     {
 
        //::ethernet
-       on ETHERNET_DEFAULT_TILE_P1:
+       on COM_TILE:
       {
         char mac_address_p1[6];
         char mac_address_p2[6];
 
-        otp_board_info_get_mac(otp_ports_p1, 0, mac_address_p1);
-        otp_board_info_get_mac(otp_ports_p2, 0, mac_address_p2);
+    //    otp_board_info_get_mac(otp_ports_p1, 0, mac_address_p1);
+        init_macAddress_p1(mac_address_p1);
+        init_macAddress_p2(mac_address_p2);
+
+   //     otp_board_info_get_mac(otp_ports_p2, 0, mac_address_p2);
 
         eth_phy_reset(eth_rst_p1);
-        eth_phy_reset(eth_rst_p2);
+   //     eth_phy_reset(eth_rst_p2);
 
         smi_init(smi_p1);
-        smi_init(smi_p2);
+ //       smi_init(smi_p2);
 
         eth_phy_config(1, smi_p1);
-        eth_phy_config(1, smi_p2);
+     //   eth_phy_config(1, smi_p2);
 
         par{
+
             ethernet_server_p1(mii_p1,
                             null,
                             mac_address_p1,
                             rx_p1, 1,
                             tx_p1, 1);
 
-            ethernet_server_p2(mii_p2,
+  /*          ethernet_server_p2(mii_p2,
                             null,
                             mac_address_p2,
                             rx_p2, 1,
-                            tx_p2, 1);
+                            tx_p2, 1);*/
+
         }
       }
 
         //::demo
         on tile[1]: ping_p1(tx_p1[0], rx_p1[0]);
-        on tile[1]: ping_p2(tx_p2[0], rx_p2[0]);
+       // on tile[1]: ping_p2(tx_p2[0], rx_p2[0]);
     }
 
 	return 0;
