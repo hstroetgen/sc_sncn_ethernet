@@ -97,8 +97,8 @@ unsigned int mac_custom_filteri(char data[]){
 
 int main()
 {
-  chan rx_p1[1], tx_p1[1], rx_p2[1], tx_p2[1];
-  chan fromApp, toApp;
+  chan rxP1[1], txP1[1], rxP2[1], txP2[1];
+  chan dataFromP1, dataToP1, dataFromP2, dataToP2;
 
   par
     {
@@ -124,18 +124,40 @@ int main()
             ethernet_server_p1(mii_p1,
                             null,
                             mac_address_p1,
-                            rx_p1, 1,
-                            tx_p1, 1);
+                            rxP1, 1,
+                            txP1, 1);
 
             ethernet_server_p2(mii_p2,
                             null,
                             mac_address_p2,
-                            rx_p2, 1,
-                            tx_p2, 1);
+                            rxP2, 1,
+                            txP2, 1);
 
         }
       }
-        on tile[1] : hub(fromApp, toApp, tx_p1[0], rx_p1[0], tx_p2[0], rx_p2[0]);
+        on tile[1] : hub(dataFromP1, dataToP1,
+                            dataFromP2, dataToP2,
+                            txP1[0], rxP1[0],
+                            txP2[0], rxP2[0]);
+        on tile[2] :
+
+        {
+            int nbytes;
+            unsigned buffer[400];
+            while(1){
+                select{
+
+                    case dataFromP1 :> nbytes:
+                                    fetch_frame(buffer, dataFromP1, nbytes);
+                                    printstrln("RX in p1");
+                    break;
+                    case dataFromP2 :> nbytes:
+                                    fetch_frame(buffer, dataFromP2, nbytes);
+                                    printstrln("RX in p2");
+                    break;
+                }
+            }
+        }
     }
 
   return 0;

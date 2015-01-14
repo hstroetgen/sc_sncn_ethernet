@@ -8,6 +8,7 @@
 
 void pass_frame(chanend c, const unsigned char buffer[], int nbytes)
 {
+    c <: 1;
 	master
 	{
 		int nwords;
