@@ -7,13 +7,15 @@
 #include <print.h>
 #include <platform.h>
 #include <stdlib.h>
+#include <print.h>
+
 #include "ethernet_conf.h"
 #include "ethernet_dual.h"
-//#include "otp_board_info.h"
 #include "ethernet_board_support.h"
+#include "hub.h"
 #include "frame_channel.h"
 #include "mac_custom_filter.h"
-#include <print.h>
+
 
 #define COM_TILE tile[0]
 
@@ -29,13 +31,12 @@ ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2
 const unsigned char MAC_ADDRESS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
 const unsigned char MAC_ADDRESS_P2[6] = {0xCA, 0xFE, 0xCA, 0xFE, 0xCA, 0xFE};
 
-void test(chanend tx_p1, chanend rx_p1, chanend tx_p2, chanend rx_p2);
 void set_filter_broadcast(chanend rx);
 
-void receiver_p1(chanend rx, chanend loopback);
-void receiver_p2(chanend rx, chanend loopback);
-void transmitter_p1(chanend tx, chanend loopback);
-void transmitter_p2(chanend tx, chanend loopback);
+//void receiver_p1(chanend rx, chanend loopback);
+//void receiver_p2(chanend rx, chanend loopback);
+//void transmitter_p1(chanend tx, chanend loopback);
+//void transmitter_p2(chanend tx, chanend loopback);
 void init_macAddress_p1(char mac_address[6]){
 
     mac_address[0] = MAC_ADDRESS_P1[0];
@@ -94,116 +95,10 @@ unsigned int mac_custom_filteri(char data[]){
     return 1;
 }
 
-void test(chanend tx_p1, chanend rx_p1, chanend tx_p2, chanend rx_p2)
-{
-  unsigned time;
-  chan loopback[2];
-
-  printstr("Connecting...\n");
-  { timer tmr; tmr :> time; tmr when timerafter(time + 600000000) :> time; }
-  printstr("Ethernet initialised\n");
-
-#if ETHERNET_DEFAULT_IS_FULL
-  mac_set_custom_filter(rx, 0x1);
-#endif
-
-  printstr("Loopback running\n");
-
-  par
-    {
-      transmitter_p1(tx_p1, loopback[0]);
-      receiver_p2(rx_p2, loopback[0]);
-
-      transmitter_p2(tx_p2, loopback[1]);
-      receiver_p1(rx_p1, loopback[1]);
-    }
-}
-
-void receiver_p1(chanend rx, chanend loopback)
-{
-  unsigned int rxbuffer[1600/4];
-
-  while (1)
-    {
-
-      unsigned int src_port;
-      unsigned int nbytes, time;
-
-      mac_rx_p1(rx, (rxbuffer, char[]), nbytes, src_port);
-   //   printuintln(nbytes);
-
-      pass_frame(loopback, (rxbuffer,char[]), nbytes);
-    }
-  set_thread_fast_mode_off();
-}
-
-void transmitter_p1(chanend tx, chanend loopback)
-{
-  unsigned  int txbuffer[1600/4];
-
-  while (1)
-    {
-      int nbytes;
-      fetch_frame(txbuffer, loopback, nbytes);
- //     (txbuffer,char[])[6] = MAC_ADDRESS_P1[0];
- //     (txbuffer,char[])[7] = MAC_ADDRESS_P1[1];
- //     (txbuffer,char[])[8] = MAC_ADDRESS_P1[2];
- //     (txbuffer,char[])[9] = MAC_ADDRESS_P1[3];
- //     (txbuffer,char[])[10] = MAC_ADDRESS_P1[4];
- //     (txbuffer,char[])[11] = MAC_ADDRESS_P1[5];
-  //    for(int i = 0; i <nbytes;i++){
-  //        printhexln((txbuffer,char[])[i]);
-  //    }
- //     printstrln("fetched_frame");
-      mac_tx_p1(tx, (txbuffer), nbytes, ETH_BROADCAST);
-      printstrln("tx");
-    }
-}
-
-void receiver_p2(chanend rx, chanend loopback)
-{
-  unsigned int rxbuffer[1600/4];
-
-  while (1)
-    {
-
-      unsigned int src_port;
-      unsigned int nbytes, time;
-
-      mac_rx_p2(rx, (rxbuffer, char[]), nbytes, src_port);
-   //   printuintln(nbytes);
-
-      pass_frame(loopback, (rxbuffer,char[]), nbytes);
-    }
-  set_thread_fast_mode_off();
-}
-
-void transmitter_p2(chanend tx, chanend loopback)
-{
-  unsigned  int txbuffer[1600/4];
-
-  while (1)
-    {
-      int nbytes;
-      fetch_frame(txbuffer, loopback, nbytes);
- //     (txbuffer,char[])[6] = MAC_ADDRESS_P1[0];
- //     (txbuffer,char[])[7] = MAC_ADDRESS_P1[1];
- //     (txbuffer,char[])[8] = MAC_ADDRESS_P1[2];
- //     (txbuffer,char[])[9] = MAC_ADDRESS_P1[3];
- //     (txbuffer,char[])[10] = MAC_ADDRESS_P1[4];
-  //    (txbuffer,char[])[11] = MAC_ADDRESS_P1[5];
-  //    for(int i = 0; i <nbytes;i++){
-  //        printhexln((txbuffer,char[])[i]);
-  //    }
- //     printstrln("fetched_frame");
-      mac_tx_p2(tx, (txbuffer), nbytes, ETH_BROADCAST);
-      printstrln("tx");
-    }
-}
-
 int main()
 {
   chan rx_p1[1], tx_p1[1], rx_p2[1], tx_p2[1];
+  chan fromApp, toApp;
 
   par
     {
@@ -240,7 +135,7 @@ int main()
 
         }
       }
-        on tile[1] : test(tx_p1[0], rx_p1[0], tx_p2[0], rx_p2[0]);
+        on tile[1] : hub(fromApp, toApp, tx_p1[0], rx_p1[0], tx_p2[0], rx_p2[0]);
     }
 
   return 0;

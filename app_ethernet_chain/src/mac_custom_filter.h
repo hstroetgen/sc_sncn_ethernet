@@ -13,9 +13,7 @@ inline unsigned int mac_custom_filter(unsigned int data[])
             return 0;
           }
 	}*/
-    unsigned char type[] = {0x08, 0x06};
+    unsigned char type[] = {0x08, 0x06};    //ARP
     int i = 12;
-        return data[i] == type[0] && data[i + 1] == type[1];
-
-	return 1;
+        return ((data,char[])[i] == type[0] && (data,char[])[i + 1] == type[1]);
 }
