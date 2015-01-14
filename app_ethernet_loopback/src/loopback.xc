@@ -26,7 +26,7 @@ mii_interface_t mii_p2 = ETHERNET_DEFAULT_MII_INIT_P2;
 ethernet_reset_interface_t eth_rst_p1 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P1;
 ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2;
 
-const unsigned char MAC_ADDRESS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
+const unsigned char MAC_ADDRESS_P1[6] = {0xFA, 0xFA, 0xFA, 0xFA, 0xFA, 0xFA};
 const unsigned char MAC_ADDRESS_P2[6] = {0xCA, 0xFE, 0xCA, 0xFE, 0xCA, 0xFE};
 
 void test(chanend tx, chanend rx);

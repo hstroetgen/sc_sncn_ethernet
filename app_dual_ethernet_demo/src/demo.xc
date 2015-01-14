@@ -18,7 +18,7 @@
 #include <stdlib.h>
 #include "ethernet_conf.h"
 #include "ethernet_dual.h"
-#include "otp_board_info.h"
+//#include "otp_board_info.h"
 #include "ethernet_board_support.h"
 #include "checksum.h"
 #include "xscope.h"
@@ -63,32 +63,32 @@ ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2
 const unsigned char OWN_IP_ADDRESS_P1[4] = {192, 168, 101, 80};
 const unsigned char OWN_IP_ADDRESS_P2[4] = {192, 168, 101, 80};
 
-const unsigned char MAC_ADDERSS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
+const unsigned char MAC_ADDRESS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
 const unsigned char MAC_ADDRESS_P2[6] = {0xCA, 0xFE, 0xCA, 0xFE, 0xCA, 0xFE};
 
 unsigned char own_mac_addr_p1[6];
 unsigned char own_mac_addr_p2[6];
 
 
-void init_macAddress_p1(char &mac_address_p1){
+void init_macAddress_p1(char mac_address_p1[6]){
 
-    mac_address_p1[0] = MAC_ADDERSS_P1[0];
-    mac_address_p1[1] = MAC_ADDERSS_P1[1];
-    mac_address_p1[2] = MAC_ADDERSS_P1[2];
-    mac_address_p1[3] = MAC_ADDERSS_P1[3];
-    mac_address_p1[4] = MAC_ADDERSS_P1[4];
-    mac_address_p1[5] = MAC_ADDERSS_P1[5];
+    mac_address_p1[0] = MAC_ADDRESS_P1[0];
+    mac_address_p1[1] = MAC_ADDRESS_P1[1];
+    mac_address_p1[2] = MAC_ADDRESS_P1[2];
+    mac_address_p1[3] = MAC_ADDRESS_P1[3];
+    mac_address_p1[4] = MAC_ADDRESS_P1[4];
+    mac_address_p1[5] = MAC_ADDRESS_P1[5];
 
 }
 
-void init_macAddress_p2(char &mac_address_p2){
+void init_macAddress_p2(char mac_address_p2[6]){
 
-    mac_address_p2[0] = MAC_ADDERSS_P2[0];
-    mac_address_p2[1] = MAC_ADDERSS_P2[1];
-    mac_address_p2[2] = MAC_ADDERSS_P2[2];
-    mac_address_p2[3] = MAC_ADDERSS_P2[3];
-    mac_address_p2[4] = MAC_ADDERSS_P2[4];
-    mac_address_p2[5] = MAC_ADDERSS_P2[5];
+    mac_address_p2[0] = MAC_ADDRESS_P2[0];
+    mac_address_p2[1] = MAC_ADDRESS_P2[1];
+    mac_address_p2[2] = MAC_ADDRESS_P2[2];
+    mac_address_p2[3] = MAC_ADDRESS_P2[3];
+    mac_address_p2[4] = MAC_ADDRESS_P2[4];
+    mac_address_p2[5] = MAC_ADDRESS_P2[5];
 
 }
 
@@ -117,7 +117,7 @@ void ping_p1(chanend tx, chanend rx)
   {
     unsigned int src_port;
     unsigned int nbytes;
-    _mac_rx(rx, (rxbuf,char[]), nbytes, src_port);
+    mac_rx_p1(rx, (rxbuf,char[]), nbytes, src_port);
     printuintln(nbytes);
 #ifdef CONFIG_LITE
     if (!is_broadcast((rxbuf,char[])) && !is_mac_addr((rxbuf,char[]), own_mac_addr_p1))
@@ -131,7 +131,7 @@ void ping_p1(chanend tx, chanend rx)
     if (is_valid_arp_packet((rxbuf,char[]), nbytes, OWN_IP_ADDRESS_P1))
       {
         build_arp_response((rxbuf,char[]), txbuf, own_mac_addr_p1, OWN_IP_ADDRESS_P1);
-        _mac_tx(tx, txbuf, nbytes, ETH_BROADCAST);
+        mac_tx_p1(tx, txbuf, nbytes, ETH_BROADCAST);
         printstr("ARP response sent\n");
       }
   //::icmp_packet_check
@@ -141,7 +141,7 @@ void ping_p1(chanend tx, chanend rx)
     //    for(int i = 0; i <nbytes;i++){
     //              printstrln((txbuf,char[])[i]);
     //          }
-        _mac_tx(tx, txbuf, nbytes, ETH_BROADCAST);
+        mac_tx_p1(tx, txbuf, nbytes, ETH_BROADCAST);
         printstr("ICMP response sent\n");
       }
   //::
@@ -172,7 +172,7 @@ void ping_p2(chanend tx, chanend rx)
   {
     unsigned int src_port;
     unsigned int nbytes;
-    mac_rx(rx, (rxbuf,char[]), nbytes, src_port);
+    mac_rx_p2(rx, (rxbuf,char[]), nbytes, src_port);
 
 #ifdef CONFIG_LITE
     if (!is_broadcast((rxbuf,char[])) && !is_mac_addr((rxbuf,char[]), own_mac_addr_p2))
@@ -185,14 +185,14 @@ void ping_p2(chanend tx, chanend rx)
     if (is_valid_arp_packet((rxbuf,char[]), nbytes, OWN_IP_ADDRESS_P2))
       {
         build_arp_response((rxbuf,char[]), txbuf, own_mac_addr_p2, OWN_IP_ADDRESS_P2);
-        mac_tx(tx, txbuf, nbytes, ETH_BROADCAST);
+        mac_tx_p2(tx, txbuf, nbytes, ETH_BROADCAST);
         printstr("ARP response sent\n");
       }
   //::icmp_packet_check  
     else if (is_valid_icmp_packet((rxbuf,char[]), nbytes, OWN_IP_ADDRESS_P2))
       {
         build_icmp_response((rxbuf,char[]), (txbuf, unsigned char[]), own_mac_addr_p2, OWN_IP_ADDRESS_P2);
-        mac_tx(tx, txbuf, nbytes, ETH_BROADCAST);
+        mac_tx_p2(tx, txbuf, nbytes, ETH_BROADCAST);
         printstr("ICMP response sent\n");
       }
   //::
