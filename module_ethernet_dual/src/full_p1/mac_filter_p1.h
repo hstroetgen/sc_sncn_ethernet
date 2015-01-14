@@ -9,7 +9,7 @@
 #ifdef __mac_custom_filter_h_exists__
 #include "mac_custom_filter.h"
 #else
-int _mac_custom_filter(unsigned int buf[]) {
+int mac_custom_filter_p1(unsigned int buf[]) {
   return 0xffffffff;
 }
 #endif

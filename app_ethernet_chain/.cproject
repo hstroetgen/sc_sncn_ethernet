@@ -175,6 +175,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/src}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.xc.compiler.input.488529169" name="XC" superClass="com.xmos.cdt.xc.compiler.input"/>
 							</tool>
@@ -304,6 +307,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/src}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.478081648" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -439,6 +445,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/src}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.32161565" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>

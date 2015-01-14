@@ -14,8 +14,6 @@
 #include "ethernet_board_support.h"
 #include "hub.h"
 #include "frame_channel.h"
-#include "mac_custom_filter.h"
-
 
 #define COM_TILE tile[0]
 
@@ -31,12 +29,8 @@ ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2
 const unsigned char MAC_ADDRESS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
 const unsigned char MAC_ADDRESS_P2[6] = {0xCA, 0xFE, 0xCA, 0xFE, 0xCA, 0xFE};
 
-void set_filter_broadcast(chanend rx);
+//void set_filter_broadcast(chanend rx);
 
-//void receiver_p1(chanend rx, chanend loopback);
-//void receiver_p2(chanend rx, chanend loopback);
-//void transmitter_p1(chanend tx, chanend loopback);
-//void transmitter_p2(chanend tx, chanend loopback);
 void init_macAddress_p1(char mac_address[6]){
 
     mac_address[0] = MAC_ADDRESS_P1[0];
@@ -74,41 +68,17 @@ void init_macAddress_p2(char mac_address[6]){
 
 }
 
-unsigned int mac_custom_filteri(char data[]){
-    /*for (int i=0;i<6;i++){
-#pragma xta label "sc_ethernet_mac_custom_filter"
-#pragma xta command "add loop sc_ethernet_mac_custom_filter 6"
-          if ((data,char[])[i] != 0xFF){
-            return 0;
-          }
-    }*/
-    unsigned char type[] = {0x08, 0x06};
-    int i = 12;
-    char a  = data[i];
- //  printintln(a);
-    char b = data[i+1];
- //   printintln(b);
-    if (a != type[0])
-            return 0;
-    if (b != type[1])
-            return 0;
-    return 1;
-}
-
 int main()
 {
-  chan rxP1[1], txP1[1], rxP2[1], txP2[1];
-  chan dataFromP1, dataToP1, dataFromP2, dataToP2;
+  chan rxP1[1], txP1[1], rxP2[1], txP2[1];          // Communicate HUB to MAC
+  chan dataFromP1, dataToP1, dataFromP2, dataToP2;  // Communicate HUB tu upper layers
 
   par
     {
       on COM_TILE:
       {
-        char mac_address_p1[6];
-        char mac_address_p2[6];
-
-        init_macAddress_p1(mac_address_p1);
-        init_macAddress_p2(mac_address_p2);
+        char mac_address_p1[6]; init_macAddress_p1(mac_address_p1);
+        char mac_address_p2[6]; init_macAddress_p2(mac_address_p2);
 
         eth_phy_reset(eth_rst_p1);
         eth_phy_reset(eth_rst_p2);

@@ -147,5 +147,5 @@ void ethernet_filter(const char mac_address[], streaming chanend c[NUM_ETHERNET_
 
 int mac_custom_filter_coerce1(unsigned int buf[])
 {
-  return mac_custom_filter(buf);
+  //return mac_custom_filter_p2(buf);
 }
