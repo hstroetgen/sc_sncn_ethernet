@@ -29,11 +29,13 @@ ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2
 const unsigned char MAC_ADDRESS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
 const unsigned char MAC_ADDRESS_P2[6] = {0xCA, 0xFE, 0xCA, 0xFE, 0xCA, 0xFE};
 
-void test(chanend tx, chanend rx);
+void test(chanend tx_p1, chanend rx_p1, chanend tx_p2, chanend rx_p2);
 void set_filter_broadcast(chanend rx);
 
-void receiver(chanend rx, chanend loopback);
-void transmitter(chanend tx, chanend loopback);
+void receiver_p1(chanend rx, chanend loopback);
+void receiver_p2(chanend rx, chanend loopback);
+void transmitter_p1(chanend tx, chanend loopback);
+void transmitter_p2(chanend tx, chanend loopback);
 void init_macAddress_p1(char mac_address[6]){
 
     mac_address[0] = MAC_ADDRESS_P1[0];
@@ -92,10 +94,10 @@ unsigned int mac_custom_filteri(char data[]){
     return 1;
 }
 
-void test(chanend tx, chanend rx)
+void test(chanend tx_p1, chanend rx_p1, chanend tx_p2, chanend rx_p2)
 {
   unsigned time;
-  chan loopback;
+  chan loopback[2];
 
   printstr("Connecting...\n");
   { timer tmr; tmr :> time; tmr when timerafter(time + 600000000) :> time; }
@@ -109,12 +111,15 @@ void test(chanend tx, chanend rx)
 
   par
     {
-      transmitter(tx, loopback);
-      receiver(rx, loopback);
+      transmitter_p1(tx_p1, loopback[0]);
+      receiver_p2(rx_p2, loopback[0]);
+
+      transmitter_p2(tx_p2, loopback[1]);
+      receiver_p1(rx_p1, loopback[1]);
     }
 }
 
-void receiver(chanend rx, chanend loopback)
+void receiver_p1(chanend rx, chanend loopback)
 {
   unsigned int rxbuffer[1600/4];
 
@@ -132,7 +137,7 @@ void receiver(chanend rx, chanend loopback)
   set_thread_fast_mode_off();
 }
 
-void transmitter(chanend tx, chanend loopback)
+void transmitter_p1(chanend tx, chanend loopback)
 {
   unsigned  int txbuffer[1600/4];
 
@@ -140,12 +145,12 @@ void transmitter(chanend tx, chanend loopback)
     {
       int nbytes;
       fetch_frame(txbuffer, loopback, nbytes);
-      (txbuffer,char[])[6] = MAC_ADDRESS_P1[0];
-      (txbuffer,char[])[7] = MAC_ADDRESS_P1[1];
-      (txbuffer,char[])[8] = MAC_ADDRESS_P1[2];
-      (txbuffer,char[])[9] = MAC_ADDRESS_P1[3];
-      (txbuffer,char[])[10] = MAC_ADDRESS_P1[4];
-      (txbuffer,char[])[11] = MAC_ADDRESS_P1[5];
+ //     (txbuffer,char[])[6] = MAC_ADDRESS_P1[0];
+ //     (txbuffer,char[])[7] = MAC_ADDRESS_P1[1];
+ //     (txbuffer,char[])[8] = MAC_ADDRESS_P1[2];
+ //     (txbuffer,char[])[9] = MAC_ADDRESS_P1[3];
+ //     (txbuffer,char[])[10] = MAC_ADDRESS_P1[4];
+ //     (txbuffer,char[])[11] = MAC_ADDRESS_P1[5];
   //    for(int i = 0; i <nbytes;i++){
   //        printhexln((txbuffer,char[])[i]);
   //    }
@@ -155,9 +160,50 @@ void transmitter(chanend tx, chanend loopback)
     }
 }
 
+void receiver_p2(chanend rx, chanend loopback)
+{
+  unsigned int rxbuffer[1600/4];
+
+  while (1)
+    {
+
+      unsigned int src_port;
+      unsigned int nbytes, time;
+
+      mac_rx_p2(rx, (rxbuffer, char[]), nbytes, src_port);
+   //   printuintln(nbytes);
+
+      pass_frame(loopback, (rxbuffer,char[]), nbytes);
+    }
+  set_thread_fast_mode_off();
+}
+
+void transmitter_p2(chanend tx, chanend loopback)
+{
+  unsigned  int txbuffer[1600/4];
+
+  while (1)
+    {
+      int nbytes;
+      fetch_frame(txbuffer, loopback, nbytes);
+ //     (txbuffer,char[])[6] = MAC_ADDRESS_P1[0];
+ //     (txbuffer,char[])[7] = MAC_ADDRESS_P1[1];
+ //     (txbuffer,char[])[8] = MAC_ADDRESS_P1[2];
+ //     (txbuffer,char[])[9] = MAC_ADDRESS_P1[3];
+ //     (txbuffer,char[])[10] = MAC_ADDRESS_P1[4];
+  //    (txbuffer,char[])[11] = MAC_ADDRESS_P1[5];
+  //    for(int i = 0; i <nbytes;i++){
+  //        printhexln((txbuffer,char[])[i]);
+  //    }
+ //     printstrln("fetched_frame");
+      mac_tx_p2(tx, (txbuffer), nbytes, ETH_BROADCAST);
+      printstrln("tx");
+    }
+}
+
 int main()
 {
-  chan rx[1], tx[1];
+  chan rx_p1[1], tx_p1[1], rx_p2[1], tx_p2[1];
 
   par
     {
@@ -183,18 +229,18 @@ int main()
             ethernet_server_p1(mii_p1,
                             null,
                             mac_address_p1,
-                            rx, 1,
-                            tx, 1);
+                            rx_p1, 1,
+                            tx_p1, 1);
 
-    /*        ethernet_server_p2(mii_p2,
+            ethernet_server_p2(mii_p2,
                             null,
                             mac_address_p2,
-                            rx, 1,
-                            tx, 1);
-*/
+                            rx_p2, 1,
+                            tx_p2, 1);
+
         }
       }
-        on tile[1] : test(tx[0], rx[0]);
+        on tile[1] : test(tx_p1[0], rx_p1[0], tx_p2[0], rx_p2[0]);
     }
 
   return 0;
