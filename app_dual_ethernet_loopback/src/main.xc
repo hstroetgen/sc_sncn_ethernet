@@ -43,7 +43,6 @@ int main()
                             mac_address_p2,
                             rxP2, 1,
                             txP2, 1);
-
         }
       }
 
