@@ -11,8 +11,8 @@
 #include "ethernet_dual.h"
 #include "ethernet_board_support.h"
 #include "hub.h"
-#include "frame_channel.h"
 #include "mac_addr.h"
+#include "top_layer.h"
 
 #define COM_TILE tile[0]
 

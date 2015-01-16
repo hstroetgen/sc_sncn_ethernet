@@ -50,27 +50,9 @@ int main()
                             dataFromP2, dataToP2,
                             txP1[0], rxP1[0],
                             txP2[0], rxP2[0]);
-        on tile[2] :
 
-        {
-            // This is a simple top layer that receives the frames that pass the filter at the HUB.
+        on tile[2] : topLayer(dataFromP1, dataToP1, dataFromP2, dataToP2);
 
-            int nbytes;
-            unsigned buffer[400];
-            while(1){
-                select{
-
-                    case dataFromP1 :> nbytes:
-                                    fetch_frame(buffer, dataFromP1, nbytes);
-                                    printstrln("Valid frame on p1");
-                    break;
-                    case dataFromP2 :> nbytes:
-                                    fetch_frame(buffer, dataFromP2, nbytes);
-                                    printstrln("Valid frame on p2");
-                    break;
-                }
-            }
-        }
     }
 
   return 0;
