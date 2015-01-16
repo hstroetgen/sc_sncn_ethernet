@@ -11,7 +11,7 @@
 #include "ethernet_board_support.h"
 #include "frame_channel.h"
 #include "mac_addr.h"
-#include <print.h>
+#include "top_layer.h"
 
 #define COM_TILE tile[0]
 

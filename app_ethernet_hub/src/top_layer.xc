@@ -9,7 +9,7 @@ void topLayer(chanend dataFromP1, chanend dataToP1, chanend dataFromP2, chanend 
     while(1){
        select{
 
-           case dataFromP1 :> nbytes:
+           case dataFromP1 :> unsigned:
 
                            fetch_frame(buffer, dataFromP1, nbytes);
                            break;
