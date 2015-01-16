@@ -18,7 +18,6 @@
 #include <stdlib.h>
 #include "ethernet_conf.h"
 #include "ethernet_dual.h"
-//#include "otp_board_info.h"
 #include "ethernet_board_support.h"
 #include "checksum.h"
 #include "xscope.h"
@@ -38,16 +37,10 @@ void xscope_user_init(void) {
 #endif
 
 #define COM_TILE tile[0]
+
 // Port Definitions
 
-// These ports are for accessing the OTP memory
-//on COM_TILE: otp_ports_t otp_ports_p1 = OTP_PORTS_INITIALIZER_P1;
-//on COM_TILE: otp_ports_t otp_ports_p2 = OTP_PORTS_INITIALIZER_P2;
 
-// Here are the port definitions required by ethernet
-// The intializers are taken from the ethernet_board_support.h header for
-// XMOS dev boards. If you are using a different board you will need to
-// supply explicit port structure intializers for these values
 smi_interface_t smi_p1 = ETHERNET_DEFAULT_SMI_INIT_P1;
 //smi_interface_t smi_p2 = ETHERNET_DEFAULT_SMI_INIT_P2;
 
@@ -63,8 +56,7 @@ ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2
 const unsigned char OWN_IP_ADDRESS_P1[4] = {192, 168, 101, 80};
 const unsigned char OWN_IP_ADDRESS_P2[4] = {192, 168, 101, 80};
 
-const unsigned char MAC_ADDRESS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
-const unsigned char MAC_ADDRESS_P2[6] = {0xCA, 0xFE, 0xCA, 0xFE, 0xCA, 0xFE};
+
 
 unsigned char own_mac_addr_p1[6];
 unsigned char own_mac_addr_p2[6];
@@ -98,9 +90,6 @@ void ping_p1(chanend tx, chanend rx)
   unsigned int rxbuf[1600/4];
   unsigned int txbuf[1600/4];
   unsigned time;
-
-  //::get-macaddr
-  //_mac_get_macaddr(tx, own_mac_addr0);
 
   printstr("Connecting...\n");
   { timer tmr; tmr :> time; tmr when timerafter(time + 600000000) :> time; }
@@ -155,8 +144,6 @@ void ping_p2(chanend tx, chanend rx)
   unsigned int txbuf[1600/4];
   unsigned time;
 
-  //::get-macaddr
-  // mac_get_macaddr(tx, own_mac_addr1);
 
   printstr("Connecting...\n");
   { timer tmr; tmr :> time; tmr when timerafter(time + 600000000) :> time; }
@@ -212,11 +199,8 @@ int main()
         char mac_address_p1[6];
         char mac_address_p2[6];
 
-    //    otp_board_info_get_mac(otp_ports_p1, 0, mac_address_p1);
         init_macAddress_p1(mac_address_p1);
         init_macAddress_p2(mac_address_p2);
-
-   //     otp_board_info_get_mac(otp_ports_p2, 0, mac_address_p2);
 
         eth_phy_reset(eth_rst_p1);
    //     eth_phy_reset(eth_rst_p2);
