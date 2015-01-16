@@ -32,18 +32,15 @@ int main()
 
         par{
 
-            ethernet_server_p1(mii_p1,
-                            null,
+            ethernet_server_p1(mii_p1, null,
                             mac_address_p1,
                             rxP1, 1,
                             txP1, 1);
 
-            ethernet_server_p2(mii_p2,
-                            null,
+            ethernet_server_p2(mii_p2, null,
                             mac_address_p2,
                             rxP2, 1,
                             txP2, 1);
-
         }
       }
         on tile[1] : ethernetHUB(dataFromP1, dataToP1,
@@ -52,7 +49,6 @@ int main()
                             txP2[0], rxP2[0]);
 
         on tile[2] : topLayer(dataFromP1, dataToP1, dataFromP2, dataToP2);
-
     }
 
   return 0;

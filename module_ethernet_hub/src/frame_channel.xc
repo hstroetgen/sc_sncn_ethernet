@@ -12,7 +12,6 @@ void pass_frame(chanend c, const unsigned char buffer[], int nbytes)
 	master
 	{
 		int nwords;
-		//c <: nbytes;
 		c <: nbytes;
 		nwords = (nbytes >> 2) + 1;
 #pragma unsafe arrays
