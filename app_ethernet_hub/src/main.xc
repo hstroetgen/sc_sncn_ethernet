@@ -62,11 +62,11 @@ int main()
 
                     case dataFromP1 :> nbytes:
                                     fetch_frame(buffer, dataFromP1, nbytes);
-                                    printstrln("Frame on p1");
+                                    printstrln("Valid frame on p1");
                     break;
                     case dataFromP2 :> nbytes:
                                     fetch_frame(buffer, dataFromP2, nbytes);
-                                    printstrln("Frame on p2");
+                                    printstrln("Valid frame on p2");
                     break;
                 }
             }
