@@ -14,8 +14,8 @@ SPHINX_PROJECT_NAME = SOMANET Ethernet Dual Stack
 REPO=./
 VERSION=2v0
 DOXYGEN_DIRS=$(REPO)/module_ethernet_dual
-#DOXYGEN_DIRS+=$(REPO)/module_ethernet_hub
-#DOXYGEN_DIRS+=$(REPO)/module_ethernet_smi
+DOXYGEN_DIRS+=$(REPO)/module_ethernet_hub
+DOXYGEN_DIRS+=$(REPO)/module_ethernet_smi
 SOURCE_INCLUDE_DIRS=$(REPO)
 XDOC_DIR ?= ../xdoc
 -include $(XDOC_DIR)/Makefile.inc
