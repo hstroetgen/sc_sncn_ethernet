@@ -60,8 +60,8 @@ void smi_init(REFERENCE_PARAM(smi_interface_t, smi));
 /** Function that configures the Ethernet PHY explicitly to set to
  * autonegotiate.
  *
- * \param If eth100 is non-zero, 100BaseT is advertised to the link peer
- * Full duplex is always advertised
+ * \param eth100    If eth100 is non-zero, 100BaseT is advertised to the link peer
+ *                  Full duplex is always advertised
  *
  * \param smi structure that defines the ports to use for SMI
  */
@@ -70,9 +70,9 @@ void eth_phy_config(int eth100, REFERENCE_PARAM(smi_interface_t, smi));
 /** Function that configures the Ethernet PHY to not
  * autonegotiate.
  *
- * \param If eth100 is non-zero, it is set to 100, else to 10 Mbits/s
+ * \param eth100    If eth100 is non-zero, it is set to 100, else to 10 Mbits/s
  *
- * \param smi structure that defines the ports to use for SMI
+ * \param smi       structure that defines the ports to use for SMI
  */
 void eth_phy_config_noauto(int eth100, REFERENCE_PARAM(smi_interface_t, smi));
 

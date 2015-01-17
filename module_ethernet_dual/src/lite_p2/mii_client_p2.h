@@ -141,7 +141,7 @@ int mii_out_packet(chanend cOut, int buf[], int index, int length);
  * the wire. The function miiOutputPacketDone() should be called to syncrhonise
  * with the end of the packet.
  *
- * \param cOut   output channel to the Low-Level Driver.
+ * \param c_out   output channel to the Low-Level Driver.
  *
  * \param buf    address that contains the message. This must be
  *               word aligned, and must contain the data in network
