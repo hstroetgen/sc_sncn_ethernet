@@ -1,3 +1,4 @@
+#include <COM_ETHERNET-rev-a.inc>
 #include <main.h>
 
 smi_interface_t smi_p1 = ETHERNET_DEFAULT_SMI_INIT_P1;

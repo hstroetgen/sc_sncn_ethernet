@@ -56,6 +56,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet/src/full}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/xc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
 								</option>
 								<option id="com.xmos.xc.compiler.option.defined.symbols.414990481" name="com.xmos.xc.compiler.option.defined.symbols" superClass="com.xmos.xc.compiler.option.defined.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__SHRT_MAX__=32767"/>
@@ -288,6 +289,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet/src/full}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.88974408" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -415,6 +417,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet/src/full}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.32032382" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
