@@ -3,8 +3,7 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#ifndef _smi_h_
-#define _smi_h_
+#pragma once
 
 #include <xs1.h>
 #include <xccompat.h>
@@ -102,5 +101,3 @@ int smi_check_link_state(REFERENCE_PARAM(smi_interface_t, smi));
 
 /**/
 int smi_reg(REFERENCE_PARAM(smi_interface_t, smi), unsigned reg, unsigned val, int inning);
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef __mac_filter_p1_h__
-#define __mac_filter_p1_h__
+#pragma once
 
 #include "ethernet_conf_derived.h"
 
@@ -15,4 +14,3 @@ int mac_custom_filter_p1(unsigned int buf[]) {
 #endif
 #endif
 
-#endif //__mac_filter_h__

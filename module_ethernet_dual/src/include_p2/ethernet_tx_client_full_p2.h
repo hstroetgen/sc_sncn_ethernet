@@ -14,8 +14,8 @@
  *
  *************************************************************************/
 
-#ifndef _ETHERNET_TX_CLIENT_FULL_P2_H_
-#define _ETHERNET_TX_CLIENT_FULL_P2_H_ 1
+#pragma once
+
 #include <xccompat.h>
 
 #define ETH_BROADCAST (-1)
@@ -136,4 +136,3 @@ void mac_set_qav_bandwidth(chanend c_mac,
 void mac_check_link_client(chanend c, unsigned char &linkNum, int &status);
 #endif
 
-#endif

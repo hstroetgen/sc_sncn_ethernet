@@ -3,8 +3,8 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#ifndef __mii_full_p1_h__
-#define __mii_full_p1_h__
+#pragma once
+
 #include <xs1.h>
 #include <xccompat.h>
 #include "mii.h"
@@ -237,4 +237,3 @@ void _mii_tx_pins(
 void _ethernet_get_mii_counts(REFERENCE_PARAM(unsigned,dropped));
 #endif
 
-#endif

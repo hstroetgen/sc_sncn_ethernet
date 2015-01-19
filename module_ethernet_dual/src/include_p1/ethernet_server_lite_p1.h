@@ -3,8 +3,7 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#ifndef _ethernet_server_lite_p1_h_
-#define _ethernet_server_lite_p1_h_
+#pragma once
 
 #include "smi.h"
 #include "mii.h"
@@ -23,4 +22,3 @@ void ethernet_server_p1_lite(mii_interface_lite_t &mii,
 
 #endif
 
-#endif // _ethernet_server_h_

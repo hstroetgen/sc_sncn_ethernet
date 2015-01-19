@@ -3,8 +3,7 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#ifndef __ethernet_rx_client_p2_h__
-#define __ethernet_rx_client_p2_h__
+#pragma once
 
 #include "ethernet_conf_derived.h"
 #include "ethernet_rx_client_lite_p2.h"
@@ -74,4 +73,3 @@ void safe_mac_rx(chanend c_mac,
 
 #define safe_mac_rx ADD_SUFFIX(safe_mac_rx, ETHERNET_DEFAULT_IMPLEMENTATION)
 
-#endif

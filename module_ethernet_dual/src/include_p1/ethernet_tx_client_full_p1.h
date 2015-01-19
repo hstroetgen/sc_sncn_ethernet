@@ -14,8 +14,8 @@
  *
  *************************************************************************/
 
-#ifndef _ETHERNET_TX_CLIENT_FULL_P1_H_
-#define _ETHERNET_TX_CLIENT_FULL_P1_H_ 1
+#pragma once
+
 #include <xccompat.h>
 
 #define ETH_BROADCAST (-1)
@@ -134,6 +134,4 @@ void _mac_set_qav_bandwidth(chanend c_mac,
 /* Select handler to check if the Ethernet link is up or down */
 #pragma select handler
 void _mac_check_link_client(chanend c, unsigned char &linkNum, int &status);
-#endif
-
 #endif

@@ -1,5 +1,5 @@
-#ifndef __ethernet_conf_derived_h__
-#define __ethernet_conf_derived_h__
+#pragma once
+
 #include "platform.h"
 
 #ifdef __ethernet_conf_h_exists__
@@ -53,5 +53,3 @@
 #define ETHERNET_TX_BUFSIZE_HIGH_PRIORITY MII_TX_BUFSIZE_HIGH_PRIORITY
 #endif
 
-
-#endif // __ethernet_conf_derived_h__

@@ -1,5 +1,5 @@
-#ifndef __phy_reset_h__
-#define __phy_reset_h__
+#pragma once
+
 #include "platform.h"
 #ifdef __ethernet_board_conf_h_exists__
 #include "ethernet_board_conf.h"
@@ -18,4 +18,3 @@ typedef out port ethernet_reset_interface_t;
 void eth_phy_reset(ethernet_reset_interface_t eth_rst);
 #endif
 
-#endif // __phy_reset_h__

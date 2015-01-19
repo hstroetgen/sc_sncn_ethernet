@@ -1,5 +1,4 @@
-#ifndef _mii_h_
-#define _mii_h_
+#pragma once
 
 #include <xs1.h>
 #include <xccompat.h>
@@ -57,10 +56,6 @@ typedef struct mii_interface_lite_t {
 #define mii_interface_t ADD_SUFFIX(ADD_SUFFIX(mii_interface,ETHERNET_DEFAULT_IMPLEMENTATION),t)
 
 #endif // __XC__
-
-
-
-#endif
 
 
 
