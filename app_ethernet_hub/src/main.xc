@@ -52,6 +52,7 @@ int main()
                             txP2, 1);
         }
       }
+
         on tile[1] : ethernetHUB(dataFromP1, dataToP1,
                             dataFromP2, dataToP2,
                             txP1[0], rxP1[0],
