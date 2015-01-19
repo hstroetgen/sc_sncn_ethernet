@@ -31,5 +31,5 @@ Required software (dependencies)
 ================================
 
   * sc_somanet-base (git@github.com:synapticon/sc_somanet-base.git)
-  * sc_utils (git@github.com:xcore/sc_utils.git)
+  * sc_util (git@github.com:xcore/sc_util.git)
 
