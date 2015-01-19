@@ -1,24 +1,19 @@
-
 #include <xclib.h>
-#include "demo_aux.h"
+#include "top_layer_aux.h"
 #include "checksum.h"
 #include "print.h"
 
-unsigned char ethertype_ip_p1[] = {0x08, 0x00};
-unsigned char ethertype_arp_p1[] = {0x08, 0x06};
-
-unsigned char ethertype_ip_p2[] = {0x08, 0x00};
-unsigned char ethertype_arp_p2[] = {0x08, 0x06};
-
+const unsigned char ethertype_ip[] = {0x08, 0x00};
+const unsigned char ethertype_arp[] = {0x08, 0x06};
 
 #pragma unsafe arrays
-int is_ethertype(unsigned char data[], unsigned char type[]){
+int is_ethertype(unsigned char data[], const unsigned char type[]){
     int i = 12;
     return data[i] == type[0] && data[i + 1] == type[1];
 }
 
 #pragma unsafe arrays
-int is_mac_addr(unsigned char data[], unsigned char addr[]){
+int is_mac_addr(unsigned char data[], const unsigned char addr[]){
     for (int i=0;i<6;i++){
           if (data[i] != addr[i]){
             return 0;
@@ -41,31 +36,19 @@ int is_broadcast(unsigned char data[]){
 
 //::custom-filter
 int mac_custom_filter(unsigned int data[]){
-    if (is_ethertype((data,char[]), ethertype_arp_p1)){
+    if (is_ethertype((data,char[]), ethertype_arp)){
         return 1;
-    }else if (is_ethertype((data,char[]), ethertype_ip_p1)){
-        return 1;
-    }
-
-    return 0;
-}
-
-int _mac_custom_filter(unsigned int data[]){
-    if (is_ethertype((data,char[]), ethertype_arp_p2)){
-        return 1;
-    }else if (is_ethertype((data,char[]), ethertype_ip_p2)){
+    }else if (is_ethertype((data,char[]), ethertype_ip)){
         return 1;
     }
 
     return 0;
 }
-//::
 
 int build_arp_response(unsigned char rxbuf[], unsigned int txbuf[], const unsigned char own_mac_addr[6], const unsigned char own_ip_addr[4])
 {
   unsigned word;
   unsigned char byte;
-  //const unsigned char own_ip_addr = OWN_IP_ADDRESS_P1;
 
   for (int i = 0; i < 6; i++)
     {
