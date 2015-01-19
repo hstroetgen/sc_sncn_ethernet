@@ -112,6 +112,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ECAT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC100}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
 								</option>
 								<option id="com.xmos.xc.compiler.option.defined.symbols.753450792" name="com.xmos.xc.compiler.option.defined.symbols" superClass="com.xmos.xc.compiler.option.defined.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__SHRT_MAX__=32767"/>
@@ -400,6 +403,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ECAT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC100}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.29426179" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -583,6 +589,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ECAT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC100}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.54474561" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
