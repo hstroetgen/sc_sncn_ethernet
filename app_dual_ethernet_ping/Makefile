@@ -22,7 +22,7 @@ XCC_FLAGS_lite = -O3 -g -report -DCONFIG_LITE  -save-temps
 
 # The USED_MODULES variable lists other module used by the application. 
 
-USED_MODULES = module_ethernet_dual #module_otp_board_info module_ethernet_board_support  #module_slicekit_support 
+USED_MODULES = module_board-support module_ethernet_dual #module_otp_board_info module_ethernet_board_support  #module_slicekit_support 
 USED_MODULES += 
 
 #=============================================================================
