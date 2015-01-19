@@ -12,6 +12,6 @@
 #include "mac_addr.h"
 #include "top_layer.h"
 
-#define COM_TILE tile[0]
+//#define COM_TILE tile[0]
 
 #endif

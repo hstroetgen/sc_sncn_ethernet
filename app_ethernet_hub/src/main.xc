@@ -1,4 +1,5 @@
 #include <COM_ETHERNET-rev-a.inc>
+#include <CORE_C22-rev-a.inc>
 #include <main.h>
 
 smi_interface_t smi_p1 = ETHERNET_DEFAULT_SMI_INIT_P1;
@@ -17,7 +18,7 @@ int main()
 
   par
     {
-      on COM_TILE:
+      on tile[COM_TILE]:
       {
         char mac_address_p1[6]; init_macAddress_p1(mac_address_p1);
         char mac_address_p2[6]; init_macAddress_p2(mac_address_p2);
