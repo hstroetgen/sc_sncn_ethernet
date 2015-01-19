@@ -123,7 +123,7 @@ void send_avb_1722_router_cmd(chanend c,
  *  based shaper algorithm specified in 802.1Qav.
  * 
  *  \param   c_mac chanend connected to ethernet server
- *  \param   bits_per_seconds The allowed bandwidth in bits per second
+ *  \param   bits_per_second The allowed bandwidth in bits per second
  *
  */
 void mac_set_qav_bandwidth(chanend c_mac,
