@@ -23,7 +23,7 @@ XCC_FLAGS_lite = -O3 -g -report -DCONFIG_LITE  -save-temps #-DMAC_CUSTOM_FILTER
 
 # The USED_MODULES variable lists other module used by the application. 
 
-USED_MODULES = module_board-support module_ethernet_hub module_ethernet_dual 
+USED_MODULES = module_board-support module_ethernet_hub module_ethernet_dual module_locks
 
 
 #=============================================================================
