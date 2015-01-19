@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <print.h>
 
-#include "ethernet_board_support.h"
 
 #include "ethernet_conf.h"
 #include "ethernet_dual.h"
