@@ -1,7 +1,8 @@
-#include <hub.h>
+
 #include <frame_channel.h>
 #include <print.h>
 #include <ethernet_dual.h>
+#include <ethernet_hub.h>
 
 void receiverP1(chanend rx, chanend toTX, chanend toApp)
 {
