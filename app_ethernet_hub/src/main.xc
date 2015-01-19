@@ -25,8 +25,10 @@ int main()
     {
       on tile[COM_TILE]:
       {
-        char mac_address_p1[6]; init_macAddress_p1(mac_address_p1);
-        char mac_address_p2[6]; init_macAddress_p2(mac_address_p2);
+          char mac_address_p1[6]; init_macAddress(mac_address_p1, MAC_ADDRESS_P1);
+          printstr("MAC on P1: "); showMAC(mac_address_p1);
+          char mac_address_p2[6]; init_macAddress(mac_address_p2, MAC_ADDRESS_P2);
+          printstr("MAC on P2: "); showMAC(mac_address_p2);
 
         eth_phy_reset(eth_rst_p1);
         eth_phy_reset(eth_rst_p2);

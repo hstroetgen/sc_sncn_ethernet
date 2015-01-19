@@ -1,4 +1,5 @@
 #include <mac_addr.h>
+#include <print.h>
 
 void init_macAddress(char mac[6], const unsigned char my_mac[6]){
 

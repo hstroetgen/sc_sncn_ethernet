@@ -1,16 +1,13 @@
-// Copyright (c) 2011, XMOS Ltd, All rights reserved
-// This software is freely distributable under a derivative of the
-// University of Illinois/NCSA Open Source License posted in
-// LICENSE.txt and at <http://github.xcore.com/>
+#pragma once
 
+//IP ADDRESSES
+// NOTE: YOU MAY NEED TO REDEFINE THIS TO AN IP ADDRESS THAT WORKS
+// FOR YOUR NETWORK
+static const unsigned char IP_ADDRESS_P1[4] = {192, 168, 101, 80};
+static const unsigned char IP_ADDRESS_P2[4] = {192, 168, 101, 81};
 
-#define MAX_ETHERNET_PACKET_SIZE (1518)
-
-#define NUM_MII_RX_BUF 20
-#define NUM_MII_TX_BUF 2
-
-#define MAX_ETHERNET_CLIENTS   (4)    
-
-
+//MAC ADDRESSES
+static const unsigned char MAC_ADDRESS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
+static const unsigned char MAC_ADDRESS_P2[6] = {0xCA, 0xFE, 0xCA, 0xFE, 0xCA, 0xFE};
 
 
