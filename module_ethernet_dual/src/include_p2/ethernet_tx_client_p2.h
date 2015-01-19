@@ -14,29 +14,10 @@
  *
  *************************************************************************/
 
-#ifndef _ETHERNET_TX_CLIENT_P2_H_
-#define _ETHERNET_TX_CLIENT_P2_H_ 1
+#pragma once
 
 #include "ethernet_conf_derived.h"
-
 #include "ethernet_tx_client_lite_p2.h"
-#include "ethernet_tx_client_full_p2.h"
-
-/** Sends an ethernet frame. Frame includes dest/src MAC address(s), type
- *  and payload.
- *
- *
- *  \param c_mac     channel end to tx server.
- *  \param buffer[]  byte array containing the ethernet frame. *This must
- *                   be word aligned*
- *  \param nbytes    number of bytes in buffer
- *  \param ifnum     the number of the eth interface to transmit to 
- *                   (use ETH_BROADCAST transmits to all ports)
- *
- */
-void mac_tx_p2(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
-
-#define mac_tx_p2 ADD_SUFFIX(mac_tx_p2, ETHERNET_DEFAULT_IMPLEMENTATION)
 
 /** Get the device MAC address.
  *
@@ -53,4 +34,3 @@ int mac_get_macaddr(chanend c_mac, unsigned char macaddr[]);
 
 #define mac_get_macaddr ADD_SUFFIX(mac_get_macaddr, ETHERNET_DEFAULT_IMPLEMENTATION)
 
-#endif

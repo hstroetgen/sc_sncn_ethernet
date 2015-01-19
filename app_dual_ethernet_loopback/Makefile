@@ -3,12 +3,13 @@
 # or a valid argument for the --target option when compiling.
 
 TARGET = SOMANET-C22
+#TARGET = SOMANET-C22_Motor-Control_xSCOPE
 
 # The APP_NAME variable determines the name of the final .xe file. It should
 # not include the .xe postfix. If left blank the name will default to 
 # the project name
 
-APP_NAME =
+APP_NAME = dual_ethernet_loopback
 
 # The flags passed to xcc when building the application
 # You can also set the following to override flags for a particular language:
@@ -23,7 +24,7 @@ XCC_FLAGS_lite = -O3 -g -report -DCONFIG_LITE  -save-temps #-DMAC_CUSTOM_FILTER
 
 # The USED_MODULES variable lists other module used by the application. 
 
-USED_MODULES = module_board-support module_ethernet_dual module_ethernet_hub module_locks
+USED_MODULES = module_board-support module_ethernet_dual module_locks
 
 
 #=============================================================================

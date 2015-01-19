@@ -1,4 +1,4 @@
-SOMANET Ethnernet MAC (dual-port)
+SOMANET Ethernet MAC (dual-port)
 =====================================
 
 .. toctree::

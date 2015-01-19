@@ -1,4 +1,4 @@
-SOMANET Ethnernet Hub
+SOMANET Ethernet Hub
 =====================================
 
 .. toctree::

@@ -14,8 +14,8 @@
  *
  *************************************************************************/
 
-#ifndef _ETHERNET_TX_CLIENT_LITE_P2_H_
-#define _ETHERNET_TX_CLIENT_LITE_P2_H_ 1
+#pragma once
+
 #include <xccompat.h>
 
 #define ETH_BROADCAST (-1)
@@ -48,6 +48,3 @@ void mac_tx_p2_lite(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum)
 
 int mac_get_macaddr_lite(chanend c_mac, unsigned char macaddr[]);
 
-
-
-#endif

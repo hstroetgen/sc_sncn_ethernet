@@ -1,4 +1,8 @@
-#include <top_layer.h>
+#include <print.h>
+#include <frame_channel.h>
+#include <ethernet_config.h>
+#include <ethernet_dual_client.h>
+#include <mac_addr.h>
 
 void setSourceMACaddr(char frame[], const char MAC[]){
     frame[6] = MAC[0];

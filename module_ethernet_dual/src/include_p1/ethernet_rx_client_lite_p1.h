@@ -36,11 +36,10 @@
  *
  *  \param c_mac      A chanend connected to the ethernet server
  *  \param buffer     The buffer to fill with the incoming packet
- *  \param src_port   A reference parameter to be filled with the ethernet
- *                   port the packet came from.        
  *  \param len        A reference parameter to be filled with the length of 
  *                   the received packet in bytes. 
- *
+ *  \param src_port   A reference parameter to be filled with the ethernet
+ *                   port the packet came from.
  **/
 #ifdef __XC__
 #pragma select handler

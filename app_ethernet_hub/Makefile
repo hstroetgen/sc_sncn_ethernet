@@ -3,12 +3,13 @@
 # or a valid argument for the --target option when compiling.
 
 TARGET = SOMANET-C22
+#TARGET = SOMANET-C22_Motor-Control_xSCOPE
 
 # The APP_NAME variable determines the name of the final .xe file. It should
 # not include the .xe postfix. If left blank the name will default to 
 # the project name
 
-APP_NAME =
+APP_NAME = ethernet_hub
 
 # The flags passed to xcc when building the application
 # You can also set the following to override flags for a particular language:

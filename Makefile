@@ -15,7 +15,9 @@ REPO=./
 VERSION=2v0
 DOXYGEN_DIRS=$(REPO)/module_ethernet_dual
 DOXYGEN_DIRS+=$(REPO)/module_ethernet_hub
-DOXYGEN_DIRS+=$(REPO)/module_ethernet_smi
+DOXYGEN_DIRS+=$(REPO)/app_dual_ethernet_ping
+DOXYGEN_DIRS+=$(REPO)/app_dual_ethernet_loopback
+DOXYGEN_DIRS+=$(REPO)/app_ethernet_hub
 SOURCE_INCLUDE_DIRS=$(REPO)
 XDOC_DIR ?= ../xdoc
 -include $(XDOC_DIR)/Makefile.inc

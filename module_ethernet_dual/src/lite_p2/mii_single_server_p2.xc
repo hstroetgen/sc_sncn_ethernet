@@ -3,7 +3,6 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-
 #include <xs1.h>
 #include <xclib.h>
 #include <print.h>
@@ -17,6 +16,16 @@
 #ifndef ETHERNET_LITE_RX_BUFSIZE
 #define ETHERNET_LITE_RX_BUFSIZE (3200*4)
 #endif
+
+void init_macAddress(char mac[6], const unsigned char my_mac[6]){
+
+    mac[0] = my_mac[0];
+    mac[1] = my_mac[1];
+    mac[2] = my_mac[2];
+    mac[3] = my_mac[3];
+    mac[4] = my_mac[4];
+    mac[5] = my_mac[5];
+}
 
 extern void mac_set_macaddr_lite(unsigned char macaddr[]);
 
@@ -123,16 +132,19 @@ void mii_single_server(out port ?p_mii_resetn,
 
 void ethernet_server_p2_lite(mii_interface_lite_t &m,
                           smi_interface_t &?smi,
-                          char mac_address[],
-                          chanend c_rx[], int num_rx, chanend c_tx[], int num_tx)
+                          const unsigned char mac_address[],
+                          chanend c_rx, chanend c_tx)
 {
   chan cIn, cOut;
   chan notifications;
   mii_port_init(m);
+  char mac_address_p2[6];
+  init_macAddress(mac_address_p2, mac_address);
+
   par {
     {asm(""::"r"(notifications));mii_driver(m, cIn, cOut);}
     the_server(cIn, cOut, notifications, smi,
-              c_rx[0], c_tx[0], mac_address);
+              c_rx, c_tx, mac_address_p2);
   }
 }
 

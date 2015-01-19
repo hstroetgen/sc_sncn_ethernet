@@ -26,18 +26,8 @@
 #endif
 
 
-/** Structure containing resources required for the SMI ethernet phy interface.
- *
- * This structure can be filled in two ways. One indicate that the SMI
- * interface is connected using two 1-bit port, the other indicates that
- * the interface is connected using a single multi-bit port.
- *
- * If used with two 1-bit ports, set the ``phy_address``, ``p_smi_mdio``
- * and ``p_smi_mdc`` as normal.
- *
- * If SMI_COMBINE_MDC_MDIO is 1 then ``p_smi_mdio`` is ommited and ``p_mdc`` is
- * assumbed to multibit port containing both mdio and mdc.
- *
+/**
+ *  Structure containing resources required for the SMI ethernet phy interface.
  */
 typedef struct smi_interface_t {
     int phy_address;           /**< Address of PHY, typically 0 or 0x1F. */

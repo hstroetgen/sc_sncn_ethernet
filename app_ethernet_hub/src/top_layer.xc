@@ -1,25 +1,24 @@
-#include <top_layer.h>
+#include <ethernet_hub_client.h>
+#include <mac_filters.h>
+#include <print.h>
 
 void topLayer(chanend dataFromP1, chanend dataToP1, chanend dataFromP2, chanend dataToP2){
 
     // This is a simple top layer that receives the frames that pass the filter at the HUB.
     int nbytes;
-    unsigned buffer[400];
+    unsigned rxbuffer[400];
 
     while(1){
        select{
 
-           case dataFromP1 :> unsigned:
-
-                           fetch_frame(buffer, dataFromP1, nbytes);
+           case fetchFrameFromHub(dataFromP1, rxbuffer, nbytes):
                            break;
 
-           case dataFromP2 :> nbytes:
-                           fetch_frame(buffer, dataFromP2, nbytes);
+           case fetchFrameFromHub(dataFromP2, rxbuffer, nbytes):
                            break;
        }
 
-       if( isARP((buffer,char[])) && isBroadcast((buffer,char[]))){
+       if( isARP((rxbuffer,char[])) && isBroadcast((rxbuffer,char[]))){
              printstrln("Packet for us");
        }
     }

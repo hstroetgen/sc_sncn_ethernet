@@ -13,11 +13,9 @@
 
 void ethernet_server_p2_lite(mii_interface_lite_t &mii,
                           smi_interface_t &?smi,
-                          char mac_address[],
-                          chanend rx[],
-                          int num_rx,
-                          chanend tx[],
-                          int num_tx);
+                          const unsigned char mac_address[],
+                          chanend rx,
+                          chanend tx);
 
 
 #endif

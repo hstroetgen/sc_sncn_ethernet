@@ -1,8 +1,7 @@
 
-#include <frame_channel.h>
+#include <ethernet_dual_client.h>
+#include <ethernet_hub_client.h>
 #include <print.h>
-#include <ethernet_dual.h>
-#include <ethernet_hub.h>
 
 void receiverP1(chanend rx, chanend toTX, chanend toApp)
 {
@@ -15,8 +14,8 @@ void receiverP1(chanend rx, chanend toTX, chanend toApp)
       unsigned int nbytes, time;
 
       mac_rx_p1(rx, (rxbuffer, char[]), nbytes, src_port);
-      pass_frame(toTX, (rxbuffer,char[]), nbytes);
-      pass_frame(toApp, (rxbuffer,char[]), nbytes);
+      passFrameToHub(toTX, (rxbuffer,char[]), nbytes);
+      passFrameToHub(toApp, (rxbuffer,char[]), nbytes);
 
     }
   set_thread_fast_mode_off();
@@ -33,8 +32,8 @@ void receiverP2(chanend rx, chanend toTX, chanend toApp)
       unsigned int nbytes, time;
 
       mac_rx_p2(rx, (rxbuffer, char[]), nbytes, src_port);
-      pass_frame(toTX, (rxbuffer,char[]), nbytes);
-      pass_frame(toApp, (rxbuffer,char[]), nbytes);
+      passFrameToHub(toTX, (rxbuffer,char[]), nbytes);
+      passFrameToHub(toApp, (rxbuffer,char[]), nbytes);
 
     }
   set_thread_fast_mode_off();
@@ -43,16 +42,13 @@ void receiverP2(chanend rx, chanend toTX, chanend toApp)
 void transmitterP1(chanend tx, chanend fromBridge, chanend fromApp)
 {
   unsigned  int txbuffer[1600/4];
+  int nbytes;
 
   while (1)
     {
-      int nbytes;
-
       select{
-          case fromBridge :> nbytes:
-              fetch_frame(txbuffer, fromBridge, nbytes); break;
-          case fromApp :> nbytes:
-              fetch_frame(txbuffer, fromApp, nbytes); break;
+          case fetchFrameFromHub(fromBridge, txbuffer, nbytes): break;
+          case fetchFrameFromHub(fromApp, txbuffer, nbytes): break;
       }
       mac_tx_p1(tx, (txbuffer), nbytes, ETH_BROADCAST);
     }
@@ -61,27 +57,23 @@ void transmitterP1(chanend tx, chanend fromBridge, chanend fromApp)
 void transmitterP2(chanend tx, chanend fromBridge, chanend fromApp)
 {
   unsigned  int txbuffer[1600/4];
+  int nbytes;
 
   while (1)
     {
-      int nbytes;
-
       select{
-        case fromBridge :> nbytes:
-            fetch_frame(txbuffer, fromBridge, nbytes); break;
-        case fromApp :> nbytes:
-            fetch_frame(txbuffer, fromApp, nbytes); break;
+        case fetchFrameFromHub(fromBridge, txbuffer, nbytes): break;
+        case fetchFrameFromHub(fromApp, txbuffer, nbytes): break;
       }
       mac_tx_p2(tx, (txbuffer), nbytes, ETH_BROADCAST);
-
     }
 }
 
 
-void ethernetHUB(chanend dataFromP1, chanend dataToP1,
-          chanend dataFromP2, chanend dataToP2,
-          chanend txP1, chanend rxP1,
-          chanend txP2, chanend rxP2)
+void ethernetHUB(chanend dataP1ToApp, chanend appDataToP1,
+          chanend dataP2ToApp, chanend appDataToP2,
+          chanend txMACP1, chanend rxMACP1,
+          chanend txMACP2, chanend rxMACP2)
 {
   unsigned time;
   chan dataBridge[2];
@@ -93,10 +85,10 @@ void ethernetHUB(chanend dataFromP1, chanend dataToP1,
 
   par
     {
-      transmitterP1(txP1, dataBridge[1], dataToP1);
-      receiverP2(rxP2, dataBridge[1], dataFromP2);
+      transmitterP1(txMACP1, dataBridge[0], appDataToP1);
+      receiverP2(rxMACP2, dataBridge[0], dataP2ToApp);
 
-      transmitterP2(txP2, dataBridge[0], dataToP2);
-      receiverP1(rxP1, dataBridge[0], dataFromP1);
+      transmitterP2(txMACP2, dataBridge[1], appDataToP2);
+      receiverP1(rxMACP1, dataBridge[1], dataP1ToApp);
     }
 }

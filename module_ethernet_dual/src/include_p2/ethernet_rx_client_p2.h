@@ -7,42 +7,8 @@
 
 #include "ethernet_conf_derived.h"
 #include "ethernet_rx_client_lite_p2.h"
-#include "ethernet_rx_client_full_p2.h"
 
 #define STATUS_PACKET_LEN -1
-
-/** This function receives a complete frame (i.e. src/dest MAC address,
- *  type & payload),  excluding pre-amble, SoF & CRC32 from the ethernet
- *  server.
- *
- *  This function is selectable i.e. it can be used as a case in a select e.g.
- *
- *  \verbatim
- *      select {
- *         ...
- *         case mac_rx(...):
- *            break;
- *          ...
- *        }
- *  \endverbatim
- *
- *  \param c_mac      A chanend connected to the ethernet server
- *  \param buffer     The buffer to fill with the incoming packet
- *  \param src_port   A reference parameter to be filled with the ethernet
- *                   port the packet came from.        
- *  \param len        A reference parameter to be filled with the length of 
- *                   the received packet in bytes. 
- *
- **/
-#ifdef __XC__
-#pragma select handler
-#endif
-void mac_rx_p2(chanend c_mac,
-            unsigned char buffer[], 
-            REFERENCE_PARAM(unsigned int, len),
-            REFERENCE_PARAM(unsigned int, src_port));
-
-#define mac_rx_p2 ADD_SUFFIX(mac_rx_p2, ETHERNET_DEFAULT_IMPLEMENTATION)
 
 /** This function receives a complete frame (i.e. src/dest MAC address,
  *  type & payload),  excluding pre-amble, SoF & CRC32. In addition it

@@ -2,7 +2,7 @@
 #include <print.h>
 
 #include <ethernet_config.h>
-#include <ethernet_dual.h>
+#include <ethernet_dual_client.h>
 #include <top_layer.h>
 #include <top_layer_aux.h>
 #include <checksum.h>
@@ -40,7 +40,6 @@ void ping_p1(chanend tx, chanend rx)
     else if (is_valid_icmp_packet((rxbuf,char[]), nbytes, IP_ADDRESS_P1))
       {
         build_icmp_response((rxbuf,char[]), (txbuf, unsigned char[]), MAC_ADDRESS_P1, IP_ADDRESS_P1);
-
         mac_tx_p1(tx, txbuf, nbytes, ETH_BROADCAST);
         printstr("ICMP response sent\n");
       }

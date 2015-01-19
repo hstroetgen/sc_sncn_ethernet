@@ -20,7 +20,7 @@ The SOMANET Ethernet Stack provides Ethernet support for SOMANET devices. SOMANE
 Known Issues
 ============
 
-none
+Communication still not compatible over XC Interfaces 
 
 Support
 =======

@@ -3,12 +3,11 @@
 // University of Illinois/NCSA Open Source License posted in
 // LICENSE.txt and at <http://github.xcore.com/>
 
-#include "frame_channel.h"
 #include <print.h>
 
-void pass_frame(chanend c, const unsigned char buffer[], int nbytes)
+void passFrameToHub(chanend c, const unsigned char buffer[], int nbytes)
 {
-    c <: 1;
+  //  c <: 1;               TODO: check if this works
 	master
 	{
 		int nwords;
@@ -22,7 +21,7 @@ void pass_frame(chanend c, const unsigned char buffer[], int nbytes)
 	}
 }
 
-void fetch_frame(unsigned buffer[], chanend c, int &nbytes)
+void fetchFrameFromHub(chanend c, unsigned buffer[], int &nbytes)
 {
 	slave
 	{
