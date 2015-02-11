@@ -80,7 +80,6 @@ void ethernetHUB(chanend dataP1ToApp, chanend appDataToP1,
 
   { timer tmr; tmr :> time; tmr when timerafter(time + 600000000) :> time; }
   printstr("Ethernet initialised\n");
-
   printstr("Hub running\n");
 
   par

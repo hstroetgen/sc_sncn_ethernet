@@ -7,8 +7,11 @@
 
 void passFrameToHub(chanend c, const unsigned char buffer[], int nbytes)
 {
-  //  c <: 1;               TODO: check if this works
-	master
+    if(nbytes < 0){
+        return;
+    }
+
+    master
 	{
 		int nwords;
 		c <: nbytes;

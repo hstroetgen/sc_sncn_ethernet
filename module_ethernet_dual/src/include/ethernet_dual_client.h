@@ -31,7 +31,8 @@
  *  \param c_mac      A chanend connected to the ethernet server
  *  \param buffer     The buffer to fill with the incoming packet
  *  \param len        A reference parameter to be filled with the length of
- *                   the received packet in bytes.
+ *                   the received packet in bytes. If the ethernet server is not ready,
+ *                   this value will be -1.
  *  \param src_port   A reference parameter to be filled with the ethernet
  *                   port the packet came from.
  **/
@@ -76,7 +77,8 @@ void mac_tx_p1(chanend c_mac, unsigned int buffer[], int nbytes, int ifnum);
  *  \param c_mac      A chanend connected to the ethernet server
  *  \param buffer     The buffer to fill with the incoming packet
  *  \param len        A reference parameter to be filled with the length of
- *                   the received packet in bytes.
+ *                   the received packet in bytes. If the ethernet server is not ready,
+ *                   this value will be -1.
  *  \param src_port   A reference parameter to be filled with the ethernet
  *                   port the packet came from.
  **/

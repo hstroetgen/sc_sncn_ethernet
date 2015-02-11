@@ -29,7 +29,7 @@ void rxP2(chanend rx, chanend loopback)
 
 void txP2(chanend tx, chanend loopback)
 {
-  unsigned  int txbuffer[400];
+  unsigned int txbuffer[400];
 
   while (1)
     {
@@ -49,11 +49,11 @@ void rxP1(chanend rx, chanend loopback)
 {
   unsigned int rxbuffer[400];
 
+  unsigned int src_port;
+  unsigned int nbytes;
+
   while (1)
     {
-      unsigned int src_port;
-      unsigned int nbytes, time;
-
       mac_rx_p1(rx, (rxbuffer, char[]), nbytes, src_port);
       pass_frame(loopback, (rxbuffer,char[]), nbytes);
     }
@@ -62,15 +62,16 @@ void rxP1(chanend rx, chanend loopback)
 void txP1(chanend tx, chanend loopback)
 {
   unsigned  int txbuffer[400];
-
+  int culete = 20;
+  int nbytes;
   while (1)
     {
-      int nbytes;
       select{
-          case loopback :> unsigned:
+          case loopback :> culete:
               fetch_frame(txbuffer, loopback, nbytes);
               break;
       }
+
       setSourceMACaddr((txbuffer,char[]), MAC_ADDRESS_P1);
       mac_tx_p1(tx, txbuffer, nbytes, ETH_BROADCAST);
     }

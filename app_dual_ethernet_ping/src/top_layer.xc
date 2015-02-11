@@ -22,7 +22,7 @@ void ping_p1(chanend tx, chanend rx)
     unsigned int src_port;
     unsigned int nbytes;
     mac_rx_p1(rx, (rxbuf,char[]), nbytes, src_port);
-
+    printintln(nbytes);
     if (!is_broadcast((rxbuf,char[])) && !is_mac_addr((rxbuf,char[]), MAC_ADDRESS_P1)){
         continue;
         }
