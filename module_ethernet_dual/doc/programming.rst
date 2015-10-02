@@ -14,7 +14,7 @@ First of all, you need to define IP and MAC address for each of your two ports. 
 
 You should make sure that the IP address selected are suitable for your Network.
 
-::
+.. code-block:: C
 
 	static const unsigned char IP_ADDRESS_P1[4] = {192, 168, 101, 80};
 	static const unsigned char IP_ADDRESS_P2[4] = {192, 168, 101, 81};
@@ -28,7 +28,7 @@ Server Initialization
 
 Your Ethernet server function must run on your COM tile. Before running the server you need to define and initialize some parameters. Here you can see how to initialize and triger the server.
 
-::
+.. code-block:: C
 
  #include <COM_ETHERNET-rev-a.inc>	// Board support definitions	
  #include <CORE_C22-rev-a.inc>		// Board support definitions
@@ -94,7 +94,7 @@ Frames Rx/Tx
 -----------------
 To send and receive Ethernet frames over the running stacks you must interface them over channels and call to the RX/TX client functions. The example here illustrate how to send and receive frames over the 2 ports:
 
-::
+.. code-block:: C
 
  #include <ethernet_config.h>		// Configuration header	
  #include <ethernet_dual_client.h>	// Header for Ethernet MAC Dual stack client

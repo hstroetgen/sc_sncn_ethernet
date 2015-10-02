@@ -13,19 +13,19 @@ Server Initialization
 
 Add the header file.
 
-::
+.. code-block:: C
 
  #include <ethernet_hub_server.h>	
 
 Declare the channels for the communication between the Hub and upper layers
 
-::
+.. code-block:: C
 
  chan dataFromP1, dataToP1, dataFromP2, dataToP2;  // Communicate Hub to upper layers
 
 Add a new parallel core in your main app where the Hub layer will run.
 
-::
+.. code-block:: C
 
   on tile[1] : ethernetHUB(dataFromP1, dataToP1,  // Ethernet Hub server
                             dataFromP2, dataToP2,
@@ -36,7 +36,7 @@ Frames Rx/Tx
 -----------------
 To send and receive Ethernet frames over the Hub you must interface it over channels and call to the RX/TX client functions. The example here illustrate how to send and receive data frames.
 
-::
+.. code-block:: C
 
  #include <ethernet_hub_client.h>
 
