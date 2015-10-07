@@ -12,12 +12,6 @@ The SOMANET Ethernet Stack provides Ethernet support for SOMANET devices. SOMANE
 
 	Ethernet MAC (dual-port) module <module_ethernet_dual/doc/index>
 	Ethernet hub module <module_ethernet_hub/doc/index>
+	Examples <examples/index>
 
-
-.. toctree::
-	:maxdepth: 1
-
-	Ping demo <app_dual_ethernet_ping/doc/index>
-	Loopback demo <app_dual_ethernet_loopback/doc/index>
-	Ethernet hub demo <app_ethernet_hub/doc/index>
 	
