@@ -1,7 +1,7 @@
 .. _enethub_programming_label:
 
 Using Module Ethernet Hub
-=====================
+==========================
 
 Before start using this module you should have your Ethernet Dual Stack successfully running into your app.
 
@@ -9,7 +9,7 @@ To make the Hub run, just trigger the Hub layer which the propper channels conne
 Then, in order to send and fetch data packets, use the RX/TX client functions.
 
 Server Initialization
------------------
+-----------------------
 
 Add the header file.
 
@@ -33,7 +33,7 @@ Add a new parallel core in your main app where the Hub layer will run.
                             txP2, rxP2);
 
 Frames Rx/Tx
------------------
+-------------
 To send and receive Ethernet frames over the Hub you must interface it over channels and call to the RX/TX client functions. The example here illustrate how to send and receive data frames.
 
 .. code-block:: C

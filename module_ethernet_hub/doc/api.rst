@@ -1,5 +1,5 @@
 API
-=================
+===
 
 The API for the module_ethernet_hub is divided into the Server API and Client API.
 Server API can be found in ethernet_hub_server.h, whereas the Client API is located at ethernet_hub_client.h. 
