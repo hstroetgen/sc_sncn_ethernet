@@ -2,6 +2,8 @@
 SOMANET Ethernet MAC (dual-port)
 =================================
 
+.. _enet_overview_label:
+
 Module Ethernet dual Stack
 ===========================
 
@@ -18,7 +20,7 @@ All communication is done by channel communication and client function calls fol
 
 
 API
-=================
+===
 
 The API for the module_ethernet_dual component is divided into the Server API and Client API.
 Server API can be found in ethernet_dual_server.h, whereas the client API is located at ethernet_dual_client.h. 
@@ -39,8 +41,10 @@ Client API
 .. doxygenfunction:: mac_rx_p2
 .. doxygenfunction:: mac_tx_p2
 
+.. _enet_programming_label:
+
 Using Module Ethernet dual
-=====================
+===========================
 
 To use this module you will need to add to your workspace the module_board-suppot where all the port definitions for SOMANET hardware are included.
 
@@ -63,7 +67,7 @@ You should make sure that the IP address selected are suitable for your Network.
 
 
 Server Initialization
------------------
+---------------------
 
 Your Ethernet server function must run on your COM tile. Before running the server you need to define and initialize some parameters. Here you can see how to initialize and triger the server.
 
@@ -129,8 +133,10 @@ Your Ethernet server function must run on your COM tile. Before running the serv
   return 0;
  }
 
+
 Frames Rx/Tx
------------------
+-------------
+
 To send and receive Ethernet frames over the running stacks you must interface them over channels and call to the RX/TX client functions. The example here illustrate how to send and receive frames over the 2 ports:
 
 .. code-block:: C
