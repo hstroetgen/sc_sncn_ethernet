@@ -1,3 +1,5 @@
+.. cssclass:: bigger_text
+
 Examples
 ========
 
