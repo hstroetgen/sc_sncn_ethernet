@@ -10,8 +10,7 @@ We will run the application on a SOMANET node connected to our Ethernet Local Ar
 Hardware setup
 ----------
 .. figure:: images/ethernet.png
-   :width: 600px
-   :align: center
+   :width: 60%
 
 To successfully test the application you will need:
 
@@ -26,8 +25,7 @@ Quick how-to
 * Open WireShark and start a live capture on the interface connected to your LAN. You will see all the traffic going on...
 
 .. figure:: images/wireshark1.png
-   :width: 800px
-   :align: center
+   :width: 100%
 
 * Then we will apply a filter over all the sniffed packets, where just are shown those packets whose sender is our SOMANET node:
 
@@ -37,8 +35,7 @@ Packets sent over port 1:
 		eth.src == CA:FE:CA:FE:CA:FE 
 
 .. figure:: images/wireshark2.png
-   :width: 600px
-   :align: center
+   :width: 100%
 
 Packets sent over port 2:	
 ::
@@ -46,8 +43,7 @@ Packets sent over port 2:
 		eth.src == F0:CA:F0:CA:F0:CA	
 
 .. figure:: images/wireshark3.png
-   :width: 600px
-   :align: center
+   :width: 100%
 
 * Run the app_dual_ethernet_loopback application on your SOMANET. You should see your two ports' MAC Addresses at your console output.
 
@@ -61,8 +57,7 @@ Packets sent over port 2:
 * If you connect now your SOMANET to the network you will start seeing packets on WireShark.
 
 .. figure:: images/wireshark4.png
-   :width: 400px
-   :align: center
+   :width: 100%
 
 
 .. _WireShark: http://www.wireshark.org

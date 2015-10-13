@@ -10,8 +10,7 @@ We will ping the IP of our SOMANET node from a terminal. Then we will run the ap
 Hardware setup
 ----------
 .. figure:: images/ethernet.png
-   :width: 600px
-   :align: center
+   :width: 60%
 
 To successfully test the application you will need:
 
