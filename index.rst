@@ -1,7 +1,7 @@
 .. cssclass:: bigger_text
 
-SOMANET Ethernet Stack
-======================
+SOMANET Ethernet Library
+========================
 
 The SOMANET Ethernet Stack provides Ethernet support for SOMANET devices. SOMANET COM-Ethernet hardware modules are required to be used with this software.
 
