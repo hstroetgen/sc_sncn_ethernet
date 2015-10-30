@@ -1,15 +1,20 @@
-=================================
-SOMANET Ethernet MAC (dual-port)
-=================================
+.. _module_ethernet_dual:
+
+========================================
+SOMANET Ethernet MAC (dual-port) Module
+========================================
 
 .. _enet_overview_label:
 
-Module Ethernet dual Stack
-===========================
+Overview
+========
+.. contents:: In this document
+    :backlinks: none
+    :depth: 3
 
 Ethernet is family of computer networking technologies for local area newtorks (LANs). Within this group, we can find the IEEE 802.3_ standard protocol, which defines the physical layer and the data link layer's media access control (MAC) for wired Ethernet.
 
-This module allows a abstract access for the application or other upper layers to two different and parallel-running Ethernet MAC layers. 
+This module (**module_ethernet_dual**) allows a abstract access for the application or other upper layers to two different and parallel-running Ethernet MAC layers. 
 
 Each MAC Ethernet layer runs over 2 dedicated cores that must allocated at the COM Tile of your SOMANET Core board. The size for each layer is 32.3 KB,
 therefore running in parallel the two available MACs they will fill the size of your COM tile completely.
@@ -18,13 +23,15 @@ All communication is done by channel communication and client function calls fol
 
 .. _802.3: http://www.ieee802.org/3/
 
-
 API
 ===
 
-The API for the module_ethernet_dual component is divided into the Server API and Client API.
-Server API can be found in ethernet_dual_server.h, whereas the client API is located at ethernet_dual_client.h. 
-Including these headers and adding the module_ethernet_smi to your application is enough to access the whole functionality.
+The API for this module is divided into:
+
+* **Server API**: can be found in **ethernet_dual_server.h**
+* **Client API**: located at **ethernet_dual_client.h**
+
+Including these headers (**ethernet_dual_server.h** and **ethernet_dual_client.h**) and adding **module_ethernet_smi** to your application is enough to access the whole functionality.
 
 Server API
 -----------
@@ -43,17 +50,20 @@ Client API
 
 .. _enet_programming_label:
 
-Using Module Ethernet dual
-===========================
+How to use
+==========
 
 To use this module you will need to add to your workspace the module_board-suppot where all the port definitions for SOMANET hardware are included.
 
-In order to access the functionality of this module you need follow 3 basic steps within your app: 
-include a configuration file, run the Ethernet server and make calls from the client functions.
+In order to access the functionality of this module you need follow **3 basic steps** within your app: 
+
+1. Include a configuration file.
+2. Run the Ethernet server.
+3. Make calls from the client functions.
 
 Configuration file
------------------
-First of all, you need to define IP and MAC address for each of your two ports. This definition must be in a file called ethernet_config.h and it must be included in your application. 
+------------------
+First of all, you need to define IP and MAC address for each of your two ports. This definition must be in a file called **ethernet_config.h** and it must be included in your application. 
 
 You should make sure that the IP address selected are suitable for your Network.
 

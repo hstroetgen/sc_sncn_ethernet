@@ -1,20 +1,36 @@
-=====================
-SOMANET Ethernet Hub
-=====================
+.. _module_ethernet_hub:
+
+============================
+SOMANET Ethernet Hub Module
+============================
 
 .. _enethub_overview_label:
 
-Module Ethernet Hub
-====================
+Overview
+========
+.. contents:: In this document
+    :backlinks: none
+    :depth: 3
 
-This module offers a layer that runs on top of the Ethernet dual Stack.
+This module (**module_ethernet_dual**) offers a layer that runs on top of the Ethernet dual Stack.
 It connects together two Ethernet interfaces and makes them act as a single network segment. It also provides the received data packets to the upper layers.
+
+.. cssclass:: smaller
+
+  .. important:: Before start using this module you have to include **Ethernet Dual-Port Module** into your app.
+    
+      We **highly recommend** you to read our :ref:`Ethernet Dual-Port Module <module_ethernet_dual>` Documentation and get familiar with it before continuing. 
 
 API
 ===
 
-The API for the module_ethernet_hub is divided into the Server API and Client API.
-Server API can be found in ethernet_hub_server.h, whereas the Client API is located at ethernet_hub_client.h. 
+The API for the **module_ethernet_hub** is divided into:
+
+* **Server API**: can be found in **ethernet_hub_server.h**. 
+
+* **Client API**: located at **ethernet_hub_client.h**. 
+
+
 If you are already using module_ethernet_dual in your app, just including these previous headers will give you access the whole functionality this module offers.
 
 Hub Server API
@@ -30,10 +46,8 @@ Hub Client API
 
 .. _enethub_programming_label:
 
-Using Module Ethernet Hub
-==========================
-
-Before start using this module you should have your Ethernet Dual Stack successfully running into your app.
+How to use
+==========
 
 To make the Hub run, just trigger the Hub layer which the propper channels connected to your MACs and to your app. 
 Then, in order to send and fetch data packets, use the RX/TX client functions.
