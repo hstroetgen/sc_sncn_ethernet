@@ -12,7 +12,7 @@ Overview
     :backlinks: none
     :depth: 3
 
-This module (**module_ethernet_dual**) offers a layer that runs on top of the Ethernet dual Stack.
+This module (**module_ethernet_hub**) offers a layer that runs on top of the Ethernet dual Stack.
 It connects together two Ethernet interfaces and makes them act as a single network segment. It also provides the received data packets to the upper layers.
 
 .. cssclass:: smaller
