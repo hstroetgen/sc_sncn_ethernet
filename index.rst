@@ -47,10 +47,6 @@ To run your **application** it is neccesary to include **SOMANET Base Library**.
 
   `Visit SOMANET Base Public Repository <https://github.com/synapticon/sc_somanet-base>`_
 
-.. important:: To be able to **run** this library in your Linux machine, you first have to install all necessary **drivers**. 
-	
-	Visit our :ref:`IgH EtherCAT Master for Linux Documentation <ethercat_master_software_linux>` for further information. 
-
 .. note:: **SOMANET COM Ethernet** hardware modules are required to be used with this software.
 	
 	Visit our :ref:`SOMANET COM Ethernet <com_ethernet>` documentation for further information.
