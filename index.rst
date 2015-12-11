@@ -13,18 +13,11 @@ The **SOMANET Ethernet Library** provides Ethernet support for SOMANET devices.
 Our SOMANET Ethernet Library is composed of the following modules:
 
 * :ref:`Ethernet MAC (dual-port) Module <module_ethernet_dual>`: This module allows an abstract access for the application or other upper layers to two different and parallel-running Ethernet MAC layers.
-* :ref:`Ethernet Hub module <module_ethernet_hub>`: This module offers a layer that runs on top of the Ethernet dual Stack. It connects together two Ethernet interfaces and makes them act as a single network segment. It also provides the received data packets to the upper layers.
+* :ref:`Ethernet Hub Module <module_ethernet_hub>`: This module offers a layer that runs on top of the Ethernet dual Stack. It connects together two Ethernet interfaces and makes them act as a single network segment. It also provides the received data packets to the upper layers.
 * Ethernet SMI Module: This module allows code to communicate with ethernet phys that are configured using the SMI serial protocol.
 
 .. figure:: doc/images/stack.png
    :width: 280px
-
-Additionally, the library includes the following examples:
-
-.. toctree::
-	:maxdepth: 2
-
-	Examples <examples/index>
 
 .. cssclass:: downloadable-button 
 
@@ -33,6 +26,23 @@ Additionally, the library includes the following examples:
 .. cssclass:: github
 
   `Visit Public Repository <https://github.com/synapticon/sc_sncn_ethernet>`_
+
+Examples
+--------
+
+.. toctree::
+	:hidden:
+	:maxdepth: 1
+
+	Ping demo <examples/app_dual_ethernet_ping/doc/index>
+	Loopback demo <examples/app_dual_ethernet_loopback/doc/index>
+	Ethernet hub demo <examples/app_ethernet_hub/doc/index>
+
+Additionally, the library includes the following examples:
+
+* `Ping demo <examples/app_dual_ethernet_ping/doc/index>`_: Learn how to use Ethernet MAC (dual-port) Module in your applications imlementing a simple app that responses a ping to the IP address configured at the config file.
+* `Loopback demo <examples/app_dual_ethernet_loopback/doc/index>`_: Learn how to use Ethernet MAC (dual-port) Module in your applications implementing a dummy packet loopback over the two ports that the SOMANET COM Ethernet board offers.
+* `Ethernet hub demo <examples/app_ethernet_hub/doc/index>`_: Learn how to use Ethernet Hub Module in your applications implementing a simple Ethernet hub.
 
 Dependencies
 ------------
