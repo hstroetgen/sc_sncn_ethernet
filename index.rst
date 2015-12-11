@@ -40,7 +40,7 @@ Examples
 
 Additionally, the library includes the following examples:
 
-* `Ping demo <examples/app_dual_ethernet_ping/doc/index>`_: Learn how to use Ethernet MAC (dual-port) Module in your applications imlementing a simple app that responses a ping to the IP address configured at the config file.
+* `Ping demo <examples/app_dual_ethernet_ping/doc/index>`_: Learn how to use Ethernet MAC (dual-port) Module in your applications implementing a simple app that responses a ping to the IP address configured at the config file.
 * `Loopback demo <examples/app_dual_ethernet_loopback/doc/index>`_: Learn how to use Ethernet MAC (dual-port) Module in your applications implementing a dummy packet loopback over the two ports that the SOMANET COM Ethernet board offers.
 * `Ethernet hub demo <examples/app_ethernet_hub/doc/index>`_: Learn how to use Ethernet Hub Module in your applications implementing a simple Ethernet hub.
 
