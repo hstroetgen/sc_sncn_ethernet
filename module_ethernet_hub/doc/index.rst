@@ -1,13 +1,7 @@
-.. _module_ethernet_hub:
-
 ============================
 SOMANET Ethernet Hub Module
 ============================
 
-.. _enethub_overview_label:
-
-Overview
-========
 .. contents:: In this document
     :backlinks: none
     :depth: 3
@@ -20,31 +14,6 @@ It connects together two Ethernet interfaces and makes them act as a single netw
   .. important:: Before start using this module you have to include **Ethernet Dual-Port Module** into your app.
     
       We **highly recommend** you to read our :ref:`Ethernet Dual-Port Module <module_ethernet_dual>` Documentation and get familiar with it before continuing. 
-
-API
-===
-
-The API for the **module_ethernet_hub** is divided into:
-
-* **Server API**: can be found in **ethernet_hub_server.h**. 
-
-* **Client API**: located at **ethernet_hub_client.h**. 
-
-
-If you are already using module_ethernet_dual in your app, just including these previous headers will give you access the whole functionality this module offers.
-
-Hub Server API
-----------------
-
-.. doxygenfunction:: ethernetHUB
-
-Hub Client API
-----------------
-
-.. doxygenfunction:: passFrameToHub
-.. doxygenfunction:: fetchFrameFromHub
-
-.. _enethub_programming_label:
 
 How to use
 ==========
@@ -59,7 +28,7 @@ Add the header file.
 
 .. code-block:: C
 
- #include <ethernet_hub_server.h>	
+ #include <ethernet_hub_server.h> 
 
 Declare the channels for the communication between the Hub and upper layers
 
@@ -87,21 +56,45 @@ To send and receive Ethernet frames over the Hub you must interface it over chan
  /***********************/ 
 
     int nbytes;
-    unsigned buffer[400];	// Rx/Tx buffer
+    unsigned buffer[400]; // Rx/Tx buffer
 
        select{
-		// Receives frame that comes from port 1
+    // Receives frame that comes from port 1
            case fetchFrameFromHub(dataFromP1, buffer, nbytes):
-			   // Sends back the packet on port 1	
-			   passFrameToHub(dataToP1, buffer, nbytes); 
+         // Sends back the packet on port 1 
+         passFrameToHub(dataToP1, buffer, nbytes); 
                            break;
 
-		// Receives frame that comes from port 2
-           case fetchFrameFromHub(dataFromP2, buffer, nbytes):	
-			   // Sends back the packet on port 2
-			   passFrameToHub(dataToP2, buffer, nbytes);
+    // Receives frame that comes from port 2
+           case fetchFrameFromHub(dataFromP2, buffer, nbytes):  
+         // Sends back the packet on port 2
+         passFrameToHub(dataToP2, buffer, nbytes);
                            break;
-	}
+  }
 
 When sending a data packet to the Hub, the user can choose to send it over port 1, port 2, or both. Just provide to passFrameToHub the right channel. If you need to send over the two ports, do not hesitate to call passFrameToHub twice.
 
+
+
+API
+===
+
+The API for the **module_ethernet_hub** is divided into:
+
+* **Server API**: can be found in **ethernet_hub_server.h**. 
+
+* **Client API**: located at **ethernet_hub_client.h**. 
+
+
+If you are already using module_ethernet_dual in your app, just including these previous headers will give you access the whole functionality this module offers.
+
+Hub Server API
+----------------
+
+.. doxygenfunction:: ethernetHUB
+
+Hub Client API
+----------------
+
+.. doxygenfunction:: passFrameToHub
+.. doxygenfunction:: fetchFrameFromHub

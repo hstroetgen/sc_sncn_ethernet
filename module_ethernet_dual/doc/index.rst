@@ -1,13 +1,7 @@
-.. _module_ethernet_dual:
-
 ========================================
 SOMANET Ethernet MAC (dual-port) Module
 ========================================
 
-.. _enet_overview_label:
-
-Overview
-========
 .. contents:: In this document
     :backlinks: none
     :depth: 3
@@ -22,33 +16,6 @@ therefore running in parallel the two available MACs they will fill the size of 
 All communication is done by channel communication and client function calls following a Server-Client scheme.
 
 .. _802.3: http://www.ieee802.org/3/
-
-API
-===
-
-The API for this module is divided into:
-
-* **Server API**: can be found in **ethernet_dual_server.h**
-* **Client API**: located at **ethernet_dual_client.h**
-
-Including these headers (**ethernet_dual_server.h** and **ethernet_dual_client.h**) and adding **module_ethernet_smi** to your application is enough to access the whole functionality.
-
-Server API
------------
-
-.. doxygenfunction:: eth_phy_reset
-.. doxygenfunction:: ethernet_server_p1
-.. doxygenfunction:: ethernet_server_p2
-
-Client API
-------------
-
-.. doxygenfunction:: mac_rx_p1
-.. doxygenfunction:: mac_tx_p1
-.. doxygenfunction:: mac_rx_p2
-.. doxygenfunction:: mac_tx_p2
-
-.. _enet_programming_label:
 
 How to use
 ==========
@@ -69,11 +36,11 @@ You should make sure that the IP address selected are suitable for your Network.
 
 .. code-block:: C
 
-	static const unsigned char IP_ADDRESS_P1[4] = {192, 168, 101, 80};
-	static const unsigned char IP_ADDRESS_P2[4] = {192, 168, 101, 81};
+  static const unsigned char IP_ADDRESS_P1[4] = {192, 168, 101, 80};
+  static const unsigned char IP_ADDRESS_P2[4] = {192, 168, 101, 81};
 
-	static const unsigned char MAC_ADDRESS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
-	static const unsigned char MAC_ADDRESS_P2[6] = {0xCA, 0xFE, 0xCA, 0xFE, 0xCA, 0xFE};
+  static const unsigned char MAC_ADDRESS_P1[6] = {0xF0, 0xCA, 0xF0, 0xCA, 0xF0, 0xCA};
+  static const unsigned char MAC_ADDRESS_P2[6] = {0xCA, 0xFE, 0xCA, 0xFE, 0xCA, 0xFE};
 
 
 Server Initialization
@@ -83,11 +50,11 @@ Your Ethernet server function must run on your COM tile. Before running the serv
 
 .. code-block:: C
 
- #include <COM_ETHERNET-rev-a.inc>	// Board support definitions	
- #include <CORE_C22-rev-a.inc>		// Board support definitions
+ #include <COM_ETHERNET-rev-a.inc>  // Board support definitions  
+ #include <CORE_C22-rev-a.inc>    // Board support definitions
 
- #include <ethernet_config.h>		// Configuration header	
- #include <ethernet_dual_server.h>	// Header for Ethernet MAC Dual stack server
+ #include <ethernet_config.h>   // Configuration header 
+ #include <ethernet_dual_server.h>  // Header for Ethernet MAC Dual stack server
 
  // Serial Management Interface on port 1
  smi_interface_t smi_p1 = ETHERNET_DEFAULT_SMI_INIT_P1; 
@@ -132,11 +99,11 @@ Your Ethernet server function must run on your COM tile. Before running the serv
 
         // Parallel loops for Ethernet servers
         par{
-		
+    
             // Port 1
             ethernet_server_p1(mii_p1, smi_p1, mac_address_p1, rxP1, txP1);
-            // Port 2	
-            ethernet_server_p2(mii_p2, smi_p2, mac_address_p2, rxP2, txP2);	
+            // Port 2 
+            ethernet_server_p2(mii_p2, smi_p2, mac_address_p2, rxP2, txP2); 
         }
       }
 
@@ -151,20 +118,45 @@ To send and receive Ethernet frames over the running stacks you must interface t
 
 .. code-block:: C
 
- #include <ethernet_config.h>		// Configuration header	
- #include <ethernet_dual_client.h>	// Header for Ethernet MAC Dual stack client
+ #include <ethernet_config.h>   // Configuration header 
+ #include <ethernet_dual_client.h>  // Header for Ethernet MAC Dual stack client
 
  /***********************/ 
 
- unsigned int rxbuffer[400];	// Rx buffer
- unsigned int txbuffer[400];	// Tx buffer
+ unsigned int rxbuffer[400];  // Rx buffer
+ unsigned int txbuffer[400];  // Tx buffer
  int nbytes;
 
-	// Before sending a packet you will probably want 
-	// to add some content to it. This step is not defined
-	// in this example since it strongly relies on your application 
+  // Before sending a packet you will probably want 
+  // to add some content to it. This step is not defined
+  // in this example since it strongly relies on your application 
 
  mac_tx_p1(txP1, txbuffer, nbytes, ETH_BROADCAST); // Send packet over port 1
  mac_tx_p2(txP2, txbuffer, nbytes, ETH_BROADCAST); // Send packet over port 2 
  mac_rx_p1(rxP1, (rxbuffer, char[]), nbytes, src_port); // Receive packet on port 1
  mac_rx_p2(rxP2, (rxbuffer, char[]), nbytes, src_port); // Receive packet on port 2
+
+API
+===
+
+The API for this module is divided into:
+
+* **Server API**: can be found in **ethernet_dual_server.h**
+* **Client API**: located at **ethernet_dual_client.h**
+
+Including these headers (**ethernet_dual_server.h** and **ethernet_dual_client.h**) and adding **module_ethernet_smi** to your application is enough to access the whole functionality.
+
+Server API
+-----------
+
+.. doxygenfunction:: eth_phy_reset
+.. doxygenfunction:: ethernet_server_p1
+.. doxygenfunction:: ethernet_server_p2
+
+Client API
+------------
+
+.. doxygenfunction:: mac_rx_p1
+.. doxygenfunction:: mac_tx_p1
+.. doxygenfunction:: mac_rx_p2
+.. doxygenfunction:: mac_tx_p2

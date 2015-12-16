@@ -1,5 +1,6 @@
-SOMANET Ethnernet SMI protocol
-=====================================
+SOMANET Ethernet SMI Module
+=============================
+
    Overview 
    API 
    Programming guide 
