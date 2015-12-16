@@ -3,6 +3,8 @@
 #include <ethernet_hub_client.h>
 #include <print.h>
 
+#define SINGLE_PORT
+
 void receiverP1(chanend rx, chanend toTX, chanend toApp)
 {
   unsigned int rxbuffer[1600/4];
@@ -15,7 +17,9 @@ void receiverP1(chanend rx, chanend toTX, chanend toApp)
 
       mac_rx_p1(rx, (rxbuffer, char[]), nbytes, src_port);
       passFrameToHub(toTX, (rxbuffer,char[]), nbytes);
+      #ifndef SINGLE_PORT
       passFrameToHub(toApp, (rxbuffer,char[]), nbytes);
+      #endif
 
     }
   set_thread_fast_mode_off();
@@ -47,7 +51,9 @@ void transmitterP1(chanend tx, chanend fromBridge, chanend fromApp)
   while (1)
     {
       select{
+          #ifndef SINGLE_PORT
           case fetchFrameFromHub(fromBridge, txbuffer, nbytes): break;
+          #endif
           case fetchFrameFromHub(fromApp, txbuffer, nbytes): break;
       }
       mac_tx_p1(tx, (txbuffer), nbytes, ETH_BROADCAST);
@@ -85,9 +91,17 @@ void ethernetHUB(chanend dataP1ToApp, chanend appDataToP1,
   par
     {
       transmitterP1(txMACP1, dataBridge[0], appDataToP1);
+      #ifndef SINGLE_PORT
       receiverP2(rxMACP2, dataBridge[0], dataP2ToApp);
 
       transmitterP2(txMACP2, dataBridge[1], appDataToP2);
-      receiverP1(rxMACP1, dataBridge[1], dataP1ToApp);
+      #endif
+      receiverP1(rxMACP1,
+              #ifndef SINGLE_PORT
+              dataBridge[1],
+              #else
+              dataBridge[0], // If only one port is used, connect transmitter and receiver of Port 1.
+              #endif
+              dataP1ToApp);
     }
 }
