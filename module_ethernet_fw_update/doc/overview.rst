@@ -27,6 +27,9 @@ Build an upgrade image
 To build an upgrade image, use xflash with following commands:
 ::
 	xflash --factory-version XTIMECOMPOSER-VERSION --upgrade VERSION XE-FILE [SIZE] -o UPGRADE-IMAGE-NAME
+
+For further information take a look in the PDF `XFLASH Command-Line Manual`_ by XMOS.	
+
 	
 Options
 --------------
@@ -43,3 +46,4 @@ E.g:
 	
 	
 .. _Design and manufacture systems with flash memory: https://download.xmos.com/XM-000949-PC-9.pdf?auth=WzAsIjkxLjE4Ljg1LjExIiwxNDUwMzQxMzA5LCJYTS0wMDA5NDktUEMtOS5wZGYiXQ==
+.. _XFLASH Command-Line Manual: https://download.xmos.com/XM-000965-PC-8.pdf?auth=WzAsIjc5LjE5Ny4yMjUuMTYyIiwxNDUwMjk2NTk4LCJYTS0wMDA5NjUtUEMtOC5wZGYiXQ==
