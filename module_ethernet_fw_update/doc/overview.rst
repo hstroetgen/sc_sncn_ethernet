@@ -11,7 +11,8 @@ Build an upgrade image
 ---------------
 
 To build an upgrade image, use xflash with following commands:
-xflash --factory-version XTIMECOMPOSER-VERSION --upgrade VERSION XE-FILE [SIZE] -o UPGRADE-IMAGE-NAME
+
+	xflash --factory-version XTIMECOMPOSER-VERSION --upgrade VERSION XE-FILE [SIZE] -o UPGRADE-IMAGE-NAME
 
 XTIMECOMPOSER-VERSION: Your xTIMEcomposer version
 VERSION: Version number of your upgrade image. Must be higher then 0
