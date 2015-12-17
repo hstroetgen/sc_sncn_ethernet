@@ -9,24 +9,16 @@ with the highest version number with a valid CRC.
 
 Flash format
 --------------
-+<---------------- Boot Partition ------------------------->+
-|0															| Data Partition
-+-------+-----------+-+-----------+--+----------+-+---------+-----------------
-|		|			|#|			  |##|			|#|			|	Default
-|Flash	|0  Factory	|#|1  Upgrade |##|2	Upgrade	|#|3 ...  	|	0 bytes
-|loader |	 image	|#|	   image  |##|	 image	|#|			| (unavailable)
-|		|			|#|			  |##|			|#|			|
-+-------+-----------+-+-----------+--+----------+-+---------+-----------------
-|	   Hardware		  |				 |	Sector	  |			|
-+<---- protected ---->+			     + boundaries +			+
+
+.. image:: images/flash_partition_structure.png
+   	:scale: 50 %
+	:target: `Design and manufacture systems with flash memory`_
 
 The factory image is that image, that will be build in your xTIMEcomposer, when you hit the Flash-Button. It is not recommended, to delete this image. Although the diagramm
 says, it is hardware protected, it is possible. 
 The advantage is, when your upgrade is failing, the flash loader will load automatically the factory image and you can try again, to add a new image.
 
-For further information take a look in the PDF `Design and manufacture systems with flash memory`_
-by XMOS.
-
+For further information take a look in the PDF `Design and manufacture systems with flash memory`_ by XMOS.
 
 
 Build an upgrade image
