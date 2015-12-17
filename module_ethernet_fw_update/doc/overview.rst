@@ -25,7 +25,7 @@ Build an upgrade image
 ---------------
 
 To build an upgrade image, use xflash with following commands:
-
+::
 	xflash --factory-version XTIMECOMPOSER-VERSION --upgrade VERSION XE-FILE [SIZE] -o UPGRADE-IMAGE-NAME
 	
 Options
@@ -38,6 +38,7 @@ Options
 * UPGRADE-IMAGE-NAME: Upgrade image name. 
 
 E.g:
+::
 	xflash --factory-version 13.2 --upgrade 1 app.xe 65536 -o upgrade_image
 	
 	
