@@ -33,14 +33,19 @@
  *
  *****************************************************************************/
 #include "crc.h"
-#include "flashlib.h"
 
-
+// TODO rewrite with the possibility to change the polynom
+/**
+ * @brief Calculates for n bytes the CRC value
+ * @param start Start pointer of a byte stream.
+ * @param end   End pointer of the byte stream.
+ * @param crc   Previously calculated CRC value or initial value (Must be the same on both sides)
+ * @return calculated CRC value.
+ */
 uint16_t crc16(uint8_t *start, uint8_t *end, uint16_t crc)
 {
     uint8_t  *data;
 
-    int cnt = 0;
     for (data = start; data < end; data++)
     {
         crc  = (crc >> 8) | (crc << 8);
@@ -48,39 +53,9 @@ uint16_t crc16(uint8_t *start, uint8_t *end, uint16_t crc)
         crc ^= (crc & 0xff) >> 4;
         crc ^= crc << 12;
         crc ^= (crc & 0xff) << 5;
-
-        cnt ++;
     }
 
     return crc;
 }
 
-uint16_t crc_calc_page(unsigned start_page, unsigned end_page)
-{
-    uint16_t crc = 0x0;
-    uint8_t data[256];
-    unsigned page = 0, byte = 0;
 
-    int cnt = 0;
-
-    if (start_page > end_page) return 0;
-
-    for (page = start_page; page < end_page; page++)
-    {
-        fl_readDataPage(page, data);
-
-        crc = crc16(data, (data+256), crc);
-        /*
-        for (byte = data; byte < (data+256); data++)
-        {
-            crc  = (crc >> 8) | (crc << 8);
-            crc ^= *byte;
-            crc ^= (crc & 0xff) >> 4;
-            crc ^= crc << 12;
-            crc ^= (crc & 0xff) << 5;
-            cnt++;
-        }*/
-    }
-
-    return crc;
-}

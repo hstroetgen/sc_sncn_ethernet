@@ -279,7 +279,15 @@ static int getSectorAtOrAfter(unsigned address)
     return -1;
 }
 
-int fwUpdt_prepare_bii(fl_BootImageInfo &b, unsigned size, unsigned &add_not_replace)
+/**
+ * @brief Prepares the BootImageInfo struct. By calling fl_startImageAdd or fl_startImageReplace
+ *        different addresses will be calculated and stored in the struct.
+ * @param b     Boot image info struct.
+ * @param size  Size of the image.
+ * @param add_not_replace   Flag of the calling function.
+ * @return Error.
+ */
+int fwUpdt_prepare_bii(fl_BootImageInfo &b, unsigned size, unsigned add_not_replace)
 {
     int val = 1;
     // Prepare the bii struct for adding or replacing image. Must be repeated until val is zero.
@@ -318,6 +326,14 @@ int fwUpdt_prepare_bii(fl_BootImageInfo &b, unsigned size, unsigned &add_not_rep
     return 0;
 }
 
+/**
+ * @brief Searched the factory image and tries to find an upgrade image. It depends on this,
+ *        if an image will be added or replaced.
+ * @param b     Boot image info struct.
+ * @param size  Size of the image.
+ * @param next_image    Flag for the calling function, if an upgrade image is found.
+ * @return  Error
+ */
 int fwUpdt_find_images(fl_BootImageInfo &b, unsigned size, unsigned &next_image)
 {
     unsigned error = 0;
@@ -350,10 +366,10 @@ int fwUpdt_find_images(fl_BootImageInfo &b, unsigned size, unsigned &next_image)
 }
 
 /**
- * @brief Flashes the firmware
+ * @brief Main firmware upgrade
  * @param SPI   The struct with the spi ports. Defined in the BSP *.inc file.
  * @param size  Size of the image.
- * @return Error code.
+ * @return Error.
  */
 int fwUpdt_upgrade_fw(fl_SPIPorts &SPI, unsigned size)
 {
@@ -399,10 +415,12 @@ int fwUpdt_upgrade_fw(fl_SPIPorts &SPI, unsigned size)
         return error_upgrade;
     }
 
+    // If an upgrade image was replaced, the information in the boot image info structed are obsolete.
+    // With the call of fl_getFactoryImage the information will be renewed.
     if (!add_not_replace)
         fl_getFactoryImage(b);
 
-    // Find new image
+    // Find the new image (Just to be safe)
     if (fl_getNextBootImage(b) != 0)
     {
         #ifdef DEBUG
@@ -441,7 +459,6 @@ void fwUpdt_filter(char data[], chanend c_flash_data, int nbytes, client interfa
     int reply;
     char version[] = FIRMWARE_VERSION;
 
-    // Send protocol data to motor function.
     if (data[OFFSET_FLAG] == UPGRADE_FLAG)
     {
         switch (data[OFFSET_CMD])
@@ -456,9 +473,7 @@ void fwUpdt_filter(char data[], chanend c_flash_data, int nbytes, client interfa
                 tx.msg(data, 20);
                 break;
             case CMD_GETVERSION:
-                //printstrln(version);
                 memcpy((data + OFFSET_PAYLOAD), version, strlen(version));
-                //printstrln("Send version");
                 tx.msg(data, 20);
                 break;
             case CMD_FLASH_FW:
@@ -466,7 +481,7 @@ void fwUpdt_filter(char data[], chanend c_flash_data, int nbytes, client interfa
                 c_flash_data :> reply;
                 memcpy((data + OFFSET_PAYLOAD), (char *) &reply, 1);
                 tx.msg(data, 20);
-                //reset_cores1();
+                //reset_cores1(); // Actually this should reboot the microcontroller.
                 break;
             default:
                 break;

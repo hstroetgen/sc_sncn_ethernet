@@ -1,9 +1,10 @@
 .. _enet_programming_label:
 
-Using Module Ethernet dual
+Using Module Ethernet Firmware Update
 =====================
 
 To use this module you will need to add to your workspace the module_board-suppot where all the port definitions for SOMANET hardware are included.
+Additionally you need the module_flash_service.
 
 In order to access the functionality of this module you need follow 3 basic steps within your app: 
 include a configuration file, run the Ethernet server and make calls from the client functions.
@@ -35,6 +36,10 @@ Your Ethernet server function must run on your COM tile. Before running the serv
 
  #include <ethernet_config.h>		// Configuration header	
  #include <ethernet_dual_server.h>	// Header for Ethernet MAC Dual stack server
+ #include <ethernet_hub_server.h>   // Header for Ethernet Hub
+ #include <ethernet_fw_update.h>    // Header for Ethernet Firmware Update
+
+ #include "ethernet.h"			    // Common Ethernet Service for fetching and sending ethernet packets
 
  // Serial Management Interface on port 1
  smi_interface_t smi_p1 = ETHERNET_DEFAULT_SMI_INIT_P1; 
@@ -55,6 +60,10 @@ Your Ethernet server function must run on your COM tile. Before running the serv
  {
   chan rxP1, txP1;    // Server-Client communication channels on port 1
   chan rxP2, txP2;    // Server-Client communication channels on port 2
+  chan dataFromP1, dataToP1;  // Communicate HUB tu upper layers port 1
+  chan dataFromP2, dataToP2;  // Communicate HUB tu upper layers port 2
+  chan c_flash_data;  // Channel for flash communication
+  interface if_tx tx; // Interface for ethernet response
 
   par
     {
@@ -84,33 +93,62 @@ Your Ethernet server function must run on your COM tile. Before running the serv
             ethernet_server_p1(mii_p1, smi_p1, mac_address_p1, rxP1, txP1);
             // Port 2	
             ethernet_server_p2(mii_p2, smi_p2, mac_address_p2, rxP2, txP2);	
+            
+            fwUpdt_loop(p_spi_flash, c_flash_data);
         }
+      }
+      
+       /************************************************************
+       * CLIENT TILE - ETHERNET HUB LAYER
+       ************************************************************/
+      // Ethernet hub server
+      on tile[1] : ethernetHUB(dataFromP1, dataToP1,
+                          dataFromP2, dataToP2,
+                          txP1, rxP1,
+                          txP2, rxP2);
+
+      /************************************************************
+       * CLIENT TILE - UPPER LAYERS
+       ************************************************************/
+      //  Ethernet hub client
+      on tile[2] :
+      {
+          par
+          {
+              ethernet_fetcher(dataFromP1, dataFromP2, c_flash_data, tx);
+
+              ethernet_send(dataToP1, dataToP2, tx);
+          }
       }
 
   return 0;
  }
 
-Frames Rx/Tx
+Upgrading Firmware
 -----------------
-To send and receive Ethernet frames over the running stacks you must interface them over channels and call to the RX/TX client functions. The example here illustrate how to send and receive frames over the 2 ports:
+To upgrade your firmware, call the firmware update filter in the ethernet fetcher.
 
-::
+void ethernet_fetcher(chanend dataFromP1, chanend dataFromP2, chanend c_flash_data, client interface if_tx tx)
+{
+    int nbytes;
+    unsigned rxbuffer[BUFFER_SIZE];
 
- #include <ethernet_config.h>		// Configuration header	
- #include <ethernet_dual_client.h>	// Header for Ethernet MAC Dual stack client
+    while(1)
+    {
+       select
+       {
+           case fetchFrameFromHub(dataFromP1, rxbuffer, nbytes):
+                           break;
 
- /***********************/ 
+           case fetchFrameFromHub(dataFromP2, rxbuffer, nbytes):
+                           break;
+       }
 
- unsigned int rxbuffer[400];	// Rx buffer
- unsigned int txbuffer[400];	// Tx buffer
- int nbytes;
+       if( isSNCN((rxbuffer,char[])) && ( isForMe((rxbuffer,char[]), MAC_ADDRESS_P1 ) || isForMe((rxbuffer,char[]), MAC_ADDRESS_P2 )) )
+       {
+           fwUpdt_filter(rxbuffer, c_flash_data, nbytes, tx);
+       }
+    }
+}
 
-	// Before sending a packet you will probably want 
-	// to add some content to it. This step is not defined
-	// in this example since it strongly relies on your application 
-
- mac_tx_p1(txP1, txbuffer, nbytes, ETH_BROADCAST); // Send packet over port 1
- mac_tx_p2(txP2, txbuffer, nbytes, ETH_BROADCAST); // Send packet over port 2 
- mac_rx_p1(rxP1, (rxbuffer, char[]), nbytes, src_port); // Receive packet on port 1
- mac_rx_p2(rxP2, (rxbuffer, char[]), nbytes, src_port); // Receive packet on port 2
 
