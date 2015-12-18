@@ -28,7 +28,7 @@ Now the next step is to run the application on your Linux PC to perform the SOMA
 
    1. Make sure that you have installed the latest Python 2.7 interpreter. Under Linux just do the following. ::
 
-      sudo apt-get install python2.7
+         sudo apt-get install python2.7
 
    2. Navigate to the ``app_master_fw_update`` folder using a terminal. Identify the ``app_master_fw_update.sh`` application there.
    3. To run the application you need root rights.
