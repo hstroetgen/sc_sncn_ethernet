@@ -77,9 +77,9 @@ void transmitterP2(chanend tx, chanend fromBridge, chanend fromApp)
 
 
 void ethernetHUB(chanend dataP1ToApp, chanend appDataToP1,
-          chanend dataP2ToApp, chanend appDataToP2,
+          chanend ?dataP2ToApp, chanend ?appDataToP2,
           chanend txMACP1, chanend rxMACP1,
-          chanend txMACP2, chanend rxMACP2)
+          chanend ?txMACP2, chanend ?rxMACP2)
 {
   unsigned time;
   chan dataBridge[2];

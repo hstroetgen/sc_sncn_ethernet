@@ -33,7 +33,7 @@ unsigned isSNCN(char data[])
 unsigned isBroadcast(char data[])
 {
     for (int i = 0; i < 6; i++){
-          if (data[i + DST_MAC_BYTE] != 0xFF){
+          if (data[i + DST_MAC_ADDR] != 0xFF){
             return 0;
           }
     }
@@ -44,7 +44,7 @@ unsigned isBroadcast(char data[])
 unsigned isForMe(char data[], const unsigned char mac[]){
 
     for (int i = 0;i < 6;i++){
-          if (data[i + DST_MAC_BYTE] != mac[i]){
+          if (data[i + DST_MAC_ADDR] != mac[i]){
             return 0;
           }
     }

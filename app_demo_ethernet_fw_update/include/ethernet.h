@@ -24,7 +24,7 @@ interface if_rx
     void msg(char data[], int nbytes);
 };
 
-void ethernet_send(chanend dataToP1, chanend dataToP2, server interface if_tx tx);
-void ethernet_fetcher(chanend dataFromP1, chanend dataFromP2, chanend c_flash_data, client interface if_tx tx);
+void ethernet_send(chanend dataToP1, chanend ?dataToP2, server interface if_tx tx);
+void ethernet_fetcher(chanend dataFromP1, chanend ?dataFromP2, chanend c_flash_data, client interface if_tx tx);
 
 #endif /* ethernet_H_ */

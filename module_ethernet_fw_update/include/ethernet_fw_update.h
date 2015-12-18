@@ -9,6 +9,7 @@
 #define FLASH_OVER_ETHERNET_H_
 
 #include <flash.h> // FIXME This dependencies should be removed
+#include <ethernet.h>
 
 
 void fwUpdt_filter(char data[], chanend c_flash_data, int nbytes, client interface if_tx tx);

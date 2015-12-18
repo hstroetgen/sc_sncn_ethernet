@@ -64,6 +64,30 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
 								</option>
 								<option id="com.xmos.xc.compiler.option.defined.symbols.748402137" name="com.xmos.xc.compiler.option.defined.symbols" superClass="com.xmos.xc.compiler.option.defined.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__SHRT_MAX__=32767"/>
@@ -597,6 +621,30 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.41382888" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -950,6 +998,30 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.36455670" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
@@ -1108,6 +1180,30 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
 								</option>
 								<option id="com.xmos.xc.compiler.option.defined.symbols.1811809540" name="com.xmos.xc.compiler.option.defined.symbols" superClass="com.xmos.xc.compiler.option.defined.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__SHRT_MAX__=32767"/>
@@ -1346,6 +1442,30 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.50386593" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -1479,6 +1599,30 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/COM_ETHERNET}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_board-support/bsp/IFM_DC300}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc/images}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/lite_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_smi/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include_p1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_hub/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.48872041" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>

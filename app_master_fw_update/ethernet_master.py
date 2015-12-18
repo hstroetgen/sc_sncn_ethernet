@@ -30,7 +30,7 @@ class EthernetMaster:
     #   @return     the decoded string with removed colon
     #
     @staticmethod
-    def __strToHex(data):
+    def strToByte(data):
         return data.replace(":", "").decode('hex')
 
     @staticmethod
@@ -69,7 +69,7 @@ class EthernetMaster:
     # 
     def make_packet(self, address, payload):
         val = address + self.__src_addr + self.__ethertype + payload
-        return self.__strToHex(val)
+        return self.strToByte(val)
 
     ##
     #   @brief  Put address and payload into a packet and sends it.

@@ -14,12 +14,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <ethernet_config.h>
-#include <velocity_ctrl_client.h>
-#include <position_ctrl_client.h>
-#include <statemachine.h>
+#include <ethernet_fw_update.h>
 
 #include "ethernet.h"
-#include "flash_over_ethernet.h"
+
 
 
 /**
@@ -45,7 +43,7 @@ void ethernet_make_packet(char data[])
  *  @param dataToP2     Channel for port 2.
  *  @param[in] addr     Interface with the mac-address from filter().
  */
-void ethernet_send(chanend dataToP1, chanend dataToP2, server interface if_tx tx)
+void ethernet_send(chanend dataToP1, chanend ?dataToP2, server interface if_tx tx)
 {
     char txbuffer[BUFFER_SIZE];
     int nBytes;
@@ -55,7 +53,7 @@ void ethernet_send(chanend dataToP1, chanend dataToP2, server interface if_tx tx
         select
         {
             case tx.msg(char data[], int nbytes):
-                memcpy(txbuffer, reply, nbytes);
+                memcpy(txbuffer, data, nbytes);
                 nBytes = nbytes;
                 ethernet_make_packet(txbuffer);
                 break;
@@ -77,7 +75,7 @@ void ethernet_send(chanend dataToP1, chanend dataToP2, server interface if_tx tx
  *  @param[out]     addr     Interface client for address communication with send().
  */
 // TODO change c_flash_data to interface
-void ethernet_fetcher(chanend dataFromP1, chanend dataFromP2, chanend c_flash_data, client interface if_tx tx)
+void ethernet_fetcher(chanend dataFromP1, chanend ?dataFromP2, chanend c_flash_data, client interface if_tx tx)
 {
     int nbytes;
     unsigned rxbuffer[BUFFER_SIZE];
@@ -95,8 +93,7 @@ void ethernet_fetcher(chanend dataFromP1, chanend dataFromP2, chanend c_flash_da
 
        if( isSNCN((rxbuffer,char[])) && ( isForMe((rxbuffer,char[]), MAC_ADDRESS_P1 ) || isForMe((rxbuffer,char[]), MAC_ADDRESS_P2 )) )
        {
-           fwUpdt_filter(rxbuffer, c_flash_data, nbytes, tx);
-
+           fwUpdt_filter((rxbuffer,char[]), c_flash_data, nbytes, tx);
            // Insert here your own filter ...
        }
     }

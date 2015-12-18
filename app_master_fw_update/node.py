@@ -5,6 +5,21 @@ from ethernet_master import *
 from ethernet_settings import *
 from print_color import *
 
+PACKAGE_SIZE    = 256
+OFFSET_DATA     = 22
+OFFSET_PAYLOAD  = 14
+OFFSET_SRC_ADDR = 6
+ERR_CRC         = 0xFC
+ACK             = 0xFF
+NACK            = 0x0
+CMD_PRE         = 0xF1
+CMD_VERSION     = 0x04
+CMD_WRITE       = 0x03
+CMD_READ        = 0x01
+CMD_FLASH       = 0x05
+
+
+# TODO i lose packages... i have to change everything :( 
 
 class ProgressBar(threading.Thread):
     def __init__(self, max_val, class_):
@@ -31,7 +46,7 @@ class ScanNodes(threading.Thread, EthernetMaster):
         self.found = None
 
     def run(self):
-        print "searching", self.address
+        #print "searching", self.address
         reply = None
         self.set_socket()
         self.set_timeout(5)
@@ -40,12 +55,8 @@ class ScanNodes(threading.Thread, EthernetMaster):
         self.send(self.address, protocol_data)
         reply = self.receive(error_msg=False)
 
-        if reply:
-            answer = reply.encode('hex')
-            sys.stdout.write("found node " + self.address + " --- " + answer + "\n\n")
-            sys.stdout.flush()
+        if reply and reply[OFFSET_SRC_ADDR:OFFSET_SRC_ADDR + 6] == self.strToByte(self.address):
             self.found = self.address
-
 
 class SendImage(threading.Thread, EthernetMaster):
     thread_count = 0

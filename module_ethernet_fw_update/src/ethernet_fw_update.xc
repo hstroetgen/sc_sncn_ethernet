@@ -23,7 +23,7 @@
 #include "crc.h"
 
 
-#define DEBUG
+//#define DEBUG
 
 #define OFFSET_FLAG     0 + OFFSET_PAYLOAD
 #define OFFSET_CMD      1 + OFFSET_PAYLOAD
@@ -371,12 +371,12 @@ int fwUpdt_find_images(fl_BootImageInfo &b, unsigned size, unsigned &next_image)
  * @param size  Size of the image.
  * @return Error.
  */
-int fwUpdt_upgrade_fw(fl_SPIPorts &SPI, unsigned size)
+int fwUpdt_upgrade_fw(unsigned size)
 {
-    fl_BootImageInfo b, b1;
+    fl_BootImageInfo b;
 
     // Connect to flash memory
-    connect_to_flash(SPI);
+    connect_to_flash();
 
     // Disable protection (perhabs obsolet) TODO: Delete the shit
     if (fl_setProtection(0) != 0)
@@ -429,16 +429,16 @@ int fwUpdt_upgrade_fw(fl_SPIPorts &SPI, unsigned size)
         fl_disconnect();
         return 3;
     }
-#ifdef DEBUG
-    printstr("Next Image Size: ");
-    printuint(b.size);
-    printstr(", Next Image Addr: ");
-    printuint(b.startAddress);
-    printstr(", Next Image Version: ");
-    printuint(b.version);
-    printstr(", Factory?: ");
-    printuintln(b.factory);
-#endif
+    #ifdef DEBUG
+        printstr("Next Image Size: ");
+        printuint(b.size);
+        printstr(", Next Image Addr: ");
+        printuint(b.startAddress);
+        printstr(", Next Image Version: ");
+        printuint(b.version);
+        printstr(", Factory?: ");
+        printuintln(b.factory);
+    #endif
 
     // Enable protection TODO This should be unnecessary.
     fl_setProtection(1);

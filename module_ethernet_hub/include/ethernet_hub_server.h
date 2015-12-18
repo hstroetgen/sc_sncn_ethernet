@@ -17,7 +17,7 @@
  *  \param rxMACP2                  Chanend to receive packets from the Ethernet server on port 2.
  *
  **/
-void ethernetHUB(chanend dataP1toApp, chanend appDataToP1,
-                chanend dataP2ToApp, chanend appDataToP2,
-                chanend txMACP1, chanend rxMACP1,
-                chanend txMACP2, chanend rxMACP2);
+void ethernetHUB(chanend dataP1ToApp, chanend appDataToP1,
+          chanend ?dataP2ToApp, chanend ?appDataToP2,
+          chanend txMACP1, chanend rxMACP1,
+          chanend ?txMACP2, chanend ?rxMACP2);

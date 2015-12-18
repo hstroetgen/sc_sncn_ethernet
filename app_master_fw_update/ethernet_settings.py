@@ -49,14 +49,4 @@ interface = "eth0"
 # Ethertype are byte 13 and 14 in the ethernet packet
 ethertype = "0801"
 
-PACKAGE_SIZE    = 256
-OFFSET_DATA     = 22
-OFFSET_PAYLOAD  = 14
-ERR_CRC         = 0xFC
-ACK             = 0xFF
-NACK            = 0x0
-CMD_PRE         = 0xF1
-CMD_VERSION     = 0x04
-CMD_WRITE       = 0x03
-CMD_READ        = 0x01
-CMD_FLASH       = 0x05
+

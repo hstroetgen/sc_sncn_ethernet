@@ -12,6 +12,7 @@
 #include <flash_somanet.h>
 #include <string.h>
 #include <print.h>
+#include <flash_write.h>
 
 //#define DEBUG // No space for prints!
 
@@ -21,12 +22,12 @@ fl_SPIPorts SPI_port;
 
 void flash_init(fl_SPIPorts *SPI)
 {
-    SPI_port = SPI;
+    SPI_port = *SPI;
 }
 
 void connect_to_flash(void)
 {
-    if (fl_connect(SPI_port) != 0) {
+    if (fl_connect(&SPI_port) != 0) {
         #ifdef DEBUG
         printstrln("could not connect flash");
         #endif
