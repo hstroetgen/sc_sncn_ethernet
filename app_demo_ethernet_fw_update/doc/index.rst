@@ -8,6 +8,8 @@ Overview
 We will run the application on a SOMANET node connected to our Ethernet Local Area Network. On a Linux PC we will run the master firmware update application. Of course, the PC needs to be connected
 to the same LAN.
 
+**Important!** At the moment it is not possible to use both ethernet ports of the COM Ethernet module. In this demo we use just port 1.
+
 Hardware setup
 ----------
 
@@ -25,10 +27,10 @@ Quick how-to
 ------------
 
 * Make sure you downloaded the `SOMANET firmware upgrade master application`_.
-* Run the app_demo_ethernet_fw_update application on your SOMANET. You should see your ports' MAC Addresse at your console output.
-* On your PC start the SOMANET firmware upgrade master application. Make sure your upgrade image is in the same directory.
-::
-      ./app_master_fw_update.sh -n 1 -u upgrade_image eth0
+* Run the ``app_demo_ethernet_fw_update.sh`` application on your SOMANET. You should see your ports' MAC Addresse at your console output.
+* On your PC start the SOMANET firmware upgrade master application. Make sure your upgrade image is in the same directory. ::
+
+   ./app_master_fw_update.sh -n 1 -u upgrade_image eth0
 
 * Now the application sends the image packetwise to the SOMANET node and upgrades the firmware. 
 * If the firmware updated correctly you will see the flashing completed message in the terminal line. 
