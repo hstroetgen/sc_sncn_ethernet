@@ -7,12 +7,6 @@
 
 import argparse
 import os
-import sys
-from ctypes import c_ushort
-import threading
-
-from ethernet_master import *
-from ethernet_settings import *
 from node import *
 from print_color import *
 
@@ -240,7 +234,7 @@ class FirmwareUpdate(EthernetMaster):
 
 def arg_parser():
 
-    parser = argparse.ArgumentParser(description='Synapticon SOMANET Firmware Update over Ethernet')
+    parser = argparse.ArgumentParser(prog='app_master_fw_update', description='Synapticon SOMANET Firmware Update over Ethernet')
     parser.add_argument('interface', help='Network interface')
     parser.add_argument('-scan', action='store_true', help='Scan the slave/slaves connected and display their serial number', dest='scan')
 

@@ -39,7 +39,7 @@ Now the next step is to run the application on your Linux PC to perform the SOMA
 
     The general usage of the command line is the following: ::
 
-      Usage: flash_master.py [-h] [-scan] [-n NODE | -s SEQ | -a] [-u FILEPATH] [-v]
+      Usage: app_master_fw_update [-h] [-scan] [-n NODE | -s SEQ | -a] [-u FILEPATH] [-v]
                              interface
 
       Positional arguments:

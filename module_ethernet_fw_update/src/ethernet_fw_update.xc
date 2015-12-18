@@ -238,7 +238,7 @@ int fwUpdt_addUpgradeImage(unsigned address, unsigned imageSize)
         /*
         // Verify page
         if (fl_readPage(address, checkBuf) == 0)
-        //if (fl_readImagePage(checkBuf) == 0)
+        if (fl_readImagePage(checkBuf) == 0)
         {
             for(int i=0; i < PAGE_SIZE; i++)
             {
