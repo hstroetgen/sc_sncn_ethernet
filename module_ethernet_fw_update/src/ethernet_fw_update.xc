@@ -440,7 +440,7 @@ int fwUpdt_upgrade_fw(unsigned size)
         printuintln(b.factory);
     #endif
 
-    // Enable protection TODO This should be unnecessary.
+    // Enable protection TODO This should be not necessary.
     fl_setProtection(1);
     fl_disconnect();
 

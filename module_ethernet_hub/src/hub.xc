@@ -3,7 +3,7 @@
 #include <ethernet_hub_client.h>
 #include <print.h>
 
-#define SINGLE_PORT
+//#define SINGLE_PORT
 
 void receiverP1(chanend rx, chanend toTX, chanend toApp)
 {
@@ -96,6 +96,7 @@ void ethernetHUB(chanend dataP1ToApp, chanend appDataToP1,
 
       transmitterP2(txMACP2, dataBridge[1], appDataToP2);
       #endif
+
       receiverP1(rxMACP1,
               #ifndef SINGLE_PORT
               dataBridge[1],

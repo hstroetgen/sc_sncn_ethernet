@@ -19,7 +19,6 @@
 #include "ethernet.h"
 
 
-
 /**
  *  @brief Receives the receive packet and changed it to the transfer packet.
  *  @param[in, out] data    Buffer with the receive packet.
@@ -35,6 +34,12 @@ void ethernet_make_packet(char data[])
     memcpy((tmp + SRC_MAC_ADDR), (data + DST_MAC_ADDR), 6);
     memcpy((tmp + DST_MAC_ADDR), (data + SRC_MAC_ADDR), 6);
     memcpy(data, tmp, 12);
+}
+
+void ethernet_make_packet_w_mac(char data[], const unsigned char mac[])
+{
+    memcpy((data + DST_MAC_ADDR), mac, 6);
+    ethernet_make_packet(data);
 }
 
 /**
@@ -55,15 +60,14 @@ void ethernet_send(chanend dataToP1, chanend ?dataToP2, server interface if_tx t
             case tx.msg(char data[], int nbytes):
                 memcpy(txbuffer, data, nbytes);
                 nBytes = nbytes;
-                ethernet_make_packet(txbuffer);
                 break;
         }
+
+        ethernet_make_packet_w_mac(txbuffer, MAC_ADDRESS_P1);
         // Minimal length of an ethernet packet is 64 bytes.
         if (nBytes < 64)
             nBytes = 64;
-
         passFrameToHub(dataToP1, txbuffer, nBytes);
-        //passFrameToHub(dataToP2, txbuffer, BUFFER_SIZE);
     }
 }
 
@@ -85,13 +89,13 @@ void ethernet_fetcher(chanend dataFromP1, chanend ?dataFromP2, chanend c_flash_d
        select
        {
            case fetchFrameFromHub(dataFromP1, rxbuffer, nbytes):
-                           break;
-
-           //case fetchFrameFromHub(dataFromP2, rxbuffer, nbytes):
-           //                break;
+               break;
        }
+       printstr("Receveid...\n");
 
-       if( isSNCN((rxbuffer,char[])) && ( isForMe((rxbuffer,char[]), MAC_ADDRESS_P1 ) || isForMe((rxbuffer,char[]), MAC_ADDRESS_P2 )) )
+       if( isSNCN((rxbuffer,char[]))
+          && ( isForMe((rxbuffer,char[]), MAC_ADDRESS_P1 )
+            || isBroadcast((rxbuffer,char[]))) )
        {
            fwUpdt_filter((rxbuffer,char[]), c_flash_data, nbytes, tx);
            // Insert here your own filter ...
