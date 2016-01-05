@@ -91,7 +91,6 @@ void ethernet_fetcher(chanend dataFromP1, chanend ?dataFromP2, chanend c_flash_d
            case fetchFrameFromHub(dataFromP1, rxbuffer, nbytes):
                break;
        }
-       printstr("Receveid...\n");
 
        if( isSNCN((rxbuffer,char[]))
           && ( isForMe((rxbuffer,char[]), MAC_ADDRESS_P1 )

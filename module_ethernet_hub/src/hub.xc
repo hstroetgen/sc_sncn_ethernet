@@ -3,7 +3,7 @@
 #include <ethernet_hub_client.h>
 #include <print.h>
 
-//#define SINGLE_PORT
+#define SINGLE_PORT
 
 void receiverP1(chanend rx, chanend toTX, chanend toApp)
 {
@@ -16,9 +16,9 @@ void receiverP1(chanend rx, chanend toTX, chanend toApp)
       unsigned int nbytes, time;
 
       mac_rx_p1(rx, (rxbuffer, char[]), nbytes, src_port);
-      passFrameToHub(toTX, (rxbuffer,char[]), nbytes);
-      #ifndef SINGLE_PORT
       passFrameToHub(toApp, (rxbuffer,char[]), nbytes);
+      #ifndef SINGLE_PORT
+      passFrameToHub(toTX, (rxbuffer,char[]), nbytes);
       #endif
 
     }

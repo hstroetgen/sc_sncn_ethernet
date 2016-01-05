@@ -6,7 +6,7 @@ TARGET = SOMANET-C22
 # The APP_NAME variable determines the name of the final .xe file. It should
 # not include the .xe postfix. If left blank the name will default to
 # the project name
-APP_NAME = app_test_com-detect
+APP_NAME = app_demo_ethernet_fw_update
 
 # The USED_MODULES variable lists other module used by the application.
 USED_MODULES = module_board-support module_ethernet_dual module_ethernet_fw_update module_ethernet_hub module_ethernet_smi module_locks

@@ -8,6 +8,6 @@
 #ifndef FW_CONFIG_H_
 #define FW_CONFIG_H_
 
-#define FIRMWARE_VERSION    "v2.0"
+#define FIRMWARE_VERSION    "v1.0"
 
 #endif /* FW_CONFIG_H_ */
