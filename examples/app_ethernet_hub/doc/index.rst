@@ -9,7 +9,7 @@ As you will understand, there is not a specific single way to use a hub. Neverth
 
 Hardware setup
 ----------
-.. figure:: images/setup.png
+.. image:: images/setup.png
    :width: 60%
 
 To successfully test the application you will need:
