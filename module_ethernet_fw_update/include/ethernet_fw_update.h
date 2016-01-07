@@ -12,7 +12,7 @@
 #include <ethernet.h>
 
 
-void fwUpdt_filter(char data[], chanend c_flash_data, int nbytes, client interface if_tx tx);
+void fwUpdt_filter(char data[], int nbytes, chanend c_flash_data, client interface if_tx tx);
 
 void fwUpdt_loop(fl_SPIPorts &SPI, chanend c_flash_data);
 

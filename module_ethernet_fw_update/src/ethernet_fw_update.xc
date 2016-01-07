@@ -454,7 +454,7 @@ int fwUpdt_upgrade_fw(unsigned size)
  * @param nbytes    Size of the ethernet packet. Actually it isn't used at the moment.
  * @param tx        Interface for reply
  */
-void fwUpdt_filter(char data[], chanend c_flash_data, int nbytes, client interface if_tx tx)
+void fwUpdt_filter(char data[], int nbytes, chanend c_flash_data, client interface if_tx tx)
 {
     int reply;
     char version[] = FIRMWARE_VERSION;
