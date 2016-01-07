@@ -12,6 +12,7 @@ class EthernetMaster:
         self.__ethertype = ethertype
         self.__socket = None
         self.__src_addr  = self.__getHwAddr(self.__interface)
+        #self.__process_id = id
 
     ##
     #   @brief Gets the MAC address from the interface. Works only on linux.
@@ -30,7 +31,7 @@ class EthernetMaster:
     #   @return     the decoded string with removed colon
     #
     @staticmethod
-    def strToByte(data):
+    def __strToHex(data):
         return data.replace(":", "").decode('hex')
 
     @staticmethod
@@ -69,7 +70,7 @@ class EthernetMaster:
     # 
     def make_packet(self, address, payload):
         val = address + self.__src_addr + self.__ethertype + payload
-        return self.strToByte(val)
+        return self.__strToHex(val)
 
     ##
     #   @brief  Put address and payload into a packet and sends it.
@@ -107,7 +108,7 @@ class EthernetMaster:
     def set_socket(self):
         self.__socket = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, 
                                       socket.htons(int(self.__ethertype, 16)))
-        self.__socket.bind((self.__interface, 0))
+        self.__socket.bind((self.__interface, 0))#50000 + self.__process_id))
     
     ##
     #   @brief Sets the timeout for the socket.
