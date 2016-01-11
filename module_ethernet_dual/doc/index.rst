@@ -1,3 +1,5 @@
+.. _module_ethernet_dual:
+
 ========================================
 SOMANET Ethernet MAC (dual-port) Module
 ========================================
@@ -20,16 +22,19 @@ All communication is done by channel communication and client function calls fol
 How to use
 ==========
 
-To use this module you will need to add to your workspace the module_board-suppot where all the port definitions for SOMANET hardware are included.
+To use this module you will need to add to your workspace the :ref:`SOMANET Board Support Module <somanet_board_support_module>` where all the port definitions for SOMANET hardware are included.
 
 In order to access the functionality of this module you need follow **3 basic steps** within your app: 
 
 1. Include a configuration file.
+
 2. Run the Ethernet server.
+
 3. Make calls from the client functions.
 
 Configuration file
 ------------------
+
 First of all, you need to define IP and MAC address for each of your two ports. This definition must be in a file called **ethernet_config.h** and it must be included in your application. 
 
 You should make sure that the IP address selected are suitable for your Network.
@@ -141,8 +146,8 @@ API
 
 The API for this module is divided into:
 
-* **Server API**: can be found in **ethernet_dual_server.h**
-* **Client API**: located at **ethernet_dual_client.h**
+:Server API: can be found in **ethernet_dual_server.h**
+:Client API: located at **ethernet_dual_client.h**
 
 Including these headers (**ethernet_dual_server.h** and **ethernet_dual_client.h**) and adding **module_ethernet_smi** to your application is enough to access the whole functionality.
 

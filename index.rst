@@ -51,7 +51,7 @@ Additionally, the library includes the following examples:
 Dependencies
 ------------
 
-To run your **application** it is neccesary to include **SOMANET Base Library**.
+To run your **application** it is neccesary to include :ref:`SOMANET Base <somanet_base>`.
 
 .. cssclass:: downloadable-button 
 
