@@ -5,10 +5,7 @@
  *      Author: hstroetgen
  */
 
-#include <mac_filters.h>
-#include <ethernet_fw_update.h>
-#include <ethernet_config.h>
-#include <fw_config.h>
+
 #include <print.h>
 #include <flashlib.h>
 #include <flash.h>
@@ -17,7 +14,9 @@
 #include <stdint.h>
 #include <xclib.h>
 
-
+#include "fw_config.h"
+#include "ethernet_fw_update_client.h"
+#include "ethernet_fw_update_server.h"
 #include "flash_somanet.h"
 #include "flash_write.h"
 #include "crc.h"
@@ -25,6 +24,7 @@
 
 //#define DEBUG
 
+#define OFFSET_PAYLOAD  14
 #define OFFSET_FLAG     0 + OFFSET_PAYLOAD
 #define OFFSET_CMD      1 + OFFSET_PAYLOAD
 #define OFFSET_SIZE     2 + OFFSET_PAYLOAD
@@ -216,10 +216,10 @@ int fwUpdt_addUpgradeImage(unsigned address, unsigned imageSize)
 
     /* Write data. */
     unsigned char buf[PAGE_SIZE];
-    unsigned char checkBuf[PAGE_SIZE];
     unsigned max_page = imageSize/PAGE_SIZE+1;
 
 #ifdef DEBUG
+    unsigned char checkBuf[PAGE_SIZE];
     printstr("Add Image at ");
     printintln(address);
 #endif
@@ -295,12 +295,16 @@ int fwUpdt_prepare_bii(fl_BootImageInfo &b, unsigned size, unsigned add_not_repl
     {
         if (add_not_replace)
         {
+            #ifdef DEBUG
             printstrln("Add Image");
+            #endif
             val = fl_startImageAdd(b, size, 0);
         }
         else
         {
+            #ifdef DEBUG
             printstrln("Replace Image");
+            #endif
             val = fl_startImageReplace(b, size);
         }
         if (val == 0)
@@ -452,9 +456,9 @@ int fwUpdt_upgrade_fw(unsigned size)
  * @param data  Ethernet packet.
  * @param c_flash_data  Channel for sending and receiving data to the flash function.
  * @param nbytes    Size of the ethernet packet. Actually it isn't used at the moment.
- * @param tx        Interface for reply
+ * @return 1 if packet is for me
  */
-void fwUpdt_filter(char data[], chanend c_flash_data, int nbytes, client interface if_tx tx)
+int fwUpdt_filter(char data[], int &nbytes, chanend c_flash_data)
 {
     int reply;
     char version[] = FIRMWARE_VERSION;
@@ -465,33 +469,36 @@ void fwUpdt_filter(char data[], chanend c_flash_data, int nbytes, client interfa
         {
             case CMD_READ:
                 fwUpdt_read_image(data, c_flash_data);
-                tx.msg(data, 300);
+                nbytes = 300;
                 break;
             case CMD_WRITE:
                 reply = fwUpdt_write_image(data, c_flash_data);
                 memcpy((data + OFFSET_PAYLOAD), (char *) &reply, 4);
-                tx.msg(data, 20);
+                nbytes = 20;
                 break;
             case CMD_GETVERSION:
                 memcpy((data + OFFSET_PAYLOAD), version, strlen(version));
-                tx.msg(data, 20);
+                nbytes = 20;
                 break;
             case CMD_FLASH_FW:
                 c_flash_data <: CMD_FLASH_FW;
                 c_flash_data :> reply;
                 memcpy((data + OFFSET_PAYLOAD), (char *) &reply, 1);
-                tx.msg(data, 20);
+                nbytes = 20;
                 //reset_cores1(); // Actually this should reboot the microcontroller.
                 break;
             default:
+                nbytes = 0;
                 break;
         }
+        return 1;
     }
+    return 0;
 }
 
 // TODO: This loop will be in the future in the module_flash_service
 // Firmware Update Server
-void fwUpdt_loop(fl_SPIPorts &SPI, chanend c_flash_data)
+void fwUpdt_server(fl_SPIPorts &SPI, chanend c_flash_data)
 {
     int command;
     int data_length; /* data length exceeds page length error */

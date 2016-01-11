@@ -15,7 +15,7 @@
 #include <ethernet_dual_server.h>
 #include <ethernet_hub_server.h>
 #include <mac_addr.h>
-#include <ethernet_fw_update.h>
+#include <ethernet_fw_update_server.h>
 #include <xs1.h>
 
 #include "ethernet.h"
@@ -53,7 +53,7 @@ int main()
             // Port 1
             ethernet_server_p1(mii_p1, smi_p1, MAC_ADDRESS_P1, rxP1, txP1);
 
-            fwUpdt_loop(p_spi_flash, c_flash_data); // TODO in future this will be the module_flash_service loop
+            fwUpdt_server(p_spi_flash, c_flash_data); // TODO in future this will be the module_flash_service loop
         }
       }
 

@@ -115,7 +115,6 @@ int __write_data_flash(unsigned char data[PAGE_SIZE], int data_length, int page)
 int __read_data_flash(int page, unsigned char data[PAGE_SIZE])
 {
     /* Variables for buffering, counting iterations, etc */
-    unsigned int temp;
     int status = 1;
 
     /* Initialise the data_page array */
@@ -125,7 +124,7 @@ int __read_data_flash(int page, unsigned char data[PAGE_SIZE])
 
     // Get the FLASH data partition size
     #ifdef DEBUG
-    temp = fl_getDataPartitionSize();
+    unsigned int temp; = fl_getDataPartitionSize();
     printstr("FLASH data partition size: ");
     printint(temp);
     printstrln(" bytes.");

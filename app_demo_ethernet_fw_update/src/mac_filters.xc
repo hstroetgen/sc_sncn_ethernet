@@ -7,7 +7,7 @@ unsigned char ETHERTYPE_PROFINET[2] = {0x88, 0x92};
 
 unsigned char ETHERTYPE_SNCN[2] = {0x08, 0x01};
 
-// FIXME this function is actually inline, but now it throw errors...
+// FIXME this function is actually inline, but now it throws errors...
 unsigned isEthertype(unsigned char data[], unsigned char type[]){
     int i = ETHERTYPE_BYTE;
     return data[i] == type[0] && data[i + 1] == type[1];

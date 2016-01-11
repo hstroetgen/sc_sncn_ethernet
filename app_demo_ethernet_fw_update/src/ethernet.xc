@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ethernet_config.h>
-#include <ethernet_fw_update.h>
+#include <ethernet_fw_update_client.h>
 
 #include "ethernet.h"
 
@@ -62,7 +62,7 @@ void ethernet_send(chanend dataToP1, chanend ?dataToP2, server interface if_tx t
                 nBytes = nbytes;
                 break;
         }
-
+        // This function is needed to answer broadcast packages.
         ethernet_make_packet_w_mac(txbuffer, MAC_ADDRESS_P1);
         // Minimal length of an ethernet packet is 64 bytes.
         if (nBytes < 64)
@@ -93,10 +93,14 @@ void ethernet_fetcher(chanend dataFromP1, chanend ?dataFromP2, chanend c_flash_d
        }
 
        if( isSNCN((rxbuffer,char[]))
-          && ( isForMe((rxbuffer,char[]), MAC_ADDRESS_P1 )
+          && ( isForMe( (rxbuffer,char[]), MAC_ADDRESS_P1 )
             || isBroadcast((rxbuffer,char[]))) )
        {
-           fwUpdt_filter((rxbuffer,char[]), c_flash_data, nbytes, tx);
+           if ( fwUpdt_filter((rxbuffer,char[]), nbytes, c_flash_data) )
+           {
+               tx.msg((rxbuffer,char[]), nbytes);
+           }
+
            // Insert here your own filter ...
        }
     }

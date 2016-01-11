@@ -10,7 +10,6 @@
 
 
 #define TX_SIZE         60
-#define OFFSET_PAYLOAD  14
 
 #define BUFFER_SIZE     1600
 

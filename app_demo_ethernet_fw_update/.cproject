@@ -88,6 +88,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/config}&quot;"/>
 								</option>
 								<option id="com.xmos.xc.compiler.option.defined.symbols.748402137" name="com.xmos.xc.compiler.option.defined.symbols" superClass="com.xmos.xc.compiler.option.defined.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__SHRT_MAX__=32767"/>
@@ -645,6 +646,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/config}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.41382888" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -1022,6 +1024,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/config}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.36455670" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
@@ -1204,6 +1207,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/config}&quot;"/>
 								</option>
 								<option id="com.xmos.xc.compiler.option.defined.symbols.1811809540" name="com.xmos.xc.compiler.option.defined.symbols" superClass="com.xmos.xc.compiler.option.defined.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__SHRT_MAX__=32767"/>
@@ -1466,6 +1470,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/config}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.50386593" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -1623,6 +1628,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_locks}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/doc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_dual/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_ethernet_fw_update/config}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.48872041" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
