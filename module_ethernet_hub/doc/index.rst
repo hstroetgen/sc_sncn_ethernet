@@ -1,3 +1,5 @@
+.. _module_ethernet_hub:
+
 ============================
 SOMANET Ethernet Hub Module
 ============================
