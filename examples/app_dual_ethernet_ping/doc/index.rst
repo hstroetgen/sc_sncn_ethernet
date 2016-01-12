@@ -3,22 +3,12 @@ Ping demo
 
 The purpose of this app is showing the use of the module_ethernet_dual in your applications. For that, it implements a simple app that responses a ping to the IP address configured at the config file.
 
-Overview
-----------
-We will ping the IP of our SOMANET node from a terminal. Then we will run the application on a SOMANET node connected to our Ethernet Local Area Network. At this point we should be receiving the ping responses from our SOMANET. 
+We will ping the IP of our SOMANET node from a terminal. Then we will run the application on a SOMANET node connected to our Ethernet Local Area Network (the two available ports on the **SOMANET COM Ethernet** could be connected simultaneously). At this point we should be receiving the ping responses from our SOMANET device. 
 
-Hardware setup
-----------
-.. image:: images/ethernet.png
-   :width: 60%
+ .. important:: To connect your SOMANET device to you LAN network you will need a SOMANET COM Ethernet Cable STP RJ45 to PicoBlade 5pin.
+ 
 
-To successfully test the application you will need:
-
-* A SOMANET node composed (at least) by a CORE C22 and a COM Ethernet boards (IFM is not required).
-* A COM Ethernet Cable STP RJ45 to PicoBlade 5pin (two cables will allow testing both ports simultaneously).
-* A PC that shares a Local Area Network with your SOMANET node (this is achievable by simply connecting the node to your computer Ethernet interface)  
-
-Quick how-to
+Quick How-to
 ------------
 
 * First of all you should make sure that the IP addresses configured in your config/ethernet_config.h file are suitable and unused at your Local Area Network. 

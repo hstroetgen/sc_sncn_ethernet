@@ -8,11 +8,24 @@ The **SOMANET Ethernet Library** provides Ethernet support for SOMANET devices.
 
 .. cssclass:: downloadable-button 
 
-  `Download Library <https://github.com/synapticon/sc_sncn_ethernet/archive/develop.zip>`_
+  `Download Library <https://github.com/synapticon/sc_sncn_ethernet/archive/master.zip>`_
 
 .. cssclass:: github
 
   `Visit Public Repository <https://github.com/synapticon/sc_sncn_ethernet>`_
+
+Hardware Compatibilities
+------------------------
+
+Minimum Hardware requirements:
+ 
+* 1x SOMANET **Core**.
+* 1x SOMANET **COM**.
+
+Hardware Compatibility:
+
+* SOMANET Core: :ref:`C22 <core_c22>`.
+* SOMANET COM: :ref:`Ethernet <com_ethernet>`.
 
 Modules
 --------

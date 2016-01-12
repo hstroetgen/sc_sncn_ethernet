@@ -3,23 +3,11 @@ Loopback demo
 
 The purpose of this app is showing the use of the module_ethernet_dual in your applications. For that, it implements a dummy packet loopback over the two ports that the SOMANET COM Ethernet board offers.
 
-Overview
---------
-We will run the application on a SOMANET node connected to our Ethernet Local Area Network. At this point the node will start sending back all the packets that it receives but changing the sender MAC address. Then we will sniff the existing packets forwarded over the network. At this sniffed traffic we will see all the packets sent by the SOMANET. 
+We will run the application on a SOMANET node connected to our Ethernet Local Area Network (the two available ports on the **SOMANET COM Ethernet** could be connected simultaneously). At this point the node will start sending back all the packets that it receives but changing the sender MAC address. Then we will sniff the existing packets forwarded over the network. Within this sniffed traffic we will see all the packets sent by the SOMANET. 
 
-Hardware setup
---------------
+ .. important:: To connect your SOMANET device to you LAN network you will need a SOMANET COM Ethernet Cable STP RJ45 to PicoBlade 5pin.
 
-.. image:: images/ethernet.png
-   :width: 60%
-
-To successfully test the application you will need:
-
-* A SOMANET node composed (at least) by a CORE C22 and a COM Ethernet boards (IFM is not required).
-* A COM Ethernet Cable STP RJ45 to PicoBlade 5pin (two cables will allow testing both ports simultaneously).
-* A PC that shares a Local Area Network with your SOMANET node (this is achievable by simply connecting the node to your computer Ethernet interface)  
-
-Quick how-to
+Quick How-to
 ------------
 
 * Download and install in your computer WireShark_. This program monitors the traffic of Ethernet packets in your network.
