@@ -11,6 +11,10 @@ SOMANET Ethernet Hub Module
 This module (**module_ethernet_hub**) offers a layer that runs on top of the Ethernet dual Stack.
 It connects together two Ethernet interfaces and makes them act as a single network segment. It also provides the received data packets to the upper layers.
 
+.. cssclass:: github
+
+  `See Module on Public Repository <https://github.com/synapticon/sc_sncn_ethernet/tree/master/module_ethernet_hub>`_
+
 .. cssclass:: smaller
 
   .. important:: Before start using this module you have to include **Ethernet Dual-Port Module** into your app.

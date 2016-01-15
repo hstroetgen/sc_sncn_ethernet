@@ -11,6 +11,10 @@ We will ping the IP of our SOMANET node from a terminal. Then we will run the ap
 
  .. important:: To connect your SOMANET device to you LAN network you will need a SOMANET COM Ethernet Cable STP RJ45 to PicoBlade 5pin.
  
+.. cssclass:: github
+
+  `See Application on Public Repository <https://github.com/synapticon/sc_sncn_ethernet/tree/master/examples/app_dual_ethernet_ping>`_
+
 Quick How-to
 ------------
 
