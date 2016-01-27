@@ -1,5 +1,5 @@
-#include <COM_ETHERNET-rev-a.inc>
-#include <CORE_C22-rev-a.inc>
+#include <COM_ETHERNET-rev-a.bsp>
+#include <CORE_C22-rev-a.bsp>
 
 /**
  * @file main.xc
