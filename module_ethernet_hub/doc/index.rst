@@ -1,7 +1,7 @@
 .. _module_ethernet_hub:
 
 ============================
-SOMANET Ethernet Hub Module
+Ethernet Hub Module
 ============================
 
 .. contents:: In this document
@@ -24,7 +24,7 @@ It connects together two Ethernet interfaces and makes them act as a single netw
 How to use
 ==========
 
-To make the Hub run, just trigger the Hub layer which the propper channels connected to your MACs and to your app. 
+To make the Hub run, just trigger the Hub layer with the proper channels connected to your MACs and to your app. 
 Then, in order to send and fetch data packets, use the RX/TX client functions.
 
 Server Initialization

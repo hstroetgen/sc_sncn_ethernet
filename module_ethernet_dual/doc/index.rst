@@ -1,14 +1,14 @@
 .. _module_ethernet_dual:
 
 ========================================
-SOMANET Ethernet MAC (dual-port) Module
+Ethernet MAC (dual-port) Module
 ========================================
 
 .. contents:: In this document
     :backlinks: none
     :depth: 3
 
-Ethernet is family of computer networking technologies for local area newtorks (LANs). Within this group, we can find the IEEE 802.3_ standard protocol, which defines the physical layer and the data link layer's media access control (MAC) for wired Ethernet.
+Ethernet is family of computer networking technologies for local area networks (LANs). Within this group, we can find the IEEE 802.3_ standard protocol, which defines the physical layer and the data link layer's media access control (MAC) for wired Ethernet.
 
 This module (**module_ethernet_dual**) allows a abstract access for the application or other upper layers to two different and parallel-running Ethernet MAC layers. 
 
