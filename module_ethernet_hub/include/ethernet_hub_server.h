@@ -9,7 +9,7 @@
  *
  *  \param dataP1toApp              Chanend to connect to the client which receives packets from port 1.
  *  \param appDataToP1              Chanend to connect to the client which transmits packets over port 1.
- *  \param dataP2toApp              Chanend to connect to the client which receives packets from port 2.
+ *  \param dataP2ToApp              Chanend to connect to the client which receives packets from port 2.
  *  \param appDataToP2              Chanend to connect to the client which transmits packets over port 2.
  *  \param txMACP1                  Chanend to transmit packets to the Ethernet server on port 1.
  *  \param rxMACP1                  Chanend to receive packets from the Ethernet server on port 1.
