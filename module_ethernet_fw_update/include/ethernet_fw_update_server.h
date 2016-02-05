@@ -8,7 +8,7 @@
 #ifndef ETHERNET_FW_UPDATE_SERVER_H_
 #define ETHERNET_FW_UPDATE_SERVER_H_
 
-#include <flash.h> // FIXME This dependencies should be removed
+#include <flash.h>
 
 void fwUpdt_server(fl_SPIPorts &SPI, chanend c_flash_data);
 

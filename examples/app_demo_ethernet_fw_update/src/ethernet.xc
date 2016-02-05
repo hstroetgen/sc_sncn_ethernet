@@ -48,7 +48,7 @@ void ethernet_make_packet_w_mac(char data[], const unsigned char mac[])
  *  @param dataToP2     Channel for port 2.
  *  @param[in] addr     Interface with the mac-address from filter().
  */
-void ethernet_send(chanend dataToP1, chanend ?dataToP2, server interface if_tx tx)
+void ethernet_send(chanend dataToP1, chanend ?dataToP2, server interface EtherInterface i_ether)
 {
     char txbuffer[BUFFER_SIZE];
     int nBytes;
@@ -57,10 +57,13 @@ void ethernet_send(chanend dataToP1, chanend ?dataToP2, server interface if_tx t
     {
         select
         {
-            case tx.msg(char data[], int nbytes):
+            case i_ether.tx(char data[], int nbytes):
                 memcpy(txbuffer, data, nbytes);
                 nBytes = nbytes;
                 break;
+
+            case i_ether.rx(char data[], int nbytes):
+                 break;
         }
         // This function is needed to answer broadcast packages.
         ethernet_make_packet_w_mac(txbuffer, MAC_ADDRESS_P1);
@@ -79,7 +82,7 @@ void ethernet_send(chanend dataToP1, chanend ?dataToP2, server interface if_tx t
  *  @param[out]     addr     Interface client for address communication with send().
  */
 // TODO change c_flash_data to interface
-void ethernet_fetcher(chanend dataFromP1, chanend ?dataFromP2, chanend c_flash_data, client interface if_tx tx)
+void ethernet_fetcher(chanend dataFromP1, chanend ?dataFromP2, client interface FlashBootInterface i_boot, client interface EtherInterface i_ether)
 {
     int nbytes;
     unsigned rxbuffer[BUFFER_SIZE];
@@ -96,9 +99,9 @@ void ethernet_fetcher(chanend dataFromP1, chanend ?dataFromP2, chanend c_flash_d
           && ( isForMe( (rxbuffer,char[]), MAC_ADDRESS_P1 )
             || isBroadcast((rxbuffer,char[]))) )
        {
-           if ( fwUpdt_filter((rxbuffer,char[]), nbytes, c_flash_data) )
+           if ( fwUpdt_filter(i_boot, (rxbuffer,char[]), nbytes) )
            {
-               tx.msg((rxbuffer,char[]), nbytes);
+               i_ether.tx((rxbuffer,char[]), nbytes);
            }
 
            // Insert here your own filter ...

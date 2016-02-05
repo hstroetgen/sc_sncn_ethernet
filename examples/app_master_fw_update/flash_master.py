@@ -175,6 +175,7 @@ class FirmwareUpdate(EthernetMaster):
         #print "Send file with %s bytes:\n" % size
         print "Sending..."
 
+
         threads = []
         lock = threading.Lock()
         #print "Start Threads"
@@ -188,8 +189,9 @@ class FirmwareUpdate(EthernetMaster):
             t = SendImage(image, address, size, lock)
             threads.append(t)
             t.start()
-
-        prog_bar = ProgressBar(256*len(addresses), SendImage)
+        print "groese", len(image[0]), len(image)
+        packages = len(image[0])/PACKAGE_SIZE
+        prog_bar = ProgressBar(packages*len(addresses), SendImage)
         prog_bar.start()
         prog_bar.join()
 

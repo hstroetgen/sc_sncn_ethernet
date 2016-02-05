@@ -9,7 +9,7 @@ TARGET = SOMANET-C22
 APP_NAME = app_demo_ethernet_fw_update
 
 # The USED_MODULES variable lists other module used by the application.
-USED_MODULES = module_board-support module_ethernet_dual module_ethernet_fw_update module_ethernet_hub module_ethernet_smi module_locks
+USED_MODULES = module_board-support module_ethernet_dual module_ethernet_fw_update module_ethernet_hub module_ethernet_smi module_flash_service module_locks
 
 # The flags passed to xcc when building the application
 # You can also set the following to override flags for a particular language:

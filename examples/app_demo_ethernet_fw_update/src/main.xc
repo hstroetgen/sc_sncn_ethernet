@@ -1,11 +1,6 @@
 #include <COM_ETHERNET-rev-a.inc>
 #include <CORE_C22-rev-a.inc>
 /**
- * main.xc
- *
- *  Created on: 16.12.2015
- *      Author: hstroetgen
- *
  * @file main.xc
  * @brief This module illustrates the use of the firmware upgrade function.
  * @author Synapticon GmbH <support@synapticon.com>
@@ -16,6 +11,7 @@
 #include <ethernet_hub_server.h>
 #include <mac_addr.h>
 #include <ethernet_fw_update_server.h>
+#include <flash_service.h>
 #include <xs1.h>
 
 #include "ethernet.h"
@@ -28,8 +24,9 @@ int main()
 {
   chan rxP1, txP1;    // Server-Client communication channels on port 1
   chan dataFromP1, dataToP1;  // Communicate HUB tu upper layers port 1
-  chan c_flash_data;  // Channel for flash communication
-  interface if_tx tx; // Interface for ethernet response
+  interface FlashBootInterface i_boot;  // Channel for flash communication
+  interface FlashDataInterface i_data[2];
+  interface EtherInterface i_ether; // Interface for ethernet response
 
   par
     {
@@ -48,12 +45,13 @@ int main()
         // Set config over SMI. These functions belong to module_ethernet_smi.
         eth_phy_config(1, smi_p1);
         // Parallel Ethernet server loops
+
         par
         {
             // Port 1
             ethernet_server_p1(mii_p1, smi_p1, MAC_ADDRESS_P1, rxP1, txP1);
 
-            fwUpdt_server(p_spi_flash, c_flash_data); // TODO in future this will be the module_flash_service loop
+            flash_service(p_spi_flash, i_boot, i_data);
         }
       }
 
@@ -74,9 +72,9 @@ int main()
       {
           par
           {
-              ethernet_fetcher(dataFromP1, null, c_flash_data, tx);
+              ethernet_fetcher(dataFromP1, null, i_boot, i_ether);
 
-              ethernet_send(dataToP1, null, tx);
+              ethernet_send(dataToP1, null, i_ether);
           }
       }
     }
