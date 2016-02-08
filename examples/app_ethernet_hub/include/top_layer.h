@@ -1,3 +1,5 @@
 #pragma once
 
-void topLayer(chanend dataFromP1, chanend dataToP1, chanend dataFromP2, chanend dataToP2);
+#include <ethernet_hub_service.h>
+
+void topLayer(interface EthernetHubInterface client i_hub);

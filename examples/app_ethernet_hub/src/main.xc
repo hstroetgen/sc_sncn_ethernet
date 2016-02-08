@@ -1,5 +1,5 @@
-#include <COM_ETHERNET-rev-a.inc>
-#include <CORE_C22-rev-a.inc>
+#include <COM_ETHERNET-rev-a.bsp>
+#include <CORE_C22-rev-a.bsp>
 
 /**
  * @file main.xc
@@ -10,7 +10,8 @@
 
 #include <ethernet_config.h>
 #include <ethernet_dual_server.h>
-#include <ethernet_hub_server.h>
+//#include <ethernet_hub_server.h>
+#include <ethernet_hub_service.h>
 #include <mac_addr.h>
 #include <top_layer.h>
 #include <print.h>
@@ -27,7 +28,8 @@ ethernet_reset_interface_t eth_rst_p2 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P2
 int main()
 {
   chan rxP1, txP1, rxP2, txP2;                      // Communicate HUB to MAC
-  chan dataFromP1, dataToP1, dataFromP2, dataToP2;  // Communicate HUB tu upper layers
+  //chan dataFromP1, dataToP1, dataFromP2, dataToP2;  // Communicate HUB tu upper layers
+  interface EthernetHubInterface i_hub;
 
   par
     {
@@ -67,16 +69,18 @@ int main()
          * CLIENT TILE - ETHERNET HUB LAYER
          ************************************************************/
         // Ethernet hub server
-        on tile[1] : ethernetHUB(dataFromP1, dataToP1,
+        on tile[1] : ethernet_hub_service(i_hub, txP1, rxP1,
+                        txP2, rxP2);
+        /*ethernetHUB(dataFromP1, dataToP1,
                             dataFromP2, dataToP2,
                             txP1, rxP1,
-                            txP2, rxP2);
+                            txP2, rxP2);*/
 
         /************************************************************
          * CLIENT TILE - UPPER LAYERS
          ************************************************************/
         //  Ethernet hub client
-        on tile[2] : topLayer(dataFromP1, dataToP1, dataFromP2, dataToP2);  // Ethernet hub client
+        on tile[2] : topLayer(i_hub);  // Ethernet hub client
     }
 
   return 0;

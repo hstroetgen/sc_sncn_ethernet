@@ -8,7 +8,8 @@
 
 #include <ethernet_config.h>
 #include <ethernet_dual_server.h>
-#include <ethernet_hub_server.h>
+//#include <ethernet_hub_server.h>
+#include <ethernet_hub_service.h>
 #include <mac_addr.h>
 #include <ethernet_fw_update_server.h>
 #include <flash_service.h>
@@ -23,10 +24,11 @@ ethernet_reset_interface_t eth_rst_p1 = ETHERNET_DEFAULT_RESET_INTERFACE_INIT_P1
 int main()
 {
   chan rxP1, txP1;    // Server-Client communication channels on port 1
-  chan dataFromP1, dataToP1;  // Communicate HUB tu upper layers port 1
+  //chan dataFromP1, dataToP1;  // Communicate HUB tu upper layers port 1
   interface FlashBootInterface i_boot;  // Channel for flash communication
   interface FlashDataInterface i_data[2];
   interface EtherInterface i_ether; // Interface for ethernet response
+  interface EthernetHubInterface i_hub;
 
   par
     {
@@ -59,10 +61,13 @@ int main()
        * CLIENT TILE - ETHERNET HUB LAYER
        ************************************************************/
       // Ethernet hub server
-      on tile[1] : ethernetHUB(dataFromP1, dataToP1,
+      on tile[1] : ethernet_hub_service(i_hub, txP1, rxP1,
+                          null, null);
+      /*ethernetHUB(dataFromP1, dataToP1,
                           null, null,
                           txP1, rxP1,
                           null, null);
+                          */
 
       /************************************************************
        * CLIENT TILE - UPPER LAYERS
@@ -74,7 +79,7 @@ int main()
           {
               ethernet_fetcher(dataFromP1, null, i_boot, i_ether);
 
-              ethernet_send(dataToP1, null, i_ether);
+              //ethernet_send(dataToP1, null, i_ether);
           }
       }
     }
