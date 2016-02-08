@@ -22,7 +22,6 @@
 /**
  *  @brief Receives the receive packet and changed it to the transfer packet.
  *  @param[in, out] data    Buffer with the receive packet.
- *  @param[in]      reply   Answer from led_server().
  */
 void ethernet_make_packet(char data[])
 {
@@ -36,6 +35,12 @@ void ethernet_make_packet(char data[])
     memcpy(data, tmp, 12);
 }
 
+/**
+ * @brief Copies the mac address into the ethernet package and calls then ethernet_make_packet.
+ *        This is neccessary to answer broadcast packages.
+ * @param data  Ethernet package
+ * @param mac   MAC address of the node.
+ */
 void ethernet_make_packet_w_mac(char data[], const unsigned char mac[])
 {
     memcpy((data + DST_MAC_ADDR), mac, 6);
@@ -46,7 +51,7 @@ void ethernet_make_packet_w_mac(char data[], const unsigned char mac[])
  *  @brief Send the response packages to the server.
  *  @param dataToP1     Channel for port 1.
  *  @param dataToP2     Channel for port 2.
- *  @param[in] addr     Interface with the mac-address from filter().
+ *  @param i_ether      Interface for ethernet communication.
  */
 void ethernet_send(chanend dataToP1, chanend ?dataToP2, server interface EtherInterface i_ether)
 {
@@ -78,10 +83,9 @@ void ethernet_send(chanend dataToP1, chanend ?dataToP2, server interface EtherIn
  *  @brief Fetched all packages from the ports.
  *  @param dataFromP1   Channel for port 1.
  *  @param dataFromP2   Channel for port 2.
- *  @param[in,out]  led      Interface client for LED communication with led_server().
- *  @param[out]     addr     Interface client for address communication with send().
+ *  @param i_boot   Interface for firmware upgrade.
+ *  @param i_ether  Interface for ethernet communication.
  */
-// TODO change c_flash_data to interface
 void ethernet_fetcher(chanend dataFromP1, chanend ?dataFromP2, client interface FlashBootInterface i_boot, client interface EtherInterface i_ether)
 {
     int nbytes;

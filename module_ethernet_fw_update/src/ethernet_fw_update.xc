@@ -19,13 +19,14 @@
 #include "ethernet_fw_update_server.h"
 #include "crc.h"
 #include "flash_common.h"
+#include "flash_reboot.h"
 
 
-//#define DEBUG
+#define DEBUG
 /*
   6 Byte   6 Byte   2 Byte     46-1500 Byte
-+--------+--------+----------+------------)
-|Dst MAC |Src MAC | Ethertype| Payload   (
++--------+--------+----------+------------(
+|Dst MAC |Src MAC | Ethertype| Payload    |
 +--------+--------+----------+------------)
 */
 #define OFFSET_PAYLOAD      14
@@ -41,11 +42,10 @@
 #define CMD_WRITE       3
 #define CMD_GETVERSION  4
 #define CMD_REBOOT      5
+#define CMD_VALIDATE    6
 
 #define UPGRADE_FLAG    0xf1
-#define ACK             0xff
-#define NACK            !ACK
-#define ERR_CRC         0xfc
+
 
 
 /**
@@ -85,17 +85,17 @@ void fwUpdt_read_image(interface FlashBootInterface client i_boot, char data[])
 
     size_rest -= byte_count;
 
-#ifdef DEBUG
+    #ifdef DEBUG
     if (size_rest == 0)
         printstrln("Finished reading");
-#endif
+    #endif
 }
 
 /**
  * @brief Receives an ethernet packet, which contains a size n and m bytes.
+ * @param i_boot    Interface for the boot partiton actions.
  * @param[in, out]  data    Contains the ethernet packet and the read bytes.
- * @param[in, out]  c_flash_data    Channel
- * @return  status
+ * @return  0, if writing was successful.
  */
 int fwUpdt_write_image(interface FlashBootInterface client i_boot, char data[])
 {
@@ -112,6 +112,11 @@ int fwUpdt_write_image(interface FlashBootInterface client i_boot, char data[])
     // Get size (amount of bytes). Size is in every packet.
     if (size_rest == 0)
     {
+        size = (data[OFFSET_SIZE] << 24
+              | data[OFFSET_SIZE+1] << 16
+              | data[OFFSET_SIZE+2] << 8
+              | data[OFFSET_SIZE+3] << 0);
+
         status = i_boot.prepare_boot_partition(size);
 
         size_rest = size;
@@ -130,14 +135,15 @@ int fwUpdt_write_image(interface FlashBootInterface client i_boot, char data[])
 
     if (calculatedCRC)
     {
-#ifdef DEBUG
+        #ifdef DEBUG
         uint16_t packetCRC;
         packetCRC = data[OFFSET_CRC] << 8 | data[OFFSET_CRC + 1];
         printstr("Wrong CRC: ");
         printint(packetCRC);
         printstr(" ");
         printint(calculatedCRC);
-#endif
+        #endif
+
         return ERR_CRC;
     }
 
@@ -145,48 +151,19 @@ int fwUpdt_write_image(interface FlashBootInterface client i_boot, char data[])
     status = i_boot.write(data+OFFSET_DATA, byte_count);
 
     size_rest -= byte_count;
-#ifdef DEBUG
+    #ifdef DEBUG
     if (size_rest == 0)
         printstrln("Finished writing");
-#endif
+    #endif
 
-    return status?NACK:ACK;
-}
-
-/* Code by Xcore from module_avb_util reboot.xc */
-void fwUpdt_reboot_device(void)
-{
-    unsigned int pllVal;
-    unsigned int localTileId = get_local_tile_id();
-    unsigned int tileId;
-    unsigned int tileArrayLength;
-
-    asm volatile ("ldc %0, tile.globound":"=r"(tileArrayLength));
-
-    // Reset all remote tiles
-    for(int i = 0; i < tileArrayLength; i++)
-    {
-        // Cannot cast tileref to unsigned
-        tileId = get_tile_id(tile[i]);
-
-        // Do not reboot local tile yet
-        if (localTileId != tileId)
-        {
-            read_sswitch_reg(tileId, 6, pllVal);
-            write_sswitch_reg_no_ack(tileId, 6, pllVal);
-        }
-    }
-
-    // Finally reboot this tile
-    read_sswitch_reg(localTileId, 6, pllVal);
-    write_sswitch_reg_no_ack(localTileId, 6, pllVal);
+    return status;
 }
 
 
 /**
- * @brief Checks if a packet is a firmware update.
- * @param data  Ethernet packet.
- * @param c_flash_data  Channel for sending and receiving data to the flash function.
+ * @brief Checks if a packet is a firmware update and parsed the flash command.
+ * @param i_boot    Interface for the boot partiton actions.
+ * @param data      Ethernet packet.
  * @param nbytes    Size of the ethernet packet. Actually it isn't used at the moment.
  * @return 1 if packet is for me
  */
@@ -212,9 +189,14 @@ int fwUpdt_filter(interface FlashBootInterface client i_boot, char data[], int &
                 memcpy((data + OFFSET_PAYLOAD), version, strlen(version));
                 nbytes = 20;
                 break;
+            case CMD_VALIDATE:
+                reply = i_boot.validate_flashing();
+                memcpy((data + OFFSET_PAYLOAD), (char *) &reply, 4);
+                nbytes = 20;
+                break;
             case CMD_REBOOT:
                 nbytes = 0;
-                fwUpdt_reboot_device();
+                flash_reboot_device();
                 break;
             default:
                 nbytes = 0;

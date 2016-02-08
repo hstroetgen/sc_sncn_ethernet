@@ -1,5 +1,6 @@
 import threading
 import sys
+import time
 
 from ethernet_master import *
 from ethernet_settings import *
@@ -57,7 +58,7 @@ class SendImage(threading.Thread, EthernetMaster):
         for page in self.image:
             #print "%s sends..." % self.mac_address[-2:]
             #print "Page: %s" % page
-            reply = NACK
+            reply = not NO_ERROR
 
             crc = self.crc16(page)
 
@@ -66,15 +67,16 @@ class SendImage(threading.Thread, EthernetMaster):
             page_index += 1
 
             # While the reply is not ACK, try to send the package again. Reason should only be a CRC error.
-            while reply != ACK:
+            while reply != NO_ERROR:
                 self.send(self.mac_address, payload)
 
                 reply_bytes = self.receive()
 
                 if reply_bytes and self.is_for_me(reply_bytes):
                     reply = bytearray(reply_bytes)[OFFSET_PAYLOAD]
-                    if reply != ACK and reply != ERR_CRC:
+                    if reply != NO_ERROR and reply != ERR_CRC:
                         sys.stdout.write(print_fail("\n\tERROR: Sending image"))
+                        sys.stdout.write(print_warning(" Code: %d\n" % reply))
                         self.thread_counter(-1)
                         self.success = False
                         return
@@ -90,7 +92,7 @@ class SendImage(threading.Thread, EthernetMaster):
         self.thread_counter(-1)
 
 
-class FlashFirmware(threading.Thread, EthernetMaster):
+class ValidateFirmware(threading.Thread, EthernetMaster):
     thread_count = 0
 
     def __init__(self, mac_address, lock):
@@ -102,7 +104,7 @@ class FlashFirmware(threading.Thread, EthernetMaster):
 
     def thread_counter(self, num):
         self.lock.acquire()
-        FlashFirmware.thread_count += num
+        ValidateFirmware.thread_count += num
         self.lock.release()
 
     def run(self):
@@ -111,10 +113,11 @@ class FlashFirmware(threading.Thread, EthernetMaster):
         @param node: Node number, to which the upgrade image will be send.
         """
         self.thread_counter(1)
-        protocol_data = "%02X%02X" % (CMD_PRE, CMD_FLASH)
+        protocol_data = "%02X%02X" % (CMD_PRE, CMD_VALIDATE)
         self.set_socket()
         self.set_timeout(5)
 
+        # Validate firmware: Flashing was succesful, when both images were found on the MCU.
         self.send(self.mac_address, protocol_data)
         reply = self.receive()
 
@@ -127,4 +130,21 @@ class FlashFirmware(threading.Thread, EthernetMaster):
                 print print_fail("\n\tERROR %s: Flashing Firmware\n" % error)
         else:
             print print_fail("ERROR: No Reply")
+
+        # Reboot MCU
+        protocol_data = "%02X%02X" % (CMD_PRE, CMD_REBOOT)
+        self.send(self.mac_address, protocol_data)
+
+        time.sleep(5)
+        # Get new firmware version
+        protocol_data = "%02X%02X" % (CMD_PRE, CMD_VERSION)
+
+        self.send(self.mac_address, protocol_data)
+        reply = self.receive()
+
+        if reply:
+            sys.stdout.write("\tFirmware version: ")
+            print reply[OFFSET_PAYLOAD:OFFSET_PAYLOAD + 5]
+        else:
+            print print_fail("Error: Getting Firmware Version")
         self.thread_counter(-1)

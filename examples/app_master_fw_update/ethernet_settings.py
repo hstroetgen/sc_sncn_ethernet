@@ -56,10 +56,11 @@ OFFSET_DATA     = 22
 OFFSET_PAYLOAD  = 14
 OFFSET_SRC_MAC  = 6
 ERR_CRC         = 0xFC
-ACK             = 0xFF
-NACK            = 0x0
+NO_ERROR        = 0
 CMD_PRE         = 0xF1
 CMD_VERSION     = 0x04
 CMD_WRITE       = 0x03
 CMD_READ        = 0x01
-CMD_FLASH       = 0x05
+CMD_REBOOT      = 0x05
+CMD_VALIDATE    = 0x06
+

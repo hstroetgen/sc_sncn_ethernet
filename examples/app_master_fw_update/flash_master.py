@@ -134,7 +134,7 @@ class FirmwareUpdate(EthernetMaster):
         return images_array
 
     @staticmethod
-    def flash_firmware(addresses):
+    def validate_firmware(addresses):
         """
         @note: Sends a request for a firmware update. That request starts the upgrade process.
         @param addresses: Mac addresses of the nodes.
@@ -146,17 +146,17 @@ class FirmwareUpdate(EthernetMaster):
         print "Starte Threads"
 
         for address in addresses:
-            t = FlashFirmware(address, lock)
+            t = ValidateFirmware(address, lock)
             threads.append(t)
             t.start()
 
         print "Warte bis alle terminieren"
 
-        print "Es laufen gerade %s Threads" % FlashFirmware.thread_count
+        print "Es laufen gerade %s Threads" % ValidateFirmware.thread_count
         for t in threads:
             t.join()
 
-        if FlashFirmware.thread_count == 0:
+        if ValidateFirmware.thread_count == 0:
             print "Alle Threads tot"
         else:
             print "Da lebt noch was..."
@@ -189,9 +189,8 @@ class FirmwareUpdate(EthernetMaster):
             t = SendImage(image, address, size, lock)
             threads.append(t)
             t.start()
-        print "groese", len(image[0]), len(image)
-        packages = len(image[0])/PACKAGE_SIZE
-        prog_bar = ProgressBar(packages*len(addresses), SendImage)
+
+        prog_bar = ProgressBar(len(image)*len(addresses), SendImage)
         prog_bar.start()
         prog_bar.join()
 
@@ -203,7 +202,7 @@ class FirmwareUpdate(EthernetMaster):
         if SendImage.thread_count > 0:
             print "There is something still living..."
 
-        print '...done'
+        print '\n...done\n'
         return success
 
     def get_firmware_version(self, addresses):
@@ -217,7 +216,7 @@ class FirmwareUpdate(EthernetMaster):
 
         for address in addresses:
             print print_bold(address)
-    
+
             self.send(address, protocol_data)
             reply = self.receive()
 
@@ -272,7 +271,7 @@ def main():
             # Send images
             if fm.send_images(address, images):
                 # Flash images
-                fm.flash_firmware(address)
+                fm.validate_firmware(address)
 
         elif args.version:
             if args.scan:
