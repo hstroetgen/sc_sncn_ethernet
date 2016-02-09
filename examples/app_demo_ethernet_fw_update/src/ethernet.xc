@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ethernet_config.h>
-#include <ethernet_fw_update_client.h>
+#include <ethernet_fw_update.h>
 
 #include "ethernet.h"
 

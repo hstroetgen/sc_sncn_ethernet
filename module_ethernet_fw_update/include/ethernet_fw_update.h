@@ -9,11 +9,10 @@
 #define FLASH_OVER_ETHERNET_H_
 
 #include <flash.h> // FIXME This dependencies should be removed
+#include <flash_service.h>
 #include <ethernet.h>
 
 
-void fwUpdt_filter(char data[], int nbytes, chanend c_flash_data, client interface if_tx tx);
-
-void fwUpdt_loop(fl_SPIPorts &SPI, chanend c_flash_data);
+int fwUpdt_filter(interface FlashBootInterface client i_boot, char data[], int &nbytes);
 
 #endif /* FLASH_OVER_ETHERNET_H_ */

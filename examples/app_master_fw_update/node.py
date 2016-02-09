@@ -18,7 +18,6 @@ class ProgressBar(threading.Thread):
         while progress < self.max_val:
             progress = self.class_.progress
             sys.stdout.write("\r[%-50s] %d%%" % ('=' * ((progress * 50) / self.max_val), ((progress * 100) / self.max_val)))
-            sys.stdout.flush()
 
 
 class SendImage(threading.Thread, EthernetMaster):
@@ -80,11 +79,11 @@ class SendImage(threading.Thread, EthernetMaster):
                         self.thread_counter(-1)
                         self.success = False
                         return
-                else:
-                    print print_fail("\tERROR: No Reply")
-                    self.thread_counter(-1)
-                    self.success = False
-                    return
+                #else:
+                #    print print_fail("\tERROR: No Reply")
+                #    self.thread_counter(-1)
+                #    self.success = False
+                #    return
             self.progress_counter(1)
 
         sys.stdout.write("\n\n")
@@ -107,6 +106,9 @@ class ValidateFirmware(threading.Thread, EthernetMaster):
         ValidateFirmware.thread_count += num
         self.lock.release()
 
+    def is_for_me(self, packet):
+        return packet[OFFSET_SRC_MAC:OFFSET_SRC_MAC + 6].encode('hex') == self.mac_address.replace(":", "")
+
     def run(self):
         """
         @note: Sends a request for a firmware update. That request starts the upgrade process.
@@ -122,15 +124,16 @@ class ValidateFirmware(threading.Thread, EthernetMaster):
         reply = self.receive()
 
         if reply:
-            error = bytearray(reply)[OFFSET_PAYLOAD]
-            if error == 0:
-                print print_ok("\n\tFlashing successfully finished!\n")
-                self.success = True
-            else:
-                print print_fail("\n\tERROR %s: Flashing Firmware\n" % error)
+            if self.is_for_me(reply):
+                error = bytearray(reply)[OFFSET_PAYLOAD]
+                if error == 0:
+                    print print_ok("\n\tFlashing successfully finished!\n")
+                    self.success = True
+                else:
+                    print print_fail("\n\tERROR %s: Flashing Firmware\n" % error)
         else:
             print print_fail("ERROR: No Reply")
-
+"""
         # Reboot MCU
         protocol_data = "%02X%02X" % (CMD_PRE, CMD_REBOOT)
         self.send(self.mac_address, protocol_data)
@@ -148,3 +151,4 @@ class ValidateFirmware(threading.Thread, EthernetMaster):
         else:
             print print_fail("Error: Getting Firmware Version")
         self.thread_counter(-1)
+"""

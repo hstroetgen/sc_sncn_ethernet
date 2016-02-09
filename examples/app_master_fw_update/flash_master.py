@@ -95,6 +95,7 @@ class FirmwareUpdate(EthernetMaster):
         print "Found %d node%s:" % (found, 's' if found > 1 else '')
         # Print the mac addresses in fancy format.
         print '\n'.join(':'.join(a+b for a, b in zip(adr[::2], adr[1::2])) for adr in self.__found_nodes)
+        print
         return self.__found_nodes
 
     def __read_image(self, file_name):
@@ -139,7 +140,7 @@ class FirmwareUpdate(EthernetMaster):
         @note: Sends a request for a firmware update. That request starts the upgrade process.
         @param addresses: Mac addresses of the nodes.
         """
-        print "Flash Firmware..."
+        print "Validate Firmware..."
 
         threads = []
         lock = threading.Lock()
@@ -173,7 +174,7 @@ class FirmwareUpdate(EthernetMaster):
         print "Update Firmware from %s nodes\n" % len(addresses)
 
         #print "Send file with %s bytes:\n" % size
-        print "Sending..."
+        print "Sending"# % len(images[0])*len(images[0][0])
 
 
         threads = []
@@ -185,7 +186,7 @@ class FirmwareUpdate(EthernetMaster):
 
         for address, image in zip(addresses, images):
             size = len(image)*len(image[0])
-            print size
+            print size, 'bytes'
             t = SendImage(image, address, size, lock)
             threads.append(t)
             t.start()
@@ -199,10 +200,13 @@ class FirmwareUpdate(EthernetMaster):
             t.join()
             success &= t.success
 
+        if not success:
+            print "Da ist was schief gelaufen"
+
         if SendImage.thread_count > 0:
             print "There is something still living..."
 
-        print '\n...done\n'
+        #print '\n...done\n'
         return success
 
     def get_firmware_version(self, addresses):
@@ -210,19 +214,19 @@ class FirmwareUpdate(EthernetMaster):
         @note: Sends a request to a node, to get the firmware version.
         @param addresses: Mac addresses of the nodes.
         """
-        sys.stdout.write("Get Firmware Version from node ")
+        print "Get Firmware Version:"
 
         protocol_data = "%02X%02X" % (CMD_PRE, CMD_VERSION)
 
         for address in addresses:
-            print print_bold(address)
+            sys.stdout.write(print_bold(':'.join(a+b for a, b in zip(address[::2], address[1::2]))))
 
             self.send(address, protocol_data)
             reply = self.receive()
 
             if reply:
-                sys.stdout.write("\tFirmware version: ")
-                print reply[OFFSET_PAYLOAD:OFFSET_PAYLOAD + 5]
+                sys.stdout.write(' -> ')
+                print print_bold(reply[OFFSET_PAYLOAD:OFFSET_PAYLOAD + 5])
             else:
                 print print_fail("Error: Getting Firmware Version")
 
@@ -267,11 +271,12 @@ def main():
                 address = fm.scan_slaves()
 
             # Read images
-            images = fm.read_images(address)
-            # Send images
-            if fm.send_images(address, images):
-                # Flash images
-                fm.validate_firmware(address)
+            if address:
+                images = fm.read_images(address)
+                # Send images
+                if fm.send_images(address, images):
+                    # Flash images
+                    fm.validate_firmware(address)
 
         elif args.version:
             if args.scan:

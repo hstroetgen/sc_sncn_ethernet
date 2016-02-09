@@ -15,11 +15,10 @@
 #include <xclib.h>
 
 #include "fw_config.h"
-#include "ethernet_fw_update_client.h"
-#include "ethernet_fw_update_server.h"
+#include "ethernet_fw_update.h"
 #include "crc.h"
 #include "flash_common.h"
-#include "flash_reboot.h"
+#include "reboot.h"
 
 
 #define DEBUG
@@ -45,6 +44,7 @@
 #define CMD_VALIDATE    6
 
 #define UPGRADE_FLAG    0xf1
+#define ERR_CRC         20
 
 
 
@@ -58,7 +58,6 @@ void fwUpdt_read_image(interface FlashBootInterface client i_boot, char data[])
     static int size = 0;
     static int size_rest = 0;
     int page = 0;
-    int status = 0;
     int byte_count = 0;
 
     // Get page number
@@ -196,7 +195,7 @@ int fwUpdt_filter(interface FlashBootInterface client i_boot, char data[], int &
                 break;
             case CMD_REBOOT:
                 nbytes = 0;
-                flash_reboot_device();
+                reboot_device();
                 break;
             default:
                 nbytes = 0;
