@@ -1,35 +1,4 @@
-SOMANET Ethernet Software Component
-...................................
+SOMANET Ethernet Library
+=========================
 
-:Latest release: 1.0.0-rc1
-:Maintainer: Synapticon
-:Description: The SOMANET Ethernet Stack provides Ethernet support for SOMANET devices. SOMANET COM-Ethernet hardware modules are required to be used with this software.
-
-
-Key features
-============
-
-   * Dual-port Ethernet-MAC
-   * Ethernet Hub
-
-Firmware overview
-=================
-
-The SOMANET Ethernet Stack provides Ethernet support for SOMANET devices. SOMANET COM-Ethernet hardware modules are required to be used with this software.
-
-Known Issues
-============
-
-Communication still not compatible over XC Interfaces 
-
-Support
-=======
-
-Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted is at the discretion of the maintainer for this line.
-
-Required software (dependencies)
-================================
-
-  * sc_somanet-base (git@github.com:synapticon/sc_somanet-base.git)
-  * sc_util (git@github.com:xcore/sc_util.git)
-
+`Please visit SOMANET Documentation for further information <https://doc.synapticon.com/software/sc_sncn_ethernet/index.html>`_
