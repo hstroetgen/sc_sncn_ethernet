@@ -9,7 +9,7 @@ TARGET = SOMANET-C22
 # not include the .xe postfix. If left blank the name will default to 
 # the project name
 
-APP_NAME = dual_ethernet_loopback
+APP_NAME = app_dual_ethernet_loopback
 
 # The flags passed to xcc when building the application
 # You can also set the following to override flags for a particular language:
@@ -21,11 +21,9 @@ APP_NAME = dual_ethernet_loopback
 
 XCC_FLAGS_lite = -O3 -g -report -DCONFIG_LITE  -save-temps #-DMAC_CUSTOM_FILTER
 
-
 # The USED_MODULES variable lists other module used by the application. 
 
 USED_MODULES = module_board-support module_ethernet_dual module_locks
-
 
 #=============================================================================
 #=============================================================================
