@@ -16,7 +16,7 @@ def tags(tag_name):
     """
     def tags_decorator(func):
         def func_wrapper(text):
-            return "{0}{1}{2}".format(tag_name, func(text), ENDC)
+            return '{0}{1}{2}'.format(tag_name, func(text), ENDC)
         return func_wrapper
     return tags_decorator
 

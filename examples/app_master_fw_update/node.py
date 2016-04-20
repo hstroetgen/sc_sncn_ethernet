@@ -1,6 +1,6 @@
 import threading
 import sys
-import time
+import Queue
 
 from ethernet_master import *
 from ethernet_settings import *
@@ -17,7 +17,7 @@ class ProgressBar(threading.Thread):
         progress = 0
         while progress < self.max_val:
             progress = self.class_.progress
-            sys.stdout.write("\r[%-50s] %d%%" % ('=' * ((progress * 50) / self.max_val), ((progress * 100) / self.max_val)))
+            sys.stdout.write('\r[%-50s] %d%%' % ('=' * ((progress * 50) / self.max_val), ((progress * 100) / self.max_val)))
 
 
 class SendImage(threading.Thread, EthernetMaster):
@@ -44,25 +44,25 @@ class SendImage(threading.Thread, EthernetMaster):
         self.lock.release()
 
     def is_for_me(self, packet):
-        return packet[OFFSET_SRC_MAC:OFFSET_SRC_MAC + 6].encode('hex') == self.mac_address.replace(":", "")
+        return packet[OFFSET_SRC_MAC:OFFSET_SRC_MAC + 6].encode('hex') == self.mac_address.replace(':', '')
 
     def run(self):
         self.thread_counter(1)
-        #print "Start %s" % self.mac_address
-        protocol_data = "%02X%02X" % (CMD_PRE, CMD_WRITE) + "%08X" % self.size
+        #print 'Start %s' % self.mac_address
+        protocol_data = '%02X%02X' % (CMD_PRE, CMD_WRITE) + '%08X' % self.size
         page_index = 0
         self.set_socket()
         self.set_timeout(5)
 
         for page in self.image:
-            #print "%s sends..." % self.mac_address[-2:]
-            #print "Page: %s" % page
+            #print '%s sends...' % self.mac_address[-2:]
+            #print 'Page: %s' % page
             reply = not NO_ERROR
 
             crc = self.crc16(page)
 
-            header = protocol_data + "%04X" % page_index
-            payload = header + page.encode('hex') + "%04X" % crc
+            header = protocol_data + '%04X' % page_index
+            payload = header + page.encode('hex') + '%04X' % crc
             page_index += 1
 
             # While the reply is not ACK, try to send the package again. Reason should only be a CRC error.
@@ -74,19 +74,19 @@ class SendImage(threading.Thread, EthernetMaster):
                 if reply_bytes and self.is_for_me(reply_bytes):
                     reply = bytearray(reply_bytes)[OFFSET_PAYLOAD]
                     if reply != NO_ERROR and reply != ERR_CRC:
-                        sys.stdout.write(print_fail("\n\tERROR: Sending image"))
-                        sys.stdout.write(print_warning(" Code: %d\n" % reply))
+                        sys.stdout.write(print_fail('\n\tERROR: Sending image'))
+                        sys.stdout.write(print_warning(' Code: %d\n' % reply))
                         self.thread_counter(-1)
                         self.success = False
                         return
                 #else:
-                #    print print_fail("\tERROR: No Reply")
+                #    print print_fail('\tERROR: No Reply')
                 #    self.thread_counter(-1)
                 #    self.success = False
                 #    return
             self.progress_counter(1)
 
-        sys.stdout.write("\n\n")
+        sys.stdout.write('\n\n')
         self.success = True
         self.thread_counter(-1)
 
@@ -107,7 +107,7 @@ class ValidateFirmware(threading.Thread, EthernetMaster):
         self.lock.release()
 
     def is_for_me(self, packet):
-        return packet[OFFSET_SRC_MAC:OFFSET_SRC_MAC + 6].encode('hex') == self.mac_address.replace(":", "")
+        return packet[OFFSET_SRC_MAC:OFFSET_SRC_MAC + 6].encode('hex') == self.mac_address.replace(':', '')
 
     def run(self):
         """
@@ -115,7 +115,7 @@ class ValidateFirmware(threading.Thread, EthernetMaster):
         @param node: Node number, to which the upgrade image will be send.
         """
         self.thread_counter(1)
-        protocol_data = "%02X%02X" % (CMD_PRE, CMD_VALIDATE)
+        protocol_data = '%02X%02X' % (CMD_PRE, CMD_VALIDATE)
         self.set_socket()
         self.set_timeout(5)
 
@@ -127,28 +127,28 @@ class ValidateFirmware(threading.Thread, EthernetMaster):
             if self.is_for_me(reply):
                 error = bytearray(reply)[OFFSET_PAYLOAD]
                 if error == 0:
-                    print print_ok("\n\tFlashing successfully finished!\n")
+                    print print_ok('\n\tFlashing successfully finished!\n')
                     self.success = True
                 else:
-                    print print_fail("\n\tERROR %s: Flashing Firmware\n" % error)
+                    print print_fail('\n\tERROR %s: Flashing Firmware\n' % error)
         else:
-            print print_fail("ERROR: No Reply")
+            print print_fail('ERROR: No Reply')
 """
         # Reboot MCU
-        protocol_data = "%02X%02X" % (CMD_PRE, CMD_REBOOT)
+        protocol_data = '%02X%02X' % (CMD_PRE, CMD_REBOOT)
         self.send(self.mac_address, protocol_data)
 
         time.sleep(5)
         # Get new firmware version
-        protocol_data = "%02X%02X" % (CMD_PRE, CMD_VERSION)
+        protocol_data = '%02X%02X' % (CMD_PRE, CMD_VERSION)
 
         self.send(self.mac_address, protocol_data)
         reply = self.receive()
 
         if reply:
-            sys.stdout.write("\tFirmware version: ")
+            sys.stdout.write('\tFirmware version: ')
             print reply[OFFSET_PAYLOAD:OFFSET_PAYLOAD + 5]
         else:
-            print print_fail("Error: Getting Firmware Version")
+            print print_fail('Error: Getting Firmware Version')
         self.thread_counter(-1)
 """

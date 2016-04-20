@@ -106,7 +106,7 @@ class EthernetMaster:
     #   @brief Creates the socket and bind it to the interface.
     #
     def set_socket(self):
-        self.__socket = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, 
+        self.__socket = socket.socket(socket.AF_PACKET, socket.SOCK_RAW,
                                       socket.htons(int(self.__ethertype, 16)))
         self.__socket.bind((self.__interface, 0))#50000 + self.__process_id))
     
