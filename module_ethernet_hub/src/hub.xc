@@ -84,7 +84,7 @@ void ethernetHUB(chanend dataP1ToApp, chanend appDataToP1,
   unsigned time;
   chan dataBridge[2];
 
-  { timer tmr; tmr :> time; tmr when timerafter(time + 600000000) :> time; }
+  //{ timer tmr; tmr :> time; tmr when timerafter(time + 600000000) :> time; }
   printstr(">>   SOMANET ETHERNET HUB STARTING...\n");
 
   par

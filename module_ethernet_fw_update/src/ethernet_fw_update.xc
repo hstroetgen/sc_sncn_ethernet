@@ -19,6 +19,7 @@
 #include "crc.h"
 #include "flash_common.h"
 #include "reboot.h"
+#include "otp.h"
 
 
 #define DEBUG
@@ -34,14 +35,21 @@
 #define OFFSET_SIZE         2 + OFFSET_PAYLOAD
 #define OFFSET_PAGE         6 + OFFSET_PAYLOAD
 #define OFFSET_DATA         8 + OFFSET_PAYLOAD
+
+#define OFFSET_VERSION      1 + OFFSET_PAYLOAD
+#define OFFSET_SERIAL       OFFSET_VERSION + VERSION_LENGTH
+#define OFFSET_TIME         OFFSET_SERIAL + 4 // 4 Byte serial number length
+#define OFFSET_DATE         OFFSET_TIME + TIME_LENGTH
+
 #define OFFSET_CRC          OFFSET_DATA + PAGE_SIZE
 #define OFFSET_END_W_CRC    OFFSET_CRC + 2
 
 #define CMD_READ        1
 #define CMD_WRITE       3
-#define CMD_GETVERSION  4
+#define CMD_GET_INFO    4
 #define CMD_REBOOT      5
 #define CMD_VALIDATE    6
+#define CMD_ERASE       7
 
 #define UPGRADE_FLAG    0xf1
 #define ERR_CRC         20
@@ -166,10 +174,12 @@ int fwUpdt_write_image(interface FlashBootInterface client i_boot, char data[])
  * @param nbytes    Size of the ethernet packet. Actually it isn't used at the moment.
  * @return 1 if packet is for me
  */
-int fwUpdt_filter(interface FlashBootInterface client i_boot, char data[], int &nbytes)
+int fwUpdt_filter(interface FlashBootInterface client i_boot, char data[], int &nbytes, unsigned serial)
 {
     int reply;
     char version[] = FIRMWARE_VERSION;
+
+    serial_number = HTONL(serial);
 
     if (data[OFFSET_FLAG] == UPGRADE_FLAG)
     {
@@ -184,9 +194,12 @@ int fwUpdt_filter(interface FlashBootInterface client i_boot, char data[], int &
                 memcpy((data + OFFSET_PAYLOAD), (char *) &reply, 4);
                 nbytes = 20;
                 break;
-            case CMD_GETVERSION:
-                memcpy((data + OFFSET_PAYLOAD), version, strlen(version));
-                nbytes = 20;
+            case CMD_GET_INFO:
+                memcpy((data + OFFSET_VERSION), version, strlen(version));
+                memcpy((data + OFFSET_SERIAL), (char *) &(serial_number), 4);
+                memcpy((data + OFFSET_TIME), BUILD_TIME, strlen(BUILD_TIME));
+                memcpy((data + OFFSET_DATE), BUILD_DATE, strlen(BUILD_DATE));
+                nbytes = 50;
                 break;
             case CMD_VALIDATE:
                 reply = i_boot.validate_flashing();
@@ -196,6 +209,11 @@ int fwUpdt_filter(interface FlashBootInterface client i_boot, char data[], int &
             case CMD_REBOOT:
                 nbytes = 0;
                 reboot_device();
+                break;
+            case CMD_ERASE:
+                reply = i_boot.erase_upgrade_image();
+                memcpy((data + OFFSET_PAYLOAD), (char *) &reply, 4);
+                nbytes = 20;
                 break;
             default:
                 nbytes = 0;
