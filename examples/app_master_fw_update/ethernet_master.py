@@ -11,7 +11,7 @@ class EthernetMaster:
         self.__interface = interface
         self.__ethertype = ethertype
         self.__socket = None
-        self.__src_addr  = self.__getHwAddr(self.__interface)
+        self.__src_addr = self.__getHwAddr(self.__interface)
         #self.__process_id = id
 
     ##

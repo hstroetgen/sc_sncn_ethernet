@@ -1,7 +1,3 @@
-# List with the MAC address of the nodes.
-dst_addresses = ["F0:CA:F0:CA:F0:CA",
-                 "CA:FE:CA:FE:CA:FE"]
-
 broadcast = "FF:FF:FF:FF:FF:FF"
 
 # Interface name, only on Linux.           
