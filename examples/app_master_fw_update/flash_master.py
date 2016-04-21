@@ -20,7 +20,8 @@ err_codes = {0: 'NO ERROR',
              12: 'UPGRADE FAILED',
              13: 'CONNECT FAILED',
              14: 'DISCONNECT FAILED',
-             15: 'WRITE FAILED'}
+             15: 'WRITE FAILED',
+             16: 'ERASE FAILED'}
 
 OFFSET_VERSION = OFFSET_PAYLOAD + 1
 LENGTH_VERSION = 6
@@ -85,9 +86,51 @@ class FirmwareUpdate(EthernetMaster):
     def format_mac_address(byte_array):
         return ':'.join('{:02x}'.format(x) for x in (bytearray(byte_array)[OFFSET_SRC_MAC:OFFSET_SRC_MAC+6]))
 
+    def erase_upgrade_image(self, node):
+        """
+        @note: Deletes the upgrade image on n nodes.
+        @param node. Node number, depends of -scan result.
+        """
+        sys.stdout.write('\nErasing firmware...')
+        sys.stdout.flush()
+        self.set_socket()
+        self.set_timeout(5)
+
+        protocol_data = '%02X%02X' % (CMD_PRE, CMD_ERASE)
+
+        if node is not None:
+            # Make an array of an single object. Necessary to iterate through it.
+            nodes = [self.__found_nodes[node]]
+        else:
+            nodes = self.__found_nodes
+
+        # Send to every node in nodes the command to validate the firmware
+        for node in nodes:
+            self.send(node[0], protocol_data)
+
+        sys.stdout.write('done\n\n')
+
+        reply_list = []
+        # Validate firmware: Flashing was succesful, when both images were found on the MCU.
+        for i in range(len(nodes)):
+            reply_list.append(self.receive())
+
+        for reply in reply_list:
+            error = bytearray(reply)[OFFSET_PAYLOAD]
+            client_address = self.format_mac_address(reply)
+
+            if error == 0:
+                print print_ok('\tErasing successfully finished for client %s!\n' % client_address)
+            else:
+                print print_fail(
+                    '\n\tERROR %s: Erasing Firmware for client %s\n' % (err_codes[error], client_address))
+
+        print print_bold('IMPORTANT: Please power cycle nodes to boot the old firmware!\n\n')
+
     def scan_slaves(self):
         """
-        @note: Sends a broadcast packet and asks for the firmware version. The result will be stored.
+        @note: Sends a broadcast packet and asks for the firmware version, serial number, build date and time.
+               The result will be stored.
         """
         sys.stdout.write('\nScanning devices...')
         sys.stdout.flush()
@@ -97,6 +140,7 @@ class FirmwareUpdate(EthernetMaster):
         protocol_data = '%02X%02X' % (CMD_PRE, CMD_VERSION)
         self.send(broadcast, protocol_data)
         t_start = time.time()
+
         # Search n seconds
         while (time.time() - t_start) < 2:
             reply = self.receive(error_msg=False)
@@ -108,14 +152,17 @@ class FirmwareUpdate(EthernetMaster):
                 node_build_date = reply[OFFSET_DATE:OFFSET_DATE+LENGTH_DATE]
                 self.__found_nodes.append([node_mac, node_serial, node_version, node_build_time, node_build_date])
 
+        # Print number of found nodes.
         found = len(self.__found_nodes)
         print 'done\n'
         print '-> Found %d node%s\n' % (found, 's' if found > 1 else '')
 
+        # Print result in a table.
         print '{:<5}|{:^19}|{:^15}|{:^12}|{:^12}|{:^14}'.format('Node', 'MAC address', 'Serial number', 'FW version', 'Build Time', 'Build Date')
-        print '%s+%s+%s+%s+%s' % ('-'*5, '-'*19, '-'*15, '-'*12*2, '-'*14)
+        print '%s+%s+%s+%s+%s+%s' % ('-'*5, '-'*19, '-'*15, '-'*12, '-'*12, '-'*14)
 
         self.__found_nodes = sorted(self.__found_nodes)
+
         # Print the mac addresses in fancy format.
         node = 0
         for adr in self.__found_nodes:
@@ -127,9 +174,7 @@ class FirmwareUpdate(EthernetMaster):
 
     def read_image(self):
         """
-        @note: Reads on image and returns it as an array.
-        @param file_name: File name of the image
-        @return: Image array. One entry is one page.
+        @note: Reads an image, saves it in class variable.
         """
         image_page_array = []
 
@@ -146,8 +191,8 @@ class FirmwareUpdate(EthernetMaster):
 
     def validate_firmware(self, node=None):
         """
-        @note: Sends a request for a firmware update. That request starts the upgrade process.
-        @param addresses: Mac addresses of the nodes.
+        @note: Checks if a new firmware is found on the node.
+        @param node. Node number, depends of -scan result.
         """
         protocol_data = '%02X%02X' % (CMD_PRE, CMD_VALIDATE)
         self.set_socket()
@@ -156,12 +201,15 @@ class FirmwareUpdate(EthernetMaster):
         sys.stdout.write('Validate firmware...')
 
         if node is not None:
+            # Make an array of an single object. Necessary to iterate through it.
             nodes = [self.__found_nodes[node]]
         else:
             nodes = self.__found_nodes
 
-        for address, serial, version in nodes:
-            self.send(address, protocol_data)
+        # Send to every node in nodes the command to validate the firmware
+        for node in nodes:
+            # First element is address
+            self.send(node[0], protocol_data)
 
         sys.stdout.write('done\n\n')
 
@@ -182,6 +230,10 @@ class FirmwareUpdate(EthernetMaster):
         print print_bold('IMPORTANT: Please power cycle nodes to boot the new firmware!\n\n')
 
     def send_image(self, node=None):
+        """
+        @note: Sends an image to n nodes. Every ethernet package is the size of one flash memory page.
+        @param node. Node number, depends of -scan result.
+        """
         protocol_data = '%02X%02X' % (CMD_PRE, CMD_WRITE) + '%08X' % self.__image_size
         page_index = 0
         self.set_socket()
@@ -209,8 +261,9 @@ class FirmwareUpdate(EthernetMaster):
                 print 'ERROR: No node addresses. Exit...'
                 sys.exit(-1)
 
-            for address, serial, version in nodes:
-                self.send(address, payload)
+            for node in nodes:
+                # First element is address
+                self.send(node[0], payload)
 
             reply_packages = []
             for i in range(len(nodes)):
@@ -279,6 +332,7 @@ def main():
     parser.add_argument('-n', type=int, help='Node number', dest='node')
     parser.add_argument('-v', action='store_true', help='Gets the firmware version of the specified node.',
                         dest='version')
+    parser.add_argument('-d', action='store_true', help='Delete upgrade image', dest='delete')
 
     group = parser.add_mutually_exclusive_group()
     group.add_argument('-a', type=int, help='Specify the node address for the ethernet slave.', dest='address')
@@ -295,22 +349,22 @@ def main():
     fm.set_socket()
     try:
         print print_bold('Synapticon SOMANET') + ' Firmware Update over Ethernet'
+        node = None
+        # If switch all is turned on, get all addresses from the list, or scan the for nodes.
+        if args.scan:
+            fm.scan_slaves()  # Todo Silent mode for scan_slaves
+        elif args.all:
+            fm.scan_slaves()
+        elif args.node is not None:
+            fm.scan_slaves()
+            node = args.node
+
         # Update mode
         if args.filepath:
 
-            node = None
             fm.set_timeout(5)
 
             fm.read_image()
-
-            # If switch all is turned on, get all addresses from the list, or scan the for nodes.
-            if args.scan:
-                fm.scan_slaves()  # Todo Silent mode for scan_slaves
-            elif args.all:
-                fm.scan_slaves()
-            elif args.node is not None:
-                fm.scan_slaves()
-                node = args.node
 
             # Send images
             if fm.send_image(node=node):
@@ -324,9 +378,8 @@ def main():
                 fm.set_timeout(5)
                 fm.get_firmware_version()
 
-        elif args.scan:
-            #fm.set_timeout(0.5)
-            fm.scan_slaves()
+        elif args.delete:
+            fm.erase_upgrade_image(node=node)
     except (KeyboardInterrupt, SystemExit):
         print 'Exit...'
 

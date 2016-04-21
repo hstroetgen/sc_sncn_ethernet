@@ -17,4 +17,4 @@ CMD_WRITE       = 0x03
 CMD_READ        = 0x01
 CMD_REBOOT      = 0x05
 CMD_VALIDATE    = 0x06
-
+CMD_ERASE       = 0x07
