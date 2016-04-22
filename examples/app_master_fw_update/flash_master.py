@@ -9,6 +9,7 @@ import argparse
 import os
 import time
 import sys
+from reportlab.platypus.para import NameObject
 
 from print_color import *
 from ethernet_master import *
@@ -83,35 +84,44 @@ class FirmwareUpdate(EthernetMaster):
             return os.path.getsize(self.__filename)
 
     @staticmethod
-    def format_mac_address(byte_array):
-        return ':'.join('{:02x}'.format(x) for x in (bytearray(byte_array)[OFFSET_SRC_MAC:OFFSET_SRC_MAC+6]))
+    def format_mac_address(mac):
+        return ':'.join('{:02x}'.format(x) for x in (bytearray(mac)[OFFSET_SRC_MAC:OFFSET_SRC_MAC+6]))
+
+    @staticmethod
+    def format_mac_str(mac):
+        return ':'.join(a + b for a, b in zip(mac[::2], mac[1::2]))
 
     def erase_upgrade_image(self, node):
         """
         @note: Deletes the upgrade image on n nodes.
         @param node. Node number, depends of -scan result.
         """
+
+        if node is not None:
+            # Make an array of an single object. Necessary to iterate through it.
+            nodes = [self.__found_nodes[node]]
+            print '\nDelete upgrade image on node %s' % (self.format_mac_str(nodes[0][0]))
+        else:
+            nodes = self.__found_nodes
+            print 'Delete upgrade image on all nodes'
+
+
         sys.stdout.write('\nErasing firmware...')
         sys.stdout.flush()
+
         self.set_socket()
         self.set_timeout(5)
 
         protocol_data = '%02X%02X' % (CMD_PRE, CMD_ERASE)
 
-        if node is not None:
-            # Make an array of an single object. Necessary to iterate through it.
-            nodes = [self.__found_nodes[node]]
-        else:
-            nodes = self.__found_nodes
-
-        # Send to every node in nodes the command to validate the firmware
+        # Send to every node in nodes the command to erase the firmware
         for node in nodes:
             self.send(node[0], protocol_data)
 
         sys.stdout.write('done\n\n')
 
         reply_list = []
-        # Validate firmware: Flashing was succesful, when both images were found on the MCU.
+
         for i in range(len(nodes)):
             reply_list.append(self.receive())
 
@@ -119,20 +129,24 @@ class FirmwareUpdate(EthernetMaster):
             error = bytearray(reply)[OFFSET_PAYLOAD]
             client_address = self.format_mac_address(reply)
 
-            if error == 0:
-                print print_ok('\tErasing successfully finished for client %s!\n' % client_address)
+            if error == NO_ERROR:
+                print print_ok('\tErasing successfully finished for node %s!\n' % client_address)
+            elif error == 11:
+                print print_warning('\n\tWarning: %s found on node %s\n'
+                                    % (err_codes[error], client_address))
             else:
-                print print_fail(
-                    '\n\tERROR %s: Erasing Firmware for client %s\n' % (err_codes[error], client_address))
+                print print_fail('\n\tERROR %s: Erasing Firmware for node %s\n' % (err_codes[error], client_address))
 
-        print print_bold('IMPORTANT: Please power cycle nodes to boot the old firmware!\n\n')
+        print print_bold(print_underscore('IMPORTANT')) \
+              + print_bold(': Please power cycle nodes to boot the old firmware!\n\n')
 
-    def scan_slaves(self):
+    def scan_slaves(self, verbose=True):
         """
         @note: Sends a broadcast packet and asks for the firmware version, serial number, build date and time.
                The result will be stored.
+        @param verbose  Prints information.
         """
-        sys.stdout.write('\nScanning devices...')
+        if verbose: sys.stdout.write('\nScanning devices...')
         sys.stdout.flush()
         self.set_socket()
         self.set_timeout(1)
@@ -154,23 +168,25 @@ class FirmwareUpdate(EthernetMaster):
 
         # Print number of found nodes.
         found = len(self.__found_nodes)
-        print 'done\n'
-        print '-> Found %d node%s\n' % (found, 's' if found > 1 else '')
+        if verbose:
+            print 'done\n'
+            print '-> Found %d node%s\n' % (found, 's' if found > 1 else '')
 
-        # Print result in a table.
-        print '{:<5}|{:^19}|{:^15}|{:^12}|{:^12}|{:^14}'.format('Node', 'MAC address', 'Serial number', 'FW version', 'Build Time', 'Build Date')
-        print '%s+%s+%s+%s+%s+%s' % ('-'*5, '-'*19, '-'*15, '-'*12, '-'*12, '-'*14)
+            # Print result in a table.
+            print '{:<5}|{:^19}|{:^15}|{:^12}|{:^12}|{:^14}'.format('Node', 'MAC address', 'Serial number', 'FW version', 'Build Time', 'Build Date')
+            print '%s+%s+%s+%s+%s+%s' % ('-'*5, '-'*19, '-'*15, '-'*12, '-'*12, '-'*14)
 
         self.__found_nodes = sorted(self.__found_nodes)
 
         # Print the mac addresses in fancy format.
         node = 0
-        for adr in self.__found_nodes:
-            print print_bold('{:<6}{:^19}{:^16}{:^15}{:^15}{:^15}'.format(node,
-            (':'.join(a+b for a, b in zip(adr[0][::2], adr[0][1::2]))), int(adr[1], 16), adr[2], adr[3], adr[4]))
-            node += 1
+        if verbose:
+            for adr in self.__found_nodes:
+                print print_bold('{:<6}{:^19}{:^16}{:^15}{:^15}{:^15}'.format(node,
+                (':'.join(a+b for a, b in zip(adr[0][::2], adr[0][1::2]))), int(adr[1], 16), adr[2], adr[3], adr[4]))
+                node += 1
 
-        print
+            print
 
     def read_image(self):
         """
@@ -188,6 +204,7 @@ class FirmwareUpdate(EthernetMaster):
         self.close_file()
         self.__image = image_page_array
         self.__image_size = len(self.__image)*PACKAGE_SIZE
+
 
     def validate_firmware(self, node=None):
         """
@@ -223,17 +240,25 @@ class FirmwareUpdate(EthernetMaster):
             client_address = self.format_mac_address(reply)
 
             if error == 0:
-                print print_ok('\tFlashing successfully finished for client %s!\n' % client_address)
+                print print_ok('\tFlashing successfully finished for node %s!\n' % client_address)
             else:
-                print print_fail('\n\tERROR %s: Validating Firmware for client %s\n' % (err_codes[error], client_address))
+                print print_fail('\n\tERROR %s: Validating Firmware for node %s\n' % (err_codes[error], client_address))
 
         print print_bold('IMPORTANT: Please power cycle nodes to boot the new firmware!\n\n')
+
 
     def send_image(self, node=None):
         """
         @note: Sends an image to n nodes. Every ethernet package is the size of one flash memory page.
         @param node. Node number, depends of -scan result.
         """
+        if node is not None:
+            nodes = [self.__found_nodes[node]]
+            print '\nSend upgrade image to node %s' % (self.format_mac_str(nodes[0][0]))
+        else:
+            nodes = self.__found_nodes
+            print '\nSend upgrade image to all nodes'
+
         protocol_data = '%02X%02X' % (CMD_PRE, CMD_WRITE) + '%08X' % self.__image_size
         page_index = 0
         self.set_socket()
@@ -241,14 +266,7 @@ class FirmwareUpdate(EthernetMaster):
 
         sys.stdout.write('Send image to client...')
 
-        if node is not None:
-            nodes = [self.__found_nodes[node]]
-        else:
-            nodes = self.__found_nodes
-
         for page in self.__image:
-            # print '%s sends...' % self.mac_address[-2:]
-            # print 'Page: %s' % page
             reply = not NO_ERROR
 
             crc = self.crc16(page)
@@ -283,7 +301,7 @@ class FirmwareUpdate(EthernetMaster):
                         err_reply = ERR_CRC
 
                         for i in (range(5)):
-                            sys.stdout.write(print_warning('\n\tWARNING: CRC Error @ client %s.') % client_address)
+                            sys.stdout.write(print_warning('\n\tWARNING: CRC Error on node %s.') % client_address)
                             sys.stdout.write(print_warning(' %s\n' % err_codes[reply]))
                             sys.stdout.write('Sending page one more time...')
                             self.send(client_address, payload)
@@ -295,7 +313,7 @@ class FirmwareUpdate(EthernetMaster):
                                 break
 
                         if err_reply != NO_ERROR:
-                            print print_fail('Client %s still not able to perform update. Please check this. Exit...')\
+                            print print_fail('Node %s still not able to perform update. Please check this. Exit...')\
                                   % client_address
                             return 0
 
@@ -352,11 +370,11 @@ def main():
         node = None
         # If switch all is turned on, get all addresses from the list, or scan the for nodes.
         if args.scan:
-            fm.scan_slaves()  # Todo Silent mode for scan_slaves
+            fm.scan_slaves()
         elif args.all:
-            fm.scan_slaves()
+            fm.scan_slaves(verbose=False)
         elif args.node is not None:
-            fm.scan_slaves()
+            fm.scan_slaves(verbose=False)
             node = args.node
 
         # Update mode

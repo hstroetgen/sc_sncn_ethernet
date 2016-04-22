@@ -5,7 +5,7 @@ WARNING = '\033[93m'
 FAIL = '\033[91m'
 ENDC = '\033[0m'
 BOLD = '\033[1m'
-UNDERLINE = '\033[4m'
+UNDERSCORE = '\033[4m'
 
 
 def tags(tag_name):
@@ -34,4 +34,8 @@ def print_warning(text):
 
 @tags(BOLD)
 def print_bold(text):
+    return text
+
+@tags(UNDERSCORE)
+def print_underscore(text):
     return text
