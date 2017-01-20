@@ -2,7 +2,7 @@
  * ethernet_service.h
  *
  *  Created on: 13.10.2016
- *      Author: hstroetgen
+ *      Author: Synapticon GmbH <support@synapticon.com>
  */
 
 

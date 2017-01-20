@@ -2,7 +2,7 @@
  * co_interface.h
  *
  *  Created on: 05.12.2016
- *      Author: hstroetgen
+ *      Author: Synapticon GmbH <support@synapticon.com>
  */
 
 

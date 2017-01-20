@@ -2,21 +2,20 @@
  * ethernet_service.xc
  *
  *  Created on: 11.10.2016
- *      Author: hstroetgen
+ *      Author: Synapticon GmbH <support@synapticon.com>
  */
 
 #include <xs1.h>
 #include <xccompat.h>
 #include <stdio.h>
 #include <refclk.h>
-#include "ethernet_service.h"
 #include <print.h>
 #include <xtcp.h>
 #include <string.h>
 #include <stdint.h>
 
+#include "ethernet_service.h"
 #include "sdo_handler.h"
-//#include "can_od.h"
 
 
 #define ETHERNET_DEBUG_PRINT 0
