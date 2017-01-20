@@ -145,7 +145,6 @@ static int getODListRequest(unsigned listtype, client interface ODCommunicationI
     sdo_header.opcode = CO_SDOI_GET_ODLIST_RSP;
 
     if (listtype == 0) { /* list of length is replied */
-        //canod_get_all_list_length(lists);
         i_od.get_all_list_length((lists, uint32_t[]));
 
         /* FIXME build reply */
@@ -163,10 +162,9 @@ static int getODListRequest(unsigned listtype, client interface ODCommunicationI
 
         reply_pending = build_sdoinfo_reply(sdo_header, data, k);
     } else {
-        //size = canod_get_list(olists, OJBECT_DICTIONARY_MAXSIZE, listtype);
         size = i_od.get_list(olists, OJBECT_DICTIONARY_MAXSIZE, listtype);
 
-        int max_payload_size = (CO_SDO_DATA_LENGTH - SDO_INFO_HEADER_LENGTH);
+        unsigned max_payload_size = (CO_SDO_DATA_LENGTH - SDO_INFO_HEADER_LENGTH);
         int fragment_count = ((size * 2) - 1) / max_payload_size;
 
 //      if (fragment_count > 0) { /* DEBUG if thing */
@@ -250,7 +248,6 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface O
 
         /* if the bitlength of the value is less than 4 octects use expedited transfere */
         struct _sdoinfo_entry_description desc;
-        //canod_get_entry_description(index, subindex, 0, desc);
         {desc, error} = i_od.get_entry_description(index, subindex, 0);
         if (desc.bitLength <= 32) {
             header.dataSetSize = 4 - desc.bitLength/8;
@@ -268,7 +265,6 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface O
         }
 
         if (completeAccess==1) {
-            //canod_get_entry(index, 0, value, type);
             {value, bitlength, error} = i_od.get_object_value(index, 0);
             maxSubindex = value;
             if (subindex==0x00) {
@@ -276,7 +272,6 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface O
             }
 
             for (unsigned i=1; i<maxSubindex; i++) {
-                //canod_get_entry(index, i, value, type);
                 {value, bitlength, error} = i_od.get_object_value(index, 1);
 
 //              printstr("[DEBUG complete object values: "); printintln(i); printstr(": ");
@@ -448,7 +443,6 @@ static int sdoinfo_request(unsigned char buffer[], unsigned size, client interfa
     case CO_SDOI_OBJDICT_REQ: /* answer with CO_SDOI_OBJDICT_RSP */
         servicedata = ((unsigned)buffer[6]&0xff) | (((unsigned)buffer[7]<<8)&0xff00);
         /* here servicedata holds the index of the requested object description */
-        //canod_get_object_description(desc, servicedata);
         error = i_od.get_object_description(desc, servicedata);
 
         data[0] = desc.index&0xff;
@@ -473,7 +467,6 @@ static int sdoinfo_request(unsigned char buffer[], unsigned size, client interfa
         subindex = buffer[8];
         valueinfo = buffer[9]; /* bitmask which elements should be in the response - bit 1,2 and 3 = 0 (reserved) */
 
-        //canod_get_entry_description(index, subindex, valueinfo, desc);
         {desc, error} = i_od.get_entry_description(index, subindex, valueinfo);
         response.fragmentsleft = 0;
         response.incomplete = 0;
