@@ -121,7 +121,7 @@ int co_init(void);
  * @param
  * @return
  */
-int co_rx_handler(char buffer[], unsigned size, client interface ODCommunicationInterface i_od);
+int co_rx_handler(char buffer[], unsigned size, client interface i_co_communication i_co);
 
 /*
  * @brief

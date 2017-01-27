@@ -2,7 +2,7 @@
  * co_interface.h
  *
  *  Created on: 05.12.2016
- *      Author: Synapticon GmbH <support@synapticon.com>
+ *      Author: hstroetgen
  */
 
 
@@ -10,6 +10,8 @@
 #define CO_INTERFACE_H_
 
 #include <stdint.h>
+
+#define CO_IF_COUNT 3
 
 /** entry description structure */
 struct _sdoinfo_entry_description {
@@ -25,9 +27,45 @@ struct _sdoinfo_entry_description {
 };
 
 /**
+ * @brief
+ *  Struct for Tx, Rx PDOs
+ */
+typedef struct
+{
+    int8_t operation_mode;     //      Modes of Operation
+    uint16_t control_word;     //      Control Word
+
+    int16_t target_torque;
+    int32_t target_velocity;
+    int32_t target_position;
+
+    /* User defined PDOs */
+    int32_t user1_in;
+    int32_t user2_in;
+    int32_t user3_in;
+    int32_t user4_in;
+
+
+    int8_t operation_mode_display; //      Modes of Operation Display
+    uint16_t status_word;                   //  Status Word
+
+    int16_t actual_torque;
+    int32_t actual_velocity;
+    int32_t actual_position;
+
+    /* User defined PDOs */
+    int32_t user1_out;
+    int32_t user2_out;
+    int32_t user3_out;
+    int32_t user4_out;
+} pdo_values_t;
+
+typedef uint16_t pdo_size_t;
+
+/**
  * @brief Communication interface for OD service
  */
-interface ODCommunicationInterface
+interface i_co_communication
 {
     /**
      * @brief Returns an object value from dictionary.
@@ -79,25 +117,28 @@ interface ODCommunicationInterface
      * @return Flag status.
      */
     int configuration_get(void);
-};
 
-
-typedef uint16_t pdo_size_t;
-
-/**
- * @brief Communication interface for PDO service
- */
-interface PDOCommunicationInterface
-{
     /**
      * @brief Transfers PDOs from slave to master
      */
-    void pdo_out(unsigned int size, pdo_size_t data_out[]);
+    void pdo_in_com(unsigned int size, pdo_size_t data_out[]);
 
     /**
      * @brief Receives PDOs from master to slave
      */
-    unsigned int pdo_in(pdo_size_t data_in[]);
+    unsigned int pdo_out_com(pdo_size_t data_in[]);
+
+    {pdo_values_t, unsigned int} pdo_exchange_app(pdo_values_t pdo_out);
 };
+
+
+
+/**
+ * @brief Communication interface for PDO service
+ */
+//interface PDOCommunicationInterface
+//{
+//
+//};
 
 #endif /* CO_INTERFACE_H_ */

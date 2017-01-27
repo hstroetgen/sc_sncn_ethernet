@@ -15,13 +15,13 @@
 #define CONFIG_TCP_SIZE 1024
 
 
-void _ethernet_service(chanend ?c_xtcp, server interface PDOCommunicationInterface i_pdo, client interface ODCommunicationInterface i_od);
+void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co);
 
-#define ethernet_service(c_xtcp, i_pdo, i_od) \
+#define ethernet_service(c_xtcp, i_co) \
 {\
     par {\
-    _ethernet_service(c_xtcp, i_pdo, i_od[0]);\
-    canopen_service(i_od);\
+    _ethernet_service(c_xtcp, i_co[0]);\
+    canopen_service(i_co, CO_IF_COUNT);\
     }\
 } while(0)
 
