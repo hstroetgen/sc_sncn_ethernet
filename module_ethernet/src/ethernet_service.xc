@@ -62,7 +62,7 @@ void ethernet_close(chanend c_xtcp, xtcp_connection_t &conn)
 }
 
 
-void _ethernet_service(chanend ?c_xtcp, server interface PDOCommunicationInterface i_pdo, client interface ODCommunicationInterface i_od)
+void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co)
 {
     printstr(">>   ETHERNET SERVICE STARTING...\n");
 
@@ -161,7 +161,7 @@ void _ethernet_service(chanend ?c_xtcp, server interface PDOCommunicationInterfa
                             // Receive data
                             sdo_handler.insize = xtcp_recv_count(c_xtcp, sdo_handler.inbuf, SDO_BUF_SIZE);
 
-                            coeReplyPending = co_rx_handler(sdo_handler.inbuf, sdo_handler.insize, i_od);
+                            coeReplyPending = co_rx_handler(sdo_handler.inbuf, sdo_handler.insize, i_co);
 
                             if (op_state == STATE_PREOP)
                                 op_state = STATE_OP;
@@ -175,6 +175,11 @@ void _ethernet_service(chanend ?c_xtcp, server interface PDOCommunicationInterfa
                         else if (conn.id == pdo_handler.conn.id)
                         {
                             pdo_handler.insize = xtcp_recv_count(c_xtcp, (pdo_handler.inbuf, char[]), PDO_BUF_SIZE);
+
+                            i_co.pdo_in_com(pdo_handler.insize, pdo_handler.inbuf);
+                            pdo_handler.outsize = i_co.pdo_out_com(pdo_handler.outbuf);
+
+                            xtcp_init_send(c_xtcp, pdo_handler.conn);
 
                             // Greater equals means: IF is up
                             if (pdo_handler.inbuf[0] == 0xC1A4 && op_state >= STATE_PREOP)
@@ -194,7 +199,7 @@ void _ethernet_service(chanend ?c_xtcp, server interface PDOCommunicationInterfa
                                     if (pdo_handler.insize > 0 && op_state == STATE_OP)
                                     {
                                         // On the very first pdo packet, set SDO configuration to ready. So cia402_drive can continue.
-                                        i_od.configuration_ready();
+                                        i_co.configuration_ready();
                                         sdo_config_finished = 1;
                                     }
                                     else
@@ -224,6 +229,7 @@ void _ethernet_service(chanend ?c_xtcp, server interface PDOCommunicationInterfa
                         else if (conn.id == pdo_handler.conn.id && pdo_handler.outsize > 0)
                         {
                             xtcp_send(c_xtcp, (pdo_handler.outbuf, char[]), pdo_handler.outsize);
+                            pdo_handler.outsize = 0;
                         }
                         break;
 
@@ -266,38 +272,22 @@ void _ethernet_service(chanend ?c_xtcp, server interface PDOCommunicationInterfa
                 }
                 break;
 
-//            case i_coe.get_object_value(uint16_t index, uint8_t subindex) -> { uint32_t value }:
-//                unsigned bitlength = 32;
-//                unsigned val = 0;
-//                canod_get_entry(index, subindex, val, bitlength);
-//                value = val;
-//                break;
-//
-//            case i_coe.set_object_value(uint16_t index, uint8_t subindex, uint32_t value):
-//                unsigned type = 0;
-//                canod_set_entry(index, subindex, value, type);
-//                break;
-//
-//            case i_coe.configuration_done():
-//                /* just clean the notification */
-//                break;
-
                 // Interface for PDOs transfered to Master
-            case i_pdo.pdo_out(unsigned int size_out, pdo_size_t data_out[]):
-                memcpy(pdo_handler.outbuf, data_out, size_out*sizeof(pdo_size_t));
-                pdo_handler.outsize = size_out*2; // 8bit vs. 16bit FIXME some more cool way to do this
-                xtcp_init_send(c_xtcp, pdo_handler.conn);
-                break;
-
-                // Interface for PDOs received from Master
-            case i_pdo.pdo_in(pdo_size_t data_in[]) -> { unsigned int size_in }:
-                size_in = pdo_handler.insize;
-                if (pdo_handler.insize > 0)
-                {
-                    memcpy(data_in, pdo_handler.inbuf, pdo_handler.insize*sizeof(pdo_size_t));
-                    pdo_handler.insize = 0;
-                }
-                break;
+//            case i_co.pdo_out(unsigned int size_out, pdo_size_t data_out[]):
+//                memcpy(pdo_handler.outbuf, data_out, size_out*sizeof(pdo_size_t));
+//                pdo_handler.outsize = size_out*2; // 8bit vs. 16bit FIXME some more cool way to do this
+//                xtcp_init_send(c_xtcp, pdo_handler.conn);
+//                break;
+//
+//                // Interface for PDOs received from Master
+//            case i_co.pdo_in(pdo_size_t data_in[]) -> { unsigned int size_in }:
+//                size_in = pdo_handler.insize;
+//                if (pdo_handler.insize > 0)
+//                {
+//                    memcpy(data_in, pdo_handler.inbuf, pdo_handler.insize*sizeof(pdo_size_t));
+//                    pdo_handler.insize = 0;
+//                }
+//                break;
 
             default:
                 break;
