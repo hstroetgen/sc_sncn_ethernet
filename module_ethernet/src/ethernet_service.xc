@@ -20,7 +20,7 @@
 
 #define ETHERNET_DEBUG_PRINT 0
 
-#define CONNECTION_TIMEOUT  10*SEC_STD
+#define CONNECTION_TIMEOUT  (200*MSEC_STD)
 
 #define CIA402_DRIVE_SDO_PORT       40001
 #define CIA402_DRIVE_PDO_PORT       40002
@@ -176,8 +176,8 @@ void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co
                         {
                             pdo_handler.insize = xtcp_recv_count(c_xtcp, (pdo_handler.inbuf, char[]), PDO_BUF_SIZE);
 
-                            i_co.pdo_in_com(pdo_handler.insize, pdo_handler.inbuf);
-                            pdo_handler.outsize = i_co.pdo_out_com(pdo_handler.outbuf);
+                            i_co.pdo_in_buffer(pdo_handler.insize, pdo_handler.inbuf);
+                            pdo_handler.outsize = i_co.pdo_out_buffer(pdo_handler.outbuf);
 
                             xtcp_init_send(c_xtcp, pdo_handler.conn);
 
@@ -254,6 +254,7 @@ void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co
                           if (sdo_handler.conn.id == conn.id)
                           {
                               sdo_handler.communication_active = 0;
+                              i_co.inactive_communication();
                               sdo_handler.conn.id = -1;
                           }
                           else if (pdo_handler.conn.id == conn.id)
@@ -262,6 +263,7 @@ void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co
                               sdo_config_finished = 0;
                               op_state = STATE_PREOP;
                               pdo_handler.conn.id = -1;
+                              i_co.inactive_communication();
                           }
                     }
                     break;
@@ -271,23 +273,6 @@ void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co
                     }
                 }
                 break;
-
-                // Interface for PDOs transfered to Master
-//            case i_co.pdo_out(unsigned int size_out, pdo_size_t data_out[]):
-//                memcpy(pdo_handler.outbuf, data_out, size_out*sizeof(pdo_size_t));
-//                pdo_handler.outsize = size_out*2; // 8bit vs. 16bit FIXME some more cool way to do this
-//                xtcp_init_send(c_xtcp, pdo_handler.conn);
-//                break;
-//
-//                // Interface for PDOs received from Master
-//            case i_co.pdo_in(pdo_size_t data_in[]) -> { unsigned int size_in }:
-//                size_in = pdo_handler.insize;
-//                if (pdo_handler.insize > 0)
-//                {
-//                    memcpy(data_in, pdo_handler.inbuf, pdo_handler.insize*sizeof(pdo_size_t));
-//                    pdo_handler.insize = 0;
-//                }
-//                break;
 
             default:
                 break;
@@ -309,6 +294,7 @@ void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co
 
             if (ts_comm_inactive - c_time_tcp > CONNECTION_TIMEOUT)
             {
+                i_co.inactive_communication();
                 sdo_handler.communication_active = 0;
                 ethernet_close(c_xtcp, sdo_handler.conn);
                 pdo_handler.outsize = 0;
@@ -325,6 +311,7 @@ void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co
 
             if (ts_comm_inactive - c_time_udp > CONNECTION_TIMEOUT)
             {
+                i_co.inactive_communication();
                 pdo_handler.communication_active = 0;
                 ethernet_close(c_xtcp, pdo_handler.conn);
                 pdo_handler.outsize = 0;

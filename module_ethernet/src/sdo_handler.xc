@@ -145,7 +145,7 @@ static int getODListRequest(unsigned listtype, client interface i_co_communicati
     sdo_header.opcode = CO_SDOI_GET_ODLIST_RSP;
 
     if (listtype == 0) { /* list of length is replied */
-        i_co.get_all_list_length((lists, uint32_t[]));
+        i_co.od_get_all_list_length((lists, uint32_t[]));
 
         /* FIXME build reply */
         sdo_header.incomplete = 0;
@@ -162,7 +162,7 @@ static int getODListRequest(unsigned listtype, client interface i_co_communicati
 
         reply_pending = build_sdoinfo_reply(sdo_header, data, k);
     } else {
-        size = i_co.get_list(olists, OJBECT_DICTIONARY_MAXSIZE, listtype);
+        size = i_co.od_get_list(olists, OJBECT_DICTIONARY_MAXSIZE, listtype);
 
         unsigned max_payload_size = (CO_SDO_DATA_LENGTH - SDO_INFO_HEADER_LENGTH);
         int fragment_count = ((size * 2) - 1) / max_payload_size;
@@ -207,6 +207,7 @@ static int getODListRequest(unsigned listtype, client interface i_co_communicati
 
 static int sdo_request(unsigned char buffer[], unsigned size, client interface i_co_communication i_co)
 {
+    unsigned od_index;
     unsigned index;
     unsigned subindex;
     unsigned bitlength;
@@ -248,7 +249,10 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface i
 
         /* if the bitlength of the value is less than 4 octects use expedited transfere */
         struct _sdoinfo_entry_description desc;
-        {desc, error} = i_co.get_entry_description(index, subindex, 0);
+
+        {od_index, error} = i_co.od_find_index(index, subindex);
+
+        {desc, error} = i_co.od_get_entry_description(od_index, 0);
         if (desc.bitLength <= 32) {
             header.dataSetSize = 4 - desc.bitLength/8;
             header.transfereType = CO_SDO_TRANSFER_EXPEDITED;
@@ -265,14 +269,16 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface i
         }
 
         if (completeAccess==1) {
-            {value, bitlength, error} = i_co.get_object_value(index, 0);
+            {od_index, error} = i_co.od_find_index(index, 0);
+            {value, bitlength, error} = i_co.od_get_object_value(od_index);
             maxSubindex = value;
             if (subindex==0x00) {
                 tmp[dataSize++] = value&0xff; /* subindex 0 is alway UNSIGNED8 */
             }
 
             for (unsigned i=1; i<maxSubindex; i++) {
-                {value, bitlength, error} = i_co.get_object_value(index, 1);
+                {od_index, error} = i_co.od_find_index(index, 1);
+                {value, bitlength, error} = i_co.od_get_object_value(od_index);
 
 //              printstr("[DEBUG complete object values: "); printintln(i); printstr(": ");
                 for (unsigned k=0; k<(bitlength/8); k++) {
@@ -284,7 +290,7 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface i
             completeSize = dataSize - 3;
 
         } else {
-            {value, bitlength, error} = i_co.get_object_value(index, subindex);
+            {value, bitlength, error} = i_co.od_get_object_value(od_index);
             if (error != 0) {
                 printstr("[sdorequest CO_CMD_UPLOAD_REQ] error, entry not found 0x"); printhex(index); printstr(" 0x"); printhexln(subindex);
                 return 1;
@@ -353,7 +359,9 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface i
 
         unsigned char co_service = CO_SERVICE_SDO_RSP;
 
-        error = i_co.set_object_value(index, subindex, value);
+        {od_index, error} = i_co.od_find_index(index, subindex);
+
+        i_co.od_set_object_value(od_index, value);
 
         if (error == 0) {
             header.command = CO_CMD_DOWNLOAD_RSP;
@@ -371,6 +379,23 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface i
             tmp[dataSize++] = 0x00;
             tmp[dataSize++] = 0x00;
         } else {
+            uint32_t abort_code;
+
+            switch (error)
+            {
+            case 1:
+                abort_code = CO_ABORT_WRITE_RO;
+                break;
+            case 2:
+                abort_code = CO_ABORT_OBJNOTEXIST;
+                break;
+            case 3:
+                abort_code = CO_ABORT_NO_SUBINDEX;
+                break;
+            default:
+                abort_code = CO_ABORT_ERROR;
+            }
+
             // Error handling send abort command
             co_service = CO_SERVICE_SDO_REQ;
 
@@ -386,7 +411,7 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface i
             tmp[dataSize++] = subindex&0xff;
 
             // get abort code and set value.
-            uint32_t abort_code = CO_ABORT_WRITE_RO;
+
             tmp[dataSize++] = abort_code         & 0xff;
             tmp[dataSize++] = (abort_code >> 8)  & 0xff;
             tmp[dataSize++] = (abort_code >> 16) & 0xff;
@@ -420,7 +445,7 @@ static int sdoinfo_request(unsigned char buffer[], unsigned size, client interfa
     int error = 0;
 
     int i = 0;
-    unsigned index, subindex, valueinfo;
+    unsigned index, subindex, valueinfo, od_index;
     struct _sdoinfo_entry_description desc;
 
     infoheader.opcode = buffer[2]&0x07;
@@ -443,7 +468,7 @@ static int sdoinfo_request(unsigned char buffer[], unsigned size, client interfa
     case CO_SDOI_OBJDICT_REQ: /* answer with CO_SDOI_OBJDICT_RSP */
         servicedata = ((unsigned)buffer[6]&0xff) | (((unsigned)buffer[7]<<8)&0xff00);
         /* here servicedata holds the index of the requested object description */
-        error = i_co.get_object_description(desc, servicedata);
+        error = i_co.od_get_object_description(desc, servicedata);
 
         data[0] = desc.index&0xff;
         data[1] = (desc.index>>8)&0xff;
@@ -467,7 +492,9 @@ static int sdoinfo_request(unsigned char buffer[], unsigned size, client interfa
         subindex = buffer[8];
         valueinfo = buffer[9]; /* bitmask which elements should be in the response - bit 1,2 and 3 = 0 (reserved) */
 
-        {desc, error} = i_co.get_entry_description(index, subindex, valueinfo);
+        {od_index, error} = i_co.od_find_index(index, subindex);
+
+        {desc, error} = i_co.od_get_entry_description(od_index, valueinfo);
         response.fragmentsleft = 0;
         response.incomplete = 0;
         response.opcode = CO_SDOI_ENTRY_DESCRIPTION_RSP;
