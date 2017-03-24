@@ -176,8 +176,9 @@ void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co
                         {
                             pdo_handler.insize = xtcp_recv_count(c_xtcp, (pdo_handler.inbuf, char[]), PDO_BUF_SIZE);
 
-                            i_co.pdo_in_buffer(pdo_handler.insize, pdo_handler.inbuf);
-                            pdo_handler.outsize = i_co.pdo_out_buffer(pdo_handler.outbuf);
+                            // PDO 0
+                            i_co.pdo_in(0, pdo_handler.insize, pdo_handler.inbuf);
+                            pdo_handler.outsize = i_co.pdo_out(0, pdo_handler.outbuf);
 
                             xtcp_init_send(c_xtcp, pdo_handler.conn);
 
