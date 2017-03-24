@@ -10,6 +10,7 @@
 #define ETHERNET_SERVICE_H_
 
 #include <stdint.h>
+#include <canopen_service.h>
 #include <co_interface.h>
 
 #define CONFIG_TCP_SIZE 1024
