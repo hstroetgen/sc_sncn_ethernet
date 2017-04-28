@@ -8,7 +8,7 @@ The **SOMANET Ethernet Library** provides Ethernet support for SOMANET devices.
 
 .. cssclass:: downloadable-button 
 
-  `Download Library <https://github.com/synapticon/sc_sncn_ethernet/archive/master.zip>`_
+  `Download Library <https://github.com/synapticon/sc_sncn_ethernet/archive/release_2.0.0.zip>`_
 
 .. cssclass:: github
 
