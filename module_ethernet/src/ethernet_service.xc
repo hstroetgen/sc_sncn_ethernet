@@ -20,7 +20,8 @@
 
 #define ETHERNET_DEBUG_PRINT 0
 
-#define CONNECTION_TIMEOUT  (200*MSEC_STD)
+#define CONNECTION_TIMEOUT_UDP  (200*MSEC_STD)
+#define CONNECTION_TIMEOUT_TCP  (1000*MSEC_STD)
 
 #define CIA402_DRIVE_SDO_PORT       40001
 #define CIA402_DRIVE_PDO_PORT       40002
@@ -36,8 +37,8 @@
 typedef struct pdo_connection
 {
     xtcp_connection_t conn;
-    uint16_t inbuf[PDO_BUF_SIZE];
-    uint16_t outbuf[PDO_BUF_SIZE];
+    uint8_t inbuf[PDO_BUF_SIZE];
+    uint8_t outbuf[PDO_BUF_SIZE];
     unsigned insize;
     unsigned outsize;
     char communication_active;
@@ -200,7 +201,7 @@ void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co
                                     if (pdo_handler.insize > 0 && op_state == STATE_OP)
                                     {
                                         // On the very first pdo packet, set SDO configuration to ready. So cia402_drive can continue.
-                                        i_co.configuration_ready();
+                                        i_co.operational_state_change(1);
                                         sdo_config_finished = 1;
                                     }
                                     else
@@ -293,7 +294,7 @@ void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co
             unsigned ts_comm_inactive = 0;
             t :> ts_comm_inactive;
 
-            if (ts_comm_inactive - c_time_tcp > CONNECTION_TIMEOUT)
+            if (ts_comm_inactive - c_time_tcp > CONNECTION_TIMEOUT_TCP)
             {
                 i_co.inactive_communication();
                 sdo_handler.communication_active = 0;
@@ -310,7 +311,7 @@ void _ethernet_service(chanend ?c_xtcp, client interface i_co_communication i_co
             unsigned ts_comm_inactive = 0;
             t :> ts_comm_inactive;
 
-            if (ts_comm_inactive - c_time_udp > CONNECTION_TIMEOUT)
+            if (ts_comm_inactive - c_time_udp > CONNECTION_TIMEOUT_UDP)
             {
                 i_co.inactive_communication();
                 pdo_handler.communication_active = 0;

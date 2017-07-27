@@ -137,7 +137,7 @@ int co_tx_handler();
  * @param buffer[] Buffer for outgoing packet
  * @return Number of bytes stored in buffer
  */
-int co_get_reply(char buffer[]);
+size_t co_get_reply(char buffer[]);
 
 /*
  * @brief Check if a packet is pending
