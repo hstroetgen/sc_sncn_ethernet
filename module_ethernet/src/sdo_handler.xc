@@ -491,6 +491,7 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface i
 		break;
 
 	default:
+	    printstrln("unknown command specifier");
 		return -1; /* unknown command specifier */
 	}
 
