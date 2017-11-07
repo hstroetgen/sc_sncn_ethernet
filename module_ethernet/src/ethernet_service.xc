@@ -113,13 +113,19 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                 i_xtcp.get_packet(co_conn.conn, co_conn.inbuf, SDO_BUF_SIZE, co_conn.insize);
 
                 // Check if this connection is CiA402 Drive port
-                if (co_conn.conn.event != XTCP_IFUP && co_conn.conn.event != XTCP_IFDOWN &&
-                        co_conn.conn.local_port != CIA402_DRIVE_SDO_PORT && co_conn.conn.local_port != CIA402_DRIVE_PDO_PORT)
-                {
-                    #if ETHERNET_DEBUG_PRINT
-                    printstrln("Ethernet: Wrong Port");
-                    #endif
-                    return;
+//                if (co_conn.conn.event != XTCP_IFUP && co_conn.conn.event != XTCP_IFDOWN &&
+//                        co_conn.conn.local_port != CIA402_DRIVE_SDO_PORT && co_conn.conn.local_port != CIA402_DRIVE_PDO_PORT)
+//                {
+//                    #if ETHERNET_DEBUG_PRINT
+//                    printstrln("Ethernet: Wrong Port");
+//                    #endif
+//                    return;
+//                }
+                if (co_conn.conn.local_port != CIA402_DRIVE_SDO_PORT && co_conn.conn.local_port != CIA402_DRIVE_PDO_PORT) {
+                   #if ETHERNET_DEBUG_PRINT
+                   printstrln("Ethernet: Wrong Port");
+                   #endif
+                   break;
                 }
 
                 switch (co_conn.conn.event)
@@ -129,7 +135,7 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                     #if ETHERNET_DEBUG_PRINT
                         printstrln("Ethernet: IF Up");
                     #endif
-                        // When IF up, node got a IP address
+                        // When IF up, node got an IP address
                         op_state = STATE_PREOP;
                       break;
                     }
@@ -161,7 +167,6 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                         else if (co_conn.conn.local_port == CIA402_DRIVE_PDO_PORT )
                         {
                             pdo_handler.conn = co_conn.conn;
-
                         }
                         else
                         {
@@ -200,8 +205,8 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                             #if ETHERNET_DEBUG_PRINT
                                 printstrln("Ethernet: Recv PDO");
                             #endif
-                            if (op_state == STATE_PREOP)
-                                op_state = STATE_OP;
+                            //if (op_state == STATE_PREOP)
+                            op_state = STATE_OP;
 
                             // PDO 0
                             i_co.pdo_in(0, co_conn.insize, co_conn.inbuf);
@@ -258,7 +263,11 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                 }
                 break;
 
+            default:
+                break;
         }
+
+
 
         // Check if we have to send something to the master
        if (coeReplyPending == 1)
@@ -268,14 +277,13 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
            coeReplyPending = co_reply_ready();
        }
 
-
         // Check for timeouts
         if (sdo_handler.communication_active)
         {
             unsigned ts_comm_inactive = 0;
             t :> ts_comm_inactive;
 
-            if (ts_comm_inactive - c_time_tcp > CONNECTION_TIMEOUT_TCP)
+            if (timeafter(ts_comm_inactive, (c_time_tcp + CONNECTION_TIMEOUT_TCP)))
             {
                 i_co.inactive_communication();
                 sdo_handler.communication_active = 0;
@@ -292,7 +300,7 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
             unsigned ts_comm_inactive = 0;
             t :> ts_comm_inactive;
 
-            if (ts_comm_inactive - c_time_udp > CONNECTION_TIMEOUT_UDP)
+            if (timeafter(ts_comm_inactive, (c_time_udp + CONNECTION_TIMEOUT_UDP)))
             {
                 i_co.inactive_communication();
                 pdo_handler.communication_active = 0;
