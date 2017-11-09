@@ -11,6 +11,8 @@
 #include "coe_handling.h"
 #include "sdo_handler.h"
 
+#define MINIMUM(a,b)     (a < b ? a : b)
+
 #define OJBECT_DICTIONARY_MAXSIZE    100
 #define CO_SDO_HEADER_LENGTH        4
 #define CO_SDO_DATA_LENGTH          (CO_MAX_MSG_SIZE - CO_MAX_HEADER_SIZE - CO_SDO_HEADER_LENGTH)
@@ -158,28 +160,6 @@ static int build_sdo_reply(struct _sdo_response_header header, unsigned char dat
 	return replyPending;
 }
 
-static size_t build_sdo_error_buffer(int error, uint16_t iindex, uint8_t subindex, uint8_t tmp[])
-{
-    uint32_t abort_code;
-    switch (error) {
-        case 0:   abort_code = 0;                  break;
-        case 1:   abort_code = CO_ABORT_UNSUPPORTED; break;
-        case 255: abort_code = CO_ABORT_WRITE_RO; break;
-        default:  abort_code = CO_ABORT_ERROR;    break;
-    }
-
-    size_t dataSize = 0;
-    tmp[dataSize++] = iindex&0xff;
-    tmp[dataSize++] = (iindex>>8)&0xff;
-    tmp[dataSize++] = subindex&0xff;
-
-    tmp[dataSize++] = abort_code         & 0xff;
-    tmp[dataSize++] = (abort_code >> 8)  & 0xff;
-    tmp[dataSize++] = (abort_code >> 16) & 0xff;
-    tmp[dataSize++] = (abort_code >> 24) & 0xff;
-
-    return dataSize;
-}
 
 #if 0
 static void parse_packet(unsigned char buffer[], ...)
@@ -254,7 +234,7 @@ static int getODListRequest(unsigned listtype, client interface i_co_communicati
 		    data[datacount++] = listtype&0xff;
 		    data[datacount++] = (listtype>>8)&0xff;
 
-#define MINIMUM(a,b)     (a < b ? a : b)
+
 		    int objects_to_transfer = MINIMUM(size - (i * (max_payload_size / 2)), max_payload_size/2);
 		    int start_object = i * (max_payload_size / 2);
 		    for (int j = start_object; j < (start_object + objects_to_transfer); j++) {
@@ -279,7 +259,6 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface i
 	unsigned iindex;
 	unsigned subindex;
 	unsigned bitlength;
-	unsigned value;
     uint8_t valuebuffer[MAX_VALUE_BYTE_SIZE];
 	int error;
 	struct _sdo_response_header header;
@@ -287,7 +266,6 @@ static int sdo_request(unsigned char buffer[], unsigned size, client interface i
 	unsigned opcode = (buffer[2]>>5)&0x03;
 	unsigned completeAccess = (buffer[2]>>4)&0x01; /* completeAccess only in SDO Upload Req/Rsp */
     unsigned expeditedTransfer = (buffer[2]>>1)&0x01; /* Expedited transfer */
-	unsigned maxSubindex = 0;
     unsigned dataStart = 0;
 	unsigned dataSize = 0;
     unsigned completeSize = 0;
@@ -793,3 +771,4 @@ int co_get_last_changed_object()
     g_last_modified_object = 0;
     return last;
 }
+

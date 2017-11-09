@@ -11,20 +11,17 @@
 
 #include <stdint.h>
 #include <canopen_interface_service.h>
-#include <co_interface.h>
 #include <xtcp.h>
 
 
-#define CONFIG_TCP_SIZE 1024
-
-
 void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communication i_co);
+
 
 #define ethernet_service(i_xtcp, i_pdo, i_co) \
 {\
     par {\
     _ethernet_service(i_xtcp, i_co[0]);\
-    canopen_interface_service(i_pdo, i_co, CO_IF_COUNT);\
+    [[distribute]] canopen_interface_service(i_pdo, i_co, CO_IF_COUNT);\
     }\
 } while(0)
 

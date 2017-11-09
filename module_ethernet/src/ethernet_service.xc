@@ -17,7 +17,6 @@
 #include "ethernet_service.h"
 #include "sdo_handler.h"
 
-
 #define ETHERNET_DEBUG_PRINT 0
 
 #define CONNECTION_TIMEOUT_UDP  (200*MSEC_STD)
@@ -25,14 +24,8 @@
 
 #define CIA402_DRIVE_SDO_PORT       40001
 #define CIA402_DRIVE_PDO_PORT       40002
-#define ETHERNET_TIMEOUT_MS         500
 #define PDO_BUF_SIZE    64
 #define SDO_BUF_SIZE    1024
-
-#define STATE_PREINIT  0x0
-#define STATE_INIT  0x1
-#define STATE_PREOP 0x2
-#define STATE_OP    0x3
 
 typedef struct pdo_connection
 {
@@ -87,20 +80,21 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
 
     /* Timeout Timer */
     timer t;
-    unsigned c_time_udp = 0;
-    unsigned c_time_tcp = 0;
+    unsigned t_udp = 0;
+    unsigned t_tcp = 0;
+    unsigned time = 0;
 
     /* Common */
     co_connection_t co_conn;
     int sdo_config_finished = 0;
     static int coeReplyPending;
 
-    uint8_t op_state = STATE_INIT;
-
     i_xtcp.listen(CIA402_DRIVE_SDO_PORT, XTCP_PROTOCOL_TCP);
     i_xtcp.listen(CIA402_DRIVE_PDO_PORT, XTCP_PROTOCOL_UDP);;
 
     co_init();
+
+    t :> time;
 
     while (1)
     {
@@ -136,7 +130,6 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                         printstrln("Ethernet: IF Up");
                     #endif
                         // When IF up, node got an IP address
-                        op_state = STATE_PREOP;
                       break;
                     }
                     case XTCP_IFDOWN:
@@ -147,7 +140,6 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                         // layer and close the active connection.
                         {
                             ethernet_close(i_xtcp, co_conn.conn);
-                            op_state = STATE_PREOP;
                         }
                         break;
 
@@ -161,7 +153,6 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                         {
                             sdo_handler.conn = co_conn.conn;
                             i_xtcp.set_appstate(sdo_handler.conn, (xtcp_appstate_t) &sdo_handler.conn);
-                            op_state = STATE_PREOP;
 
                         }
                         else if (co_conn.conn.local_port == CIA402_DRIVE_PDO_PORT )
@@ -182,7 +173,8 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                                 printstrln("Ethernet: Recv SDO");
                             #endif
 
-
+                            // Because of laziness, I'm using the same SDO handler like EtherCAT.
+                            // So a little protocol overhead is needed, to parse the packages correctly.
                             coeReplyPending = co_rx_handler(co_conn.inbuf, co_conn.insize, i_co);
 
                             sdo_handler.outsize = co_get_reply(sdo_handler.outbuf);
@@ -190,14 +182,9 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
 
                             coeReplyPending = co_reply_ready();
 
-
-                            if (op_state == STATE_PREOP)
-                                op_state = STATE_OP;
-
-
                             sdo_handler.communication_active = 1;
                             // Get time for timeout
-                            t :> c_time_tcp;
+                            t :> t_tcp;
                         }
                         // PDOs
                         else if (co_conn.conn.id == pdo_handler.conn.id)
@@ -205,8 +192,6 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                             #if ETHERNET_DEBUG_PRINT
                                 printstrln("Ethernet: Recv PDO");
                             #endif
-                            //if (op_state == STATE_PREOP)
-                            op_state = STATE_OP;
 
                             // PDO 0
                             i_co.pdo_in(0, co_conn.insize, co_conn.inbuf);
@@ -214,16 +199,16 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
 
                             i_xtcp.send(pdo_handler.conn, pdo_handler.outbuf, pdo_handler.outsize);
 
-                            if (!sdo_config_finished && op_state == STATE_OP)
+                            if (!sdo_config_finished)
                             {
                                 // On the very first pdo packet, set SDO configuration to ready. So cia402_drive can continue.
                                 i_co.operational_state_change(1);
                                 sdo_config_finished = 1;
                             }
 
-                            t :> c_time_udp;
-                            // Get time for timeout
                             pdo_handler.communication_active = 1;
+                            // Get time for timeout
+                            t :> t_udp;
                         }
                         break;
 
@@ -250,7 +235,6 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
                           {
                               pdo_handler.communication_active = 0;
                               sdo_config_finished = 0;
-                              op_state = STATE_PREOP;
                               pdo_handler.conn.id = -1;
                               i_co.inactive_communication();
                           }
@@ -283,7 +267,7 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
             unsigned ts_comm_inactive = 0;
             t :> ts_comm_inactive;
 
-            if (timeafter(ts_comm_inactive, (c_time_tcp + CONNECTION_TIMEOUT_TCP)))
+            if (timeafter(ts_comm_inactive, (t_tcp + CONNECTION_TIMEOUT_TCP)))
             {
                 i_co.inactive_communication();
                 sdo_handler.communication_active = 0;
@@ -300,7 +284,7 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
             unsigned ts_comm_inactive = 0;
             t :> ts_comm_inactive;
 
-            if (timeafter(ts_comm_inactive, (c_time_udp + CONNECTION_TIMEOUT_UDP)))
+            if (timeafter(ts_comm_inactive, (t_udp + CONNECTION_TIMEOUT_UDP)))
             {
                 i_co.inactive_communication();
                 pdo_handler.communication_active = 0;
@@ -312,7 +296,9 @@ void _ethernet_service(client xtcp_if i_xtcp, client interface i_co_communicatio
 
             }
         }
+
+        /* wait 1 ms to respect timing */
+        t when timerafter(time + USEC_STD*1000) :> time;
     }
 }
-
 

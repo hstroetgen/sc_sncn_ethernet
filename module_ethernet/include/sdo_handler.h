@@ -8,7 +8,7 @@
 #define SDO_HANDLER_H
 
 #include <stdint.h>
-#include "co_interface.h"
+#include <canopen_interface_service.h>
 
 #define CO_MAX_HEADER_SIZE  2
 #define CO_MAX_MSG_SIZE     124
@@ -159,5 +159,7 @@ int co_object_changed(void);
  * @return Index of the last modified object
  */
 int co_get_last_changed_object(void);
+#endif
+int co_debug_if(client interface i_co_communication i_co);
 
-#endif /* ECAT_CO_H */
+/* ECAT_CO_H */
