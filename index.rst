@@ -6,14 +6,6 @@ The **SOMANET Ethernet Library** provides Ethernet support for SOMANET devices.
 .. image:: doc/images/stack.png
    :width: 280px
 
-.. cssclass:: downloadable-button 
-
-  `Download Library <https://github.com/synapticon/sc_sncn_ethernet/archive/master.zip>`_
-
-.. cssclass:: github
-
-  `Visit Public Repository <https://github.com/synapticon/sc_sncn_ethernet>`_
-
 Hardware Compatibility
 -----------------------
 
@@ -76,15 +68,7 @@ Dependencies
 
 To run your **application** it is necessary to include :ref:`SOMANET Base <somanet_base>`.
 
-.. cssclass:: downloadable-button 
-
-  `Download SOMANET Base Library <https://github.com/synapticon/sc_somanet-base/archive/master.zip>`_
-
-.. cssclass:: github
-
-  `Visit SOMANET Base Public Repository <https://github.com/synapticon/sc_somanet-base>`_
-
 .. note:: **SOMANET COM Ethernet** hardware modules are required to be used with this software.
 	
-	Visit our :ref:`SOMANET COM Ethernet <com_ethernet>` documentation for further information.
+Visit our :ref:`SOMANET COM Ethernet <com_ethernet>` documentation for further information.
 
