@@ -9,10 +9,6 @@ The purpose of this app is showing the use of the :ref:`SOMANET Ethernet MAC (du
 
 We will run the application on a SOMANET node connected to our Ethernet Local Area Network (the two available ports on the **SOMANET COM Ethernet** could be connected simultaneously). At this point the node will start sending back all the packets that it receives but changing the sender MAC address. Then we will sniff the existing packets forwarded over the network. Within this sniffed traffic we will see all the packets sent by the SOMANET. 
 
-.. cssclass:: github
-
-  `See Application on Public Repository <https://github.com/synapticon/sc_sncn_ethernet/tree/master/examples/app_dual_ethernet_loopback>`_
-
  .. important:: To connect your SOMANET device to you LAN network you will need a SOMANET COM Ethernet Cable STP RJ45 to PicoBlade 5pin.
 
 Quick How-to
