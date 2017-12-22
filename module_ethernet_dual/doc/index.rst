@@ -17,10 +17,6 @@ therefore running in parallel the two available MACs they will fill the size of 
 
 All communication is done by channel communication and client function calls following a Server-Client scheme.
 
-.. cssclass:: github
-
-  `See Module on Public Repository <https://github.com/synapticon/sc_sncn_ethernet/tree/master/module_ethernet_dual>`_
-
 .. _802.3: http://www.ieee802.org/3/
 
 How to use

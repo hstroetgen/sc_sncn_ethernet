@@ -9,11 +9,7 @@ The purpose of this app is showing the use of the :ref:`SOMANET Ethernet Hub Mod
 
 We will set the SOMANET hub in between our PC and the internet. 
 
-.. cssclass:: github
-
-  `See Application on Public Repository <https://github.com/synapticon/sc_sncn_ethernet/tree/master/examples/app_ethernet_hub>`_
-
- .. important:: To run this application you will need 2x SOMANET COM Ethernet Cable STP RJ45 to PicoBlade 5pin.
+.. important:: To run this application you will need 2x SOMANET COM Ethernet Cable STP RJ45 to PicoBlade 5pin.
 
 Quick How-to
 ------------
