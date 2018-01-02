@@ -2,8 +2,12 @@
 # compiled for. It either refers to an XN file in the source directories
 # or a valid argument for the --target option when compiling.
 
-TARGET = SOMANET-C22
-#TARGET = SOMANET-C22_Motor-Control_xSCOPE
+# Possible SOMANET targets:
+# SOMANET-CoreC22
+# SOMANET-CoreC21
+# SOMANET-CoreC21-rev-b
+# SOMANET-CoreC2X
+TARGET = SOMANET-CoreC2X
 
 # The APP_NAME variable determines the name of the final .xe file. It should
 # not include the .xe postfix. If left blank the name will default to 
