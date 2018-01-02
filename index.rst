@@ -42,8 +42,8 @@ Modules
 	
 Our SOMANET Ethernet Library is composed of the following modules:
 
-* `Ethernet MAC (dual-port) Module <module_ethernet_dual/doc/index.html>`_: This module allows an abstract access for the application or other upper layers to two different and parallel-running Ethernet MAC layers.
-* `Ethernet Hub Module <module_ethernet_hub/doc/index.html>`_: This module offers a layer that runs on top of the Ethernet dual Stack. It connects together two Ethernet interfaces and makes them act as a single network segment. It also provides the received data packets to the upper layers.
+* Ethernet MAC (dual-port) Module: This module allows an abstract access for the application or other upper layers to two different and parallel-running Ethernet MAC layers.
+* Ethernet Hub Module: This module offers a layer that runs on top of the Ethernet dual Stack. It connects together two Ethernet interfaces and makes them act as a single network segment. It also provides the received data packets to the upper layers.
 * Ethernet SMI Module: This module allows code to communicate with ethernet phys that are configured using the SMI serial protocol.
 
 Examples
