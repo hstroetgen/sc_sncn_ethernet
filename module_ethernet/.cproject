@@ -175,6 +175,12 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/xc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/clang&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/object_dictionary}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/pdo_handler}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.xc.compiler.input.794194851" name="XC" superClass="com.xmos.cdt.xc.compiler.input"/>
 							</tool>
@@ -478,6 +484,12 @@
 								<option id="com.xmos.c.compiler.option.include.paths.1135594052" name="com.xmos.c.compiler.option.include.paths" superClass="com.xmos.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/clang&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/object_dictionary}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/pdo_handler}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.c.compiler.input.c.246465686" name="C" superClass="com.xmos.cdt.c.compiler.input.c"/>
 							</tool>
@@ -786,6 +798,12 @@
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/clang&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${XMOS_TOOL_PATH}/target/include/c++/v1&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/doc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/object_dictionary}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/pdo_handler}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/module_canopen_interface/include}&quot;"/>
 								</option>
 								<inputType id="com.xmos.cdt.cxx.compiler.input.cpp.1467349806" name="C++" superClass="com.xmos.cdt.cxx.compiler.input.cpp"/>
 							</tool>
