@@ -275,10 +275,9 @@ void xtcp_uip(server xtcp_if i_xtcp[n_xtcp],
   unsigned autoip_timer=0;
   char mac_address[6];
 
-  if (!isnull(mac_address0)) {
+  if (!isnull(otp_ports) && otp_board_info_get_mac(otp_ports, 0, mac_address)) {
+  } else if (!isnull(mac_address0)) {
     memcpy(mac_address, mac_address0, 6);
-  } else if (!isnull(otp_ports)) {
-    otp_board_info_get_mac(otp_ports, 0, mac_address);
   } else if (!isnull(i_eth_cfg)) {
     i_eth_cfg.get_macaddr(0, mac_address);
   } else {
